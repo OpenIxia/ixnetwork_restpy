@@ -30,6 +30,13 @@ class CpdpConvergence(Base):
 
     __slots__ = ()
     _SDM_NAME = 'cpdpConvergence'
+    _SDM_ATT_MAP = {
+        'DataPlaneJitterWindow': 'dataPlaneJitterWindow',
+        'DataPlaneThreshold': 'dataPlaneThreshold',
+        'EnableControlPlaneEvents': 'enableControlPlaneEvents',
+        'EnableDataPlaneEventsRateMonitor': 'enableDataPlaneEventsRateMonitor',
+        'Enabled': 'enabled',
+    }
 
     def __init__(self, parent):
         super(CpdpConvergence, self).__init__(parent)
@@ -41,10 +48,10 @@ class CpdpConvergence(Base):
         -------
         - str(0 | 10485760 | 1310720 | 167772160 | 20971520 | 2621440 | 335544320 | 41943040 | 5242880 | 671088640 | 83886080): Indicates the number of packets received during a time interval. This is used forcalculating the rate on the recieve side.
         """
-        return self._get_attribute('dataPlaneJitterWindow')
+        return self._get_attribute(self._SDM_ATT_MAP['DataPlaneJitterWindow'])
     @DataPlaneJitterWindow.setter
     def DataPlaneJitterWindow(self, value):
-        self._set_attribute('dataPlaneJitterWindow', value)
+        self._set_attribute(self._SDM_ATT_MAP['DataPlaneJitterWindow'], value)
 
     @property
     def DataPlaneThreshold(self):
@@ -53,10 +60,10 @@ class CpdpConvergence(Base):
         -------
         - number: The data loss threshold percentage for CP/DP events at the prompt.
         """
-        return self._get_attribute('dataPlaneThreshold')
+        return self._get_attribute(self._SDM_ATT_MAP['DataPlaneThreshold'])
     @DataPlaneThreshold.setter
     def DataPlaneThreshold(self, value):
-        self._set_attribute('dataPlaneThreshold', value)
+        self._set_attribute(self._SDM_ATT_MAP['DataPlaneThreshold'], value)
 
     @property
     def EnableControlPlaneEvents(self):
@@ -65,10 +72,10 @@ class CpdpConvergence(Base):
         -------
         - bool: If enabled, fetches control plane event statistics of event name, event start timestamp, and event end timestamp.
         """
-        return self._get_attribute('enableControlPlaneEvents')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableControlPlaneEvents'])
     @EnableControlPlaneEvents.setter
     def EnableControlPlaneEvents(self, value):
-        self._set_attribute('enableControlPlaneEvents', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableControlPlaneEvents'], value)
 
     @property
     def EnableDataPlaneEventsRateMonitor(self):
@@ -77,10 +84,10 @@ class CpdpConvergence(Base):
         -------
         - bool: If enabled, fetches data plane event rate statistics of DP above Threshold Timestamp, DP below Threshold Timestamp, Ramp Up Convergence, Ramp Down Convergence, CP/DP Convergence, and DP/DP Convergence.
         """
-        return self._get_attribute('enableDataPlaneEventsRateMonitor')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableDataPlaneEventsRateMonitor'])
     @EnableDataPlaneEventsRateMonitor.setter
     def EnableDataPlaneEventsRateMonitor(self, value):
-        self._set_attribute('enableDataPlaneEventsRateMonitor', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableDataPlaneEventsRateMonitor'], value)
 
     @property
     def Enabled(self):
@@ -89,10 +96,10 @@ class CpdpConvergence(Base):
         -------
         - bool: If enabled, fetches control plane/data plane statistics.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     def update(self, DataPlaneJitterWindow=None, DataPlaneThreshold=None, EnableControlPlaneEvents=None, EnableDataPlaneEventsRateMonitor=None, Enabled=None):
         """Updates cpdpConvergence resource on the server.
@@ -109,4 +116,4 @@ class CpdpConvergence(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

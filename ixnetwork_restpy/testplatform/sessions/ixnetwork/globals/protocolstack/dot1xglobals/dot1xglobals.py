@@ -32,6 +32,29 @@ class Dot1xGlobals(Base):
 
     __slots__ = ()
     _SDM_NAME = 'dot1xGlobals'
+    _SDM_ATT_MAP = {
+        'AuthOnNoResponse': 'authOnNoResponse',
+        'AuthPeriod': 'authPeriod',
+        'Authenticator': 'authenticator',
+        'AuthenticatorMulticast': 'authenticatorMulticast',
+        'DisableLogoff': 'disableLogoff',
+        'DutTestMode': 'dutTestMode',
+        'FragmentSize': 'fragmentSize',
+        'HeldPeriod': 'heldPeriod',
+        'LogoffMaxClientsPerSecond': 'logoffMaxClientsPerSecond',
+        'LogoffMaxOutstandingRequests': 'logoffMaxOutstandingRequests',
+        'MacAuthPrefix': 'macAuthPrefix',
+        'MaxClientsPerSecond': 'maxClientsPerSecond',
+        'MaxOutstandingRequests': 'maxOutstandingRequests',
+        'MaxStart': 'maxStart',
+        'ObjectId': 'objectId',
+        'OnlyMulticast': 'onlyMulticast',
+        'StartPeriod': 'startPeriod',
+        'StatsPeriod': 'statsPeriod',
+        'SuccessiveStart': 'successiveStart',
+        'WaitBeforeRun': 'waitBeforeRun',
+        'WaitForCompletion': 'waitForCompletion',
+    }
 
     def __init__(self, parent):
         super(Dot1xGlobals, self).__init__(parent)
@@ -71,10 +94,10 @@ class Dot1xGlobals(Base):
         -------
         - bool: If the DUT is not responding to EAPoL Start after configured number of retries, declare the session a success.
         """
-        return self._get_attribute('authOnNoResponse')
+        return self._get_attribute(self._SDM_ATT_MAP['AuthOnNoResponse'])
     @AuthOnNoResponse.setter
     def AuthOnNoResponse(self, value):
-        self._set_attribute('authOnNoResponse', value)
+        self._set_attribute(self._SDM_ATT_MAP['AuthOnNoResponse'], value)
 
     @property
     def AuthPeriod(self):
@@ -83,10 +106,10 @@ class Dot1xGlobals(Base):
         -------
         - number: Time to wait for Authentication request
         """
-        return self._get_attribute('authPeriod')
+        return self._get_attribute(self._SDM_ATT_MAP['AuthPeriod'])
     @AuthPeriod.setter
     def AuthPeriod(self, value):
-        self._set_attribute('authPeriod', value)
+        self._set_attribute(self._SDM_ATT_MAP['AuthPeriod'], value)
 
     @property
     def Authenticator(self):
@@ -95,10 +118,10 @@ class Dot1xGlobals(Base):
         -------
         - str: Mac address used to send frames if multicast is used.
         """
-        return self._get_attribute('authenticator')
+        return self._get_attribute(self._SDM_ATT_MAP['Authenticator'])
     @Authenticator.setter
     def Authenticator(self, value):
-        self._set_attribute('authenticator', value)
+        self._set_attribute(self._SDM_ATT_MAP['Authenticator'], value)
 
     @property
     def AuthenticatorMulticast(self):
@@ -107,10 +130,10 @@ class Dot1xGlobals(Base):
         -------
         - bool: When using vlan and multicast, this value need to be true.
         """
-        return self._get_attribute('authenticatorMulticast')
+        return self._get_attribute(self._SDM_ATT_MAP['AuthenticatorMulticast'])
     @AuthenticatorMulticast.setter
     def AuthenticatorMulticast(self, value):
-        self._set_attribute('authenticatorMulticast', value)
+        self._set_attribute(self._SDM_ATT_MAP['AuthenticatorMulticast'], value)
 
     @property
     def DisableLogoff(self):
@@ -119,10 +142,10 @@ class Dot1xGlobals(Base):
         -------
         - bool: Do not send Logoff message when closing a session.
         """
-        return self._get_attribute('disableLogoff')
+        return self._get_attribute(self._SDM_ATT_MAP['DisableLogoff'])
     @DisableLogoff.setter
     def DisableLogoff(self, value):
-        self._set_attribute('disableLogoff', value)
+        self._set_attribute(self._SDM_ATT_MAP['DisableLogoff'], value)
 
     @property
     def DutTestMode(self):
@@ -131,10 +154,10 @@ class Dot1xGlobals(Base):
         -------
         - str: Specify what is the dut port mode.
         """
-        return self._get_attribute('dutTestMode')
+        return self._get_attribute(self._SDM_ATT_MAP['DutTestMode'])
     @DutTestMode.setter
     def DutTestMode(self, value):
-        self._set_attribute('dutTestMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['DutTestMode'], value)
 
     @property
     def FragmentSize(self):
@@ -143,10 +166,10 @@ class Dot1xGlobals(Base):
         -------
         - number: Size of the frame sent.
         """
-        return self._get_attribute('fragmentSize')
+        return self._get_attribute(self._SDM_ATT_MAP['FragmentSize'])
     @FragmentSize.setter
     def FragmentSize(self, value):
-        self._set_attribute('fragmentSize', value)
+        self._set_attribute(self._SDM_ATT_MAP['FragmentSize'], value)
 
     @property
     def HeldPeriod(self):
@@ -155,10 +178,10 @@ class Dot1xGlobals(Base):
         -------
         - number: Time to wait before sending new authentication requests after a failure
         """
-        return self._get_attribute('heldPeriod')
+        return self._get_attribute(self._SDM_ATT_MAP['HeldPeriod'])
     @HeldPeriod.setter
     def HeldPeriod(self, value):
-        self._set_attribute('heldPeriod', value)
+        self._set_attribute(self._SDM_ATT_MAP['HeldPeriod'], value)
 
     @property
     def LogoffMaxClientsPerSecond(self):
@@ -167,10 +190,10 @@ class Dot1xGlobals(Base):
         -------
         - number: The number of interfaces to logoff per second. Zero value means maximum with no limit.
         """
-        return self._get_attribute('logoffMaxClientsPerSecond')
+        return self._get_attribute(self._SDM_ATT_MAP['LogoffMaxClientsPerSecond'])
     @LogoffMaxClientsPerSecond.setter
     def LogoffMaxClientsPerSecond(self, value):
-        self._set_attribute('logoffMaxClientsPerSecond', value)
+        self._set_attribute(self._SDM_ATT_MAP['LogoffMaxClientsPerSecond'], value)
 
     @property
     def LogoffMaxOutstandingRequests(self):
@@ -179,10 +202,10 @@ class Dot1xGlobals(Base):
         -------
         - number: The maximum number of logoff sessions that can be negotiated at one moment. Zero value means maximum with no limit.
         """
-        return self._get_attribute('logoffMaxOutstandingRequests')
+        return self._get_attribute(self._SDM_ATT_MAP['LogoffMaxOutstandingRequests'])
     @LogoffMaxOutstandingRequests.setter
     def LogoffMaxOutstandingRequests(self, value):
-        self._set_attribute('logoffMaxOutstandingRequests', value)
+        self._set_attribute(self._SDM_ATT_MAP['LogoffMaxOutstandingRequests'], value)
 
     @property
     def MacAuthPrefix(self):
@@ -191,10 +214,10 @@ class Dot1xGlobals(Base):
         -------
         - str: When using machine authentication, a prefix is needed to differentiate between users and machines.
         """
-        return self._get_attribute('macAuthPrefix')
+        return self._get_attribute(self._SDM_ATT_MAP['MacAuthPrefix'])
     @MacAuthPrefix.setter
     def MacAuthPrefix(self, value):
-        self._set_attribute('macAuthPrefix', value)
+        self._set_attribute(self._SDM_ATT_MAP['MacAuthPrefix'], value)
 
     @property
     def MaxClientsPerSecond(self):
@@ -203,10 +226,10 @@ class Dot1xGlobals(Base):
         -------
         - number: The number of interfaces to setup per second. Zero value means maximum with no limit.
         """
-        return self._get_attribute('maxClientsPerSecond')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxClientsPerSecond'])
     @MaxClientsPerSecond.setter
     def MaxClientsPerSecond(self, value):
-        self._set_attribute('maxClientsPerSecond', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxClientsPerSecond'], value)
 
     @property
     def MaxOutstandingRequests(self):
@@ -215,10 +238,10 @@ class Dot1xGlobals(Base):
         -------
         - number: The maximum number of sessions that can be negotiated at one moment. Zero value means maximum with no limit.
         """
-        return self._get_attribute('maxOutstandingRequests')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
-        self._set_attribute('maxOutstandingRequests', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
 
     @property
     def MaxStart(self):
@@ -227,10 +250,10 @@ class Dot1xGlobals(Base):
         -------
         - number: Number of times to send EAPoL Start frames before assuming sessions are considered timeout if no frame is received from authenticator. If Authorized on no response global option is checked, sessions will be declared a success
         """
-        return self._get_attribute('maxStart')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxStart'])
     @MaxStart.setter
     def MaxStart(self, value):
-        self._set_attribute('maxStart', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxStart'], value)
 
     @property
     def ObjectId(self):
@@ -239,7 +262,7 @@ class Dot1xGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def OnlyMulticast(self):
@@ -248,10 +271,10 @@ class Dot1xGlobals(Base):
         -------
         - bool: Specify if destination MAC address can be multicast.
         """
-        return self._get_attribute('onlyMulticast')
+        return self._get_attribute(self._SDM_ATT_MAP['OnlyMulticast'])
     @OnlyMulticast.setter
     def OnlyMulticast(self, value):
-        self._set_attribute('onlyMulticast', value)
+        self._set_attribute(self._SDM_ATT_MAP['OnlyMulticast'], value)
 
     @property
     def StartPeriod(self):
@@ -260,10 +283,10 @@ class Dot1xGlobals(Base):
         -------
         - number: Time to wait for ID request
         """
-        return self._get_attribute('startPeriod')
+        return self._get_attribute(self._SDM_ATT_MAP['StartPeriod'])
     @StartPeriod.setter
     def StartPeriod(self, value):
-        self._set_attribute('startPeriod', value)
+        self._set_attribute(self._SDM_ATT_MAP['StartPeriod'], value)
 
     @property
     def StatsPeriod(self):
@@ -272,10 +295,10 @@ class Dot1xGlobals(Base):
         -------
         - number: Protocol option.
         """
-        return self._get_attribute('statsPeriod')
+        return self._get_attribute(self._SDM_ATT_MAP['StatsPeriod'])
     @StatsPeriod.setter
     def StatsPeriod(self, value):
-        self._set_attribute('statsPeriod', value)
+        self._set_attribute(self._SDM_ATT_MAP['StatsPeriod'], value)
 
     @property
     def SuccessiveStart(self):
@@ -284,10 +307,10 @@ class Dot1xGlobals(Base):
         -------
         - number: Number of EAPoL Start messages that are sent when a client is started.
         """
-        return self._get_attribute('successiveStart')
+        return self._get_attribute(self._SDM_ATT_MAP['SuccessiveStart'])
     @SuccessiveStart.setter
     def SuccessiveStart(self, value):
-        self._set_attribute('successiveStart', value)
+        self._set_attribute(self._SDM_ATT_MAP['SuccessiveStart'], value)
 
     @property
     def WaitBeforeRun(self):
@@ -296,10 +319,10 @@ class Dot1xGlobals(Base):
         -------
         - number: Time to wait before running this protocol
         """
-        return self._get_attribute('waitBeforeRun')
+        return self._get_attribute(self._SDM_ATT_MAP['WaitBeforeRun'])
     @WaitBeforeRun.setter
     def WaitBeforeRun(self, value):
-        self._set_attribute('waitBeforeRun', value)
+        self._set_attribute(self._SDM_ATT_MAP['WaitBeforeRun'], value)
 
     @property
     def WaitForCompletion(self):
@@ -308,10 +331,10 @@ class Dot1xGlobals(Base):
         -------
         - bool: If true the configuration will end after all interfaces are configured.
         """
-        return self._get_attribute('waitForCompletion')
+        return self._get_attribute(self._SDM_ATT_MAP['WaitForCompletion'])
     @WaitForCompletion.setter
     def WaitForCompletion(self, value):
-        self._set_attribute('waitForCompletion', value)
+        self._set_attribute(self._SDM_ATT_MAP['WaitForCompletion'], value)
 
     def update(self, AuthOnNoResponse=None, AuthPeriod=None, Authenticator=None, AuthenticatorMulticast=None, DisableLogoff=None, DutTestMode=None, FragmentSize=None, HeldPeriod=None, LogoffMaxClientsPerSecond=None, LogoffMaxOutstandingRequests=None, MacAuthPrefix=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, MaxStart=None, OnlyMulticast=None, StartPeriod=None, StatsPeriod=None, SuccessiveStart=None, WaitBeforeRun=None, WaitForCompletion=None):
         """Updates dot1xGlobals resource on the server.
@@ -343,7 +366,7 @@ class Dot1xGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AuthOnNoResponse=None, AuthPeriod=None, Authenticator=None, AuthenticatorMulticast=None, DisableLogoff=None, DutTestMode=None, FragmentSize=None, HeldPeriod=None, LogoffMaxClientsPerSecond=None, LogoffMaxOutstandingRequests=None, MacAuthPrefix=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, MaxStart=None, OnlyMulticast=None, StartPeriod=None, StatsPeriod=None, SuccessiveStart=None, WaitBeforeRun=None, WaitForCompletion=None):
         """Adds a new dot1xGlobals resource on the server and adds it to the container.
@@ -379,7 +402,7 @@ class Dot1xGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained dot1xGlobals resources in this instance from the server.
@@ -430,7 +453,7 @@ class Dot1xGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of dot1xGlobals data from the server.

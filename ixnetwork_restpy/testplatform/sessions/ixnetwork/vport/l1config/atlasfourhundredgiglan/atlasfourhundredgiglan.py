@@ -30,6 +30,40 @@ class AtlasFourHundredGigLan(Base):
 
     __slots__ = ()
     _SDM_NAME = 'atlasFourHundredGigLan'
+    _SDM_ATT_MAP = {
+        'AutoInstrumentation': 'autoInstrumentation',
+        'BadBlocksNumber': 'badBlocksNumber',
+        'EnableAutoNegotiation': 'enableAutoNegotiation',
+        'EnablePPM': 'enablePPM',
+        'EnableRsFec': 'enableRsFec',
+        'EnableRsFecStats': 'enableRsFecStats',
+        'EnabledFlowControl': 'enabledFlowControl',
+        'FirecodeAdvertise': 'firecodeAdvertise',
+        'FirecodeForceOff': 'firecodeForceOff',
+        'FirecodeForceOn': 'firecodeForceOn',
+        'FirecodeRequest': 'firecodeRequest',
+        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
+        'ForceDisableFEC': 'forceDisableFEC',
+        'GoodBlocksNumber': 'goodBlocksNumber',
+        'IeeeL1Defaults': 'ieeeL1Defaults',
+        'LaserOn': 'laserOn',
+        'LinkTraining': 'linkTraining',
+        'LoopContinuously': 'loopContinuously',
+        'LoopCountNumber': 'loopCountNumber',
+        'Loopback': 'loopback',
+        'LoopbackMode': 'loopbackMode',
+        'Ppm': 'ppm',
+        'RsFecAdvertise': 'rsFecAdvertise',
+        'RsFecForceOn': 'rsFecForceOn',
+        'RsFecRequest': 'rsFecRequest',
+        'SendSetsMode': 'sendSetsMode',
+        'Speed': 'speed',
+        'StartErrorInsertion': 'startErrorInsertion',
+        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
+        'TypeAOrderedSets': 'typeAOrderedSets',
+        'TypeBOrderedSets': 'typeBOrderedSets',
+        'UseANResults': 'useANResults',
+    }
 
     def __init__(self, parent):
         super(AtlasFourHundredGigLan, self).__init__(parent)
@@ -39,13 +73,13 @@ class AtlasFourHundredGigLan(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.atlasfourhundredgiglan.fcoe.fcoe.Fcoe): An instance of the Fcoe class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.fcoe.fcoe.Fcoe): An instance of the Fcoe class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.atlasfourhundredgiglan.fcoe.fcoe import Fcoe
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.fcoe.fcoe import Fcoe
         return Fcoe(self)._select()
 
     @property
@@ -55,10 +89,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - str(endOfFrame | floating): 
         """
-        return self._get_attribute('autoInstrumentation')
+        return self._get_attribute(self._SDM_ATT_MAP['AutoInstrumentation'])
     @AutoInstrumentation.setter
     def AutoInstrumentation(self, value):
-        self._set_attribute('autoInstrumentation', value)
+        self._set_attribute(self._SDM_ATT_MAP['AutoInstrumentation'], value)
 
     @property
     def BadBlocksNumber(self):
@@ -67,10 +101,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - number: 
         """
-        return self._get_attribute('badBlocksNumber')
+        return self._get_attribute(self._SDM_ATT_MAP['BadBlocksNumber'])
     @BadBlocksNumber.setter
     def BadBlocksNumber(self, value):
-        self._set_attribute('badBlocksNumber', value)
+        self._set_attribute(self._SDM_ATT_MAP['BadBlocksNumber'], value)
 
     @property
     def EnableAutoNegotiation(self):
@@ -79,10 +113,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('enableAutoNegotiation')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableAutoNegotiation'])
     @EnableAutoNegotiation.setter
     def EnableAutoNegotiation(self, value):
-        self._set_attribute('enableAutoNegotiation', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableAutoNegotiation'], value)
 
     @property
     def EnablePPM(self):
@@ -91,10 +125,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('enablePPM')
+        return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
     @EnablePPM.setter
     def EnablePPM(self, value):
-        self._set_attribute('enablePPM', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnablePPM'], value)
 
     @property
     def EnableRsFec(self):
@@ -103,10 +137,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('enableRsFec')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableRsFec'])
     @EnableRsFec.setter
     def EnableRsFec(self, value):
-        self._set_attribute('enableRsFec', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableRsFec'], value)
 
     @property
     def EnableRsFecStats(self):
@@ -115,10 +149,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('enableRsFecStats')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableRsFecStats'])
     @EnableRsFecStats.setter
     def EnableRsFecStats(self, value):
-        self._set_attribute('enableRsFecStats', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableRsFecStats'], value)
 
     @property
     def EnabledFlowControl(self):
@@ -127,10 +161,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('enabledFlowControl')
+        return self._get_attribute(self._SDM_ATT_MAP['EnabledFlowControl'])
     @EnabledFlowControl.setter
     def EnabledFlowControl(self, value):
-        self._set_attribute('enabledFlowControl', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnabledFlowControl'], value)
 
     @property
     def FirecodeAdvertise(self):
@@ -139,10 +173,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('firecodeAdvertise')
+        return self._get_attribute(self._SDM_ATT_MAP['FirecodeAdvertise'])
     @FirecodeAdvertise.setter
     def FirecodeAdvertise(self, value):
-        self._set_attribute('firecodeAdvertise', value)
+        self._set_attribute(self._SDM_ATT_MAP['FirecodeAdvertise'], value)
 
     @property
     def FirecodeForceOff(self):
@@ -151,10 +185,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('firecodeForceOff')
+        return self._get_attribute(self._SDM_ATT_MAP['FirecodeForceOff'])
     @FirecodeForceOff.setter
     def FirecodeForceOff(self, value):
-        self._set_attribute('firecodeForceOff', value)
+        self._set_attribute(self._SDM_ATT_MAP['FirecodeForceOff'], value)
 
     @property
     def FirecodeForceOn(self):
@@ -163,10 +197,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('firecodeForceOn')
+        return self._get_attribute(self._SDM_ATT_MAP['FirecodeForceOn'])
     @FirecodeForceOn.setter
     def FirecodeForceOn(self, value):
-        self._set_attribute('firecodeForceOn', value)
+        self._set_attribute(self._SDM_ATT_MAP['FirecodeForceOn'], value)
 
     @property
     def FirecodeRequest(self):
@@ -175,10 +209,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('firecodeRequest')
+        return self._get_attribute(self._SDM_ATT_MAP['FirecodeRequest'])
     @FirecodeRequest.setter
     def FirecodeRequest(self, value):
-        self._set_attribute('firecodeRequest', value)
+        self._set_attribute(self._SDM_ATT_MAP['FirecodeRequest'], value)
 
     @property
     def FlowControlDirectedAddress(self):
@@ -187,10 +221,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - str: 
         """
-        return self._get_attribute('flowControlDirectedAddress')
+        return self._get_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'])
     @FlowControlDirectedAddress.setter
     def FlowControlDirectedAddress(self, value):
-        self._set_attribute('flowControlDirectedAddress', value)
+        self._set_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'], value)
 
     @property
     def ForceDisableFEC(self):
@@ -199,10 +233,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('forceDisableFEC')
+        return self._get_attribute(self._SDM_ATT_MAP['ForceDisableFEC'])
     @ForceDisableFEC.setter
     def ForceDisableFEC(self, value):
-        self._set_attribute('forceDisableFEC', value)
+        self._set_attribute(self._SDM_ATT_MAP['ForceDisableFEC'], value)
 
     @property
     def GoodBlocksNumber(self):
@@ -211,10 +245,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - number: 
         """
-        return self._get_attribute('goodBlocksNumber')
+        return self._get_attribute(self._SDM_ATT_MAP['GoodBlocksNumber'])
     @GoodBlocksNumber.setter
     def GoodBlocksNumber(self, value):
-        self._set_attribute('goodBlocksNumber', value)
+        self._set_attribute(self._SDM_ATT_MAP['GoodBlocksNumber'], value)
 
     @property
     def IeeeL1Defaults(self):
@@ -223,7 +257,7 @@ class AtlasFourHundredGigLan(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('ieeeL1Defaults')
+        return self._get_attribute(self._SDM_ATT_MAP['IeeeL1Defaults'])
 
     @property
     def LaserOn(self):
@@ -232,10 +266,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('laserOn')
+        return self._get_attribute(self._SDM_ATT_MAP['LaserOn'])
     @LaserOn.setter
     def LaserOn(self, value):
-        self._set_attribute('laserOn', value)
+        self._set_attribute(self._SDM_ATT_MAP['LaserOn'], value)
 
     @property
     def LinkTraining(self):
@@ -244,10 +278,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('linkTraining')
+        return self._get_attribute(self._SDM_ATT_MAP['LinkTraining'])
     @LinkTraining.setter
     def LinkTraining(self, value):
-        self._set_attribute('linkTraining', value)
+        self._set_attribute(self._SDM_ATT_MAP['LinkTraining'], value)
 
     @property
     def LoopContinuously(self):
@@ -256,10 +290,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('loopContinuously')
+        return self._get_attribute(self._SDM_ATT_MAP['LoopContinuously'])
     @LoopContinuously.setter
     def LoopContinuously(self, value):
-        self._set_attribute('loopContinuously', value)
+        self._set_attribute(self._SDM_ATT_MAP['LoopContinuously'], value)
 
     @property
     def LoopCountNumber(self):
@@ -268,10 +302,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - number: 
         """
-        return self._get_attribute('loopCountNumber')
+        return self._get_attribute(self._SDM_ATT_MAP['LoopCountNumber'])
     @LoopCountNumber.setter
     def LoopCountNumber(self, value):
-        self._set_attribute('loopCountNumber', value)
+        self._set_attribute(self._SDM_ATT_MAP['LoopCountNumber'], value)
 
     @property
     def Loopback(self):
@@ -280,10 +314,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('loopback')
+        return self._get_attribute(self._SDM_ATT_MAP['Loopback'])
     @Loopback.setter
     def Loopback(self, value):
-        self._set_attribute('loopback', value)
+        self._set_attribute(self._SDM_ATT_MAP['Loopback'], value)
 
     @property
     def LoopbackMode(self):
@@ -292,10 +326,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - str(internalLoopback | lineLoopback | none): 
         """
-        return self._get_attribute('loopbackMode')
+        return self._get_attribute(self._SDM_ATT_MAP['LoopbackMode'])
     @LoopbackMode.setter
     def LoopbackMode(self, value):
-        self._set_attribute('loopbackMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['LoopbackMode'], value)
 
     @property
     def Ppm(self):
@@ -304,10 +338,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - number: 
         """
-        return self._get_attribute('ppm')
+        return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
     @Ppm.setter
     def Ppm(self, value):
-        self._set_attribute('ppm', value)
+        self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
     def RsFecAdvertise(self):
@@ -316,10 +350,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('rsFecAdvertise')
+        return self._get_attribute(self._SDM_ATT_MAP['RsFecAdvertise'])
     @RsFecAdvertise.setter
     def RsFecAdvertise(self, value):
-        self._set_attribute('rsFecAdvertise', value)
+        self._set_attribute(self._SDM_ATT_MAP['RsFecAdvertise'], value)
 
     @property
     def RsFecForceOn(self):
@@ -328,10 +362,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('rsFecForceOn')
+        return self._get_attribute(self._SDM_ATT_MAP['RsFecForceOn'])
     @RsFecForceOn.setter
     def RsFecForceOn(self, value):
-        self._set_attribute('rsFecForceOn', value)
+        self._set_attribute(self._SDM_ATT_MAP['RsFecForceOn'], value)
 
     @property
     def RsFecRequest(self):
@@ -340,10 +374,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('rsFecRequest')
+        return self._get_attribute(self._SDM_ATT_MAP['RsFecRequest'])
     @RsFecRequest.setter
     def RsFecRequest(self, value):
-        self._set_attribute('rsFecRequest', value)
+        self._set_attribute(self._SDM_ATT_MAP['RsFecRequest'], value)
 
     @property
     def SendSetsMode(self):
@@ -352,10 +386,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - str(alternate | typeAOnly | typeBOnly): 
         """
-        return self._get_attribute('sendSetsMode')
+        return self._get_attribute(self._SDM_ATT_MAP['SendSetsMode'])
     @SendSetsMode.setter
     def SendSetsMode(self, value):
-        self._set_attribute('sendSetsMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['SendSetsMode'], value)
 
     @property
     def Speed(self):
@@ -364,10 +398,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - str(speed100g | speed200g | speed400g | speed50g): 
         """
-        return self._get_attribute('speed')
+        return self._get_attribute(self._SDM_ATT_MAP['Speed'])
     @Speed.setter
     def Speed(self, value):
-        self._set_attribute('speed', value)
+        self._set_attribute(self._SDM_ATT_MAP['Speed'], value)
 
     @property
     def StartErrorInsertion(self):
@@ -376,10 +410,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('startErrorInsertion')
+        return self._get_attribute(self._SDM_ATT_MAP['StartErrorInsertion'])
     @StartErrorInsertion.setter
     def StartErrorInsertion(self, value):
-        self._set_attribute('startErrorInsertion', value)
+        self._set_attribute(self._SDM_ATT_MAP['StartErrorInsertion'], value)
 
     @property
     def TxIgnoreRxLinkFaults(self):
@@ -388,10 +422,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('txIgnoreRxLinkFaults')
+        return self._get_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'])
     @TxIgnoreRxLinkFaults.setter
     def TxIgnoreRxLinkFaults(self, value):
-        self._set_attribute('txIgnoreRxLinkFaults', value)
+        self._set_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'], value)
 
     @property
     def TypeAOrderedSets(self):
@@ -400,10 +434,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - str(localFault | remoteFault): 
         """
-        return self._get_attribute('typeAOrderedSets')
+        return self._get_attribute(self._SDM_ATT_MAP['TypeAOrderedSets'])
     @TypeAOrderedSets.setter
     def TypeAOrderedSets(self, value):
-        self._set_attribute('typeAOrderedSets', value)
+        self._set_attribute(self._SDM_ATT_MAP['TypeAOrderedSets'], value)
 
     @property
     def TypeBOrderedSets(self):
@@ -412,10 +446,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - str(localFault | remoteFault): 
         """
-        return self._get_attribute('typeBOrderedSets')
+        return self._get_attribute(self._SDM_ATT_MAP['TypeBOrderedSets'])
     @TypeBOrderedSets.setter
     def TypeBOrderedSets(self, value):
-        self._set_attribute('typeBOrderedSets', value)
+        self._set_attribute(self._SDM_ATT_MAP['TypeBOrderedSets'], value)
 
     @property
     def UseANResults(self):
@@ -424,10 +458,10 @@ class AtlasFourHundredGigLan(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('useANResults')
+        return self._get_attribute(self._SDM_ATT_MAP['UseANResults'])
     @UseANResults.setter
     def UseANResults(self, value):
-        self._set_attribute('useANResults', value)
+        self._set_attribute(self._SDM_ATT_MAP['UseANResults'], value)
 
     def update(self, AutoInstrumentation=None, BadBlocksNumber=None, EnableAutoNegotiation=None, EnablePPM=None, EnableRsFec=None, EnableRsFecStats=None, EnabledFlowControl=None, FirecodeAdvertise=None, FirecodeForceOff=None, FirecodeForceOn=None, FirecodeRequest=None, FlowControlDirectedAddress=None, ForceDisableFEC=None, GoodBlocksNumber=None, LaserOn=None, LinkTraining=None, LoopContinuously=None, LoopCountNumber=None, Loopback=None, LoopbackMode=None, Ppm=None, RsFecAdvertise=None, RsFecForceOn=None, RsFecRequest=None, SendSetsMode=None, Speed=None, StartErrorInsertion=None, TxIgnoreRxLinkFaults=None, TypeAOrderedSets=None, TypeBOrderedSets=None, UseANResults=None):
         """Updates atlasFourHundredGigLan resource on the server.
@@ -470,4 +504,4 @@ class AtlasFourHundredGigLan(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

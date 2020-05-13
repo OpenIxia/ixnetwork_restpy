@@ -32,6 +32,19 @@ class AncpDslResyncTlv(Base):
 
     __slots__ = ()
     _SDM_NAME = 'ancpDslResyncTlv'
+    _SDM_ATT_MAP = {
+        'Code': 'code',
+        'FirstValue': 'firstValue',
+        'LastValue': 'lastValue',
+        'MaxValue': 'maxValue',
+        'MinValue': 'minValue',
+        'Mode': 'mode',
+        'Name': 'name',
+        'ObjectId': 'objectId',
+        'StepValue': 'stepValue',
+        'Type': 'type',
+        'Value': 'value',
+    }
 
     def __init__(self, parent):
         super(AncpDslResyncTlv, self).__init__(parent)
@@ -43,10 +56,10 @@ class AncpDslResyncTlv(Base):
         -------
         - number: Option code.
         """
-        return self._get_attribute('code')
+        return self._get_attribute(self._SDM_ATT_MAP['Code'])
     @Code.setter
     def Code(self, value):
-        self._set_attribute('code', value)
+        self._set_attribute(self._SDM_ATT_MAP['Code'], value)
 
     @property
     def FirstValue(self):
@@ -55,10 +68,10 @@ class AncpDslResyncTlv(Base):
         -------
         - number: Used by Trend mode.
         """
-        return self._get_attribute('firstValue')
+        return self._get_attribute(self._SDM_ATT_MAP['FirstValue'])
     @FirstValue.setter
     def FirstValue(self, value):
-        self._set_attribute('firstValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['FirstValue'], value)
 
     @property
     def LastValue(self):
@@ -67,10 +80,10 @@ class AncpDslResyncTlv(Base):
         -------
         - number: Used by Trend mode.
         """
-        return self._get_attribute('lastValue')
+        return self._get_attribute(self._SDM_ATT_MAP['LastValue'])
     @LastValue.setter
     def LastValue(self, value):
-        self._set_attribute('lastValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['LastValue'], value)
 
     @property
     def MaxValue(self):
@@ -79,10 +92,10 @@ class AncpDslResyncTlv(Base):
         -------
         - number: Used by Random mode.
         """
-        return self._get_attribute('maxValue')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxValue'])
     @MaxValue.setter
     def MaxValue(self, value):
-        self._set_attribute('maxValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxValue'], value)
 
     @property
     def MinValue(self):
@@ -91,10 +104,10 @@ class AncpDslResyncTlv(Base):
         -------
         - number: Used by Random mode.
         """
-        return self._get_attribute('minValue')
+        return self._get_attribute(self._SDM_ATT_MAP['MinValue'])
     @MinValue.setter
     def MinValue(self, value):
-        self._set_attribute('minValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['MinValue'], value)
 
     @property
     def Mode(self):
@@ -103,10 +116,10 @@ class AncpDslResyncTlv(Base):
         -------
         - str: Sets the TLV value update method.
         """
-        return self._get_attribute('mode')
+        return self._get_attribute(self._SDM_ATT_MAP['Mode'])
     @Mode.setter
     def Mode(self, value):
-        self._set_attribute('mode', value)
+        self._set_attribute(self._SDM_ATT_MAP['Mode'], value)
 
     @property
     def Name(self):
@@ -115,10 +128,10 @@ class AncpDslResyncTlv(Base):
         -------
         - str: Option name.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
@@ -127,7 +140,7 @@ class AncpDslResyncTlv(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def StepValue(self):
@@ -136,10 +149,10 @@ class AncpDslResyncTlv(Base):
         -------
         - number: Used by Trend mode.
         """
-        return self._get_attribute('stepValue')
+        return self._get_attribute(self._SDM_ATT_MAP['StepValue'])
     @StepValue.setter
     def StepValue(self, value):
-        self._set_attribute('stepValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['StepValue'], value)
 
     @property
     def Type(self):
@@ -148,10 +161,10 @@ class AncpDslResyncTlv(Base):
         -------
         - str(bytes3 | bytes4 | bytes8 | string): Value type.
         """
-        return self._get_attribute('type')
+        return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
-        self._set_attribute('type', value)
+        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     @property
     def Value(self):
@@ -160,10 +173,10 @@ class AncpDslResyncTlv(Base):
         -------
         - str: Value represented as string.
         """
-        return self._get_attribute('value')
+        return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
-        self._set_attribute('value', value)
+        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Code=None, FirstValue=None, LastValue=None, MaxValue=None, MinValue=None, Mode=None, Name=None, StepValue=None, Type=None, Value=None):
         """Updates ancpDslResyncTlv resource on the server.
@@ -185,7 +198,7 @@ class AncpDslResyncTlv(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Code=None, FirstValue=None, LastValue=None, MaxValue=None, MinValue=None, Mode=None, Name=None, StepValue=None, Type=None, Value=None):
         """Adds a new ancpDslResyncTlv resource on the server and adds it to the container.
@@ -211,7 +224,7 @@ class AncpDslResyncTlv(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained ancpDslResyncTlv resources in this instance from the server.
@@ -252,7 +265,7 @@ class AncpDslResyncTlv(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of ancpDslResyncTlv data from the server.

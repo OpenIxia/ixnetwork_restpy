@@ -30,6 +30,10 @@ class CustomDelayVariation(Base):
 
     __slots__ = ()
     _SDM_NAME = 'customDelayVariation'
+    _SDM_ATT_MAP = {
+        'Enabled': 'enabled',
+        'Name': 'name',
+    }
 
     def __init__(self, parent):
         super(CustomDelayVariation, self).__init__(parent)
@@ -55,10 +59,10 @@ class CustomDelayVariation(Base):
         -------
         - bool: If true, vary the packet delay.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Name(self):
@@ -67,10 +71,10 @@ class CustomDelayVariation(Base):
         -------
         - str: Descriptive name of custom value list.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Enabled=None, Name=None):
         """Updates customDelayVariation resource on the server.
@@ -84,4 +88,4 @@ class CustomDelayVariation(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -31,6 +31,11 @@ class Connection(Base):
 
     __slots__ = ()
     _SDM_NAME = 'connection'
+    _SDM_ATT_MAP = {
+        'ConnectionId': 'connectionId',
+        'ConnectionParams': 'connectionParams',
+        'IsTCP': 'isTCP',
+    }
 
     def __init__(self, parent):
         super(Connection, self).__init__(parent)
@@ -40,13 +45,13 @@ class Connection(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.connection.parameter.parameter.Parameter): An instance of the Parameter class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.parameter.parameter.Parameter): An instance of the Parameter class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.connection.parameter.parameter import Parameter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.parameter.parameter import Parameter
         return Parameter(self)
 
     @property
@@ -56,7 +61,7 @@ class Connection(Base):
         -------
         - number: (Read only) Application library flow connection id.
         """
-        return self._get_attribute('connectionId')
+        return self._get_attribute(self._SDM_ATT_MAP['ConnectionId'])
 
     @property
     def ConnectionParams(self):
@@ -65,7 +70,7 @@ class Connection(Base):
         -------
         - list(str): (Read only) Names of parameter available on application flow connection.
         """
-        return self._get_attribute('connectionParams')
+        return self._get_attribute(self._SDM_ATT_MAP['ConnectionParams'])
 
     @property
     def IsTCP(self):
@@ -74,7 +79,7 @@ class Connection(Base):
         -------
         - bool: (Read only) Application library flow connection type - true is the type is TCP, false if it's UDP.
         """
-        return self._get_attribute('isTCP')
+        return self._get_attribute(self._SDM_ATT_MAP['IsTCP'])
 
     def find(self, ConnectionId=None, ConnectionParams=None, IsTCP=None):
         """Finds and retrieves connection resources from the server.
@@ -97,7 +102,7 @@ class Connection(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of connection data from the server.

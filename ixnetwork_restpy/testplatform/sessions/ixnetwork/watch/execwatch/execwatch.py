@@ -32,6 +32,17 @@ class ExecWatch(Base):
 
     __slots__ = ()
     _SDM_NAME = 'execWatch'
+    _SDM_ATT_MAP = {
+        'AverageExecutionTime': 'averageExecutionTime',
+        'ExecToWatch': 'execToWatch',
+        'IsDisabled': 'isDisabled',
+        'LastExecutionTime': 'lastExecutionTime',
+        'LastNotification': 'lastNotification',
+        'MaxExecutionTime': 'maxExecutionTime',
+        'PollInterval': 'pollInterval',
+        'Token': 'token',
+        'Topic': 'topic',
+    }
 
     def __init__(self, parent):
         super(ExecWatch, self).__init__(parent)
@@ -43,7 +54,7 @@ class ExecWatch(Base):
         -------
         - number: 
         """
-        return self._get_attribute('averageExecutionTime')
+        return self._get_attribute(self._SDM_ATT_MAP['AverageExecutionTime'])
 
     @property
     def ExecToWatch(self):
@@ -52,10 +63,10 @@ class ExecWatch(Base):
         -------
         - str: 
         """
-        return self._get_attribute('execToWatch')
+        return self._get_attribute(self._SDM_ATT_MAP['ExecToWatch'])
     @ExecToWatch.setter
     def ExecToWatch(self, value):
-        self._set_attribute('execToWatch', value)
+        self._set_attribute(self._SDM_ATT_MAP['ExecToWatch'], value)
 
     @property
     def IsDisabled(self):
@@ -64,7 +75,7 @@ class ExecWatch(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('isDisabled')
+        return self._get_attribute(self._SDM_ATT_MAP['IsDisabled'])
 
     @property
     def LastExecutionTime(self):
@@ -73,7 +84,7 @@ class ExecWatch(Base):
         -------
         - number: 
         """
-        return self._get_attribute('lastExecutionTime')
+        return self._get_attribute(self._SDM_ATT_MAP['LastExecutionTime'])
 
     @property
     def LastNotification(self):
@@ -82,7 +93,7 @@ class ExecWatch(Base):
         -------
         - str: 
         """
-        return self._get_attribute('lastNotification')
+        return self._get_attribute(self._SDM_ATT_MAP['LastNotification'])
 
     @property
     def MaxExecutionTime(self):
@@ -91,10 +102,10 @@ class ExecWatch(Base):
         -------
         - number: The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         """
-        return self._get_attribute('maxExecutionTime')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxExecutionTime'])
     @MaxExecutionTime.setter
     def MaxExecutionTime(self, value):
-        self._set_attribute('maxExecutionTime', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxExecutionTime'], value)
 
     @property
     def PollInterval(self):
@@ -103,10 +114,10 @@ class ExecWatch(Base):
         -------
         - number: The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
         """
-        return self._get_attribute('pollInterval')
+        return self._get_attribute(self._SDM_ATT_MAP['PollInterval'])
     @PollInterval.setter
     def PollInterval(self, value):
-        self._set_attribute('pollInterval', value)
+        self._set_attribute(self._SDM_ATT_MAP['PollInterval'], value)
 
     @property
     def Token(self):
@@ -115,7 +126,7 @@ class ExecWatch(Base):
         -------
         - number: 
         """
-        return self._get_attribute('token')
+        return self._get_attribute(self._SDM_ATT_MAP['Token'])
 
     @property
     def Topic(self):
@@ -124,10 +135,10 @@ class ExecWatch(Base):
         -------
         - str: 
         """
-        return self._get_attribute('topic')
+        return self._get_attribute(self._SDM_ATT_MAP['Topic'])
     @Topic.setter
     def Topic(self, value):
-        self._set_attribute('topic', value)
+        self._set_attribute(self._SDM_ATT_MAP['Topic'], value)
 
     def update(self, ExecToWatch=None, MaxExecutionTime=None, PollInterval=None, Topic=None):
         """Updates execWatch resource on the server.
@@ -143,7 +154,7 @@ class ExecWatch(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ExecToWatch=None, MaxExecutionTime=None, PollInterval=None, Topic=None):
         """Adds a new execWatch resource on the server and adds it to the container.
@@ -163,7 +174,7 @@ class ExecWatch(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained execWatch resources in this instance from the server.
@@ -202,7 +213,7 @@ class ExecWatch(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of execWatch data from the server.

@@ -32,6 +32,12 @@ class AdvancedFilter(Base):
 
     __slots__ = ()
     _SDM_NAME = 'advancedFilter'
+    _SDM_ATT_MAP = {
+        'Expression': 'expression',
+        'Name': 'name',
+        'SortingStats': 'sortingStats',
+        'TrackingFilterId': 'trackingFilterId',
+    }
 
     def __init__(self, parent):
         super(AdvancedFilter, self).__init__(parent)
@@ -43,10 +49,10 @@ class AdvancedFilter(Base):
         -------
         - str: Specifies the filter body. This is a string that must have a specific format.This can be empty (no filter). The available operations and statistics can be obtained from availableAdvancedFilterOptions.
         """
-        return self._get_attribute('expression')
+        return self._get_attribute(self._SDM_ATT_MAP['Expression'])
     @Expression.setter
     def Expression(self, value):
-        self._set_attribute('expression', value)
+        self._set_attribute(self._SDM_ATT_MAP['Expression'], value)
 
     @property
     def Name(self):
@@ -55,10 +61,10 @@ class AdvancedFilter(Base):
         -------
         - str: Specifies the filter name. It must be unique per view.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def SortingStats(self):
@@ -67,10 +73,10 @@ class AdvancedFilter(Base):
         -------
         - str: Specifies the list of statistics by which the view will be sorted.
         """
-        return self._get_attribute('sortingStats')
+        return self._get_attribute(self._SDM_ATT_MAP['SortingStats'])
     @SortingStats.setter
     def SortingStats(self, value):
-        self._set_attribute('sortingStats', value)
+        self._set_attribute(self._SDM_ATT_MAP['SortingStats'], value)
 
     @property
     def TrackingFilterId(self):
@@ -79,10 +85,10 @@ class AdvancedFilter(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters): Gets the id of the filter, which is used to add the filter to a view.
         """
-        return self._get_attribute('trackingFilterId')
+        return self._get_attribute(self._SDM_ATT_MAP['TrackingFilterId'])
     @TrackingFilterId.setter
     def TrackingFilterId(self, value):
-        self._set_attribute('trackingFilterId', value)
+        self._set_attribute(self._SDM_ATT_MAP['TrackingFilterId'], value)
 
     def update(self, Expression=None, Name=None, SortingStats=None, TrackingFilterId=None):
         """Updates advancedFilter resource on the server.
@@ -98,7 +104,7 @@ class AdvancedFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Expression=None, Name=None, SortingStats=None, TrackingFilterId=None):
         """Adds a new advancedFilter resource on the server and adds it to the container.
@@ -118,7 +124,7 @@ class AdvancedFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained advancedFilter resources in this instance from the server.
@@ -152,7 +158,7 @@ class AdvancedFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of advancedFilter data from the server.

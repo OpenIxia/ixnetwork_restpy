@@ -30,6 +30,19 @@ class Oam(Base):
 
     __slots__ = ()
     _SDM_NAME = 'oam'
+    _SDM_ATT_MAP = {
+        'EnableTlvOption': 'enableTlvOption',
+        'Enabled': 'enabled',
+        'IdleTimer': 'idleTimer',
+        'LinkEvents': 'linkEvents',
+        'Loopback': 'loopback',
+        'MacAddress': 'macAddress',
+        'MaxOAMPDUSize': 'maxOAMPDUSize',
+        'OrganizationUniqueIdentifier': 'organizationUniqueIdentifier',
+        'TlvType': 'tlvType',
+        'TlvValue': 'tlvValue',
+        'VendorSpecificInformation': 'vendorSpecificInformation',
+    }
 
     def __init__(self, parent):
         super(Oam, self).__init__(parent)
@@ -41,10 +54,10 @@ class Oam(Base):
         -------
         - bool: If true, enables the tlv option.
         """
-        return self._get_attribute('enableTlvOption')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableTlvOption'])
     @EnableTlvOption.setter
     def EnableTlvOption(self, value):
-        self._set_attribute('enableTlvOption', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableTlvOption'], value)
 
     @property
     def Enabled(self):
@@ -53,10 +66,10 @@ class Oam(Base):
         -------
         - bool: If true, enables OAM for the Ten Gig Lan port.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IdleTimer(self):
@@ -65,10 +78,10 @@ class Oam(Base):
         -------
         - number: The timer used to ensure OAM sub layer adheres to maximum number of OAMPDUs per second and emits at least one OAMPDU per second. The default is 1, minimum value is 1 and maximum value is 10.
         """
-        return self._get_attribute('idleTimer')
+        return self._get_attribute(self._SDM_ATT_MAP['IdleTimer'])
     @IdleTimer.setter
     def IdleTimer(self, value):
-        self._set_attribute('idleTimer', value)
+        self._set_attribute(self._SDM_ATT_MAP['IdleTimer'], value)
 
     @property
     def LinkEvents(self):
@@ -77,10 +90,10 @@ class Oam(Base):
         -------
         - bool: If true, enables link event interpreting support in Ixia port.
         """
-        return self._get_attribute('linkEvents')
+        return self._get_attribute(self._SDM_ATT_MAP['LinkEvents'])
     @LinkEvents.setter
     def LinkEvents(self, value):
-        self._set_attribute('linkEvents', value)
+        self._set_attribute(self._SDM_ATT_MAP['LinkEvents'], value)
 
     @property
     def Loopback(self):
@@ -89,10 +102,10 @@ class Oam(Base):
         -------
         - bool: If true, enables the loopback. when an ixia port goes to loopback mode, then all non oam packets coming to that port gets looped back.
         """
-        return self._get_attribute('loopback')
+        return self._get_attribute(self._SDM_ATT_MAP['Loopback'])
     @Loopback.setter
     def Loopback(self, value):
-        self._set_attribute('loopback', value)
+        self._set_attribute(self._SDM_ATT_MAP['Loopback'], value)
 
     @property
     def MacAddress(self):
@@ -101,10 +114,10 @@ class Oam(Base):
         -------
         - str: Mac address of the local DTE. By default, the mac address is automatically generated from card, port and other related information.
         """
-        return self._get_attribute('macAddress')
+        return self._get_attribute(self._SDM_ATT_MAP['MacAddress'])
     @MacAddress.setter
     def MacAddress(self, value):
-        self._set_attribute('macAddress', value)
+        self._set_attribute(self._SDM_ATT_MAP['MacAddress'], value)
 
     @property
     def MaxOAMPDUSize(self):
@@ -113,10 +126,10 @@ class Oam(Base):
         -------
         - number: Indicates the maximum OAMPDU size supported by local DTE. The default is 1500, minimum is 64, and maximum is 1500 in octets.
         """
-        return self._get_attribute('maxOAMPDUSize')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxOAMPDUSize'])
     @MaxOAMPDUSize.setter
     def MaxOAMPDUSize(self, value):
-        self._set_attribute('maxOAMPDUSize', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxOAMPDUSize'], value)
 
     @property
     def OrganizationUniqueIdentifier(self):
@@ -125,10 +138,10 @@ class Oam(Base):
         -------
         - str: This three-octet field contains a 24-bit Organizationally Unique Identifier. The default value is 00-01-00. Any three octets hex value can be given.
         """
-        return self._get_attribute('organizationUniqueIdentifier')
+        return self._get_attribute(self._SDM_ATT_MAP['OrganizationUniqueIdentifier'])
     @OrganizationUniqueIdentifier.setter
     def OrganizationUniqueIdentifier(self, value):
-        self._set_attribute('organizationUniqueIdentifier', value)
+        self._set_attribute(self._SDM_ATT_MAP['OrganizationUniqueIdentifier'], value)
 
     @property
     def TlvType(self):
@@ -137,10 +150,10 @@ class Oam(Base):
         -------
         - str: Indicates the tlv type.
         """
-        return self._get_attribute('tlvType')
+        return self._get_attribute(self._SDM_ATT_MAP['TlvType'])
     @TlvType.setter
     def TlvType(self, value):
-        self._set_attribute('tlvType', value)
+        self._set_attribute(self._SDM_ATT_MAP['TlvType'], value)
 
     @property
     def TlvValue(self):
@@ -149,10 +162,10 @@ class Oam(Base):
         -------
         - str: Enters the tlv value.
         """
-        return self._get_attribute('tlvValue')
+        return self._get_attribute(self._SDM_ATT_MAP['TlvValue'])
     @TlvValue.setter
     def TlvValue(self, value):
-        self._set_attribute('tlvValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['TlvValue'], value)
 
     @property
     def VendorSpecificInformation(self):
@@ -161,10 +174,10 @@ class Oam(Base):
         -------
         - str: Contains the vendor specific information that is used to differentiate a vendor's product modes/version. Default is 00000000.
         """
-        return self._get_attribute('vendorSpecificInformation')
+        return self._get_attribute(self._SDM_ATT_MAP['VendorSpecificInformation'])
     @VendorSpecificInformation.setter
     def VendorSpecificInformation(self, value):
-        self._set_attribute('vendorSpecificInformation', value)
+        self._set_attribute(self._SDM_ATT_MAP['VendorSpecificInformation'], value)
 
     def update(self, EnableTlvOption=None, Enabled=None, IdleTimer=None, LinkEvents=None, Loopback=None, MacAddress=None, MaxOAMPDUSize=None, OrganizationUniqueIdentifier=None, TlvType=None, TlvValue=None, VendorSpecificInformation=None):
         """Updates oam resource on the server.
@@ -187,4 +200,4 @@ class Oam(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

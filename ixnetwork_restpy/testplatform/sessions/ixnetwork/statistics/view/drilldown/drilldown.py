@@ -32,6 +32,13 @@ class DrillDown(Base):
 
     __slots__ = ()
     _SDM_NAME = 'drillDown'
+    _SDM_ATT_MAP = {
+        'AvailableDrillDownOptions': 'availableDrillDownOptions',
+        'TargetDrillDownOption': 'targetDrillDownOption',
+        'TargetRow': 'targetRow',
+        'TargetRowFilter': 'targetRowFilter',
+        'TargetRowIndex': 'targetRowIndex',
+    }
 
     def __init__(self, parent):
         super(DrillDown, self).__init__(parent)
@@ -57,7 +64,7 @@ class DrillDown(Base):
         -------
         - list(str): Gets the available drill down options for the selected row.
         """
-        return self._get_attribute('availableDrillDownOptions')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableDrillDownOptions'])
 
     @property
     def TargetDrillDownOption(self):
@@ -66,10 +73,10 @@ class DrillDown(Base):
         -------
         - str: Sets the drill down option attribute to the drilldown object. It is one of the items in the list returned at 2.
         """
-        return self._get_attribute('targetDrillDownOption')
+        return self._get_attribute(self._SDM_ATT_MAP['TargetDrillDownOption'])
     @TargetDrillDownOption.setter
     def TargetDrillDownOption(self, value):
-        self._set_attribute('targetDrillDownOption', value)
+        self._set_attribute(self._SDM_ATT_MAP['TargetDrillDownOption'], value)
 
     @property
     def TargetRow(self):
@@ -78,7 +85,7 @@ class DrillDown(Base):
         -------
         - list(str): Gets the target row, set previously, at step 1.
         """
-        return self._get_attribute('targetRow')
+        return self._get_attribute(self._SDM_ATT_MAP['TargetRow'])
 
     @property
     def TargetRowFilter(self):
@@ -87,10 +94,10 @@ class DrillDown(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTargetRowFilters): Sets the row (from the view) that will be used to perform the drill-down. This is done by using one of the filters provided by availableTargetRowFilters
         """
-        return self._get_attribute('targetRowFilter')
+        return self._get_attribute(self._SDM_ATT_MAP['TargetRowFilter'])
     @TargetRowFilter.setter
     def TargetRowFilter(self, value):
-        self._set_attribute('targetRowFilter', value)
+        self._set_attribute(self._SDM_ATT_MAP['TargetRowFilter'], value)
 
     @property
     def TargetRowIndex(self):
@@ -99,10 +106,10 @@ class DrillDown(Base):
         -------
         - number: Sets the attribute targetRowIndex to the drill down object. This is the row (from the view) that will be used to perform the drill-down.
         """
-        return self._get_attribute('targetRowIndex')
+        return self._get_attribute(self._SDM_ATT_MAP['TargetRowIndex'])
     @TargetRowIndex.setter
     def TargetRowIndex(self, value):
-        self._set_attribute('targetRowIndex', value)
+        self._set_attribute(self._SDM_ATT_MAP['TargetRowIndex'], value)
 
     def update(self, TargetDrillDownOption=None, TargetRowFilter=None, TargetRowIndex=None):
         """Updates drillDown resource on the server.
@@ -117,7 +124,7 @@ class DrillDown(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, TargetDrillDownOption=None, TargetRowFilter=None, TargetRowIndex=None):
         """Adds a new drillDown resource on the server and adds it to the container.
@@ -136,7 +143,7 @@ class DrillDown(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained drillDown resources in this instance from the server.
@@ -171,7 +178,7 @@ class DrillDown(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of drillDown data from the server.

@@ -32,6 +32,15 @@ class AncpDslTlv(Base):
 
     __slots__ = ()
     _SDM_NAME = 'ancpDslTlv'
+    _SDM_ATT_MAP = {
+        'Code': 'code',
+        'MaxValue': 'maxValue',
+        'MinValue': 'minValue',
+        'Name': 'name',
+        'ObjectId': 'objectId',
+        'Type': 'type',
+        'Value': 'value',
+    }
 
     def __init__(self, parent):
         super(AncpDslTlv, self).__init__(parent)
@@ -43,10 +52,10 @@ class AncpDslTlv(Base):
         -------
         - number: Option code.
         """
-        return self._get_attribute('code')
+        return self._get_attribute(self._SDM_ATT_MAP['Code'])
     @Code.setter
     def Code(self, value):
-        self._set_attribute('code', value)
+        self._set_attribute(self._SDM_ATT_MAP['Code'], value)
 
     @property
     def MaxValue(self):
@@ -55,10 +64,10 @@ class AncpDslTlv(Base):
         -------
         - number: Represents the max value for this TLV, if it's numeric
         """
-        return self._get_attribute('maxValue')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxValue'])
     @MaxValue.setter
     def MaxValue(self, value):
-        self._set_attribute('maxValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxValue'], value)
 
     @property
     def MinValue(self):
@@ -67,10 +76,10 @@ class AncpDslTlv(Base):
         -------
         - number: Represents the min value for this TLV, if it's numeric
         """
-        return self._get_attribute('minValue')
+        return self._get_attribute(self._SDM_ATT_MAP['MinValue'])
     @MinValue.setter
     def MinValue(self, value):
-        self._set_attribute('minValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['MinValue'], value)
 
     @property
     def Name(self):
@@ -79,10 +88,10 @@ class AncpDslTlv(Base):
         -------
         - str: Option name.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
@@ -91,7 +100,7 @@ class AncpDslTlv(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def Type(self):
@@ -100,10 +109,10 @@ class AncpDslTlv(Base):
         -------
         - str(bytes3 | bytes4 | bytes8 | string): Value type.
         """
-        return self._get_attribute('type')
+        return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
-        self._set_attribute('type', value)
+        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     @property
     def Value(self):
@@ -112,10 +121,10 @@ class AncpDslTlv(Base):
         -------
         - str: Value represented as string.
         """
-        return self._get_attribute('value')
+        return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
-        self._set_attribute('value', value)
+        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Code=None, MaxValue=None, MinValue=None, Name=None, Type=None, Value=None):
         """Updates ancpDslTlv resource on the server.
@@ -133,7 +142,7 @@ class AncpDslTlv(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Code=None, MaxValue=None, MinValue=None, Name=None, Type=None, Value=None):
         """Adds a new ancpDslTlv resource on the server and adds it to the container.
@@ -155,7 +164,7 @@ class AncpDslTlv(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained ancpDslTlv resources in this instance from the server.
@@ -192,7 +201,7 @@ class AncpDslTlv(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of ancpDslTlv data from the server.

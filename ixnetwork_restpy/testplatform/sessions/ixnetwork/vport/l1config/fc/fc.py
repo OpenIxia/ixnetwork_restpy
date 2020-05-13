@@ -30,6 +30,22 @@ class Fc(Base):
 
     __slots__ = ()
     _SDM_NAME = 'fc'
+    _SDM_ATT_MAP = {
+        'CreditStarvationValue': 'creditStarvationValue',
+        'EnableEmissionLoweringProtocol': 'enableEmissionLoweringProtocol',
+        'EnablePPM': 'enablePPM',
+        'FixedDelayValue': 'fixedDelayValue',
+        'ForceErrors': 'forceErrors',
+        'Loopback': 'loopback',
+        'MaxDelayForRandomValue': 'maxDelayForRandomValue',
+        'MinDelayForRandomValue': 'minDelayForRandomValue',
+        'NoRRDYAfter': 'noRRDYAfter',
+        'Ppm': 'ppm',
+        'RrdyResponseDelays': 'rrdyResponseDelays',
+        'Speed': 'speed',
+        'TxIgnoreAvailableCredits': 'txIgnoreAvailableCredits',
+        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
+    }
 
     def __init__(self, parent):
         super(Fc, self).__init__(parent)
@@ -41,10 +57,10 @@ class Fc(Base):
         -------
         - number: If selected, programs encounter a delay value specified in the Hold R_RDY field. The counter starts counting down after it receives the first frame. The port holds R_RDY for all frames received until counter reaches to 0. After counter reaches 0, the port sends out all accumulated R_RDY.
         """
-        return self._get_attribute('creditStarvationValue')
+        return self._get_attribute(self._SDM_ATT_MAP['CreditStarvationValue'])
     @CreditStarvationValue.setter
     def CreditStarvationValue(self, value):
-        self._set_attribute('creditStarvationValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['CreditStarvationValue'], value)
 
     @property
     def EnableEmissionLoweringProtocol(self):
@@ -53,10 +69,10 @@ class Fc(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute('enableEmissionLoweringProtocol')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableEmissionLoweringProtocol'])
     @EnableEmissionLoweringProtocol.setter
     def EnableEmissionLoweringProtocol(self, value):
-        self._set_attribute('enableEmissionLoweringProtocol', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableEmissionLoweringProtocol'], value)
 
     @property
     def EnablePPM(self):
@@ -65,10 +81,10 @@ class Fc(Base):
         -------
         - bool: If true, enables the portsppm.
         """
-        return self._get_attribute('enablePPM')
+        return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
     @EnablePPM.setter
     def EnablePPM(self, value):
-        self._set_attribute('enablePPM', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnablePPM'], value)
 
     @property
     def FixedDelayValue(self):
@@ -77,10 +93,10 @@ class Fc(Base):
         -------
         - number: Internally delays the R_RDY primitive signals with X ms. X is between 0 and 20000 milliseconds.
         """
-        return self._get_attribute('fixedDelayValue')
+        return self._get_attribute(self._SDM_ATT_MAP['FixedDelayValue'])
     @FixedDelayValue.setter
     def FixedDelayValue(self, value):
-        self._set_attribute('fixedDelayValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['FixedDelayValue'], value)
 
     @property
     def ForceErrors(self):
@@ -89,10 +105,10 @@ class Fc(Base):
         -------
         - str(noErrors | noRRDY | noRRDYEvery): Helps to configure the port to introduce errors in the transmission of R_RDYPrimitive Signals
         """
-        return self._get_attribute('forceErrors')
+        return self._get_attribute(self._SDM_ATT_MAP['ForceErrors'])
     @ForceErrors.setter
     def ForceErrors(self, value):
-        self._set_attribute('forceErrors', value)
+        self._set_attribute(self._SDM_ATT_MAP['ForceErrors'], value)
 
     @property
     def Loopback(self):
@@ -101,10 +117,10 @@ class Fc(Base):
         -------
         - bool: If true, the port is set to internally loopback from transmit to receive.
         """
-        return self._get_attribute('loopback')
+        return self._get_attribute(self._SDM_ATT_MAP['Loopback'])
     @Loopback.setter
     def Loopback(self, value):
-        self._set_attribute('loopback', value)
+        self._set_attribute(self._SDM_ATT_MAP['Loopback'], value)
 
     @property
     def MaxDelayForRandomValue(self):
@@ -113,10 +129,10 @@ class Fc(Base):
         -------
         - number: The maximum random delay value for the R_RDY primitives. The maximum value is 1,000,000 microseconds.
         """
-        return self._get_attribute('maxDelayForRandomValue')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxDelayForRandomValue'])
     @MaxDelayForRandomValue.setter
     def MaxDelayForRandomValue(self, value):
-        self._set_attribute('maxDelayForRandomValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxDelayForRandomValue'], value)
 
     @property
     def MinDelayForRandomValue(self):
@@ -125,10 +141,10 @@ class Fc(Base):
         -------
         - number: The minimum random delay value for the R_RDY primitives. The minimum value is 0 microseconds.
         """
-        return self._get_attribute('minDelayForRandomValue')
+        return self._get_attribute(self._SDM_ATT_MAP['MinDelayForRandomValue'])
     @MinDelayForRandomValue.setter
     def MinDelayForRandomValue(self, value):
-        self._set_attribute('minDelayForRandomValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['MinDelayForRandomValue'], value)
 
     @property
     def NoRRDYAfter(self):
@@ -137,10 +153,10 @@ class Fc(Base):
         -------
         - number: Sends R_RDY primitive signals without any delay.
         """
-        return self._get_attribute('noRRDYAfter')
+        return self._get_attribute(self._SDM_ATT_MAP['NoRRDYAfter'])
     @NoRRDYAfter.setter
     def NoRRDYAfter(self, value):
-        self._set_attribute('noRRDYAfter', value)
+        self._set_attribute(self._SDM_ATT_MAP['NoRRDYAfter'], value)
 
     @property
     def Ppm(self):
@@ -149,10 +165,10 @@ class Fc(Base):
         -------
         - number: Indicates the value that needs to be adjusted for the line transmit frequency.
         """
-        return self._get_attribute('ppm')
+        return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
     @Ppm.setter
     def Ppm(self, value):
-        self._set_attribute('ppm', value)
+        self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
     def RrdyResponseDelays(self):
@@ -161,10 +177,10 @@ class Fc(Base):
         -------
         - str(creditStarvation | fixedDelay | noDelay | randomDelay): Helps to set internal delays for the transmission of R_RDY Primitive Signals.
         """
-        return self._get_attribute('rrdyResponseDelays')
+        return self._get_attribute(self._SDM_ATT_MAP['RrdyResponseDelays'])
     @RrdyResponseDelays.setter
     def RrdyResponseDelays(self, value):
-        self._set_attribute('rrdyResponseDelays', value)
+        self._set_attribute(self._SDM_ATT_MAP['RrdyResponseDelays'], value)
 
     @property
     def Speed(self):
@@ -173,10 +189,10 @@ class Fc(Base):
         -------
         - str(speed2000 | speed4000 | speed8000): Indicates the line speed.
         """
-        return self._get_attribute('speed')
+        return self._get_attribute(self._SDM_ATT_MAP['Speed'])
     @Speed.setter
     def Speed(self, value):
-        self._set_attribute('speed', value)
+        self._set_attribute(self._SDM_ATT_MAP['Speed'], value)
 
     @property
     def TxIgnoreAvailableCredits(self):
@@ -185,10 +201,10 @@ class Fc(Base):
         -------
         - bool: The transmitting port does not listen to flow control. It keeps transmittingpackets irrespective of available credits. For example, if two Fibre Channel portsare connected back-to-back andTransmitignoreavailablecredits'optionistrueonthetransmittingportand'Don'tsendR_RDY'optionistrueonthereceivingport,andthentransmitisstarted,theporttransmitsatfullrateeventhoughitdoesnothavecredits.
         """
-        return self._get_attribute('txIgnoreAvailableCredits')
+        return self._get_attribute(self._SDM_ATT_MAP['TxIgnoreAvailableCredits'])
     @TxIgnoreAvailableCredits.setter
     def TxIgnoreAvailableCredits(self, value):
-        self._set_attribute('txIgnoreAvailableCredits', value)
+        self._set_attribute(self._SDM_ATT_MAP['TxIgnoreAvailableCredits'], value)
 
     @property
     def TxIgnoreRxLinkFaults(self):
@@ -197,10 +213,10 @@ class Fc(Base):
         -------
         - bool: If true, allows transmission of packets even if the receive link is down.
         """
-        return self._get_attribute('txIgnoreRxLinkFaults')
+        return self._get_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'])
     @TxIgnoreRxLinkFaults.setter
     def TxIgnoreRxLinkFaults(self, value):
-        self._set_attribute('txIgnoreRxLinkFaults', value)
+        self._set_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'], value)
 
     def update(self, CreditStarvationValue=None, EnableEmissionLoweringProtocol=None, EnablePPM=None, FixedDelayValue=None, ForceErrors=None, Loopback=None, MaxDelayForRandomValue=None, MinDelayForRandomValue=None, NoRRDYAfter=None, Ppm=None, RrdyResponseDelays=None, Speed=None, TxIgnoreAvailableCredits=None, TxIgnoreRxLinkFaults=None):
         """Updates fc resource on the server.
@@ -226,4 +242,4 @@ class Fc(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

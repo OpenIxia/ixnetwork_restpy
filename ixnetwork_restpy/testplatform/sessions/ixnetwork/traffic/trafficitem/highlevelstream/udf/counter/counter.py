@@ -31,6 +31,15 @@ class Counter(Base):
 
     __slots__ = ()
     _SDM_NAME = 'counter'
+    _SDM_ATT_MAP = {
+        'AvailableWidths': 'availableWidths',
+        'BitOffset': 'bitOffset',
+        'Count': 'count',
+        'Direction': 'direction',
+        'StartValue': 'startValue',
+        'StepValue': 'stepValue',
+        'Width': 'width',
+    }
 
     def __init__(self, parent):
         super(Counter, self).__init__(parent)
@@ -42,7 +51,7 @@ class Counter(Base):
         -------
         - list(str): Contains all the possible widths available for a UDF in particular Type.
         """
-        return self._get_attribute('availableWidths')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableWidths'])
 
     @property
     def BitOffset(self):
@@ -51,10 +60,10 @@ class Counter(Base):
         -------
         - number: Specifies additional Offset of the UDF in terms of bits. This Offset will start from where the Offset provided in Byte Offset field ends.
         """
-        return self._get_attribute('bitOffset')
+        return self._get_attribute(self._SDM_ATT_MAP['BitOffset'])
     @BitOffset.setter
     def BitOffset(self, value):
-        self._set_attribute('bitOffset', value)
+        self._set_attribute(self._SDM_ATT_MAP['BitOffset'], value)
 
     @property
     def Count(self):
@@ -63,10 +72,10 @@ class Counter(Base):
         -------
         - number: Specifies the repeat count for the UDF. After the elapse of this count, UDF will again start from the Start Value.
         """
-        return self._get_attribute('count')
+        return self._get_attribute(self._SDM_ATT_MAP['Count'])
     @Count.setter
     def Count(self, value):
-        self._set_attribute('count', value)
+        self._set_attribute(self._SDM_ATT_MAP['Count'], value)
 
     @property
     def Direction(self):
@@ -75,10 +84,10 @@ class Counter(Base):
         -------
         - str(decrement | increment): Specifies if the UDF value will be incremented or decremented.
         """
-        return self._get_attribute('direction')
+        return self._get_attribute(self._SDM_ATT_MAP['Direction'])
     @Direction.setter
     def Direction(self, value):
-        self._set_attribute('direction', value)
+        self._set_attribute(self._SDM_ATT_MAP['Direction'], value)
 
     @property
     def StartValue(self):
@@ -87,10 +96,10 @@ class Counter(Base):
         -------
         - number: Specifies the Start Value of the UDF.
         """
-        return self._get_attribute('startValue')
+        return self._get_attribute(self._SDM_ATT_MAP['StartValue'])
     @StartValue.setter
     def StartValue(self, value):
-        self._set_attribute('startValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['StartValue'], value)
 
     @property
     def StepValue(self):
@@ -99,10 +108,10 @@ class Counter(Base):
         -------
         - number: Specifies the Step Value by which the UDF value will be incremented or decremented.
         """
-        return self._get_attribute('stepValue')
+        return self._get_attribute(self._SDM_ATT_MAP['StepValue'])
     @StepValue.setter
     def StepValue(self, value):
-        self._set_attribute('stepValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['StepValue'], value)
 
     @property
     def Width(self):
@@ -111,10 +120,10 @@ class Counter(Base):
         -------
         - str(1 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 2 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 3 | 30 | 31 | 32 | 4 | 5 | 6 | 7 | 8 | 9): Specifies the width of the UDF.
         """
-        return self._get_attribute('width')
+        return self._get_attribute(self._SDM_ATT_MAP['Width'])
     @Width.setter
     def Width(self, value):
-        self._set_attribute('width', value)
+        self._set_attribute(self._SDM_ATT_MAP['Width'], value)
 
     def update(self, BitOffset=None, Count=None, Direction=None, StartValue=None, StepValue=None, Width=None):
         """Updates counter resource on the server.
@@ -132,7 +141,7 @@ class Counter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, AvailableWidths=None, BitOffset=None, Count=None, Direction=None, StartValue=None, StepValue=None, Width=None):
         """Finds and retrieves counter resources from the server.
@@ -159,7 +168,7 @@ class Counter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of counter data from the server.

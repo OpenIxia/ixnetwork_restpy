@@ -32,6 +32,11 @@ class AllFlowsFilter(Base):
 
     __slots__ = ()
     _SDM_NAME = 'allFlowsFilter'
+    _SDM_ATT_MAP = {
+        'NumberOfResults': 'numberOfResults',
+        'SortByStatisticId': 'sortByStatisticId',
+        'SortingCondition': 'sortingCondition',
+    }
 
     def __init__(self, parent):
         super(AllFlowsFilter, self).__init__(parent)
@@ -43,10 +48,10 @@ class AllFlowsFilter(Base):
         -------
         - number: Number of traffic flows to be displayed.
         """
-        return self._get_attribute('numberOfResults')
+        return self._get_attribute(self._SDM_ATT_MAP['NumberOfResults'])
     @NumberOfResults.setter
     def NumberOfResults(self, value):
-        self._set_attribute('numberOfResults', value)
+        self._set_attribute(self._SDM_ATT_MAP['NumberOfResults'], value)
 
     @property
     def SortByStatisticId(self):
@@ -55,10 +60,10 @@ class AllFlowsFilter(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableStatisticFilter): The reference statistic by which the data will be sorted in created SV.
         """
-        return self._get_attribute('sortByStatisticId')
+        return self._get_attribute(self._SDM_ATT_MAP['SortByStatisticId'])
     @SortByStatisticId.setter
     def SortByStatisticId(self, value):
-        self._set_attribute('sortByStatisticId', value)
+        self._set_attribute(self._SDM_ATT_MAP['SortByStatisticId'], value)
 
     @property
     def SortingCondition(self):
@@ -67,10 +72,10 @@ class AllFlowsFilter(Base):
         -------
         - str(bestPerformers | worstPerformers): Sets the display order of the view.
         """
-        return self._get_attribute('sortingCondition')
+        return self._get_attribute(self._SDM_ATT_MAP['SortingCondition'])
     @SortingCondition.setter
     def SortingCondition(self, value):
-        self._set_attribute('sortingCondition', value)
+        self._set_attribute(self._SDM_ATT_MAP['SortingCondition'], value)
 
     def update(self, NumberOfResults=None, SortByStatisticId=None, SortingCondition=None):
         """Updates allFlowsFilter resource on the server.
@@ -85,7 +90,7 @@ class AllFlowsFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, NumberOfResults=None, SortByStatisticId=None, SortingCondition=None):
         """Adds a new allFlowsFilter resource on the server and adds it to the container.
@@ -104,7 +109,7 @@ class AllFlowsFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained allFlowsFilter resources in this instance from the server.
@@ -137,7 +142,7 @@ class AllFlowsFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of allFlowsFilter data from the server.

@@ -32,6 +32,21 @@ class EgtpGlobalsBase(Base):
 
     __slots__ = ()
     _SDM_NAME = 'egtpGlobalsBase'
+    _SDM_ATT_MAP = {
+        'EnableDynamicQosCtrl': 'enableDynamicQosCtrl',
+        'EnableGatewayArp': 'enableGatewayArp',
+        'GatewayArpRequestRate': 'gatewayArpRequestRate',
+        'MaxMbrUAndD': 'maxMbrUAndD',
+        'MaxOutstandingGatewayArpRequests': 'maxOutstandingGatewayArpRequests',
+        'MaxOutstandingReleases': 'maxOutstandingReleases',
+        'MaxOutstandingRequests': 'maxOutstandingRequests',
+        'ObjectId': 'objectId',
+        'SendOneArpFromEachInterface': 'sendOneArpFromEachInterface',
+        'SetupRateInitial': 'setupRateInitial',
+        'TeardownRateInitial': 'teardownRateInitial',
+        'TsSpec': 'tsSpec',
+        'UseMaxRatesForDcp': 'useMaxRatesForDcp',
+    }
 
     def __init__(self, parent):
         super(EgtpGlobalsBase, self).__init__(parent)
@@ -43,10 +58,10 @@ class EgtpGlobalsBase(Base):
         -------
         - bool: Enable Dynamic QoS Enforcement
         """
-        return self._get_attribute('enableDynamicQosCtrl')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableDynamicQosCtrl'])
     @EnableDynamicQosCtrl.setter
     def EnableDynamicQosCtrl(self, value):
-        self._set_attribute('enableDynamicQosCtrl', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableDynamicQosCtrl'], value)
 
     @property
     def EnableGatewayArp(self):
@@ -55,10 +70,10 @@ class EgtpGlobalsBase(Base):
         -------
         - bool: When enabled, every IP address will ARP the specified gateway.
         """
-        return self._get_attribute('enableGatewayArp')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableGatewayArp'])
     @EnableGatewayArp.setter
     def EnableGatewayArp(self, value):
-        self._set_attribute('enableGatewayArp', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableGatewayArp'], value)
 
     @property
     def GatewayArpRequestRate(self):
@@ -67,10 +82,10 @@ class EgtpGlobalsBase(Base):
         -------
         - number: Maximum ARP request rate
         """
-        return self._get_attribute('gatewayArpRequestRate')
+        return self._get_attribute(self._SDM_ATT_MAP['GatewayArpRequestRate'])
     @GatewayArpRequestRate.setter
     def GatewayArpRequestRate(self, value):
-        self._set_attribute('gatewayArpRequestRate', value)
+        self._set_attribute(self._SDM_ATT_MAP['GatewayArpRequestRate'], value)
 
     @property
     def MaxMbrUAndD(self):
@@ -79,10 +94,10 @@ class EgtpGlobalsBase(Base):
         -------
         - number: 
         """
-        return self._get_attribute('maxMbrUAndD')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxMbrUAndD'])
     @MaxMbrUAndD.setter
     def MaxMbrUAndD(self, value):
-        self._set_attribute('maxMbrUAndD', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxMbrUAndD'], value)
 
     @property
     def MaxOutstandingGatewayArpRequests(self):
@@ -91,10 +106,10 @@ class EgtpGlobalsBase(Base):
         -------
         - number: Threshold at which the plugin begins throttling back the number of new ARP requests sent out.
         """
-        return self._get_attribute('maxOutstandingGatewayArpRequests')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingGatewayArpRequests'])
     @MaxOutstandingGatewayArpRequests.setter
     def MaxOutstandingGatewayArpRequests(self, value):
-        self._set_attribute('maxOutstandingGatewayArpRequests', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingGatewayArpRequests'], value)
 
     @property
     def MaxOutstandingReleases(self):
@@ -103,10 +118,10 @@ class EgtpGlobalsBase(Base):
         -------
         - number: 
         """
-        return self._get_attribute('maxOutstandingReleases')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'])
     @MaxOutstandingReleases.setter
     def MaxOutstandingReleases(self, value):
-        self._set_attribute('maxOutstandingReleases', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'], value)
 
     @property
     def MaxOutstandingRequests(self):
@@ -115,10 +130,10 @@ class EgtpGlobalsBase(Base):
         -------
         - number: 
         """
-        return self._get_attribute('maxOutstandingRequests')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
-        self._set_attribute('maxOutstandingRequests', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
 
     @property
     def ObjectId(self):
@@ -127,7 +142,7 @@ class EgtpGlobalsBase(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def SendOneArpFromEachInterface(self):
@@ -136,10 +151,10 @@ class EgtpGlobalsBase(Base):
         -------
         - bool: When set, each interface will send one ARP request.
         """
-        return self._get_attribute('sendOneArpFromEachInterface')
+        return self._get_attribute(self._SDM_ATT_MAP['SendOneArpFromEachInterface'])
     @SendOneArpFromEachInterface.setter
     def SendOneArpFromEachInterface(self, value):
-        self._set_attribute('sendOneArpFromEachInterface', value)
+        self._set_attribute(self._SDM_ATT_MAP['SendOneArpFromEachInterface'], value)
 
     @property
     def SetupRateInitial(self):
@@ -148,10 +163,10 @@ class EgtpGlobalsBase(Base):
         -------
         - number: Initial setup rate
         """
-        return self._get_attribute('setupRateInitial')
+        return self._get_attribute(self._SDM_ATT_MAP['SetupRateInitial'])
     @SetupRateInitial.setter
     def SetupRateInitial(self, value):
-        self._set_attribute('setupRateInitial', value)
+        self._set_attribute(self._SDM_ATT_MAP['SetupRateInitial'], value)
 
     @property
     def TeardownRateInitial(self):
@@ -160,10 +175,10 @@ class EgtpGlobalsBase(Base):
         -------
         - number: Initial teardown rate
         """
-        return self._get_attribute('teardownRateInitial')
+        return self._get_attribute(self._SDM_ATT_MAP['TeardownRateInitial'])
     @TeardownRateInitial.setter
     def TeardownRateInitial(self, value):
-        self._set_attribute('teardownRateInitial', value)
+        self._set_attribute(self._SDM_ATT_MAP['TeardownRateInitial'], value)
 
     @property
     def TsSpec(self):
@@ -172,10 +187,10 @@ class EgtpGlobalsBase(Base):
         -------
         - str: 
         """
-        return self._get_attribute('tsSpec')
+        return self._get_attribute(self._SDM_ATT_MAP['TsSpec'])
     @TsSpec.setter
     def TsSpec(self, value):
-        self._set_attribute('tsSpec', value)
+        self._set_attribute(self._SDM_ATT_MAP['TsSpec'], value)
 
     @property
     def UseMaxRatesForDcp(self):
@@ -184,10 +199,10 @@ class EgtpGlobalsBase(Base):
         -------
         - bool: Use default rates (DCP mode)
         """
-        return self._get_attribute('useMaxRatesForDcp')
+        return self._get_attribute(self._SDM_ATT_MAP['UseMaxRatesForDcp'])
     @UseMaxRatesForDcp.setter
     def UseMaxRatesForDcp(self, value):
-        self._set_attribute('useMaxRatesForDcp', value)
+        self._set_attribute(self._SDM_ATT_MAP['UseMaxRatesForDcp'], value)
 
     def update(self, EnableDynamicQosCtrl=None, EnableGatewayArp=None, GatewayArpRequestRate=None, MaxMbrUAndD=None, MaxOutstandingGatewayArpRequests=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, SendOneArpFromEachInterface=None, SetupRateInitial=None, TeardownRateInitial=None, TsSpec=None, UseMaxRatesForDcp=None):
         """Updates egtpGlobalsBase resource on the server.
@@ -211,7 +226,7 @@ class EgtpGlobalsBase(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, EnableDynamicQosCtrl=None, EnableGatewayArp=None, GatewayArpRequestRate=None, MaxMbrUAndD=None, MaxOutstandingGatewayArpRequests=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, SendOneArpFromEachInterface=None, SetupRateInitial=None, TeardownRateInitial=None, TsSpec=None, UseMaxRatesForDcp=None):
         """Adds a new egtpGlobalsBase resource on the server and adds it to the container.
@@ -239,7 +254,7 @@ class EgtpGlobalsBase(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained egtpGlobalsBase resources in this instance from the server.
@@ -282,7 +297,7 @@ class EgtpGlobalsBase(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of egtpGlobalsBase data from the server.

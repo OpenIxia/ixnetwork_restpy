@@ -32,6 +32,12 @@ class PtpGlobals(Base):
 
     __slots__ = ()
     _SDM_NAME = 'ptpGlobals'
+    _SDM_ATT_MAP = {
+        'MaxOutstanding': 'maxOutstanding',
+        'ObjectId': 'objectId',
+        'SetupRate': 'setupRate',
+        'TeardownRate': 'teardownRate',
+    }
 
     def __init__(self, parent):
         super(PtpGlobals, self).__init__(parent)
@@ -43,10 +49,10 @@ class PtpGlobals(Base):
         -------
         - number: The number of PTP connections to be in initiation or terminating state at any time.
         """
-        return self._get_attribute('maxOutstanding')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstanding'])
     @MaxOutstanding.setter
     def MaxOutstanding(self, value):
-        self._set_attribute('maxOutstanding', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxOutstanding'], value)
 
     @property
     def ObjectId(self):
@@ -55,7 +61,7 @@ class PtpGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def SetupRate(self):
@@ -64,10 +70,10 @@ class PtpGlobals(Base):
         -------
         - number: Initiation rate for the PTP connection establishement.
         """
-        return self._get_attribute('setupRate')
+        return self._get_attribute(self._SDM_ATT_MAP['SetupRate'])
     @SetupRate.setter
     def SetupRate(self, value):
-        self._set_attribute('setupRate', value)
+        self._set_attribute(self._SDM_ATT_MAP['SetupRate'], value)
 
     @property
     def TeardownRate(self):
@@ -76,10 +82,10 @@ class PtpGlobals(Base):
         -------
         - number: Teardown rate for the PTP connection establishement.
         """
-        return self._get_attribute('teardownRate')
+        return self._get_attribute(self._SDM_ATT_MAP['TeardownRate'])
     @TeardownRate.setter
     def TeardownRate(self, value):
-        self._set_attribute('teardownRate', value)
+        self._set_attribute(self._SDM_ATT_MAP['TeardownRate'], value)
 
     def update(self, MaxOutstanding=None, SetupRate=None, TeardownRate=None):
         """Updates ptpGlobals resource on the server.
@@ -94,7 +100,7 @@ class PtpGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, MaxOutstanding=None, SetupRate=None, TeardownRate=None):
         """Adds a new ptpGlobals resource on the server and adds it to the container.
@@ -113,7 +119,7 @@ class PtpGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained ptpGlobals resources in this instance from the server.
@@ -147,7 +153,7 @@ class PtpGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of ptpGlobals data from the server.

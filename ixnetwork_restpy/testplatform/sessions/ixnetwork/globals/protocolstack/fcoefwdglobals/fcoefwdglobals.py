@@ -32,6 +32,15 @@ class FcoeFwdGlobals(Base):
 
     __slots__ = ()
     _SDM_NAME = 'fcoeFwdGlobals'
+    _SDM_ATT_MAP = {
+        'AcceptPartialConfig': 'acceptPartialConfig',
+        'DcbxTimeout': 'dcbxTimeout',
+        'FipClearVlinkWithPortIds': 'fipClearVlinkWithPortIds',
+        'MaxPacketsPerSecond': 'maxPacketsPerSecond',
+        'MaxRetries': 'maxRetries',
+        'ObjectId': 'objectId',
+        'RetryInterval': 'retryInterval',
+    }
 
     def __init__(self, parent):
         super(FcoeFwdGlobals, self).__init__(parent)
@@ -43,10 +52,10 @@ class FcoeFwdGlobals(Base):
         -------
         - bool: This flag controls how the negotiation process reports success or failure. When is true the plugin reports success if at least one session is established. When is false the plugin reports success only if all sessions are established.
         """
-        return self._get_attribute('acceptPartialConfig')
+        return self._get_attribute(self._SDM_ATT_MAP['AcceptPartialConfig'])
     @AcceptPartialConfig.setter
     def AcceptPartialConfig(self, value):
-        self._set_attribute('acceptPartialConfig', value)
+        self._set_attribute(self._SDM_ATT_MAP['AcceptPartialConfig'], value)
 
     @property
     def DcbxTimeout(self):
@@ -55,10 +64,10 @@ class FcoeFwdGlobals(Base):
         -------
         - number: The number of seconds to wait for DCBX to negotiate.
         """
-        return self._get_attribute('dcbxTimeout')
+        return self._get_attribute(self._SDM_ATT_MAP['DcbxTimeout'])
     @DcbxTimeout.setter
     def DcbxTimeout(self, value):
-        self._set_attribute('dcbxTimeout', value)
+        self._set_attribute(self._SDM_ATT_MAP['DcbxTimeout'], value)
 
     @property
     def FipClearVlinkWithPortIds(self):
@@ -67,10 +76,10 @@ class FcoeFwdGlobals(Base):
         -------
         - bool: Determines whether the FIP Clear Virtual Link requests sent by FCF contain Vx_Port Identification descriptors or not.
         """
-        return self._get_attribute('fipClearVlinkWithPortIds')
+        return self._get_attribute(self._SDM_ATT_MAP['FipClearVlinkWithPortIds'])
     @FipClearVlinkWithPortIds.setter
     def FipClearVlinkWithPortIds(self, value):
-        self._set_attribute('fipClearVlinkWithPortIds', value)
+        self._set_attribute(self._SDM_ATT_MAP['FipClearVlinkWithPortIds'], value)
 
     @property
     def MaxPacketsPerSecond(self):
@@ -79,10 +88,10 @@ class FcoeFwdGlobals(Base):
         -------
         - number: The maximum number of requests transmitted in each second.
         """
-        return self._get_attribute('maxPacketsPerSecond')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'])
     @MaxPacketsPerSecond.setter
     def MaxPacketsPerSecond(self, value):
-        self._set_attribute('maxPacketsPerSecond', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'], value)
 
     @property
     def MaxRetries(self):
@@ -91,10 +100,10 @@ class FcoeFwdGlobals(Base):
         -------
         - number: The number of request retries for each negotiation stage in case of response timeout or error.
         """
-        return self._get_attribute('maxRetries')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxRetries'])
     @MaxRetries.setter
     def MaxRetries(self, value):
-        self._set_attribute('maxRetries', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxRetries'], value)
 
     @property
     def ObjectId(self):
@@ -103,7 +112,7 @@ class FcoeFwdGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def RetryInterval(self):
@@ -112,10 +121,10 @@ class FcoeFwdGlobals(Base):
         -------
         - number: The number of seconds to wait for a response before sending a new request.
         """
-        return self._get_attribute('retryInterval')
+        return self._get_attribute(self._SDM_ATT_MAP['RetryInterval'])
     @RetryInterval.setter
     def RetryInterval(self, value):
-        self._set_attribute('retryInterval', value)
+        self._set_attribute(self._SDM_ATT_MAP['RetryInterval'], value)
 
     def update(self, AcceptPartialConfig=None, DcbxTimeout=None, FipClearVlinkWithPortIds=None, MaxPacketsPerSecond=None, MaxRetries=None, RetryInterval=None):
         """Updates fcoeFwdGlobals resource on the server.
@@ -133,7 +142,7 @@ class FcoeFwdGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AcceptPartialConfig=None, DcbxTimeout=None, FipClearVlinkWithPortIds=None, MaxPacketsPerSecond=None, MaxRetries=None, RetryInterval=None):
         """Adds a new fcoeFwdGlobals resource on the server and adds it to the container.
@@ -155,7 +164,7 @@ class FcoeFwdGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained fcoeFwdGlobals resources in this instance from the server.
@@ -192,7 +201,7 @@ class FcoeFwdGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of fcoeFwdGlobals data from the server.

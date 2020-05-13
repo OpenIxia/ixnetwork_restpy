@@ -30,6 +30,9 @@ class MeasurementMode(Base):
 
     __slots__ = ()
     _SDM_NAME = 'measurementMode'
+    _SDM_ATT_MAP = {
+        'MeasurementMode': 'measurementMode',
+    }
 
     def __init__(self, parent):
         super(MeasurementMode, self).__init__(parent)
@@ -41,10 +44,10 @@ class MeasurementMode(Base):
         -------
         - str(cumulativeMode | instantaneousMode | mixedMode): Mode of the measurement
         """
-        return self._get_attribute('measurementMode')
+        return self._get_attribute(self._SDM_ATT_MAP['MeasurementMode'])
     @MeasurementMode.setter
     def MeasurementMode(self, value):
-        self._set_attribute('measurementMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['MeasurementMode'], value)
 
     def update(self, MeasurementMode=None):
         """Updates measurementMode resource on the server.
@@ -57,4 +60,4 @@ class MeasurementMode(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

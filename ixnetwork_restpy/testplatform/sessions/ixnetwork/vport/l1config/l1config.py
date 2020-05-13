@@ -30,6 +30,9 @@ class L1Config(Base):
 
     __slots__ = ()
     _SDM_NAME = 'l1Config'
+    _SDM_ATT_MAP = {
+        'CurrentType': 'currentType',
+    }
 
     def __init__(self, parent):
         super(L1Config, self).__init__(parent)
@@ -307,10 +310,10 @@ class L1Config(Base):
         -------
         - str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe): Indicates the five types of ports for configuration to choose from.
         """
-        return self._get_attribute('currentType')
+        return self._get_attribute(self._SDM_ATT_MAP['CurrentType'])
     @CurrentType.setter
     def CurrentType(self, value):
-        self._set_attribute('currentType', value)
+        self._set_attribute(self._SDM_ATT_MAP['CurrentType'], value)
 
     def update(self, CurrentType=None):
         """Updates l1Config resource on the server.
@@ -323,4 +326,4 @@ class L1Config(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

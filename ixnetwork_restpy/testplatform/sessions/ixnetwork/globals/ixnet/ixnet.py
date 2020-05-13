@@ -30,6 +30,10 @@ class Ixnet(Base):
 
     __slots__ = ()
     _SDM_NAME = 'ixnet'
+    _SDM_ATT_MAP = {
+        'ConnectedClients': 'connectedClients',
+        'IsActive': 'isActive',
+    }
 
     def __init__(self, parent):
         super(Ixnet, self).__init__(parent)
@@ -41,7 +45,7 @@ class Ixnet(Base):
         -------
         - list(str): Returns the remote address and remote port for each of the currently connected ixNet clients.
         """
-        return self._get_attribute('connectedClients')
+        return self._get_attribute(self._SDM_ATT_MAP['ConnectedClients'])
 
     @property
     def IsActive(self):
@@ -50,4 +54,4 @@ class Ixnet(Base):
         -------
         - bool: Returns true if any remote clients are connected, false if no remote clients are connected.
         """
-        return self._get_attribute('isActive')
+        return self._get_attribute(self._SDM_ATT_MAP['IsActive'])

@@ -31,18 +31,59 @@ class Field(Base):
 
     __slots__ = ()
     _SDM_NAME = 'field'
+    _SDM_ATT_MAP = {
+        'Id__': '__id__',
+        'ActiveFieldChoice': 'activeFieldChoice',
+        'Auto': 'auto',
+        'CountValue': 'countValue',
+        'DefaultValue': 'defaultValue',
+        'DisplayName': 'displayName',
+        'EnumValues': 'enumValues',
+        'FieldChoice': 'fieldChoice',
+        'FieldTypeId': 'fieldTypeId',
+        'FieldValue': 'fieldValue',
+        'FixedBits': 'fixedBits',
+        'FormattedFieldValue': 'formattedFieldValue',
+        'FullMesh': 'fullMesh',
+        'Length': 'length',
+        'Level': 'level',
+        'MaxValue': 'maxValue',
+        'MinValue': 'minValue',
+        'Name': 'name',
+        'Offset': 'offset',
+        'OffsetFromRoot': 'offsetFromRoot',
+        'OnTheFlyMask': 'onTheFlyMask',
+        'Optional': 'optional',
+        'OptionalEnabled': 'optionalEnabled',
+        'RandomMask': 'randomMask',
+        'RateVaried': 'rateVaried',
+        'ReadOnly': 'readOnly',
+        'RequiresUdf': 'requiresUdf',
+        'Seed': 'seed',
+        'SingleValue': 'singleValue',
+        'StartValue': 'startValue',
+        'StepValue': 'stepValue',
+        'SupportsAuto': 'supportsAuto',
+        'SupportsNonRepeatableRandom': 'supportsNonRepeatableRandom',
+        'SupportsOnTheFlyMask': 'supportsOnTheFlyMask',
+        'SupportsRepeatableRandomRange': 'supportsRepeatableRandomRange',
+        'TrackingEnabled': 'trackingEnabled',
+        'ValueFormat': 'valueFormat',
+        'ValueList': 'valueList',
+        'ValueType': 'valueType',
+    }
 
     def __init__(self, parent):
         super(Field, self).__init__(parent)
 
     @property
-    def __id__(self):
+    def Id__(self):
         """
         Returns
         -------
         - str: An alphanumeric string that defines the internal field ID.
         """
-        return self._get_attribute('__id__')
+        return self._get_attribute(self._SDM_ATT_MAP['Id__'])
 
     @property
     def ActiveFieldChoice(self):
@@ -51,10 +92,10 @@ class Field(Base):
         -------
         - bool: It is used to select a particular option out of multiple field choice options. The activeFieldChoice will be true only for the fields of the option which is active in GUI.
         """
-        return self._get_attribute('activeFieldChoice')
+        return self._get_attribute(self._SDM_ATT_MAP['ActiveFieldChoice'])
     @ActiveFieldChoice.setter
     def ActiveFieldChoice(self, value):
-        self._set_attribute('activeFieldChoice', value)
+        self._set_attribute(self._SDM_ATT_MAP['ActiveFieldChoice'], value)
 
     @property
     def Auto(self):
@@ -63,10 +104,10 @@ class Field(Base):
         -------
         - bool: If true, value for the particular field is considered automatically. If false, user can set values for the particular field.
         """
-        return self._get_attribute('auto')
+        return self._get_attribute(self._SDM_ATT_MAP['Auto'])
     @Auto.setter
     def Auto(self, value):
-        self._set_attribute('auto', value)
+        self._set_attribute(self._SDM_ATT_MAP['Auto'], value)
 
     @property
     def CountValue(self):
@@ -75,10 +116,10 @@ class Field(Base):
         -------
         - str: It is used to get the count value of the field.
         """
-        return self._get_attribute('countValue')
+        return self._get_attribute(self._SDM_ATT_MAP['CountValue'])
     @CountValue.setter
     def CountValue(self, value):
-        self._set_attribute('countValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['CountValue'], value)
 
     @property
     def DefaultValue(self):
@@ -87,7 +128,7 @@ class Field(Base):
         -------
         - str: It is used to get the default value of the field.
         """
-        return self._get_attribute('defaultValue')
+        return self._get_attribute(self._SDM_ATT_MAP['DefaultValue'])
 
     @property
     def DisplayName(self):
@@ -96,7 +137,7 @@ class Field(Base):
         -------
         - str: It is used to get the name of the particular field as available in Packet/Qos
         """
-        return self._get_attribute('displayName')
+        return self._get_attribute(self._SDM_ATT_MAP['DisplayName'])
 
     @property
     def EnumValues(self):
@@ -105,7 +146,7 @@ class Field(Base):
         -------
         - list(str): If the field has string options, then each string is associated with a particular integer value. This attribute is used to get the mapping of integer value with the corresponding string option.
         """
-        return self._get_attribute('enumValues')
+        return self._get_attribute(self._SDM_ATT_MAP['EnumValues'])
 
     @property
     def FieldChoice(self):
@@ -114,7 +155,7 @@ class Field(Base):
         -------
         - bool: It is true for all the field options active in the GUI.
         """
-        return self._get_attribute('fieldChoice')
+        return self._get_attribute(self._SDM_ATT_MAP['FieldChoice'])
 
     @property
     def FieldTypeId(self):
@@ -123,7 +164,7 @@ class Field(Base):
         -------
         - str: 
         """
-        return self._get_attribute('fieldTypeId')
+        return self._get_attribute(self._SDM_ATT_MAP['FieldTypeId'])
 
     @property
     def FieldValue(self):
@@ -132,10 +173,10 @@ class Field(Base):
         -------
         - str: An alphanumeric string that returns the value of the field.
         """
-        return self._get_attribute('fieldValue')
+        return self._get_attribute(self._SDM_ATT_MAP['FieldValue'])
     @FieldValue.setter
     def FieldValue(self, value):
-        self._set_attribute('fieldValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['FieldValue'], value)
 
     @property
     def FixedBits(self):
@@ -144,10 +185,10 @@ class Field(Base):
         -------
         - str: Sets all the fields to a constant specified size.
         """
-        return self._get_attribute('fixedBits')
+        return self._get_attribute(self._SDM_ATT_MAP['FixedBits'])
     @FixedBits.setter
     def FixedBits(self, value):
-        self._set_attribute('fixedBits', value)
+        self._set_attribute(self._SDM_ATT_MAP['FixedBits'], value)
 
     @property
     def FormattedFieldValue(self):
@@ -156,7 +197,7 @@ class Field(Base):
         -------
         - str: 
         """
-        return self._get_attribute('formattedFieldValue')
+        return self._get_attribute(self._SDM_ATT_MAP['FormattedFieldValue'])
 
     @property
     def FullMesh(self):
@@ -165,10 +206,10 @@ class Field(Base):
         -------
         - bool: If true, Full Mesh is enabled.
         """
-        return self._get_attribute('fullMesh')
+        return self._get_attribute(self._SDM_ATT_MAP['FullMesh'])
     @FullMesh.setter
     def FullMesh(self, value):
-        self._set_attribute('fullMesh', value)
+        self._set_attribute(self._SDM_ATT_MAP['FullMesh'], value)
 
     @property
     def Length(self):
@@ -177,7 +218,7 @@ class Field(Base):
         -------
         - number: It is used to get the length of the field in bits.
         """
-        return self._get_attribute('length')
+        return self._get_attribute(self._SDM_ATT_MAP['Length'])
 
     @property
     def Level(self):
@@ -186,7 +227,7 @@ class Field(Base):
         -------
         - bool: It is used to get the level of the field in bits.
         """
-        return self._get_attribute('level')
+        return self._get_attribute(self._SDM_ATT_MAP['Level'])
 
     @property
     def MaxValue(self):
@@ -195,10 +236,10 @@ class Field(Base):
         -------
         - str: 
         """
-        return self._get_attribute('maxValue')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxValue'])
     @MaxValue.setter
     def MaxValue(self, value):
-        self._set_attribute('maxValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxValue'], value)
 
     @property
     def MinValue(self):
@@ -207,10 +248,10 @@ class Field(Base):
         -------
         - str: 
         """
-        return self._get_attribute('minValue')
+        return self._get_attribute(self._SDM_ATT_MAP['MinValue'])
     @MinValue.setter
     def MinValue(self, value):
-        self._set_attribute('minValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['MinValue'], value)
 
     @property
     def Name(self):
@@ -219,7 +260,7 @@ class Field(Base):
         -------
         - str: An alphanumeric string that returns the name of the field.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
 
     @property
     def Offset(self):
@@ -228,7 +269,7 @@ class Field(Base):
         -------
         - number: It is used to get the position of the field in terms of number of bits.
         """
-        return self._get_attribute('offset')
+        return self._get_attribute(self._SDM_ATT_MAP['Offset'])
 
     @property
     def OffsetFromRoot(self):
@@ -237,7 +278,7 @@ class Field(Base):
         -------
         - number: It is used to get the position of the field in terms of number of bits from the root packet.
         """
-        return self._get_attribute('offsetFromRoot')
+        return self._get_attribute(self._SDM_ATT_MAP['OffsetFromRoot'])
 
     @property
     def OnTheFlyMask(self):
@@ -246,10 +287,10 @@ class Field(Base):
         -------
         - str: 
         """
-        return self._get_attribute('onTheFlyMask')
+        return self._get_attribute(self._SDM_ATT_MAP['OnTheFlyMask'])
     @OnTheFlyMask.setter
     def OnTheFlyMask(self, value):
-        self._set_attribute('onTheFlyMask', value)
+        self._set_attribute(self._SDM_ATT_MAP['OnTheFlyMask'], value)
 
     @property
     def Optional(self):
@@ -258,7 +299,7 @@ class Field(Base):
         -------
         - bool: A read-only field that accepts true/false to make the field optional.
         """
-        return self._get_attribute('optional')
+        return self._get_attribute(self._SDM_ATT_MAP['Optional'])
 
     @property
     def OptionalEnabled(self):
@@ -267,10 +308,10 @@ class Field(Base):
         -------
         - bool: If true, the optional field can accept values.
         """
-        return self._get_attribute('optionalEnabled')
+        return self._get_attribute(self._SDM_ATT_MAP['OptionalEnabled'])
     @OptionalEnabled.setter
     def OptionalEnabled(self, value):
-        self._set_attribute('optionalEnabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['OptionalEnabled'], value)
 
     @property
     def RandomMask(self):
@@ -279,10 +320,10 @@ class Field(Base):
         -------
         - str: Select to use random mask bit values.
         """
-        return self._get_attribute('randomMask')
+        return self._get_attribute(self._SDM_ATT_MAP['RandomMask'])
     @RandomMask.setter
     def RandomMask(self, value):
-        self._set_attribute('randomMask', value)
+        self._set_attribute(self._SDM_ATT_MAP['RandomMask'], value)
 
     @property
     def RateVaried(self):
@@ -291,7 +332,7 @@ class Field(Base):
         -------
         - bool: It is used to get the varied rate of packet field.
         """
-        return self._get_attribute('rateVaried')
+        return self._get_attribute(self._SDM_ATT_MAP['RateVaried'])
 
     @property
     def ReadOnly(self):
@@ -300,7 +341,7 @@ class Field(Base):
         -------
         - bool: It is used to check whether particular field is readOnly or otherwise.
         """
-        return self._get_attribute('readOnly')
+        return self._get_attribute(self._SDM_ATT_MAP['ReadOnly'])
 
     @property
     def RequiresUdf(self):
@@ -309,7 +350,7 @@ class Field(Base):
         -------
         - bool: It is used to check whether UDF is required.
         """
-        return self._get_attribute('requiresUdf')
+        return self._get_attribute(self._SDM_ATT_MAP['RequiresUdf'])
 
     @property
     def Seed(self):
@@ -318,10 +359,10 @@ class Field(Base):
         -------
         - str: Select to use seed.
         """
-        return self._get_attribute('seed')
+        return self._get_attribute(self._SDM_ATT_MAP['Seed'])
     @Seed.setter
     def Seed(self, value):
-        self._set_attribute('seed', value)
+        self._set_attribute(self._SDM_ATT_MAP['Seed'], value)
 
     @property
     def SingleValue(self):
@@ -330,10 +371,10 @@ class Field(Base):
         -------
         - str: If valueType is to be set as singleValue, then after setting the valueType to singleValue, the singleValue is set to a particular value.
         """
-        return self._get_attribute('singleValue')
+        return self._get_attribute(self._SDM_ATT_MAP['SingleValue'])
     @SingleValue.setter
     def SingleValue(self, value):
-        self._set_attribute('singleValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['SingleValue'], value)
 
     @property
     def StartValue(self):
@@ -342,10 +383,10 @@ class Field(Base):
         -------
         - str: Specifies the initial value of increment or decrement.
         """
-        return self._get_attribute('startValue')
+        return self._get_attribute(self._SDM_ATT_MAP['StartValue'])
     @StartValue.setter
     def StartValue(self, value):
-        self._set_attribute('startValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['StartValue'], value)
 
     @property
     def StepValue(self):
@@ -354,10 +395,10 @@ class Field(Base):
         -------
         - str: Specifies the value by which value will keep incrementing or decrementing.
         """
-        return self._get_attribute('stepValue')
+        return self._get_attribute(self._SDM_ATT_MAP['StepValue'])
     @StepValue.setter
     def StepValue(self, value):
-        self._set_attribute('stepValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['StepValue'], value)
 
     @property
     def SupportsAuto(self):
@@ -366,7 +407,7 @@ class Field(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('supportsAuto')
+        return self._get_attribute(self._SDM_ATT_MAP['SupportsAuto'])
 
     @property
     def SupportsNonRepeatableRandom(self):
@@ -375,7 +416,7 @@ class Field(Base):
         -------
         - bool: Indicates whether or not this type of stack supports non-repeatable random
         """
-        return self._get_attribute('supportsNonRepeatableRandom')
+        return self._get_attribute(self._SDM_ATT_MAP['SupportsNonRepeatableRandom'])
 
     @property
     def SupportsOnTheFlyMask(self):
@@ -384,7 +425,7 @@ class Field(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('supportsOnTheFlyMask')
+        return self._get_attribute(self._SDM_ATT_MAP['SupportsOnTheFlyMask'])
 
     @property
     def SupportsRepeatableRandomRange(self):
@@ -393,7 +434,7 @@ class Field(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('supportsRepeatableRandomRange')
+        return self._get_attribute(self._SDM_ATT_MAP['SupportsRepeatableRandomRange'])
 
     @property
     def TrackingEnabled(self):
@@ -402,10 +443,10 @@ class Field(Base):
         -------
         - bool: If true, tracking is enabled on the particular field in flowTracking.
         """
-        return self._get_attribute('trackingEnabled')
+        return self._get_attribute(self._SDM_ATT_MAP['TrackingEnabled'])
     @TrackingEnabled.setter
     def TrackingEnabled(self, value):
-        self._set_attribute('trackingEnabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['TrackingEnabled'], value)
 
     @property
     def ValueFormat(self):
@@ -414,7 +455,7 @@ class Field(Base):
         -------
         - str(aTM | bool | debug | decimal | decimalFixed2 | decimalSigned8 | fCID | float | floatEng | hex | hex8WithColons | hex8WithSpaces | iPv4 | iPv6 | mAC | mACMAC | mACSiteId | mACVLAN | mACVLANSiteId | string | unknown | varLenHex): It is used to get the format of the field like whether format is mac, hex, integer, ipv4 and ipv6.
         """
-        return self._get_attribute('valueFormat')
+        return self._get_attribute(self._SDM_ATT_MAP['ValueFormat'])
 
     @property
     def ValueList(self):
@@ -423,10 +464,10 @@ class Field(Base):
         -------
         - list(str): If valueType is set as valueList, then after setting valueType to valueList a, list of values can be provided using this attribute.
         """
-        return self._get_attribute('valueList')
+        return self._get_attribute(self._SDM_ATT_MAP['ValueList'])
     @ValueList.setter
     def ValueList(self, value):
-        self._set_attribute('valueList', value)
+        self._set_attribute(self._SDM_ATT_MAP['ValueList'], value)
 
     @property
     def ValueType(self):
@@ -435,10 +476,10 @@ class Field(Base):
         -------
         - str(decrement | increment | nonRepeatableRandom | random | repeatableRandomRange | singleValue | valueList): It is used to select a particular value type.
         """
-        return self._get_attribute('valueType')
+        return self._get_attribute(self._SDM_ATT_MAP['ValueType'])
     @ValueType.setter
     def ValueType(self, value):
-        self._set_attribute('valueType', value)
+        self._set_attribute(self._SDM_ATT_MAP['ValueType'], value)
 
     def update(self, ActiveFieldChoice=None, Auto=None, CountValue=None, FieldValue=None, FixedBits=None, FullMesh=None, MaxValue=None, MinValue=None, OnTheFlyMask=None, OptionalEnabled=None, RandomMask=None, Seed=None, SingleValue=None, StartValue=None, StepValue=None, TrackingEnabled=None, ValueList=None, ValueType=None):
         """Updates field resource on the server.
@@ -468,9 +509,9 @@ class Field(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, __id__=None, ActiveFieldChoice=None, Auto=None, CountValue=None, DefaultValue=None, DisplayName=None, EnumValues=None, FieldChoice=None, FieldTypeId=None, FieldValue=None, FixedBits=None, FormattedFieldValue=None, FullMesh=None, Length=None, Level=None, MaxValue=None, MinValue=None, Name=None, Offset=None, OffsetFromRoot=None, OnTheFlyMask=None, Optional=None, OptionalEnabled=None, RandomMask=None, RateVaried=None, ReadOnly=None, RequiresUdf=None, Seed=None, SingleValue=None, StartValue=None, StepValue=None, SupportsAuto=None, SupportsNonRepeatableRandom=None, SupportsOnTheFlyMask=None, SupportsRepeatableRandomRange=None, TrackingEnabled=None, ValueFormat=None, ValueList=None, ValueType=None):
+    def find(self, Id__=None, ActiveFieldChoice=None, Auto=None, CountValue=None, DefaultValue=None, DisplayName=None, EnumValues=None, FieldChoice=None, FieldTypeId=None, FieldValue=None, FixedBits=None, FormattedFieldValue=None, FullMesh=None, Length=None, Level=None, MaxValue=None, MinValue=None, Name=None, Offset=None, OffsetFromRoot=None, OnTheFlyMask=None, Optional=None, OptionalEnabled=None, RandomMask=None, RateVaried=None, ReadOnly=None, RequiresUdf=None, Seed=None, SingleValue=None, StartValue=None, StepValue=None, SupportsAuto=None, SupportsNonRepeatableRandom=None, SupportsOnTheFlyMask=None, SupportsRepeatableRandomRange=None, TrackingEnabled=None, ValueFormat=None, ValueList=None, ValueType=None):
         """Finds and retrieves field resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve field resources from the server.
@@ -479,7 +520,7 @@ class Field(Base):
 
         Args
         ----
-        - __id__ (str): An alphanumeric string that defines the internal field ID.
+        - Id__ (str): An alphanumeric string that defines the internal field ID.
         - ActiveFieldChoice (bool): It is used to select a particular option out of multiple field choice options. The activeFieldChoice will be true only for the fields of the option which is active in GUI.
         - Auto (bool): If true, value for the particular field is considered automatically. If false, user can set values for the particular field.
         - CountValue (str): It is used to get the count value of the field.
@@ -527,7 +568,7 @@ class Field(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of field data from the server.

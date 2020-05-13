@@ -31,6 +31,17 @@ class Tracking(Base):
 
     __slots__ = ()
     _SDM_NAME = 'tracking'
+    _SDM_ATT_MAP = {
+        'AvailableProtocolOffsets': 'availableProtocolOffsets',
+        'AvailableTrackBy': 'availableTrackBy',
+        'AvailableTrackByInfos': 'availableTrackByInfos',
+        'FieldWidth': 'fieldWidth',
+        'Offset': 'offset',
+        'OneToOneMesh': 'oneToOneMesh',
+        'ProtocolOffset': 'protocolOffset',
+        'TrackBy': 'trackBy',
+        'Values': 'values',
+    }
 
     def __init__(self, parent):
         super(Tracking, self).__init__(parent)
@@ -70,7 +81,7 @@ class Tracking(Base):
         -------
         - list(str): Specifies the available Protocol Offsets when the Flows of a Traffic Item are tracked by Custom Override.
         """
-        return self._get_attribute('availableProtocolOffsets')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableProtocolOffsets'])
 
     @property
     def AvailableTrackBy(self):
@@ -79,7 +90,7 @@ class Tracking(Base):
         -------
         - list(str): Returns list of available tracking field ids
         """
-        return self._get_attribute('availableTrackBy')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableTrackBy'])
 
     @property
     def AvailableTrackByInfos(self):
@@ -88,7 +99,7 @@ class Tracking(Base):
         -------
         - list(dict(arg1:str,arg2:str)): Returns list of tracking fields with id/displayname
         """
-        return self._get_attribute('availableTrackByInfos')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableTrackByInfos'])
 
     @property
     def FieldWidth(self):
@@ -97,10 +108,10 @@ class Tracking(Base):
         -------
         - str(eightBits | sixteenBits | thirtyTwoBits | twentyFourBits): Specifies the Field Width when the flows of a Traffic Item are tracked by Custom Override.
         """
-        return self._get_attribute('fieldWidth')
+        return self._get_attribute(self._SDM_ATT_MAP['FieldWidth'])
     @FieldWidth.setter
     def FieldWidth(self, value):
-        self._set_attribute('fieldWidth', value)
+        self._set_attribute(self._SDM_ATT_MAP['FieldWidth'], value)
 
     @property
     def Offset(self):
@@ -109,10 +120,10 @@ class Tracking(Base):
         -------
         - number: Specifies the Offset when the Flows of a Traffic Item are tracked by Custom Override.
         """
-        return self._get_attribute('offset')
+        return self._get_attribute(self._SDM_ATT_MAP['Offset'])
     @Offset.setter
     def Offset(self, value):
-        self._set_attribute('offset', value)
+        self._set_attribute(self._SDM_ATT_MAP['Offset'], value)
 
     @property
     def OneToOneMesh(self):
@@ -121,10 +132,10 @@ class Tracking(Base):
         -------
         - bool: If true, one-one mesh is enabled when flows of a traffic item are tracked by Custom Override.
         """
-        return self._get_attribute('oneToOneMesh')
+        return self._get_attribute(self._SDM_ATT_MAP['OneToOneMesh'])
     @OneToOneMesh.setter
     def OneToOneMesh(self, value):
-        self._set_attribute('oneToOneMesh', value)
+        self._set_attribute(self._SDM_ATT_MAP['OneToOneMesh'], value)
 
     @property
     def ProtocolOffset(self):
@@ -133,10 +144,10 @@ class Tracking(Base):
         -------
         - str: Specifies the Protocol Offset when flows of a Traffic Item are tracked by Custom Override.
         """
-        return self._get_attribute('protocolOffset')
+        return self._get_attribute(self._SDM_ATT_MAP['ProtocolOffset'])
     @ProtocolOffset.setter
     def ProtocolOffset(self, value):
-        self._set_attribute('protocolOffset', value)
+        self._set_attribute(self._SDM_ATT_MAP['ProtocolOffset'], value)
 
     @property
     def TrackBy(self):
@@ -145,10 +156,10 @@ class Tracking(Base):
         -------
         - list(str): Specifies the tracking option by which the Flows of a Traffic Item are tracked.
         """
-        return self._get_attribute('trackBy')
+        return self._get_attribute(self._SDM_ATT_MAP['TrackBy'])
     @TrackBy.setter
     def TrackBy(self, value):
-        self._set_attribute('trackBy', value)
+        self._set_attribute(self._SDM_ATT_MAP['TrackBy'], value)
 
     @property
     def Values(self):
@@ -157,10 +168,10 @@ class Tracking(Base):
         -------
         - list(str): Specifies the Values when the Flows of a Traffic Item are tracked by Custom Override.
         """
-        return self._get_attribute('values')
+        return self._get_attribute(self._SDM_ATT_MAP['Values'])
     @Values.setter
     def Values(self, value):
-        self._set_attribute('values', value)
+        self._set_attribute(self._SDM_ATT_MAP['Values'], value)
 
     def update(self, FieldWidth=None, Offset=None, OneToOneMesh=None, ProtocolOffset=None, TrackBy=None, Values=None):
         """Updates tracking resource on the server.
@@ -178,7 +189,7 @@ class Tracking(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, AvailableProtocolOffsets=None, AvailableTrackBy=None, AvailableTrackByInfos=None, FieldWidth=None, Offset=None, OneToOneMesh=None, ProtocolOffset=None, TrackBy=None, Values=None):
         """Finds and retrieves tracking resources from the server.
@@ -207,7 +218,7 @@ class Tracking(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of tracking data from the server.

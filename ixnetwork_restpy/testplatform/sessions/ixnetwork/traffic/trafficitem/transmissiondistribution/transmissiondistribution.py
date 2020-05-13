@@ -31,6 +31,12 @@ class TransmissionDistribution(Base):
 
     __slots__ = ()
     _SDM_NAME = 'transmissionDistribution'
+    _SDM_ATT_MAP = {
+        'AvailableDistributions': 'availableDistributions',
+        'AvailableDistributionsSet': 'availableDistributionsSet',
+        'Distributions': 'distributions',
+        'DistributionsDisplayNames': 'distributionsDisplayNames',
+    }
 
     def __init__(self, parent):
         super(TransmissionDistribution, self).__init__(parent)
@@ -42,7 +48,7 @@ class TransmissionDistribution(Base):
         -------
         - list(str): Indicates the available transmission distributions for the traffic streams.
         """
-        return self._get_attribute('availableDistributions')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableDistributions'])
 
     @property
     def AvailableDistributionsSet(self):
@@ -51,7 +57,7 @@ class TransmissionDistribution(Base):
         -------
         - list(dict(arg1:str,arg2:str)): Returns user friendly list of distribution fields
         """
-        return self._get_attribute('availableDistributionsSet')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableDistributionsSet'])
 
     @property
     def Distributions(self):
@@ -60,10 +66,10 @@ class TransmissionDistribution(Base):
         -------
         - list(str): Indicates the predefined size distribution based on size and weight.
         """
-        return self._get_attribute('distributions')
+        return self._get_attribute(self._SDM_ATT_MAP['Distributions'])
     @Distributions.setter
     def Distributions(self, value):
-        self._set_attribute('distributions', value)
+        self._set_attribute(self._SDM_ATT_MAP['Distributions'], value)
 
     @property
     def DistributionsDisplayNames(self):
@@ -72,7 +78,7 @@ class TransmissionDistribution(Base):
         -------
         - list(str): Returns user friendly list of distribution fields
         """
-        return self._get_attribute('distributionsDisplayNames')
+        return self._get_attribute(self._SDM_ATT_MAP['DistributionsDisplayNames'])
 
     def update(self, Distributions=None):
         """Updates transmissionDistribution resource on the server.
@@ -85,7 +91,7 @@ class TransmissionDistribution(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, AvailableDistributions=None, AvailableDistributionsSet=None, Distributions=None, DistributionsDisplayNames=None):
         """Finds and retrieves transmissionDistribution resources from the server.
@@ -109,7 +115,7 @@ class TransmissionDistribution(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of transmissionDistribution data from the server.

@@ -30,6 +30,11 @@ class Ethernet(Base):
 
     __slots__ = ()
     _SDM_NAME = 'ethernet'
+    _SDM_ATT_MAP = {
+        'MacAddress': 'macAddress',
+        'Mtu': 'mtu',
+        'UidFromMac': 'uidFromMac',
+    }
 
     def __init__(self, parent):
         super(Ethernet, self).__init__(parent)
@@ -41,10 +46,10 @@ class Ethernet(Base):
         -------
         - str: A 48-bit hardware address that uniquely identifies each node of a network.
         """
-        return self._get_attribute('macAddress')
+        return self._get_attribute(self._SDM_ATT_MAP['MacAddress'])
     @MacAddress.setter
     def MacAddress(self, value):
-        self._set_attribute('macAddress', value)
+        self._set_attribute(self._SDM_ATT_MAP['MacAddress'], value)
 
     @property
     def Mtu(self):
@@ -53,10 +58,10 @@ class Ethernet(Base):
         -------
         - number: The maximum packet size, in bytes, that a particular interface can handle.
         """
-        return self._get_attribute('mtu')
+        return self._get_attribute(self._SDM_ATT_MAP['Mtu'])
     @Mtu.setter
     def Mtu(self, value):
-        self._set_attribute('mtu', value)
+        self._set_attribute(self._SDM_ATT_MAP['Mtu'], value)
 
     @property
     def UidFromMac(self):
@@ -65,10 +70,10 @@ class Ethernet(Base):
         -------
         - bool: The interface identifier is derived from the MAC address. The interface identifier u (universal/local) bit will be set to zero to indicate global scope.
         """
-        return self._get_attribute('uidFromMac')
+        return self._get_attribute(self._SDM_ATT_MAP['UidFromMac'])
     @UidFromMac.setter
     def UidFromMac(self, value):
-        self._set_attribute('uidFromMac', value)
+        self._set_attribute(self._SDM_ATT_MAP['UidFromMac'], value)
 
     def update(self, MacAddress=None, Mtu=None, UidFromMac=None):
         """Updates ethernet resource on the server.
@@ -83,4 +88,4 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

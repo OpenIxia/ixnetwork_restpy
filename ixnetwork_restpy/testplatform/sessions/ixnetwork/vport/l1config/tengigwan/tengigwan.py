@@ -30,6 +30,20 @@ class TenGigWan(Base):
 
     __slots__ = ()
     _SDM_NAME = 'tenGigWan'
+    _SDM_ATT_MAP = {
+        'AutoInstrumentation': 'autoInstrumentation',
+        'C2Expected': 'c2Expected',
+        'C2Tx': 'c2Tx',
+        'EnablePPM': 'enablePPM',
+        'EnabledFlowControl': 'enabledFlowControl',
+        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
+        'IfsStretch': 'ifsStretch',
+        'InterfaceType': 'interfaceType',
+        'Loopback': 'loopback',
+        'Ppm': 'ppm',
+        'TransmitClocking': 'transmitClocking',
+        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
+    }
 
     def __init__(self, parent):
         super(TenGigWan, self).__init__(parent)
@@ -39,13 +53,13 @@ class TenGigWan(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengigwan.fcoe.fcoe.Fcoe): An instance of the Fcoe class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.fcoe.fcoe.Fcoe): An instance of the Fcoe class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengigwan.fcoe.fcoe import Fcoe
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.fcoe.fcoe import Fcoe
         return Fcoe(self)._select()
 
     @property
@@ -53,13 +67,13 @@ class TenGigWan(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengigwan.txlane.txlane.TxLane): An instance of the TxLane class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.txlane.txlane.TxLane): An instance of the TxLane class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengigwan.txlane.txlane import TxLane
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.txlane.txlane import TxLane
         return TxLane(self)._select()
 
     @property
@@ -69,10 +83,10 @@ class TenGigWan(Base):
         -------
         - str(endOfFrame | floating): The auto instrumentation mode.
         """
-        return self._get_attribute('autoInstrumentation')
+        return self._get_attribute(self._SDM_ATT_MAP['AutoInstrumentation'])
     @AutoInstrumentation.setter
     def AutoInstrumentation(self, value):
-        self._set_attribute('autoInstrumentation', value)
+        self._set_attribute(self._SDM_ATT_MAP['AutoInstrumentation'], value)
 
     @property
     def C2Expected(self):
@@ -81,10 +95,10 @@ class TenGigWan(Base):
         -------
         - number: The expected value of the link partner's C2 byte. Typically, this will match the value in the Transmit field. (Hex). The default value is 0x24 (hex).
         """
-        return self._get_attribute('c2Expected')
+        return self._get_attribute(self._SDM_ATT_MAP['C2Expected'])
     @C2Expected.setter
     def C2Expected(self, value):
-        self._set_attribute('c2Expected', value)
+        self._set_attribute(self._SDM_ATT_MAP['C2Expected'], value)
 
     @property
     def C2Tx(self):
@@ -93,10 +107,10 @@ class TenGigWan(Base):
         -------
         - number: The value of the C2 byte in the transmitted stream. (Hex) The default value is 0x24 (hex).
         """
-        return self._get_attribute('c2Tx')
+        return self._get_attribute(self._SDM_ATT_MAP['C2Tx'])
     @C2Tx.setter
     def C2Tx(self, value):
-        self._set_attribute('c2Tx', value)
+        self._set_attribute(self._SDM_ATT_MAP['C2Tx'], value)
 
     @property
     def EnablePPM(self):
@@ -105,10 +119,10 @@ class TenGigWan(Base):
         -------
         - bool: If true, enables the portsppm.
         """
-        return self._get_attribute('enablePPM')
+        return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
     @EnablePPM.setter
     def EnablePPM(self, value):
-        self._set_attribute('enablePPM', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnablePPM'], value)
 
     @property
     def EnabledFlowControl(self):
@@ -117,10 +131,10 @@ class TenGigWan(Base):
         -------
         - bool: Enables the port's MAC Flow control mechanisms to listen for a directed address pause message.
         """
-        return self._get_attribute('enabledFlowControl')
+        return self._get_attribute(self._SDM_ATT_MAP['EnabledFlowControl'])
     @EnabledFlowControl.setter
     def EnabledFlowControl(self, value):
-        self._set_attribute('enabledFlowControl', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnabledFlowControl'], value)
 
     @property
     def FlowControlDirectedAddress(self):
@@ -129,10 +143,10 @@ class TenGigWan(Base):
         -------
         - str: This is the 48-bit MAC address that the port will listen on for a directed pause message.
         """
-        return self._get_attribute('flowControlDirectedAddress')
+        return self._get_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'])
     @FlowControlDirectedAddress.setter
     def FlowControlDirectedAddress(self, value):
-        self._set_attribute('flowControlDirectedAddress', value)
+        self._set_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'], value)
 
     @property
     def IfsStretch(self):
@@ -141,10 +155,10 @@ class TenGigWan(Base):
         -------
         - bool: If checked, indicates the ifsStretch as the desired mode of operation. The IFS Stretch ratio determines the number of bits in a frame that require one octet of Inter Frame Spacing Extension.
         """
-        return self._get_attribute('ifsStretch')
+        return self._get_attribute(self._SDM_ATT_MAP['IfsStretch'])
     @IfsStretch.setter
     def IfsStretch(self, value):
-        self._set_attribute('ifsStretch', value)
+        self._set_attribute(self._SDM_ATT_MAP['IfsStretch'], value)
 
     @property
     def InterfaceType(self):
@@ -153,10 +167,10 @@ class TenGigWan(Base):
         -------
         - str(wanSdh | wanSonet): The 10G WAN interface type for the port.
         """
-        return self._get_attribute('interfaceType')
+        return self._get_attribute(self._SDM_ATT_MAP['InterfaceType'])
     @InterfaceType.setter
     def InterfaceType(self, value):
-        self._set_attribute('interfaceType', value)
+        self._set_attribute(self._SDM_ATT_MAP['InterfaceType'], value)
 
     @property
     def Loopback(self):
@@ -165,10 +179,10 @@ class TenGigWan(Base):
         -------
         - bool: If enabled, the port is set to internally loopback from transmit to receive.
         """
-        return self._get_attribute('loopback')
+        return self._get_attribute(self._SDM_ATT_MAP['Loopback'])
     @Loopback.setter
     def Loopback(self, value):
-        self._set_attribute('loopback', value)
+        self._set_attribute(self._SDM_ATT_MAP['Loopback'], value)
 
     @property
     def Ppm(self):
@@ -177,10 +191,10 @@ class TenGigWan(Base):
         -------
         - number: Indicates the value that needs to be adjusted for the line transmit frequency.
         """
-        return self._get_attribute('ppm')
+        return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
     @Ppm.setter
     def Ppm(self, value):
-        self._set_attribute('ppm', value)
+        self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
     def TransmitClocking(self):
@@ -189,10 +203,10 @@ class TenGigWan(Base):
         -------
         - str(external | internal | recovered): The transmit clocking type for this 10G WAN port.
         """
-        return self._get_attribute('transmitClocking')
+        return self._get_attribute(self._SDM_ATT_MAP['TransmitClocking'])
     @TransmitClocking.setter
     def TransmitClocking(self, value):
-        self._set_attribute('transmitClocking', value)
+        self._set_attribute(self._SDM_ATT_MAP['TransmitClocking'], value)
 
     @property
     def TxIgnoreRxLinkFaults(self):
@@ -201,10 +215,10 @@ class TenGigWan(Base):
         -------
         - bool: If enabled, will allow transmission of packets even if the receive link is down.
         """
-        return self._get_attribute('txIgnoreRxLinkFaults')
+        return self._get_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'])
     @TxIgnoreRxLinkFaults.setter
     def TxIgnoreRxLinkFaults(self, value):
-        self._set_attribute('txIgnoreRxLinkFaults', value)
+        self._set_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'], value)
 
     def update(self, AutoInstrumentation=None, C2Expected=None, C2Tx=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, IfsStretch=None, InterfaceType=None, Loopback=None, Ppm=None, TransmitClocking=None, TxIgnoreRxLinkFaults=None):
         """Updates tenGigWan resource on the server.
@@ -228,4 +242,4 @@ class TenGigWan(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

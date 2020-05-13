@@ -32,6 +32,13 @@ class NacPosture(Base):
 
     __slots__ = ()
     _SDM_NAME = 'nacPosture'
+    _SDM_ATT_MAP = {
+        'ExpectedSystemToken': 'expectedSystemToken',
+        'NacTlvs': 'nacTlvs',
+        'Name': 'name',
+        'ObjectId': 'objectId',
+        'Selected': 'selected',
+    }
 
     def __init__(self, parent):
         super(NacPosture, self).__init__(parent)
@@ -43,10 +50,10 @@ class NacPosture(Base):
         -------
         - number: Expected System Token.
         """
-        return self._get_attribute('expectedSystemToken')
+        return self._get_attribute(self._SDM_ATT_MAP['ExpectedSystemToken'])
     @ExpectedSystemToken.setter
     def ExpectedSystemToken(self, value):
-        self._set_attribute('expectedSystemToken', value)
+        self._set_attribute(self._SDM_ATT_MAP['ExpectedSystemToken'], value)
 
     @property
     def NacTlvs(self):
@@ -55,10 +62,10 @@ class NacPosture(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/globals/.../nacTlv]): List of NacTLVs.
         """
-        return self._get_attribute('nacTlvs')
+        return self._get_attribute(self._SDM_ATT_MAP['NacTlvs'])
     @NacTlvs.setter
     def NacTlvs(self, value):
-        self._set_attribute('nacTlvs', value)
+        self._set_attribute(self._SDM_ATT_MAP['NacTlvs'], value)
 
     @property
     def Name(self):
@@ -67,10 +74,10 @@ class NacPosture(Base):
         -------
         - str: Unique name for this NAC Posture.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
@@ -79,7 +86,7 @@ class NacPosture(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def Selected(self):
@@ -88,10 +95,10 @@ class NacPosture(Base):
         -------
         - bool: Add to postures list.
         """
-        return self._get_attribute('selected')
+        return self._get_attribute(self._SDM_ATT_MAP['Selected'])
     @Selected.setter
     def Selected(self, value):
-        self._set_attribute('selected', value)
+        self._set_attribute(self._SDM_ATT_MAP['Selected'], value)
 
     def update(self, ExpectedSystemToken=None, NacTlvs=None, Name=None, Selected=None):
         """Updates nacPosture resource on the server.
@@ -107,7 +114,7 @@ class NacPosture(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ExpectedSystemToken=None, NacTlvs=None, Name=None, Selected=None):
         """Adds a new nacPosture resource on the server and adds it to the container.
@@ -127,7 +134,7 @@ class NacPosture(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained nacPosture resources in this instance from the server.
@@ -162,7 +169,7 @@ class NacPosture(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of nacPosture data from the server.

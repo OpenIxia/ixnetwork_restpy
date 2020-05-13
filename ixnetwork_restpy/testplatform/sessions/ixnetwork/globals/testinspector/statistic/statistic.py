@@ -32,6 +32,14 @@ class Statistic(Base):
 
     __slots__ = ()
     _SDM_NAME = 'statistic'
+    _SDM_ATT_MAP = {
+        'Enable': 'enable',
+        'Name': 'name',
+        'Notes': 'notes',
+        'Operator': 'operator',
+        'Unit': 'unit',
+        'Value': 'value',
+    }
 
     def __init__(self, parent):
         super(Statistic, self).__init__(parent)
@@ -43,10 +51,10 @@ class Statistic(Base):
         -------
         - bool: Enable/Disable monitoring for the current statistic.
         """
-        return self._get_attribute('enable')
+        return self._get_attribute(self._SDM_ATT_MAP['Enable'])
     @Enable.setter
     def Enable(self, value):
-        self._set_attribute('enable', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enable'], value)
 
     @property
     def Name(self):
@@ -55,7 +63,7 @@ class Statistic(Base):
         -------
         - str: The name of the statistic that is being monitored.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
 
     @property
     def Notes(self):
@@ -64,7 +72,7 @@ class Statistic(Base):
         -------
         - str: Additional notes that explain what is being monitored for this statistic.
         """
-        return self._get_attribute('notes')
+        return self._get_attribute(self._SDM_ATT_MAP['Notes'])
 
     @property
     def Operator(self):
@@ -73,7 +81,7 @@ class Statistic(Base):
         -------
         - str: The operator that is being used to compare the actual value of the statistic with the configured threshold.
         """
-        return self._get_attribute('operator')
+        return self._get_attribute(self._SDM_ATT_MAP['Operator'])
 
     @property
     def Unit(self):
@@ -82,7 +90,7 @@ class Statistic(Base):
         -------
         - str: The measurement unit being used for this statistic.
         """
-        return self._get_attribute('unit')
+        return self._get_attribute(self._SDM_ATT_MAP['Unit'])
 
     @property
     def Value(self):
@@ -91,10 +99,10 @@ class Statistic(Base):
         -------
         - number: The threshold for the current statistic. Exceeding this value will trigger a warning if monitoring is enabled for this statistic.
         """
-        return self._get_attribute('value')
+        return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
-        self._set_attribute('value', value)
+        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Enable=None, Value=None):
         """Updates statistic resource on the server.
@@ -108,7 +116,7 @@ class Statistic(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enable=None, Value=None):
         """Adds a new statistic resource on the server and adds it to the container.
@@ -126,7 +134,7 @@ class Statistic(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained statistic resources in this instance from the server.
@@ -162,7 +170,7 @@ class Statistic(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of statistic data from the server.

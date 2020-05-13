@@ -30,6 +30,9 @@ class MultipleJoinLeaveLatency(Base):
 
     __slots__ = ()
     _SDM_NAME = 'multipleJoinLeaveLatency'
+    _SDM_ATT_MAP = {
+        'Enabled': 'enabled',
+    }
 
     def __init__(self, parent):
         super(MultipleJoinLeaveLatency, self).__init__(parent)
@@ -41,10 +44,10 @@ class MultipleJoinLeaveLatency(Base):
         -------
         - bool: If true enables multiple join leave latency.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     def update(self, Enabled=None):
         """Updates multipleJoinLeaveLatency resource on the server.
@@ -57,4 +60,4 @@ class MultipleJoinLeaveLatency(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

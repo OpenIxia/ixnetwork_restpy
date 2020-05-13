@@ -30,6 +30,11 @@ class Licensing(Base):
 
     __slots__ = ()
     _SDM_NAME = 'licensing'
+    _SDM_ATT_MAP = {
+        'LicensingServers': 'licensingServers',
+        'Mode': 'mode',
+        'Tier': 'tier',
+    }
 
     def __init__(self, parent):
         super(Licensing, self).__init__(parent)
@@ -41,10 +46,10 @@ class Licensing(Base):
         -------
         - list(str): List of license servers to use
         """
-        return self._get_attribute('licensingServers')
+        return self._get_attribute(self._SDM_ATT_MAP['LicensingServers'])
     @LicensingServers.setter
     def LicensingServers(self, value):
-        self._set_attribute('licensingServers', value)
+        self._set_attribute(self._SDM_ATT_MAP['LicensingServers'], value)
 
     @property
     def Mode(self):
@@ -53,10 +58,10 @@ class Licensing(Base):
         -------
         - str(mixed | perpetual | subscription): Set license mode to either perpetual or subscription
         """
-        return self._get_attribute('mode')
+        return self._get_attribute(self._SDM_ATT_MAP['Mode'])
     @Mode.setter
     def Mode(self, value):
-        self._set_attribute('mode', value)
+        self._set_attribute(self._SDM_ATT_MAP['Mode'], value)
 
     @property
     def Tier(self):
@@ -65,10 +70,10 @@ class Licensing(Base):
         -------
         - str: set or get the tier level, using the tier ID. Available IDs are: tier3-10g, tier3, tier2, tier1
         """
-        return self._get_attribute('tier')
+        return self._get_attribute(self._SDM_ATT_MAP['Tier'])
     @Tier.setter
     def Tier(self, value):
-        self._set_attribute('tier', value)
+        self._set_attribute(self._SDM_ATT_MAP['Tier'], value)
 
     def update(self, LicensingServers=None, Mode=None, Tier=None):
         """Updates licensing resource on the server.
@@ -83,4 +88,4 @@ class Licensing(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

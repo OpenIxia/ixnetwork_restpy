@@ -32,6 +32,13 @@ class Hypervisor(Base):
 
     __slots__ = ()
     _SDM_NAME = 'hypervisor'
+    _SDM_ATT_MAP = {
+        'Enabled': 'enabled',
+        'Password': 'password',
+        'ServerIp': 'serverIp',
+        'Type': 'type',
+        'User': 'user',
+    }
 
     def __init__(self, parent):
         super(Hypervisor, self).__init__(parent)
@@ -43,10 +50,10 @@ class Hypervisor(Base):
         -------
         - bool: If true the hypervisor is enabled
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Password(self):
@@ -55,10 +62,10 @@ class Hypervisor(Base):
         -------
         - str: Represents the hypervisor password
         """
-        return self._get_attribute('password')
+        return self._get_attribute(self._SDM_ATT_MAP['Password'])
     @Password.setter
     def Password(self, value):
-        self._set_attribute('password', value)
+        self._set_attribute(self._SDM_ATT_MAP['Password'], value)
 
     @property
     def ServerIp(self):
@@ -67,10 +74,10 @@ class Hypervisor(Base):
         -------
         - str: Represents the hypervisor Ip
         """
-        return self._get_attribute('serverIp')
+        return self._get_attribute(self._SDM_ATT_MAP['ServerIp'])
     @ServerIp.setter
     def ServerIp(self, value):
-        self._set_attribute('serverIp', value)
+        self._set_attribute(self._SDM_ATT_MAP['ServerIp'], value)
 
     @property
     def Type(self):
@@ -79,10 +86,10 @@ class Hypervisor(Base):
         -------
         - str(qemu | vCenter | vmware): Represents the hypervisor host type
         """
-        return self._get_attribute('type')
+        return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
-        self._set_attribute('type', value)
+        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     @property
     def User(self):
@@ -91,10 +98,10 @@ class Hypervisor(Base):
         -------
         - str: Represents the hypervisor username
         """
-        return self._get_attribute('user')
+        return self._get_attribute(self._SDM_ATT_MAP['User'])
     @User.setter
     def User(self, value):
-        self._set_attribute('user', value)
+        self._set_attribute(self._SDM_ATT_MAP['User'], value)
 
     def update(self, Enabled=None, Password=None, ServerIp=None, Type=None, User=None):
         """Updates hypervisor resource on the server.
@@ -111,7 +118,7 @@ class Hypervisor(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, Password=None, ServerIp=None, Type=None, User=None):
         """Adds a new hypervisor resource on the server and adds it to the container.
@@ -132,7 +139,7 @@ class Hypervisor(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained hypervisor resources in this instance from the server.
@@ -167,7 +174,7 @@ class Hypervisor(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of hypervisor data from the server.

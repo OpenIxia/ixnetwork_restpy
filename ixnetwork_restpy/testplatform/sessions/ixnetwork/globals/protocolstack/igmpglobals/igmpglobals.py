@@ -32,6 +32,10 @@ class IgmpGlobals(Base):
 
     __slots__ = ()
     _SDM_NAME = 'igmpGlobals'
+    _SDM_ATT_MAP = {
+        'MaxPacketsPerSecond': 'maxPacketsPerSecond',
+        'ObjectId': 'objectId',
+    }
 
     def __init__(self, parent):
         super(IgmpGlobals, self).__init__(parent)
@@ -57,10 +61,10 @@ class IgmpGlobals(Base):
         -------
         - number: The maximum number of requests transmitted in each second.
         """
-        return self._get_attribute('maxPacketsPerSecond')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'])
     @MaxPacketsPerSecond.setter
     def MaxPacketsPerSecond(self, value):
-        self._set_attribute('maxPacketsPerSecond', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'], value)
 
     @property
     def ObjectId(self):
@@ -69,7 +73,7 @@ class IgmpGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def update(self, MaxPacketsPerSecond=None):
         """Updates igmpGlobals resource on the server.
@@ -82,7 +86,7 @@ class IgmpGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, MaxPacketsPerSecond=None):
         """Adds a new igmpGlobals resource on the server and adds it to the container.
@@ -99,7 +103,7 @@ class IgmpGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained igmpGlobals resources in this instance from the server.
@@ -131,7 +135,7 @@ class IgmpGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of igmpGlobals data from the server.

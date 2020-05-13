@@ -31,6 +31,9 @@ class AvailablePortFilter(Base):
 
     __slots__ = ()
     _SDM_NAME = 'availablePortFilter'
+    _SDM_ATT_MAP = {
+        'Name': 'name',
+    }
 
     def __init__(self, parent):
         super(AvailablePortFilter, self).__init__(parent)
@@ -42,7 +45,7 @@ class AvailablePortFilter(Base):
         -------
         - str: The name of the port filter.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
 
     def find(self, Name=None):
         """Finds and retrieves availablePortFilter resources from the server.
@@ -63,7 +66,7 @@ class AvailablePortFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of availablePortFilter data from the server.

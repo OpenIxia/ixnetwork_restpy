@@ -30,6 +30,10 @@ class Latency(Base):
 
     __slots__ = ()
     _SDM_NAME = 'latency'
+    _SDM_ATT_MAP = {
+        'Enabled': 'enabled',
+        'Mode': 'mode',
+    }
 
     def __init__(self, parent):
         super(Latency, self).__init__(parent)
@@ -41,10 +45,10 @@ class Latency(Base):
         -------
         - bool: If true, latency statistics is enabled and if false, latency statistics is disabled.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Mode(self):
@@ -53,10 +57,10 @@ class Latency(Base):
         -------
         - str(cutThrough | forwardingDelay | mef | storeForward): Latency statistics is generated according to the mode set if latency is enabled.
         """
-        return self._get_attribute('mode')
+        return self._get_attribute(self._SDM_ATT_MAP['Mode'])
     @Mode.setter
     def Mode(self, value):
-        self._set_attribute('mode', value)
+        self._set_attribute(self._SDM_ATT_MAP['Mode'], value)
 
     def update(self, Enabled=None, Mode=None):
         """Updates latency resource on the server.
@@ -70,4 +74,4 @@ class Latency(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

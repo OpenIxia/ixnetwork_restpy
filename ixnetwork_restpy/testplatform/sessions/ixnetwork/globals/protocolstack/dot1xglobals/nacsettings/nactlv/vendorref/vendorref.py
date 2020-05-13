@@ -30,6 +30,11 @@ class VendorRef(Base):
 
     __slots__ = ()
     _SDM_NAME = 'vendorRef'
+    _SDM_ATT_MAP = {
+        'Name': 'name',
+        'ObjectId': 'objectId',
+        'Value': 'value',
+    }
 
     def __init__(self, parent):
         super(VendorRef, self).__init__(parent)
@@ -55,10 +60,10 @@ class VendorRef(Base):
         -------
         - str: Vendor Name.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
@@ -67,7 +72,7 @@ class VendorRef(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def Value(self):
@@ -76,10 +81,10 @@ class VendorRef(Base):
         -------
         - number: Vendor ID.
         """
-        return self._get_attribute('value')
+        return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
-        self._set_attribute('value', value)
+        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Name=None, Value=None):
         """Updates vendorRef resource on the server.
@@ -93,4 +98,4 @@ class VendorRef(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

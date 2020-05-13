@@ -32,6 +32,32 @@ class FcoeClientGlobals(Base):
 
     __slots__ = ()
     _SDM_NAME = 'fcoeClientGlobals'
+    _SDM_ATT_MAP = {
+        'AcceptPartialConfig': 'acceptPartialConfig',
+        'B2bRxSize': 'b2bRxSize',
+        'DcbxTimeout': 'dcbxTimeout',
+        'FipAdvertisementPeriod': 'fipAdvertisementPeriod',
+        'FipFcfMacListCollection': 'fipFcfMacListCollection',
+        'FipFcfMacListCollectionInterval': 'fipFcfMacListCollectionInterval',
+        'FipOverrideAdvertisementPeriod': 'fipOverrideAdvertisementPeriod',
+        'FipOverrideVnportKeepAlivePeriod': 'fipOverrideVnportKeepAlivePeriod',
+        'FipProposeMacInFpma': 'fipProposeMacInFpma',
+        'FipResetDiscovery': 'fipResetDiscovery',
+        'FipResetNumRetry': 'fipResetNumRetry',
+        'FipRestartOnSessionDown': 'fipRestartOnSessionDown',
+        'FipSendKeepAlives': 'fipSendKeepAlives',
+        'FipVersion': 'fipVersion',
+        'FipVlanDiscWithNameId': 'fipVlanDiscWithNameId',
+        'FipVnportKeepAlivePeriod': 'fipVnportKeepAlivePeriod',
+        'IgnoreDuplicateMacDescriptors': 'ignoreDuplicateMacDescriptors',
+        'MaxFcoeSize': 'maxFcoeSize',
+        'MaxPacketsPerSecond': 'maxPacketsPerSecond',
+        'MaxRetries': 'maxRetries',
+        'ObjectId': 'objectId',
+        'RetryInterval': 'retryInterval',
+        'SetupRate': 'setupRate',
+        'TeardownRate': 'teardownRate',
+    }
 
     def __init__(self, parent):
         super(FcoeClientGlobals, self).__init__(parent)
@@ -57,10 +83,10 @@ class FcoeClientGlobals(Base):
         -------
         - bool: This flag controls how the negotiation process reports success or failure.When is true the plugin reports success if at least one session is established.When is false the plugin reports success only if all sessions are established.
         """
-        return self._get_attribute('acceptPartialConfig')
+        return self._get_attribute(self._SDM_ATT_MAP['AcceptPartialConfig'])
     @AcceptPartialConfig.setter
     def AcceptPartialConfig(self, value):
-        self._set_attribute('acceptPartialConfig', value)
+        self._set_attribute(self._SDM_ATT_MAP['AcceptPartialConfig'], value)
 
     @property
     def B2bRxSize(self):
@@ -69,10 +95,10 @@ class FcoeClientGlobals(Base):
         -------
         - number: The buffer-to-buffer receive data field size in bytes.
         """
-        return self._get_attribute('b2bRxSize')
+        return self._get_attribute(self._SDM_ATT_MAP['B2bRxSize'])
     @B2bRxSize.setter
     def B2bRxSize(self, value):
-        self._set_attribute('b2bRxSize', value)
+        self._set_attribute(self._SDM_ATT_MAP['B2bRxSize'], value)
 
     @property
     def DcbxTimeout(self):
@@ -81,10 +107,10 @@ class FcoeClientGlobals(Base):
         -------
         - number: The number of seconds to wait for DCBX to negotiate.
         """
-        return self._get_attribute('dcbxTimeout')
+        return self._get_attribute(self._SDM_ATT_MAP['DcbxTimeout'])
     @DcbxTimeout.setter
     def DcbxTimeout(self, value):
-        self._set_attribute('dcbxTimeout', value)
+        self._set_attribute(self._SDM_ATT_MAP['DcbxTimeout'], value)
 
     @property
     def FipAdvertisementPeriod(self):
@@ -93,10 +119,10 @@ class FcoeClientGlobals(Base):
         -------
         - number: The interval in seconds between periodic Discovery Advertisements and ENode FIP Keep-Alive messages.The default value is 8. Valid values are in the range 1 to 90.
         """
-        return self._get_attribute('fipAdvertisementPeriod')
+        return self._get_attribute(self._SDM_ATT_MAP['FipAdvertisementPeriod'])
     @FipAdvertisementPeriod.setter
     def FipAdvertisementPeriod(self, value):
-        self._set_attribute('fipAdvertisementPeriod', value)
+        self._set_attribute(self._SDM_ATT_MAP['FipAdvertisementPeriod'], value)
 
     @property
     def FipFcfMacListCollection(self):
@@ -105,10 +131,10 @@ class FcoeClientGlobals(Base):
         -------
         - bool: Allow Ixia emulated ENodes to collect FCF-MAC address info and show details at per-session stats.
         """
-        return self._get_attribute('fipFcfMacListCollection')
+        return self._get_attribute(self._SDM_ATT_MAP['FipFcfMacListCollection'])
     @FipFcfMacListCollection.setter
     def FipFcfMacListCollection(self, value):
-        self._set_attribute('fipFcfMacListCollection', value)
+        self._set_attribute(self._SDM_ATT_MAP['FipFcfMacListCollection'], value)
 
     @property
     def FipFcfMacListCollectionInterval(self):
@@ -117,10 +143,10 @@ class FcoeClientGlobals(Base):
         -------
         - number: The amount of time in seconds given to the Ixia emulated ENodes to receive FIP Discovery Advertisements from different FCF-MACs.
         """
-        return self._get_attribute('fipFcfMacListCollectionInterval')
+        return self._get_attribute(self._SDM_ATT_MAP['FipFcfMacListCollectionInterval'])
     @FipFcfMacListCollectionInterval.setter
     def FipFcfMacListCollectionInterval(self, value):
-        self._set_attribute('fipFcfMacListCollectionInterval', value)
+        self._set_attribute(self._SDM_ATT_MAP['FipFcfMacListCollectionInterval'], value)
 
     @property
     def FipOverrideAdvertisementPeriod(self):
@@ -129,10 +155,10 @@ class FcoeClientGlobals(Base):
         -------
         - bool: If enabled, the Discovery Advertisement period will be specified by the application.
         """
-        return self._get_attribute('fipOverrideAdvertisementPeriod')
+        return self._get_attribute(self._SDM_ATT_MAP['FipOverrideAdvertisementPeriod'])
     @FipOverrideAdvertisementPeriod.setter
     def FipOverrideAdvertisementPeriod(self, value):
-        self._set_attribute('fipOverrideAdvertisementPeriod', value)
+        self._set_attribute(self._SDM_ATT_MAP['FipOverrideAdvertisementPeriod'], value)
 
     @property
     def FipOverrideVnportKeepAlivePeriod(self):
@@ -141,10 +167,10 @@ class FcoeClientGlobals(Base):
         -------
         - bool: If enabled, the VN_Port Keep-Alive period will be specified by the application.
         """
-        return self._get_attribute('fipOverrideVnportKeepAlivePeriod')
+        return self._get_attribute(self._SDM_ATT_MAP['FipOverrideVnportKeepAlivePeriod'])
     @FipOverrideVnportKeepAlivePeriod.setter
     def FipOverrideVnportKeepAlivePeriod(self, value):
-        self._set_attribute('fipOverrideVnportKeepAlivePeriod', value)
+        self._set_attribute(self._SDM_ATT_MAP['FipOverrideVnportKeepAlivePeriod'], value)
 
     @property
     def FipProposeMacInFpma(self):
@@ -153,10 +179,10 @@ class FcoeClientGlobals(Base):
         -------
         - bool: Allow Ixia emulated ENodes to propose a non-zero valid MAC address in FPMA FLOGI request.If not enabled, Ixia encodes an all zero MAC address in FPMA FLOGI request.
         """
-        return self._get_attribute('fipProposeMacInFpma')
+        return self._get_attribute(self._SDM_ATT_MAP['FipProposeMacInFpma'])
     @FipProposeMacInFpma.setter
     def FipProposeMacInFpma(self, value):
-        self._set_attribute('fipProposeMacInFpma', value)
+        self._set_attribute(self._SDM_ATT_MAP['FipProposeMacInFpma'], value)
 
     @property
     def FipResetDiscovery(self):
@@ -165,10 +191,10 @@ class FcoeClientGlobals(Base):
         -------
         - bool: Allow FIP negotiation to be reinitialized after a specified number of retries has been attempted.
         """
-        return self._get_attribute('fipResetDiscovery')
+        return self._get_attribute(self._SDM_ATT_MAP['FipResetDiscovery'])
     @FipResetDiscovery.setter
     def FipResetDiscovery(self, value):
-        self._set_attribute('fipResetDiscovery', value)
+        self._set_attribute(self._SDM_ATT_MAP['FipResetDiscovery'], value)
 
     @property
     def FipResetNumRetry(self):
@@ -177,10 +203,10 @@ class FcoeClientGlobals(Base):
         -------
         - number: The number of normal retries to be attempted before resetting the state machineand continue retrying with alternate FIP VLAN Discovery and FIP Solicitation messages.
         """
-        return self._get_attribute('fipResetNumRetry')
+        return self._get_attribute(self._SDM_ATT_MAP['FipResetNumRetry'])
     @FipResetNumRetry.setter
     def FipResetNumRetry(self, value):
-        self._set_attribute('fipResetNumRetry', value)
+        self._set_attribute(self._SDM_ATT_MAP['FipResetNumRetry'], value)
 
     @property
     def FipRestartOnSessionDown(self):
@@ -189,10 +215,10 @@ class FcoeClientGlobals(Base):
         -------
         - bool: If enabled, the port will restart FIP negotiation when the session goes down.
         """
-        return self._get_attribute('fipRestartOnSessionDown')
+        return self._get_attribute(self._SDM_ATT_MAP['FipRestartOnSessionDown'])
     @FipRestartOnSessionDown.setter
     def FipRestartOnSessionDown(self, value):
-        self._set_attribute('fipRestartOnSessionDown', value)
+        self._set_attribute(self._SDM_ATT_MAP['FipRestartOnSessionDown'], value)
 
     @property
     def FipSendKeepAlives(self):
@@ -201,10 +227,10 @@ class FcoeClientGlobals(Base):
         -------
         - bool: If enabled, the port will send ENode/VN_Port FIP Keep-Alive messages.
         """
-        return self._get_attribute('fipSendKeepAlives')
+        return self._get_attribute(self._SDM_ATT_MAP['FipSendKeepAlives'])
     @FipSendKeepAlives.setter
     def FipSendKeepAlives(self, value):
-        self._set_attribute('fipSendKeepAlives', value)
+        self._set_attribute(self._SDM_ATT_MAP['FipSendKeepAlives'], value)
 
     @property
     def FipVersion(self):
@@ -213,10 +239,10 @@ class FcoeClientGlobals(Base):
         -------
         - str: The FIP version to use. Auto mode will accept same version as the negotiating party.
         """
-        return self._get_attribute('fipVersion')
+        return self._get_attribute(self._SDM_ATT_MAP['FipVersion'])
     @FipVersion.setter
     def FipVersion(self, value):
-        self._set_attribute('fipVersion', value)
+        self._set_attribute(self._SDM_ATT_MAP['FipVersion'], value)
 
     @property
     def FipVlanDiscWithNameId(self):
@@ -225,10 +251,10 @@ class FcoeClientGlobals(Base):
         -------
         - bool: Include Name_Identifier Descriptor in FIP VLAN Request messages generated by Ixia emulated ENodes.
         """
-        return self._get_attribute('fipVlanDiscWithNameId')
+        return self._get_attribute(self._SDM_ATT_MAP['FipVlanDiscWithNameId'])
     @FipVlanDiscWithNameId.setter
     def FipVlanDiscWithNameId(self, value):
-        self._set_attribute('fipVlanDiscWithNameId', value)
+        self._set_attribute(self._SDM_ATT_MAP['FipVlanDiscWithNameId'], value)
 
     @property
     def FipVnportKeepAlivePeriod(self):
@@ -237,10 +263,10 @@ class FcoeClientGlobals(Base):
         -------
         - number: The interval in seconds between periodic VN_Port FIP Keep-Alive messages.The default value is 90. Valid values are in the range 1 to 3600.
         """
-        return self._get_attribute('fipVnportKeepAlivePeriod')
+        return self._get_attribute(self._SDM_ATT_MAP['FipVnportKeepAlivePeriod'])
     @FipVnportKeepAlivePeriod.setter
     def FipVnportKeepAlivePeriod(self, value):
-        self._set_attribute('fipVnportKeepAlivePeriod', value)
+        self._set_attribute(self._SDM_ATT_MAP['FipVnportKeepAlivePeriod'], value)
 
     @property
     def IgnoreDuplicateMacDescriptors(self):
@@ -249,10 +275,10 @@ class FcoeClientGlobals(Base):
         -------
         - bool: Ignore duplicate MAC descriptors.
         """
-        return self._get_attribute('ignoreDuplicateMacDescriptors')
+        return self._get_attribute(self._SDM_ATT_MAP['IgnoreDuplicateMacDescriptors'])
     @IgnoreDuplicateMacDescriptors.setter
     def IgnoreDuplicateMacDescriptors(self, value):
-        self._set_attribute('ignoreDuplicateMacDescriptors', value)
+        self._set_attribute(self._SDM_ATT_MAP['IgnoreDuplicateMacDescriptors'], value)
 
     @property
     def MaxFcoeSize(self):
@@ -261,10 +287,10 @@ class FcoeClientGlobals(Base):
         -------
         - number: The maximum FCoE frame size in bytes.
         """
-        return self._get_attribute('maxFcoeSize')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxFcoeSize'])
     @MaxFcoeSize.setter
     def MaxFcoeSize(self, value):
-        self._set_attribute('maxFcoeSize', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxFcoeSize'], value)
 
     @property
     def MaxPacketsPerSecond(self):
@@ -273,10 +299,10 @@ class FcoeClientGlobals(Base):
         -------
         - number: The maximum number of requests transmitted in each second.
         """
-        return self._get_attribute('maxPacketsPerSecond')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'])
     @MaxPacketsPerSecond.setter
     def MaxPacketsPerSecond(self, value):
-        self._set_attribute('maxPacketsPerSecond', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'], value)
 
     @property
     def MaxRetries(self):
@@ -285,10 +311,10 @@ class FcoeClientGlobals(Base):
         -------
         - number: The number of request retries for each negotiation stage in case of response timeout or error.
         """
-        return self._get_attribute('maxRetries')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxRetries'])
     @MaxRetries.setter
     def MaxRetries(self, value):
-        self._set_attribute('maxRetries', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxRetries'], value)
 
     @property
     def ObjectId(self):
@@ -297,7 +323,7 @@ class FcoeClientGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def RetryInterval(self):
@@ -306,10 +332,10 @@ class FcoeClientGlobals(Base):
         -------
         - number: The number of seconds to wait for a response before sending a new request.
         """
-        return self._get_attribute('retryInterval')
+        return self._get_attribute(self._SDM_ATT_MAP['RetryInterval'])
     @RetryInterval.setter
     def RetryInterval(self, value):
-        self._set_attribute('retryInterval', value)
+        self._set_attribute(self._SDM_ATT_MAP['RetryInterval'], value)
 
     @property
     def SetupRate(self):
@@ -318,10 +344,10 @@ class FcoeClientGlobals(Base):
         -------
         - number: The number of interfaces scheduled to be configured in each second.
         """
-        return self._get_attribute('setupRate')
+        return self._get_attribute(self._SDM_ATT_MAP['SetupRate'])
     @SetupRate.setter
     def SetupRate(self, value):
-        self._set_attribute('setupRate', value)
+        self._set_attribute(self._SDM_ATT_MAP['SetupRate'], value)
 
     @property
     def TeardownRate(self):
@@ -330,10 +356,10 @@ class FcoeClientGlobals(Base):
         -------
         - number: The number of interfaces scheduled to be deconfigured in each second.
         """
-        return self._get_attribute('teardownRate')
+        return self._get_attribute(self._SDM_ATT_MAP['TeardownRate'])
     @TeardownRate.setter
     def TeardownRate(self, value):
-        self._set_attribute('teardownRate', value)
+        self._set_attribute(self._SDM_ATT_MAP['TeardownRate'], value)
 
     def update(self, AcceptPartialConfig=None, B2bRxSize=None, DcbxTimeout=None, FipAdvertisementPeriod=None, FipFcfMacListCollection=None, FipFcfMacListCollectionInterval=None, FipOverrideAdvertisementPeriod=None, FipOverrideVnportKeepAlivePeriod=None, FipProposeMacInFpma=None, FipResetDiscovery=None, FipResetNumRetry=None, FipRestartOnSessionDown=None, FipSendKeepAlives=None, FipVersion=None, FipVlanDiscWithNameId=None, FipVnportKeepAlivePeriod=None, IgnoreDuplicateMacDescriptors=None, MaxFcoeSize=None, MaxPacketsPerSecond=None, MaxRetries=None, RetryInterval=None, SetupRate=None, TeardownRate=None):
         """Updates fcoeClientGlobals resource on the server.
@@ -368,7 +394,7 @@ class FcoeClientGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AcceptPartialConfig=None, B2bRxSize=None, DcbxTimeout=None, FipAdvertisementPeriod=None, FipFcfMacListCollection=None, FipFcfMacListCollectionInterval=None, FipOverrideAdvertisementPeriod=None, FipOverrideVnportKeepAlivePeriod=None, FipProposeMacInFpma=None, FipResetDiscovery=None, FipResetNumRetry=None, FipRestartOnSessionDown=None, FipSendKeepAlives=None, FipVersion=None, FipVlanDiscWithNameId=None, FipVnportKeepAlivePeriod=None, IgnoreDuplicateMacDescriptors=None, MaxFcoeSize=None, MaxPacketsPerSecond=None, MaxRetries=None, RetryInterval=None, SetupRate=None, TeardownRate=None):
         """Adds a new fcoeClientGlobals resource on the server and adds it to the container.
@@ -407,7 +433,7 @@ class FcoeClientGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained fcoeClientGlobals resources in this instance from the server.
@@ -461,7 +487,7 @@ class FcoeClientGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of fcoeClientGlobals data from the server.

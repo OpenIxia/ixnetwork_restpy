@@ -31,6 +31,16 @@ class Parameter(Base):
 
     __slots__ = ()
     _SDM_NAME = 'parameter'
+    _SDM_ATT_MAP = {
+        'AvailableChoices': 'availableChoices',
+        'CurrentValue': 'currentValue',
+        'CustomDefaultValue': 'customDefaultValue',
+        'DefaultValue': 'defaultValue',
+        'IsReadOnly': 'isReadOnly',
+        'MaxValue': 'maxValue',
+        'MinValue': 'minValue',
+        'Name': 'name',
+    }
 
     def __init__(self, parent):
         super(Parameter, self).__init__(parent)
@@ -42,7 +52,7 @@ class Parameter(Base):
         -------
         - list(str): Available Choices
         """
-        return self._get_attribute('availableChoices')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableChoices'])
 
     @property
     def CurrentValue(self):
@@ -51,10 +61,10 @@ class Parameter(Base):
         -------
         - str: Parameter UI Display Value
         """
-        return self._get_attribute('currentValue')
+        return self._get_attribute(self._SDM_ATT_MAP['CurrentValue'])
     @CurrentValue.setter
     def CurrentValue(self, value):
-        self._set_attribute('currentValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['CurrentValue'], value)
 
     @property
     def CustomDefaultValue(self):
@@ -63,7 +73,7 @@ class Parameter(Base):
         -------
         - str: Parameter Custom Default Value
         """
-        return self._get_attribute('customDefaultValue')
+        return self._get_attribute(self._SDM_ATT_MAP['CustomDefaultValue'])
 
     @property
     def DefaultValue(self):
@@ -72,7 +82,7 @@ class Parameter(Base):
         -------
         - str: Parameter Default Value
         """
-        return self._get_attribute('defaultValue')
+        return self._get_attribute(self._SDM_ATT_MAP['DefaultValue'])
 
     @property
     def IsReadOnly(self):
@@ -81,7 +91,7 @@ class Parameter(Base):
         -------
         - bool: Parameter value type
         """
-        return self._get_attribute('isReadOnly')
+        return self._get_attribute(self._SDM_ATT_MAP['IsReadOnly'])
 
     @property
     def MaxValue(self):
@@ -90,7 +100,7 @@ class Parameter(Base):
         -------
         - str: Parameter Maximum Value
         """
-        return self._get_attribute('maxValue')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxValue'])
 
     @property
     def MinValue(self):
@@ -99,7 +109,7 @@ class Parameter(Base):
         -------
         - str: Parameter Minimum Value
         """
-        return self._get_attribute('minValue')
+        return self._get_attribute(self._SDM_ATT_MAP['MinValue'])
 
     @property
     def Name(self):
@@ -108,7 +118,7 @@ class Parameter(Base):
         -------
         - str: Parameter Name.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
 
     def update(self, CurrentValue=None):
         """Updates parameter resource on the server.
@@ -121,7 +131,7 @@ class Parameter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, AvailableChoices=None, CurrentValue=None, CustomDefaultValue=None, DefaultValue=None, IsReadOnly=None, MaxValue=None, MinValue=None, Name=None):
         """Finds and retrieves parameter resources from the server.
@@ -149,7 +159,7 @@ class Parameter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of parameter data from the server.

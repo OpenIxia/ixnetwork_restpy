@@ -30,6 +30,10 @@ class AdvancedSequenceChecking(Base):
 
     __slots__ = ()
     _SDM_NAME = 'advancedSequenceChecking'
+    _SDM_ATT_MAP = {
+        'AdvancedSequenceThreshold': 'advancedSequenceThreshold',
+        'Enabled': 'enabled',
+    }
 
     def __init__(self, parent):
         super(AdvancedSequenceChecking, self).__init__(parent)
@@ -41,10 +45,10 @@ class AdvancedSequenceChecking(Base):
         -------
         - number: Signifies the threshold of advanced sequence
         """
-        return self._get_attribute('advancedSequenceThreshold')
+        return self._get_attribute(self._SDM_ATT_MAP['AdvancedSequenceThreshold'])
     @AdvancedSequenceThreshold.setter
     def AdvancedSequenceThreshold(self, value):
-        self._set_attribute('advancedSequenceThreshold', value)
+        self._set_attribute(self._SDM_ATT_MAP['AdvancedSequenceThreshold'], value)
 
     @property
     def Enabled(self):
@@ -53,10 +57,10 @@ class AdvancedSequenceChecking(Base):
         -------
         - bool: If true, enables advanced sequence checking
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     def update(self, AdvancedSequenceThreshold=None, Enabled=None):
         """Updates advancedSequenceChecking resource on the server.
@@ -70,4 +74,4 @@ class AdvancedSequenceChecking(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -1,5 +1,10 @@
 # Release Notes
 
+### May 2020
+* 1.0.53
+  * fixed translation of python class property names to rest api property names
+  * added update method to Multivalue.Steps class
+
 ### Apr 2020
 * 1.0.52
   * classes generated from IxNetwork build 9.00.1915.16

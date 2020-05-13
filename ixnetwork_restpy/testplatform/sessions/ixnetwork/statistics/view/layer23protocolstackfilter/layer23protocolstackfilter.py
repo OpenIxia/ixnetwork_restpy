@@ -32,6 +32,13 @@ class Layer23ProtocolStackFilter(Base):
 
     __slots__ = ()
     _SDM_NAME = 'layer23ProtocolStackFilter'
+    _SDM_ATT_MAP = {
+        'DrilldownType': 'drilldownType',
+        'NumberOfResults': 'numberOfResults',
+        'ProtocolStackFilterId': 'protocolStackFilterId',
+        'SortAscending': 'sortAscending',
+        'SortingStatistic': 'sortingStatistic',
+    }
 
     def __init__(self, parent):
         super(Layer23ProtocolStackFilter, self).__init__(parent)
@@ -43,10 +50,10 @@ class Layer23ProtocolStackFilter(Base):
         -------
         - str(perRange | perSession): Emulates perRange or perSession view based on the option seleted.
         """
-        return self._get_attribute('drilldownType')
+        return self._get_attribute(self._SDM_ATT_MAP['DrilldownType'])
     @DrilldownType.setter
     def DrilldownType(self, value):
-        self._set_attribute('drilldownType', value)
+        self._set_attribute(self._SDM_ATT_MAP['DrilldownType'], value)
 
     @property
     def NumberOfResults(self):
@@ -55,10 +62,10 @@ class Layer23ProtocolStackFilter(Base):
         -------
         - number: Number of traffic flows to be displayed.
         """
-        return self._get_attribute('numberOfResults')
+        return self._get_attribute(self._SDM_ATT_MAP['NumberOfResults'])
     @NumberOfResults.setter
     def NumberOfResults(self, value):
-        self._set_attribute('numberOfResults', value)
+        self._set_attribute(self._SDM_ATT_MAP['NumberOfResults'], value)
 
     @property
     def ProtocolStackFilterId(self):
@@ -67,10 +74,10 @@ class Layer23ProtocolStackFilter(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolStackFilter]): Selected protocol stack filters from the availableProtocolStackFilter list.
         """
-        return self._get_attribute('protocolStackFilterId')
+        return self._get_attribute(self._SDM_ATT_MAP['ProtocolStackFilterId'])
     @ProtocolStackFilterId.setter
     def ProtocolStackFilterId(self, value):
-        self._set_attribute('protocolStackFilterId', value)
+        self._set_attribute(self._SDM_ATT_MAP['ProtocolStackFilterId'], value)
 
     @property
     def SortAscending(self):
@@ -79,10 +86,10 @@ class Layer23ProtocolStackFilter(Base):
         -------
         - bool: Sets the display order of the view.
         """
-        return self._get_attribute('sortAscending')
+        return self._get_attribute(self._SDM_ATT_MAP['SortAscending'])
     @SortAscending.setter
     def SortAscending(self, value):
-        self._set_attribute('sortAscending', value)
+        self._set_attribute(self._SDM_ATT_MAP['SortAscending'], value)
 
     @property
     def SortingStatistic(self):
@@ -91,10 +98,10 @@ class Layer23ProtocolStackFilter(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../statistic): The reference statistic by which the data will be sorted in created SV.
         """
-        return self._get_attribute('sortingStatistic')
+        return self._get_attribute(self._SDM_ATT_MAP['SortingStatistic'])
     @SortingStatistic.setter
     def SortingStatistic(self, value):
-        self._set_attribute('sortingStatistic', value)
+        self._set_attribute(self._SDM_ATT_MAP['SortingStatistic'], value)
 
     def update(self, DrilldownType=None, NumberOfResults=None, ProtocolStackFilterId=None, SortAscending=None, SortingStatistic=None):
         """Updates layer23ProtocolStackFilter resource on the server.
@@ -111,7 +118,7 @@ class Layer23ProtocolStackFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, DrilldownType=None, NumberOfResults=None, ProtocolStackFilterId=None, SortAscending=None, SortingStatistic=None):
         """Adds a new layer23ProtocolStackFilter resource on the server and adds it to the container.
@@ -132,7 +139,7 @@ class Layer23ProtocolStackFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained layer23ProtocolStackFilter resources in this instance from the server.
@@ -167,7 +174,7 @@ class Layer23ProtocolStackFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of layer23ProtocolStackFilter data from the server.

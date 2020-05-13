@@ -190,7 +190,7 @@ class Base(object):
                 if method_name is not None:
                     attribute_name = key
                 else:
-                    attribute_name = '%s%s' % (key[0].lower(), key[1:])
+                    attribute_name = key
                 payload_value = self._build_value(key, value, method_name=python_method_name)
                 if payload_value is not None:
                     payload[attribute_name] = payload_value
@@ -444,6 +444,13 @@ class Base(object):
                         device_ids[i] = 0
 
         return [x for x in device_ids if x != 0]
+
+    def _map_locals(self, sdm_att_map, locals_dict):
+        mapped_dict = {}
+        for key in locals_dict.keys():
+            if key in sdm_att_map.keys():
+                mapped_dict[sdm_att_map[key]] = locals_dict[key]
+        return mapped_dict
 
     def info(self, message):
         """Add an INFO level message to the logger handlers

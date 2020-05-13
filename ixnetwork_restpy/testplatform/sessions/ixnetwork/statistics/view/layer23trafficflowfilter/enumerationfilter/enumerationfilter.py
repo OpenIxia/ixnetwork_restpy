@@ -32,6 +32,10 @@ class EnumerationFilter(Base):
 
     __slots__ = ()
     _SDM_NAME = 'enumerationFilter'
+    _SDM_ATT_MAP = {
+        'SortDirection': 'sortDirection',
+        'TrackingFilterId': 'trackingFilterId',
+    }
 
     def __init__(self, parent):
         super(EnumerationFilter, self).__init__(parent)
@@ -43,10 +47,10 @@ class EnumerationFilter(Base):
         -------
         - str(ascending | descending): Sets the display order of the view.
         """
-        return self._get_attribute('sortDirection')
+        return self._get_attribute(self._SDM_ATT_MAP['SortDirection'])
     @SortDirection.setter
     def SortDirection(self, value):
-        self._set_attribute('sortDirection', value)
+        self._set_attribute(self._SDM_ATT_MAP['SortDirection'], value)
 
     @property
     def TrackingFilterId(self):
@@ -55,10 +59,10 @@ class EnumerationFilter(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter): Selected tracking filters from the availableTrackingFilter list.
         """
-        return self._get_attribute('trackingFilterId')
+        return self._get_attribute(self._SDM_ATT_MAP['TrackingFilterId'])
     @TrackingFilterId.setter
     def TrackingFilterId(self, value):
-        self._set_attribute('trackingFilterId', value)
+        self._set_attribute(self._SDM_ATT_MAP['TrackingFilterId'], value)
 
     def update(self, SortDirection=None, TrackingFilterId=None):
         """Updates enumerationFilter resource on the server.
@@ -72,7 +76,7 @@ class EnumerationFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, SortDirection=None, TrackingFilterId=None):
         """Adds a new enumerationFilter resource on the server and adds it to the container.
@@ -90,7 +94,7 @@ class EnumerationFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained enumerationFilter resources in this instance from the server.
@@ -122,7 +126,7 @@ class EnumerationFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of enumerationFilter data from the server.

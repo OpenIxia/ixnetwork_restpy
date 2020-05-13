@@ -31,6 +31,15 @@ class Port(Base):
 
     __slots__ = ()
     _SDM_NAME = 'port'
+    _SDM_ATT_MAP = {
+        'Description': 'description',
+        'IsAvailable': 'isAvailable',
+        'IsBusy': 'isBusy',
+        'IsLinkUp': 'isLinkUp',
+        'IsUsable': 'isUsable',
+        'Owner': 'owner',
+        'PortId': 'portId',
+    }
 
     def __init__(self, parent):
         super(Port, self).__init__(parent)
@@ -56,7 +65,7 @@ class Port(Base):
         -------
         - str: The port description/mode.
         """
-        return self._get_attribute('description')
+        return self._get_attribute(self._SDM_ATT_MAP['Description'])
 
     @property
     def IsAvailable(self):
@@ -65,7 +74,7 @@ class Port(Base):
         -------
         - bool: The link is available on the port.
         """
-        return self._get_attribute('isAvailable')
+        return self._get_attribute(self._SDM_ATT_MAP['IsAvailable'])
 
     @property
     def IsBusy(self):
@@ -74,7 +83,7 @@ class Port(Base):
         -------
         - bool: The link is unavailable on the port.
         """
-        return self._get_attribute('isBusy')
+        return self._get_attribute(self._SDM_ATT_MAP['IsBusy'])
 
     @property
     def IsLinkUp(self):
@@ -83,7 +92,7 @@ class Port(Base):
         -------
         - bool: The link is up on the port.
         """
-        return self._get_attribute('isLinkUp')
+        return self._get_attribute(self._SDM_ATT_MAP['IsLinkUp'])
 
     @property
     def IsUsable(self):
@@ -92,7 +101,7 @@ class Port(Base):
         -------
         - bool: (read only) Returns true of false depending on whether the port can be used, based on the value of parent card aggregationMode. If card aggregationMode is notSupported and normal it always returns true. If card aggregationMode is tenGigAggregation, only the ports with index 1, 5, 9, and 13 returns true.
         """
-        return self._get_attribute('isUsable')
+        return self._get_attribute(self._SDM_ATT_MAP['IsUsable'])
 
     @property
     def Owner(self):
@@ -101,7 +110,7 @@ class Port(Base):
         -------
         - str: The current owner of the port.
         """
-        return self._get_attribute('owner')
+        return self._get_attribute(self._SDM_ATT_MAP['Owner'])
 
     @property
     def PortId(self):
@@ -110,7 +119,7 @@ class Port(Base):
         -------
         - number: The physical port ID.
         """
-        return self._get_attribute('portId')
+        return self._get_attribute(self._SDM_ATT_MAP['PortId'])
 
     def find(self, Description=None, IsAvailable=None, IsBusy=None, IsLinkUp=None, IsUsable=None, Owner=None, PortId=None):
         """Finds and retrieves port resources from the server.
@@ -137,7 +146,7 @@ class Port(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of port data from the server.

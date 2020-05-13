@@ -31,6 +31,12 @@ class Link(Base):
 
     __slots__ = ()
     _SDM_NAME = 'link'
+    _SDM_ATT_MAP = {
+        'ForwardingInterruption': 'forwardingInterruption',
+        'Name': 'name',
+        'RxPortName': 'rxPortName',
+        'TxPortName': 'txPortName',
+    }
 
     def __init__(self, parent):
         super(Link, self).__init__(parent)
@@ -56,10 +62,10 @@ class Link(Base):
         -------
         - bool: Emulate a link fault. Drop all packets received.
         """
-        return self._get_attribute('forwardingInterruption')
+        return self._get_attribute(self._SDM_ATT_MAP['ForwardingInterruption'])
     @ForwardingInterruption.setter
     def ForwardingInterruption(self, value):
-        self._set_attribute('forwardingInterruption', value)
+        self._set_attribute(self._SDM_ATT_MAP['ForwardingInterruption'], value)
 
     @property
     def Name(self):
@@ -68,7 +74,7 @@ class Link(Base):
         -------
         - str: The name of the link: receiving port -> transmitting port.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
 
     @property
     def RxPortName(self):
@@ -77,7 +83,7 @@ class Link(Base):
         -------
         - str: The name of the receiving port.
         """
-        return self._get_attribute('rxPortName')
+        return self._get_attribute(self._SDM_ATT_MAP['RxPortName'])
 
     @property
     def TxPortName(self):
@@ -86,7 +92,7 @@ class Link(Base):
         -------
         - str: The name of the transmitting port.
         """
-        return self._get_attribute('txPortName')
+        return self._get_attribute(self._SDM_ATT_MAP['TxPortName'])
 
     def update(self, ForwardingInterruption=None):
         """Updates link resource on the server.
@@ -99,7 +105,7 @@ class Link(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, ForwardingInterruption=None, Name=None, RxPortName=None, TxPortName=None):
         """Finds and retrieves link resources from the server.
@@ -123,7 +129,7 @@ class Link(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of link data from the server.

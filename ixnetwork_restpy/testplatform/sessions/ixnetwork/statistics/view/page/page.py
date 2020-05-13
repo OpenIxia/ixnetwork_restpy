@@ -30,6 +30,24 @@ class Page(Base):
 
     __slots__ = ()
     _SDM_NAME = 'page'
+    _SDM_ATT_MAP = {
+        'AllowPaging': 'allowPaging',
+        'ColumnCaptions': 'columnCaptions',
+        'ColumnCount': 'columnCount',
+        'CurrentPage': 'currentPage',
+        'EgressMode': 'egressMode',
+        'EgressPageSize': 'egressPageSize',
+        'IsBlocked': 'isBlocked',
+        'IsReady': 'isReady',
+        'IsReadyTimeout': 'isReadyTimeout',
+        'PageSize': 'pageSize',
+        'PageValues': 'pageValues',
+        'RowCount': 'rowCount',
+        'RowValues': 'rowValues',
+        'Timestamp': 'timestamp',
+        'TotalPages': 'totalPages',
+        'TotalRows': 'totalRows',
+    }
 
     def __init__(self, parent):
         super(Page, self).__init__(parent)
@@ -69,7 +87,7 @@ class Page(Base):
         -------
         - bool: If true, statistics will be displayed in multiple pages.
         """
-        return self._get_attribute('allowPaging')
+        return self._get_attribute(self._SDM_ATT_MAP['AllowPaging'])
 
     @property
     def ColumnCaptions(self):
@@ -78,7 +96,7 @@ class Page(Base):
         -------
         - list(str): The statistics column caption.
         """
-        return self._get_attribute('columnCaptions')
+        return self._get_attribute(self._SDM_ATT_MAP['ColumnCaptions'])
 
     @property
     def ColumnCount(self):
@@ -87,7 +105,7 @@ class Page(Base):
         -------
         - number: Displays the particular column number in the view.
         """
-        return self._get_attribute('columnCount')
+        return self._get_attribute(self._SDM_ATT_MAP['ColumnCount'])
 
     @property
     def CurrentPage(self):
@@ -96,10 +114,10 @@ class Page(Base):
         -------
         - number: The current page number being displayed.
         """
-        return self._get_attribute('currentPage')
+        return self._get_attribute(self._SDM_ATT_MAP['CurrentPage'])
     @CurrentPage.setter
     def CurrentPage(self, value):
-        self._set_attribute('currentPage', value)
+        self._set_attribute(self._SDM_ATT_MAP['CurrentPage'], value)
 
     @property
     def EgressMode(self):
@@ -108,10 +126,10 @@ class Page(Base):
         -------
         - str(conditional | paged): Emulates conditional or paged egress tracking view based on selected mode.
         """
-        return self._get_attribute('egressMode')
+        return self._get_attribute(self._SDM_ATT_MAP['EgressMode'])
     @EgressMode.setter
     def EgressMode(self, value):
-        self._set_attribute('egressMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['EgressMode'], value)
 
     @property
     def EgressPageSize(self):
@@ -120,10 +138,10 @@ class Page(Base):
         -------
         - number: The current egress page size across all ingress rows. Default = 3
         """
-        return self._get_attribute('egressPageSize')
+        return self._get_attribute(self._SDM_ATT_MAP['EgressPageSize'])
     @EgressPageSize.setter
     def EgressPageSize(self, value):
-        self._set_attribute('egressPageSize', value)
+        self._set_attribute(self._SDM_ATT_MAP['EgressPageSize'], value)
 
     @property
     def IsBlocked(self):
@@ -132,7 +150,7 @@ class Page(Base):
         -------
         - bool: Is a flag used to fetch the status of view (returns true if the views was blocked by Guard Rail, false otherwise)
         """
-        return self._get_attribute('isBlocked')
+        return self._get_attribute(self._SDM_ATT_MAP['IsBlocked'])
 
     @property
     def IsReady(self):
@@ -141,7 +159,7 @@ class Page(Base):
         -------
         - bool: If true, the counter is ready to record the statistics.
         """
-        return self._get_attribute('isReady')
+        return self._get_attribute(self._SDM_ATT_MAP['IsReady'])
 
     @property
     def IsReadyTimeout(self):
@@ -150,10 +168,10 @@ class Page(Base):
         -------
         - number: The maximum time (in seconds) for the -isReady attribute to wait before it returns false in case the page has no data.
         """
-        return self._get_attribute('isReadyTimeout')
+        return self._get_attribute(self._SDM_ATT_MAP['IsReadyTimeout'])
     @IsReadyTimeout.setter
     def IsReadyTimeout(self, value):
-        self._set_attribute('isReadyTimeout', value)
+        self._set_attribute(self._SDM_ATT_MAP['IsReadyTimeout'], value)
 
     @property
     def PageSize(self):
@@ -162,10 +180,10 @@ class Page(Base):
         -------
         - number: The number of statistics per page.
         """
-        return self._get_attribute('pageSize')
+        return self._get_attribute(self._SDM_ATT_MAP['PageSize'])
     @PageSize.setter
     def PageSize(self, value):
-        self._set_attribute('pageSize', value)
+        self._set_attribute(self._SDM_ATT_MAP['PageSize'], value)
 
     @property
     def PageValues(self):
@@ -174,7 +192,7 @@ class Page(Base):
         -------
         - list(list[list[str]]): Returns the values in the current page. The ingress row is grouped with its corresponding egress rows
         """
-        return self._get_attribute('pageValues')
+        return self._get_attribute(self._SDM_ATT_MAP['PageValues'])
 
     @property
     def RowCount(self):
@@ -183,7 +201,7 @@ class Page(Base):
         -------
         - number: Displays the particular row number in the view.
         """
-        return self._get_attribute('rowCount')
+        return self._get_attribute(self._SDM_ATT_MAP['RowCount'])
 
     @property
     def RowValues(self):
@@ -192,7 +210,7 @@ class Page(Base):
         -------
         - dict(arg1:list[list[list[str]]]): All statistics values in a row.
         """
-        return self._get_attribute('rowValues')
+        return self._get_attribute(self._SDM_ATT_MAP['RowValues'])
 
     @property
     def Timestamp(self):
@@ -201,7 +219,7 @@ class Page(Base):
         -------
         - number: Describes the date and time of the event.
         """
-        return self._get_attribute('timestamp')
+        return self._get_attribute(self._SDM_ATT_MAP['Timestamp'])
 
     @property
     def TotalPages(self):
@@ -210,7 +228,7 @@ class Page(Base):
         -------
         - number: The total number of statistics pages.
         """
-        return self._get_attribute('totalPages')
+        return self._get_attribute(self._SDM_ATT_MAP['TotalPages'])
 
     @property
     def TotalRows(self):
@@ -219,7 +237,7 @@ class Page(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute('totalRows')
+        return self._get_attribute(self._SDM_ATT_MAP['TotalRows'])
 
     def update(self, CurrentPage=None, EgressMode=None, EgressPageSize=None, IsReadyTimeout=None, PageSize=None):
         """Updates page resource on the server.
@@ -236,4 +254,4 @@ class Page(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

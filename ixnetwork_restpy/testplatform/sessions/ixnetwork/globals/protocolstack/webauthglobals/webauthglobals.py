@@ -32,6 +32,34 @@ class WebAuthGlobals(Base):
 
     __slots__ = ()
     _SDM_NAME = 'webAuthGlobals'
+    _SDM_ATT_MAP = {
+        'AuthFailure': 'authFailure',
+        'AuthSuccess': 'authSuccess',
+        'AuthTimeout': 'authTimeout',
+        'DefaultFields': 'defaultFields',
+        'DelayDhcp': 'delayDhcp',
+        'DisableArpResponse': 'disableArpResponse',
+        'EnableMaxOutstanding': 'enableMaxOutstanding',
+        'InputField1': 'inputField1',
+        'InputField2': 'inputField2',
+        'InputField3': 'inputField3',
+        'MaxClientsPerSecond': 'maxClientsPerSecond',
+        'MaxOutstandingRequests': 'maxOutstandingRequests',
+        'NumRetry': 'numRetry',
+        'ObjectId': 'objectId',
+        'PolicyEnable': 'policyEnable',
+        'PolicySuccess': 'policySuccess',
+        'PolicyTimeout': 'policyTimeout',
+        'Port': 'port',
+        'Protocol': 'protocol',
+        'RedirectFailureUrl': 'redirectFailureUrl',
+        'RedirectLoginUrl': 'redirectLoginUrl',
+        'RenewDhcp': 'renewDhcp',
+        'RequestUrl': 'requestUrl',
+        'ResponseDelay': 'responseDelay',
+        'WaitBeforeRun': 'waitBeforeRun',
+        'WaitForCompletion': 'waitForCompletion',
+    }
 
     def __init__(self, parent):
         super(WebAuthGlobals, self).__init__(parent)
@@ -43,10 +71,10 @@ class WebAuthGlobals(Base):
         -------
         - str: Text to match on web page to determine if authentication was unsuccessful
         """
-        return self._get_attribute('authFailure')
+        return self._get_attribute(self._SDM_ATT_MAP['AuthFailure'])
     @AuthFailure.setter
     def AuthFailure(self, value):
-        self._set_attribute('authFailure', value)
+        self._set_attribute(self._SDM_ATT_MAP['AuthFailure'], value)
 
     @property
     def AuthSuccess(self):
@@ -55,10 +83,10 @@ class WebAuthGlobals(Base):
         -------
         - str: Text to match on web page to determine if authentication was successful
         """
-        return self._get_attribute('authSuccess')
+        return self._get_attribute(self._SDM_ATT_MAP['AuthSuccess'])
     @AuthSuccess.setter
     def AuthSuccess(self, value):
-        self._set_attribute('authSuccess', value)
+        self._set_attribute(self._SDM_ATT_MAP['AuthSuccess'], value)
 
     @property
     def AuthTimeout(self):
@@ -67,10 +95,10 @@ class WebAuthGlobals(Base):
         -------
         - number: The amount of time to wait for the DUT to return a success or failure page
         """
-        return self._get_attribute('authTimeout')
+        return self._get_attribute(self._SDM_ATT_MAP['AuthTimeout'])
     @AuthTimeout.setter
     def AuthTimeout(self, value):
-        self._set_attribute('authTimeout', value)
+        self._set_attribute(self._SDM_ATT_MAP['AuthTimeout'], value)
 
     @property
     def DefaultFields(self):
@@ -79,10 +107,10 @@ class WebAuthGlobals(Base):
         -------
         - bool: Controls if we look up for default HTML tags
         """
-        return self._get_attribute('defaultFields')
+        return self._get_attribute(self._SDM_ATT_MAP['DefaultFields'])
     @DefaultFields.setter
     def DefaultFields(self, value):
-        self._set_attribute('defaultFields', value)
+        self._set_attribute(self._SDM_ATT_MAP['DefaultFields'], value)
 
     @property
     def DelayDhcp(self):
@@ -91,10 +119,10 @@ class WebAuthGlobals(Base):
         -------
         - number: DHCP delay
         """
-        return self._get_attribute('delayDhcp')
+        return self._get_attribute(self._SDM_ATT_MAP['DelayDhcp'])
     @DelayDhcp.setter
     def DelayDhcp(self, value):
-        self._set_attribute('delayDhcp', value)
+        self._set_attribute(self._SDM_ATT_MAP['DelayDhcp'], value)
 
     @property
     def DisableArpResponse(self):
@@ -103,10 +131,10 @@ class WebAuthGlobals(Base):
         -------
         - bool: If enabled, bla bla
         """
-        return self._get_attribute('disableArpResponse')
+        return self._get_attribute(self._SDM_ATT_MAP['DisableArpResponse'])
     @DisableArpResponse.setter
     def DisableArpResponse(self, value):
-        self._set_attribute('disableArpResponse', value)
+        self._set_attribute(self._SDM_ATT_MAP['DisableArpResponse'], value)
 
     @property
     def EnableMaxOutstanding(self):
@@ -115,10 +143,10 @@ class WebAuthGlobals(Base):
         -------
         - bool: If set, maximum number of sessions will be enforced
         """
-        return self._get_attribute('enableMaxOutstanding')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableMaxOutstanding'])
     @EnableMaxOutstanding.setter
     def EnableMaxOutstanding(self, value):
-        self._set_attribute('enableMaxOutstanding', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableMaxOutstanding'], value)
 
     @property
     def InputField1(self):
@@ -127,10 +155,10 @@ class WebAuthGlobals(Base):
         -------
         - str: The label on the first field of the web authentication form to be matched
         """
-        return self._get_attribute('inputField1')
+        return self._get_attribute(self._SDM_ATT_MAP['InputField1'])
     @InputField1.setter
     def InputField1(self, value):
-        self._set_attribute('inputField1', value)
+        self._set_attribute(self._SDM_ATT_MAP['InputField1'], value)
 
     @property
     def InputField2(self):
@@ -139,10 +167,10 @@ class WebAuthGlobals(Base):
         -------
         - str: The label on the second field of the web authentication form to be matched
         """
-        return self._get_attribute('inputField2')
+        return self._get_attribute(self._SDM_ATT_MAP['InputField2'])
     @InputField2.setter
     def InputField2(self, value):
-        self._set_attribute('inputField2', value)
+        self._set_attribute(self._SDM_ATT_MAP['InputField2'], value)
 
     @property
     def InputField3(self):
@@ -151,10 +179,10 @@ class WebAuthGlobals(Base):
         -------
         - str: The label on the third field of the web authentication form to be matched
         """
-        return self._get_attribute('inputField3')
+        return self._get_attribute(self._SDM_ATT_MAP['InputField3'])
     @InputField3.setter
     def InputField3(self, value):
-        self._set_attribute('inputField3', value)
+        self._set_attribute(self._SDM_ATT_MAP['InputField3'], value)
 
     @property
     def MaxClientsPerSecond(self):
@@ -163,10 +191,10 @@ class WebAuthGlobals(Base):
         -------
         - number: The number of interfaces to setup per second
         """
-        return self._get_attribute('maxClientsPerSecond')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxClientsPerSecond'])
     @MaxClientsPerSecond.setter
     def MaxClientsPerSecond(self, value):
-        self._set_attribute('maxClientsPerSecond', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxClientsPerSecond'], value)
 
     @property
     def MaxOutstandingRequests(self):
@@ -175,10 +203,10 @@ class WebAuthGlobals(Base):
         -------
         - number: The maximum number of sessions that can be outstanding at any time
         """
-        return self._get_attribute('maxOutstandingRequests')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
-        self._set_attribute('maxOutstandingRequests', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
 
     @property
     def NumRetry(self):
@@ -187,10 +215,10 @@ class WebAuthGlobals(Base):
         -------
         - number: The number of times to attempt web authentication, including failures and timeouts.
         """
-        return self._get_attribute('numRetry')
+        return self._get_attribute(self._SDM_ATT_MAP['NumRetry'])
     @NumRetry.setter
     def NumRetry(self, value):
-        self._set_attribute('numRetry', value)
+        self._set_attribute(self._SDM_ATT_MAP['NumRetry'], value)
 
     @property
     def ObjectId(self):
@@ -199,7 +227,7 @@ class WebAuthGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def PolicyEnable(self):
@@ -208,10 +236,10 @@ class WebAuthGlobals(Base):
         -------
         - bool: Attempt to read the Request URL after a successful authentication
         """
-        return self._get_attribute('policyEnable')
+        return self._get_attribute(self._SDM_ATT_MAP['PolicyEnable'])
     @PolicyEnable.setter
     def PolicyEnable(self, value):
-        self._set_attribute('policyEnable', value)
+        self._set_attribute(self._SDM_ATT_MAP['PolicyEnable'], value)
 
     @property
     def PolicySuccess(self):
@@ -220,10 +248,10 @@ class WebAuthGlobals(Base):
         -------
         - str: Text to match on web page to determine if policy enforcement was successful
         """
-        return self._get_attribute('policySuccess')
+        return self._get_attribute(self._SDM_ATT_MAP['PolicySuccess'])
     @PolicySuccess.setter
     def PolicySuccess(self, value):
-        self._set_attribute('policySuccess', value)
+        self._set_attribute(self._SDM_ATT_MAP['PolicySuccess'], value)
 
     @property
     def PolicyTimeout(self):
@@ -232,10 +260,10 @@ class WebAuthGlobals(Base):
         -------
         - number: The amount of time to wait for the DUT to return the Request URL page
         """
-        return self._get_attribute('policyTimeout')
+        return self._get_attribute(self._SDM_ATT_MAP['PolicyTimeout'])
     @PolicyTimeout.setter
     def PolicyTimeout(self, value):
-        self._set_attribute('policyTimeout', value)
+        self._set_attribute(self._SDM_ATT_MAP['PolicyTimeout'], value)
 
     @property
     def Port(self):
@@ -244,10 +272,10 @@ class WebAuthGlobals(Base):
         -------
         - number: TCP port number for the Protocol Type
         """
-        return self._get_attribute('port')
+        return self._get_attribute(self._SDM_ATT_MAP['Port'])
     @Port.setter
     def Port(self, value):
-        self._set_attribute('port', value)
+        self._set_attribute(self._SDM_ATT_MAP['Port'], value)
 
     @property
     def Protocol(self):
@@ -256,10 +284,10 @@ class WebAuthGlobals(Base):
         -------
         - str: The protocol used by the supplicants
         """
-        return self._get_attribute('protocol')
+        return self._get_attribute(self._SDM_ATT_MAP['Protocol'])
     @Protocol.setter
     def Protocol(self, value):
-        self._set_attribute('protocol', value)
+        self._set_attribute(self._SDM_ATT_MAP['Protocol'], value)
 
     @property
     def RedirectFailureUrl(self):
@@ -268,10 +296,10 @@ class WebAuthGlobals(Base):
         -------
         - str: URL that the DUT will redirect a failed supplicant to if the DUT does not generate the page itself
         """
-        return self._get_attribute('redirectFailureUrl')
+        return self._get_attribute(self._SDM_ATT_MAP['RedirectFailureUrl'])
     @RedirectFailureUrl.setter
     def RedirectFailureUrl(self, value):
-        self._set_attribute('redirectFailureUrl', value)
+        self._set_attribute(self._SDM_ATT_MAP['RedirectFailureUrl'], value)
 
     @property
     def RedirectLoginUrl(self):
@@ -280,10 +308,10 @@ class WebAuthGlobals(Base):
         -------
         - str: URL that the DUT will redirect the supplicant to if the DUT does not generate the page itself
         """
-        return self._get_attribute('redirectLoginUrl')
+        return self._get_attribute(self._SDM_ATT_MAP['RedirectLoginUrl'])
     @RedirectLoginUrl.setter
     def RedirectLoginUrl(self, value):
-        self._set_attribute('redirectLoginUrl', value)
+        self._set_attribute(self._SDM_ATT_MAP['RedirectLoginUrl'], value)
 
     @property
     def RenewDhcp(self):
@@ -292,10 +320,10 @@ class WebAuthGlobals(Base):
         -------
         - bool: If set, a new DHCP request will be generated following a successful authentication
         """
-        return self._get_attribute('renewDhcp')
+        return self._get_attribute(self._SDM_ATT_MAP['RenewDhcp'])
     @RenewDhcp.setter
     def RenewDhcp(self, value):
-        self._set_attribute('renewDhcp', value)
+        self._set_attribute(self._SDM_ATT_MAP['RenewDhcp'], value)
 
     @property
     def RequestUrl(self):
@@ -304,10 +332,10 @@ class WebAuthGlobals(Base):
         -------
         - str: The URL that the emulated supplicants will request, also used to determine successful authentication
         """
-        return self._get_attribute('requestUrl')
+        return self._get_attribute(self._SDM_ATT_MAP['RequestUrl'])
     @RequestUrl.setter
     def RequestUrl(self, value):
-        self._set_attribute('requestUrl', value)
+        self._set_attribute(self._SDM_ATT_MAP['RequestUrl'], value)
 
     @property
     def ResponseDelay(self):
@@ -316,10 +344,10 @@ class WebAuthGlobals(Base):
         -------
         - number: The amount of time that the supplicant will wait after receiving the WebAuth credential request page before sending a response
         """
-        return self._get_attribute('responseDelay')
+        return self._get_attribute(self._SDM_ATT_MAP['ResponseDelay'])
     @ResponseDelay.setter
     def ResponseDelay(self, value):
-        self._set_attribute('responseDelay', value)
+        self._set_attribute(self._SDM_ATT_MAP['ResponseDelay'], value)
 
     @property
     def WaitBeforeRun(self):
@@ -328,10 +356,10 @@ class WebAuthGlobals(Base):
         -------
         - number: Wait before running this protocol
         """
-        return self._get_attribute('waitBeforeRun')
+        return self._get_attribute(self._SDM_ATT_MAP['WaitBeforeRun'])
     @WaitBeforeRun.setter
     def WaitBeforeRun(self, value):
-        self._set_attribute('waitBeforeRun', value)
+        self._set_attribute(self._SDM_ATT_MAP['WaitBeforeRun'], value)
 
     @property
     def WaitForCompletion(self):
@@ -340,10 +368,10 @@ class WebAuthGlobals(Base):
         -------
         - bool: If true the configuration will end after all interfaces are configured
         """
-        return self._get_attribute('waitForCompletion')
+        return self._get_attribute(self._SDM_ATT_MAP['WaitForCompletion'])
     @WaitForCompletion.setter
     def WaitForCompletion(self, value):
-        self._set_attribute('waitForCompletion', value)
+        self._set_attribute(self._SDM_ATT_MAP['WaitForCompletion'], value)
 
     def update(self, AuthFailure=None, AuthSuccess=None, AuthTimeout=None, DefaultFields=None, DelayDhcp=None, DisableArpResponse=None, EnableMaxOutstanding=None, InputField1=None, InputField2=None, InputField3=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, NumRetry=None, PolicyEnable=None, PolicySuccess=None, PolicyTimeout=None, Port=None, Protocol=None, RedirectFailureUrl=None, RedirectLoginUrl=None, RenewDhcp=None, RequestUrl=None, ResponseDelay=None, WaitBeforeRun=None, WaitForCompletion=None):
         """Updates webAuthGlobals resource on the server.
@@ -380,7 +408,7 @@ class WebAuthGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AuthFailure=None, AuthSuccess=None, AuthTimeout=None, DefaultFields=None, DelayDhcp=None, DisableArpResponse=None, EnableMaxOutstanding=None, InputField1=None, InputField2=None, InputField3=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, NumRetry=None, PolicyEnable=None, PolicySuccess=None, PolicyTimeout=None, Port=None, Protocol=None, RedirectFailureUrl=None, RedirectLoginUrl=None, RenewDhcp=None, RequestUrl=None, ResponseDelay=None, WaitBeforeRun=None, WaitForCompletion=None):
         """Adds a new webAuthGlobals resource on the server and adds it to the container.
@@ -421,7 +449,7 @@ class WebAuthGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained webAuthGlobals resources in this instance from the server.
@@ -477,7 +505,7 @@ class WebAuthGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of webAuthGlobals data from the server.

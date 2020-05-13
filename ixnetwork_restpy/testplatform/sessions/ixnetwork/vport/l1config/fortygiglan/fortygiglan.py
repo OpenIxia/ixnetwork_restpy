@@ -30,6 +30,17 @@ class FortyGigLan(Base):
 
     __slots__ = ()
     _SDM_NAME = 'fortyGigLan'
+    _SDM_ATT_MAP = {
+        'AutoInstrumentation': 'autoInstrumentation',
+        'EnableLASIMonitoring': 'enableLASIMonitoring',
+        'EnablePPM': 'enablePPM',
+        'EnabledFlowControl': 'enabledFlowControl',
+        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
+        'Loopback': 'loopback',
+        'Ppm': 'ppm',
+        'TransmitClocking': 'transmitClocking',
+        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
+    }
 
     def __init__(self, parent):
         super(FortyGigLan, self).__init__(parent)
@@ -39,13 +50,13 @@ class FortyGigLan(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.fortygiglan.fcoe.fcoe.Fcoe): An instance of the Fcoe class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.fcoe.fcoe.Fcoe): An instance of the Fcoe class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.fortygiglan.fcoe.fcoe import Fcoe
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.fcoe.fcoe import Fcoe
         return Fcoe(self)._select()
 
     @property
@@ -53,13 +64,13 @@ class FortyGigLan(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.fortygiglan.txlane.txlane.TxLane): An instance of the TxLane class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.txlane.txlane.TxLane): An instance of the TxLane class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.fortygiglan.txlane.txlane import TxLane
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.txlane.txlane import TxLane
         return TxLane(self)._select()
 
     @property
@@ -69,10 +80,10 @@ class FortyGigLan(Base):
         -------
         - str(endOfFrame | floating): The auto instrumentation mode.
         """
-        return self._get_attribute('autoInstrumentation')
+        return self._get_attribute(self._SDM_ATT_MAP['AutoInstrumentation'])
     @AutoInstrumentation.setter
     def AutoInstrumentation(self, value):
-        self._set_attribute('autoInstrumentation', value)
+        self._set_attribute(self._SDM_ATT_MAP['AutoInstrumentation'], value)
 
     @property
     def EnableLASIMonitoring(self):
@@ -81,10 +92,10 @@ class FortyGigLan(Base):
         -------
         - bool: If selected, enables LASI monitoring.
         """
-        return self._get_attribute('enableLASIMonitoring')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableLASIMonitoring'])
     @EnableLASIMonitoring.setter
     def EnableLASIMonitoring(self, value):
-        self._set_attribute('enableLASIMonitoring', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableLASIMonitoring'], value)
 
     @property
     def EnablePPM(self):
@@ -93,10 +104,10 @@ class FortyGigLan(Base):
         -------
         - bool: If true, enables the portsppm.
         """
-        return self._get_attribute('enablePPM')
+        return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
     @EnablePPM.setter
     def EnablePPM(self, value):
-        self._set_attribute('enablePPM', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnablePPM'], value)
 
     @property
     def EnabledFlowControl(self):
@@ -105,10 +116,10 @@ class FortyGigLan(Base):
         -------
         - bool: Enables the port's MAC Flow control mechanisms to listen for a directed address pause message.
         """
-        return self._get_attribute('enabledFlowControl')
+        return self._get_attribute(self._SDM_ATT_MAP['EnabledFlowControl'])
     @EnabledFlowControl.setter
     def EnabledFlowControl(self, value):
-        self._set_attribute('enabledFlowControl', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnabledFlowControl'], value)
 
     @property
     def FlowControlDirectedAddress(self):
@@ -117,10 +128,10 @@ class FortyGigLan(Base):
         -------
         - str: This is the 48-bit MAC address that the port will listen on for a directed pause message.
         """
-        return self._get_attribute('flowControlDirectedAddress')
+        return self._get_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'])
     @FlowControlDirectedAddress.setter
     def FlowControlDirectedAddress(self, value):
-        self._set_attribute('flowControlDirectedAddress', value)
+        self._set_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'], value)
 
     @property
     def Loopback(self):
@@ -129,10 +140,10 @@ class FortyGigLan(Base):
         -------
         - bool: If enabled, the port is set to internally loopback from transmit to receive.
         """
-        return self._get_attribute('loopback')
+        return self._get_attribute(self._SDM_ATT_MAP['Loopback'])
     @Loopback.setter
     def Loopback(self, value):
-        self._set_attribute('loopback', value)
+        self._set_attribute(self._SDM_ATT_MAP['Loopback'], value)
 
     @property
     def Ppm(self):
@@ -141,10 +152,10 @@ class FortyGigLan(Base):
         -------
         - number: Indicates the value that needs to be adjusted for the line transmit frequency.
         """
-        return self._get_attribute('ppm')
+        return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
     @Ppm.setter
     def Ppm(self, value):
-        self._set_attribute('ppm', value)
+        self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
     def TransmitClocking(self):
@@ -153,10 +164,10 @@ class FortyGigLan(Base):
         -------
         - str(external | internal | recovered): Allows to select the transmit clocing options.
         """
-        return self._get_attribute('transmitClocking')
+        return self._get_attribute(self._SDM_ATT_MAP['TransmitClocking'])
     @TransmitClocking.setter
     def TransmitClocking(self, value):
-        self._set_attribute('transmitClocking', value)
+        self._set_attribute(self._SDM_ATT_MAP['TransmitClocking'], value)
 
     @property
     def TxIgnoreRxLinkFaults(self):
@@ -165,10 +176,10 @@ class FortyGigLan(Base):
         -------
         - bool: Tx ignore Rx link fault.
         """
-        return self._get_attribute('txIgnoreRxLinkFaults')
+        return self._get_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'])
     @TxIgnoreRxLinkFaults.setter
     def TxIgnoreRxLinkFaults(self, value):
-        self._set_attribute('txIgnoreRxLinkFaults', value)
+        self._set_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'], value)
 
     def update(self, AutoInstrumentation=None, EnableLASIMonitoring=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, Ppm=None, TransmitClocking=None, TxIgnoreRxLinkFaults=None):
         """Updates fortyGigLan resource on the server.
@@ -189,4 +200,4 @@ class FortyGigLan(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

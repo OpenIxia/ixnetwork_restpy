@@ -32,6 +32,17 @@ class SelectWatch(Base):
 
     __slots__ = ()
     _SDM_NAME = 'selectWatch'
+    _SDM_ATT_MAP = {
+        'AverageExecutionTime': 'averageExecutionTime',
+        'IsDisabled': 'isDisabled',
+        'LastExecutionTime': 'lastExecutionTime',
+        'LastNotification': 'lastNotification',
+        'MaxExecutionTime': 'maxExecutionTime',
+        'PollInterval': 'pollInterval',
+        'Selects': 'selects',
+        'Token': 'token',
+        'Topic': 'topic',
+    }
 
     def __init__(self, parent):
         super(SelectWatch, self).__init__(parent)
@@ -43,7 +54,7 @@ class SelectWatch(Base):
         -------
         - number: 
         """
-        return self._get_attribute('averageExecutionTime')
+        return self._get_attribute(self._SDM_ATT_MAP['AverageExecutionTime'])
 
     @property
     def IsDisabled(self):
@@ -52,7 +63,7 @@ class SelectWatch(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('isDisabled')
+        return self._get_attribute(self._SDM_ATT_MAP['IsDisabled'])
 
     @property
     def LastExecutionTime(self):
@@ -61,7 +72,7 @@ class SelectWatch(Base):
         -------
         - number: 
         """
-        return self._get_attribute('lastExecutionTime')
+        return self._get_attribute(self._SDM_ATT_MAP['LastExecutionTime'])
 
     @property
     def LastNotification(self):
@@ -70,7 +81,7 @@ class SelectWatch(Base):
         -------
         - str: 
         """
-        return self._get_attribute('lastNotification')
+        return self._get_attribute(self._SDM_ATT_MAP['LastNotification'])
 
     @property
     def MaxExecutionTime(self):
@@ -79,10 +90,10 @@ class SelectWatch(Base):
         -------
         - number: The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         """
-        return self._get_attribute('maxExecutionTime')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxExecutionTime'])
     @MaxExecutionTime.setter
     def MaxExecutionTime(self, value):
-        self._set_attribute('maxExecutionTime', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxExecutionTime'], value)
 
     @property
     def PollInterval(self):
@@ -91,10 +102,10 @@ class SelectWatch(Base):
         -------
         - number: The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
         """
-        return self._get_attribute('pollInterval')
+        return self._get_attribute(self._SDM_ATT_MAP['PollInterval'])
     @PollInterval.setter
     def PollInterval(self, value):
-        self._set_attribute('pollInterval', value)
+        self._set_attribute(self._SDM_ATT_MAP['PollInterval'], value)
 
     @property
     def Selects(self):
@@ -103,10 +114,10 @@ class SelectWatch(Base):
         -------
         - list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])])): 
         """
-        return self._get_attribute('selects')
+        return self._get_attribute(self._SDM_ATT_MAP['Selects'])
     @Selects.setter
     def Selects(self, value):
-        self._set_attribute('selects', value)
+        self._set_attribute(self._SDM_ATT_MAP['Selects'], value)
 
     @property
     def Token(self):
@@ -115,7 +126,7 @@ class SelectWatch(Base):
         -------
         - number: 
         """
-        return self._get_attribute('token')
+        return self._get_attribute(self._SDM_ATT_MAP['Token'])
 
     @property
     def Topic(self):
@@ -124,10 +135,10 @@ class SelectWatch(Base):
         -------
         - str: 
         """
-        return self._get_attribute('topic')
+        return self._get_attribute(self._SDM_ATT_MAP['Topic'])
     @Topic.setter
     def Topic(self, value):
-        self._set_attribute('topic', value)
+        self._set_attribute(self._SDM_ATT_MAP['Topic'], value)
 
     def update(self, MaxExecutionTime=None, PollInterval=None, Selects=None, Topic=None):
         """Updates selectWatch resource on the server.
@@ -143,7 +154,7 @@ class SelectWatch(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, MaxExecutionTime=None, PollInterval=None, Selects=None, Topic=None):
         """Adds a new selectWatch resource on the server and adds it to the container.
@@ -163,7 +174,7 @@ class SelectWatch(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained selectWatch resources in this instance from the server.
@@ -202,7 +213,7 @@ class SelectWatch(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of selectWatch data from the server.

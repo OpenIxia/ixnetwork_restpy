@@ -32,6 +32,16 @@ class NacTlv(Base):
 
     __slots__ = ()
     _SDM_NAME = 'nacTlv'
+    _SDM_ATT_MAP = {
+        'AppCode': 'appCode',
+        'AppType': 'appType',
+        'AvpType': 'avpType',
+        'Name': 'name',
+        'ObjectId': 'objectId',
+        'Selected': 'selected',
+        'Value': 'value',
+        'VendorId': 'vendorId',
+    }
 
     def __init__(self, parent):
         super(NacTlv, self).__init__(parent)
@@ -85,10 +95,10 @@ class NacTlv(Base):
         -------
         - number: Application code.
         """
-        return self._get_attribute('appCode')
+        return self._get_attribute(self._SDM_ATT_MAP['AppCode'])
     @AppCode.setter
     def AppCode(self, value):
-        self._set_attribute('appCode', value)
+        self._set_attribute(self._SDM_ATT_MAP['AppCode'], value)
 
     @property
     def AppType(self):
@@ -97,10 +107,10 @@ class NacTlv(Base):
         -------
         - number: Application type.
         """
-        return self._get_attribute('appType')
+        return self._get_attribute(self._SDM_ATT_MAP['AppType'])
     @AppType.setter
     def AppType(self, value):
-        self._set_attribute('appType', value)
+        self._set_attribute(self._SDM_ATT_MAP['AppType'], value)
 
     @property
     def AvpType(self):
@@ -109,10 +119,10 @@ class NacTlv(Base):
         -------
         - number: The value type.
         """
-        return self._get_attribute('avpType')
+        return self._get_attribute(self._SDM_ATT_MAP['AvpType'])
     @AvpType.setter
     def AvpType(self, value):
-        self._set_attribute('avpType', value)
+        self._set_attribute(self._SDM_ATT_MAP['AvpType'], value)
 
     @property
     def Name(self):
@@ -121,10 +131,10 @@ class NacTlv(Base):
         -------
         - str: Unique name for this NAC TLV.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
@@ -133,7 +143,7 @@ class NacTlv(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def Selected(self):
@@ -142,10 +152,10 @@ class NacTlv(Base):
         -------
         - bool: Add to TLV list.
         """
-        return self._get_attribute('selected')
+        return self._get_attribute(self._SDM_ATT_MAP['Selected'])
     @Selected.setter
     def Selected(self, value):
-        self._set_attribute('selected', value)
+        self._set_attribute(self._SDM_ATT_MAP['Selected'], value)
 
     @property
     def Value(self):
@@ -154,10 +164,10 @@ class NacTlv(Base):
         -------
         - str: Actual value of this TLV.
         """
-        return self._get_attribute('value')
+        return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
-        self._set_attribute('value', value)
+        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     @property
     def VendorId(self):
@@ -166,10 +176,10 @@ class NacTlv(Base):
         -------
         - number: Vendor id.
         """
-        return self._get_attribute('vendorId')
+        return self._get_attribute(self._SDM_ATT_MAP['VendorId'])
     @VendorId.setter
     def VendorId(self, value):
-        self._set_attribute('vendorId', value)
+        self._set_attribute(self._SDM_ATT_MAP['VendorId'], value)
 
     def update(self, AppCode=None, AppType=None, AvpType=None, Name=None, Selected=None, Value=None, VendorId=None):
         """Updates nacTlv resource on the server.
@@ -188,7 +198,7 @@ class NacTlv(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AppCode=None, AppType=None, AvpType=None, Name=None, Selected=None, Value=None, VendorId=None):
         """Adds a new nacTlv resource on the server and adds it to the container.
@@ -211,7 +221,7 @@ class NacTlv(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained nacTlv resources in this instance from the server.
@@ -249,7 +259,7 @@ class NacTlv(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of nacTlv data from the server.

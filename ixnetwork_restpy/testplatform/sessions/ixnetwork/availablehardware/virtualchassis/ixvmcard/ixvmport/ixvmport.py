@@ -32,6 +32,17 @@ class IxVmPort(Base):
 
     __slots__ = ()
     _SDM_NAME = 'ixVmPort'
+    _SDM_ATT_MAP = {
+        'Interface': 'interface',
+        'IpAddress': 'ipAddress',
+        'MacAddress': 'macAddress',
+        'Mtu': 'mtu',
+        'Owner': 'owner',
+        'PortId': 'portId',
+        'PortName': 'portName',
+        'PortState': 'portState',
+        'PromiscMode': 'promiscMode',
+    }
 
     def __init__(self, parent):
         super(IxVmPort, self).__init__(parent)
@@ -43,10 +54,10 @@ class IxVmPort(Base):
         -------
         - str: Represents the interface name
         """
-        return self._get_attribute('interface')
+        return self._get_attribute(self._SDM_ATT_MAP['Interface'])
     @Interface.setter
     def Interface(self, value):
-        self._set_attribute('interface', value)
+        self._set_attribute(self._SDM_ATT_MAP['Interface'], value)
 
     @property
     def IpAddress(self):
@@ -55,10 +66,10 @@ class IxVmPort(Base):
         -------
         - str: Represents the IP address
         """
-        return self._get_attribute('ipAddress')
+        return self._get_attribute(self._SDM_ATT_MAP['IpAddress'])
     @IpAddress.setter
     def IpAddress(self, value):
-        self._set_attribute('ipAddress', value)
+        self._set_attribute(self._SDM_ATT_MAP['IpAddress'], value)
 
     @property
     def MacAddress(self):
@@ -67,10 +78,10 @@ class IxVmPort(Base):
         -------
         - str: Represents the MAC address
         """
-        return self._get_attribute('macAddress')
+        return self._get_attribute(self._SDM_ATT_MAP['MacAddress'])
     @MacAddress.setter
     def MacAddress(self, value):
-        self._set_attribute('macAddress', value)
+        self._set_attribute(self._SDM_ATT_MAP['MacAddress'], value)
 
     @property
     def Mtu(self):
@@ -79,10 +90,10 @@ class IxVmPort(Base):
         -------
         - number: Represents MTU
         """
-        return self._get_attribute('mtu')
+        return self._get_attribute(self._SDM_ATT_MAP['Mtu'])
     @Mtu.setter
     def Mtu(self, value):
-        self._set_attribute('mtu', value)
+        self._set_attribute(self._SDM_ATT_MAP['Mtu'], value)
 
     @property
     def Owner(self):
@@ -91,7 +102,7 @@ class IxVmPort(Base):
         -------
         - str: Represents the user owning the port
         """
-        return self._get_attribute('owner')
+        return self._get_attribute(self._SDM_ATT_MAP['Owner'])
 
     @property
     def PortId(self):
@@ -100,10 +111,10 @@ class IxVmPort(Base):
         -------
         - str: Represents a slot on the card
         """
-        return self._get_attribute('portId')
+        return self._get_attribute(self._SDM_ATT_MAP['PortId'])
     @PortId.setter
     def PortId(self, value):
-        self._set_attribute('portId', value)
+        self._set_attribute(self._SDM_ATT_MAP['PortId'], value)
 
     @property
     def PortName(self):
@@ -112,10 +123,10 @@ class IxVmPort(Base):
         -------
         - str: Represents a port name
         """
-        return self._get_attribute('portName')
+        return self._get_attribute(self._SDM_ATT_MAP['PortName'])
     @PortName.setter
     def PortName(self, value):
-        self._set_attribute('portName', value)
+        self._set_attribute(self._SDM_ATT_MAP['PortName'], value)
 
     @property
     def PortState(self):
@@ -124,7 +135,7 @@ class IxVmPort(Base):
         -------
         - str(invalidNIC | ixVmPortUnitialized | portLicenseNotFound | portNotAdded | portOK | portRemoved | portUnconnectedCard | portUnknownError): Represents the port State
         """
-        return self._get_attribute('portState')
+        return self._get_attribute(self._SDM_ATT_MAP['PortState'])
 
     @property
     def PromiscMode(self):
@@ -133,10 +144,10 @@ class IxVmPort(Base):
         -------
         - bool: Represents the promiscuos Mode
         """
-        return self._get_attribute('promiscMode')
+        return self._get_attribute(self._SDM_ATT_MAP['PromiscMode'])
     @PromiscMode.setter
     def PromiscMode(self, value):
-        self._set_attribute('promiscMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['PromiscMode'], value)
 
     def update(self, Interface=None, IpAddress=None, MacAddress=None, Mtu=None, PortId=None, PortName=None, PromiscMode=None):
         """Updates ixVmPort resource on the server.
@@ -155,7 +166,7 @@ class IxVmPort(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Interface=None, IpAddress=None, MacAddress=None, Mtu=None, PortId=None, PortName=None, PromiscMode=None):
         """Adds a new ixVmPort resource on the server and adds it to the container.
@@ -178,7 +189,7 @@ class IxVmPort(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained ixVmPort resources in this instance from the server.
@@ -217,7 +228,7 @@ class IxVmPort(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of ixVmPort data from the server.

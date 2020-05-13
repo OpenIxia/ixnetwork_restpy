@@ -30,6 +30,21 @@ class Timeline(Base):
 
     __slots__ = ()
     _SDM_NAME = 'timeline'
+    _SDM_ATT_MAP = {
+        'CurrentTime': 'currentTime',
+        'EndTime': 'endTime',
+        'EndTimeAsTicks': 'endTimeAsTicks',
+        'ExecutingTest': 'executingTest',
+        'ExecutingTestProgress': 'executingTestProgress',
+        'ForceTakePorts': 'forceTakePorts',
+        'MonitorTopologyId': 'monitorTopologyId',
+        'PauseOnError': 'pauseOnError',
+        'StartTime': 'startTime',
+        'StartTimeAsTicks': 'startTimeAsTicks',
+        'State': 'state',
+        'TestOrder': 'testOrder',
+        'TimingTopologyIds': 'timingTopologyIds',
+    }
 
     def __init__(self, parent):
         super(Timeline, self).__init__(parent)
@@ -55,7 +70,7 @@ class Timeline(Base):
         -------
         - str: 
         """
-        return self._get_attribute('currentTime')
+        return self._get_attribute(self._SDM_ATT_MAP['CurrentTime'])
 
     @property
     def EndTime(self):
@@ -64,7 +79,7 @@ class Timeline(Base):
         -------
         - str: 
         """
-        return self._get_attribute('endTime')
+        return self._get_attribute(self._SDM_ATT_MAP['EndTime'])
 
     @property
     def EndTimeAsTicks(self):
@@ -73,10 +88,10 @@ class Timeline(Base):
         -------
         - number: 
         """
-        return self._get_attribute('endTimeAsTicks')
+        return self._get_attribute(self._SDM_ATT_MAP['EndTimeAsTicks'])
     @EndTimeAsTicks.setter
     def EndTimeAsTicks(self, value):
-        self._set_attribute('endTimeAsTicks', value)
+        self._set_attribute(self._SDM_ATT_MAP['EndTimeAsTicks'], value)
 
     @property
     def ExecutingTest(self):
@@ -85,10 +100,10 @@ class Timeline(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/timeline/.../test): 
         """
-        return self._get_attribute('executingTest')
+        return self._get_attribute(self._SDM_ATT_MAP['ExecutingTest'])
     @ExecutingTest.setter
     def ExecutingTest(self, value):
-        self._set_attribute('executingTest', value)
+        self._set_attribute(self._SDM_ATT_MAP['ExecutingTest'], value)
 
     @property
     def ExecutingTestProgress(self):
@@ -97,7 +112,7 @@ class Timeline(Base):
         -------
         - str: 
         """
-        return self._get_attribute('executingTestProgress')
+        return self._get_attribute(self._SDM_ATT_MAP['ExecutingTestProgress'])
 
     @property
     def ForceTakePorts(self):
@@ -106,10 +121,10 @@ class Timeline(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('forceTakePorts')
+        return self._get_attribute(self._SDM_ATT_MAP['ForceTakePorts'])
     @ForceTakePorts.setter
     def ForceTakePorts(self, value):
-        self._set_attribute('forceTakePorts', value)
+        self._set_attribute(self._SDM_ATT_MAP['ForceTakePorts'], value)
 
     @property
     def MonitorTopologyId(self):
@@ -118,7 +133,7 @@ class Timeline(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/topology): 
         """
-        return self._get_attribute('monitorTopologyId')
+        return self._get_attribute(self._SDM_ATT_MAP['MonitorTopologyId'])
 
     @property
     def PauseOnError(self):
@@ -127,10 +142,10 @@ class Timeline(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('pauseOnError')
+        return self._get_attribute(self._SDM_ATT_MAP['PauseOnError'])
     @PauseOnError.setter
     def PauseOnError(self, value):
-        self._set_attribute('pauseOnError', value)
+        self._set_attribute(self._SDM_ATT_MAP['PauseOnError'], value)
 
     @property
     def StartTime(self):
@@ -139,7 +154,7 @@ class Timeline(Base):
         -------
         - str: 
         """
-        return self._get_attribute('startTime')
+        return self._get_attribute(self._SDM_ATT_MAP['StartTime'])
 
     @property
     def StartTimeAsTicks(self):
@@ -148,10 +163,10 @@ class Timeline(Base):
         -------
         - number: 
         """
-        return self._get_attribute('startTimeAsTicks')
+        return self._get_attribute(self._SDM_ATT_MAP['StartTimeAsTicks'])
     @StartTimeAsTicks.setter
     def StartTimeAsTicks(self, value):
-        self._set_attribute('startTimeAsTicks', value)
+        self._set_attribute(self._SDM_ATT_MAP['StartTimeAsTicks'], value)
 
     @property
     def State(self):
@@ -160,7 +175,7 @@ class Timeline(Base):
         -------
         - dict(arg1:str,arg2:str[cancelled | complete | idle | postflightReleasingPorts | postflightStoppingProtocols | postflightStoppingTimeline | preflightAggregatingCards | preflightCheckingPorts | preflightConnectingPorts | preflightFailed | preflightSettingUpChassisChain | preflightSettingUpPorts | preflightStart | preflightValidateTopologyPortCount | preflightValidatingTimeline | preflightWaitingForChassisConnect | running]): 
         """
-        return self._get_attribute('state')
+        return self._get_attribute(self._SDM_ATT_MAP['State'])
 
     @property
     def TestOrder(self):
@@ -169,10 +184,10 @@ class Timeline(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/timeline/.../test]): 
         """
-        return self._get_attribute('testOrder')
+        return self._get_attribute(self._SDM_ATT_MAP['TestOrder'])
     @TestOrder.setter
     def TestOrder(self, value):
-        self._set_attribute('testOrder', value)
+        self._set_attribute(self._SDM_ATT_MAP['TestOrder'], value)
 
     @property
     def TimingTopologyIds(self):
@@ -181,7 +196,7 @@ class Timeline(Base):
         -------
         - list(str): 
         """
-        return self._get_attribute('timingTopologyIds')
+        return self._get_attribute(self._SDM_ATT_MAP['TimingTopologyIds'])
 
     def update(self, EndTimeAsTicks=None, ExecutingTest=None, ForceTakePorts=None, PauseOnError=None, StartTimeAsTicks=None, TestOrder=None):
         """Updates timeline resource on the server.
@@ -199,7 +214,7 @@ class Timeline(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def CreateProtocol(self, *args, **kwargs):
         """Executes the createProtocol operation on the server.

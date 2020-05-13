@@ -32,6 +32,11 @@ class Ipv4(Base):
 
     __slots__ = ()
     _SDM_NAME = 'ipv4'
+    _SDM_ATT_MAP = {
+        'Gateway': 'gateway',
+        'Ip': 'ip',
+        'MaskWidth': 'maskWidth',
+    }
 
     def __init__(self, parent):
         super(Ipv4, self).__init__(parent)
@@ -43,10 +48,10 @@ class Ipv4(Base):
         -------
         - str: The IPv4 address of the Gateway to the network, typically an interface on the DUT.
         """
-        return self._get_attribute('gateway')
+        return self._get_attribute(self._SDM_ATT_MAP['Gateway'])
     @Gateway.setter
     def Gateway(self, value):
-        self._set_attribute('gateway', value)
+        self._set_attribute(self._SDM_ATT_MAP['Gateway'], value)
 
     @property
     def Ip(self):
@@ -55,10 +60,10 @@ class Ipv4(Base):
         -------
         - str: The 32-bit IPv4 address assigned to this unconnected interface.
         """
-        return self._get_attribute('ip')
+        return self._get_attribute(self._SDM_ATT_MAP['Ip'])
     @Ip.setter
     def Ip(self, value):
-        self._set_attribute('ip', value)
+        self._set_attribute(self._SDM_ATT_MAP['Ip'], value)
 
     @property
     def MaskWidth(self):
@@ -67,10 +72,10 @@ class Ipv4(Base):
         -------
         - number: The number of bits in the mask used with the IPv4 address. The default is 24 bits.
         """
-        return self._get_attribute('maskWidth')
+        return self._get_attribute(self._SDM_ATT_MAP['MaskWidth'])
     @MaskWidth.setter
     def MaskWidth(self, value):
-        self._set_attribute('maskWidth', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaskWidth'], value)
 
     def update(self, Gateway=None, Ip=None, MaskWidth=None):
         """Updates ipv4 resource on the server.
@@ -85,7 +90,7 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Gateway=None, Ip=None, MaskWidth=None):
         """Adds a new ipv4 resource on the server and adds it to the container.
@@ -104,7 +109,7 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained ipv4 resources in this instance from the server.
@@ -137,7 +142,7 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of ipv4 data from the server.

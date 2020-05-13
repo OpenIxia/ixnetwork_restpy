@@ -50,7 +50,7 @@ class AvailableTargetRowFilters(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of availableTargetRowFilters data from the server.

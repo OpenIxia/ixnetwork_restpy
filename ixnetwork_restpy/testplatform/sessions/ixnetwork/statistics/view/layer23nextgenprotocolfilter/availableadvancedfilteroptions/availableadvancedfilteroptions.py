@@ -31,6 +31,10 @@ class AvailableAdvancedFilterOptions(Base):
 
     __slots__ = ()
     _SDM_NAME = 'availableAdvancedFilterOptions'
+    _SDM_ATT_MAP = {
+        'Operators': 'operators',
+        'Stat': 'stat',
+    }
 
     def __init__(self, parent):
         super(AvailableAdvancedFilterOptions, self).__init__(parent)
@@ -42,7 +46,7 @@ class AvailableAdvancedFilterOptions(Base):
         -------
         - str: Returns the operators list for a filter option.
         """
-        return self._get_attribute('operators')
+        return self._get_attribute(self._SDM_ATT_MAP['Operators'])
 
     @property
     def Stat(self):
@@ -51,7 +55,7 @@ class AvailableAdvancedFilterOptions(Base):
         -------
         - str: Returns the statistic name for a filter option.
         """
-        return self._get_attribute('stat')
+        return self._get_attribute(self._SDM_ATT_MAP['Stat'])
 
     def find(self, Operators=None, Stat=None):
         """Finds and retrieves availableAdvancedFilterOptions resources from the server.
@@ -73,7 +77,7 @@ class AvailableAdvancedFilterOptions(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of availableAdvancedFilterOptions data from the server.

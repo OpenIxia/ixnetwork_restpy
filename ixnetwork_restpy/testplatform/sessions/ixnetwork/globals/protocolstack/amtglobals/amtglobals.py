@@ -32,6 +32,17 @@ class AmtGlobals(Base):
 
     __slots__ = ()
     _SDM_NAME = 'amtGlobals'
+    _SDM_ATT_MAP = {
+        'DiscoveryTimeout': 'discoveryTimeout',
+        'MaxOutstandingSessions': 'maxOutstandingSessions',
+        'MaxRelayDiscoveryRetransmissionCount': 'maxRelayDiscoveryRetransmissionCount',
+        'MaxRequestRetransmissionCount': 'maxRequestRetransmissionCount',
+        'ObjectId': 'objectId',
+        'RequestTimeout': 'requestTimeout',
+        'RetransmissionHolddown': 'retransmissionHolddown',
+        'SetupRate': 'setupRate',
+        'TeardownRate': 'teardownRate',
+    }
 
     def __init__(self, parent):
         super(AmtGlobals, self).__init__(parent)
@@ -43,10 +54,10 @@ class AmtGlobals(Base):
         -------
         - number: Initial time to wait for a response to a Relay Discovery message.
         """
-        return self._get_attribute('discoveryTimeout')
+        return self._get_attribute(self._SDM_ATT_MAP['DiscoveryTimeout'])
     @DiscoveryTimeout.setter
     def DiscoveryTimeout(self, value):
-        self._set_attribute('discoveryTimeout', value)
+        self._set_attribute(self._SDM_ATT_MAP['DiscoveryTimeout'], value)
 
     @property
     def MaxOutstandingSessions(self):
@@ -55,10 +66,10 @@ class AmtGlobals(Base):
         -------
         - number: This is the point at which AMT Discovery packets will be restricted. AMT Discovery are sent at the configured speed until these are the number of AMT Discovery in progress, without receiving AMT Advertisment messages; at which point new Discovery messages are sent only when other are completed.
         """
-        return self._get_attribute('maxOutstandingSessions')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingSessions'])
     @MaxOutstandingSessions.setter
     def MaxOutstandingSessions(self, value):
-        self._set_attribute('maxOutstandingSessions', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingSessions'], value)
 
     @property
     def MaxRelayDiscoveryRetransmissionCount(self):
@@ -67,10 +78,10 @@ class AmtGlobals(Base):
         -------
         - number: Maximum number of Relay Discovery retransmissions to allow before terminating relay discovery and reporting an error.
         """
-        return self._get_attribute('maxRelayDiscoveryRetransmissionCount')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxRelayDiscoveryRetransmissionCount'])
     @MaxRelayDiscoveryRetransmissionCount.setter
     def MaxRelayDiscoveryRetransmissionCount(self, value):
-        self._set_attribute('maxRelayDiscoveryRetransmissionCount', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxRelayDiscoveryRetransmissionCount'], value)
 
     @property
     def MaxRequestRetransmissionCount(self):
@@ -79,10 +90,10 @@ class AmtGlobals(Base):
         -------
         - number: Maximum number of Request retransmissions to allow before abandoning a relay and restarting relay discovery or reporting an error.
         """
-        return self._get_attribute('maxRequestRetransmissionCount')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxRequestRetransmissionCount'])
     @MaxRequestRetransmissionCount.setter
     def MaxRequestRetransmissionCount(self, value):
-        self._set_attribute('maxRequestRetransmissionCount', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxRequestRetransmissionCount'], value)
 
     @property
     def ObjectId(self):
@@ -91,7 +102,7 @@ class AmtGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def RequestTimeout(self):
@@ -100,10 +111,10 @@ class AmtGlobals(Base):
         -------
         - number: Initial time to wait for a response to a Request message.
         """
-        return self._get_attribute('requestTimeout')
+        return self._get_attribute(self._SDM_ATT_MAP['RequestTimeout'])
     @RequestTimeout.setter
     def RequestTimeout(self, value):
-        self._set_attribute('requestTimeout', value)
+        self._set_attribute(self._SDM_ATT_MAP['RequestTimeout'], value)
 
     @property
     def RetransmissionHolddown(self):
@@ -112,10 +123,10 @@ class AmtGlobals(Base):
         -------
         - number: Number of seconds to wait in hold-down when the maximum number of retries was reached before trying to retransmit message. Applicable for both Relay Discovery and Request messages.
         """
-        return self._get_attribute('retransmissionHolddown')
+        return self._get_attribute(self._SDM_ATT_MAP['RetransmissionHolddown'])
     @RetransmissionHolddown.setter
     def RetransmissionHolddown(self, value):
-        self._set_attribute('retransmissionHolddown', value)
+        self._set_attribute(self._SDM_ATT_MAP['RetransmissionHolddown'], value)
 
     @property
     def SetupRate(self):
@@ -124,10 +135,10 @@ class AmtGlobals(Base):
         -------
         - number: Request Rate is the number of AMT Discovery packets to send in each second.
         """
-        return self._get_attribute('setupRate')
+        return self._get_attribute(self._SDM_ATT_MAP['SetupRate'])
     @SetupRate.setter
     def SetupRate(self, value):
-        self._set_attribute('setupRate', value)
+        self._set_attribute(self._SDM_ATT_MAP['SetupRate'], value)
 
     @property
     def TeardownRate(self):
@@ -136,10 +147,10 @@ class AmtGlobals(Base):
         -------
         - number: Teardown rate is the number of clients to stop in each second. This value represents the initial value for teardown rate.
         """
-        return self._get_attribute('teardownRate')
+        return self._get_attribute(self._SDM_ATT_MAP['TeardownRate'])
     @TeardownRate.setter
     def TeardownRate(self, value):
-        self._set_attribute('teardownRate', value)
+        self._set_attribute(self._SDM_ATT_MAP['TeardownRate'], value)
 
     def update(self, DiscoveryTimeout=None, MaxOutstandingSessions=None, MaxRelayDiscoveryRetransmissionCount=None, MaxRequestRetransmissionCount=None, RequestTimeout=None, RetransmissionHolddown=None, SetupRate=None, TeardownRate=None):
         """Updates amtGlobals resource on the server.
@@ -159,7 +170,7 @@ class AmtGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, DiscoveryTimeout=None, MaxOutstandingSessions=None, MaxRelayDiscoveryRetransmissionCount=None, MaxRequestRetransmissionCount=None, RequestTimeout=None, RetransmissionHolddown=None, SetupRate=None, TeardownRate=None):
         """Adds a new amtGlobals resource on the server and adds it to the container.
@@ -183,7 +194,7 @@ class AmtGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained amtGlobals resources in this instance from the server.
@@ -222,7 +233,7 @@ class AmtGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of amtGlobals data from the server.

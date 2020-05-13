@@ -30,6 +30,11 @@ class SequenceChecking(Base):
 
     __slots__ = ()
     _SDM_NAME = 'sequenceChecking'
+    _SDM_ATT_MAP = {
+        'AdvancedSequenceThreshold': 'advancedSequenceThreshold',
+        'Enabled': 'enabled',
+        'SequenceMode': 'sequenceMode',
+    }
 
     def __init__(self, parent):
         super(SequenceChecking, self).__init__(parent)
@@ -41,10 +46,10 @@ class SequenceChecking(Base):
         -------
         - number: Checks the sequence.
         """
-        return self._get_attribute('advancedSequenceThreshold')
+        return self._get_attribute(self._SDM_ATT_MAP['AdvancedSequenceThreshold'])
     @AdvancedSequenceThreshold.setter
     def AdvancedSequenceThreshold(self, value):
-        self._set_attribute('advancedSequenceThreshold', value)
+        self._set_attribute(self._SDM_ATT_MAP['AdvancedSequenceThreshold'], value)
 
     @property
     def Enabled(self):
@@ -53,10 +58,10 @@ class SequenceChecking(Base):
         -------
         - bool: If enabled, fetches sequence checking statistics to measure duplicate packets, sequence gap, and the last sequence number.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def SequenceMode(self):
@@ -65,10 +70,10 @@ class SequenceChecking(Base):
         -------
         - str(advanced | rxPacketArrival | rxSwitchedPath | rxThreshold): The mode to conduct sequence checking.
         """
-        return self._get_attribute('sequenceMode')
+        return self._get_attribute(self._SDM_ATT_MAP['SequenceMode'])
     @SequenceMode.setter
     def SequenceMode(self, value):
-        self._set_attribute('sequenceMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['SequenceMode'], value)
 
     def update(self, AdvancedSequenceThreshold=None, Enabled=None, SequenceMode=None):
         """Updates sequenceChecking resource on the server.
@@ -83,4 +88,4 @@ class SequenceChecking(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

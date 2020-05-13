@@ -30,6 +30,20 @@ class Ethernet(Base):
 
     __slots__ = ()
     _SDM_NAME = 'ethernet'
+    _SDM_ATT_MAP = {
+        'AutoInstrumentation': 'autoInstrumentation',
+        'AutoNegotiate': 'autoNegotiate',
+        'EnablePPM': 'enablePPM',
+        'EnabledFlowControl': 'enabledFlowControl',
+        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
+        'Loopback': 'loopback',
+        'MasterSlaveMode': 'masterSlaveMode',
+        'Media': 'media',
+        'NegotiateMasterSlave': 'negotiateMasterSlave',
+        'Ppm': 'ppm',
+        'Speed': 'speed',
+        'SpeedAuto': 'speedAuto',
+    }
 
     def __init__(self, parent):
         super(Ethernet, self).__init__(parent)
@@ -83,10 +97,10 @@ class Ethernet(Base):
         -------
         - str(endOfFrame | floating): The auto instrumentation mode.
         """
-        return self._get_attribute('autoInstrumentation')
+        return self._get_attribute(self._SDM_ATT_MAP['AutoInstrumentation'])
     @AutoInstrumentation.setter
     def AutoInstrumentation(self, value):
-        self._set_attribute('autoInstrumentation', value)
+        self._set_attribute(self._SDM_ATT_MAP['AutoInstrumentation'], value)
 
     @property
     def AutoNegotiate(self):
@@ -95,10 +109,10 @@ class Ethernet(Base):
         -------
         - bool: If enabled, allows autonegotiation between ports for speed and duplex operation based on the various choices. The selected capabilities are advertised during AutoNegotiation
         """
-        return self._get_attribute('autoNegotiate')
+        return self._get_attribute(self._SDM_ATT_MAP['AutoNegotiate'])
     @AutoNegotiate.setter
     def AutoNegotiate(self, value):
-        self._set_attribute('autoNegotiate', value)
+        self._set_attribute(self._SDM_ATT_MAP['AutoNegotiate'], value)
 
     @property
     def EnablePPM(self):
@@ -107,10 +121,10 @@ class Ethernet(Base):
         -------
         - bool: If true, enables the portsppm.
         """
-        return self._get_attribute('enablePPM')
+        return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
     @EnablePPM.setter
     def EnablePPM(self, value):
-        self._set_attribute('enablePPM', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnablePPM'], value)
 
     @property
     def EnabledFlowControl(self):
@@ -119,10 +133,10 @@ class Ethernet(Base):
         -------
         - bool: If true, enables the port's MAC flow control and mechanisms to listen for a directed address pause message.
         """
-        return self._get_attribute('enabledFlowControl')
+        return self._get_attribute(self._SDM_ATT_MAP['EnabledFlowControl'])
     @EnabledFlowControl.setter
     def EnabledFlowControl(self, value):
-        self._set_attribute('enabledFlowControl', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnabledFlowControl'], value)
 
     @property
     def FlowControlDirectedAddress(self):
@@ -131,10 +145,10 @@ class Ethernet(Base):
         -------
         - str: The 48-bit MAC address that the port listens on for a directed pause.
         """
-        return self._get_attribute('flowControlDirectedAddress')
+        return self._get_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'])
     @FlowControlDirectedAddress.setter
     def FlowControlDirectedAddress(self, value):
-        self._set_attribute('flowControlDirectedAddress', value)
+        self._set_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'], value)
 
     @property
     def Loopback(self):
@@ -143,10 +157,10 @@ class Ethernet(Base):
         -------
         - bool: If enabled, the port is set to internally loopback from transmit to receive.
         """
-        return self._get_attribute('loopback')
+        return self._get_attribute(self._SDM_ATT_MAP['Loopback'])
     @Loopback.setter
     def Loopback(self, value):
-        self._set_attribute('loopback', value)
+        self._set_attribute(self._SDM_ATT_MAP['Loopback'], value)
 
     @property
     def MasterSlaveMode(self):
@@ -155,10 +169,10 @@ class Ethernet(Base):
         -------
         - str(master | slave): NOT DEFINED
         """
-        return self._get_attribute('masterSlaveMode')
+        return self._get_attribute(self._SDM_ATT_MAP['MasterSlaveMode'])
     @MasterSlaveMode.setter
     def MasterSlaveMode(self, value):
-        self._set_attribute('masterSlaveMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['MasterSlaveMode'], value)
 
     @property
     def Media(self):
@@ -167,10 +181,10 @@ class Ethernet(Base):
         -------
         - str(copper | fiber | sgmii): Available only for Ethernet cards that support this dual-PHY capability.
         """
-        return self._get_attribute('media')
+        return self._get_attribute(self._SDM_ATT_MAP['Media'])
     @Media.setter
     def Media(self, value):
-        self._set_attribute('media', value)
+        self._set_attribute(self._SDM_ATT_MAP['Media'], value)
 
     @property
     def NegotiateMasterSlave(self):
@@ -179,10 +193,10 @@ class Ethernet(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute('negotiateMasterSlave')
+        return self._get_attribute(self._SDM_ATT_MAP['NegotiateMasterSlave'])
     @NegotiateMasterSlave.setter
     def NegotiateMasterSlave(self, value):
-        self._set_attribute('negotiateMasterSlave', value)
+        self._set_attribute(self._SDM_ATT_MAP['NegotiateMasterSlave'], value)
 
     @property
     def Ppm(self):
@@ -191,10 +205,10 @@ class Ethernet(Base):
         -------
         - number: Indicates the value that needs to be adjusted for the line transmit frequency
         """
-        return self._get_attribute('ppm')
+        return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
     @Ppm.setter
     def Ppm(self, value):
-        self._set_attribute('ppm', value)
+        self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
     def Speed(self):
@@ -203,10 +217,10 @@ class Ethernet(Base):
         -------
         - str(auto | speed1000 | speed100fd | speed100hd | speed10fd | speed10hd): The speed and duplex operation options.
         """
-        return self._get_attribute('speed')
+        return self._get_attribute(self._SDM_ATT_MAP['Speed'])
     @Speed.setter
     def Speed(self, value):
-        self._set_attribute('speed', value)
+        self._set_attribute(self._SDM_ATT_MAP['Speed'], value)
 
     @property
     def SpeedAuto(self):
@@ -215,10 +229,10 @@ class Ethernet(Base):
         -------
         - list(str[all | speed1000 | speed100fd | speed100hd | speed10fd | speed10hd]): If selected, allows auto negotiation between ports for speed and duplex operation based on the various choices. The selected capabilities are advertised during AutoNegotiation.
         """
-        return self._get_attribute('speedAuto')
+        return self._get_attribute(self._SDM_ATT_MAP['SpeedAuto'])
     @SpeedAuto.setter
     def SpeedAuto(self, value):
-        self._set_attribute('speedAuto', value)
+        self._set_attribute(self._SDM_ATT_MAP['SpeedAuto'], value)
 
     def update(self, AutoInstrumentation=None, AutoNegotiate=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, MasterSlaveMode=None, Media=None, NegotiateMasterSlave=None, Ppm=None, Speed=None, SpeedAuto=None):
         """Updates ethernet resource on the server.
@@ -242,4 +256,4 @@ class Ethernet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

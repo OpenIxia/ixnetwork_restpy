@@ -32,6 +32,11 @@ class TrackingFilter(Base):
 
     __slots__ = ()
     _SDM_NAME = 'trackingFilter'
+    _SDM_ATT_MAP = {
+        'Operator': 'operator',
+        'TrackingFilterId': 'trackingFilterId',
+        'Value': 'value',
+    }
 
     def __init__(self, parent):
         super(TrackingFilter, self).__init__(parent)
@@ -43,10 +48,10 @@ class TrackingFilter(Base):
         -------
         - str(isAnyOf | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isInAnyRange | isNoneOf | isSmaller): The logical operation to be performed.
         """
-        return self._get_attribute('operator')
+        return self._get_attribute(self._SDM_ATT_MAP['Operator'])
     @Operator.setter
     def Operator(self, value):
-        self._set_attribute('operator', value)
+        self._set_attribute(self._SDM_ATT_MAP['Operator'], value)
 
     @property
     def TrackingFilterId(self):
@@ -55,10 +60,10 @@ class TrackingFilter(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter): Selected tracking filters from the availableTrackingFilter list.
         """
-        return self._get_attribute('trackingFilterId')
+        return self._get_attribute(self._SDM_ATT_MAP['TrackingFilterId'])
     @TrackingFilterId.setter
     def TrackingFilterId(self, value):
-        self._set_attribute('trackingFilterId', value)
+        self._set_attribute(self._SDM_ATT_MAP['TrackingFilterId'], value)
 
     @property
     def Value(self):
@@ -67,10 +72,10 @@ class TrackingFilter(Base):
         -------
         - list(str): Value of the object
         """
-        return self._get_attribute('value')
+        return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
-        self._set_attribute('value', value)
+        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Operator=None, TrackingFilterId=None, Value=None):
         """Updates trackingFilter resource on the server.
@@ -85,7 +90,7 @@ class TrackingFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Operator=None, TrackingFilterId=None, Value=None):
         """Adds a new trackingFilter resource on the server and adds it to the container.
@@ -104,7 +109,7 @@ class TrackingFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained trackingFilter resources in this instance from the server.
@@ -137,7 +142,7 @@ class TrackingFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of trackingFilter data from the server.

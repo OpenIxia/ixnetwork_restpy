@@ -31,6 +31,17 @@ class DynamicRate(Base):
 
     __slots__ = ()
     _SDM_NAME = 'dynamicRate'
+    _SDM_ATT_MAP = {
+        'BitRateUnitsType': 'bitRateUnitsType',
+        'EnforceMinimumInterPacketGap': 'enforceMinimumInterPacketGap',
+        'HighLevelStreamName': 'highLevelStreamName',
+        'InterPacketGapUnitsType': 'interPacketGapUnitsType',
+        'OverSubscribed': 'overSubscribed',
+        'Rate': 'rate',
+        'RateType': 'rateType',
+        'TrafficItemName': 'trafficItemName',
+        'TxPort': 'txPort',
+    }
 
     def __init__(self, parent):
         super(DynamicRate, self).__init__(parent)
@@ -42,10 +53,10 @@ class DynamicRate(Base):
         -------
         - str(bitsPerSec | bytesPerSec | kbitsPerSec | kbytesPerSec | mbitsPerSec | mbytesPerSec): The rate units for transmitting packet.
         """
-        return self._get_attribute('bitRateUnitsType')
+        return self._get_attribute(self._SDM_ATT_MAP['BitRateUnitsType'])
     @BitRateUnitsType.setter
     def BitRateUnitsType(self, value):
-        self._set_attribute('bitRateUnitsType', value)
+        self._set_attribute(self._SDM_ATT_MAP['BitRateUnitsType'], value)
 
     @property
     def EnforceMinimumInterPacketGap(self):
@@ -54,10 +65,10 @@ class DynamicRate(Base):
         -------
         - number: Sets the minimum inter-packet gap allowed for Ethernet ports only.
         """
-        return self._get_attribute('enforceMinimumInterPacketGap')
+        return self._get_attribute(self._SDM_ATT_MAP['EnforceMinimumInterPacketGap'])
     @EnforceMinimumInterPacketGap.setter
     def EnforceMinimumInterPacketGap(self, value):
-        self._set_attribute('enforceMinimumInterPacketGap', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnforceMinimumInterPacketGap'], value)
 
     @property
     def HighLevelStreamName(self):
@@ -66,7 +77,7 @@ class DynamicRate(Base):
         -------
         - str: The name of the high level stream
         """
-        return self._get_attribute('highLevelStreamName')
+        return self._get_attribute(self._SDM_ATT_MAP['HighLevelStreamName'])
 
     @property
     def InterPacketGapUnitsType(self):
@@ -75,10 +86,10 @@ class DynamicRate(Base):
         -------
         - str(bytes | nanoseconds): The inter-packet gap expressed in units.
         """
-        return self._get_attribute('interPacketGapUnitsType')
+        return self._get_attribute(self._SDM_ATT_MAP['InterPacketGapUnitsType'])
     @InterPacketGapUnitsType.setter
     def InterPacketGapUnitsType(self, value):
-        self._set_attribute('interPacketGapUnitsType', value)
+        self._set_attribute(self._SDM_ATT_MAP['InterPacketGapUnitsType'], value)
 
     @property
     def OverSubscribed(self):
@@ -87,7 +98,7 @@ class DynamicRate(Base):
         -------
         - bool: If true, the packet transmission rate is oversubscribed.
         """
-        return self._get_attribute('overSubscribed')
+        return self._get_attribute(self._SDM_ATT_MAP['OverSubscribed'])
 
     @property
     def Rate(self):
@@ -96,10 +107,10 @@ class DynamicRate(Base):
         -------
         - number: The rate at which packet is transmitted.
         """
-        return self._get_attribute('rate')
+        return self._get_attribute(self._SDM_ATT_MAP['Rate'])
     @Rate.setter
     def Rate(self, value):
-        self._set_attribute('rate', value)
+        self._set_attribute(self._SDM_ATT_MAP['Rate'], value)
 
     @property
     def RateType(self):
@@ -108,10 +119,10 @@ class DynamicRate(Base):
         -------
         - str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate): The types of packet rate transmission.
         """
-        return self._get_attribute('rateType')
+        return self._get_attribute(self._SDM_ATT_MAP['RateType'])
     @RateType.setter
     def RateType(self, value):
-        self._set_attribute('rateType', value)
+        self._set_attribute(self._SDM_ATT_MAP['RateType'], value)
 
     @property
     def TrafficItemName(self):
@@ -120,7 +131,7 @@ class DynamicRate(Base):
         -------
         - str: The name of the parent traffic item.
         """
-        return self._get_attribute('trafficItemName')
+        return self._get_attribute(self._SDM_ATT_MAP['TrafficItemName'])
 
     @property
     def TxPort(self):
@@ -129,7 +140,7 @@ class DynamicRate(Base):
         -------
         - number: The transmitting port.
         """
-        return self._get_attribute('txPort')
+        return self._get_attribute(self._SDM_ATT_MAP['TxPort'])
 
     def update(self, BitRateUnitsType=None, EnforceMinimumInterPacketGap=None, InterPacketGapUnitsType=None, Rate=None, RateType=None):
         """Updates dynamicRate resource on the server.
@@ -146,7 +157,7 @@ class DynamicRate(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, BitRateUnitsType=None, EnforceMinimumInterPacketGap=None, HighLevelStreamName=None, InterPacketGapUnitsType=None, OverSubscribed=None, Rate=None, RateType=None, TrafficItemName=None, TxPort=None):
         """Finds and retrieves dynamicRate resources from the server.
@@ -175,7 +186,7 @@ class DynamicRate(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of dynamicRate data from the server.

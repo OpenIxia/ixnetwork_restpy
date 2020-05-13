@@ -30,6 +30,9 @@ class OneTimeJoinLeaveLatency(Base):
 
     __slots__ = ()
     _SDM_NAME = 'oneTimeJoinLeaveLatency'
+    _SDM_ATT_MAP = {
+        'Enabled': 'enabled',
+    }
 
     def __init__(self, parent):
         super(OneTimeJoinLeaveLatency, self).__init__(parent)
@@ -41,10 +44,10 @@ class OneTimeJoinLeaveLatency(Base):
         -------
         - bool: If true enables one time join leave latency.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     def update(self, Enabled=None):
         """Updates oneTimeJoinLeaveLatency resource on the server.
@@ -57,4 +60,4 @@ class OneTimeJoinLeaveLatency(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

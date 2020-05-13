@@ -31,6 +31,11 @@ class Choice(Base):
 
     __slots__ = ()
     _SDM_NAME = 'choice'
+    _SDM_ATT_MAP = {
+        'Default': 'default',
+        'SupportedValues': 'supportedValues',
+        'Value': 'value',
+    }
 
     def __init__(self, parent):
         super(Choice, self).__init__(parent)
@@ -42,7 +47,7 @@ class Choice(Base):
         -------
         - str: (Read only) Parameter choice default value.
         """
-        return self._get_attribute('default')
+        return self._get_attribute(self._SDM_ATT_MAP['Default'])
 
     @property
     def SupportedValues(self):
@@ -51,7 +56,7 @@ class Choice(Base):
         -------
         - list(str): (Read only) Parameter supported choice values.
         """
-        return self._get_attribute('supportedValues')
+        return self._get_attribute(self._SDM_ATT_MAP['SupportedValues'])
 
     @property
     def Value(self):
@@ -60,10 +65,10 @@ class Choice(Base):
         -------
         - str: Parameter choice selected value.
         """
-        return self._get_attribute('value')
+        return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
-        self._set_attribute('value', value)
+        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Value=None):
         """Updates choice resource on the server.
@@ -76,7 +81,7 @@ class Choice(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, Default=None, SupportedValues=None, Value=None):
         """Finds and retrieves choice resources from the server.
@@ -99,7 +104,7 @@ class Choice(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of choice data from the server.

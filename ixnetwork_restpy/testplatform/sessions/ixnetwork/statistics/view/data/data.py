@@ -30,22 +30,39 @@ class Data(Base):
 
     __slots__ = ()
     _SDM_NAME = 'data'
+    _SDM_ATT_MAP = {
+        'AllowPaging': 'allowPaging',
+        'ColumnCaptions': 'columnCaptions',
+        'ColumnCount': 'columnCount',
+        'CurrentPage': 'currentPage',
+        'EgressMode': 'egressMode',
+        'EgressPageSize': 'egressPageSize',
+        'IsBlocked': 'isBlocked',
+        'IsReady': 'isReady',
+        'PageSize': 'pageSize',
+        'PageValues': 'pageValues',
+        'RowCount': 'rowCount',
+        'RowValues': 'rowValues',
+        'Timestamp': 'timestamp',
+        'TotalPages': 'totalPages',
+        'TotalRows': 'totalRows',
+    }
 
     def __init__(self, parent):
         super(Data, self).__init__(parent)
 
     @property
     def Egress(self):
-        """
+        """DEPRECATED 
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.data.egress.egress.Egress): An instance of the Egress class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egress.egress.Egress): An instance of the Egress class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.data.egress.egress import Egress
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egress.egress import Egress
         return Egress(self)
 
     @property
@@ -53,13 +70,13 @@ class Data(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.data.egressrxcondition.egressrxcondition.EgressRxCondition): An instance of the EgressRxCondition class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egressrxcondition.egressrxcondition.EgressRxCondition): An instance of the EgressRxCondition class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.data.egressrxcondition.egressrxcondition import EgressRxCondition
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egressrxcondition.egressrxcondition import EgressRxCondition
         return EgressRxCondition(self)._select()
 
     @property
@@ -69,7 +86,7 @@ class Data(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('allowPaging')
+        return self._get_attribute(self._SDM_ATT_MAP['AllowPaging'])
 
     @property
     def ColumnCaptions(self):
@@ -78,7 +95,7 @@ class Data(Base):
         -------
         - list(str): 
         """
-        return self._get_attribute('columnCaptions')
+        return self._get_attribute(self._SDM_ATT_MAP['ColumnCaptions'])
 
     @property
     def ColumnCount(self):
@@ -87,7 +104,7 @@ class Data(Base):
         -------
         - number: 
         """
-        return self._get_attribute('columnCount')
+        return self._get_attribute(self._SDM_ATT_MAP['ColumnCount'])
 
     @property
     def CurrentPage(self):
@@ -96,10 +113,10 @@ class Data(Base):
         -------
         - number: 
         """
-        return self._get_attribute('currentPage')
+        return self._get_attribute(self._SDM_ATT_MAP['CurrentPage'])
     @CurrentPage.setter
     def CurrentPage(self, value):
-        self._set_attribute('currentPage', value)
+        self._set_attribute(self._SDM_ATT_MAP['CurrentPage'], value)
 
     @property
     def EgressMode(self):
@@ -108,10 +125,10 @@ class Data(Base):
         -------
         - str(conditional | paged): 
         """
-        return self._get_attribute('egressMode')
+        return self._get_attribute(self._SDM_ATT_MAP['EgressMode'])
     @EgressMode.setter
     def EgressMode(self, value):
-        self._set_attribute('egressMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['EgressMode'], value)
 
     @property
     def EgressPageSize(self):
@@ -120,10 +137,10 @@ class Data(Base):
         -------
         - number: 
         """
-        return self._get_attribute('egressPageSize')
+        return self._get_attribute(self._SDM_ATT_MAP['EgressPageSize'])
     @EgressPageSize.setter
     def EgressPageSize(self, value):
-        self._set_attribute('egressPageSize', value)
+        self._set_attribute(self._SDM_ATT_MAP['EgressPageSize'], value)
 
     @property
     def IsBlocked(self):
@@ -132,7 +149,7 @@ class Data(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('isBlocked')
+        return self._get_attribute(self._SDM_ATT_MAP['IsBlocked'])
 
     @property
     def IsReady(self):
@@ -141,7 +158,7 @@ class Data(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('isReady')
+        return self._get_attribute(self._SDM_ATT_MAP['IsReady'])
 
     @property
     def PageSize(self):
@@ -150,10 +167,10 @@ class Data(Base):
         -------
         - number: 
         """
-        return self._get_attribute('pageSize')
+        return self._get_attribute(self._SDM_ATT_MAP['PageSize'])
     @PageSize.setter
     def PageSize(self, value):
-        self._set_attribute('pageSize', value)
+        self._set_attribute(self._SDM_ATT_MAP['PageSize'], value)
 
     @property
     def PageValues(self):
@@ -162,7 +179,7 @@ class Data(Base):
         -------
         - list(list[list[str]]): Returns the values in the current page. The ingress row is grouped with its corresponding egress rows
         """
-        return self._get_attribute('pageValues')
+        return self._get_attribute(self._SDM_ATT_MAP['PageValues'])
 
     @property
     def RowCount(self):
@@ -171,7 +188,7 @@ class Data(Base):
         -------
         - number: 
         """
-        return self._get_attribute('rowCount')
+        return self._get_attribute(self._SDM_ATT_MAP['RowCount'])
 
     @property
     def RowValues(self):
@@ -180,7 +197,7 @@ class Data(Base):
         -------
         - dict(arg1:list[list[list[str]]]): 
         """
-        return self._get_attribute('rowValues')
+        return self._get_attribute(self._SDM_ATT_MAP['RowValues'])
 
     @property
     def Timestamp(self):
@@ -189,7 +206,7 @@ class Data(Base):
         -------
         - number: 
         """
-        return self._get_attribute('timestamp')
+        return self._get_attribute(self._SDM_ATT_MAP['Timestamp'])
 
     @property
     def TotalPages(self):
@@ -198,7 +215,7 @@ class Data(Base):
         -------
         - number: 
         """
-        return self._get_attribute('totalPages')
+        return self._get_attribute(self._SDM_ATT_MAP['TotalPages'])
 
     @property
     def TotalRows(self):
@@ -207,7 +224,7 @@ class Data(Base):
         -------
         - number: 
         """
-        return self._get_attribute('totalRows')
+        return self._get_attribute(self._SDM_ATT_MAP['TotalRows'])
 
     def update(self, CurrentPage=None, EgressMode=None, EgressPageSize=None, PageSize=None):
         """Updates data resource on the server.
@@ -223,4 +240,4 @@ class Data(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -32,6 +32,11 @@ class FcoeClientOptionSet(Base):
 
     __slots__ = ()
     _SDM_NAME = 'fcoeClientOptionSet'
+    _SDM_ATT_MAP = {
+        'Defaultp': 'defaultp',
+        'Name': 'name',
+        'ObjectId': 'objectId',
+    }
 
     def __init__(self, parent):
         super(FcoeClientOptionSet, self).__init__(parent)
@@ -57,10 +62,10 @@ class FcoeClientOptionSet(Base):
         -------
         - bool: True to assign this option set to new ranges.
         """
-        return self._get_attribute('defaultp')
+        return self._get_attribute(self._SDM_ATT_MAP['Defaultp'])
     @Defaultp.setter
     def Defaultp(self, value):
-        self._set_attribute('defaultp', value)
+        self._set_attribute(self._SDM_ATT_MAP['Defaultp'], value)
 
     @property
     def Name(self):
@@ -69,10 +74,10 @@ class FcoeClientOptionSet(Base):
         -------
         - str: Option set name.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
@@ -81,7 +86,7 @@ class FcoeClientOptionSet(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def update(self, Defaultp=None, Name=None):
         """Updates fcoeClientOptionSet resource on the server.
@@ -95,7 +100,7 @@ class FcoeClientOptionSet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Defaultp=None, Name=None):
         """Adds a new fcoeClientOptionSet resource on the server and adds it to the container.
@@ -113,7 +118,7 @@ class FcoeClientOptionSet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained fcoeClientOptionSet resources in this instance from the server.
@@ -146,7 +151,7 @@ class FcoeClientOptionSet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of fcoeClientOptionSet data from the server.

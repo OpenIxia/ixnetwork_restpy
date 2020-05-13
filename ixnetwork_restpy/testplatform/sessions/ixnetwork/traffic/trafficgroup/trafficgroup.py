@@ -32,6 +32,9 @@ class TrafficGroup(Base):
 
     __slots__ = ()
     _SDM_NAME = 'trafficGroup'
+    _SDM_ATT_MAP = {
+        'Name': 'name',
+    }
 
     def __init__(self, parent):
         super(TrafficGroup, self).__init__(parent)
@@ -43,10 +46,10 @@ class TrafficGroup(Base):
         -------
         - str: Name of the traffic item.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Name=None):
         """Updates trafficGroup resource on the server.
@@ -59,7 +62,7 @@ class TrafficGroup(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None):
         """Adds a new trafficGroup resource on the server and adds it to the container.
@@ -76,7 +79,7 @@ class TrafficGroup(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained trafficGroup resources in this instance from the server.
@@ -107,7 +110,7 @@ class TrafficGroup(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of trafficGroup data from the server.

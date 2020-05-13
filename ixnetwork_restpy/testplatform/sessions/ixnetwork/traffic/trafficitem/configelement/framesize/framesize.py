@@ -30,6 +30,19 @@ class FrameSize(Base):
 
     __slots__ = ()
     _SDM_NAME = 'frameSize'
+    _SDM_ATT_MAP = {
+        'FixedSize': 'fixedSize',
+        'IncrementFrom': 'incrementFrom',
+        'IncrementStep': 'incrementStep',
+        'IncrementTo': 'incrementTo',
+        'PresetDistribution': 'presetDistribution',
+        'QuadGaussian': 'quadGaussian',
+        'RandomMax': 'randomMax',
+        'RandomMin': 'randomMin',
+        'Type': 'type',
+        'WeightedPairs': 'weightedPairs',
+        'WeightedRangePairs': 'weightedRangePairs',
+    }
 
     def __init__(self, parent):
         super(FrameSize, self).__init__(parent)
@@ -41,10 +54,10 @@ class FrameSize(Base):
         -------
         - number: Sets all frames to a constant specified size.
         """
-        return self._get_attribute('fixedSize')
+        return self._get_attribute(self._SDM_ATT_MAP['FixedSize'])
     @FixedSize.setter
     def FixedSize(self, value):
-        self._set_attribute('fixedSize', value)
+        self._set_attribute(self._SDM_ATT_MAP['FixedSize'], value)
 
     @property
     def IncrementFrom(self):
@@ -53,10 +66,10 @@ class FrameSize(Base):
         -------
         - number: Specifies the Start Value if the Frame Size is incremented.
         """
-        return self._get_attribute('incrementFrom')
+        return self._get_attribute(self._SDM_ATT_MAP['IncrementFrom'])
     @IncrementFrom.setter
     def IncrementFrom(self, value):
-        self._set_attribute('incrementFrom', value)
+        self._set_attribute(self._SDM_ATT_MAP['IncrementFrom'], value)
 
     @property
     def IncrementStep(self):
@@ -65,10 +78,10 @@ class FrameSize(Base):
         -------
         - number: Specifies the Step Value if the Frame Size is Increment.
         """
-        return self._get_attribute('incrementStep')
+        return self._get_attribute(self._SDM_ATT_MAP['IncrementStep'])
     @IncrementStep.setter
     def IncrementStep(self, value):
-        self._set_attribute('incrementStep', value)
+        self._set_attribute(self._SDM_ATT_MAP['IncrementStep'], value)
 
     @property
     def IncrementTo(self):
@@ -77,10 +90,10 @@ class FrameSize(Base):
         -------
         - number: Specifies the Final Value if the Frame Size is Increment.
         """
-        return self._get_attribute('incrementTo')
+        return self._get_attribute(self._SDM_ATT_MAP['IncrementTo'])
     @IncrementTo.setter
     def IncrementTo(self, value):
-        self._set_attribute('incrementTo', value)
+        self._set_attribute(self._SDM_ATT_MAP['IncrementTo'], value)
 
     @property
     def PresetDistribution(self):
@@ -89,10 +102,10 @@ class FrameSize(Base):
         -------
         - str(cisco | imix | ipSecImix | ipV6Imix | rprQuar | rprTri | standardImix | tcpImix | tolly): If set, Frame Size is set to IMIX.
         """
-        return self._get_attribute('presetDistribution')
+        return self._get_attribute(self._SDM_ATT_MAP['PresetDistribution'])
     @PresetDistribution.setter
     def PresetDistribution(self, value):
-        self._set_attribute('presetDistribution', value)
+        self._set_attribute(self._SDM_ATT_MAP['PresetDistribution'], value)
 
     @property
     def QuadGaussian(self):
@@ -101,10 +114,10 @@ class FrameSize(Base):
         -------
         - list(number): This option allows to set frames to use a calculated distribution of Frame sizes. Quad Gaussian is the superposition of four Gaussian distributions. The user can specify the center (or mean), width of half maximum, and weight of each Gaussian distribution. The distribution is then normalized to a single distribution and generates the random numbers according to the normalized distribution.
         """
-        return self._get_attribute('quadGaussian')
+        return self._get_attribute(self._SDM_ATT_MAP['QuadGaussian'])
     @QuadGaussian.setter
     def QuadGaussian(self, value):
-        self._set_attribute('quadGaussian', value)
+        self._set_attribute(self._SDM_ATT_MAP['QuadGaussian'], value)
 
     @property
     def RandomMax(self):
@@ -113,10 +126,10 @@ class FrameSize(Base):
         -------
         - number: Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
         """
-        return self._get_attribute('randomMax')
+        return self._get_attribute(self._SDM_ATT_MAP['RandomMax'])
     @RandomMax.setter
     def RandomMax(self, value):
-        self._set_attribute('randomMax', value)
+        self._set_attribute(self._SDM_ATT_MAP['RandomMax'], value)
 
     @property
     def RandomMin(self):
@@ -125,10 +138,10 @@ class FrameSize(Base):
         -------
         - number: Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
         """
-        return self._get_attribute('randomMin')
+        return self._get_attribute(self._SDM_ATT_MAP['RandomMin'])
     @RandomMin.setter
     def RandomMin(self, value):
-        self._set_attribute('randomMin', value)
+        self._set_attribute(self._SDM_ATT_MAP['RandomMin'], value)
 
     @property
     def Type(self):
@@ -137,10 +150,10 @@ class FrameSize(Base):
         -------
         - str(auto | fixed | increment | presetDistribution | quadGaussian | random | weightedPairs): Sets the type of Frame Size.
         """
-        return self._get_attribute('type')
+        return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
-        self._set_attribute('type', value)
+        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     @property
     def WeightedPairs(self):
@@ -149,10 +162,10 @@ class FrameSize(Base):
         -------
         - list(number): Defines the values for the weight pairs.
         """
-        return self._get_attribute('weightedPairs')
+        return self._get_attribute(self._SDM_ATT_MAP['WeightedPairs'])
     @WeightedPairs.setter
     def WeightedPairs(self, value):
-        self._set_attribute('weightedPairs', value)
+        self._set_attribute(self._SDM_ATT_MAP['WeightedPairs'], value)
 
     @property
     def WeightedRangePairs(self):
@@ -161,10 +174,10 @@ class FrameSize(Base):
         -------
         - list(dict(arg1:number,arg2:number,arg3:number)): A list of structures that define the weighted range.
         """
-        return self._get_attribute('weightedRangePairs')
+        return self._get_attribute(self._SDM_ATT_MAP['WeightedRangePairs'])
     @WeightedRangePairs.setter
     def WeightedRangePairs(self, value):
-        self._set_attribute('weightedRangePairs', value)
+        self._set_attribute(self._SDM_ATT_MAP['WeightedRangePairs'], value)
 
     def update(self, FixedSize=None, IncrementFrom=None, IncrementStep=None, IncrementTo=None, PresetDistribution=None, QuadGaussian=None, RandomMax=None, RandomMin=None, Type=None, WeightedPairs=None, WeightedRangePairs=None):
         """Updates frameSize resource on the server.
@@ -187,4 +200,4 @@ class FrameSize(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

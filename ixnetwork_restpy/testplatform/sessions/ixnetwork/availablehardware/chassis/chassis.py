@@ -32,6 +32,25 @@ class Chassis(Base):
 
     __slots__ = ()
     _SDM_NAME = 'chassis'
+    _SDM_ATT_MAP = {
+        'CableLength': 'cableLength',
+        'ChainTopology': 'chainTopology',
+        'ChassisOSType': 'chassisOSType',
+        'ChassisType': 'chassisType',
+        'ChassisVersion': 'chassisVersion',
+        'ConnectRetries': 'connectRetries',
+        'Hostname': 'hostname',
+        'Ip': 'ip',
+        'IsLicensesRetrieved': 'isLicensesRetrieved',
+        'IsMaster': 'isMaster',
+        'IxnBuildNumber': 'ixnBuildNumber',
+        'IxosBuildNumber': 'ixosBuildNumber',
+        'LicenseErrors': 'licenseErrors',
+        'MasterChassis': 'masterChassis',
+        'ProtocolBuildNumber': 'protocolBuildNumber',
+        'SequenceId': 'sequenceId',
+        'State': 'state',
+    }
 
     def __init__(self, parent):
         super(Chassis, self).__init__(parent)
@@ -57,10 +76,10 @@ class Chassis(Base):
         -------
         - number: Specifies the length of the cable between two adjacent chassis. Must be set only after the chassis hostname has been set and committed on the current chassis.
         """
-        return self._get_attribute('cableLength')
+        return self._get_attribute(self._SDM_ATT_MAP['CableLength'])
     @CableLength.setter
     def CableLength(self, value):
-        self._set_attribute('cableLength', value)
+        self._set_attribute(self._SDM_ATT_MAP['CableLength'], value)
 
     @property
     def ChainTopology(self):
@@ -69,10 +88,10 @@ class Chassis(Base):
         -------
         - str(daisy | none | star): The chain topology type. This must be defined on the master chassis. It must be defined only after the chassis host name has been specified and applied on the current chassis. For legacy chassis chains, the daisy chainTopology should be indicated.
         """
-        return self._get_attribute('chainTopology')
+        return self._get_attribute(self._SDM_ATT_MAP['ChainTopology'])
     @ChainTopology.setter
     def ChainTopology(self, value):
-        self._set_attribute('chainTopology', value)
+        self._set_attribute(self._SDM_ATT_MAP['ChainTopology'], value)
 
     @property
     def ChassisOSType(self):
@@ -81,7 +100,7 @@ class Chassis(Base):
         -------
         - str(linux | unknown | windows): 
         """
-        return self._get_attribute('chassisOSType')
+        return self._get_attribute(self._SDM_ATT_MAP['ChassisOSType'])
 
     @property
     def ChassisType(self):
@@ -90,7 +109,7 @@ class Chassis(Base):
         -------
         - str: The type of chassis.
         """
-        return self._get_attribute('chassisType')
+        return self._get_attribute(self._SDM_ATT_MAP['ChassisType'])
 
     @property
     def ChassisVersion(self):
@@ -99,7 +118,7 @@ class Chassis(Base):
         -------
         - str: The version of the Chassis in use.
         """
-        return self._get_attribute('chassisVersion')
+        return self._get_attribute(self._SDM_ATT_MAP['ChassisVersion'])
 
     @property
     def ConnectRetries(self):
@@ -108,7 +127,7 @@ class Chassis(Base):
         -------
         - number: The number of time the client attempted to re-connect with the chassis. (read only)
         """
-        return self._get_attribute('connectRetries')
+        return self._get_attribute(self._SDM_ATT_MAP['ConnectRetries'])
 
     @property
     def Hostname(self):
@@ -117,10 +136,10 @@ class Chassis(Base):
         -------
         - str: The IP address associated with the chassis.
         """
-        return self._get_attribute('hostname')
+        return self._get_attribute(self._SDM_ATT_MAP['Hostname'])
     @Hostname.setter
     def Hostname(self, value):
-        self._set_attribute('hostname', value)
+        self._set_attribute(self._SDM_ATT_MAP['Hostname'], value)
 
     @property
     def Ip(self):
@@ -129,7 +148,7 @@ class Chassis(Base):
         -------
         - str: The IP address associated with the chassis.
         """
-        return self._get_attribute('ip')
+        return self._get_attribute(self._SDM_ATT_MAP['Ip'])
 
     @property
     def IsLicensesRetrieved(self):
@@ -138,7 +157,7 @@ class Chassis(Base):
         -------
         - bool: Retrieves the licenses in the chassis.
         """
-        return self._get_attribute('isLicensesRetrieved')
+        return self._get_attribute(self._SDM_ATT_MAP['IsLicensesRetrieved'])
 
     @property
     def IsMaster(self):
@@ -147,7 +166,7 @@ class Chassis(Base):
         -------
         - bool: Specifies whether this chassis is a master of a slave in a chain. There can be only one master chassis in a chain. NOTE: The master is automatically assigned based on cable connections.
         """
-        return self._get_attribute('isMaster')
+        return self._get_attribute(self._SDM_ATT_MAP['IsMaster'])
 
     @property
     def IxnBuildNumber(self):
@@ -156,7 +175,7 @@ class Chassis(Base):
         -------
         - str: IxNetwork build number.
         """
-        return self._get_attribute('ixnBuildNumber')
+        return self._get_attribute(self._SDM_ATT_MAP['IxnBuildNumber'])
 
     @property
     def IxosBuildNumber(self):
@@ -165,7 +184,7 @@ class Chassis(Base):
         -------
         - str: The IxOS version of the Chassis in use.
         """
-        return self._get_attribute('ixosBuildNumber')
+        return self._get_attribute(self._SDM_ATT_MAP['IxosBuildNumber'])
 
     @property
     def LicenseErrors(self):
@@ -174,7 +193,7 @@ class Chassis(Base):
         -------
         - list(str): Shows the licening errors that occurred due to licensing problems.
         """
-        return self._get_attribute('licenseErrors')
+        return self._get_attribute(self._SDM_ATT_MAP['LicenseErrors'])
 
     @property
     def MasterChassis(self):
@@ -183,10 +202,10 @@ class Chassis(Base):
         -------
         - str: Specify the hostname of the master chassis on a slave chassis. Must be left blank on master. Must be set only after the chassis hostname has been set and committed on the current chassis.
         """
-        return self._get_attribute('masterChassis')
+        return self._get_attribute(self._SDM_ATT_MAP['MasterChassis'])
     @MasterChassis.setter
     def MasterChassis(self, value):
-        self._set_attribute('masterChassis', value)
+        self._set_attribute(self._SDM_ATT_MAP['MasterChassis'], value)
 
     @property
     def ProtocolBuildNumber(self):
@@ -195,7 +214,7 @@ class Chassis(Base):
         -------
         - str: The Protocols version of the Chassis in use.
         """
-        return self._get_attribute('protocolBuildNumber')
+        return self._get_attribute(self._SDM_ATT_MAP['ProtocolBuildNumber'])
 
     @property
     def SequenceId(self):
@@ -204,10 +223,10 @@ class Chassis(Base):
         -------
         - number: Indicates the order at which the chassis in a chassis chain are pulsed by IxOS. Star topology chains are automatically setting this value. Must be set only after the chassis hostname has been set and committed on the current chassis.
         """
-        return self._get_attribute('sequenceId')
+        return self._get_attribute(self._SDM_ATT_MAP['SequenceId'])
     @SequenceId.setter
     def SequenceId(self, value):
-        self._set_attribute('sequenceId', value)
+        self._set_attribute(self._SDM_ATT_MAP['SequenceId'], value)
 
     @property
     def State(self):
@@ -216,7 +235,7 @@ class Chassis(Base):
         -------
         - str(down | down | polling | polling | polling | ready): The following states can be read from the port: polling, ready, and down.
         """
-        return self._get_attribute('state')
+        return self._get_attribute(self._SDM_ATT_MAP['State'])
 
     def update(self, CableLength=None, ChainTopology=None, Hostname=None, MasterChassis=None, SequenceId=None):
         """Updates chassis resource on the server.
@@ -233,7 +252,7 @@ class Chassis(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, CableLength=None, ChainTopology=None, Hostname=None, MasterChassis=None, SequenceId=None):
         """Adds a new chassis resource on the server and adds it to the container.
@@ -254,7 +273,7 @@ class Chassis(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained chassis resources in this instance from the server.
@@ -301,7 +320,7 @@ class Chassis(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of chassis data from the server.

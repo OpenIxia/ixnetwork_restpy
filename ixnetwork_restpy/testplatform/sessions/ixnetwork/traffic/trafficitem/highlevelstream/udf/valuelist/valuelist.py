@@ -31,6 +31,11 @@ class ValueList(Base):
 
     __slots__ = ()
     _SDM_NAME = 'valueList'
+    _SDM_ATT_MAP = {
+        'AvailableWidths': 'availableWidths',
+        'StartValueList': 'startValueList',
+        'Width': 'width',
+    }
 
     def __init__(self, parent):
         super(ValueList, self).__init__(parent)
@@ -42,7 +47,7 @@ class ValueList(Base):
         -------
         - list(str): Species all the possible widths available for a UDF in particular Type.
         """
-        return self._get_attribute('availableWidths')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableWidths'])
 
     @property
     def StartValueList(self):
@@ -51,10 +56,10 @@ class ValueList(Base):
         -------
         - list(number): Specifies the starting value for a particular UDF.
         """
-        return self._get_attribute('startValueList')
+        return self._get_attribute(self._SDM_ATT_MAP['StartValueList'])
     @StartValueList.setter
     def StartValueList(self, value):
-        self._set_attribute('startValueList', value)
+        self._set_attribute(self._SDM_ATT_MAP['StartValueList'], value)
 
     @property
     def Width(self):
@@ -63,10 +68,10 @@ class ValueList(Base):
         -------
         - str(16 | 24 | 32 | 8): Specifies the width of the UDF.
         """
-        return self._get_attribute('width')
+        return self._get_attribute(self._SDM_ATT_MAP['Width'])
     @Width.setter
     def Width(self, value):
-        self._set_attribute('width', value)
+        self._set_attribute(self._SDM_ATT_MAP['Width'], value)
 
     def update(self, StartValueList=None, Width=None):
         """Updates valueList resource on the server.
@@ -80,7 +85,7 @@ class ValueList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, AvailableWidths=None, StartValueList=None, Width=None):
         """Finds and retrieves valueList resources from the server.
@@ -103,7 +108,7 @@ class ValueList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of valueList data from the server.

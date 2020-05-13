@@ -32,6 +32,16 @@ class Dhcpv6ClientGlobals(Base):
 
     __slots__ = ()
     _SDM_NAME = 'dhcpv6ClientGlobals'
+    _SDM_ATT_MAP = {
+        'Dhcp6InfMaxRc': 'dhcp6InfMaxRc',
+        'Dhcp6InfMaxRt': 'dhcp6InfMaxRt',
+        'Dhcp6InfTimeout': 'dhcp6InfTimeout',
+        'MaxOutstandingRequests': 'maxOutstandingRequests',
+        'ObjectId': 'objectId',
+        'SetupRateIncrement': 'setupRateIncrement',
+        'SetupRateInitial': 'setupRateInitial',
+        'SetupRateMax': 'setupRateMax',
+    }
 
     def __init__(self, parent):
         super(Dhcpv6ClientGlobals, self).__init__(parent)
@@ -43,10 +53,10 @@ class Dhcpv6ClientGlobals(Base):
         -------
         - number: The maximum information-request retry attempts.
         """
-        return self._get_attribute('dhcp6InfMaxRc')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp6InfMaxRc'])
     @Dhcp6InfMaxRc.setter
     def Dhcp6InfMaxRc(self, value):
-        self._set_attribute('dhcp6InfMaxRc', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp6InfMaxRc'], value)
 
     @property
     def Dhcp6InfMaxRt(self):
@@ -55,10 +65,10 @@ class Dhcpv6ClientGlobals(Base):
         -------
         - number: RFC 3315 maximum information-request timeout value, in seconds.
         """
-        return self._get_attribute('dhcp6InfMaxRt')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp6InfMaxRt'])
     @Dhcp6InfMaxRt.setter
     def Dhcp6InfMaxRt(self, value):
-        self._set_attribute('dhcp6InfMaxRt', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp6InfMaxRt'], value)
 
     @property
     def Dhcp6InfTimeout(self):
@@ -67,10 +77,10 @@ class Dhcpv6ClientGlobals(Base):
         -------
         - number: RFC 3315 Initial information-request timeout, in seconds.
         """
-        return self._get_attribute('dhcp6InfTimeout')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp6InfTimeout'])
     @Dhcp6InfTimeout.setter
     def Dhcp6InfTimeout(self, value):
-        self._set_attribute('dhcp6InfTimeout', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp6InfTimeout'], value)
 
     @property
     def MaxOutstandingRequests(self):
@@ -79,10 +89,10 @@ class Dhcpv6ClientGlobals(Base):
         -------
         - number: This is the point at which requests will be restricted. Requests are sent at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
         """
-        return self._get_attribute('maxOutstandingRequests')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
-        self._set_attribute('maxOutstandingRequests', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
 
     @property
     def ObjectId(self):
@@ -91,7 +101,7 @@ class Dhcpv6ClientGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def SetupRateIncrement(self):
@@ -100,10 +110,10 @@ class Dhcpv6ClientGlobals(Base):
         -------
         - number: This value represents the increment value for setup rate. This value is applied every second and can be negative.
         """
-        return self._get_attribute('setupRateIncrement')
+        return self._get_attribute(self._SDM_ATT_MAP['SetupRateIncrement'])
     @SetupRateIncrement.setter
     def SetupRateIncrement(self, value):
-        self._set_attribute('setupRateIncrement', value)
+        self._set_attribute(self._SDM_ATT_MAP['SetupRateIncrement'], value)
 
     @property
     def SetupRateInitial(self):
@@ -112,10 +122,10 @@ class Dhcpv6ClientGlobals(Base):
         -------
         - number: Setup rate is the number of clients to start in each second. This value represents the initial value for setup rate.
         """
-        return self._get_attribute('setupRateInitial')
+        return self._get_attribute(self._SDM_ATT_MAP['SetupRateInitial'])
     @SetupRateInitial.setter
     def SetupRateInitial(self, value):
-        self._set_attribute('setupRateInitial', value)
+        self._set_attribute(self._SDM_ATT_MAP['SetupRateInitial'], value)
 
     @property
     def SetupRateMax(self):
@@ -124,10 +134,10 @@ class Dhcpv6ClientGlobals(Base):
         -------
         - number: This value represents the final value for setup rate. The setup rate will not change after this value is reached.
         """
-        return self._get_attribute('setupRateMax')
+        return self._get_attribute(self._SDM_ATT_MAP['SetupRateMax'])
     @SetupRateMax.setter
     def SetupRateMax(self, value):
-        self._set_attribute('setupRateMax', value)
+        self._set_attribute(self._SDM_ATT_MAP['SetupRateMax'], value)
 
     def update(self, Dhcp6InfMaxRc=None, Dhcp6InfMaxRt=None, Dhcp6InfTimeout=None, MaxOutstandingRequests=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None):
         """Updates dhcpv6ClientGlobals resource on the server.
@@ -146,7 +156,7 @@ class Dhcpv6ClientGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Dhcp6InfMaxRc=None, Dhcp6InfMaxRt=None, Dhcp6InfTimeout=None, MaxOutstandingRequests=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None):
         """Adds a new dhcpv6ClientGlobals resource on the server and adds it to the container.
@@ -169,7 +179,7 @@ class Dhcpv6ClientGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained dhcpv6ClientGlobals resources in this instance from the server.
@@ -207,7 +217,7 @@ class Dhcpv6ClientGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of dhcpv6ClientGlobals data from the server.

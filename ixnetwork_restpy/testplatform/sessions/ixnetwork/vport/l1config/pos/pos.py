@@ -30,6 +30,19 @@ class Pos(Base):
 
     __slots__ = ()
     _SDM_NAME = 'pos'
+    _SDM_ATT_MAP = {
+        'C2Expected': 'c2Expected',
+        'C2Tx': 'c2Tx',
+        'CrcSize': 'crcSize',
+        'DataScrambling': 'dataScrambling',
+        'EnablePPM': 'enablePPM',
+        'InterfaceType': 'interfaceType',
+        'Loopback': 'loopback',
+        'PayloadType': 'payloadType',
+        'Ppm': 'ppm',
+        'TrafficMapType': 'trafficMapType',
+        'TransmitClocking': 'transmitClocking',
+    }
 
     def __init__(self, parent):
         super(Pos, self).__init__(parent)
@@ -69,10 +82,10 @@ class Pos(Base):
         -------
         - number: C2 Byte
         """
-        return self._get_attribute('c2Expected')
+        return self._get_attribute(self._SDM_ATT_MAP['C2Expected'])
     @C2Expected.setter
     def C2Expected(self, value):
-        self._set_attribute('c2Expected', value)
+        self._set_attribute(self._SDM_ATT_MAP['C2Expected'], value)
 
     @property
     def C2Tx(self):
@@ -81,10 +94,10 @@ class Pos(Base):
         -------
         - number: C2 Byte
         """
-        return self._get_attribute('c2Tx')
+        return self._get_attribute(self._SDM_ATT_MAP['C2Tx'])
     @C2Tx.setter
     def C2Tx(self, value):
-        self._set_attribute('c2Tx', value)
+        self._set_attribute(self._SDM_ATT_MAP['C2Tx'], value)
 
     @property
     def CrcSize(self):
@@ -93,10 +106,10 @@ class Pos(Base):
         -------
         - str(crc16 | crc32): The type of cyclic redundancy check (CRC) to be used.
         """
-        return self._get_attribute('crcSize')
+        return self._get_attribute(self._SDM_ATT_MAP['CrcSize'])
     @CrcSize.setter
     def CrcSize(self, value):
-        self._set_attribute('crcSize', value)
+        self._set_attribute(self._SDM_ATT_MAP['CrcSize'], value)
 
     @property
     def DataScrambling(self):
@@ -105,10 +118,10 @@ class Pos(Base):
         -------
         - bool: Data scrambling is enabled on this POS port.
         """
-        return self._get_attribute('dataScrambling')
+        return self._get_attribute(self._SDM_ATT_MAP['DataScrambling'])
     @DataScrambling.setter
     def DataScrambling(self, value):
-        self._set_attribute('dataScrambling', value)
+        self._set_attribute(self._SDM_ATT_MAP['DataScrambling'], value)
 
     @property
     def EnablePPM(self):
@@ -117,10 +130,10 @@ class Pos(Base):
         -------
         - bool: If true, enables the portsppm
         """
-        return self._get_attribute('enablePPM')
+        return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
     @EnablePPM.setter
     def EnablePPM(self, value):
-        self._set_attribute('enablePPM', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnablePPM'], value)
 
     @property
     def InterfaceType(self):
@@ -129,10 +142,10 @@ class Pos(Base):
         -------
         - str(oc12 | oc192 | oc3 | oc48 | stm1 | stm16 | stm4 | stm64): The POS interface type for the port.
         """
-        return self._get_attribute('interfaceType')
+        return self._get_attribute(self._SDM_ATT_MAP['InterfaceType'])
     @InterfaceType.setter
     def InterfaceType(self, value):
-        self._set_attribute('interfaceType', value)
+        self._set_attribute(self._SDM_ATT_MAP['InterfaceType'], value)
 
     @property
     def Loopback(self):
@@ -141,10 +154,10 @@ class Pos(Base):
         -------
         - bool: If enabled, the port is set to internally loopback from transmit to receive.
         """
-        return self._get_attribute('loopback')
+        return self._get_attribute(self._SDM_ATT_MAP['Loopback'])
     @Loopback.setter
     def Loopback(self, value):
-        self._set_attribute('loopback', value)
+        self._set_attribute(self._SDM_ATT_MAP['Loopback'], value)
 
     @property
     def PayloadType(self):
@@ -153,10 +166,10 @@ class Pos(Base):
         -------
         - str(ciscoFrameRelay | ciscoHdlc | frameRelay | ppp): The POS payload type.
         """
-        return self._get_attribute('payloadType')
+        return self._get_attribute(self._SDM_ATT_MAP['PayloadType'])
     @PayloadType.setter
     def PayloadType(self, value):
-        self._set_attribute('payloadType', value)
+        self._set_attribute(self._SDM_ATT_MAP['PayloadType'], value)
 
     @property
     def Ppm(self):
@@ -165,10 +178,10 @@ class Pos(Base):
         -------
         - number: Indicates the value that needs to be adjusted for the line transmit frequency.
         """
-        return self._get_attribute('ppm')
+        return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
     @Ppm.setter
     def Ppm(self, value):
-        self._set_attribute('ppm', value)
+        self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
     def TrafficMapType(self):
@@ -177,10 +190,10 @@ class Pos(Base):
         -------
         - str(dcc | spe): The POS traffic map type.
         """
-        return self._get_attribute('trafficMapType')
+        return self._get_attribute(self._SDM_ATT_MAP['TrafficMapType'])
     @TrafficMapType.setter
     def TrafficMapType(self, value):
-        self._set_attribute('trafficMapType', value)
+        self._set_attribute(self._SDM_ATT_MAP['TrafficMapType'], value)
 
     @property
     def TransmitClocking(self):
@@ -189,10 +202,10 @@ class Pos(Base):
         -------
         - str(external | internal | recovered): The POS transmit clocking type.
         """
-        return self._get_attribute('transmitClocking')
+        return self._get_attribute(self._SDM_ATT_MAP['TransmitClocking'])
     @TransmitClocking.setter
     def TransmitClocking(self, value):
-        self._set_attribute('transmitClocking', value)
+        self._set_attribute(self._SDM_ATT_MAP['TransmitClocking'], value)
 
     def update(self, C2Expected=None, C2Tx=None, CrcSize=None, DataScrambling=None, EnablePPM=None, InterfaceType=None, Loopback=None, PayloadType=None, Ppm=None, TrafficMapType=None, TransmitClocking=None):
         """Updates pos resource on the server.
@@ -215,4 +228,4 @@ class Pos(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

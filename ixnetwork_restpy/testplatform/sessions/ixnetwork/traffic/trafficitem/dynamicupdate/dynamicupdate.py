@@ -31,6 +31,13 @@ class DynamicUpdate(Base):
 
     __slots__ = ()
     _SDM_NAME = 'dynamicUpdate'
+    _SDM_ATT_MAP = {
+        'AvailableDynamicUpdateFields': 'availableDynamicUpdateFields',
+        'AvailableSessionAwareTrafficFields': 'availableSessionAwareTrafficFields',
+        'EnabledDynamicUpdateFields': 'enabledDynamicUpdateFields',
+        'EnabledDynamicUpdateFieldsDisplayNames': 'enabledDynamicUpdateFieldsDisplayNames',
+        'EnabledSessionAwareTrafficFields': 'enabledSessionAwareTrafficFields',
+    }
 
     def __init__(self, parent):
         super(DynamicUpdate, self).__init__(parent)
@@ -42,7 +49,7 @@ class DynamicUpdate(Base):
         -------
         - list(str): (Read only) Specifies the available Dynamic Updates support.
         """
-        return self._get_attribute('availableDynamicUpdateFields')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableDynamicUpdateFields'])
 
     @property
     def AvailableSessionAwareTrafficFields(self):
@@ -51,7 +58,7 @@ class DynamicUpdate(Base):
         -------
         - list(str): (Read only) Specifies the available Kill Bit support.
         """
-        return self._get_attribute('availableSessionAwareTrafficFields')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableSessionAwareTrafficFields'])
 
     @property
     def EnabledDynamicUpdateFields(self):
@@ -60,10 +67,10 @@ class DynamicUpdate(Base):
         -------
         - list(str): If true, enables the Dynamic Updates support.
         """
-        return self._get_attribute('enabledDynamicUpdateFields')
+        return self._get_attribute(self._SDM_ATT_MAP['EnabledDynamicUpdateFields'])
     @EnabledDynamicUpdateFields.setter
     def EnabledDynamicUpdateFields(self, value):
-        self._set_attribute('enabledDynamicUpdateFields', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnabledDynamicUpdateFields'], value)
 
     @property
     def EnabledDynamicUpdateFieldsDisplayNames(self):
@@ -72,7 +79,7 @@ class DynamicUpdate(Base):
         -------
         - list(str): Returns user friendly list of dynamic update fields
         """
-        return self._get_attribute('enabledDynamicUpdateFieldsDisplayNames')
+        return self._get_attribute(self._SDM_ATT_MAP['EnabledDynamicUpdateFieldsDisplayNames'])
 
     @property
     def EnabledSessionAwareTrafficFields(self):
@@ -81,10 +88,10 @@ class DynamicUpdate(Base):
         -------
         - list(str): If true, enables the Kill Bit support.
         """
-        return self._get_attribute('enabledSessionAwareTrafficFields')
+        return self._get_attribute(self._SDM_ATT_MAP['EnabledSessionAwareTrafficFields'])
     @EnabledSessionAwareTrafficFields.setter
     def EnabledSessionAwareTrafficFields(self, value):
-        self._set_attribute('enabledSessionAwareTrafficFields', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnabledSessionAwareTrafficFields'], value)
 
     def update(self, EnabledDynamicUpdateFields=None, EnabledSessionAwareTrafficFields=None):
         """Updates dynamicUpdate resource on the server.
@@ -98,7 +105,7 @@ class DynamicUpdate(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, AvailableDynamicUpdateFields=None, AvailableSessionAwareTrafficFields=None, EnabledDynamicUpdateFields=None, EnabledDynamicUpdateFieldsDisplayNames=None, EnabledSessionAwareTrafficFields=None):
         """Finds and retrieves dynamicUpdate resources from the server.
@@ -123,7 +130,7 @@ class DynamicUpdate(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of dynamicUpdate data from the server.

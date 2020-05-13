@@ -32,6 +32,9 @@ class Layer23TrafficItemFilter(Base):
 
     __slots__ = ()
     _SDM_NAME = 'layer23TrafficItemFilter'
+    _SDM_ATT_MAP = {
+        'TrafficItemFilterIds': 'trafficItemFilterIds',
+    }
 
     def __init__(self, parent):
         super(Layer23TrafficItemFilter, self).__init__(parent)
@@ -43,10 +46,10 @@ class Layer23TrafficItemFilter(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrafficItemFilter]): Selected traffic item filters from the availableTrafficItemFilter list.
         """
-        return self._get_attribute('trafficItemFilterIds')
+        return self._get_attribute(self._SDM_ATT_MAP['TrafficItemFilterIds'])
     @TrafficItemFilterIds.setter
     def TrafficItemFilterIds(self, value):
-        self._set_attribute('trafficItemFilterIds', value)
+        self._set_attribute(self._SDM_ATT_MAP['TrafficItemFilterIds'], value)
 
     def update(self, TrafficItemFilterIds=None):
         """Updates layer23TrafficItemFilter resource on the server.
@@ -59,7 +62,7 @@ class Layer23TrafficItemFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, TrafficItemFilterIds=None):
         """Adds a new layer23TrafficItemFilter resource on the server and adds it to the container.
@@ -76,7 +79,7 @@ class Layer23TrafficItemFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained layer23TrafficItemFilter resources in this instance from the server.
@@ -107,7 +110,7 @@ class Layer23TrafficItemFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of layer23TrafficItemFilter data from the server.

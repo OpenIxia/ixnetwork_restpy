@@ -30,6 +30,10 @@ class InterfaceDiscoveredAddress(Base):
 
     __slots__ = ()
     _SDM_NAME = 'interfaceDiscoveredAddress'
+    _SDM_ATT_MAP = {
+        'Description': 'description',
+        'IpAddress': 'ipAddress',
+    }
 
     def __init__(self, parent):
         super(InterfaceDiscoveredAddress, self).__init__(parent)
@@ -41,7 +45,7 @@ class InterfaceDiscoveredAddress(Base):
         -------
         - str: Shows description of the interface.
         """
-        return self._get_attribute('description')
+        return self._get_attribute(self._SDM_ATT_MAP['Description'])
 
     @property
     def IpAddress(self):
@@ -50,4 +54,4 @@ class InterfaceDiscoveredAddress(Base):
         -------
         - str: Shows IP address of the interface.
         """
-        return self._get_attribute('ipAddress')
+        return self._get_attribute(self._SDM_ATT_MAP['IpAddress'])

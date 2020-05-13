@@ -31,6 +31,14 @@ class Statistic(Base):
 
     __slots__ = ()
     _SDM_NAME = 'statistic'
+    _SDM_ATT_MAP = {
+        'AggregationType': 'aggregationType',
+        'Caption': 'caption',
+        'DefaultCaption': 'defaultCaption',
+        'Enabled': 'enabled',
+        'ScaleFactor': 'scaleFactor',
+        'SourceTypes': 'sourceTypes',
+    }
 
     def __init__(self, parent):
         super(Statistic, self).__init__(parent)
@@ -42,10 +50,10 @@ class Statistic(Base):
         -------
         - str(average | averageRate | ax | axRate | intervalAverage | min | minRate | none | rate | runStateAgg | runStateAggIgnoreRamp | sum | vectorMax | vectorMin | weightedAverage): 
         """
-        return self._get_attribute('aggregationType')
+        return self._get_attribute(self._SDM_ATT_MAP['AggregationType'])
     @AggregationType.setter
     def AggregationType(self, value):
-        self._set_attribute('aggregationType', value)
+        self._set_attribute(self._SDM_ATT_MAP['AggregationType'], value)
 
     @property
     def Caption(self):
@@ -54,10 +62,10 @@ class Statistic(Base):
         -------
         - str: 
         """
-        return self._get_attribute('caption')
+        return self._get_attribute(self._SDM_ATT_MAP['Caption'])
     @Caption.setter
     def Caption(self, value):
-        self._set_attribute('caption', value)
+        self._set_attribute(self._SDM_ATT_MAP['Caption'], value)
 
     @property
     def DefaultCaption(self):
@@ -66,7 +74,7 @@ class Statistic(Base):
         -------
         - str: 
         """
-        return self._get_attribute('defaultCaption')
+        return self._get_attribute(self._SDM_ATT_MAP['DefaultCaption'])
 
     @property
     def Enabled(self):
@@ -75,10 +83,10 @@ class Statistic(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def ScaleFactor(self):
@@ -87,10 +95,10 @@ class Statistic(Base):
         -------
         - number: 
         """
-        return self._get_attribute('scaleFactor')
+        return self._get_attribute(self._SDM_ATT_MAP['ScaleFactor'])
     @ScaleFactor.setter
     def ScaleFactor(self, value):
-        self._set_attribute('scaleFactor', value)
+        self._set_attribute(self._SDM_ATT_MAP['ScaleFactor'], value)
 
     @property
     def SourceTypes(self):
@@ -99,7 +107,7 @@ class Statistic(Base):
         -------
         - list(str): 
         """
-        return self._get_attribute('sourceTypes')
+        return self._get_attribute(self._SDM_ATT_MAP['SourceTypes'])
 
     def update(self, AggregationType=None, Caption=None, Enabled=None, ScaleFactor=None):
         """Updates statistic resource on the server.
@@ -115,7 +123,7 @@ class Statistic(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, AggregationType=None, Caption=None, DefaultCaption=None, Enabled=None, ScaleFactor=None, SourceTypes=None):
         """Finds and retrieves statistic resources from the server.
@@ -141,7 +149,7 @@ class Statistic(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of statistic data from the server.

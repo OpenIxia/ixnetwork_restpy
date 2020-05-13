@@ -31,6 +31,17 @@ class Error(Base):
 
     __slots__ = ()
     _SDM_NAME = 'error'
+    _SDM_ATT_MAP = {
+        'Description': 'description',
+        'ErrorCode': 'errorCode',
+        'ErrorLevel': 'errorLevel',
+        'InstanceCount': 'instanceCount',
+        'LastModified': 'lastModified',
+        'Name': 'name',
+        'Provider': 'provider',
+        'SourceColumns': 'sourceColumns',
+        'SourceColumnsDisplayName': 'sourceColumnsDisplayName',
+    }
 
     def __init__(self, parent):
         super(Error, self).__init__(parent)
@@ -56,7 +67,7 @@ class Error(Base):
         -------
         - str: The description of the error
         """
-        return self._get_attribute('description')
+        return self._get_attribute(self._SDM_ATT_MAP['Description'])
 
     @property
     def ErrorCode(self):
@@ -65,7 +76,7 @@ class Error(Base):
         -------
         - number: The error code of the error
         """
-        return self._get_attribute('errorCode')
+        return self._get_attribute(self._SDM_ATT_MAP['ErrorCode'])
 
     @property
     def ErrorLevel(self):
@@ -74,7 +85,7 @@ class Error(Base):
         -------
         - str(kAnalysis | kCount | kError | kMessage | kWarning): The error level of the error
         """
-        return self._get_attribute('errorLevel')
+        return self._get_attribute(self._SDM_ATT_MAP['ErrorLevel'])
 
     @property
     def InstanceCount(self):
@@ -83,7 +94,7 @@ class Error(Base):
         -------
         - number: The number of instances of the error
         """
-        return self._get_attribute('instanceCount')
+        return self._get_attribute(self._SDM_ATT_MAP['InstanceCount'])
 
     @property
     def LastModified(self):
@@ -92,7 +103,7 @@ class Error(Base):
         -------
         - str: 
         """
-        return self._get_attribute('lastModified')
+        return self._get_attribute(self._SDM_ATT_MAP['LastModified'])
 
     @property
     def Name(self):
@@ -101,7 +112,7 @@ class Error(Base):
         -------
         - str: The name of the error
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
 
     @property
     def Provider(self):
@@ -110,7 +121,7 @@ class Error(Base):
         -------
         - str: The error provider of the error
         """
-        return self._get_attribute('provider')
+        return self._get_attribute(self._SDM_ATT_MAP['Provider'])
 
     @property
     def SourceColumns(self):
@@ -119,7 +130,7 @@ class Error(Base):
         -------
         - list(str): If the error content originated from an xml meta file, these are the source column names if any for this error.
         """
-        return self._get_attribute('sourceColumns')
+        return self._get_attribute(self._SDM_ATT_MAP['SourceColumns'])
 
     @property
     def SourceColumnsDisplayName(self):
@@ -128,7 +139,7 @@ class Error(Base):
         -------
         - list(str): 
         """
-        return self._get_attribute('sourceColumnsDisplayName')
+        return self._get_attribute(self._SDM_ATT_MAP['SourceColumnsDisplayName'])
 
     def find(self, Description=None, ErrorCode=None, ErrorLevel=None, InstanceCount=None, LastModified=None, Name=None, Provider=None, SourceColumns=None, SourceColumnsDisplayName=None):
         """Finds and retrieves error resources from the server.
@@ -157,7 +168,7 @@ class Error(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of error data from the server.

@@ -30,6 +30,15 @@ class Egress(Base):
 
     __slots__ = ()
     _SDM_NAME = 'egress'
+    _SDM_ATT_MAP = {
+        'AvailableEncapsulations': 'availableEncapsulations',
+        'AvailableOffsets': 'availableOffsets',
+        'CustomOffsetBits': 'customOffsetBits',
+        'CustomWidthBits': 'customWidthBits',
+        'Enabled': 'enabled',
+        'Encapsulation': 'encapsulation',
+        'Offset': 'offset',
+    }
 
     def __init__(self, parent):
         super(Egress, self).__init__(parent)
@@ -55,7 +64,7 @@ class Egress(Base):
         -------
         - list(str): Specifies the available Encapsulations for Egress Tracking.
         """
-        return self._get_attribute('availableEncapsulations')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableEncapsulations'])
 
     @property
     def AvailableOffsets(self):
@@ -64,7 +73,7 @@ class Egress(Base):
         -------
         - list(str): Specifies the available Offsets for Egress Tracking.
         """
-        return self._get_attribute('availableOffsets')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableOffsets'])
 
     @property
     def CustomOffsetBits(self):
@@ -73,10 +82,10 @@ class Egress(Base):
         -------
         - number: Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings.
         """
-        return self._get_attribute('customOffsetBits')
+        return self._get_attribute(self._SDM_ATT_MAP['CustomOffsetBits'])
     @CustomOffsetBits.setter
     def CustomOffsetBits(self, value):
-        self._set_attribute('customOffsetBits', value)
+        self._set_attribute(self._SDM_ATT_MAP['CustomOffsetBits'], value)
 
     @property
     def CustomWidthBits(self):
@@ -85,10 +94,10 @@ class Egress(Base):
         -------
         - number: Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings.
         """
-        return self._get_attribute('customWidthBits')
+        return self._get_attribute(self._SDM_ATT_MAP['CustomWidthBits'])
     @CustomWidthBits.setter
     def CustomWidthBits(self, value):
-        self._set_attribute('customWidthBits', value)
+        self._set_attribute(self._SDM_ATT_MAP['CustomWidthBits'], value)
 
     @property
     def Enabled(self):
@@ -97,10 +106,10 @@ class Egress(Base):
         -------
         - bool: If true, egress tracking is enabled.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Encapsulation(self):
@@ -109,10 +118,10 @@ class Egress(Base):
         -------
         - str: Specifies the Encapsulation for Egress Tracking.
         """
-        return self._get_attribute('encapsulation')
+        return self._get_attribute(self._SDM_ATT_MAP['Encapsulation'])
     @Encapsulation.setter
     def Encapsulation(self, value):
-        self._set_attribute('encapsulation', value)
+        self._set_attribute(self._SDM_ATT_MAP['Encapsulation'], value)
 
     @property
     def Offset(self):
@@ -121,10 +130,10 @@ class Egress(Base):
         -------
         - str: Specifies the Offset for Egress Tracking.
         """
-        return self._get_attribute('offset')
+        return self._get_attribute(self._SDM_ATT_MAP['Offset'])
     @Offset.setter
     def Offset(self, value):
-        self._set_attribute('offset', value)
+        self._set_attribute(self._SDM_ATT_MAP['Offset'], value)
 
     def update(self, CustomOffsetBits=None, CustomWidthBits=None, Enabled=None, Encapsulation=None, Offset=None):
         """Updates egress resource on the server.
@@ -141,4 +150,4 @@ class Egress(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

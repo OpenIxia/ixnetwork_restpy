@@ -31,18 +31,25 @@ class Field(Base):
 
     __slots__ = ()
     _SDM_NAME = 'field'
+    _SDM_ATT_MAP = {
+        'Id__': '__id__',
+        'DisplayName': 'displayName',
+        'FieldTypeId': 'fieldTypeId',
+        'Length': 'length',
+        'Trackable': 'trackable',
+    }
 
     def __init__(self, parent):
         super(Field, self).__init__(parent)
 
     @property
-    def __id__(self):
+    def Id__(self):
         """DEPRECATED 
         Returns
         -------
         - str: An alphanumeric string that defines the internal field ID.
         """
-        return self._get_attribute('__id__')
+        return self._get_attribute(self._SDM_ATT_MAP['Id__'])
 
     @property
     def DisplayName(self):
@@ -51,7 +58,7 @@ class Field(Base):
         -------
         - str: It is used to get the name of the particular field as available in the protocol template.
         """
-        return self._get_attribute('displayName')
+        return self._get_attribute(self._SDM_ATT_MAP['DisplayName'])
 
     @property
     def FieldTypeId(self):
@@ -60,7 +67,7 @@ class Field(Base):
         -------
         - str: 
         """
-        return self._get_attribute('fieldTypeId')
+        return self._get_attribute(self._SDM_ATT_MAP['FieldTypeId'])
 
     @property
     def Length(self):
@@ -69,7 +76,7 @@ class Field(Base):
         -------
         - number: It is used to get the length of the field in bits.
         """
-        return self._get_attribute('length')
+        return self._get_attribute(self._SDM_ATT_MAP['Length'])
 
     @property
     def Trackable(self):
@@ -78,9 +85,9 @@ class Field(Base):
         -------
         - bool: The trackable fields.
         """
-        return self._get_attribute('trackable')
+        return self._get_attribute(self._SDM_ATT_MAP['Trackable'])
 
-    def find(self, __id__=None, DisplayName=None, FieldTypeId=None, Length=None, Trackable=None):
+    def find(self, Id__=None, DisplayName=None, FieldTypeId=None, Length=None, Trackable=None):
         """Finds and retrieves field resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve field resources from the server.
@@ -89,7 +96,7 @@ class Field(Base):
 
         Args
         ----
-        - __id__ (str): An alphanumeric string that defines the internal field ID.
+        - Id__ (str): An alphanumeric string that defines the internal field ID.
         - DisplayName (str): It is used to get the name of the particular field as available in the protocol template.
         - FieldTypeId (str): 
         - Length (number): It is used to get the length of the field in bits.
@@ -103,7 +110,7 @@ class Field(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of field data from the server.

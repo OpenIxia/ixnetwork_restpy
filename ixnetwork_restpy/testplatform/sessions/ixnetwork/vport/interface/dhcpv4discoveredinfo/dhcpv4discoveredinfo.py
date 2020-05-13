@@ -30,6 +30,15 @@ class DhcpV4DiscoveredInfo(Base):
 
     __slots__ = ()
     _SDM_NAME = 'dhcpV4DiscoveredInfo'
+    _SDM_ATT_MAP = {
+        'Gateway': 'gateway',
+        'Ipv4Address': 'ipv4Address',
+        'Ipv4Mask': 'ipv4Mask',
+        'IsDhcpV4LearnedInfoRefreshed': 'isDhcpV4LearnedInfoRefreshed',
+        'LeaseDuration': 'leaseDuration',
+        'ProtocolInterface': 'protocolInterface',
+        'Tlv': 'tlv',
+    }
 
     def __init__(self, parent):
         super(DhcpV4DiscoveredInfo, self).__init__(parent)
@@ -41,7 +50,7 @@ class DhcpV4DiscoveredInfo(Base):
         -------
         - str: (Read only) A learned/allocated IPv4 Gateway address for this interface on the router that connects to the network segment on which the source host is located.
         """
-        return self._get_attribute('gateway')
+        return self._get_attribute(self._SDM_ATT_MAP['Gateway'])
 
     @property
     def Ipv4Address(self):
@@ -50,7 +59,7 @@ class DhcpV4DiscoveredInfo(Base):
         -------
         - str: (Read only) A learned/allocated IPv4 address for this interface,
         """
-        return self._get_attribute('ipv4Address')
+        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Address'])
 
     @property
     def Ipv4Mask(self):
@@ -59,7 +68,7 @@ class DhcpV4DiscoveredInfo(Base):
         -------
         - number: (Read only) A 32-bit address mask used in IP to indicate the bits of an IP address that are being used for the subnet address.
         """
-        return self._get_attribute('ipv4Mask')
+        return self._get_attribute(self._SDM_ATT_MAP['Ipv4Mask'])
 
     @property
     def IsDhcpV4LearnedInfoRefreshed(self):
@@ -68,7 +77,7 @@ class DhcpV4DiscoveredInfo(Base):
         -------
         - bool: (Read Only) When true, the DHCPv4 discovered information is refreshed automatically.
         """
-        return self._get_attribute('isDhcpV4LearnedInfoRefreshed')
+        return self._get_attribute(self._SDM_ATT_MAP['IsDhcpV4LearnedInfoRefreshed'])
 
     @property
     def LeaseDuration(self):
@@ -77,7 +86,7 @@ class DhcpV4DiscoveredInfo(Base):
         -------
         - number: (Read Only) The user-specified value and the lease timer (from the DHCP Server) are compared. The lowest value is used as the release/renew timer. After this time period has elapsed, the address will be renewed.
         """
-        return self._get_attribute('leaseDuration')
+        return self._get_attribute(self._SDM_ATT_MAP['LeaseDuration'])
 
     @property
     def ProtocolInterface(self):
@@ -86,7 +95,7 @@ class DhcpV4DiscoveredInfo(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): (Read only) An Ixia protocol interface that is negotiating with the DHCP Server.
         """
-        return self._get_attribute('protocolInterface')
+        return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterface'])
 
     @property
     def Tlv(self):
@@ -95,4 +104,4 @@ class DhcpV4DiscoveredInfo(Base):
         -------
         - list(dict(arg1:number,arg2:str)): (Read only) Type Length Value for DHCPv4.
         """
-        return self._get_attribute('tlv')
+        return self._get_attribute(self._SDM_ATT_MAP['Tlv'])

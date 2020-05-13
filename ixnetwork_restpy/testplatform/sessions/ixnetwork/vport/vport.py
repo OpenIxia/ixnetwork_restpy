@@ -32,6 +32,38 @@ class Vport(Base):
 
     __slots__ = ()
     _SDM_NAME = 'vport'
+    _SDM_ATT_MAP = {
+        'ActualSpeed': 'actualSpeed',
+        'AssignedTo': 'assignedTo',
+        'ConnectedTo': 'connectedTo',
+        'ConnectionInfo': 'connectionInfo',
+        'ConnectionState': 'connectionState',
+        'ConnectionStatus': 'connectionStatus',
+        'InternalId': 'internalId',
+        'IsAvailable': 'isAvailable',
+        'IsConnected': 'isConnected',
+        'IsFramePreemptionSupported': 'isFramePreemptionSupported',
+        'IsMapped': 'isMapped',
+        'IsPullOnly': 'isPullOnly',
+        'IsVMPort': 'isVMPort',
+        'IxnChassisVersion': 'ixnChassisVersion',
+        'IxnClientVersion': 'ixnClientVersion',
+        'IxosChassisVersion': 'ixosChassisVersion',
+        'Licenses': 'licenses',
+        'Name': 'name',
+        'RxMode': 'rxMode',
+        'State': 'state',
+        'StateDetail': 'stateDetail',
+        'TraceEnabled': 'traceEnabled',
+        'TraceLevel': 'traceLevel',
+        'TraceTag': 'traceTag',
+        'TransmitIgnoreLinkStatus': 'transmitIgnoreLinkStatus',
+        'TxGapControlMode': 'txGapControlMode',
+        'TxMode': 'txMode',
+        'Type': 'type',
+        'UseGlobalSettings': 'useGlobalSettings',
+        'ValidTxModes': 'validTxModes',
+    }
 
     def __init__(self, parent):
         super(Vport, self).__init__(parent)
@@ -155,7 +187,7 @@ class Vport(Base):
         -------
         - number: The actual speed.
         """
-        return self._get_attribute('actualSpeed')
+        return self._get_attribute(self._SDM_ATT_MAP['ActualSpeed'])
 
     @property
     def AssignedTo(self):
@@ -164,7 +196,7 @@ class Vport(Base):
         -------
         - str: (Read Only) A new port is assigned with this option.
         """
-        return self._get_attribute('assignedTo')
+        return self._get_attribute(self._SDM_ATT_MAP['AssignedTo'])
 
     @property
     def ConnectedTo(self):
@@ -173,10 +205,10 @@ class Vport(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port): The physical port to which the unassigned port is assigned.
         """
-        return self._get_attribute('connectedTo')
+        return self._get_attribute(self._SDM_ATT_MAP['ConnectedTo'])
     @ConnectedTo.setter
     def ConnectedTo(self, value):
-        self._set_attribute('connectedTo', value)
+        self._set_attribute(self._SDM_ATT_MAP['ConnectedTo'], value)
 
     @property
     def ConnectionInfo(self):
@@ -185,7 +217,7 @@ class Vport(Base):
         -------
         - str: Detailed information about location of the physical port that is assigned to this port configuration.
         """
-        return self._get_attribute('connectionInfo')
+        return self._get_attribute(self._SDM_ATT_MAP['ConnectionInfo'])
 
     @property
     def ConnectionState(self):
@@ -194,7 +226,7 @@ class Vport(Base):
         -------
         - str(assignedInUseByOther | assignedUnconnected | connectedLinkDown | connectedLinkUp | connecting | unassigned): Consolidated state of the vport. This combines the connection state with link state.
         """
-        return self._get_attribute('connectionState')
+        return self._get_attribute(self._SDM_ATT_MAP['ConnectionState'])
 
     @property
     def ConnectionStatus(self):
@@ -203,7 +235,7 @@ class Vport(Base):
         -------
         - str: A string describing the status of the hardware connected to this vport
         """
-        return self._get_attribute('connectionStatus')
+        return self._get_attribute(self._SDM_ATT_MAP['ConnectionStatus'])
 
     @property
     def InternalId(self):
@@ -212,7 +244,7 @@ class Vport(Base):
         -------
         - number: For internal use.
         """
-        return self._get_attribute('internalId')
+        return self._get_attribute(self._SDM_ATT_MAP['InternalId'])
 
     @property
     def IsAvailable(self):
@@ -221,7 +253,7 @@ class Vport(Base):
         -------
         - bool: If true, this virtual port is available for assigning to a physical port.
         """
-        return self._get_attribute('isAvailable')
+        return self._get_attribute(self._SDM_ATT_MAP['IsAvailable'])
 
     @property
     def IsConnected(self):
@@ -230,7 +262,7 @@ class Vport(Base):
         -------
         - bool: If true, indicates that the port is connected.
         """
-        return self._get_attribute('isConnected')
+        return self._get_attribute(self._SDM_ATT_MAP['IsConnected'])
 
     @property
     def IsFramePreemptionSupported(self):
@@ -239,7 +271,7 @@ class Vport(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('isFramePreemptionSupported')
+        return self._get_attribute(self._SDM_ATT_MAP['IsFramePreemptionSupported'])
 
     @property
     def IsMapped(self):
@@ -248,7 +280,7 @@ class Vport(Base):
         -------
         - bool: If true, this virtual port is mapped.
         """
-        return self._get_attribute('isMapped')
+        return self._get_attribute(self._SDM_ATT_MAP['IsMapped'])
 
     @property
     def IsPullOnly(self):
@@ -257,10 +289,10 @@ class Vport(Base):
         -------
         - bool: (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
         """
-        return self._get_attribute('isPullOnly')
+        return self._get_attribute(self._SDM_ATT_MAP['IsPullOnly'])
     @IsPullOnly.setter
     def IsPullOnly(self, value):
-        self._set_attribute('isPullOnly', value)
+        self._set_attribute(self._SDM_ATT_MAP['IsPullOnly'], value)
 
     @property
     def IsVMPort(self):
@@ -269,7 +301,7 @@ class Vport(Base):
         -------
         - bool: If true the hardware connected to this vport is a virtual machine port
         """
-        return self._get_attribute('isVMPort')
+        return self._get_attribute(self._SDM_ATT_MAP['IsVMPort'])
 
     @property
     def IxnChassisVersion(self):
@@ -278,7 +310,7 @@ class Vport(Base):
         -------
         - str: (Read Only) If true, the installer installs the same resources as installed by the IxNetwork Full installer/IxNetwork Chassis installer on chassis.
         """
-        return self._get_attribute('ixnChassisVersion')
+        return self._get_attribute(self._SDM_ATT_MAP['IxnChassisVersion'])
 
     @property
     def IxnClientVersion(self):
@@ -287,7 +319,7 @@ class Vport(Base):
         -------
         - str: (Read Only) If true, this installs full client side IxNetwork or IxNetwork-FT components.
         """
-        return self._get_attribute('ixnClientVersion')
+        return self._get_attribute(self._SDM_ATT_MAP['IxnClientVersion'])
 
     @property
     def IxosChassisVersion(self):
@@ -296,7 +328,7 @@ class Vport(Base):
         -------
         - str: (Read Only) If true, the installer installs the same resources as installed by IxOS on a chassis.
         """
-        return self._get_attribute('ixosChassisVersion')
+        return self._get_attribute(self._SDM_ATT_MAP['IxosChassisVersion'])
 
     @property
     def Licenses(self):
@@ -305,7 +337,7 @@ class Vport(Base):
         -------
         - str: Number of licenses.
         """
-        return self._get_attribute('licenses')
+        return self._get_attribute(self._SDM_ATT_MAP['Licenses'])
 
     @property
     def Name(self):
@@ -314,10 +346,10 @@ class Vport(Base):
         -------
         - str: The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def RxMode(self):
@@ -326,10 +358,10 @@ class Vport(Base):
         -------
         - str(capture | captureAndMeasure | measure | packetImpairment): The receive mode of the virtual port.
         """
-        return self._get_attribute('rxMode')
+        return self._get_attribute(self._SDM_ATT_MAP['RxMode'])
     @RxMode.setter
     def RxMode(self, value):
-        self._set_attribute('rxMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['RxMode'], value)
 
     @property
     def State(self):
@@ -338,7 +370,7 @@ class Vport(Base):
         -------
         - str(busy | down | unassigned | up | versionMismatch): The virtual port state.
         """
-        return self._get_attribute('state')
+        return self._get_attribute(self._SDM_ATT_MAP['State'])
 
     @property
     def StateDetail(self):
@@ -347,7 +379,7 @@ class Vport(Base):
         -------
         - str(busy | cpuNotReady | idle | inActive | l1ConfigFailed | protocolsNotSupported | versionMismatched | waitingForCPUStatus): This attribute describes the state of the port.
         """
-        return self._get_attribute('stateDetail')
+        return self._get_attribute(self._SDM_ATT_MAP['StateDetail'])
 
     @property
     def TraceEnabled(self):
@@ -356,10 +388,10 @@ class Vport(Base):
         -------
         - bool: Enables/Disables rpf port trace for this port
         """
-        return self._get_attribute('traceEnabled')
+        return self._get_attribute(self._SDM_ATT_MAP['TraceEnabled'])
     @TraceEnabled.setter
     def TraceEnabled(self, value):
-        self._set_attribute('traceEnabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['TraceEnabled'], value)
 
     @property
     def TraceLevel(self):
@@ -368,10 +400,10 @@ class Vport(Base):
         -------
         - str(kCritical | kDebug | kError | kInfo | kTrace | kWarning): PCPU Trace level
         """
-        return self._get_attribute('traceLevel')
+        return self._get_attribute(self._SDM_ATT_MAP['TraceLevel'])
     @TraceLevel.setter
     def TraceLevel(self, value):
-        self._set_attribute('traceLevel', value)
+        self._set_attribute(self._SDM_ATT_MAP['TraceLevel'], value)
 
     @property
     def TraceTag(self):
@@ -380,10 +412,10 @@ class Vport(Base):
         -------
         - str: PCPU Trace Tag
         """
-        return self._get_attribute('traceTag')
+        return self._get_attribute(self._SDM_ATT_MAP['TraceTag'])
     @TraceTag.setter
     def TraceTag(self, value):
-        self._set_attribute('traceTag', value)
+        self._set_attribute(self._SDM_ATT_MAP['TraceTag'], value)
 
     @property
     def TransmitIgnoreLinkStatus(self):
@@ -392,10 +424,10 @@ class Vport(Base):
         -------
         - bool: If true, the port ingores the link status when transmitting data.
         """
-        return self._get_attribute('transmitIgnoreLinkStatus')
+        return self._get_attribute(self._SDM_ATT_MAP['TransmitIgnoreLinkStatus'])
     @TransmitIgnoreLinkStatus.setter
     def TransmitIgnoreLinkStatus(self, value):
-        self._set_attribute('transmitIgnoreLinkStatus', value)
+        self._set_attribute(self._SDM_ATT_MAP['TransmitIgnoreLinkStatus'], value)
 
     @property
     def TxGapControlMode(self):
@@ -404,10 +436,10 @@ class Vport(Base):
         -------
         - str(averageMode | fixedMode): This object controls the Gap Control mode of the port.
         """
-        return self._get_attribute('txGapControlMode')
+        return self._get_attribute(self._SDM_ATT_MAP['TxGapControlMode'])
     @TxGapControlMode.setter
     def TxGapControlMode(self, value):
-        self._set_attribute('txGapControlMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['TxGapControlMode'], value)
 
     @property
     def TxMode(self):
@@ -416,10 +448,10 @@ class Vport(Base):
         -------
         - str(interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse): The transmit mode.
         """
-        return self._get_attribute('txMode')
+        return self._get_attribute(self._SDM_ATT_MAP['TxMode'])
     @TxMode.setter
     def TxMode(self, value):
-        self._set_attribute('txMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['TxMode'], value)
 
     @property
     def Type(self):
@@ -428,10 +460,10 @@ class Vport(Base):
         -------
         - str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe): The type of port selection.
         """
-        return self._get_attribute('type')
+        return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
-        self._set_attribute('type', value)
+        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     @property
     def UseGlobalSettings(self):
@@ -440,10 +472,10 @@ class Vport(Base):
         -------
         - bool: Enables/Disables use of global settings instead of local settings on port
         """
-        return self._get_attribute('useGlobalSettings')
+        return self._get_attribute(self._SDM_ATT_MAP['UseGlobalSettings'])
     @UseGlobalSettings.setter
     def UseGlobalSettings(self, value):
-        self._set_attribute('useGlobalSettings', value)
+        self._set_attribute(self._SDM_ATT_MAP['UseGlobalSettings'], value)
 
     @property
     def ValidTxModes(self):
@@ -452,7 +484,7 @@ class Vport(Base):
         -------
         - list(str[interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse]): 
         """
-        return self._get_attribute('validTxModes')
+        return self._get_attribute(self._SDM_ATT_MAP['ValidTxModes'])
 
     def update(self, ConnectedTo=None, IsPullOnly=None, Name=None, RxMode=None, TraceEnabled=None, TraceLevel=None, TraceTag=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None, UseGlobalSettings=None):
         """Updates vport resource on the server.
@@ -476,7 +508,7 @@ class Vport(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedTo=None, IsPullOnly=None, Name=None, RxMode=None, TraceEnabled=None, TraceLevel=None, TraceTag=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None, UseGlobalSettings=None):
         """Adds a new vport resource on the server and adds it to the container.
@@ -504,7 +536,7 @@ class Vport(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained vport resources in this instance from the server.
@@ -564,7 +596,7 @@ class Vport(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of vport data from the server.

@@ -30,6 +30,31 @@ class TenFortyHundredGigLan(Base):
 
     __slots__ = ()
     _SDM_NAME = 'tenFortyHundredGigLan'
+    _SDM_ATT_MAP = {
+        'AutoInstrumentation': 'autoInstrumentation',
+        'BadBlocksNumber': 'badBlocksNumber',
+        'EnableAutoNegotiation': 'enableAutoNegotiation',
+        'EnablePPM': 'enablePPM',
+        'EnableRsFec': 'enableRsFec',
+        'EnableRsFecStats': 'enableRsFecStats',
+        'EnabledFlowControl': 'enabledFlowControl',
+        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
+        'GoodBlocksNumber': 'goodBlocksNumber',
+        'IeeeL1Defaults': 'ieeeL1Defaults',
+        'LaserOn': 'laserOn',
+        'LinkTraining': 'linkTraining',
+        'LoopContinuously': 'loopContinuously',
+        'LoopCountNumber': 'loopCountNumber',
+        'Loopback': 'loopback',
+        'LoopbackMode': 'loopbackMode',
+        'Ppm': 'ppm',
+        'SendSetsMode': 'sendSetsMode',
+        'Speed': 'speed',
+        'StartErrorInsertion': 'startErrorInsertion',
+        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
+        'TypeAOrderedSets': 'typeAOrderedSets',
+        'TypeBOrderedSets': 'typeBOrderedSets',
+    }
 
     def __init__(self, parent):
         super(TenFortyHundredGigLan, self).__init__(parent)
@@ -39,13 +64,13 @@ class TenFortyHundredGigLan(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tenfortyhundredgiglan.fcoe.fcoe.Fcoe): An instance of the Fcoe class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.fcoe.fcoe.Fcoe): An instance of the Fcoe class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tenfortyhundredgiglan.fcoe.fcoe import Fcoe
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.fcoe.fcoe import Fcoe
         return Fcoe(self)._select()
 
     @property
@@ -53,13 +78,13 @@ class TenFortyHundredGigLan(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tenfortyhundredgiglan.txlane.txlane.TxLane): An instance of the TxLane class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.txlane.txlane.TxLane): An instance of the TxLane class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tenfortyhundredgiglan.txlane.txlane import TxLane
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.txlane.txlane import TxLane
         return TxLane(self)._select()
 
     @property
@@ -69,10 +94,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - str(endOfFrame | floating): The auto instrumentation mode.
         """
-        return self._get_attribute('autoInstrumentation')
+        return self._get_attribute(self._SDM_ATT_MAP['AutoInstrumentation'])
     @AutoInstrumentation.setter
     def AutoInstrumentation(self, value):
-        self._set_attribute('autoInstrumentation', value)
+        self._set_attribute(self._SDM_ATT_MAP['AutoInstrumentation'], value)
 
     @property
     def BadBlocksNumber(self):
@@ -81,10 +106,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute('badBlocksNumber')
+        return self._get_attribute(self._SDM_ATT_MAP['BadBlocksNumber'])
     @BadBlocksNumber.setter
     def BadBlocksNumber(self, value):
-        self._set_attribute('badBlocksNumber', value)
+        self._set_attribute(self._SDM_ATT_MAP['BadBlocksNumber'], value)
 
     @property
     def EnableAutoNegotiation(self):
@@ -93,10 +118,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute('enableAutoNegotiation')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableAutoNegotiation'])
     @EnableAutoNegotiation.setter
     def EnableAutoNegotiation(self, value):
-        self._set_attribute('enableAutoNegotiation', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableAutoNegotiation'], value)
 
     @property
     def EnablePPM(self):
@@ -105,10 +130,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - bool: If true, enables the portsppm.
         """
-        return self._get_attribute('enablePPM')
+        return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
     @EnablePPM.setter
     def EnablePPM(self, value):
-        self._set_attribute('enablePPM', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnablePPM'], value)
 
     @property
     def EnableRsFec(self):
@@ -117,10 +142,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute('enableRsFec')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableRsFec'])
     @EnableRsFec.setter
     def EnableRsFec(self, value):
-        self._set_attribute('enableRsFec', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableRsFec'], value)
 
     @property
     def EnableRsFecStats(self):
@@ -129,10 +154,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute('enableRsFecStats')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableRsFecStats'])
     @EnableRsFecStats.setter
     def EnableRsFecStats(self, value):
-        self._set_attribute('enableRsFecStats', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableRsFecStats'], value)
 
     @property
     def EnabledFlowControl(self):
@@ -141,10 +166,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - bool: If true, enables the port's MAC flow control and mechanisms to listen for a directed address pause message.
         """
-        return self._get_attribute('enabledFlowControl')
+        return self._get_attribute(self._SDM_ATT_MAP['EnabledFlowControl'])
     @EnabledFlowControl.setter
     def EnabledFlowControl(self, value):
-        self._set_attribute('enabledFlowControl', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnabledFlowControl'], value)
 
     @property
     def FlowControlDirectedAddress(self):
@@ -153,10 +178,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute('flowControlDirectedAddress')
+        return self._get_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'])
     @FlowControlDirectedAddress.setter
     def FlowControlDirectedAddress(self, value):
-        self._set_attribute('flowControlDirectedAddress', value)
+        self._set_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'], value)
 
     @property
     def GoodBlocksNumber(self):
@@ -165,10 +190,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute('goodBlocksNumber')
+        return self._get_attribute(self._SDM_ATT_MAP['GoodBlocksNumber'])
     @GoodBlocksNumber.setter
     def GoodBlocksNumber(self, value):
-        self._set_attribute('goodBlocksNumber', value)
+        self._set_attribute(self._SDM_ATT_MAP['GoodBlocksNumber'], value)
 
     @property
     def IeeeL1Defaults(self):
@@ -177,10 +202,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute('ieeeL1Defaults')
+        return self._get_attribute(self._SDM_ATT_MAP['IeeeL1Defaults'])
     @IeeeL1Defaults.setter
     def IeeeL1Defaults(self, value):
-        self._set_attribute('ieeeL1Defaults', value)
+        self._set_attribute(self._SDM_ATT_MAP['IeeeL1Defaults'], value)
 
     @property
     def LaserOn(self):
@@ -189,10 +214,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute('laserOn')
+        return self._get_attribute(self._SDM_ATT_MAP['LaserOn'])
     @LaserOn.setter
     def LaserOn(self, value):
-        self._set_attribute('laserOn', value)
+        self._set_attribute(self._SDM_ATT_MAP['LaserOn'], value)
 
     @property
     def LinkTraining(self):
@@ -201,10 +226,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute('linkTraining')
+        return self._get_attribute(self._SDM_ATT_MAP['LinkTraining'])
     @LinkTraining.setter
     def LinkTraining(self, value):
-        self._set_attribute('linkTraining', value)
+        self._set_attribute(self._SDM_ATT_MAP['LinkTraining'], value)
 
     @property
     def LoopContinuously(self):
@@ -213,10 +238,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute('loopContinuously')
+        return self._get_attribute(self._SDM_ATT_MAP['LoopContinuously'])
     @LoopContinuously.setter
     def LoopContinuously(self, value):
-        self._set_attribute('loopContinuously', value)
+        self._set_attribute(self._SDM_ATT_MAP['LoopContinuously'], value)
 
     @property
     def LoopCountNumber(self):
@@ -225,10 +250,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute('loopCountNumber')
+        return self._get_attribute(self._SDM_ATT_MAP['LoopCountNumber'])
     @LoopCountNumber.setter
     def LoopCountNumber(self, value):
-        self._set_attribute('loopCountNumber', value)
+        self._set_attribute(self._SDM_ATT_MAP['LoopCountNumber'], value)
 
     @property
     def Loopback(self):
@@ -237,10 +262,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - bool: If enabled, the port is set to internally loopback from transmit to receive.
         """
-        return self._get_attribute('loopback')
+        return self._get_attribute(self._SDM_ATT_MAP['Loopback'])
     @Loopback.setter
     def Loopback(self, value):
-        self._set_attribute('loopback', value)
+        self._set_attribute(self._SDM_ATT_MAP['Loopback'], value)
 
     @property
     def LoopbackMode(self):
@@ -249,10 +274,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - str(internalLoopback | lineLoopback | none): NOT DEFINED
         """
-        return self._get_attribute('loopbackMode')
+        return self._get_attribute(self._SDM_ATT_MAP['LoopbackMode'])
     @LoopbackMode.setter
     def LoopbackMode(self, value):
-        self._set_attribute('loopbackMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['LoopbackMode'], value)
 
     @property
     def Ppm(self):
@@ -261,10 +286,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - number: Indicates the value that needs to be adjusted for the line transmit frequency
         """
-        return self._get_attribute('ppm')
+        return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
     @Ppm.setter
     def Ppm(self, value):
-        self._set_attribute('ppm', value)
+        self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
     def SendSetsMode(self):
@@ -273,10 +298,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - str(alternate | typeAOnly | typeBOnly): NOT DEFINED
         """
-        return self._get_attribute('sendSetsMode')
+        return self._get_attribute(self._SDM_ATT_MAP['SendSetsMode'])
     @SendSetsMode.setter
     def SendSetsMode(self, value):
-        self._set_attribute('sendSetsMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['SendSetsMode'], value)
 
     @property
     def Speed(self):
@@ -285,10 +310,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - str(speed100g | speed10g | speed25g | speed40g | speed50g): The speed of the lan
         """
-        return self._get_attribute('speed')
+        return self._get_attribute(self._SDM_ATT_MAP['Speed'])
     @Speed.setter
     def Speed(self, value):
-        self._set_attribute('speed', value)
+        self._set_attribute(self._SDM_ATT_MAP['Speed'], value)
 
     @property
     def StartErrorInsertion(self):
@@ -297,10 +322,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute('startErrorInsertion')
+        return self._get_attribute(self._SDM_ATT_MAP['StartErrorInsertion'])
     @StartErrorInsertion.setter
     def StartErrorInsertion(self, value):
-        self._set_attribute('startErrorInsertion', value)
+        self._set_attribute(self._SDM_ATT_MAP['StartErrorInsertion'], value)
 
     @property
     def TxIgnoreRxLinkFaults(self):
@@ -309,10 +334,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - bool: If enabled, will allow transmission of packets even if the receive link is down.
         """
-        return self._get_attribute('txIgnoreRxLinkFaults')
+        return self._get_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'])
     @TxIgnoreRxLinkFaults.setter
     def TxIgnoreRxLinkFaults(self, value):
-        self._set_attribute('txIgnoreRxLinkFaults', value)
+        self._set_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'], value)
 
     @property
     def TypeAOrderedSets(self):
@@ -321,10 +346,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - str(localFault | remoteFault): NOT DEFINED
         """
-        return self._get_attribute('typeAOrderedSets')
+        return self._get_attribute(self._SDM_ATT_MAP['TypeAOrderedSets'])
     @TypeAOrderedSets.setter
     def TypeAOrderedSets(self, value):
-        self._set_attribute('typeAOrderedSets', value)
+        self._set_attribute(self._SDM_ATT_MAP['TypeAOrderedSets'], value)
 
     @property
     def TypeBOrderedSets(self):
@@ -333,10 +358,10 @@ class TenFortyHundredGigLan(Base):
         -------
         - str(localFault | remoteFault): NOT DEFINED
         """
-        return self._get_attribute('typeBOrderedSets')
+        return self._get_attribute(self._SDM_ATT_MAP['TypeBOrderedSets'])
     @TypeBOrderedSets.setter
     def TypeBOrderedSets(self, value):
-        self._set_attribute('typeBOrderedSets', value)
+        self._set_attribute(self._SDM_ATT_MAP['TypeBOrderedSets'], value)
 
     def update(self, AutoInstrumentation=None, BadBlocksNumber=None, EnableAutoNegotiation=None, EnablePPM=None, EnableRsFec=None, EnableRsFecStats=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, GoodBlocksNumber=None, IeeeL1Defaults=None, LaserOn=None, LinkTraining=None, LoopContinuously=None, LoopCountNumber=None, Loopback=None, LoopbackMode=None, Ppm=None, SendSetsMode=None, Speed=None, StartErrorInsertion=None, TxIgnoreRxLinkFaults=None, TypeAOrderedSets=None, TypeBOrderedSets=None):
         """Updates tenFortyHundredGigLan resource on the server.
@@ -371,4 +396,4 @@ class TenFortyHundredGigLan(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -94,7 +94,8 @@ class Connection(object):
                 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
         self._headers = {
             Connection.X_API_KEY: None,
-            'User-Agent': 'ixnetwork-restpy'
+            'User-Agent': 'ixnetwork-restpy',
+            'Connection': 'keep-alive'
         }
         if script_watch is False:
             self._headers['SDMAPI'] = 'GUIREQUEST'

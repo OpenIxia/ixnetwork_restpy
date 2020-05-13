@@ -30,6 +30,15 @@ class Ethernetvm(Base):
 
     __slots__ = ()
     _SDM_NAME = 'ethernetvm'
+    _SDM_ATT_MAP = {
+        'AutoInstrumentation': 'autoInstrumentation',
+        'EnablePPM': 'enablePPM',
+        'Loopback': 'loopback',
+        'Mtu': 'mtu',
+        'Ppm': 'ppm',
+        'PromiscuousMode': 'promiscuousMode',
+        'Speed': 'speed',
+    }
 
     def __init__(self, parent):
         super(Ethernetvm, self).__init__(parent)
@@ -41,10 +50,10 @@ class Ethernetvm(Base):
         -------
         - str(endOfFrame | floating): NOT DEFINED
         """
-        return self._get_attribute('autoInstrumentation')
+        return self._get_attribute(self._SDM_ATT_MAP['AutoInstrumentation'])
     @AutoInstrumentation.setter
     def AutoInstrumentation(self, value):
-        self._set_attribute('autoInstrumentation', value)
+        self._set_attribute(self._SDM_ATT_MAP['AutoInstrumentation'], value)
 
     @property
     def EnablePPM(self):
@@ -53,7 +62,7 @@ class Ethernetvm(Base):
         -------
         - bool: If true, enables the portsppm.
         """
-        return self._get_attribute('enablePPM')
+        return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
 
     @property
     def Loopback(self):
@@ -62,10 +71,10 @@ class Ethernetvm(Base):
         -------
         - bool: If true, enables the ports ppm
         """
-        return self._get_attribute('loopback')
+        return self._get_attribute(self._SDM_ATT_MAP['Loopback'])
     @Loopback.setter
     def Loopback(self, value):
-        self._set_attribute('loopback', value)
+        self._set_attribute(self._SDM_ATT_MAP['Loopback'], value)
 
     @property
     def Mtu(self):
@@ -74,10 +83,10 @@ class Ethernetvm(Base):
         -------
         - number: 
         """
-        return self._get_attribute('mtu')
+        return self._get_attribute(self._SDM_ATT_MAP['Mtu'])
     @Mtu.setter
     def Mtu(self, value):
-        self._set_attribute('mtu', value)
+        self._set_attribute(self._SDM_ATT_MAP['Mtu'], value)
 
     @property
     def Ppm(self):
@@ -86,7 +95,7 @@ class Ethernetvm(Base):
         -------
         - number: Indicates the value that needs to be adjusted for the line transmit frequency
         """
-        return self._get_attribute('ppm')
+        return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
 
     @property
     def PromiscuousMode(self):
@@ -95,10 +104,10 @@ class Ethernetvm(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('promiscuousMode')
+        return self._get_attribute(self._SDM_ATT_MAP['PromiscuousMode'])
     @PromiscuousMode.setter
     def PromiscuousMode(self, value):
-        self._set_attribute('promiscuousMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['PromiscuousMode'], value)
 
     @property
     def Speed(self):
@@ -107,10 +116,10 @@ class Ethernetvm(Base):
         -------
         - str(speed100 | speed1000 | speed10g | speed2000 | speed20g | speed25g | speed3000 | speed30g | speed4000 | speed40g | speed5000 | speed50g | speed6000 | speed7000 | speed8000 | speed9000): Select one of the enums to set the speed of the ethernet vm
         """
-        return self._get_attribute('speed')
+        return self._get_attribute(self._SDM_ATT_MAP['Speed'])
     @Speed.setter
     def Speed(self, value):
-        self._set_attribute('speed', value)
+        self._set_attribute(self._SDM_ATT_MAP['Speed'], value)
 
     def update(self, AutoInstrumentation=None, Loopback=None, Mtu=None, PromiscuousMode=None, Speed=None):
         """Updates ethernetvm resource on the server.
@@ -127,4 +136,4 @@ class Ethernetvm(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

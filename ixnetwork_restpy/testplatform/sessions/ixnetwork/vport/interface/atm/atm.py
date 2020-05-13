@@ -30,6 +30,11 @@ class Atm(Base):
 
     __slots__ = ()
     _SDM_NAME = 'atm'
+    _SDM_ATT_MAP = {
+        'Encapsulation': 'encapsulation',
+        'Vci': 'vci',
+        'Vpi': 'vpi',
+    }
 
     def __init__(self, parent):
         super(Atm, self).__init__(parent)
@@ -41,10 +46,10 @@ class Atm(Base):
         -------
         - str(vcMuxIpv4 | vcMuxIpv6 | vcMuxBridgeFcs | vcMuxBridgeNoFcs | llcClip | llcBridgeFcs | llcBridgeNoFcs): The type of RFC 2684 ATM multiplexing encapsulation (routing) protocol to be used.
         """
-        return self._get_attribute('encapsulation')
+        return self._get_attribute(self._SDM_ATT_MAP['Encapsulation'])
     @Encapsulation.setter
     def Encapsulation(self, value):
-        self._set_attribute('encapsulation', value)
+        self._set_attribute(self._SDM_ATT_MAP['Encapsulation'], value)
 
     @property
     def Vci(self):
@@ -53,10 +58,10 @@ class Atm(Base):
         -------
         - number: Virtual Circuit/Connection Identifier (VCI) for the ATM VC over which information is being transmitted.
         """
-        return self._get_attribute('vci')
+        return self._get_attribute(self._SDM_ATT_MAP['Vci'])
     @Vci.setter
     def Vci(self, value):
-        self._set_attribute('vci', value)
+        self._set_attribute(self._SDM_ATT_MAP['Vci'], value)
 
     @property
     def Vpi(self):
@@ -65,10 +70,10 @@ class Atm(Base):
         -------
         - number: Virtual Path Identifier (VPI) for the ATM VC over which information is being transmitted.
         """
-        return self._get_attribute('vpi')
+        return self._get_attribute(self._SDM_ATT_MAP['Vpi'])
     @Vpi.setter
     def Vpi(self, value):
-        self._set_attribute('vpi', value)
+        self._set_attribute(self._SDM_ATT_MAP['Vpi'], value)
 
     def update(self, Encapsulation=None, Vci=None, Vpi=None):
         """Updates atm resource on the server.
@@ -83,4 +88,4 @@ class Atm(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

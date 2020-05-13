@@ -31,6 +31,12 @@ class AvailableTrackingFilter(Base):
 
     __slots__ = ()
     _SDM_NAME = 'availableTrackingFilter'
+    _SDM_ATT_MAP = {
+        'Constraints': 'constraints',
+        'Name': 'name',
+        'TrackingType': 'trackingType',
+        'ValueType': 'valueType',
+    }
 
     def __init__(self, parent):
         super(AvailableTrackingFilter, self).__init__(parent)
@@ -42,7 +48,7 @@ class AvailableTrackingFilter(Base):
         -------
         - list(str): Lists down the constraints associated with the available tracking filter list.
         """
-        return self._get_attribute('constraints')
+        return self._get_attribute(self._SDM_ATT_MAP['Constraints'])
 
     @property
     def Name(self):
@@ -51,7 +57,7 @@ class AvailableTrackingFilter(Base):
         -------
         - str: Displays the name of the tracking filter.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
 
     @property
     def TrackingType(self):
@@ -60,7 +66,7 @@ class AvailableTrackingFilter(Base):
         -------
         - str: Indicates the tracking type.
         """
-        return self._get_attribute('trackingType')
+        return self._get_attribute(self._SDM_ATT_MAP['TrackingType'])
 
     @property
     def ValueType(self):
@@ -69,7 +75,7 @@ class AvailableTrackingFilter(Base):
         -------
         - str: Value of tracking to be matched based on operator.
         """
-        return self._get_attribute('valueType')
+        return self._get_attribute(self._SDM_ATT_MAP['ValueType'])
 
     def find(self, Constraints=None, Name=None, TrackingType=None, ValueType=None):
         """Finds and retrieves availableTrackingFilter resources from the server.
@@ -93,7 +99,7 @@ class AvailableTrackingFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of availableTrackingFilter data from the server.

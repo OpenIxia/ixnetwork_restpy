@@ -32,6 +32,15 @@ class FcClientGlobals(Base):
 
     __slots__ = ()
     _SDM_NAME = 'fcClientGlobals'
+    _SDM_ATT_MAP = {
+        'AcceptPartialConfig': 'acceptPartialConfig',
+        'MaxPacketsPerSecond': 'maxPacketsPerSecond',
+        'MaxRetries': 'maxRetries',
+        'ObjectId': 'objectId',
+        'RetryInterval': 'retryInterval',
+        'SetupRate': 'setupRate',
+        'TeardownRate': 'teardownRate',
+    }
 
     def __init__(self, parent):
         super(FcClientGlobals, self).__init__(parent)
@@ -43,10 +52,10 @@ class FcClientGlobals(Base):
         -------
         - bool: This flag controls how the negotiation process reports success or failure.When is true the plugin reports success if at least one session is established.When is false the plugin reports success only if all sessions are established.
         """
-        return self._get_attribute('acceptPartialConfig')
+        return self._get_attribute(self._SDM_ATT_MAP['AcceptPartialConfig'])
     @AcceptPartialConfig.setter
     def AcceptPartialConfig(self, value):
-        self._set_attribute('acceptPartialConfig', value)
+        self._set_attribute(self._SDM_ATT_MAP['AcceptPartialConfig'], value)
 
     @property
     def MaxPacketsPerSecond(self):
@@ -55,10 +64,10 @@ class FcClientGlobals(Base):
         -------
         - number: The maximum number of requests transmitted in each second.
         """
-        return self._get_attribute('maxPacketsPerSecond')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'])
     @MaxPacketsPerSecond.setter
     def MaxPacketsPerSecond(self, value):
-        self._set_attribute('maxPacketsPerSecond', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'], value)
 
     @property
     def MaxRetries(self):
@@ -67,10 +76,10 @@ class FcClientGlobals(Base):
         -------
         - number: The number of request retries for each negotiation stage in case of response timeout or error.
         """
-        return self._get_attribute('maxRetries')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxRetries'])
     @MaxRetries.setter
     def MaxRetries(self, value):
-        self._set_attribute('maxRetries', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxRetries'], value)
 
     @property
     def ObjectId(self):
@@ -79,7 +88,7 @@ class FcClientGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def RetryInterval(self):
@@ -88,10 +97,10 @@ class FcClientGlobals(Base):
         -------
         - number: The number of seconds to wait for a response before sending a new request.
         """
-        return self._get_attribute('retryInterval')
+        return self._get_attribute(self._SDM_ATT_MAP['RetryInterval'])
     @RetryInterval.setter
     def RetryInterval(self, value):
-        self._set_attribute('retryInterval', value)
+        self._set_attribute(self._SDM_ATT_MAP['RetryInterval'], value)
 
     @property
     def SetupRate(self):
@@ -100,10 +109,10 @@ class FcClientGlobals(Base):
         -------
         - number: The number of interfaces scheduled to be configured in each second.
         """
-        return self._get_attribute('setupRate')
+        return self._get_attribute(self._SDM_ATT_MAP['SetupRate'])
     @SetupRate.setter
     def SetupRate(self, value):
-        self._set_attribute('setupRate', value)
+        self._set_attribute(self._SDM_ATT_MAP['SetupRate'], value)
 
     @property
     def TeardownRate(self):
@@ -112,10 +121,10 @@ class FcClientGlobals(Base):
         -------
         - number: The number of interfaces scheduled to be deconfigured in each second.
         """
-        return self._get_attribute('teardownRate')
+        return self._get_attribute(self._SDM_ATT_MAP['TeardownRate'])
     @TeardownRate.setter
     def TeardownRate(self, value):
-        self._set_attribute('teardownRate', value)
+        self._set_attribute(self._SDM_ATT_MAP['TeardownRate'], value)
 
     def update(self, AcceptPartialConfig=None, MaxPacketsPerSecond=None, MaxRetries=None, RetryInterval=None, SetupRate=None, TeardownRate=None):
         """Updates fcClientGlobals resource on the server.
@@ -133,7 +142,7 @@ class FcClientGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AcceptPartialConfig=None, MaxPacketsPerSecond=None, MaxRetries=None, RetryInterval=None, SetupRate=None, TeardownRate=None):
         """Adds a new fcClientGlobals resource on the server and adds it to the container.
@@ -155,7 +164,7 @@ class FcClientGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained fcClientGlobals resources in this instance from the server.
@@ -192,7 +201,7 @@ class FcClientGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of fcClientGlobals data from the server.

@@ -30,6 +30,11 @@ class AppTypeRef(Base):
 
     __slots__ = ()
     _SDM_NAME = 'appTypeRef'
+    _SDM_ATT_MAP = {
+        'Name': 'name',
+        'ObjectId': 'objectId',
+        'Value': 'value',
+    }
 
     def __init__(self, parent):
         super(AppTypeRef, self).__init__(parent)
@@ -39,13 +44,13 @@ class AppTypeRef(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.apptyperef.nacapps.nacapps.NacApps): An instance of the NacApps class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.vendorref.nactypes.nacapps.nacapps.NacApps): An instance of the NacApps class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.apptyperef.nacapps.nacapps import NacApps
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.vendorref.nactypes.nacapps.nacapps import NacApps
         return NacApps(self)
 
     @property
@@ -55,10 +60,10 @@ class AppTypeRef(Base):
         -------
         - str: AppType Name.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
@@ -67,7 +72,7 @@ class AppTypeRef(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def Value(self):
@@ -76,10 +81,10 @@ class AppTypeRef(Base):
         -------
         - number: AppType ID.
         """
-        return self._get_attribute('value')
+        return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
-        self._set_attribute('value', value)
+        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Name=None, Value=None):
         """Updates appTypeRef resource on the server.
@@ -93,4 +98,4 @@ class AppTypeRef(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

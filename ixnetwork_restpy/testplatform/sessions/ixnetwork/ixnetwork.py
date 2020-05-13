@@ -82,13 +82,13 @@ class Ixnetwork(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lag.Lag): An instance of the Lag class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lag_cd537f07f912db233dacbe727e8568d7.Lag): An instance of the Lag class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lag import Lag
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lag_cd537f07f912db233dacbe727e8568d7 import Lag
         return Lag(self)
 
     @property
@@ -152,13 +152,13 @@ class Ixnetwork(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.topology.Topology): An instance of the Topology class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.topology_f5f1d3cc89bb391f61b0e839056168ef.Topology): An instance of the Topology class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.topology import Topology
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.topology_f5f1d3cc89bb391f61b0e839056168ef import Topology
         return Topology(self)
 
     @property

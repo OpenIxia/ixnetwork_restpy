@@ -30,6 +30,13 @@ class Checksums(Base):
 
     __slots__ = ()
     _SDM_NAME = 'checksums'
+    _SDM_ATT_MAP = {
+        'AlwaysCorrectWhenModifying': 'alwaysCorrectWhenModifying',
+        'CorrectTxChecksumOverIp': 'correctTxChecksumOverIp',
+        'CorrectTxIpv4Checksum': 'correctTxIpv4Checksum',
+        'CorrectTxL2FcsErrors': 'correctTxL2FcsErrors',
+        'DropRxL2FcsErrors': 'dropRxL2FcsErrors',
+    }
 
     def __init__(self, parent):
         super(Checksums, self).__init__(parent)
@@ -41,10 +48,10 @@ class Checksums(Base):
         -------
         - bool: If true, and one or more field modifiers are enabled on this profile, then always correct the L2 FCS, IPv4 header checksum, and checksums for protocols over IPv4/IPv6.
         """
-        return self._get_attribute('alwaysCorrectWhenModifying')
+        return self._get_attribute(self._SDM_ATT_MAP['AlwaysCorrectWhenModifying'])
     @AlwaysCorrectWhenModifying.setter
     def AlwaysCorrectWhenModifying(self, value):
-        self._set_attribute('alwaysCorrectWhenModifying', value)
+        self._set_attribute(self._SDM_ATT_MAP['AlwaysCorrectWhenModifying'], value)
 
     @property
     def CorrectTxChecksumOverIp(self):
@@ -53,10 +60,10 @@ class Checksums(Base):
         -------
         - bool: If true, correct the checksum for the following protocols over IPv4/IPv6: TCP, UDP, ICMP, IGMP, ICMPv6, MLD, PIM, OSPF, RSVP.
         """
-        return self._get_attribute('correctTxChecksumOverIp')
+        return self._get_attribute(self._SDM_ATT_MAP['CorrectTxChecksumOverIp'])
     @CorrectTxChecksumOverIp.setter
     def CorrectTxChecksumOverIp(self, value):
-        self._set_attribute('correctTxChecksumOverIp', value)
+        self._set_attribute(self._SDM_ATT_MAP['CorrectTxChecksumOverIp'], value)
 
     @property
     def CorrectTxIpv4Checksum(self):
@@ -65,10 +72,10 @@ class Checksums(Base):
         -------
         - bool: If true, correct the IPv4 header checksum in outgoing IPv4 packets.
         """
-        return self._get_attribute('correctTxIpv4Checksum')
+        return self._get_attribute(self._SDM_ATT_MAP['CorrectTxIpv4Checksum'])
     @CorrectTxIpv4Checksum.setter
     def CorrectTxIpv4Checksum(self, value):
-        self._set_attribute('correctTxIpv4Checksum', value)
+        self._set_attribute(self._SDM_ATT_MAP['CorrectTxIpv4Checksum'], value)
 
     @property
     def CorrectTxL2FcsErrors(self):
@@ -77,10 +84,10 @@ class Checksums(Base):
         -------
         - bool: If true, correct the L2 frame check sequence in outgoing packets.
         """
-        return self._get_attribute('correctTxL2FcsErrors')
+        return self._get_attribute(self._SDM_ATT_MAP['CorrectTxL2FcsErrors'])
     @CorrectTxL2FcsErrors.setter
     def CorrectTxL2FcsErrors(self, value):
-        self._set_attribute('correctTxL2FcsErrors', value)
+        self._set_attribute(self._SDM_ATT_MAP['CorrectTxL2FcsErrors'], value)
 
     @property
     def DropRxL2FcsErrors(self):
@@ -89,10 +96,10 @@ class Checksums(Base):
         -------
         - bool: If true, drop incoming packets with L2 frame check sequence errors.
         """
-        return self._get_attribute('dropRxL2FcsErrors')
+        return self._get_attribute(self._SDM_ATT_MAP['DropRxL2FcsErrors'])
     @DropRxL2FcsErrors.setter
     def DropRxL2FcsErrors(self, value):
-        self._set_attribute('dropRxL2FcsErrors', value)
+        self._set_attribute(self._SDM_ATT_MAP['DropRxL2FcsErrors'], value)
 
     def update(self, AlwaysCorrectWhenModifying=None, CorrectTxChecksumOverIp=None, CorrectTxIpv4Checksum=None, CorrectTxL2FcsErrors=None, DropRxL2FcsErrors=None):
         """Updates checksums resource on the server.
@@ -109,4 +116,4 @@ class Checksums(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

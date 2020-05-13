@@ -31,6 +31,12 @@ class Range(Base):
 
     __slots__ = ()
     _SDM_NAME = 'range'
+    _SDM_ATT_MAP = {
+        'From': 'from',
+        'MaxValue': 'maxValue',
+        'MinValue': 'minValue',
+        'To': 'to',
+    }
 
     def __init__(self, parent):
         super(Range, self).__init__(parent)
@@ -42,10 +48,10 @@ class Range(Base):
         -------
         - number: Start range value.
         """
-        return self._get_attribute('from')
+        return self._get_attribute(self._SDM_ATT_MAP['From'])
     @From.setter
     def From(self, value):
-        self._set_attribute('from', value)
+        self._set_attribute(self._SDM_ATT_MAP['From'], value)
 
     @property
     def MaxValue(self):
@@ -54,7 +60,7 @@ class Range(Base):
         -------
         - number: (Read only) Maximum supported value for parameter range.
         """
-        return self._get_attribute('maxValue')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxValue'])
 
     @property
     def MinValue(self):
@@ -63,7 +69,7 @@ class Range(Base):
         -------
         - number: (Read only) Minimum supported value for parameter range.
         """
-        return self._get_attribute('minValue')
+        return self._get_attribute(self._SDM_ATT_MAP['MinValue'])
 
     @property
     def To(self):
@@ -72,10 +78,10 @@ class Range(Base):
         -------
         - number: End range value.
         """
-        return self._get_attribute('to')
+        return self._get_attribute(self._SDM_ATT_MAP['To'])
     @To.setter
     def To(self, value):
-        self._set_attribute('to', value)
+        self._set_attribute(self._SDM_ATT_MAP['To'], value)
 
     def update(self, From=None, To=None):
         """Updates range resource on the server.
@@ -89,7 +95,7 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, From=None, MaxValue=None, MinValue=None, To=None):
         """Finds and retrieves range resources from the server.
@@ -113,7 +119,7 @@ class Range(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of range data from the server.

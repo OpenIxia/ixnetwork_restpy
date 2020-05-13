@@ -32,6 +32,12 @@ class VicOptionSet(Base):
 
     __slots__ = ()
     _SDM_NAME = 'vicOptionSet'
+    _SDM_ATT_MAP = {
+        'Defaultp': 'defaultp',
+        'FeatureType': 'featureType',
+        'Name': 'name',
+        'ObjectId': 'objectId',
+    }
 
     def __init__(self, parent):
         super(VicOptionSet, self).__init__(parent)
@@ -57,10 +63,10 @@ class VicOptionSet(Base):
         -------
         - bool: True to assign this option set to new ranges.
         """
-        return self._get_attribute('defaultp')
+        return self._get_attribute(self._SDM_ATT_MAP['Defaultp'])
     @Defaultp.setter
     def Defaultp(self, value):
-        self._set_attribute('defaultp', value)
+        self._set_attribute(self._SDM_ATT_MAP['Defaultp'], value)
 
     @property
     def FeatureType(self):
@@ -69,10 +75,10 @@ class VicOptionSet(Base):
         -------
         - number: The usage purpose of this TLV set.
         """
-        return self._get_attribute('featureType')
+        return self._get_attribute(self._SDM_ATT_MAP['FeatureType'])
     @FeatureType.setter
     def FeatureType(self, value):
-        self._set_attribute('featureType', value)
+        self._set_attribute(self._SDM_ATT_MAP['FeatureType'], value)
 
     @property
     def Name(self):
@@ -81,10 +87,10 @@ class VicOptionSet(Base):
         -------
         - str: Option set name.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
@@ -93,7 +99,7 @@ class VicOptionSet(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def update(self, Defaultp=None, FeatureType=None, Name=None):
         """Updates vicOptionSet resource on the server.
@@ -108,7 +114,7 @@ class VicOptionSet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Defaultp=None, FeatureType=None, Name=None):
         """Adds a new vicOptionSet resource on the server and adds it to the container.
@@ -127,7 +133,7 @@ class VicOptionSet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained vicOptionSet resources in this instance from the server.
@@ -161,7 +167,7 @@ class VicOptionSet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of vicOptionSet data from the server.

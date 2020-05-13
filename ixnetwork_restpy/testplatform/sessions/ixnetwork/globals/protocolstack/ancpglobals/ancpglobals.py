@@ -32,6 +32,12 @@ class AncpGlobals(Base):
 
     __slots__ = ()
     _SDM_NAME = 'ancpGlobals'
+    _SDM_ATT_MAP = {
+        'ObjectId': 'objectId',
+        'PortDownRate': 'portDownRate',
+        'PortUpRate': 'portUpRate',
+        'ResyncRate': 'resyncRate',
+    }
 
     def __init__(self, parent):
         super(AncpGlobals, self).__init__(parent)
@@ -71,7 +77,7 @@ class AncpGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def PortDownRate(self):
@@ -80,10 +86,10 @@ class AncpGlobals(Base):
         -------
         - number: The number of Port Down event messages to send each second.
         """
-        return self._get_attribute('portDownRate')
+        return self._get_attribute(self._SDM_ATT_MAP['PortDownRate'])
     @PortDownRate.setter
     def PortDownRate(self, value):
-        self._set_attribute('portDownRate', value)
+        self._set_attribute(self._SDM_ATT_MAP['PortDownRate'], value)
 
     @property
     def PortUpRate(self):
@@ -92,10 +98,10 @@ class AncpGlobals(Base):
         -------
         - number: The number of Port Up event messages to send each second.
         """
-        return self._get_attribute('portUpRate')
+        return self._get_attribute(self._SDM_ATT_MAP['PortUpRate'])
     @PortUpRate.setter
     def PortUpRate(self, value):
-        self._set_attribute('portUpRate', value)
+        self._set_attribute(self._SDM_ATT_MAP['PortUpRate'], value)
 
     @property
     def ResyncRate(self):
@@ -104,10 +110,10 @@ class AncpGlobals(Base):
         -------
         - number: The number of Port Up event messages to send each second, to simulate DSL Resync events.
         """
-        return self._get_attribute('resyncRate')
+        return self._get_attribute(self._SDM_ATT_MAP['ResyncRate'])
     @ResyncRate.setter
     def ResyncRate(self, value):
-        self._set_attribute('resyncRate', value)
+        self._set_attribute(self._SDM_ATT_MAP['ResyncRate'], value)
 
     def update(self, PortDownRate=None, PortUpRate=None, ResyncRate=None):
         """Updates ancpGlobals resource on the server.
@@ -122,7 +128,7 @@ class AncpGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, PortDownRate=None, PortUpRate=None, ResyncRate=None):
         """Adds a new ancpGlobals resource on the server and adds it to the container.
@@ -141,7 +147,7 @@ class AncpGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained ancpGlobals resources in this instance from the server.
@@ -175,7 +181,7 @@ class AncpGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of ancpGlobals data from the server.

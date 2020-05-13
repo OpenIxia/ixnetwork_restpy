@@ -30,6 +30,17 @@ class Filter(Base):
 
     __slots__ = ()
     _SDM_NAME = 'filter'
+    _SDM_ATT_MAP = {
+        'CaptureFilterDA': 'captureFilterDA',
+        'CaptureFilterEnable': 'captureFilterEnable',
+        'CaptureFilterError': 'captureFilterError',
+        'CaptureFilterExpressionString': 'captureFilterExpressionString',
+        'CaptureFilterFrameSizeEnable': 'captureFilterFrameSizeEnable',
+        'CaptureFilterFrameSizeFrom': 'captureFilterFrameSizeFrom',
+        'CaptureFilterFrameSizeTo': 'captureFilterFrameSizeTo',
+        'CaptureFilterPattern': 'captureFilterPattern',
+        'CaptureFilterSA': 'captureFilterSA',
+    }
 
     def __init__(self, parent):
         super(Filter, self).__init__(parent)
@@ -41,10 +52,10 @@ class Filter(Base):
         -------
         - str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2): One of two available destination MAC addresses to filter on. Applicable only when capturefilternable is set to true.
         """
-        return self._get_attribute('captureFilterDA')
+        return self._get_attribute(self._SDM_ATT_MAP['CaptureFilterDA'])
     @CaptureFilterDA.setter
     def CaptureFilterDA(self, value):
-        self._set_attribute('captureFilterDA', value)
+        self._set_attribute(self._SDM_ATT_MAP['CaptureFilterDA'], value)
 
     @property
     def CaptureFilterEnable(self):
@@ -53,10 +64,10 @@ class Filter(Base):
         -------
         - bool: Enables or disables the capture filter.
         """
-        return self._get_attribute('captureFilterEnable')
+        return self._get_attribute(self._SDM_ATT_MAP['CaptureFilterEnable'])
     @CaptureFilterEnable.setter
     def CaptureFilterEnable(self, value):
-        self._set_attribute('captureFilterEnable', value)
+        self._set_attribute(self._SDM_ATT_MAP['CaptureFilterEnable'], value)
 
     @property
     def CaptureFilterError(self):
@@ -65,10 +76,10 @@ class Filter(Base):
         -------
         - str(errAnyFrame | errAnyIpTcpUdpChecksumError | errAnySequencekError | errBadCRC | errBadFrame | errBigSequenceError | errDataIntegrityError | errGoodFrame | errInvalidFcoeFrame | errReverseSequenceError | errSmallSequenceError): Applicable only when captureFilterEnable is set to true.
         """
-        return self._get_attribute('captureFilterError')
+        return self._get_attribute(self._SDM_ATT_MAP['CaptureFilterError'])
     @CaptureFilterError.setter
     def CaptureFilterError(self, value):
-        self._set_attribute('captureFilterError', value)
+        self._set_attribute(self._SDM_ATT_MAP['CaptureFilterError'], value)
 
     @property
     def CaptureFilterExpressionString(self):
@@ -77,10 +88,10 @@ class Filter(Base):
         -------
         - str: String composed of SA1, DA1, P1, P2, optionally negated with '!', and connected with operators 'and', 'or', 'xor', 'nand' or 'nor'. (Eg: {DA1 and SA1 or !P1 and P2} ). NOTE: The 'or', 'xor', 'nand' and 'nor' operators are available only on the following load modules: XMVDC, NGY, XMSP12, LAVA(MK), Xcellon AP, Xcellon NP.
         """
-        return self._get_attribute('captureFilterExpressionString')
+        return self._get_attribute(self._SDM_ATT_MAP['CaptureFilterExpressionString'])
     @CaptureFilterExpressionString.setter
     def CaptureFilterExpressionString(self, value):
-        self._set_attribute('captureFilterExpressionString', value)
+        self._set_attribute(self._SDM_ATT_MAP['CaptureFilterExpressionString'], value)
 
     @property
     def CaptureFilterFrameSizeEnable(self):
@@ -89,10 +100,10 @@ class Filter(Base):
         -------
         - bool: Enables or disables the frame size constraint which specifies a range of frame.
         """
-        return self._get_attribute('captureFilterFrameSizeEnable')
+        return self._get_attribute(self._SDM_ATT_MAP['CaptureFilterFrameSizeEnable'])
     @CaptureFilterFrameSizeEnable.setter
     def CaptureFilterFrameSizeEnable(self, value):
-        self._set_attribute('captureFilterFrameSizeEnable', value)
+        self._set_attribute(self._SDM_ATT_MAP['CaptureFilterFrameSizeEnable'], value)
 
     @property
     def CaptureFilterFrameSizeFrom(self):
@@ -101,10 +112,10 @@ class Filter(Base):
         -------
         - number: Applicable only when captureFilterFrameSizeEnable is enabled. The minimum range of the size of frame to be filtered.
         """
-        return self._get_attribute('captureFilterFrameSizeFrom')
+        return self._get_attribute(self._SDM_ATT_MAP['CaptureFilterFrameSizeFrom'])
     @CaptureFilterFrameSizeFrom.setter
     def CaptureFilterFrameSizeFrom(self, value):
-        self._set_attribute('captureFilterFrameSizeFrom', value)
+        self._set_attribute(self._SDM_ATT_MAP['CaptureFilterFrameSizeFrom'], value)
 
     @property
     def CaptureFilterFrameSizeTo(self):
@@ -113,10 +124,10 @@ class Filter(Base):
         -------
         - number: Applicable only when captureFilterFrameSizeEnable is enabled. The maximum range of the size of frame to be filtered.
         """
-        return self._get_attribute('captureFilterFrameSizeTo')
+        return self._get_attribute(self._SDM_ATT_MAP['CaptureFilterFrameSizeTo'])
     @CaptureFilterFrameSizeTo.setter
     def CaptureFilterFrameSizeTo(self, value):
-        self._set_attribute('captureFilterFrameSizeTo', value)
+        self._set_attribute(self._SDM_ATT_MAP['CaptureFilterFrameSizeTo'], value)
 
     @property
     def CaptureFilterPattern(self):
@@ -125,10 +136,10 @@ class Filter(Base):
         -------
         - str(anyPattern | notPattern1 | notPattern2 | pattern1 | pattern1AndPattern2 | pattern2): Applicable only when captureFilterEnable is set to true.
         """
-        return self._get_attribute('captureFilterPattern')
+        return self._get_attribute(self._SDM_ATT_MAP['CaptureFilterPattern'])
     @CaptureFilterPattern.setter
     def CaptureFilterPattern(self, value):
-        self._set_attribute('captureFilterPattern', value)
+        self._set_attribute(self._SDM_ATT_MAP['CaptureFilterPattern'], value)
 
     @property
     def CaptureFilterSA(self):
@@ -137,10 +148,10 @@ class Filter(Base):
         -------
         - str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2): One of two available destination MAC addresses to filter on. Applicable only when capturefilternable is set to true.
         """
-        return self._get_attribute('captureFilterSA')
+        return self._get_attribute(self._SDM_ATT_MAP['CaptureFilterSA'])
     @CaptureFilterSA.setter
     def CaptureFilterSA(self, value):
-        self._set_attribute('captureFilterSA', value)
+        self._set_attribute(self._SDM_ATT_MAP['CaptureFilterSA'], value)
 
     def update(self, CaptureFilterDA=None, CaptureFilterEnable=None, CaptureFilterError=None, CaptureFilterExpressionString=None, CaptureFilterFrameSizeEnable=None, CaptureFilterFrameSizeFrom=None, CaptureFilterFrameSizeTo=None, CaptureFilterPattern=None, CaptureFilterSA=None):
         """Updates filter resource on the server.
@@ -161,4 +172,4 @@ class Filter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

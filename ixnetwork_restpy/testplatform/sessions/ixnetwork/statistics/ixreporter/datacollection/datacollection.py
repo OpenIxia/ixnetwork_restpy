@@ -30,6 +30,10 @@ class DataCollection(Base):
 
     __slots__ = ()
     _SDM_NAME = 'dataCollection'
+    _SDM_ATT_MAP = {
+        'Enable': 'Enable',
+        'LastRunId': 'LastRunId',
+    }
 
     def __init__(self, parent):
         super(DataCollection, self).__init__(parent)
@@ -41,10 +45,10 @@ class DataCollection(Base):
         -------
         - bool: If it is true, enables collection of data
         """
-        return self._get_attribute('Enable')
+        return self._get_attribute(self._SDM_ATT_MAP['Enable'])
     @Enable.setter
     def Enable(self, value):
-        self._set_attribute('Enable', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enable'], value)
 
     @property
     def LastRunId(self):
@@ -53,7 +57,7 @@ class DataCollection(Base):
         -------
         - number: Specifies the identifier for last run.
         """
-        return self._get_attribute('LastRunId')
+        return self._get_attribute(self._SDM_ATT_MAP['LastRunId'])
 
     def update(self, Enable=None):
         """Updates dataCollection resource on the server.
@@ -66,4 +70,4 @@ class DataCollection(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

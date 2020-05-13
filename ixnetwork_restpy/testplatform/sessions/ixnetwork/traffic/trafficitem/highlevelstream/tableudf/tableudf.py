@@ -31,6 +31,9 @@ class TableUdf(Base):
 
     __slots__ = ()
     _SDM_NAME = 'tableUdf'
+    _SDM_ATT_MAP = {
+        'Enabled': 'enabled',
+    }
 
     def __init__(self, parent):
         super(TableUdf, self).__init__(parent)
@@ -56,10 +59,10 @@ class TableUdf(Base):
         -------
         - bool: If enabled, enables the UDF table for this flow group if it is supported.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     def update(self, Enabled=None):
         """Updates tableUdf resource on the server.
@@ -72,7 +75,7 @@ class TableUdf(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, Enabled=None):
         """Finds and retrieves tableUdf resources from the server.
@@ -93,7 +96,7 @@ class TableUdf(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of tableUdf data from the server.

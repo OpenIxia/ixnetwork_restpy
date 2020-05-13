@@ -31,6 +31,13 @@ class Card(Base):
 
     __slots__ = ()
     _SDM_NAME = 'card'
+    _SDM_ATT_MAP = {
+        'AggregationMode': 'aggregationMode',
+        'AggregationSupported': 'aggregationSupported',
+        'AvailableModes': 'availableModes',
+        'CardId': 'cardId',
+        'Description': 'description',
+    }
 
     def __init__(self, parent):
         super(Card, self).__init__(parent)
@@ -70,10 +77,10 @@ class Card(Base):
         -------
         - str(notSupported | mixed | normal | tenGigAggregation | fortyGigAggregation | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneEightByFiftyGigFanOut): Gets or sets the aggregation mode.
         """
-        return self._get_attribute('aggregationMode')
+        return self._get_attribute(self._SDM_ATT_MAP['AggregationMode'])
     @AggregationMode.setter
     def AggregationMode(self, value):
-        self._set_attribute('aggregationMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['AggregationMode'], value)
 
     @property
     def AggregationSupported(self):
@@ -82,7 +89,7 @@ class Card(Base):
         -------
         - bool: (read only) If true, indicates that the card is operating in resource group mode and not in normal mode
         """
-        return self._get_attribute('aggregationSupported')
+        return self._get_attribute(self._SDM_ATT_MAP['AggregationSupported'])
 
     @property
     def AvailableModes(self):
@@ -91,7 +98,7 @@ class Card(Base):
         -------
         - list(str[notSupported | mixed | normal | tenGigAggregation | fortyGigAggregation | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneEightByFiftyGigFanOut]): Gets the supported port resource group modes on the card.
         """
-        return self._get_attribute('availableModes')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableModes'])
 
     @property
     def CardId(self):
@@ -100,7 +107,7 @@ class Card(Base):
         -------
         - number: Identifier for the card on the chassis.
         """
-        return self._get_attribute('cardId')
+        return self._get_attribute(self._SDM_ATT_MAP['CardId'])
 
     @property
     def Description(self):
@@ -109,7 +116,7 @@ class Card(Base):
         -------
         - str: Description of the card.
         """
-        return self._get_attribute('description')
+        return self._get_attribute(self._SDM_ATT_MAP['Description'])
 
     def update(self, AggregationMode=None):
         """Updates card resource on the server.
@@ -122,7 +129,7 @@ class Card(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, AggregationMode=None, AggregationSupported=None, AvailableModes=None, CardId=None, Description=None):
         """Finds and retrieves card resources from the server.
@@ -147,7 +154,7 @@ class Card(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of card data from the server.

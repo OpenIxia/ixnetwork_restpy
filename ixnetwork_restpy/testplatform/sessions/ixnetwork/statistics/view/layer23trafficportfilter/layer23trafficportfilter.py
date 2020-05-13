@@ -32,6 +32,9 @@ class Layer23TrafficPortFilter(Base):
 
     __slots__ = ()
     _SDM_NAME = 'layer23TrafficPortFilter'
+    _SDM_ATT_MAP = {
+        'PortFilterIds': 'portFilterIds',
+    }
 
     def __init__(self, parent):
         super(Layer23TrafficPortFilter, self).__init__(parent)
@@ -43,10 +46,10 @@ class Layer23TrafficPortFilter(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter]): Selected port filters from the availablePortFilter list.
         """
-        return self._get_attribute('portFilterIds')
+        return self._get_attribute(self._SDM_ATT_MAP['PortFilterIds'])
     @PortFilterIds.setter
     def PortFilterIds(self, value):
-        self._set_attribute('portFilterIds', value)
+        self._set_attribute(self._SDM_ATT_MAP['PortFilterIds'], value)
 
     def update(self, PortFilterIds=None):
         """Updates layer23TrafficPortFilter resource on the server.
@@ -59,7 +62,7 @@ class Layer23TrafficPortFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, PortFilterIds=None):
         """Adds a new layer23TrafficPortFilter resource on the server and adds it to the container.
@@ -76,7 +79,7 @@ class Layer23TrafficPortFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained layer23TrafficPortFilter resources in this instance from the server.
@@ -107,7 +110,7 @@ class Layer23TrafficPortFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of layer23TrafficPortFilter data from the server.

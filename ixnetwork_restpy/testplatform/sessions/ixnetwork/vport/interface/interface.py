@@ -32,6 +32,13 @@ class Interface(Base):
 
     __slots__ = ()
     _SDM_NAME = 'interface'
+    _SDM_ATT_MAP = {
+        'Description': 'description',
+        'Enabled': 'enabled',
+        'Eui64Id': 'eui64Id',
+        'Mtu': 'mtu',
+        'Type': 'type',
+    }
 
     def __init__(self, parent):
         super(Interface, self).__init__(parent)
@@ -197,10 +204,10 @@ class Interface(Base):
         -------
         - str: The identifier for the port including card and port numbers, and the port type.
         """
-        return self._get_attribute('description')
+        return self._get_attribute(self._SDM_ATT_MAP['Description'])
     @Description.setter
     def Description(self, value):
-        self._set_attribute('description', value)
+        self._set_attribute(self._SDM_ATT_MAP['Description'], value)
 
     @property
     def Enabled(self):
@@ -209,10 +216,10 @@ class Interface(Base):
         -------
         - bool: Enables the selected protocol interface.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Eui64Id(self):
@@ -221,10 +228,10 @@ class Interface(Base):
         -------
         - str: This is the 64-bit IEEE Modified EUI ID value for the Interface Identifier portion of the IPv6 address.
         """
-        return self._get_attribute('eui64Id')
+        return self._get_attribute(self._SDM_ATT_MAP['Eui64Id'])
     @Eui64Id.setter
     def Eui64Id(self, value):
-        self._set_attribute('eui64Id', value)
+        self._set_attribute(self._SDM_ATT_MAP['Eui64Id'], value)
 
     @property
     def Mtu(self):
@@ -233,10 +240,10 @@ class Interface(Base):
         -------
         - number: The maximum transmission unit for the interfaces created with this range.
         """
-        return self._get_attribute('mtu')
+        return self._get_attribute(self._SDM_ATT_MAP['Mtu'])
     @Mtu.setter
     def Mtu(self, value):
-        self._set_attribute('mtu', value)
+        self._set_attribute(self._SDM_ATT_MAP['Mtu'], value)
 
     @property
     def Type(self):
@@ -245,10 +252,10 @@ class Interface(Base):
         -------
         - str(default | gre | routed): The identifier or 'tag' for this DHCP option.
         """
-        return self._get_attribute('type')
+        return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
-        self._set_attribute('type', value)
+        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     def update(self, Description=None, Enabled=None, Eui64Id=None, Mtu=None, Type=None):
         """Updates interface resource on the server.
@@ -265,7 +272,7 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Description=None, Enabled=None, Eui64Id=None, Mtu=None, Type=None):
         """Adds a new interface resource on the server and adds it to the container.
@@ -286,7 +293,7 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained interface resources in this instance from the server.
@@ -321,7 +328,7 @@ class Interface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of interface data from the server.

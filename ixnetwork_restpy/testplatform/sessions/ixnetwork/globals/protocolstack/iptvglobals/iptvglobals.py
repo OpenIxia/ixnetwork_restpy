@@ -32,6 +32,9 @@ class IptvGlobals(Base):
 
     __slots__ = ()
     _SDM_NAME = 'iptvGlobals'
+    _SDM_ATT_MAP = {
+        'ObjectId': 'objectId',
+    }
 
     def __init__(self, parent):
         super(IptvGlobals, self).__init__(parent)
@@ -55,13 +58,13 @@ class IptvGlobals(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.iptvglobals.igmpgrouprange.igmpgrouprange.IgmpGroupRange): An instance of the IgmpGroupRange class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.igmpglobals.igmpgrouprange.igmpgrouprange.IgmpGroupRange): An instance of the IgmpGroupRange class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.iptvglobals.igmpgrouprange.igmpgrouprange import IgmpGroupRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.igmpglobals.igmpgrouprange.igmpgrouprange import IgmpGroupRange
         return IgmpGroupRange(self)
 
     @property
@@ -85,7 +88,7 @@ class IptvGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def add(self):
         """Adds a new iptvGlobals resource on the server and adds it to the container.
@@ -98,7 +101,7 @@ class IptvGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained iptvGlobals resources in this instance from the server.
@@ -129,7 +132,7 @@ class IptvGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of iptvGlobals data from the server.

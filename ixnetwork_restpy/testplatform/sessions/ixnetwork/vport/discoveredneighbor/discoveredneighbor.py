@@ -32,6 +32,12 @@ class DiscoveredNeighbor(Base):
 
     __slots__ = ()
     _SDM_NAME = 'discoveredNeighbor'
+    _SDM_ATT_MAP = {
+        'IsRouter': 'isRouter',
+        'LastUpdate': 'lastUpdate',
+        'NeighborIp': 'neighborIp',
+        'NeighborMac': 'neighborMac',
+    }
 
     def __init__(self, parent):
         super(DiscoveredNeighbor, self).__init__(parent)
@@ -43,7 +49,7 @@ class DiscoveredNeighbor(Base):
         -------
         - str: (read only) Indicates if the neighbor is a router or not.
         """
-        return self._get_attribute('isRouter')
+        return self._get_attribute(self._SDM_ATT_MAP['IsRouter'])
 
     @property
     def LastUpdate(self):
@@ -52,7 +58,7 @@ class DiscoveredNeighbor(Base):
         -------
         - str: (read only) Indicates when the last update for the neighbor happened.
         """
-        return self._get_attribute('lastUpdate')
+        return self._get_attribute(self._SDM_ATT_MAP['LastUpdate'])
 
     @property
     def NeighborIp(self):
@@ -61,7 +67,7 @@ class DiscoveredNeighbor(Base):
         -------
         - str: (read only) The IP address of the neighbor.
         """
-        return self._get_attribute('neighborIp')
+        return self._get_attribute(self._SDM_ATT_MAP['NeighborIp'])
 
     @property
     def NeighborMac(self):
@@ -70,7 +76,7 @@ class DiscoveredNeighbor(Base):
         -------
         - str: (read only) The MAC address of the neighbor.
         """
-        return self._get_attribute('neighborMac')
+        return self._get_attribute(self._SDM_ATT_MAP['NeighborMac'])
 
     def add(self):
         """Adds a new discoveredNeighbor resource on the server and adds it to the container.
@@ -83,7 +89,7 @@ class DiscoveredNeighbor(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained discoveredNeighbor resources in this instance from the server.
@@ -117,7 +123,7 @@ class DiscoveredNeighbor(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of discoveredNeighbor data from the server.

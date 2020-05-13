@@ -30,6 +30,11 @@ class AvailableHardware(Base):
 
     __slots__ = ()
     _SDM_NAME = 'availableHardware'
+    _SDM_ATT_MAP = {
+        'IsLocked': 'isLocked',
+        'IsOffChassis': 'isOffChassis',
+        'OffChassisHwM': 'offChassisHwM',
+    }
 
     def __init__(self, parent):
         super(AvailableHardware, self).__init__(parent)
@@ -69,7 +74,7 @@ class AvailableHardware(Base):
         -------
         - bool: If true, locks the Hardware Manager.
         """
-        return self._get_attribute('isLocked')
+        return self._get_attribute(self._SDM_ATT_MAP['IsLocked'])
 
     @property
     def IsOffChassis(self):
@@ -78,10 +83,10 @@ class AvailableHardware(Base):
         -------
         - bool: If true, the Hardware Manager is Off Chassis.
         """
-        return self._get_attribute('isOffChassis')
+        return self._get_attribute(self._SDM_ATT_MAP['IsOffChassis'])
     @IsOffChassis.setter
     def IsOffChassis(self, value):
-        self._set_attribute('isOffChassis', value)
+        self._set_attribute(self._SDM_ATT_MAP['IsOffChassis'], value)
 
     @property
     def OffChassisHwM(self):
@@ -90,10 +95,10 @@ class AvailableHardware(Base):
         -------
         - str: Enables the Off Chassis Hardware Manager. The Hardware Manager is an IxOS component that manages the resources on an Ixia chassis. IxNetwork communicates with a chassis through Hardware Manager. Normally, Hardware Manager runs on the chassis itself; however, it can also be installed and run on a separate PC. This configuration is known as an Off-Chassis Hardware Manager.
         """
-        return self._get_attribute('offChassisHwM')
+        return self._get_attribute(self._SDM_ATT_MAP['OffChassisHwM'])
     @OffChassisHwM.setter
     def OffChassisHwM(self, value):
-        self._set_attribute('offChassisHwM', value)
+        self._set_attribute(self._SDM_ATT_MAP['OffChassisHwM'], value)
 
     def update(self, IsOffChassis=None, OffChassisHwM=None):
         """Updates availableHardware resource on the server.
@@ -107,4 +112,4 @@ class AvailableHardware(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

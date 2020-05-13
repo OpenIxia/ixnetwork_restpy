@@ -32,6 +32,12 @@ class Column(Base):
 
     __slots__ = ()
     _SDM_NAME = 'column'
+    _SDM_ATT_MAP = {
+        'Format': 'format',
+        'Offset': 'offset',
+        'Size': 'size',
+        'Values': 'values',
+    }
 
     def __init__(self, parent):
         super(Column, self).__init__(parent)
@@ -43,10 +49,10 @@ class Column(Base):
         -------
         - str(ascii | binary | custom | decimal | hex | ipv4 | ipv6 | mac): The format of the Table UDF list (column).
         """
-        return self._get_attribute('format')
+        return self._get_attribute(self._SDM_ATT_MAP['Format'])
     @Format.setter
     def Format(self, value):
-        self._set_attribute('format', value)
+        self._set_attribute(self._SDM_ATT_MAP['Format'], value)
 
     @property
     def Offset(self):
@@ -55,10 +61,10 @@ class Column(Base):
         -------
         - number: The offset value, in bytes, of the Table UDF list (column).
         """
-        return self._get_attribute('offset')
+        return self._get_attribute(self._SDM_ATT_MAP['Offset'])
     @Offset.setter
     def Offset(self, value):
-        self._set_attribute('offset', value)
+        self._set_attribute(self._SDM_ATT_MAP['Offset'], value)
 
     @property
     def Size(self):
@@ -67,10 +73,10 @@ class Column(Base):
         -------
         - number: The size, in bytes, of the Table UDF list (column).
         """
-        return self._get_attribute('size')
+        return self._get_attribute(self._SDM_ATT_MAP['Size'])
     @Size.setter
     def Size(self, value):
-        self._set_attribute('size', value)
+        self._set_attribute(self._SDM_ATT_MAP['Size'], value)
 
     @property
     def Values(self):
@@ -79,10 +85,10 @@ class Column(Base):
         -------
         - list(str): The value of the table UDF column.
         """
-        return self._get_attribute('values')
+        return self._get_attribute(self._SDM_ATT_MAP['Values'])
     @Values.setter
     def Values(self, value):
-        self._set_attribute('values', value)
+        self._set_attribute(self._SDM_ATT_MAP['Values'], value)
 
     def update(self, Format=None, Offset=None, Size=None, Values=None):
         """Updates column resource on the server.
@@ -98,7 +104,7 @@ class Column(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Format=None, Offset=None, Size=None, Values=None):
         """Adds a new column resource on the server and adds it to the container.
@@ -118,7 +124,7 @@ class Column(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained column resources in this instance from the server.
@@ -152,7 +158,7 @@ class Column(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of column data from the server.

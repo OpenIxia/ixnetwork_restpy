@@ -30,6 +30,9 @@ class DefaultProfile(Base):
 
     __slots__ = ()
     _SDM_NAME = 'defaultProfile'
+    _SDM_ATT_MAP = {
+        'Name': 'name',
+    }
 
     def __init__(self, parent):
         super(DefaultProfile, self).__init__(parent)
@@ -181,4 +184,4 @@ class DefaultProfile(Base):
         -------
         - str: The name of the profile. Read-only.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])

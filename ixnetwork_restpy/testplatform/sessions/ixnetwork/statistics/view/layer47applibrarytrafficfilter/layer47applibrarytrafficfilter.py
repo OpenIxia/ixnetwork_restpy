@@ -32,6 +32,13 @@ class Layer47AppLibraryTrafficFilter(Base):
 
     __slots__ = ()
     _SDM_NAME = 'layer47AppLibraryTrafficFilter'
+    _SDM_ATT_MAP = {
+        'AdvancedFilterName': 'advancedFilterName',
+        'AllAdvancedFilters': 'allAdvancedFilters',
+        'MatchingAdvancedFilters': 'matchingAdvancedFilters',
+        'TopxEnabled': 'topxEnabled',
+        'TopxValue': 'topxValue',
+    }
 
     def __init__(self, parent):
         super(Layer47AppLibraryTrafficFilter, self).__init__(parent)
@@ -41,13 +48,13 @@ class Layer47AppLibraryTrafficFilter(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer47applibrarytrafficfilter.advancedfilter.advancedfilter.AdvancedFilter): An instance of the AdvancedFilter class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23nextgenprotocolfilter.advancedfilter.advancedfilter.AdvancedFilter): An instance of the AdvancedFilter class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer47applibrarytrafficfilter.advancedfilter.advancedfilter import AdvancedFilter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23nextgenprotocolfilter.advancedfilter.advancedfilter import AdvancedFilter
         return AdvancedFilter(self)
 
     @property
@@ -57,10 +64,10 @@ class Layer47AppLibraryTrafficFilter(Base):
         -------
         - str: Specifies an advanced filter from the ones available in the selected drill down view.
         """
-        return self._get_attribute('advancedFilterName')
+        return self._get_attribute(self._SDM_ATT_MAP['AdvancedFilterName'])
     @AdvancedFilterName.setter
     def AdvancedFilterName(self, value):
-        self._set_attribute('advancedFilterName', value)
+        self._set_attribute(self._SDM_ATT_MAP['AdvancedFilterName'], value)
 
     @property
     def AllAdvancedFilters(self):
@@ -69,7 +76,7 @@ class Layer47AppLibraryTrafficFilter(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters): Returns a list with all the filters that are present in the selected drill down views. This includes filters that cannot be applied for the current drill down view.
         """
-        return self._get_attribute('allAdvancedFilters')
+        return self._get_attribute(self._SDM_ATT_MAP['AllAdvancedFilters'])
 
     @property
     def MatchingAdvancedFilters(self):
@@ -78,7 +85,7 @@ class Layer47AppLibraryTrafficFilter(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters): Specifies a list that contains only the filters which can be applied on the current drill down view.
         """
-        return self._get_attribute('matchingAdvancedFilters')
+        return self._get_attribute(self._SDM_ATT_MAP['MatchingAdvancedFilters'])
 
     @property
     def TopxEnabled(self):
@@ -87,10 +94,10 @@ class Layer47AppLibraryTrafficFilter(Base):
         -------
         - bool: The view only shows the number of rows specified by TopXValue. If the view is OnDemand, it will become RealTime.
         """
-        return self._get_attribute('topxEnabled')
+        return self._get_attribute(self._SDM_ATT_MAP['TopxEnabled'])
     @TopxEnabled.setter
     def TopxEnabled(self, value):
-        self._set_attribute('topxEnabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['TopxEnabled'], value)
 
     @property
     def TopxValue(self):
@@ -99,10 +106,10 @@ class Layer47AppLibraryTrafficFilter(Base):
         -------
         - number: The number of rows to be shown when TopXEnabled is set to true.
         """
-        return self._get_attribute('topxValue')
+        return self._get_attribute(self._SDM_ATT_MAP['TopxValue'])
     @TopxValue.setter
     def TopxValue(self, value):
-        self._set_attribute('topxValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['TopxValue'], value)
 
     def update(self, AdvancedFilterName=None, TopxEnabled=None, TopxValue=None):
         """Updates layer47AppLibraryTrafficFilter resource on the server.
@@ -117,7 +124,7 @@ class Layer47AppLibraryTrafficFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AdvancedFilterName=None, TopxEnabled=None, TopxValue=None):
         """Adds a new layer47AppLibraryTrafficFilter resource on the server and adds it to the container.
@@ -136,7 +143,7 @@ class Layer47AppLibraryTrafficFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained layer47AppLibraryTrafficFilter resources in this instance from the server.
@@ -171,7 +178,7 @@ class Layer47AppLibraryTrafficFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of layer47AppLibraryTrafficFilter data from the server.

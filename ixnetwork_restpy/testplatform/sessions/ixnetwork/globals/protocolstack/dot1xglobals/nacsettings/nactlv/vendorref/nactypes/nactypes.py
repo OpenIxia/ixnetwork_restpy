@@ -32,6 +32,11 @@ class NacTypes(Base):
 
     __slots__ = ()
     _SDM_NAME = 'nacTypes'
+    _SDM_ATT_MAP = {
+        'Name': 'name',
+        'ObjectId': 'objectId',
+        'Value': 'value',
+    }
 
     def __init__(self, parent):
         super(NacTypes, self).__init__(parent)
@@ -57,10 +62,10 @@ class NacTypes(Base):
         -------
         - str: AppType Name.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
@@ -69,7 +74,7 @@ class NacTypes(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def Value(self):
@@ -78,10 +83,10 @@ class NacTypes(Base):
         -------
         - number: AppType ID.
         """
-        return self._get_attribute('value')
+        return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
-        self._set_attribute('value', value)
+        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Name=None, Value=None):
         """Updates nacTypes resource on the server.
@@ -95,7 +100,7 @@ class NacTypes(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None, Value=None):
         """Adds a new nacTypes resource on the server and adds it to the container.
@@ -113,7 +118,7 @@ class NacTypes(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained nacTypes resources in this instance from the server.
@@ -146,7 +151,7 @@ class NacTypes(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of nacTypes data from the server.

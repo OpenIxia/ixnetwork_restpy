@@ -30,6 +30,13 @@ class Vlan(Base):
 
     __slots__ = ()
     _SDM_NAME = 'vlan'
+    _SDM_ATT_MAP = {
+        'Tpid': 'tpid',
+        'VlanCount': 'vlanCount',
+        'VlanEnable': 'vlanEnable',
+        'VlanId': 'vlanId',
+        'VlanPriority': 'vlanPriority',
+    }
 
     def __init__(self, parent):
         super(Vlan, self).__init__(parent)
@@ -41,10 +48,10 @@ class Vlan(Base):
         -------
         - str: Tag Protocol Identifier / TPID (hex). The EtherType that identifies the protocol header that follows the VLAN header (tag). (Active only if VLAN has been enabled.)
         """
-        return self._get_attribute('tpid')
+        return self._get_attribute(self._SDM_ATT_MAP['Tpid'])
     @Tpid.setter
     def Tpid(self, value):
-        self._set_attribute('tpid', value)
+        self._set_attribute(self._SDM_ATT_MAP['Tpid'], value)
 
     @property
     def VlanCount(self):
@@ -53,10 +60,10 @@ class Vlan(Base):
         -------
         - number: The number of VLANs configured for this interface.
         """
-        return self._get_attribute('vlanCount')
+        return self._get_attribute(self._SDM_ATT_MAP['VlanCount'])
     @VlanCount.setter
     def VlanCount(self, value):
-        self._set_attribute('vlanCount', value)
+        self._set_attribute(self._SDM_ATT_MAP['VlanCount'], value)
 
     @property
     def VlanEnable(self):
@@ -65,10 +72,10 @@ class Vlan(Base):
         -------
         - bool: If enabled, a VLAN can be assigned for each of the interfaces.
         """
-        return self._get_attribute('vlanEnable')
+        return self._get_attribute(self._SDM_ATT_MAP['VlanEnable'])
     @VlanEnable.setter
     def VlanEnable(self, value):
-        self._set_attribute('vlanEnable', value)
+        self._set_attribute(self._SDM_ATT_MAP['VlanEnable'], value)
 
     @property
     def VlanId(self):
@@ -77,10 +84,10 @@ class Vlan(Base):
         -------
         - str: If the VLAN option is enabled for the current interface, a VLAN ID may be added to the packet, to identify the VLAN that the packet belongs to. The default is 1. If the VLAN Count is greater than 1 (for stacked VLANs), corresponding multiple entries will appear in the VLAN ID field.
         """
-        return self._get_attribute('vlanId')
+        return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
     @VlanId.setter
     def VlanId(self, value):
-        self._set_attribute('vlanId', value)
+        self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
 
     @property
     def VlanPriority(self):
@@ -89,10 +96,10 @@ class Vlan(Base):
         -------
         - str: The user priority of the VLAN tag: a value from 0 through 7. The use and interpretation of this field is defined in ISO/IEC 15802-3.The default is 5.
         """
-        return self._get_attribute('vlanPriority')
+        return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
     @VlanPriority.setter
     def VlanPriority(self, value):
-        self._set_attribute('vlanPriority', value)
+        self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
 
     def update(self, Tpid=None, VlanCount=None, VlanEnable=None, VlanId=None, VlanPriority=None):
         """Updates vlan resource on the server.
@@ -109,4 +116,4 @@ class Vlan(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -32,6 +32,40 @@ class TrafficItem(Base):
 
     __slots__ = ()
     _SDM_NAME = 'trafficItem'
+    _SDM_ATT_MAP = {
+        'AllowSelfDestined': 'allowSelfDestined',
+        'BiDirectional': 'biDirectional',
+        'EgressEnabled': 'egressEnabled',
+        'EnableDynamicMplsLabelValues': 'enableDynamicMplsLabelValues',
+        'Enabled': 'enabled',
+        'Errors': 'errors',
+        'FlowGroupCount': 'flowGroupCount',
+        'FrerDuplicateElimination': 'frerDuplicateElimination',
+        'HasOpenFlow': 'hasOpenFlow',
+        'HostsPerNetwork': 'hostsPerNetwork',
+        'InterAsBgpPreference': 'interAsBgpPreference',
+        'InterAsLdpPreference': 'interAsLdpPreference',
+        'MaxNumberOfVpnLabelStack': 'maxNumberOfVpnLabelStack',
+        'MergeDestinations': 'mergeDestinations',
+        'MulticastForwardingMode': 'multicastForwardingMode',
+        'Name': 'name',
+        'NumVlansForMulticastReplication': 'numVlansForMulticastReplication',
+        'OrdinalNo': 'ordinalNo',
+        'OriginatorType': 'originatorType',
+        'RoundRobinPacketOrdering': 'roundRobinPacketOrdering',
+        'RouteMesh': 'routeMesh',
+        'SrcDestMesh': 'srcDestMesh',
+        'State': 'state',
+        'Suspend': 'suspend',
+        'TrafficItemType': 'trafficItemType',
+        'TrafficType': 'trafficType',
+        'TransmitMode': 'transmitMode',
+        'TransportLdpPreference': 'transportLdpPreference',
+        'TransportRsvpTePreference': 'transportRsvpTePreference',
+        'UseControlPlaneFrameSize': 'useControlPlaneFrameSize',
+        'UseControlPlaneRate': 'useControlPlaneRate',
+        'Warnings': 'warnings',
+    }
 
     def __init__(self, parent):
         super(TrafficItem, self).__init__(parent)
@@ -155,10 +189,10 @@ class TrafficItem(Base):
         -------
         - bool: If true, this helps to send traffic from routes on an Ixia port to other routes on the same Ixia port.
         """
-        return self._get_attribute('allowSelfDestined')
+        return self._get_attribute(self._SDM_ATT_MAP['AllowSelfDestined'])
     @AllowSelfDestined.setter
     def AllowSelfDestined(self, value):
-        self._set_attribute('allowSelfDestined', value)
+        self._set_attribute(self._SDM_ATT_MAP['AllowSelfDestined'], value)
 
     @property
     def BiDirectional(self):
@@ -167,10 +201,10 @@ class TrafficItem(Base):
         -------
         - bool: If true, this enables traffic to be sent in forward and reverse destination.
         """
-        return self._get_attribute('biDirectional')
+        return self._get_attribute(self._SDM_ATT_MAP['BiDirectional'])
     @BiDirectional.setter
     def BiDirectional(self, value):
-        self._set_attribute('biDirectional', value)
+        self._set_attribute(self._SDM_ATT_MAP['BiDirectional'], value)
 
     @property
     def EgressEnabled(self):
@@ -179,10 +213,10 @@ class TrafficItem(Base):
         -------
         - bool: Enables the egress.
         """
-        return self._get_attribute('egressEnabled')
+        return self._get_attribute(self._SDM_ATT_MAP['EgressEnabled'])
     @EgressEnabled.setter
     def EgressEnabled(self, value):
-        self._set_attribute('egressEnabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['EgressEnabled'], value)
 
     @property
     def EnableDynamicMplsLabelValues(self):
@@ -191,10 +225,10 @@ class TrafficItem(Base):
         -------
         - bool: Enables the dynamic MPLS label values.
         """
-        return self._get_attribute('enableDynamicMplsLabelValues')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableDynamicMplsLabelValues'])
     @EnableDynamicMplsLabelValues.setter
     def EnableDynamicMplsLabelValues(self, value):
-        self._set_attribute('enableDynamicMplsLabelValues', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableDynamicMplsLabelValues'], value)
 
     @property
     def Enabled(self):
@@ -203,10 +237,10 @@ class TrafficItem(Base):
         -------
         - bool: If true, this enables the selected traffic item.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Errors(self):
@@ -215,7 +249,7 @@ class TrafficItem(Base):
         -------
         - list(str): Displays the errors.
         """
-        return self._get_attribute('errors')
+        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
     @property
     def FlowGroupCount(self):
@@ -224,7 +258,7 @@ class TrafficItem(Base):
         -------
         - number: Indicates the number of flow groups.
         """
-        return self._get_attribute('flowGroupCount')
+        return self._get_attribute(self._SDM_ATT_MAP['FlowGroupCount'])
 
     @property
     def FrerDuplicateElimination(self):
@@ -233,10 +267,10 @@ class TrafficItem(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('frerDuplicateElimination')
+        return self._get_attribute(self._SDM_ATT_MAP['FrerDuplicateElimination'])
     @FrerDuplicateElimination.setter
     def FrerDuplicateElimination(self, value):
-        self._set_attribute('frerDuplicateElimination', value)
+        self._set_attribute(self._SDM_ATT_MAP['FrerDuplicateElimination'], value)
 
     @property
     def HasOpenFlow(self):
@@ -245,10 +279,10 @@ class TrafficItem(Base):
         -------
         - bool: Indicates whether or not this trafficItem has openflow.
         """
-        return self._get_attribute('hasOpenFlow')
+        return self._get_attribute(self._SDM_ATT_MAP['HasOpenFlow'])
     @HasOpenFlow.setter
     def HasOpenFlow(self, value):
-        self._set_attribute('hasOpenFlow', value)
+        self._set_attribute(self._SDM_ATT_MAP['HasOpenFlow'], value)
 
     @property
     def HostsPerNetwork(self):
@@ -257,10 +291,10 @@ class TrafficItem(Base):
         -------
         - number: The number of emulated hosts for the traffic stream.
         """
-        return self._get_attribute('hostsPerNetwork')
+        return self._get_attribute(self._SDM_ATT_MAP['HostsPerNetwork'])
     @HostsPerNetwork.setter
     def HostsPerNetwork(self, value):
-        self._set_attribute('hostsPerNetwork', value)
+        self._set_attribute(self._SDM_ATT_MAP['HostsPerNetwork'], value)
 
     @property
     def InterAsBgpPreference(self):
@@ -269,10 +303,10 @@ class TrafficItem(Base):
         -------
         - str(one | two): Signifies the inter as BGP prefence
         """
-        return self._get_attribute('interAsBgpPreference')
+        return self._get_attribute(self._SDM_ATT_MAP['InterAsBgpPreference'])
     @InterAsBgpPreference.setter
     def InterAsBgpPreference(self, value):
-        self._set_attribute('interAsBgpPreference', value)
+        self._set_attribute(self._SDM_ATT_MAP['InterAsBgpPreference'], value)
 
     @property
     def InterAsLdpPreference(self):
@@ -281,10 +315,10 @@ class TrafficItem(Base):
         -------
         - str(one | two): Preferences inter as LDP
         """
-        return self._get_attribute('interAsLdpPreference')
+        return self._get_attribute(self._SDM_ATT_MAP['InterAsLdpPreference'])
     @InterAsLdpPreference.setter
     def InterAsLdpPreference(self, value):
-        self._set_attribute('interAsLdpPreference', value)
+        self._set_attribute(self._SDM_ATT_MAP['InterAsLdpPreference'], value)
 
     @property
     def MaxNumberOfVpnLabelStack(self):
@@ -293,10 +327,10 @@ class TrafficItem(Base):
         -------
         - number: Signifies the maximum number of VPN label stack
         """
-        return self._get_attribute('maxNumberOfVpnLabelStack')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxNumberOfVpnLabelStack'])
     @MaxNumberOfVpnLabelStack.setter
     def MaxNumberOfVpnLabelStack(self, value):
-        self._set_attribute('maxNumberOfVpnLabelStack', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxNumberOfVpnLabelStack'], value)
 
     @property
     def MergeDestinations(self):
@@ -305,10 +339,10 @@ class TrafficItem(Base):
         -------
         - bool: If true, merges the traffic flow in the destination ranges.
         """
-        return self._get_attribute('mergeDestinations')
+        return self._get_attribute(self._SDM_ATT_MAP['MergeDestinations'])
     @MergeDestinations.setter
     def MergeDestinations(self, value):
-        self._set_attribute('mergeDestinations', value)
+        self._set_attribute(self._SDM_ATT_MAP['MergeDestinations'], value)
 
     @property
     def MulticastForwardingMode(self):
@@ -317,10 +351,10 @@ class TrafficItem(Base):
         -------
         - str(loadBalancing | replication): 
         """
-        return self._get_attribute('multicastForwardingMode')
+        return self._get_attribute(self._SDM_ATT_MAP['MulticastForwardingMode'])
     @MulticastForwardingMode.setter
     def MulticastForwardingMode(self, value):
-        self._set_attribute('multicastForwardingMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['MulticastForwardingMode'], value)
 
     @property
     def Name(self):
@@ -329,10 +363,10 @@ class TrafficItem(Base):
         -------
         - str: The name of the traffic item.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumVlansForMulticastReplication(self):
@@ -341,10 +375,10 @@ class TrafficItem(Base):
         -------
         - number: Set the number of vlans for multicast replication
         """
-        return self._get_attribute('numVlansForMulticastReplication')
+        return self._get_attribute(self._SDM_ATT_MAP['NumVlansForMulticastReplication'])
     @NumVlansForMulticastReplication.setter
     def NumVlansForMulticastReplication(self, value):
-        self._set_attribute('numVlansForMulticastReplication', value)
+        self._set_attribute(self._SDM_ATT_MAP['NumVlansForMulticastReplication'], value)
 
     @property
     def OrdinalNo(self):
@@ -353,10 +387,10 @@ class TrafficItem(Base):
         -------
         - number: Signifies the ordinal number
         """
-        return self._get_attribute('ordinalNo')
+        return self._get_attribute(self._SDM_ATT_MAP['OrdinalNo'])
     @OrdinalNo.setter
     def OrdinalNo(self, value):
-        self._set_attribute('ordinalNo', value)
+        self._set_attribute(self._SDM_ATT_MAP['OrdinalNo'], value)
 
     @property
     def OriginatorType(self):
@@ -365,10 +399,10 @@ class TrafficItem(Base):
         -------
         - str(endUser | quickTest): Indicates who created this trafficItem.
         """
-        return self._get_attribute('originatorType')
+        return self._get_attribute(self._SDM_ATT_MAP['OriginatorType'])
     @OriginatorType.setter
     def OriginatorType(self, value):
-        self._set_attribute('originatorType', value)
+        self._set_attribute(self._SDM_ATT_MAP['OriginatorType'], value)
 
     @property
     def RoundRobinPacketOrdering(self):
@@ -377,10 +411,10 @@ class TrafficItem(Base):
         -------
         - bool: This option enables Round Robin Packet Ordering within endpoints across Rx ports.
         """
-        return self._get_attribute('roundRobinPacketOrdering')
+        return self._get_attribute(self._SDM_ATT_MAP['RoundRobinPacketOrdering'])
     @RoundRobinPacketOrdering.setter
     def RoundRobinPacketOrdering(self, value):
-        self._set_attribute('roundRobinPacketOrdering', value)
+        self._set_attribute(self._SDM_ATT_MAP['RoundRobinPacketOrdering'], value)
 
     @property
     def RouteMesh(self):
@@ -389,10 +423,10 @@ class TrafficItem(Base):
         -------
         - str(fullMesh | oneToOne): The traffic flow type between each pair of source route endpoint and destination route endpoint.
         """
-        return self._get_attribute('routeMesh')
+        return self._get_attribute(self._SDM_ATT_MAP['RouteMesh'])
     @RouteMesh.setter
     def RouteMesh(self, value):
-        self._set_attribute('routeMesh', value)
+        self._set_attribute(self._SDM_ATT_MAP['RouteMesh'], value)
 
     @property
     def SrcDestMesh(self):
@@ -401,10 +435,10 @@ class TrafficItem(Base):
         -------
         - str(fullMesh | manyToMany | none | oneToOne): Select the options to set the traffic mesh type between the Source Endpoint and Destination endpoint.
         """
-        return self._get_attribute('srcDestMesh')
+        return self._get_attribute(self._SDM_ATT_MAP['SrcDestMesh'])
     @SrcDestMesh.setter
     def SrcDestMesh(self, value):
-        self._set_attribute('srcDestMesh', value)
+        self._set_attribute(self._SDM_ATT_MAP['SrcDestMesh'], value)
 
     @property
     def State(self):
@@ -413,7 +447,7 @@ class TrafficItem(Base):
         -------
         - str: (Read only) A read-only field which indicates the current state of the traffic item.
         """
-        return self._get_attribute('state')
+        return self._get_attribute(self._SDM_ATT_MAP['State'])
 
     @property
     def Suspend(self):
@@ -422,10 +456,10 @@ class TrafficItem(Base):
         -------
         - bool: Suspends all traffic on this stream.
         """
-        return self._get_attribute('suspend')
+        return self._get_attribute(self._SDM_ATT_MAP['Suspend'])
     @Suspend.setter
     def Suspend(self, value):
-        self._set_attribute('suspend', value)
+        self._set_attribute(self._SDM_ATT_MAP['Suspend'], value)
 
     @property
     def TrafficItemType(self):
@@ -434,10 +468,10 @@ class TrafficItem(Base):
         -------
         - str(application | applicationLibrary | l2L3 | quick): Helps to configure and edit a traffic item that is sent across Ixia ports.
         """
-        return self._get_attribute('trafficItemType')
+        return self._get_attribute(self._SDM_ATT_MAP['TrafficItemType'])
     @TrafficItemType.setter
     def TrafficItemType(self, value):
-        self._set_attribute('trafficItemType', value)
+        self._set_attribute(self._SDM_ATT_MAP['TrafficItemType'], value)
 
     @property
     def TrafficType(self):
@@ -446,10 +480,10 @@ class TrafficItem(Base):
         -------
         - str(atm | avb1722 | avbRaw | ethernetVlan | fc | fcoe | frameRelay | hdlc | ipv4 | ipv4ApplicationTraffic | ipv6 | ipv6ApplicationTraffic | ppp | raw): Helps to select the type of traffic endpoint to be configured.
         """
-        return self._get_attribute('trafficType')
+        return self._get_attribute(self._SDM_ATT_MAP['TrafficType'])
     @TrafficType.setter
     def TrafficType(self, value):
-        self._set_attribute('trafficType', value)
+        self._set_attribute(self._SDM_ATT_MAP['TrafficType'], value)
 
     @property
     def TransmitMode(self):
@@ -458,10 +492,10 @@ class TrafficItem(Base):
         -------
         - str(interleaved | sequential): The transmit mode for this traffic item
         """
-        return self._get_attribute('transmitMode')
+        return self._get_attribute(self._SDM_ATT_MAP['TransmitMode'])
     @TransmitMode.setter
     def TransmitMode(self, value):
-        self._set_attribute('transmitMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['TransmitMode'], value)
 
     @property
     def TransportLdpPreference(self):
@@ -470,10 +504,10 @@ class TrafficItem(Base):
         -------
         - str(one | two): Transports LDP preference
         """
-        return self._get_attribute('transportLdpPreference')
+        return self._get_attribute(self._SDM_ATT_MAP['TransportLdpPreference'])
     @TransportLdpPreference.setter
     def TransportLdpPreference(self, value):
-        self._set_attribute('transportLdpPreference', value)
+        self._set_attribute(self._SDM_ATT_MAP['TransportLdpPreference'], value)
 
     @property
     def TransportRsvpTePreference(self):
@@ -482,10 +516,10 @@ class TrafficItem(Base):
         -------
         - str(one | two): Transports RSVP TE preference
         """
-        return self._get_attribute('transportRsvpTePreference')
+        return self._get_attribute(self._SDM_ATT_MAP['TransportRsvpTePreference'])
     @TransportRsvpTePreference.setter
     def TransportRsvpTePreference(self, value):
-        self._set_attribute('transportRsvpTePreference', value)
+        self._set_attribute(self._SDM_ATT_MAP['TransportRsvpTePreference'], value)
 
     @property
     def UseControlPlaneFrameSize(self):
@@ -494,10 +528,10 @@ class TrafficItem(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('useControlPlaneFrameSize')
+        return self._get_attribute(self._SDM_ATT_MAP['UseControlPlaneFrameSize'])
     @UseControlPlaneFrameSize.setter
     def UseControlPlaneFrameSize(self, value):
-        self._set_attribute('useControlPlaneFrameSize', value)
+        self._set_attribute(self._SDM_ATT_MAP['UseControlPlaneFrameSize'], value)
 
     @property
     def UseControlPlaneRate(self):
@@ -506,10 +540,10 @@ class TrafficItem(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('useControlPlaneRate')
+        return self._get_attribute(self._SDM_ATT_MAP['UseControlPlaneRate'])
     @UseControlPlaneRate.setter
     def UseControlPlaneRate(self, value):
-        self._set_attribute('useControlPlaneRate', value)
+        self._set_attribute(self._SDM_ATT_MAP['UseControlPlaneRate'], value)
 
     @property
     def Warnings(self):
@@ -518,7 +552,7 @@ class TrafficItem(Base):
         -------
         - list(str): Displays the warnings.
         """
-        return self._get_attribute('warnings')
+        return self._get_attribute(self._SDM_ATT_MAP['Warnings'])
 
     def update(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, Enabled=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None):
         """Updates trafficItem resource on the server.
@@ -558,7 +592,7 @@ class TrafficItem(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, Enabled=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None):
         """Adds a new trafficItem resource on the server and adds it to the container.
@@ -602,7 +636,7 @@ class TrafficItem(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained trafficItem resources in this instance from the server.
@@ -664,7 +698,7 @@ class TrafficItem(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of trafficItem data from the server.

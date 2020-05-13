@@ -31,6 +31,9 @@ class AvailableProtocolFilter(Base):
 
     __slots__ = ()
     _SDM_NAME = 'availableProtocolFilter'
+    _SDM_ATT_MAP = {
+        'Name': 'name',
+    }
 
     def __init__(self, parent):
         super(AvailableProtocolFilter, self).__init__(parent)
@@ -42,7 +45,7 @@ class AvailableProtocolFilter(Base):
         -------
         - str: The unique identifier of the object.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
 
     def find(self, Name=None):
         """Finds and retrieves availableProtocolFilter resources from the server.
@@ -63,7 +66,7 @@ class AvailableProtocolFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of availableProtocolFilter data from the server.

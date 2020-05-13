@@ -30,6 +30,19 @@ class TenGigLan(Base):
 
     __slots__ = ()
     _SDM_NAME = 'tenGigLan'
+    _SDM_ATT_MAP = {
+        'AutoInstrumentation': 'autoInstrumentation',
+        'AutoNegotiate': 'autoNegotiate',
+        'EnableLASIMonitoring': 'enableLASIMonitoring',
+        'EnablePPM': 'enablePPM',
+        'EnabledFlowControl': 'enabledFlowControl',
+        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
+        'Loopback': 'loopback',
+        'LoopbackMode': 'loopbackMode',
+        'Ppm': 'ppm',
+        'TransmitClocking': 'transmitClocking',
+        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
+    }
 
     def __init__(self, parent):
         super(TenGigLan, self).__init__(parent)
@@ -39,13 +52,13 @@ class TenGigLan(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengiglan.fcoe.fcoe.Fcoe): An instance of the Fcoe class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.fcoe.fcoe.Fcoe): An instance of the Fcoe class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengiglan.fcoe.fcoe import Fcoe
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.fcoe.fcoe import Fcoe
         return Fcoe(self)._select()
 
     @property
@@ -53,13 +66,13 @@ class TenGigLan(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengiglan.oam.oam.Oam): An instance of the Oam class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.oam.oam.Oam): An instance of the Oam class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengiglan.oam.oam import Oam
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.oam.oam import Oam
         return Oam(self)._select()
 
     @property
@@ -67,13 +80,13 @@ class TenGigLan(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengiglan.txlane.txlane.TxLane): An instance of the TxLane class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.txlane.txlane.TxLane): An instance of the TxLane class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengiglan.txlane.txlane import TxLane
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.txlane.txlane import TxLane
         return TxLane(self)._select()
 
     @property
@@ -83,10 +96,10 @@ class TenGigLan(Base):
         -------
         - str(endOfFrame | floating): The auto instrumentation mode.
         """
-        return self._get_attribute('autoInstrumentation')
+        return self._get_attribute(self._SDM_ATT_MAP['AutoInstrumentation'])
     @AutoInstrumentation.setter
     def AutoInstrumentation(self, value):
-        self._set_attribute('autoInstrumentation', value)
+        self._set_attribute(self._SDM_ATT_MAP['AutoInstrumentation'], value)
 
     @property
     def AutoNegotiate(self):
@@ -95,10 +108,10 @@ class TenGigLan(Base):
         -------
         - str(asymmetric | both | fullDuplex | none): NOT DEFINED
         """
-        return self._get_attribute('autoNegotiate')
+        return self._get_attribute(self._SDM_ATT_MAP['AutoNegotiate'])
     @AutoNegotiate.setter
     def AutoNegotiate(self, value):
-        self._set_attribute('autoNegotiate', value)
+        self._set_attribute(self._SDM_ATT_MAP['AutoNegotiate'], value)
 
     @property
     def EnableLASIMonitoring(self):
@@ -107,10 +120,10 @@ class TenGigLan(Base):
         -------
         - bool: If selected, enables LASI monitoring.
         """
-        return self._get_attribute('enableLASIMonitoring')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableLASIMonitoring'])
     @EnableLASIMonitoring.setter
     def EnableLASIMonitoring(self, value):
-        self._set_attribute('enableLASIMonitoring', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableLASIMonitoring'], value)
 
     @property
     def EnablePPM(self):
@@ -119,10 +132,10 @@ class TenGigLan(Base):
         -------
         - bool: If true, enables the portsppm.
         """
-        return self._get_attribute('enablePPM')
+        return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
     @EnablePPM.setter
     def EnablePPM(self, value):
-        self._set_attribute('enablePPM', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnablePPM'], value)
 
     @property
     def EnabledFlowControl(self):
@@ -131,10 +144,10 @@ class TenGigLan(Base):
         -------
         - bool: Enables the port's MAC Flow control mechanisms to listen for a directed address pause message.
         """
-        return self._get_attribute('enabledFlowControl')
+        return self._get_attribute(self._SDM_ATT_MAP['EnabledFlowControl'])
     @EnabledFlowControl.setter
     def EnabledFlowControl(self, value):
-        self._set_attribute('enabledFlowControl', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnabledFlowControl'], value)
 
     @property
     def FlowControlDirectedAddress(self):
@@ -143,10 +156,10 @@ class TenGigLan(Base):
         -------
         - str: This is the 48-bit MAC address that the port will listen on for a directed pause message.
         """
-        return self._get_attribute('flowControlDirectedAddress')
+        return self._get_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'])
     @FlowControlDirectedAddress.setter
     def FlowControlDirectedAddress(self, value):
-        self._set_attribute('flowControlDirectedAddress', value)
+        self._set_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'], value)
 
     @property
     def Loopback(self):
@@ -155,10 +168,10 @@ class TenGigLan(Base):
         -------
         - bool: If enabled, the port is set to internally loopback from transmit to receive.
         """
-        return self._get_attribute('loopback')
+        return self._get_attribute(self._SDM_ATT_MAP['Loopback'])
     @Loopback.setter
     def Loopback(self, value):
-        self._set_attribute('loopback', value)
+        self._set_attribute(self._SDM_ATT_MAP['Loopback'], value)
 
     @property
     def LoopbackMode(self):
@@ -167,10 +180,10 @@ class TenGigLan(Base):
         -------
         - str(internalLoopback | lineLoopback | none): NOT DEFINED
         """
-        return self._get_attribute('loopbackMode')
+        return self._get_attribute(self._SDM_ATT_MAP['LoopbackMode'])
     @LoopbackMode.setter
     def LoopbackMode(self, value):
-        self._set_attribute('loopbackMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['LoopbackMode'], value)
 
     @property
     def Ppm(self):
@@ -179,10 +192,10 @@ class TenGigLan(Base):
         -------
         - number: Indicates the value that needs to be adjusted for the line transmit frequency.
         """
-        return self._get_attribute('ppm')
+        return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
     @Ppm.setter
     def Ppm(self, value):
-        self._set_attribute('ppm', value)
+        self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
     def TransmitClocking(self):
@@ -191,10 +204,10 @@ class TenGigLan(Base):
         -------
         - str(external | internal | recovered): The transmit clocking type for the 10G LAN port.
         """
-        return self._get_attribute('transmitClocking')
+        return self._get_attribute(self._SDM_ATT_MAP['TransmitClocking'])
     @TransmitClocking.setter
     def TransmitClocking(self, value):
-        self._set_attribute('transmitClocking', value)
+        self._set_attribute(self._SDM_ATT_MAP['TransmitClocking'], value)
 
     @property
     def TxIgnoreRxLinkFaults(self):
@@ -203,10 +216,10 @@ class TenGigLan(Base):
         -------
         - bool: If enabled, will allow transmission of packets even if the receive link is down.
         """
-        return self._get_attribute('txIgnoreRxLinkFaults')
+        return self._get_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'])
     @TxIgnoreRxLinkFaults.setter
     def TxIgnoreRxLinkFaults(self, value):
-        self._set_attribute('txIgnoreRxLinkFaults', value)
+        self._set_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'], value)
 
     def update(self, AutoInstrumentation=None, AutoNegotiate=None, EnableLASIMonitoring=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, LoopbackMode=None, Ppm=None, TransmitClocking=None, TxIgnoreRxLinkFaults=None):
         """Updates tenGigLan resource on the server.
@@ -229,4 +242,4 @@ class TenGigLan(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

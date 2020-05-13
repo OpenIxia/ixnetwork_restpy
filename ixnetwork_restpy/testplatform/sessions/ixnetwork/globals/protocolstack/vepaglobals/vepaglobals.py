@@ -32,6 +32,21 @@ class VepaGlobals(Base):
 
     __slots__ = ()
     _SDM_NAME = 'vepaGlobals'
+    _SDM_ATT_MAP = {
+        'AllowCvlan0InFilter': 'allowCvlan0InFilter',
+        'CdcpSubtype': 'cdcpSubtype',
+        'EvbSubtype': 'evbSubtype',
+        'GroupVdpTlvs': 'groupVdpTlvs',
+        'MaxVdpCommands': 'maxVdpCommands',
+        'ObjectId': 'objectId',
+        'Oui': 'oui',
+        'RetryFailedSessions': 'retryFailedSessions',
+        'RetryFailedSessionsInterval': 'retryFailedSessionsInterval',
+        'SetupRate': 'setupRate',
+        'SuppressEvbTlv': 'suppressEvbTlv',
+        'TagDefaultEr': 'tagDefaultEr',
+        'TeardownRate': 'teardownRate',
+    }
 
     def __init__(self, parent):
         super(VepaGlobals, self).__init__(parent)
@@ -43,10 +58,10 @@ class VepaGlobals(Base):
         -------
         - bool: If checked, VDP will send the exact VDP filter list, as configured in applicoation. If unchecked, VDP will detect Filters with multiple entries that contain C-VLAN 0 and will replace the entire filter list with C-VLAN 0, as specified in 802.1Qbg standard.
         """
-        return self._get_attribute('allowCvlan0InFilter')
+        return self._get_attribute(self._SDM_ATT_MAP['AllowCvlan0InFilter'])
     @AllowCvlan0InFilter.setter
     def AllowCvlan0InFilter(self, value):
-        self._set_attribute('allowCvlan0InFilter', value)
+        self._set_attribute(self._SDM_ATT_MAP['AllowCvlan0InFilter'], value)
 
     @property
     def CdcpSubtype(self):
@@ -55,10 +70,10 @@ class VepaGlobals(Base):
         -------
         - str: 1 byte value used for encapsulating CDCP TLV subtype.
         """
-        return self._get_attribute('cdcpSubtype')
+        return self._get_attribute(self._SDM_ATT_MAP['CdcpSubtype'])
     @CdcpSubtype.setter
     def CdcpSubtype(self, value):
-        self._set_attribute('cdcpSubtype', value)
+        self._set_attribute(self._SDM_ATT_MAP['CdcpSubtype'], value)
 
     @property
     def EvbSubtype(self):
@@ -67,10 +82,10 @@ class VepaGlobals(Base):
         -------
         - str: 1 byte value used for encapsulating EVB TLV subtype.
         """
-        return self._get_attribute('evbSubtype')
+        return self._get_attribute(self._SDM_ATT_MAP['EvbSubtype'])
     @EvbSubtype.setter
     def EvbSubtype(self, value):
-        self._set_attribute('evbSubtype', value)
+        self._set_attribute(self._SDM_ATT_MAP['EvbSubtype'], value)
 
     @property
     def GroupVdpTlvs(self):
@@ -79,10 +94,10 @@ class VepaGlobals(Base):
         -------
         - bool: Put multiple VDP TLVs in a single ECP packet.
         """
-        return self._get_attribute('groupVdpTlvs')
+        return self._get_attribute(self._SDM_ATT_MAP['GroupVdpTlvs'])
     @GroupVdpTlvs.setter
     def GroupVdpTlvs(self, value):
-        self._set_attribute('groupVdpTlvs', value)
+        self._set_attribute(self._SDM_ATT_MAP['GroupVdpTlvs'], value)
 
     @property
     def MaxVdpCommands(self):
@@ -91,10 +106,10 @@ class VepaGlobals(Base):
         -------
         - number: Max Outstanding VDP Commands.
         """
-        return self._get_attribute('maxVdpCommands')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxVdpCommands'])
     @MaxVdpCommands.setter
     def MaxVdpCommands(self, value):
-        self._set_attribute('maxVdpCommands', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxVdpCommands'], value)
 
     @property
     def ObjectId(self):
@@ -103,7 +118,7 @@ class VepaGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def Oui(self):
@@ -112,10 +127,10 @@ class VepaGlobals(Base):
         -------
         - str: 3 byte value used for encapsulating LLDP packets for CDCP and EVB.
         """
-        return self._get_attribute('oui')
+        return self._get_attribute(self._SDM_ATT_MAP['Oui'])
     @Oui.setter
     def Oui(self, value):
-        self._set_attribute('oui', value)
+        self._set_attribute(self._SDM_ATT_MAP['Oui'], value)
 
     @property
     def RetryFailedSessions(self):
@@ -124,10 +139,10 @@ class VepaGlobals(Base):
         -------
         - bool: When enabled, keep on retrying sessions that are failed or timed out.
         """
-        return self._get_attribute('retryFailedSessions')
+        return self._get_attribute(self._SDM_ATT_MAP['RetryFailedSessions'])
     @RetryFailedSessions.setter
     def RetryFailedSessions(self, value):
-        self._set_attribute('retryFailedSessions', value)
+        self._set_attribute(self._SDM_ATT_MAP['RetryFailedSessions'], value)
 
     @property
     def RetryFailedSessionsInterval(self):
@@ -136,10 +151,10 @@ class VepaGlobals(Base):
         -------
         - number: Retry failed sessions will be made at this value's interval (in miliseconds).
         """
-        return self._get_attribute('retryFailedSessionsInterval')
+        return self._get_attribute(self._SDM_ATT_MAP['RetryFailedSessionsInterval'])
     @RetryFailedSessionsInterval.setter
     def RetryFailedSessionsInterval(self, value):
-        self._set_attribute('retryFailedSessionsInterval', value)
+        self._set_attribute(self._SDM_ATT_MAP['RetryFailedSessionsInterval'], value)
 
     @property
     def SetupRate(self):
@@ -148,10 +163,10 @@ class VepaGlobals(Base):
         -------
         - number: Setup rate is the number of VSIs to start in each second.
         """
-        return self._get_attribute('setupRate')
+        return self._get_attribute(self._SDM_ATT_MAP['SetupRate'])
     @SetupRate.setter
     def SetupRate(self, value):
-        self._set_attribute('setupRate', value)
+        self._set_attribute(self._SDM_ATT_MAP['SetupRate'], value)
 
     @property
     def SuppressEvbTlv(self):
@@ -160,10 +175,10 @@ class VepaGlobals(Base):
         -------
         - bool: When enabled, the LLDP message containing the EVB TLV will not be sent.
         """
-        return self._get_attribute('suppressEvbTlv')
+        return self._get_attribute(self._SDM_ATT_MAP['SuppressEvbTlv'])
     @SuppressEvbTlv.setter
     def SuppressEvbTlv(self, value):
-        self._set_attribute('suppressEvbTlv', value)
+        self._set_attribute(self._SDM_ATT_MAP['SuppressEvbTlv'], value)
 
     @property
     def TagDefaultEr(self):
@@ -172,10 +187,10 @@ class VepaGlobals(Base):
         -------
         - bool: All packets originated from default ER are tagged with VLAN 1 when option is checked and untagged when option is unchecked.
         """
-        return self._get_attribute('tagDefaultEr')
+        return self._get_attribute(self._SDM_ATT_MAP['TagDefaultEr'])
     @TagDefaultEr.setter
     def TagDefaultEr(self, value):
-        self._set_attribute('tagDefaultEr', value)
+        self._set_attribute(self._SDM_ATT_MAP['TagDefaultEr'], value)
 
     @property
     def TeardownRate(self):
@@ -184,10 +199,10 @@ class VepaGlobals(Base):
         -------
         - number: Teardown rate is the number of VSIs to stop in each second.
         """
-        return self._get_attribute('teardownRate')
+        return self._get_attribute(self._SDM_ATT_MAP['TeardownRate'])
     @TeardownRate.setter
     def TeardownRate(self, value):
-        self._set_attribute('teardownRate', value)
+        self._set_attribute(self._SDM_ATT_MAP['TeardownRate'], value)
 
     def update(self, AllowCvlan0InFilter=None, CdcpSubtype=None, EvbSubtype=None, GroupVdpTlvs=None, MaxVdpCommands=None, Oui=None, RetryFailedSessions=None, RetryFailedSessionsInterval=None, SetupRate=None, SuppressEvbTlv=None, TagDefaultEr=None, TeardownRate=None):
         """Updates vepaGlobals resource on the server.
@@ -211,7 +226,7 @@ class VepaGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AllowCvlan0InFilter=None, CdcpSubtype=None, EvbSubtype=None, GroupVdpTlvs=None, MaxVdpCommands=None, Oui=None, RetryFailedSessions=None, RetryFailedSessionsInterval=None, SetupRate=None, SuppressEvbTlv=None, TagDefaultEr=None, TeardownRate=None):
         """Adds a new vepaGlobals resource on the server and adds it to the container.
@@ -239,7 +254,7 @@ class VepaGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained vepaGlobals resources in this instance from the server.
@@ -282,7 +297,7 @@ class VepaGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of vepaGlobals data from the server.

@@ -30,6 +30,11 @@ class LatencyBin(Base):
 
     __slots__ = ()
     _SDM_NAME = 'latencyBin'
+    _SDM_ATT_MAP = {
+        'BinLimits': 'binLimits',
+        'Enabled': 'enabled',
+        'NumberOfBins': 'numberOfBins',
+    }
 
     def __init__(self, parent):
         super(LatencyBin, self).__init__(parent)
@@ -41,10 +46,10 @@ class LatencyBin(Base):
         -------
         - list(number): Specifies the upper limit of each Time Bins for Latency Bin Tracking.
         """
-        return self._get_attribute('binLimits')
+        return self._get_attribute(self._SDM_ATT_MAP['BinLimits'])
     @BinLimits.setter
     def BinLimits(self, value):
-        self._set_attribute('binLimits', value)
+        self._set_attribute(self._SDM_ATT_MAP['BinLimits'], value)
 
     @property
     def Enabled(self):
@@ -53,10 +58,10 @@ class LatencyBin(Base):
         -------
         - bool: If true, Latency Bin Tracking is enabled.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def NumberOfBins(self):
@@ -65,10 +70,10 @@ class LatencyBin(Base):
         -------
         - number: Specifies the number of Time Bins for Latency Bin Tracking.
         """
-        return self._get_attribute('numberOfBins')
+        return self._get_attribute(self._SDM_ATT_MAP['NumberOfBins'])
     @NumberOfBins.setter
     def NumberOfBins(self, value):
-        self._set_attribute('numberOfBins', value)
+        self._set_attribute(self._SDM_ATT_MAP['NumberOfBins'], value)
 
     def update(self, BinLimits=None, Enabled=None, NumberOfBins=None):
         """Updates latencyBin resource on the server.
@@ -83,4 +88,4 @@ class LatencyBin(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

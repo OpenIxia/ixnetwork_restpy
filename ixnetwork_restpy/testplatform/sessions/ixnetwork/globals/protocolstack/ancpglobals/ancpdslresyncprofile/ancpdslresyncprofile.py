@@ -32,6 +32,10 @@ class AncpDslResyncProfile(Base):
 
     __slots__ = ()
     _SDM_NAME = 'ancpDslResyncProfile'
+    _SDM_ATT_MAP = {
+        'Name': 'name',
+        'ObjectId': 'objectId',
+    }
 
     def __init__(self, parent):
         super(AncpDslResyncProfile, self).__init__(parent)
@@ -57,10 +61,10 @@ class AncpDslResyncProfile(Base):
         -------
         - str: Profile name.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
@@ -69,7 +73,7 @@ class AncpDslResyncProfile(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def update(self, Name=None):
         """Updates ancpDslResyncProfile resource on the server.
@@ -82,7 +86,7 @@ class AncpDslResyncProfile(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None):
         """Adds a new ancpDslResyncProfile resource on the server and adds it to the container.
@@ -99,7 +103,7 @@ class AncpDslResyncProfile(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained ancpDslResyncProfile resources in this instance from the server.
@@ -131,7 +135,7 @@ class AncpDslResyncProfile(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of ancpDslResyncProfile data from the server.

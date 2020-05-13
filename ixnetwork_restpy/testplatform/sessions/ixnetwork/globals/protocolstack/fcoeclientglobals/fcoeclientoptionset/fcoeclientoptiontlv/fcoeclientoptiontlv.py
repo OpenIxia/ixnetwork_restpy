@@ -32,6 +32,14 @@ class FcoeClientOptionTlv(Base):
 
     __slots__ = ()
     _SDM_NAME = 'fcoeClientOptionTlv'
+    _SDM_ATT_MAP = {
+        'Code': 'code',
+        'Name': 'name',
+        'ObjectId': 'objectId',
+        'Rfc': 'rfc',
+        'Type': 'type',
+        'Value': 'value',
+    }
 
     def __init__(self, parent):
         super(FcoeClientOptionTlv, self).__init__(parent)
@@ -43,10 +51,10 @@ class FcoeClientOptionTlv(Base):
         -------
         - number: Option code.
         """
-        return self._get_attribute('code')
+        return self._get_attribute(self._SDM_ATT_MAP['Code'])
     @Code.setter
     def Code(self, value):
-        self._set_attribute('code', value)
+        self._set_attribute(self._SDM_ATT_MAP['Code'], value)
 
     @property
     def Name(self):
@@ -55,10 +63,10 @@ class FcoeClientOptionTlv(Base):
         -------
         - str: Option name.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
@@ -67,7 +75,7 @@ class FcoeClientOptionTlv(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def Rfc(self):
@@ -76,10 +84,10 @@ class FcoeClientOptionTlv(Base):
         -------
         - bool: True if defined in RFC documents.
         """
-        return self._get_attribute('rfc')
+        return self._get_attribute(self._SDM_ATT_MAP['Rfc'])
     @Rfc.setter
     def Rfc(self, value):
-        self._set_attribute('rfc', value)
+        self._set_attribute(self._SDM_ATT_MAP['Rfc'], value)
 
     @property
     def Type(self):
@@ -88,10 +96,10 @@ class FcoeClientOptionTlv(Base):
         -------
         - str(boolean | domainName | hexadecimal | integer16 | integer16List | integer32 | integer32List | integer8 | integer8List | ipv4Address | ipv4AddressList | ipv4Prefix | ipv6Address | ipv6AddressList | ipv6Prefix | string | zeroLength): Option value type.
         """
-        return self._get_attribute('type')
+        return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
-        self._set_attribute('type', value)
+        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     @property
     def Value(self):
@@ -100,10 +108,10 @@ class FcoeClientOptionTlv(Base):
         -------
         - str: Option value represented as string.
         """
-        return self._get_attribute('value')
+        return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
-        self._set_attribute('value', value)
+        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Code=None, Name=None, Rfc=None, Type=None, Value=None):
         """Updates fcoeClientOptionTlv resource on the server.
@@ -120,7 +128,7 @@ class FcoeClientOptionTlv(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Code=None, Name=None, Rfc=None, Type=None, Value=None):
         """Adds a new fcoeClientOptionTlv resource on the server and adds it to the container.
@@ -141,7 +149,7 @@ class FcoeClientOptionTlv(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained fcoeClientOptionTlv resources in this instance from the server.
@@ -177,7 +185,7 @@ class FcoeClientOptionTlv(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of fcoeClientOptionTlv data from the server.

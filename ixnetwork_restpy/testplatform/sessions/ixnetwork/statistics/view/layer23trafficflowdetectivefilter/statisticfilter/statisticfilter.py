@@ -32,6 +32,11 @@ class StatisticFilter(Base):
 
     __slots__ = ()
     _SDM_NAME = 'statisticFilter'
+    _SDM_ATT_MAP = {
+        'Operator': 'operator',
+        'StatisticFilterId': 'statisticFilterId',
+        'Value': 'value',
+    }
 
     def __init__(self, parent):
         super(StatisticFilter, self).__init__(parent)
@@ -43,10 +48,10 @@ class StatisticFilter(Base):
         -------
         - str(isAnyOf | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isLike | isNotLike | isSmaller): The logical operation to be performed.
         """
-        return self._get_attribute('operator')
+        return self._get_attribute(self._SDM_ATT_MAP['Operator'])
     @Operator.setter
     def Operator(self, value):
-        self._set_attribute('operator', value)
+        self._set_attribute(self._SDM_ATT_MAP['Operator'], value)
 
     @property
     def StatisticFilterId(self):
@@ -55,10 +60,10 @@ class StatisticFilter(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableStatisticFilter): Selected statistic filters from the availableStatisticFilter list.
         """
-        return self._get_attribute('statisticFilterId')
+        return self._get_attribute(self._SDM_ATT_MAP['StatisticFilterId'])
     @StatisticFilterId.setter
     def StatisticFilterId(self, value):
-        self._set_attribute('statisticFilterId', value)
+        self._set_attribute(self._SDM_ATT_MAP['StatisticFilterId'], value)
 
     @property
     def Value(self):
@@ -67,10 +72,10 @@ class StatisticFilter(Base):
         -------
         - str: Value of statistic to be matched based on operator.
         """
-        return self._get_attribute('value')
+        return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
-        self._set_attribute('value', value)
+        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Operator=None, StatisticFilterId=None, Value=None):
         """Updates statisticFilter resource on the server.
@@ -85,7 +90,7 @@ class StatisticFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Operator=None, StatisticFilterId=None, Value=None):
         """Adds a new statisticFilter resource on the server and adds it to the container.
@@ -104,7 +109,7 @@ class StatisticFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained statisticFilter resources in this instance from the server.
@@ -137,7 +142,7 @@ class StatisticFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of statisticFilter data from the server.

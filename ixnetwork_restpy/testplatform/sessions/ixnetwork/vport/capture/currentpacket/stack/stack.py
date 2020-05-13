@@ -31,6 +31,9 @@ class Stack(Base):
 
     __slots__ = ()
     _SDM_NAME = 'stack'
+    _SDM_ATT_MAP = {
+        'DisplayName': 'displayName',
+    }
 
     def __init__(self, parent):
         super(Stack, self).__init__(parent)
@@ -56,7 +59,7 @@ class Stack(Base):
         -------
         - str: Refers to the name of the stack.
         """
-        return self._get_attribute('displayName')
+        return self._get_attribute(self._SDM_ATT_MAP['DisplayName'])
 
     def find(self, DisplayName=None):
         """Finds and retrieves stack resources from the server.
@@ -77,7 +80,7 @@ class Stack(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of stack data from the server.

@@ -30,6 +30,10 @@ class FrameRateDistribution(Base):
 
     __slots__ = ()
     _SDM_NAME = 'frameRateDistribution'
+    _SDM_ATT_MAP = {
+        'PortDistribution': 'portDistribution',
+        'StreamDistribution': 'streamDistribution',
+    }
 
     def __init__(self, parent):
         super(FrameRateDistribution, self).__init__(parent)
@@ -41,10 +45,10 @@ class FrameRateDistribution(Base):
         -------
         - str(applyRateToAll | splitRateEvenly): At the port level, apply the target configuration transmission rate for each encapsulation.
         """
-        return self._get_attribute('portDistribution')
+        return self._get_attribute(self._SDM_ATT_MAP['PortDistribution'])
     @PortDistribution.setter
     def PortDistribution(self, value):
-        self._set_attribute('portDistribution', value)
+        self._set_attribute(self._SDM_ATT_MAP['PortDistribution'], value)
 
     @property
     def StreamDistribution(self):
@@ -53,10 +57,10 @@ class FrameRateDistribution(Base):
         -------
         - str(applyRateToAll | splitRateEvenly): At the flow group level, apply the target rate of each port.
         """
-        return self._get_attribute('streamDistribution')
+        return self._get_attribute(self._SDM_ATT_MAP['StreamDistribution'])
     @StreamDistribution.setter
     def StreamDistribution(self, value):
-        self._set_attribute('streamDistribution', value)
+        self._set_attribute(self._SDM_ATT_MAP['StreamDistribution'], value)
 
     def update(self, PortDistribution=None, StreamDistribution=None):
         """Updates frameRateDistribution resource on the server.
@@ -70,4 +74,4 @@ class FrameRateDistribution(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

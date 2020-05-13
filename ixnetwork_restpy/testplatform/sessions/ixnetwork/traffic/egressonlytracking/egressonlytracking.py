@@ -32,6 +32,13 @@ class EgressOnlyTracking(Base):
 
     __slots__ = ()
     _SDM_NAME = 'egressOnlyTracking'
+    _SDM_ATT_MAP = {
+        'Egress': 'egress',
+        'Enabled': 'enabled',
+        'Port': 'port',
+        'SignatureOffset': 'signatureOffset',
+        'SignatureValue': 'signatureValue',
+    }
 
     def __init__(self, parent):
         super(EgressOnlyTracking, self).__init__(parent)
@@ -43,10 +50,10 @@ class EgressOnlyTracking(Base):
         -------
         - list(dict(arg1:number,arg2:str)): Struct contains: egress offset and egress mask
         """
-        return self._get_attribute('egress')
+        return self._get_attribute(self._SDM_ATT_MAP['Egress'])
     @Egress.setter
     def Egress(self, value):
-        self._set_attribute('egress', value)
+        self._set_attribute(self._SDM_ATT_MAP['Egress'], value)
 
     @property
     def Enabled(self):
@@ -55,10 +62,10 @@ class EgressOnlyTracking(Base):
         -------
         - bool: Enables the egress only tracking for the given port.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Port(self):
@@ -67,10 +74,10 @@ class EgressOnlyTracking(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport): 
         """
-        return self._get_attribute('port')
+        return self._get_attribute(self._SDM_ATT_MAP['Port'])
     @Port.setter
     def Port(self, value):
-        self._set_attribute('port', value)
+        self._set_attribute(self._SDM_ATT_MAP['Port'], value)
 
     @property
     def SignatureOffset(self):
@@ -79,10 +86,10 @@ class EgressOnlyTracking(Base):
         -------
         - number: Offset where the signature value will be placed in the packet.
         """
-        return self._get_attribute('signatureOffset')
+        return self._get_attribute(self._SDM_ATT_MAP['SignatureOffset'])
     @SignatureOffset.setter
     def SignatureOffset(self, value):
-        self._set_attribute('signatureOffset', value)
+        self._set_attribute(self._SDM_ATT_MAP['SignatureOffset'], value)
 
     @property
     def SignatureValue(self):
@@ -91,10 +98,10 @@ class EgressOnlyTracking(Base):
         -------
         - str: Signature value to be placed inside the packet.
         """
-        return self._get_attribute('signatureValue')
+        return self._get_attribute(self._SDM_ATT_MAP['SignatureValue'])
     @SignatureValue.setter
     def SignatureValue(self, value):
-        self._set_attribute('signatureValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['SignatureValue'], value)
 
     def update(self, Egress=None, Enabled=None, Port=None, SignatureOffset=None, SignatureValue=None):
         """Updates egressOnlyTracking resource on the server.
@@ -111,7 +118,7 @@ class EgressOnlyTracking(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Egress=None, Enabled=None, Port=None, SignatureOffset=None, SignatureValue=None):
         """Adds a new egressOnlyTracking resource on the server and adds it to the container.
@@ -132,7 +139,7 @@ class EgressOnlyTracking(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained egressOnlyTracking resources in this instance from the server.
@@ -167,7 +174,7 @@ class EgressOnlyTracking(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of egressOnlyTracking data from the server.

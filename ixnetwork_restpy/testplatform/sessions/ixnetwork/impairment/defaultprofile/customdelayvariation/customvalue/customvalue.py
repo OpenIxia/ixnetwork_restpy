@@ -32,6 +32,10 @@ class CustomValue(Base):
 
     __slots__ = ()
     _SDM_NAME = 'customValue'
+    _SDM_ATT_MAP = {
+        'Percentage': 'percentage',
+        'Value': 'value',
+    }
 
     def __init__(self, parent):
         super(CustomValue, self).__init__(parent)
@@ -43,10 +47,10 @@ class CustomValue(Base):
         -------
         - number: How often this value occurs, as a percentage.
         """
-        return self._get_attribute('percentage')
+        return self._get_attribute(self._SDM_ATT_MAP['Percentage'])
     @Percentage.setter
     def Percentage(self, value):
-        self._set_attribute('percentage', value)
+        self._set_attribute(self._SDM_ATT_MAP['Percentage'], value)
 
     @property
     def Value(self):
@@ -55,10 +59,10 @@ class CustomValue(Base):
         -------
         - number: Delay value, in microseconds.
         """
-        return self._get_attribute('value')
+        return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
-        self._set_attribute('value', value)
+        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Percentage=None, Value=None):
         """Updates customValue resource on the server.
@@ -72,7 +76,7 @@ class CustomValue(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Percentage=None, Value=None):
         """Adds a new customValue resource on the server and adds it to the container.
@@ -90,7 +94,7 @@ class CustomValue(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained customValue resources in this instance from the server.
@@ -122,7 +126,7 @@ class CustomValue(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of customValue data from the server.

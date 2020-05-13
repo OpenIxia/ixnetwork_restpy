@@ -30,6 +30,13 @@ class LosLof(Base):
 
     __slots__ = ()
     _SDM_NAME = 'losLof'
+    _SDM_ATT_MAP = {
+        'Duration': 'duration',
+        'IsBurst': 'isBurst',
+        'State': 'state',
+        'Type': 'type',
+        'Units': 'units',
+    }
 
     def __init__(self, parent):
         super(LosLof, self).__init__(parent)
@@ -41,10 +48,10 @@ class LosLof(Base):
         -------
         - number: The burst duration.
         """
-        return self._get_attribute('duration')
+        return self._get_attribute(self._SDM_ATT_MAP['Duration'])
     @Duration.setter
     def Duration(self, value):
-        self._set_attribute('duration', value)
+        self._set_attribute(self._SDM_ATT_MAP['Duration'], value)
 
     @property
     def IsBurst(self):
@@ -53,10 +60,10 @@ class LosLof(Base):
         -------
         - bool: If true, loss of signal or loss of frame will be enabled for the specified duration.
         """
-        return self._get_attribute('isBurst')
+        return self._get_attribute(self._SDM_ATT_MAP['IsBurst'])
     @IsBurst.setter
     def IsBurst(self, value):
-        self._set_attribute('isBurst', value)
+        self._set_attribute(self._SDM_ATT_MAP['IsBurst'], value)
 
     @property
     def State(self):
@@ -65,7 +72,7 @@ class LosLof(Base):
         -------
         - str(started | stopped): Gets the loss of signal or loss of framing state.
         """
-        return self._get_attribute('state')
+        return self._get_attribute(self._SDM_ATT_MAP['State'])
 
     @property
     def Type(self):
@@ -74,10 +81,10 @@ class LosLof(Base):
         -------
         - str(lof | los): Selects loss of signal or loss of framing.
         """
-        return self._get_attribute('type')
+        return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
-        self._set_attribute('type', value)
+        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     @property
     def Units(self):
@@ -86,10 +93,10 @@ class LosLof(Base):
         -------
         - str(kMicroseconds | kMilliseconds | kSeconds | microseconds | milliseconds | seconds): Burst duration units.
         """
-        return self._get_attribute('units')
+        return self._get_attribute(self._SDM_ATT_MAP['Units'])
     @Units.setter
     def Units(self, value):
-        self._set_attribute('units', value)
+        self._set_attribute(self._SDM_ATT_MAP['Units'], value)
 
     def update(self, Duration=None, IsBurst=None, Type=None, Units=None):
         """Updates losLof resource on the server.
@@ -105,7 +112,7 @@ class LosLof(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def Start(self):
         """Executes the start operation on the server.

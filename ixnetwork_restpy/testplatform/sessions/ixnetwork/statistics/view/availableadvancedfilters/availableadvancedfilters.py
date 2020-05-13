@@ -31,6 +31,10 @@ class AvailableAdvancedFilters(Base):
 
     __slots__ = ()
     _SDM_NAME = 'availableAdvancedFilters'
+    _SDM_ATT_MAP = {
+        'Expression': 'expression',
+        'Name': 'name',
+    }
 
     def __init__(self, parent):
         super(AvailableAdvancedFilters, self).__init__(parent)
@@ -42,7 +46,7 @@ class AvailableAdvancedFilters(Base):
         -------
         - str: Allows you to get the filter expression or the body from the id.
         """
-        return self._get_attribute('expression')
+        return self._get_attribute(self._SDM_ATT_MAP['Expression'])
 
     @property
     def Name(self):
@@ -51,7 +55,7 @@ class AvailableAdvancedFilters(Base):
         -------
         - str: Allows you to get the filter name from the id.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
 
     def find(self, Expression=None, Name=None):
         """Finds and retrieves availableAdvancedFilters resources from the server.
@@ -73,7 +77,7 @@ class AvailableAdvancedFilters(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of availableAdvancedFilters data from the server.

@@ -30,6 +30,14 @@ class FramePreemption(Base):
 
     __slots__ = ()
     _SDM_NAME = 'framePreemption'
+    _SDM_ATT_MAP = {
+        'AutoFragmentCount': 'autoFragmentCount',
+        'Enable': 'enable',
+        'FragmentCount': 'fragmentCount',
+        'FrameType': 'frameType',
+        'LastFragment': 'lastFragment',
+        'SmdType': 'smdType',
+    }
 
     def __init__(self, parent):
         super(FramePreemption, self).__init__(parent)
@@ -41,10 +49,10 @@ class FramePreemption(Base):
         -------
         - bool: Let the fragments be auto counted
         """
-        return self._get_attribute('autoFragmentCount')
+        return self._get_attribute(self._SDM_ATT_MAP['AutoFragmentCount'])
     @AutoFragmentCount.setter
     def AutoFragmentCount(self, value):
-        self._set_attribute('autoFragmentCount', value)
+        self._set_attribute(self._SDM_ATT_MAP['AutoFragmentCount'], value)
 
     @property
     def Enable(self):
@@ -53,10 +61,10 @@ class FramePreemption(Base):
         -------
         - bool: Enable frame preemption on the given stream. Disabled indicates an express frame
         """
-        return self._get_attribute('enable')
+        return self._get_attribute(self._SDM_ATT_MAP['Enable'])
     @Enable.setter
     def Enable(self, value):
-        self._set_attribute('enable', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enable'], value)
 
     @property
     def FragmentCount(self):
@@ -65,10 +73,10 @@ class FramePreemption(Base):
         -------
         - number: Set the fragment count (a value between 0 and 3)
         """
-        return self._get_attribute('fragmentCount')
+        return self._get_attribute(self._SDM_ATT_MAP['FragmentCount'])
     @FragmentCount.setter
     def FragmentCount(self, value):
-        self._set_attribute('fragmentCount', value)
+        self._set_attribute(self._SDM_ATT_MAP['FragmentCount'], value)
 
     @property
     def FrameType(self):
@@ -77,10 +85,10 @@ class FramePreemption(Base):
         -------
         - str(control | fragment | invalid | wholeFrame): Select the frame type
         """
-        return self._get_attribute('frameType')
+        return self._get_attribute(self._SDM_ATT_MAP['FrameType'])
     @FrameType.setter
     def FrameType(self, value):
-        self._set_attribute('frameType', value)
+        self._set_attribute(self._SDM_ATT_MAP['FrameType'], value)
 
     @property
     def LastFragment(self):
@@ -89,10 +97,10 @@ class FramePreemption(Base):
         -------
         - bool: Indicates if this is the last fragment of the preemptable packet
         """
-        return self._get_attribute('lastFragment')
+        return self._get_attribute(self._SDM_ATT_MAP['LastFragment'])
     @LastFragment.setter
     def LastFragment(self, value):
-        self._set_attribute('lastFragment', value)
+        self._set_attribute(self._SDM_ATT_MAP['LastFragment'], value)
 
     @property
     def SmdType(self):
@@ -101,10 +109,10 @@ class FramePreemption(Base):
         -------
         - str(autoSMDC | autoSMDS | invalidSMD | smdC0 | smdC1 | smdC2 | smdC3 | smdE | smdR | smdS0 | smdS1 | smdS2 | smdS3 | smdV): Select the SMD type
         """
-        return self._get_attribute('smdType')
+        return self._get_attribute(self._SDM_ATT_MAP['SmdType'])
     @SmdType.setter
     def SmdType(self, value):
-        self._set_attribute('smdType', value)
+        self._set_attribute(self._SDM_ATT_MAP['SmdType'], value)
 
     def update(self, AutoFragmentCount=None, Enable=None, FragmentCount=None, FrameType=None, LastFragment=None, SmdType=None):
         """Updates framePreemption resource on the server.
@@ -122,4 +130,4 @@ class FramePreemption(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

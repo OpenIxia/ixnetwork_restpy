@@ -32,6 +32,11 @@ class Dhcpv6ServerGlobals(Base):
 
     __slots__ = ()
     _SDM_NAME = 'dhcpv6ServerGlobals'
+    _SDM_ATT_MAP = {
+        'DefaultLeaseTime': 'defaultLeaseTime',
+        'MaxLeaseTime': 'maxLeaseTime',
+        'ObjectId': 'objectId',
+    }
 
     def __init__(self, parent):
         super(Dhcpv6ServerGlobals, self).__init__(parent)
@@ -43,10 +48,10 @@ class Dhcpv6ServerGlobals(Base):
         -------
         - number: The Life Time length in seconds that will be assigned to a lease if the requesting DHCP Client does not specify a specific expiration time.
         """
-        return self._get_attribute('defaultLeaseTime')
+        return self._get_attribute(self._SDM_ATT_MAP['DefaultLeaseTime'])
     @DefaultLeaseTime.setter
     def DefaultLeaseTime(self, value):
-        self._set_attribute('defaultLeaseTime', value)
+        self._set_attribute(self._SDM_ATT_MAP['DefaultLeaseTime'], value)
 
     @property
     def MaxLeaseTime(self):
@@ -55,10 +60,10 @@ class Dhcpv6ServerGlobals(Base):
         -------
         - number: The maximum Life Time length in seconds that will be assigned to a lease.
         """
-        return self._get_attribute('maxLeaseTime')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxLeaseTime'])
     @MaxLeaseTime.setter
     def MaxLeaseTime(self, value):
-        self._set_attribute('maxLeaseTime', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxLeaseTime'], value)
 
     @property
     def ObjectId(self):
@@ -67,7 +72,7 @@ class Dhcpv6ServerGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def update(self, DefaultLeaseTime=None, MaxLeaseTime=None):
         """Updates dhcpv6ServerGlobals resource on the server.
@@ -81,7 +86,7 @@ class Dhcpv6ServerGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, DefaultLeaseTime=None, MaxLeaseTime=None):
         """Adds a new dhcpv6ServerGlobals resource on the server and adds it to the container.
@@ -99,7 +104,7 @@ class Dhcpv6ServerGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained dhcpv6ServerGlobals resources in this instance from the server.
@@ -132,7 +137,7 @@ class Dhcpv6ServerGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of dhcpv6ServerGlobals data from the server.

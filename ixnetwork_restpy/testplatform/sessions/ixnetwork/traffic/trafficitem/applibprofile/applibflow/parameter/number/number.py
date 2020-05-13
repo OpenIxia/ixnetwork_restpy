@@ -31,6 +31,12 @@ class Number(Base):
 
     __slots__ = ()
     _SDM_NAME = 'number'
+    _SDM_ATT_MAP = {
+        'Default': 'default',
+        'MaxValue': 'maxValue',
+        'MinValue': 'minValue',
+        'Value': 'value',
+    }
 
     def __init__(self, parent):
         super(Number, self).__init__(parent)
@@ -42,7 +48,7 @@ class Number(Base):
         -------
         - number: (Read only) Parameter default value.
         """
-        return self._get_attribute('default')
+        return self._get_attribute(self._SDM_ATT_MAP['Default'])
 
     @property
     def MaxValue(self):
@@ -51,7 +57,7 @@ class Number(Base):
         -------
         - number: (Read only) Maximum supported value for parameter.
         """
-        return self._get_attribute('maxValue')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxValue'])
 
     @property
     def MinValue(self):
@@ -60,7 +66,7 @@ class Number(Base):
         -------
         - number: (Read only) Minimum supported value for parameter.
         """
-        return self._get_attribute('minValue')
+        return self._get_attribute(self._SDM_ATT_MAP['MinValue'])
 
     @property
     def Value(self):
@@ -69,10 +75,10 @@ class Number(Base):
         -------
         - number: Parameter integer value.
         """
-        return self._get_attribute('value')
+        return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
-        self._set_attribute('value', value)
+        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Value=None):
         """Updates number resource on the server.
@@ -85,7 +91,7 @@ class Number(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, Default=None, MaxValue=None, MinValue=None, Value=None):
         """Finds and retrieves number resources from the server.
@@ -109,7 +115,7 @@ class Number(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of number data from the server.

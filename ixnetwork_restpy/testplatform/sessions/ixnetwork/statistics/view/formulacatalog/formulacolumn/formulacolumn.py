@@ -32,6 +32,10 @@ class FormulaColumn(Base):
 
     __slots__ = ()
     _SDM_NAME = 'formulaColumn'
+    _SDM_ATT_MAP = {
+        'Caption': 'caption',
+        'Formula': 'formula',
+    }
 
     def __init__(self, parent):
         super(FormulaColumn, self).__init__(parent)
@@ -43,10 +47,10 @@ class FormulaColumn(Base):
         -------
         - str: The name of the formula.
         """
-        return self._get_attribute('caption')
+        return self._get_attribute(self._SDM_ATT_MAP['Caption'])
     @Caption.setter
     def Caption(self, value):
-        self._set_attribute('caption', value)
+        self._set_attribute(self._SDM_ATT_MAP['Caption'], value)
 
     @property
     def Formula(self):
@@ -55,10 +59,10 @@ class FormulaColumn(Base):
         -------
         - str: The formula that is filtered.
         """
-        return self._get_attribute('formula')
+        return self._get_attribute(self._SDM_ATT_MAP['Formula'])
     @Formula.setter
     def Formula(self, value):
-        self._set_attribute('formula', value)
+        self._set_attribute(self._SDM_ATT_MAP['Formula'], value)
 
     def update(self, Caption=None, Formula=None):
         """Updates formulaColumn resource on the server.
@@ -72,7 +76,7 @@ class FormulaColumn(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Caption=None, Formula=None):
         """Adds a new formulaColumn resource on the server and adds it to the container.
@@ -90,7 +94,7 @@ class FormulaColumn(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained formulaColumn resources in this instance from the server.
@@ -122,7 +126,7 @@ class FormulaColumn(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of formulaColumn data from the server.

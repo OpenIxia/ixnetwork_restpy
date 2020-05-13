@@ -31,6 +31,10 @@ class Statistic(Base):
 
     __slots__ = ()
     _SDM_NAME = 'statistic'
+    _SDM_ATT_MAP = {
+        'Caption': 'caption',
+        'Enabled': 'enabled',
+    }
 
     def __init__(self, parent):
         super(Statistic, self).__init__(parent)
@@ -42,7 +46,7 @@ class Statistic(Base):
         -------
         - str: 
         """
-        return self._get_attribute('caption')
+        return self._get_attribute(self._SDM_ATT_MAP['Caption'])
 
     @property
     def Enabled(self):
@@ -51,10 +55,10 @@ class Statistic(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     def update(self, Enabled=None):
         """Updates statistic resource on the server.
@@ -67,7 +71,7 @@ class Statistic(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, Caption=None, Enabled=None):
         """Finds and retrieves statistic resources from the server.
@@ -89,7 +93,7 @@ class Statistic(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of statistic data from the server.

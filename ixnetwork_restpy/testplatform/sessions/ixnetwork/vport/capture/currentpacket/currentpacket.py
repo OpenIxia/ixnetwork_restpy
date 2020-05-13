@@ -30,6 +30,9 @@ class CurrentPacket(Base):
 
     __slots__ = ()
     _SDM_NAME = 'currentPacket'
+    _SDM_ATT_MAP = {
+        'PacketHex': 'packetHex',
+    }
 
     def __init__(self, parent):
         super(CurrentPacket, self).__init__(parent)
@@ -55,7 +58,7 @@ class CurrentPacket(Base):
         -------
         - str: Gets the packet hex of the current packet
         """
-        return self._get_attribute('packetHex')
+        return self._get_attribute(self._SDM_ATT_MAP['PacketHex'])
 
     def GetPacketFromControlCapture(self, *args, **kwargs):
         """Executes the getPacketFromControlCapture operation on the server.

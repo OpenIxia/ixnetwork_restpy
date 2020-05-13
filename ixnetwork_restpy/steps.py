@@ -26,6 +26,12 @@ class Steps(Base):
     """List of all possible steps for this multivalue
     """
     _SDM_NAME = 'nest'
+    _SDM_ATT_MAP = {
+        'Enabled': 'enabled',
+        'Step': 'step',
+        'Owner': 'owner',
+        'Description': 'description'
+    }
 
     def __init__(self, parent):
         super(Steps, self).__init__(parent)
@@ -38,7 +44,7 @@ class Steps(Base):
         -------
         - str: The description of the step
         """
-        return self._get_attribute('description')
+        return self._get_attribute(self._SDM_ATT_MAP['Description'])
 
     @property
     def Owner(self):
@@ -48,7 +54,7 @@ class Steps(Base):
         -------
         - str: The href of the owner
         """
-        return self._get_attribute('owner')
+        return self._get_attribute(self._SDM_ATT_MAP['Owner'])
 
     @property
     def Enabled(self):
@@ -58,11 +64,10 @@ class Steps(Base):
         -------
         - bool: Enable the step or disable the step
         """
-        return self._get_attribute('enabled')
-
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, enabled):
-        self._set_attribute('enabled', enabled)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], enabled)
 
     @property
     def Step(self):
@@ -72,11 +77,13 @@ class Steps(Base):
         -------
         - str: The value of the step
         """
-        return self._get_attribute('step')
-
+        return self._get_attribute(self._SDM_ATT_MAP['Step'])
     @Step.setter
     def Step(self, value):
-        self._set_attribute('step', value)
+        self._set_attribute(self._SDM_ATT_MAP['Step'], value)
+
+    def update(self, Enabled=None, Step=None):
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, Description=None):
         """Finds and retrieves multivalue step resources from the server.

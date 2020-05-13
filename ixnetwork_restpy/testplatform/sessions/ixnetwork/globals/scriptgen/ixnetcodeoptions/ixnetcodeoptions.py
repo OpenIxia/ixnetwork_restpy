@@ -30,6 +30,18 @@ class IxNetCodeOptions(Base):
 
     __slots__ = ()
     _SDM_NAME = 'ixNetCodeOptions'
+    _SDM_ATT_MAP = {
+        'IncludeAvailableHardware': 'includeAvailableHardware',
+        'IncludeConnect': 'includeConnect',
+        'IncludeDefaultValues': 'includeDefaultValues',
+        'IncludeQuickTest': 'includeQuickTest',
+        'IncludeStatistic': 'includeStatistic',
+        'IncludeTAPSettings': 'includeTAPSettings',
+        'IncludeTestComposer': 'includeTestComposer',
+        'IncludeTraffic': 'includeTraffic',
+        'IncludeTrafficFlowGroup': 'includeTrafficFlowGroup',
+        'IncludeTrafficStack': 'includeTrafficStack',
+    }
 
     def __init__(self, parent):
         super(IxNetCodeOptions, self).__init__(parent)
@@ -41,10 +53,10 @@ class IxNetCodeOptions(Base):
         -------
         - bool: Flag to include available hardware nodes
         """
-        return self._get_attribute('includeAvailableHardware')
+        return self._get_attribute(self._SDM_ATT_MAP['IncludeAvailableHardware'])
     @IncludeAvailableHardware.setter
     def IncludeAvailableHardware(self, value):
-        self._set_attribute('includeAvailableHardware', value)
+        self._set_attribute(self._SDM_ATT_MAP['IncludeAvailableHardware'], value)
 
     @property
     def IncludeConnect(self):
@@ -53,10 +65,10 @@ class IxNetCodeOptions(Base):
         -------
         - bool: Flag to include the connect command
         """
-        return self._get_attribute('includeConnect')
+        return self._get_attribute(self._SDM_ATT_MAP['IncludeConnect'])
     @IncludeConnect.setter
     def IncludeConnect(self, value):
-        self._set_attribute('includeConnect', value)
+        self._set_attribute(self._SDM_ATT_MAP['IncludeConnect'], value)
 
     @property
     def IncludeDefaultValues(self):
@@ -65,10 +77,10 @@ class IxNetCodeOptions(Base):
         -------
         - bool: Flag to include attributes that have values which are default
         """
-        return self._get_attribute('includeDefaultValues')
+        return self._get_attribute(self._SDM_ATT_MAP['IncludeDefaultValues'])
     @IncludeDefaultValues.setter
     def IncludeDefaultValues(self, value):
-        self._set_attribute('includeDefaultValues', value)
+        self._set_attribute(self._SDM_ATT_MAP['IncludeDefaultValues'], value)
 
     @property
     def IncludeQuickTest(self):
@@ -77,10 +89,10 @@ class IxNetCodeOptions(Base):
         -------
         - bool: Flag to include quickTest nodes
         """
-        return self._get_attribute('includeQuickTest')
+        return self._get_attribute(self._SDM_ATT_MAP['IncludeQuickTest'])
     @IncludeQuickTest.setter
     def IncludeQuickTest(self, value):
-        self._set_attribute('includeQuickTest', value)
+        self._set_attribute(self._SDM_ATT_MAP['IncludeQuickTest'], value)
 
     @property
     def IncludeStatistic(self):
@@ -89,10 +101,10 @@ class IxNetCodeOptions(Base):
         -------
         - bool: Flag to include statistic view nodes
         """
-        return self._get_attribute('includeStatistic')
+        return self._get_attribute(self._SDM_ATT_MAP['IncludeStatistic'])
     @IncludeStatistic.setter
     def IncludeStatistic(self, value):
-        self._set_attribute('includeStatistic', value)
+        self._set_attribute(self._SDM_ATT_MAP['IncludeStatistic'], value)
 
     @property
     def IncludeTAPSettings(self):
@@ -101,10 +113,10 @@ class IxNetCodeOptions(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('includeTAPSettings')
+        return self._get_attribute(self._SDM_ATT_MAP['IncludeTAPSettings'])
     @IncludeTAPSettings.setter
     def IncludeTAPSettings(self, value):
-        self._set_attribute('includeTAPSettings', value)
+        self._set_attribute(self._SDM_ATT_MAP['IncludeTAPSettings'], value)
 
     @property
     def IncludeTestComposer(self):
@@ -113,10 +125,10 @@ class IxNetCodeOptions(Base):
         -------
         - bool: Flag to include test composer code
         """
-        return self._get_attribute('includeTestComposer')
+        return self._get_attribute(self._SDM_ATT_MAP['IncludeTestComposer'])
     @IncludeTestComposer.setter
     def IncludeTestComposer(self, value):
-        self._set_attribute('includeTestComposer', value)
+        self._set_attribute(self._SDM_ATT_MAP['IncludeTestComposer'], value)
 
     @property
     def IncludeTraffic(self):
@@ -125,10 +137,10 @@ class IxNetCodeOptions(Base):
         -------
         - bool: Flag to include traffic item nodes
         """
-        return self._get_attribute('includeTraffic')
+        return self._get_attribute(self._SDM_ATT_MAP['IncludeTraffic'])
     @IncludeTraffic.setter
     def IncludeTraffic(self, value):
-        self._set_attribute('includeTraffic', value)
+        self._set_attribute(self._SDM_ATT_MAP['IncludeTraffic'], value)
 
     @property
     def IncludeTrafficFlowGroup(self):
@@ -137,10 +149,10 @@ class IxNetCodeOptions(Base):
         -------
         - bool: Flag to include traffic item high level stream nodes
         """
-        return self._get_attribute('includeTrafficFlowGroup')
+        return self._get_attribute(self._SDM_ATT_MAP['IncludeTrafficFlowGroup'])
     @IncludeTrafficFlowGroup.setter
     def IncludeTrafficFlowGroup(self, value):
-        self._set_attribute('includeTrafficFlowGroup', value)
+        self._set_attribute(self._SDM_ATT_MAP['IncludeTrafficFlowGroup'], value)
 
     @property
     def IncludeTrafficStack(self):
@@ -149,10 +161,10 @@ class IxNetCodeOptions(Base):
         -------
         - bool: Flag to include high level stream stack nodes
         """
-        return self._get_attribute('includeTrafficStack')
+        return self._get_attribute(self._SDM_ATT_MAP['IncludeTrafficStack'])
     @IncludeTrafficStack.setter
     def IncludeTrafficStack(self, value):
-        self._set_attribute('includeTrafficStack', value)
+        self._set_attribute(self._SDM_ATT_MAP['IncludeTrafficStack'], value)
 
     def update(self, IncludeAvailableHardware=None, IncludeConnect=None, IncludeDefaultValues=None, IncludeQuickTest=None, IncludeStatistic=None, IncludeTAPSettings=None, IncludeTestComposer=None, IncludeTraffic=None, IncludeTrafficFlowGroup=None, IncludeTrafficStack=None):
         """Updates ixNetCodeOptions resource on the server.
@@ -174,4 +186,4 @@ class IxNetCodeOptions(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

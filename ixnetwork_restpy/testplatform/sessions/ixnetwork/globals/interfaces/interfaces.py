@@ -30,6 +30,12 @@ class Interfaces(Base):
 
     __slots__ = ()
     _SDM_NAME = 'interfaces'
+    _SDM_ATT_MAP = {
+        'ArpOnLinkup': 'arpOnLinkup',
+        'NsOnLinkup': 'nsOnLinkup',
+        'SendSingleArpPerGateway': 'sendSingleArpPerGateway',
+        'SendSingleNsPerGateway': 'sendSingleNsPerGateway',
+    }
 
     def __init__(self, parent):
         super(Interfaces, self).__init__(parent)
@@ -41,10 +47,10 @@ class Interfaces(Base):
         -------
         - bool: If true, automatically enables ARP and PING when the interfaces is associated with a port.
         """
-        return self._get_attribute('arpOnLinkup')
+        return self._get_attribute(self._SDM_ATT_MAP['ArpOnLinkup'])
     @ArpOnLinkup.setter
     def ArpOnLinkup(self, value):
-        self._set_attribute('arpOnLinkup', value)
+        self._set_attribute(self._SDM_ATT_MAP['ArpOnLinkup'], value)
 
     @property
     def NsOnLinkup(self):
@@ -53,10 +59,10 @@ class Interfaces(Base):
         -------
         - bool: If true, automatically enables NS when the interfaces is associated with a port.
         """
-        return self._get_attribute('nsOnLinkup')
+        return self._get_attribute(self._SDM_ATT_MAP['NsOnLinkup'])
     @NsOnLinkup.setter
     def NsOnLinkup(self, value):
-        self._set_attribute('nsOnLinkup', value)
+        self._set_attribute(self._SDM_ATT_MAP['NsOnLinkup'], value)
 
     @property
     def SendSingleArpPerGateway(self):
@@ -65,10 +71,10 @@ class Interfaces(Base):
         -------
         - bool: If true, only a single ARP is sent via each defined gateway address.
         """
-        return self._get_attribute('sendSingleArpPerGateway')
+        return self._get_attribute(self._SDM_ATT_MAP['SendSingleArpPerGateway'])
     @SendSingleArpPerGateway.setter
     def SendSingleArpPerGateway(self, value):
-        self._set_attribute('sendSingleArpPerGateway', value)
+        self._set_attribute(self._SDM_ATT_MAP['SendSingleArpPerGateway'], value)
 
     @property
     def SendSingleNsPerGateway(self):
@@ -77,10 +83,10 @@ class Interfaces(Base):
         -------
         - bool: If true, only a single NS is sent via each defined gateway address.
         """
-        return self._get_attribute('sendSingleNsPerGateway')
+        return self._get_attribute(self._SDM_ATT_MAP['SendSingleNsPerGateway'])
     @SendSingleNsPerGateway.setter
     def SendSingleNsPerGateway(self, value):
-        self._set_attribute('sendSingleNsPerGateway', value)
+        self._set_attribute(self._SDM_ATT_MAP['SendSingleNsPerGateway'], value)
 
     def update(self, ArpOnLinkup=None, NsOnLinkup=None, SendSingleArpPerGateway=None, SendSingleNsPerGateway=None):
         """Updates interfaces resource on the server.
@@ -96,4 +102,4 @@ class Interfaces(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -31,6 +31,10 @@ class AvailableTrafficItemFilter(Base):
 
     __slots__ = ()
     _SDM_NAME = 'availableTrafficItemFilter'
+    _SDM_ATT_MAP = {
+        'Constraints': 'constraints',
+        'Name': 'name',
+    }
 
     def __init__(self, parent):
         super(AvailableTrafficItemFilter, self).__init__(parent)
@@ -42,7 +46,7 @@ class AvailableTrafficItemFilter(Base):
         -------
         - list(str): Lists down the constraints associated with the available traffic item filter list.
         """
-        return self._get_attribute('constraints')
+        return self._get_attribute(self._SDM_ATT_MAP['Constraints'])
 
     @property
     def Name(self):
@@ -51,7 +55,7 @@ class AvailableTrafficItemFilter(Base):
         -------
         - str: Displays the name of the traffic item filter.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
 
     def find(self, Constraints=None, Name=None):
         """Finds and retrieves availableTrafficItemFilter resources from the server.
@@ -73,7 +77,7 @@ class AvailableTrafficItemFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of availableTrafficItemFilter data from the server.

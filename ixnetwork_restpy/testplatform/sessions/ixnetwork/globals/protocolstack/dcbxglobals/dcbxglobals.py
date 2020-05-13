@@ -32,6 +32,12 @@ class DcbxGlobals(Base):
 
     __slots__ = ()
     _SDM_NAME = 'dcbxGlobals'
+    _SDM_ATT_MAP = {
+        'AllowMultipleSessions': 'allowMultipleSessions',
+        'FailOnMismatch': 'failOnMismatch',
+        'FlapLinkOnStart': 'flapLinkOnStart',
+        'ObjectId': 'objectId',
+    }
 
     def __init__(self, parent):
         super(DcbxGlobals, self).__init__(parent)
@@ -43,10 +49,10 @@ class DcbxGlobals(Base):
         -------
         - bool: Allows multiple LLDP / DCBX sessions on a single port. The sessions are identified by inserting a VLAN header before the upper layer protocol headers. This VLAN ID uniquely identifying the session is configured in Ethernet VLAN area.
         """
-        return self._get_attribute('allowMultipleSessions')
+        return self._get_attribute(self._SDM_ATT_MAP['AllowMultipleSessions'])
     @AllowMultipleSessions.setter
     def AllowMultipleSessions(self, value):
-        self._set_attribute('allowMultipleSessions', value)
+        self._set_attribute(self._SDM_ATT_MAP['AllowMultipleSessions'], value)
 
     @property
     def FailOnMismatch(self):
@@ -55,10 +61,10 @@ class DcbxGlobals(Base):
         -------
         - bool: If true, DCBX 802.1Qaz Priority-based Flow Control and Application Priority TLVs negotiation will be declared as failed if the advertised parameters do not match.
         """
-        return self._get_attribute('failOnMismatch')
+        return self._get_attribute(self._SDM_ATT_MAP['FailOnMismatch'])
     @FailOnMismatch.setter
     def FailOnMismatch(self, value):
-        self._set_attribute('failOnMismatch', value)
+        self._set_attribute(self._SDM_ATT_MAP['FailOnMismatch'], value)
 
     @property
     def FlapLinkOnStart(self):
@@ -67,10 +73,10 @@ class DcbxGlobals(Base):
         -------
         - bool: Change the link status (link down, then link up) to notify the LLDP / DCBX peer that the negotiation is about to be restarted. Simulates a Converged Network Adapter (CNA) power-on or reconfiguration.
         """
-        return self._get_attribute('flapLinkOnStart')
+        return self._get_attribute(self._SDM_ATT_MAP['FlapLinkOnStart'])
     @FlapLinkOnStart.setter
     def FlapLinkOnStart(self, value):
-        self._set_attribute('flapLinkOnStart', value)
+        self._set_attribute(self._SDM_ATT_MAP['FlapLinkOnStart'], value)
 
     @property
     def ObjectId(self):
@@ -79,7 +85,7 @@ class DcbxGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def update(self, AllowMultipleSessions=None, FailOnMismatch=None, FlapLinkOnStart=None):
         """Updates dcbxGlobals resource on the server.
@@ -94,7 +100,7 @@ class DcbxGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AllowMultipleSessions=None, FailOnMismatch=None, FlapLinkOnStart=None):
         """Adds a new dcbxGlobals resource on the server and adds it to the container.
@@ -113,7 +119,7 @@ class DcbxGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained dcbxGlobals resources in this instance from the server.
@@ -147,7 +153,7 @@ class DcbxGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of dcbxGlobals data from the server.

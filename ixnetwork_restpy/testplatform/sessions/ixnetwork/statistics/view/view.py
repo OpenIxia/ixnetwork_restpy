@@ -32,6 +32,25 @@ class View(Base):
 
     __slots__ = ()
     _SDM_NAME = 'view'
+    _SDM_ATT_MAP = {
+        'AutoRefresh': 'autoRefresh',
+        'AutoUpdate': 'autoUpdate',
+        'AvailableStatsSelectorColumns': 'availableStatsSelectorColumns',
+        'Caption': 'caption',
+        'CsvFileName': 'csvFileName',
+        'EnableCsvLogging': 'enableCsvLogging',
+        'Enabled': 'enabled',
+        'EnabledStatsSelectorColumns': 'enabledStatsSelectorColumns',
+        'OnDemandRefreshView': 'onDemandRefreshView',
+        'PageTimeout': 'pageTimeout',
+        'ReadOnly': 'readOnly',
+        'TimeSeries': 'timeSeries',
+        'TreeViewNodeName': 'treeViewNodeName',
+        'Type': 'type',
+        'TypeDescription': 'typeDescription',
+        'ViewCategory': 'viewCategory',
+        'Visible': 'visible',
+    }
 
     def __init__(self, parent):
         super(View, self).__init__(parent)
@@ -379,10 +398,10 @@ class View(Base):
         -------
         - bool: If true, automatically refreshes the statistics values. Default = true
         """
-        return self._get_attribute('autoRefresh')
+        return self._get_attribute(self._SDM_ATT_MAP['AutoRefresh'])
     @AutoRefresh.setter
     def AutoRefresh(self, value):
-        self._set_attribute('autoRefresh', value)
+        self._set_attribute(self._SDM_ATT_MAP['AutoRefresh'], value)
 
     @property
     def AutoUpdate(self):
@@ -391,10 +410,10 @@ class View(Base):
         -------
         - bool: If true, automatically refreshes the statistics values. Default = true
         """
-        return self._get_attribute('autoUpdate')
+        return self._get_attribute(self._SDM_ATT_MAP['AutoUpdate'])
     @AutoUpdate.setter
     def AutoUpdate(self, value):
-        self._set_attribute('autoUpdate', value)
+        self._set_attribute(self._SDM_ATT_MAP['AutoUpdate'], value)
 
     @property
     def AvailableStatsSelectorColumns(self):
@@ -403,7 +422,7 @@ class View(Base):
         -------
         - list(str): NOT DEFINED
         """
-        return self._get_attribute('availableStatsSelectorColumns')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableStatsSelectorColumns'])
 
     @property
     def Caption(self):
@@ -412,10 +431,10 @@ class View(Base):
         -------
         - str: This is the name that will appear in the GUI stats view window header or in the added view tree from tcl. The caption must be unique.
         """
-        return self._get_attribute('caption')
+        return self._get_attribute(self._SDM_ATT_MAP['Caption'])
     @Caption.setter
     def Caption(self, value):
-        self._set_attribute('caption', value)
+        self._set_attribute(self._SDM_ATT_MAP['Caption'], value)
 
     @property
     def CsvFileName(self):
@@ -424,10 +443,10 @@ class View(Base):
         -------
         - str: Specifies the file name which is used by the CSV Logging feature. The default value is the caption of the view.
         """
-        return self._get_attribute('csvFileName')
+        return self._get_attribute(self._SDM_ATT_MAP['CsvFileName'])
     @CsvFileName.setter
     def CsvFileName(self, value):
-        self._set_attribute('csvFileName', value)
+        self._set_attribute(self._SDM_ATT_MAP['CsvFileName'], value)
 
     @property
     def EnableCsvLogging(self):
@@ -436,10 +455,10 @@ class View(Base):
         -------
         - bool: If the CSV Logging feature is enabled the statistics values from a view will be written in a comma separated value format.
         """
-        return self._get_attribute('enableCsvLogging')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableCsvLogging'])
     @EnableCsvLogging.setter
     def EnableCsvLogging(self, value):
-        self._set_attribute('enableCsvLogging', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableCsvLogging'], value)
 
     @property
     def Enabled(self):
@@ -448,10 +467,10 @@ class View(Base):
         -------
         - bool: If true, enables the view that is created from the tcl script.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def EnabledStatsSelectorColumns(self):
@@ -460,10 +479,10 @@ class View(Base):
         -------
         - list(str): NOT DEFINED
         """
-        return self._get_attribute('enabledStatsSelectorColumns')
+        return self._get_attribute(self._SDM_ATT_MAP['EnabledStatsSelectorColumns'])
     @EnabledStatsSelectorColumns.setter
     def EnabledStatsSelectorColumns(self, value):
-        self._set_attribute('enabledStatsSelectorColumns', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnabledStatsSelectorColumns'], value)
 
     @property
     def OnDemandRefreshView(self):
@@ -472,7 +491,7 @@ class View(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('onDemandRefreshView')
+        return self._get_attribute(self._SDM_ATT_MAP['OnDemandRefreshView'])
 
     @property
     def PageTimeout(self):
@@ -481,10 +500,10 @@ class View(Base):
         -------
         - number: The statistics view page is timed out based on the time specified. default = 25,000 ms
         """
-        return self._get_attribute('pageTimeout')
+        return self._get_attribute(self._SDM_ATT_MAP['PageTimeout'])
     @PageTimeout.setter
     def PageTimeout(self, value):
-        self._set_attribute('pageTimeout', value)
+        self._set_attribute(self._SDM_ATT_MAP['PageTimeout'], value)
 
     @property
     def ReadOnly(self):
@@ -493,7 +512,7 @@ class View(Base):
         -------
         - bool: The default views created by the application will have this attribute set to false. Tcl SV created by user has this value set to true. Based on this attribute value, the user is allowed to modify the SV attributes.
         """
-        return self._get_attribute('readOnly')
+        return self._get_attribute(self._SDM_ATT_MAP['ReadOnly'])
 
     @property
     def TimeSeries(self):
@@ -502,10 +521,10 @@ class View(Base):
         -------
         - bool: If false, then it displays non-timeseries grid views. If true, displays, timeseries line chart view. default = false (non-timeseries)
         """
-        return self._get_attribute('timeSeries')
+        return self._get_attribute(self._SDM_ATT_MAP['TimeSeries'])
     @TimeSeries.setter
     def TimeSeries(self, value):
-        self._set_attribute('timeSeries', value)
+        self._set_attribute(self._SDM_ATT_MAP['TimeSeries'], value)
 
     @property
     def TreeViewNodeName(self):
@@ -514,10 +533,10 @@ class View(Base):
         -------
         - str: Displays the name of the tree view node.
         """
-        return self._get_attribute('treeViewNodeName')
+        return self._get_attribute(self._SDM_ATT_MAP['TreeViewNodeName'])
     @TreeViewNodeName.setter
     def TreeViewNodeName(self, value):
-        self._set_attribute('treeViewNodeName', value)
+        self._set_attribute(self._SDM_ATT_MAP['TreeViewNodeName'], value)
 
     @property
     def Type(self):
@@ -526,10 +545,10 @@ class View(Base):
         -------
         - str(layer23NextGenProtocol | layer23ProtocolAuthAccess | layer23ProtocolPort | layer23ProtocolRouting | layer23ProtocolStack | layer23TrafficFlow | layer23TrafficFlowDetective | layer23TrafficItem | layer23TrafficPort | layer47AppLibraryTraffic | sVReadOnly): The type of view the user wants to create from tcl.
         """
-        return self._get_attribute('type')
+        return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
-        self._set_attribute('type', value)
+        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     @property
     def TypeDescription(self):
@@ -538,7 +557,7 @@ class View(Base):
         -------
         - str: If true, desribes the type
         """
-        return self._get_attribute('typeDescription')
+        return self._get_attribute(self._SDM_ATT_MAP['TypeDescription'])
 
     @property
     def ViewCategory(self):
@@ -547,7 +566,7 @@ class View(Base):
         -------
         - str(ClassicProtocol | L23Traffic | L47Traffic | Mixed | NextGenProtocol | PerSession | Unknown): Returns the category of the view based on the type of statistics displayed by the view.
         """
-        return self._get_attribute('viewCategory')
+        return self._get_attribute(self._SDM_ATT_MAP['ViewCategory'])
 
     @property
     def Visible(self):
@@ -556,10 +575,10 @@ class View(Base):
         -------
         - bool: If true, displays the custom created tcl SVs in the SV tree under TCL Views node.
         """
-        return self._get_attribute('visible')
+        return self._get_attribute(self._SDM_ATT_MAP['Visible'])
     @Visible.setter
     def Visible(self, value):
-        self._set_attribute('visible', value)
+        self._set_attribute(self._SDM_ATT_MAP['Visible'], value)
 
     def update(self, AutoRefresh=None, AutoUpdate=None, Caption=None, CsvFileName=None, EnableCsvLogging=None, Enabled=None, EnabledStatsSelectorColumns=None, PageTimeout=None, TimeSeries=None, TreeViewNodeName=None, Type=None, Visible=None):
         """Updates view resource on the server.
@@ -583,7 +602,7 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AutoRefresh=None, AutoUpdate=None, Caption=None, CsvFileName=None, EnableCsvLogging=None, Enabled=None, EnabledStatsSelectorColumns=None, PageTimeout=None, TimeSeries=None, TreeViewNodeName=None, Type=None, Visible=None):
         """Adds a new view resource on the server and adds it to the container.
@@ -611,7 +630,7 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained view resources in this instance from the server.
@@ -658,7 +677,7 @@ class View(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of view data from the server.

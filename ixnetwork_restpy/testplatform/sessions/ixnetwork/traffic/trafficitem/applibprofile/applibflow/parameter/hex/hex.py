@@ -31,6 +31,10 @@ class Hex(Base):
 
     __slots__ = ()
     _SDM_NAME = 'hex'
+    _SDM_ATT_MAP = {
+        'Default': 'default',
+        'Value': 'value',
+    }
 
     def __init__(self, parent):
         super(Hex, self).__init__(parent)
@@ -42,7 +46,7 @@ class Hex(Base):
         -------
         - str: (Read only) Parameter default value.
         """
-        return self._get_attribute('default')
+        return self._get_attribute(self._SDM_ATT_MAP['Default'])
 
     @property
     def Value(self):
@@ -51,10 +55,10 @@ class Hex(Base):
         -------
         - str: Parameter hex value.
         """
-        return self._get_attribute('value')
+        return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
-        self._set_attribute('value', value)
+        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Value=None):
         """Updates hex resource on the server.
@@ -67,7 +71,7 @@ class Hex(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, Default=None, Value=None):
         """Finds and retrieves hex resources from the server.
@@ -89,7 +93,7 @@ class Hex(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of hex data from the server.

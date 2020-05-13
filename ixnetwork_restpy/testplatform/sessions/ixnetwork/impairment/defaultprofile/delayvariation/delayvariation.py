@@ -30,6 +30,14 @@ class DelayVariation(Base):
 
     __slots__ = ()
     _SDM_NAME = 'delayVariation'
+    _SDM_ATT_MAP = {
+        'Distribution': 'distribution',
+        'Enabled': 'enabled',
+        'ExponentialMeanArrival': 'exponentialMeanArrival',
+        'GaussianStandardDeviation': 'gaussianStandardDeviation',
+        'UniformSpread': 'uniformSpread',
+        'Units': 'units',
+    }
 
     def __init__(self, parent):
         super(DelayVariation, self).__init__(parent)
@@ -41,10 +49,10 @@ class DelayVariation(Base):
         -------
         - str(exponential | gaussian | kExponential | kGaussian | kUniform | uniform): Specify the distribution of the random variation.
         """
-        return self._get_attribute('distribution')
+        return self._get_attribute(self._SDM_ATT_MAP['Distribution'])
     @Distribution.setter
     def Distribution(self, value):
-        self._set_attribute('distribution', value)
+        self._set_attribute(self._SDM_ATT_MAP['Distribution'], value)
 
     @property
     def Enabled(self):
@@ -53,10 +61,10 @@ class DelayVariation(Base):
         -------
         - bool: If true, randomly vary the packet delay.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def ExponentialMeanArrival(self):
@@ -65,10 +73,10 @@ class DelayVariation(Base):
         -------
         - number: Mean arrival time for the exponential distribution.
         """
-        return self._get_attribute('exponentialMeanArrival')
+        return self._get_attribute(self._SDM_ATT_MAP['ExponentialMeanArrival'])
     @ExponentialMeanArrival.setter
     def ExponentialMeanArrival(self, value):
-        self._set_attribute('exponentialMeanArrival', value)
+        self._set_attribute(self._SDM_ATT_MAP['ExponentialMeanArrival'], value)
 
     @property
     def GaussianStandardDeviation(self):
@@ -77,10 +85,10 @@ class DelayVariation(Base):
         -------
         - number: Standard deviation for the Gaussian distribution.
         """
-        return self._get_attribute('gaussianStandardDeviation')
+        return self._get_attribute(self._SDM_ATT_MAP['GaussianStandardDeviation'])
     @GaussianStandardDeviation.setter
     def GaussianStandardDeviation(self, value):
-        self._set_attribute('gaussianStandardDeviation', value)
+        self._set_attribute(self._SDM_ATT_MAP['GaussianStandardDeviation'], value)
 
     @property
     def UniformSpread(self):
@@ -89,10 +97,10 @@ class DelayVariation(Base):
         -------
         - number: Spread for the uniform distribution.
         """
-        return self._get_attribute('uniformSpread')
+        return self._get_attribute(self._SDM_ATT_MAP['UniformSpread'])
     @UniformSpread.setter
     def UniformSpread(self, value):
-        self._set_attribute('uniformSpread', value)
+        self._set_attribute(self._SDM_ATT_MAP['UniformSpread'], value)
 
     @property
     def Units(self):
@@ -101,10 +109,10 @@ class DelayVariation(Base):
         -------
         - str(kilometers | kKilometers | kMicroseconds | kMilliseconds | kSeconds | microseconds | milliseconds | seconds): Specify the units for the value of the spread, standard deviation, or mean arrival time.
         """
-        return self._get_attribute('units')
+        return self._get_attribute(self._SDM_ATT_MAP['Units'])
     @Units.setter
     def Units(self, value):
-        self._set_attribute('units', value)
+        self._set_attribute(self._SDM_ATT_MAP['Units'], value)
 
     def update(self, Distribution=None, Enabled=None, ExponentialMeanArrival=None, GaussianStandardDeviation=None, UniformSpread=None, Units=None):
         """Updates delayVariation resource on the server.
@@ -122,4 +130,4 @@ class DelayVariation(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -30,6 +30,11 @@ class AppCodeRef(Base):
 
     __slots__ = ()
     _SDM_NAME = 'appCodeRef'
+    _SDM_ATT_MAP = {
+        'Name': 'name',
+        'ObjectId': 'objectId',
+        'Value': 'value',
+    }
 
     def __init__(self, parent):
         super(AppCodeRef, self).__init__(parent)
@@ -41,10 +46,10 @@ class AppCodeRef(Base):
         -------
         - str: AppCode Name.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
@@ -53,7 +58,7 @@ class AppCodeRef(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def Value(self):
@@ -62,10 +67,10 @@ class AppCodeRef(Base):
         -------
         - number: AppCode ID.
         """
-        return self._get_attribute('value')
+        return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
-        self._set_attribute('value', value)
+        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Name=None, Value=None):
         """Updates appCodeRef resource on the server.
@@ -79,4 +84,4 @@ class AppCodeRef(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -30,6 +30,17 @@ class Trigger(Base):
 
     __slots__ = ()
     _SDM_NAME = 'trigger'
+    _SDM_ATT_MAP = {
+        'CaptureTriggerDA': 'captureTriggerDA',
+        'CaptureTriggerEnable': 'captureTriggerEnable',
+        'CaptureTriggerError': 'captureTriggerError',
+        'CaptureTriggerExpressionString': 'captureTriggerExpressionString',
+        'CaptureTriggerFrameSizeEnable': 'captureTriggerFrameSizeEnable',
+        'CaptureTriggerFrameSizeFrom': 'captureTriggerFrameSizeFrom',
+        'CaptureTriggerFrameSizeTo': 'captureTriggerFrameSizeTo',
+        'CaptureTriggerPattern': 'captureTriggerPattern',
+        'CaptureTriggerSA': 'captureTriggerSA',
+    }
 
     def __init__(self, parent):
         super(Trigger, self).__init__(parent)
@@ -41,10 +52,10 @@ class Trigger(Base):
         -------
         - str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2): One of two available destination MAC addresses to filter on. Applicable only when captureTriggerEnable is set to true.
         """
-        return self._get_attribute('captureTriggerDA')
+        return self._get_attribute(self._SDM_ATT_MAP['CaptureTriggerDA'])
     @CaptureTriggerDA.setter
     def CaptureTriggerDA(self, value):
-        self._set_attribute('captureTriggerDA', value)
+        self._set_attribute(self._SDM_ATT_MAP['CaptureTriggerDA'], value)
 
     @property
     def CaptureTriggerEnable(self):
@@ -53,10 +64,10 @@ class Trigger(Base):
         -------
         - bool: Enables or disables the capture trigger.
         """
-        return self._get_attribute('captureTriggerEnable')
+        return self._get_attribute(self._SDM_ATT_MAP['CaptureTriggerEnable'])
     @CaptureTriggerEnable.setter
     def CaptureTriggerEnable(self, value):
-        self._set_attribute('captureTriggerEnable', value)
+        self._set_attribute(self._SDM_ATT_MAP['CaptureTriggerEnable'], value)
 
     @property
     def CaptureTriggerError(self):
@@ -65,10 +76,10 @@ class Trigger(Base):
         -------
         - str(errAnyFrame | errAnyIpTcpUdpChecksumError | errAnySequencekError | errBadCRC | errBadFrame | errBigSequenceError | errDataIntegrityError | errGoodFrame | errInvalidFcoeFrame | errReverseSequenceError | errSmallSequenceError): Applicable only when captureTriggerEnable is set to true.
         """
-        return self._get_attribute('captureTriggerError')
+        return self._get_attribute(self._SDM_ATT_MAP['CaptureTriggerError'])
     @CaptureTriggerError.setter
     def CaptureTriggerError(self, value):
-        self._set_attribute('captureTriggerError', value)
+        self._set_attribute(self._SDM_ATT_MAP['CaptureTriggerError'], value)
 
     @property
     def CaptureTriggerExpressionString(self):
@@ -77,10 +88,10 @@ class Trigger(Base):
         -------
         - str: String composed of SA1, DA1, P1, P2, optionally negated with '!', and connected with operators 'and', 'or', 'xor', 'nand' or 'nor'. (Eg: {DA1 and SA1 or !P1 and P2} ). NOTE: The 'or', 'xor', 'nand' and 'nor' operators are available only on the following load modules: XMVDC, NGY, XMSP12, LAVA(MK), Xcellon AP, Xcellon NP.
         """
-        return self._get_attribute('captureTriggerExpressionString')
+        return self._get_attribute(self._SDM_ATT_MAP['CaptureTriggerExpressionString'])
     @CaptureTriggerExpressionString.setter
     def CaptureTriggerExpressionString(self, value):
-        self._set_attribute('captureTriggerExpressionString', value)
+        self._set_attribute(self._SDM_ATT_MAP['CaptureTriggerExpressionString'], value)
 
     @property
     def CaptureTriggerFrameSizeEnable(self):
@@ -89,10 +100,10 @@ class Trigger(Base):
         -------
         - bool: Enables or disables the frame size constraint which specifies a range of frame.
         """
-        return self._get_attribute('captureTriggerFrameSizeEnable')
+        return self._get_attribute(self._SDM_ATT_MAP['CaptureTriggerFrameSizeEnable'])
     @CaptureTriggerFrameSizeEnable.setter
     def CaptureTriggerFrameSizeEnable(self, value):
-        self._set_attribute('captureTriggerFrameSizeEnable', value)
+        self._set_attribute(self._SDM_ATT_MAP['CaptureTriggerFrameSizeEnable'], value)
 
     @property
     def CaptureTriggerFrameSizeFrom(self):
@@ -101,10 +112,10 @@ class Trigger(Base):
         -------
         - number: Applicable only when captureTriggerFrameSizeEnable is enabled. The minimum range of the size of frame to be triggered.
         """
-        return self._get_attribute('captureTriggerFrameSizeFrom')
+        return self._get_attribute(self._SDM_ATT_MAP['CaptureTriggerFrameSizeFrom'])
     @CaptureTriggerFrameSizeFrom.setter
     def CaptureTriggerFrameSizeFrom(self, value):
-        self._set_attribute('captureTriggerFrameSizeFrom', value)
+        self._set_attribute(self._SDM_ATT_MAP['CaptureTriggerFrameSizeFrom'], value)
 
     @property
     def CaptureTriggerFrameSizeTo(self):
@@ -113,10 +124,10 @@ class Trigger(Base):
         -------
         - number: Applicable only when captureTriggerFrameSizeEnable is enabled. The maximum range of the size of frame to be triggered.
         """
-        return self._get_attribute('captureTriggerFrameSizeTo')
+        return self._get_attribute(self._SDM_ATT_MAP['CaptureTriggerFrameSizeTo'])
     @CaptureTriggerFrameSizeTo.setter
     def CaptureTriggerFrameSizeTo(self, value):
-        self._set_attribute('captureTriggerFrameSizeTo', value)
+        self._set_attribute(self._SDM_ATT_MAP['CaptureTriggerFrameSizeTo'], value)
 
     @property
     def CaptureTriggerPattern(self):
@@ -125,10 +136,10 @@ class Trigger(Base):
         -------
         - str(anyPattern | notPattern1 | notPattern2 | pattern1 | pattern1AndPattern2 | pattern2): Applicable only when captureTriggerEnable is set to true.
         """
-        return self._get_attribute('captureTriggerPattern')
+        return self._get_attribute(self._SDM_ATT_MAP['CaptureTriggerPattern'])
     @CaptureTriggerPattern.setter
     def CaptureTriggerPattern(self, value):
-        self._set_attribute('captureTriggerPattern', value)
+        self._set_attribute(self._SDM_ATT_MAP['CaptureTriggerPattern'], value)
 
     @property
     def CaptureTriggerSA(self):
@@ -137,10 +148,10 @@ class Trigger(Base):
         -------
         - str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2): Applicable only when captureTriggerFrameSizeEnable is enabled. The maximum range of the size of frame to be triggered.
         """
-        return self._get_attribute('captureTriggerSA')
+        return self._get_attribute(self._SDM_ATT_MAP['CaptureTriggerSA'])
     @CaptureTriggerSA.setter
     def CaptureTriggerSA(self, value):
-        self._set_attribute('captureTriggerSA', value)
+        self._set_attribute(self._SDM_ATT_MAP['CaptureTriggerSA'], value)
 
     def update(self, CaptureTriggerDA=None, CaptureTriggerEnable=None, CaptureTriggerError=None, CaptureTriggerExpressionString=None, CaptureTriggerFrameSizeEnable=None, CaptureTriggerFrameSizeFrom=None, CaptureTriggerFrameSizeTo=None, CaptureTriggerPattern=None, CaptureTriggerSA=None):
         """Updates trigger resource on the server.
@@ -161,4 +172,4 @@ class Trigger(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

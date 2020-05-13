@@ -31,6 +31,31 @@ class Test(Base):
 
     __slots__ = ()
     _SDM_NAME = 'test'
+    _SDM_ATT_MAP = {
+        'AvailableTrackBy': 'availableTrackBy',
+        'ConfigId': 'configId',
+        'Enabled': 'enabled',
+        'EndTime': 'endTime',
+        'EndTimeAsTicks': 'endTimeAsTicks',
+        'IncrementalState': 'incrementalState',
+        'MonitorPorts': 'monitorPorts',
+        'MonitorTrafficItemId': 'monitorTrafficItemId',
+        'NowTime': 'nowTime',
+        'PreflightCheckState': 'preflightCheckState',
+        'PreflightComplete': 'preflightComplete',
+        'QuickTestId': 'quickTestId',
+        'Repeat': 'repeat',
+        'StartTime': 'startTime',
+        'StartTimeAsTicks': 'startTimeAsTicks',
+        'State': 'state',
+        'SupportsMonitoring': 'supportsMonitoring',
+        'SupportsTiming': 'supportsTiming',
+        'TimingPort': 'timingPort',
+        'TimingTopologyId': 'timingTopologyId',
+        'TimingTrafficItemId': 'timingTrafficItemId',
+        'TrackBy': 'trackBy',
+        'TrafficItemIds': 'trafficItemIds',
+    }
 
     def __init__(self, parent):
         super(Test, self).__init__(parent)
@@ -42,7 +67,7 @@ class Test(Base):
         -------
         - list(dict(arg1:str,arg2:str)): 
         """
-        return self._get_attribute('availableTrackBy')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableTrackBy'])
 
     @property
     def ConfigId(self):
@@ -51,7 +76,7 @@ class Test(Base):
         -------
         - number: 
         """
-        return self._get_attribute('configId')
+        return self._get_attribute(self._SDM_ATT_MAP['ConfigId'])
 
     @property
     def Enabled(self):
@@ -60,10 +85,10 @@ class Test(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def EndTime(self):
@@ -72,7 +97,7 @@ class Test(Base):
         -------
         - str: 
         """
-        return self._get_attribute('endTime')
+        return self._get_attribute(self._SDM_ATT_MAP['EndTime'])
 
     @property
     def EndTimeAsTicks(self):
@@ -81,10 +106,10 @@ class Test(Base):
         -------
         - number: 
         """
-        return self._get_attribute('endTimeAsTicks')
+        return self._get_attribute(self._SDM_ATT_MAP['EndTimeAsTicks'])
     @EndTimeAsTicks.setter
     def EndTimeAsTicks(self, value):
-        self._set_attribute('endTimeAsTicks', value)
+        self._set_attribute(self._SDM_ATT_MAP['EndTimeAsTicks'], value)
 
     @property
     def IncrementalState(self):
@@ -93,7 +118,7 @@ class Test(Base):
         -------
         - dict(arg1:number,arg2:number): 
         """
-        return self._get_attribute('incrementalState')
+        return self._get_attribute(self._SDM_ATT_MAP['IncrementalState'])
 
     @property
     def MonitorPorts(self):
@@ -102,10 +127,10 @@ class Test(Base):
         -------
         - list(str): 
         """
-        return self._get_attribute('monitorPorts')
+        return self._get_attribute(self._SDM_ATT_MAP['MonitorPorts'])
     @MonitorPorts.setter
     def MonitorPorts(self, value):
-        self._set_attribute('monitorPorts', value)
+        self._set_attribute(self._SDM_ATT_MAP['MonitorPorts'], value)
 
     @property
     def MonitorTrafficItemId(self):
@@ -114,7 +139,7 @@ class Test(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem): 
         """
-        return self._get_attribute('monitorTrafficItemId')
+        return self._get_attribute(self._SDM_ATT_MAP['MonitorTrafficItemId'])
 
     @property
     def NowTime(self):
@@ -123,7 +148,7 @@ class Test(Base):
         -------
         - str: 
         """
-        return self._get_attribute('nowTime')
+        return self._get_attribute(self._SDM_ATT_MAP['NowTime'])
 
     @property
     def PreflightCheckState(self):
@@ -132,7 +157,7 @@ class Test(Base):
         -------
         - str(license | none | portLink | protocols | traffic | validity): 
         """
-        return self._get_attribute('preflightCheckState')
+        return self._get_attribute(self._SDM_ATT_MAP['PreflightCheckState'])
 
     @property
     def PreflightComplete(self):
@@ -141,7 +166,7 @@ class Test(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('preflightComplete')
+        return self._get_attribute(self._SDM_ATT_MAP['PreflightComplete'])
 
     @property
     def QuickTestId(self):
@@ -150,7 +175,7 @@ class Test(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/quickTest/.../*): 
         """
-        return self._get_attribute('quickTestId')
+        return self._get_attribute(self._SDM_ATT_MAP['QuickTestId'])
 
     @property
     def Repeat(self):
@@ -159,10 +184,10 @@ class Test(Base):
         -------
         - number: 
         """
-        return self._get_attribute('repeat')
+        return self._get_attribute(self._SDM_ATT_MAP['Repeat'])
     @Repeat.setter
     def Repeat(self, value):
-        self._set_attribute('repeat', value)
+        self._set_attribute(self._SDM_ATT_MAP['Repeat'], value)
 
     @property
     def StartTime(self):
@@ -171,7 +196,7 @@ class Test(Base):
         -------
         - str: 
         """
-        return self._get_attribute('startTime')
+        return self._get_attribute(self._SDM_ATT_MAP['StartTime'])
 
     @property
     def StartTimeAsTicks(self):
@@ -180,10 +205,10 @@ class Test(Base):
         -------
         - number: 
         """
-        return self._get_attribute('startTimeAsTicks')
+        return self._get_attribute(self._SDM_ATT_MAP['StartTimeAsTicks'])
     @StartTimeAsTicks.setter
     def StartTimeAsTicks(self, value):
-        self._set_attribute('startTimeAsTicks', value)
+        self._set_attribute(self._SDM_ATT_MAP['StartTimeAsTicks'], value)
 
     @property
     def State(self):
@@ -192,10 +217,10 @@ class Test(Base):
         -------
         - str(cancelled | cpDpConvergenceNotReached | fail | failedCriteria | pass | preflightCheck | preflightFail | ribInConvergenceThresholdNotReached | running | skipped | waitingForStart): 
         """
-        return self._get_attribute('state')
+        return self._get_attribute(self._SDM_ATT_MAP['State'])
     @State.setter
     def State(self, value):
-        self._set_attribute('state', value)
+        self._set_attribute(self._SDM_ATT_MAP['State'], value)
 
     @property
     def SupportsMonitoring(self):
@@ -204,7 +229,7 @@ class Test(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('supportsMonitoring')
+        return self._get_attribute(self._SDM_ATT_MAP['SupportsMonitoring'])
 
     @property
     def SupportsTiming(self):
@@ -213,7 +238,7 @@ class Test(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('supportsTiming')
+        return self._get_attribute(self._SDM_ATT_MAP['SupportsTiming'])
 
     @property
     def TimingPort(self):
@@ -222,10 +247,10 @@ class Test(Base):
         -------
         - str: 
         """
-        return self._get_attribute('timingPort')
+        return self._get_attribute(self._SDM_ATT_MAP['TimingPort'])
     @TimingPort.setter
     def TimingPort(self, value):
-        self._set_attribute('timingPort', value)
+        self._set_attribute(self._SDM_ATT_MAP['TimingPort'], value)
 
     @property
     def TimingTopologyId(self):
@@ -234,7 +259,7 @@ class Test(Base):
         -------
         - str: 
         """
-        return self._get_attribute('timingTopologyId')
+        return self._get_attribute(self._SDM_ATT_MAP['TimingTopologyId'])
 
     @property
     def TimingTrafficItemId(self):
@@ -243,7 +268,7 @@ class Test(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem): 
         """
-        return self._get_attribute('timingTrafficItemId')
+        return self._get_attribute(self._SDM_ATT_MAP['TimingTrafficItemId'])
 
     @property
     def TrackBy(self):
@@ -252,10 +277,10 @@ class Test(Base):
         -------
         - list(str): 
         """
-        return self._get_attribute('trackBy')
+        return self._get_attribute(self._SDM_ATT_MAP['TrackBy'])
     @TrackBy.setter
     def TrackBy(self, value):
-        self._set_attribute('trackBy', value)
+        self._set_attribute(self._SDM_ATT_MAP['TrackBy'], value)
 
     @property
     def TrafficItemIds(self):
@@ -264,10 +289,10 @@ class Test(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem]): 
         """
-        return self._get_attribute('trafficItemIds')
+        return self._get_attribute(self._SDM_ATT_MAP['TrafficItemIds'])
     @TrafficItemIds.setter
     def TrafficItemIds(self, value):
-        self._set_attribute('trafficItemIds', value)
+        self._set_attribute(self._SDM_ATT_MAP['TrafficItemIds'], value)
 
     def update(self, Enabled=None, EndTimeAsTicks=None, MonitorPorts=None, Repeat=None, StartTimeAsTicks=None, State=None, TimingPort=None, TrackBy=None, TrafficItemIds=None):
         """Updates test resource on the server.
@@ -288,7 +313,7 @@ class Test(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, AvailableTrackBy=None, ConfigId=None, Enabled=None, EndTime=None, EndTimeAsTicks=None, IncrementalState=None, MonitorPorts=None, MonitorTrafficItemId=None, NowTime=None, PreflightCheckState=None, PreflightComplete=None, QuickTestId=None, Repeat=None, StartTime=None, StartTimeAsTicks=None, State=None, SupportsMonitoring=None, SupportsTiming=None, TimingPort=None, TimingTopologyId=None, TimingTrafficItemId=None, TrackBy=None, TrafficItemIds=None):
         """Finds and retrieves test resources from the server.
@@ -331,7 +356,7 @@ class Test(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of test data from the server.

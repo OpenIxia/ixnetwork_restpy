@@ -32,6 +32,13 @@ class Layer23TrafficFlowFilter(Base):
 
     __slots__ = ()
     _SDM_NAME = 'layer23TrafficFlowFilter'
+    _SDM_ATT_MAP = {
+        'AggregatedAcrossPorts': 'aggregatedAcrossPorts',
+        'EgressLatencyBinDisplayOption': 'egressLatencyBinDisplayOption',
+        'PortFilterIds': 'portFilterIds',
+        'TrafficItemFilterId': 'trafficItemFilterId',
+        'TrafficItemFilterIds': 'trafficItemFilterIds',
+    }
 
     def __init__(self, parent):
         super(Layer23TrafficFlowFilter, self).__init__(parent)
@@ -71,10 +78,10 @@ class Layer23TrafficFlowFilter(Base):
         -------
         - bool: If true, displays aggregated stat value across ports selected by portFilterIds. Default = false
         """
-        return self._get_attribute('aggregatedAcrossPorts')
+        return self._get_attribute(self._SDM_ATT_MAP['AggregatedAcrossPorts'])
     @AggregatedAcrossPorts.setter
     def AggregatedAcrossPorts(self, value):
-        self._set_attribute('aggregatedAcrossPorts', value)
+        self._set_attribute(self._SDM_ATT_MAP['AggregatedAcrossPorts'], value)
 
     @property
     def EgressLatencyBinDisplayOption(self):
@@ -83,10 +90,10 @@ class Layer23TrafficFlowFilter(Base):
         -------
         - str(none | showEgressFlatView | showEgressRows | showLatencyBinStats): Emulates Latency Bin SV or Egress Tracking SV.
         """
-        return self._get_attribute('egressLatencyBinDisplayOption')
+        return self._get_attribute(self._SDM_ATT_MAP['EgressLatencyBinDisplayOption'])
     @EgressLatencyBinDisplayOption.setter
     def EgressLatencyBinDisplayOption(self, value):
-        self._set_attribute('egressLatencyBinDisplayOption', value)
+        self._set_attribute(self._SDM_ATT_MAP['EgressLatencyBinDisplayOption'], value)
 
     @property
     def PortFilterIds(self):
@@ -95,10 +102,10 @@ class Layer23TrafficFlowFilter(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter]): Selected port filters from the availablePortFilter list.
         """
-        return self._get_attribute('portFilterIds')
+        return self._get_attribute(self._SDM_ATT_MAP['PortFilterIds'])
     @PortFilterIds.setter
     def PortFilterIds(self, value):
-        self._set_attribute('portFilterIds', value)
+        self._set_attribute(self._SDM_ATT_MAP['PortFilterIds'], value)
 
     @property
     def TrafficItemFilterId(self):
@@ -107,10 +114,10 @@ class Layer23TrafficFlowFilter(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrafficItemFilter): Selected traffic item filter from the availableTrafficItemFilter list.
         """
-        return self._get_attribute('trafficItemFilterId')
+        return self._get_attribute(self._SDM_ATT_MAP['TrafficItemFilterId'])
     @TrafficItemFilterId.setter
     def TrafficItemFilterId(self, value):
-        self._set_attribute('trafficItemFilterId', value)
+        self._set_attribute(self._SDM_ATT_MAP['TrafficItemFilterId'], value)
 
     @property
     def TrafficItemFilterIds(self):
@@ -119,10 +126,10 @@ class Layer23TrafficFlowFilter(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrafficItemFilter]): Selected traffic item filters from the availableTrafficItemFilter list.
         """
-        return self._get_attribute('trafficItemFilterIds')
+        return self._get_attribute(self._SDM_ATT_MAP['TrafficItemFilterIds'])
     @TrafficItemFilterIds.setter
     def TrafficItemFilterIds(self, value):
-        self._set_attribute('trafficItemFilterIds', value)
+        self._set_attribute(self._SDM_ATT_MAP['TrafficItemFilterIds'], value)
 
     def update(self, AggregatedAcrossPorts=None, EgressLatencyBinDisplayOption=None, PortFilterIds=None, TrafficItemFilterId=None, TrafficItemFilterIds=None):
         """Updates layer23TrafficFlowFilter resource on the server.
@@ -139,7 +146,7 @@ class Layer23TrafficFlowFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AggregatedAcrossPorts=None, EgressLatencyBinDisplayOption=None, PortFilterIds=None, TrafficItemFilterId=None, TrafficItemFilterIds=None):
         """Adds a new layer23TrafficFlowFilter resource on the server and adds it to the container.
@@ -160,7 +167,7 @@ class Layer23TrafficFlowFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained layer23TrafficFlowFilter resources in this instance from the server.
@@ -195,7 +202,7 @@ class Layer23TrafficFlowFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of layer23TrafficFlowFilter data from the server.

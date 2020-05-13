@@ -30,6 +30,10 @@ class InnerGlobalStats(Base):
 
     __slots__ = ()
     _SDM_NAME = 'innerGlobalStats'
+    _SDM_ATT_MAP = {
+        'ColumnCaptions': 'columnCaptions',
+        'RowValues': 'rowValues',
+    }
 
     def __init__(self, parent):
         super(InnerGlobalStats, self).__init__(parent)
@@ -41,7 +45,7 @@ class InnerGlobalStats(Base):
         -------
         - list(str): NOT DEFINED
         """
-        return self._get_attribute('columnCaptions')
+        return self._get_attribute(self._SDM_ATT_MAP['ColumnCaptions'])
 
     @property
     def RowValues(self):
@@ -50,4 +54,4 @@ class InnerGlobalStats(Base):
         -------
         - list(str): NOT DEFINED
         """
-        return self._get_attribute('rowValues')
+        return self._get_attribute(self._SDM_ATT_MAP['RowValues'])

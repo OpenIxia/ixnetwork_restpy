@@ -30,6 +30,12 @@ class BitError(Base):
 
     __slots__ = ()
     _SDM_NAME = 'bitError'
+    _SDM_ATT_MAP = {
+        'Enabled': 'enabled',
+        'LogRate': 'logRate',
+        'SkipEndOctets': 'skipEndOctets',
+        'SkipStartOctets': 'skipStartOctets',
+    }
 
     def __init__(self, parent):
         super(BitError, self).__init__(parent)
@@ -41,10 +47,10 @@ class BitError(Base):
         -------
         - bool: If true, periodically introduce bit errors.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def LogRate(self):
@@ -53,10 +59,10 @@ class BitError(Base):
         -------
         - number: If logRate is n, error one out of 10^n bits.
         """
-        return self._get_attribute('logRate')
+        return self._get_attribute(self._SDM_ATT_MAP['LogRate'])
     @LogRate.setter
     def LogRate(self, value):
-        self._set_attribute('logRate', value)
+        self._set_attribute(self._SDM_ATT_MAP['LogRate'], value)
 
     @property
     def SkipEndOctets(self):
@@ -65,10 +71,10 @@ class BitError(Base):
         -------
         - number: Number of octets to skip at the end of each packet when erroring bits.
         """
-        return self._get_attribute('skipEndOctets')
+        return self._get_attribute(self._SDM_ATT_MAP['SkipEndOctets'])
     @SkipEndOctets.setter
     def SkipEndOctets(self, value):
-        self._set_attribute('skipEndOctets', value)
+        self._set_attribute(self._SDM_ATT_MAP['SkipEndOctets'], value)
 
     @property
     def SkipStartOctets(self):
@@ -77,10 +83,10 @@ class BitError(Base):
         -------
         - number: Number of octets to skip at the start of each packet when erroring bits.
         """
-        return self._get_attribute('skipStartOctets')
+        return self._get_attribute(self._SDM_ATT_MAP['SkipStartOctets'])
     @SkipStartOctets.setter
     def SkipStartOctets(self, value):
-        self._set_attribute('skipStartOctets', value)
+        self._set_attribute(self._SDM_ATT_MAP['SkipStartOctets'], value)
 
     def update(self, Enabled=None, LogRate=None, SkipEndOctets=None, SkipStartOctets=None):
         """Updates bitError resource on the server.
@@ -96,4 +102,4 @@ class BitError(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

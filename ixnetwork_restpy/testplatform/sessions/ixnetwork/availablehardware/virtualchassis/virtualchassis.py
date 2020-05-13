@@ -30,6 +30,13 @@ class VirtualChassis(Base):
 
     __slots__ = ()
     _SDM_NAME = 'virtualChassis'
+    _SDM_ATT_MAP = {
+        'EnableLicenseCheck': 'enableLicenseCheck',
+        'Hostname': 'hostname',
+        'LicenseServer': 'licenseServer',
+        'NtpServer': 'ntpServer',
+        'StartTxDelay': 'startTxDelay',
+    }
 
     def __init__(self, parent):
         super(VirtualChassis, self).__init__(parent)
@@ -83,10 +90,10 @@ class VirtualChassis(Base):
         -------
         - bool: Enables license check on port connect
         """
-        return self._get_attribute('enableLicenseCheck')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableLicenseCheck'])
     @EnableLicenseCheck.setter
     def EnableLicenseCheck(self, value):
-        self._set_attribute('enableLicenseCheck', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableLicenseCheck'], value)
 
     @property
     def Hostname(self):
@@ -95,7 +102,7 @@ class VirtualChassis(Base):
         -------
         - str: Virtual Chassis hostname or IP
         """
-        return self._get_attribute('hostname')
+        return self._get_attribute(self._SDM_ATT_MAP['Hostname'])
 
     @property
     def LicenseServer(self):
@@ -104,10 +111,10 @@ class VirtualChassis(Base):
         -------
         - str: The address of the license server
         """
-        return self._get_attribute('licenseServer')
+        return self._get_attribute(self._SDM_ATT_MAP['LicenseServer'])
     @LicenseServer.setter
     def LicenseServer(self, value):
-        self._set_attribute('licenseServer', value)
+        self._set_attribute(self._SDM_ATT_MAP['LicenseServer'], value)
 
     @property
     def NtpServer(self):
@@ -116,10 +123,10 @@ class VirtualChassis(Base):
         -------
         - str: The address of the NTP server
         """
-        return self._get_attribute('ntpServer')
+        return self._get_attribute(self._SDM_ATT_MAP['NtpServer'])
     @NtpServer.setter
     def NtpServer(self, value):
-        self._set_attribute('ntpServer', value)
+        self._set_attribute(self._SDM_ATT_MAP['NtpServer'], value)
 
     @property
     def StartTxDelay(self):
@@ -128,10 +135,10 @@ class VirtualChassis(Base):
         -------
         - str: The delay amount for transmit
         """
-        return self._get_attribute('startTxDelay')
+        return self._get_attribute(self._SDM_ATT_MAP['StartTxDelay'])
     @StartTxDelay.setter
     def StartTxDelay(self, value):
-        self._set_attribute('startTxDelay', value)
+        self._set_attribute(self._SDM_ATT_MAP['StartTxDelay'], value)
 
     def update(self, EnableLicenseCheck=None, LicenseServer=None, NtpServer=None, StartTxDelay=None):
         """Updates virtualChassis resource on the server.
@@ -147,4 +154,4 @@ class VirtualChassis(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

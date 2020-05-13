@@ -32,6 +32,11 @@ class NacSequence(Base):
 
     __slots__ = ()
     _SDM_NAME = 'nacSequence'
+    _SDM_ATT_MAP = {
+        'NacPostures': 'nacPostures',
+        'Name': 'name',
+        'ObjectId': 'objectId',
+    }
 
     def __init__(self, parent):
         super(NacSequence, self).__init__(parent)
@@ -43,10 +48,10 @@ class NacSequence(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/globals/.../nacPosture]): List of NacPostures.
         """
-        return self._get_attribute('nacPostures')
+        return self._get_attribute(self._SDM_ATT_MAP['NacPostures'])
     @NacPostures.setter
     def NacPostures(self, value):
-        self._set_attribute('nacPostures', value)
+        self._set_attribute(self._SDM_ATT_MAP['NacPostures'], value)
 
     @property
     def Name(self):
@@ -55,10 +60,10 @@ class NacSequence(Base):
         -------
         - str: Unique name for this NAC Sequence.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
@@ -67,7 +72,7 @@ class NacSequence(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def update(self, NacPostures=None, Name=None):
         """Updates nacSequence resource on the server.
@@ -81,7 +86,7 @@ class NacSequence(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, NacPostures=None, Name=None):
         """Adds a new nacSequence resource on the server and adds it to the container.
@@ -99,7 +104,7 @@ class NacSequence(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained nacSequence resources in this instance from the server.
@@ -132,7 +137,7 @@ class NacSequence(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of nacSequence data from the server.

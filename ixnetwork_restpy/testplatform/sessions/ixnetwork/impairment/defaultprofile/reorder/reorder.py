@@ -30,6 +30,12 @@ class Reorder(Base):
 
     __slots__ = ()
     _SDM_NAME = 'reorder'
+    _SDM_ATT_MAP = {
+        'ClusterSize': 'clusterSize',
+        'Enabled': 'enabled',
+        'PercentRate': 'percentRate',
+        'SkipCount': 'skipCount',
+    }
 
     def __init__(self, parent):
         super(Reorder, self).__init__(parent)
@@ -41,10 +47,10 @@ class Reorder(Base):
         -------
         - number: Number of packets to reorder on each occurrence.
         """
-        return self._get_attribute('clusterSize')
+        return self._get_attribute(self._SDM_ATT_MAP['ClusterSize'])
     @ClusterSize.setter
     def ClusterSize(self, value):
-        self._set_attribute('clusterSize', value)
+        self._set_attribute(self._SDM_ATT_MAP['ClusterSize'], value)
 
     @property
     def Enabled(self):
@@ -53,10 +59,10 @@ class Reorder(Base):
         -------
         - bool: If true, periodically reorder received packets.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def PercentRate(self):
@@ -65,10 +71,10 @@ class Reorder(Base):
         -------
         - number: How often to reorder packets.
         """
-        return self._get_attribute('percentRate')
+        return self._get_attribute(self._SDM_ATT_MAP['PercentRate'])
     @PercentRate.setter
     def PercentRate(self, value):
-        self._set_attribute('percentRate', value)
+        self._set_attribute(self._SDM_ATT_MAP['PercentRate'], value)
 
     @property
     def SkipCount(self):
@@ -77,10 +83,10 @@ class Reorder(Base):
         -------
         - number: How many packets to skip before sending the reordered packets.
         """
-        return self._get_attribute('skipCount')
+        return self._get_attribute(self._SDM_ATT_MAP['SkipCount'])
     @SkipCount.setter
     def SkipCount(self, value):
-        self._set_attribute('skipCount', value)
+        self._set_attribute(self._SDM_ATT_MAP['SkipCount'], value)
 
     def update(self, ClusterSize=None, Enabled=None, PercentRate=None, SkipCount=None):
         """Updates reorder resource on the server.
@@ -96,4 +102,4 @@ class Reorder(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

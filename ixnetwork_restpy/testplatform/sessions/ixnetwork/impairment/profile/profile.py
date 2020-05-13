@@ -32,6 +32,14 @@ class Profile(Base):
 
     __slots__ = ()
     _SDM_NAME = 'profile'
+    _SDM_ATT_MAP = {
+        'Links__': '__links__',
+        'AllLinks': 'allLinks',
+        'Enabled': 'enabled',
+        'Name': 'name',
+        'Priority': 'priority',
+        'ProfileId': 'profileId',
+    }
 
     def __init__(self, parent):
         super(Profile, self).__init__(parent)
@@ -55,13 +63,13 @@ class Profile(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.biterror.biterror.BitError): An instance of the BitError class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.biterror.biterror.BitError): An instance of the BitError class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.biterror.biterror import BitError
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.biterror.biterror import BitError
         return BitError(self)._select()
 
     @property
@@ -69,13 +77,13 @@ class Profile(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.checksums.checksums.Checksums): An instance of the Checksums class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.checksums.checksums.Checksums): An instance of the Checksums class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.checksums.checksums import Checksums
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.checksums.checksums import Checksums
         return Checksums(self)._select()
 
     @property
@@ -83,13 +91,13 @@ class Profile(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.customdelayvariation.customdelayvariation.CustomDelayVariation): An instance of the CustomDelayVariation class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.customdelayvariation.customdelayvariation.CustomDelayVariation): An instance of the CustomDelayVariation class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.customdelayvariation.customdelayvariation import CustomDelayVariation
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.customdelayvariation.customdelayvariation import CustomDelayVariation
         return CustomDelayVariation(self)._select()
 
     @property
@@ -97,13 +105,13 @@ class Profile(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.delay.delay.Delay): An instance of the Delay class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.delay.delay.Delay): An instance of the Delay class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.delay.delay import Delay
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.delay.delay import Delay
         return Delay(self)._select()
 
     @property
@@ -111,13 +119,13 @@ class Profile(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.delayvariation.delayvariation.DelayVariation): An instance of the DelayVariation class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.delayvariation.delayvariation.DelayVariation): An instance of the DelayVariation class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.delayvariation.delayvariation import DelayVariation
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.delayvariation.delayvariation import DelayVariation
         return DelayVariation(self)._select()
 
     @property
@@ -125,13 +133,13 @@ class Profile(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.drop.drop.Drop): An instance of the Drop class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.drop.drop.Drop): An instance of the Drop class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.drop.drop import Drop
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.drop.drop import Drop
         return Drop(self)._select()
 
     @property
@@ -139,13 +147,13 @@ class Profile(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.duplicate.duplicate.Duplicate): An instance of the Duplicate class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.duplicate.duplicate.Duplicate): An instance of the Duplicate class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.duplicate.duplicate import Duplicate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.duplicate.duplicate import Duplicate
         return Duplicate(self)._select()
 
     @property
@@ -167,13 +175,13 @@ class Profile(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.modifier.modifier.Modifier): An instance of the Modifier class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.modifier.modifier.Modifier): An instance of the Modifier class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.modifier.modifier import Modifier
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.modifier.modifier import Modifier
         return Modifier(self)
 
     @property
@@ -181,13 +189,13 @@ class Profile(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.reorder.reorder.Reorder): An instance of the Reorder class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.reorder.reorder.Reorder): An instance of the Reorder class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.reorder.reorder import Reorder
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.reorder.reorder import Reorder
         return Reorder(self)._select()
 
     @property
@@ -195,26 +203,26 @@ class Profile(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.rxratelimit.rxratelimit.RxRateLimit): An instance of the RxRateLimit class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.rxratelimit.rxratelimit.RxRateLimit): An instance of the RxRateLimit class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.rxratelimit.rxratelimit import RxRateLimit
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.rxratelimit.rxratelimit import RxRateLimit
         return RxRateLimit(self)._select()
 
     @property
-    def __links__(self):
+    def Links__(self):
         """
         Returns
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/impairment/.../link]): List of references to impairment links.
         """
-        return self._get_attribute('__links__')
-    @__links__.setter
-    def __links__(self, value):
-        self._set_attribute('__links__', value)
+        return self._get_attribute(self._SDM_ATT_MAP['Links__'])
+    @Links__.setter
+    def Links__(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['Links__'], value)
 
     @property
     def AllLinks(self):
@@ -223,10 +231,10 @@ class Profile(Base):
         -------
         - bool: If true, apply the profile to all impairment links. If not, only apply the profile to packets on selected links.
         """
-        return self._get_attribute('allLinks')
+        return self._get_attribute(self._SDM_ATT_MAP['AllLinks'])
     @AllLinks.setter
     def AllLinks(self, value):
-        self._set_attribute('allLinks', value)
+        self._set_attribute(self._SDM_ATT_MAP['AllLinks'], value)
 
     @property
     def Enabled(self):
@@ -235,10 +243,10 @@ class Profile(Base):
         -------
         - bool: If true, enables the profile.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Name(self):
@@ -247,10 +255,10 @@ class Profile(Base):
         -------
         - str: The name of the profile.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def Priority(self):
@@ -259,10 +267,10 @@ class Profile(Base):
         -------
         - number: Profile priority. 1 is highest.
         """
-        return self._get_attribute('priority')
+        return self._get_attribute(self._SDM_ATT_MAP['Priority'])
     @Priority.setter
     def Priority(self, value):
-        self._set_attribute('priority', value)
+        self._set_attribute(self._SDM_ATT_MAP['Priority'], value)
 
     @property
     def ProfileId(self):
@@ -271,14 +279,14 @@ class Profile(Base):
         -------
         - number: A unique identifier for the profile. Read-only.
         """
-        return self._get_attribute('profileId')
+        return self._get_attribute(self._SDM_ATT_MAP['ProfileId'])
 
-    def update(self, __links__=None, AllLinks=None, Enabled=None, Name=None, Priority=None):
+    def update(self, Links__=None, AllLinks=None, Enabled=None, Name=None, Priority=None):
         """Updates profile resource on the server.
 
         Args
         ----
-        - __links__ (list(str[None | /api/v1/sessions/1/ixnetwork/impairment/.../link])): List of references to impairment links.
+        - Links__ (list(str[None | /api/v1/sessions/1/ixnetwork/impairment/.../link])): List of references to impairment links.
         - AllLinks (bool): If true, apply the profile to all impairment links. If not, only apply the profile to packets on selected links.
         - Enabled (bool): If true, enables the profile.
         - Name (str): The name of the profile.
@@ -288,14 +296,14 @@ class Profile(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, __links__=None, AllLinks=None, Enabled=None, Name=None, Priority=None):
+    def add(self, Links__=None, AllLinks=None, Enabled=None, Name=None, Priority=None):
         """Adds a new profile resource on the server and adds it to the container.
 
         Args
         ----
-        - __links__ (list(str[None | /api/v1/sessions/1/ixnetwork/impairment/.../link])): List of references to impairment links.
+        - Links__ (list(str[None | /api/v1/sessions/1/ixnetwork/impairment/.../link])): List of references to impairment links.
         - AllLinks (bool): If true, apply the profile to all impairment links. If not, only apply the profile to packets on selected links.
         - Enabled (bool): If true, enables the profile.
         - Name (str): The name of the profile.
@@ -309,7 +317,7 @@ class Profile(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained profile resources in this instance from the server.
@@ -321,7 +329,7 @@ class Profile(Base):
         """
         self._delete()
 
-    def find(self, __links__=None, AllLinks=None, Enabled=None, Name=None, Priority=None, ProfileId=None):
+    def find(self, Links__=None, AllLinks=None, Enabled=None, Name=None, Priority=None, ProfileId=None):
         """Finds and retrieves profile resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve profile resources from the server.
@@ -330,7 +338,7 @@ class Profile(Base):
 
         Args
         ----
-        - __links__ (list(str[None | /api/v1/sessions/1/ixnetwork/impairment/.../link])): List of references to impairment links.
+        - Links__ (list(str[None | /api/v1/sessions/1/ixnetwork/impairment/.../link])): List of references to impairment links.
         - AllLinks (bool): If true, apply the profile to all impairment links. If not, only apply the profile to packets on selected links.
         - Enabled (bool): If true, enables the profile.
         - Name (str): The name of the profile.
@@ -345,7 +353,7 @@ class Profile(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of profile data from the server.

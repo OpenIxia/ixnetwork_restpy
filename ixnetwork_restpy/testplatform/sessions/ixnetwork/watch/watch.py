@@ -30,6 +30,9 @@ class Watch(Base):
 
     __slots__ = ()
     _SDM_NAME = 'watch'
+    _SDM_ATT_MAP = {
+        'DisabledWatches': 'disabledWatches',
+    }
 
     def __init__(self, parent):
         super(Watch, self).__init__(parent)
@@ -97,7 +100,7 @@ class Watch(Base):
         -------
         - list(number): 
         """
-        return self._get_attribute('disabledWatches')
+        return self._get_attribute(self._SDM_ATT_MAP['DisabledWatches'])
 
     def AddAttributeWatch(self, *args, **kwargs):
         """Executes the addAttributeWatch operation on the server.

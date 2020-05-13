@@ -30,6 +30,25 @@ class CertInfo(Base):
 
     __slots__ = ()
     _SDM_NAME = 'certInfo'
+    _SDM_ATT_MAP = {
+        'AltName': 'altName',
+        'CertFormat': 'certFormat',
+        'CertPath': 'certPath',
+        'City': 'city',
+        'Company': 'company',
+        'Country': 'country',
+        'Department': 'department',
+        'GetCACertOnly': 'getCACertOnly',
+        'KeyPath': 'keyPath',
+        'KeySize': 'keySize',
+        'KeyUsage': 'keyUsage',
+        'ObjectId': 'objectId',
+        'SameKeyFile': 'sameKeyFile',
+        'SendCACertOnly': 'sendCACertOnly',
+        'ServerUrl': 'serverUrl',
+        'State': 'state',
+        'UseCertServer': 'useCertServer',
+    }
 
     def __init__(self, parent):
         super(CertInfo, self).__init__(parent)
@@ -41,10 +60,10 @@ class CertInfo(Base):
         -------
         - str: Other Options - Alternative Subject Name
         """
-        return self._get_attribute('altName')
+        return self._get_attribute(self._SDM_ATT_MAP['AltName'])
     @AltName.setter
     def AltName(self, value):
-        self._set_attribute('altName', value)
+        self._set_attribute(self._SDM_ATT_MAP['AltName'], value)
 
     @property
     def CertFormat(self):
@@ -53,10 +72,10 @@ class CertInfo(Base):
         -------
         - str: Required.
         """
-        return self._get_attribute('certFormat')
+        return self._get_attribute(self._SDM_ATT_MAP['CertFormat'])
     @CertFormat.setter
     def CertFormat(self, value):
-        self._set_attribute('certFormat', value)
+        self._set_attribute(self._SDM_ATT_MAP['CertFormat'], value)
 
     @property
     def CertPath(self):
@@ -65,10 +84,10 @@ class CertInfo(Base):
         -------
         - str: The path to certificate files.
         """
-        return self._get_attribute('certPath')
+        return self._get_attribute(self._SDM_ATT_MAP['CertPath'])
     @CertPath.setter
     def CertPath(self, value):
-        self._set_attribute('certPath', value)
+        self._set_attribute(self._SDM_ATT_MAP['CertPath'], value)
 
     @property
     def City(self):
@@ -77,10 +96,10 @@ class CertInfo(Base):
         -------
         - str: Identification Info - City
         """
-        return self._get_attribute('city')
+        return self._get_attribute(self._SDM_ATT_MAP['City'])
     @City.setter
     def City(self, value):
-        self._set_attribute('city', value)
+        self._set_attribute(self._SDM_ATT_MAP['City'], value)
 
     @property
     def Company(self):
@@ -89,10 +108,10 @@ class CertInfo(Base):
         -------
         - str: Identification Info - Company
         """
-        return self._get_attribute('company')
+        return self._get_attribute(self._SDM_ATT_MAP['Company'])
     @Company.setter
     def Company(self, value):
-        self._set_attribute('company', value)
+        self._set_attribute(self._SDM_ATT_MAP['Company'], value)
 
     @property
     def Country(self):
@@ -101,10 +120,10 @@ class CertInfo(Base):
         -------
         - str: Identification Info - Country
         """
-        return self._get_attribute('country')
+        return self._get_attribute(self._SDM_ATT_MAP['Country'])
     @Country.setter
     def Country(self, value):
-        self._set_attribute('country', value)
+        self._set_attribute(self._SDM_ATT_MAP['Country'], value)
 
     @property
     def Department(self):
@@ -113,10 +132,10 @@ class CertInfo(Base):
         -------
         - str: Identification Info - Department
         """
-        return self._get_attribute('department')
+        return self._get_attribute(self._SDM_ATT_MAP['Department'])
     @Department.setter
     def Department(self, value):
-        self._set_attribute('department', value)
+        self._set_attribute(self._SDM_ATT_MAP['Department'], value)
 
     @property
     def GetCACertOnly(self):
@@ -125,10 +144,10 @@ class CertInfo(Base):
         -------
         - bool: Obtain only the CA certificate.
         """
-        return self._get_attribute('getCACertOnly')
+        return self._get_attribute(self._SDM_ATT_MAP['GetCACertOnly'])
     @GetCACertOnly.setter
     def GetCACertOnly(self, value):
-        self._set_attribute('getCACertOnly', value)
+        self._set_attribute(self._SDM_ATT_MAP['GetCACertOnly'], value)
 
     @property
     def KeyPath(self):
@@ -137,10 +156,10 @@ class CertInfo(Base):
         -------
         - str: The path to key files.
         """
-        return self._get_attribute('keyPath')
+        return self._get_attribute(self._SDM_ATT_MAP['KeyPath'])
     @KeyPath.setter
     def KeyPath(self, value):
-        self._set_attribute('keyPath', value)
+        self._set_attribute(self._SDM_ATT_MAP['KeyPath'], value)
 
     @property
     def KeySize(self):
@@ -149,10 +168,10 @@ class CertInfo(Base):
         -------
         - number: Key Options - Key Size
         """
-        return self._get_attribute('keySize')
+        return self._get_attribute(self._SDM_ATT_MAP['KeySize'])
     @KeySize.setter
     def KeySize(self, value):
-        self._set_attribute('keySize', value)
+        self._set_attribute(self._SDM_ATT_MAP['KeySize'], value)
 
     @property
     def KeyUsage(self):
@@ -161,10 +180,10 @@ class CertInfo(Base):
         -------
         - str: Key Options - Key Usage
         """
-        return self._get_attribute('keyUsage')
+        return self._get_attribute(self._SDM_ATT_MAP['KeyUsage'])
     @KeyUsage.setter
     def KeyUsage(self, value):
-        self._set_attribute('keyUsage', value)
+        self._set_attribute(self._SDM_ATT_MAP['KeyUsage'], value)
 
     @property
     def ObjectId(self):
@@ -173,7 +192,7 @@ class CertInfo(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def SameKeyFile(self):
@@ -182,10 +201,10 @@ class CertInfo(Base):
         -------
         - bool: Required.
         """
-        return self._get_attribute('sameKeyFile')
+        return self._get_attribute(self._SDM_ATT_MAP['SameKeyFile'])
     @SameKeyFile.setter
     def SameKeyFile(self, value):
-        self._set_attribute('sameKeyFile', value)
+        self._set_attribute(self._SDM_ATT_MAP['SameKeyFile'], value)
 
     @property
     def SendCACertOnly(self):
@@ -194,10 +213,10 @@ class CertInfo(Base):
         -------
         - bool: Send only the CA certificate.
         """
-        return self._get_attribute('sendCACertOnly')
+        return self._get_attribute(self._SDM_ATT_MAP['SendCACertOnly'])
     @SendCACertOnly.setter
     def SendCACertOnly(self, value):
-        self._set_attribute('sendCACertOnly', value)
+        self._set_attribute(self._SDM_ATT_MAP['SendCACertOnly'], value)
 
     @property
     def ServerUrl(self):
@@ -206,10 +225,10 @@ class CertInfo(Base):
         -------
         - str: Cerficate Server URL
         """
-        return self._get_attribute('serverUrl')
+        return self._get_attribute(self._SDM_ATT_MAP['ServerUrl'])
     @ServerUrl.setter
     def ServerUrl(self, value):
-        self._set_attribute('serverUrl', value)
+        self._set_attribute(self._SDM_ATT_MAP['ServerUrl'], value)
 
     @property
     def State(self):
@@ -218,10 +237,10 @@ class CertInfo(Base):
         -------
         - str: Identification Info - State
         """
-        return self._get_attribute('state')
+        return self._get_attribute(self._SDM_ATT_MAP['State'])
     @State.setter
     def State(self, value):
-        self._set_attribute('state', value)
+        self._set_attribute(self._SDM_ATT_MAP['State'], value)
 
     @property
     def UseCertServer(self):
@@ -230,10 +249,10 @@ class CertInfo(Base):
         -------
         - bool: This value is true if the certificates are obtained from a certificate server.
         """
-        return self._get_attribute('useCertServer')
+        return self._get_attribute(self._SDM_ATT_MAP['UseCertServer'])
     @UseCertServer.setter
     def UseCertServer(self, value):
-        self._set_attribute('useCertServer', value)
+        self._set_attribute(self._SDM_ATT_MAP['UseCertServer'], value)
 
     def update(self, AltName=None, CertFormat=None, CertPath=None, City=None, Company=None, Country=None, Department=None, GetCACertOnly=None, KeyPath=None, KeySize=None, KeyUsage=None, SameKeyFile=None, SendCACertOnly=None, ServerUrl=None, State=None, UseCertServer=None):
         """Updates certInfo resource on the server.
@@ -261,4 +280,4 @@ class CertInfo(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

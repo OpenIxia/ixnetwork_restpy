@@ -32,6 +32,11 @@ class NacApps(Base):
 
     __slots__ = ()
     _SDM_NAME = 'nacApps'
+    _SDM_ATT_MAP = {
+        'Name': 'name',
+        'ObjectId': 'objectId',
+        'Value': 'value',
+    }
 
     def __init__(self, parent):
         super(NacApps, self).__init__(parent)
@@ -43,10 +48,10 @@ class NacApps(Base):
         -------
         - str: AppCode Name.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
@@ -55,7 +60,7 @@ class NacApps(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def Value(self):
@@ -64,10 +69,10 @@ class NacApps(Base):
         -------
         - number: AppCode ID.
         """
-        return self._get_attribute('value')
+        return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
-        self._set_attribute('value', value)
+        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Name=None, Value=None):
         """Updates nacApps resource on the server.
@@ -81,7 +86,7 @@ class NacApps(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None, Value=None):
         """Adds a new nacApps resource on the server and adds it to the container.
@@ -99,7 +104,7 @@ class NacApps(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained nacApps resources in this instance from the server.
@@ -132,7 +137,7 @@ class NacApps(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of nacApps data from the server.

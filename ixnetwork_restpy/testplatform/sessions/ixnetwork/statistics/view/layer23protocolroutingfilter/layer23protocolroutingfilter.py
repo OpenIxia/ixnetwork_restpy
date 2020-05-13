@@ -32,6 +32,10 @@ class Layer23ProtocolRoutingFilter(Base):
 
     __slots__ = ()
     _SDM_NAME = 'layer23ProtocolRoutingFilter'
+    _SDM_ATT_MAP = {
+        'PortFilterIds': 'portFilterIds',
+        'ProtocolFilterIds': 'protocolFilterIds',
+    }
 
     def __init__(self, parent):
         super(Layer23ProtocolRoutingFilter, self).__init__(parent)
@@ -43,10 +47,10 @@ class Layer23ProtocolRoutingFilter(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter]): Ports that have been filtered.
         """
-        return self._get_attribute('portFilterIds')
+        return self._get_attribute(self._SDM_ATT_MAP['PortFilterIds'])
     @PortFilterIds.setter
     def PortFilterIds(self, value):
-        self._set_attribute('portFilterIds', value)
+        self._set_attribute(self._SDM_ATT_MAP['PortFilterIds'], value)
 
     @property
     def ProtocolFilterIds(self):
@@ -55,10 +59,10 @@ class Layer23ProtocolRoutingFilter(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolFilter]): Protocols that have been filtered.
         """
-        return self._get_attribute('protocolFilterIds')
+        return self._get_attribute(self._SDM_ATT_MAP['ProtocolFilterIds'])
     @ProtocolFilterIds.setter
     def ProtocolFilterIds(self, value):
-        self._set_attribute('protocolFilterIds', value)
+        self._set_attribute(self._SDM_ATT_MAP['ProtocolFilterIds'], value)
 
     def update(self, PortFilterIds=None, ProtocolFilterIds=None):
         """Updates layer23ProtocolRoutingFilter resource on the server.
@@ -72,7 +76,7 @@ class Layer23ProtocolRoutingFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, PortFilterIds=None, ProtocolFilterIds=None):
         """Adds a new layer23ProtocolRoutingFilter resource on the server and adds it to the container.
@@ -90,7 +94,7 @@ class Layer23ProtocolRoutingFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained layer23ProtocolRoutingFilter resources in this instance from the server.
@@ -122,7 +126,7 @@ class Layer23ProtocolRoutingFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of layer23ProtocolRoutingFilter data from the server.

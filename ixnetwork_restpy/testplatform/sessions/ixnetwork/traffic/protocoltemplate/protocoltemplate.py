@@ -31,6 +31,11 @@ class ProtocolTemplate(Base):
 
     __slots__ = ()
     _SDM_NAME = 'protocolTemplate'
+    _SDM_ATT_MAP = {
+        'DisplayName': 'displayName',
+        'StackTypeId': 'stackTypeId',
+        'TemplateName': 'templateName',
+    }
 
     def __init__(self, parent):
         super(ProtocolTemplate, self).__init__(parent)
@@ -56,7 +61,7 @@ class ProtocolTemplate(Base):
         -------
         - str: The display name of the template.
         """
-        return self._get_attribute('displayName')
+        return self._get_attribute(self._SDM_ATT_MAP['DisplayName'])
 
     @property
     def StackTypeId(self):
@@ -65,7 +70,7 @@ class ProtocolTemplate(Base):
         -------
         - str: 
         """
-        return self._get_attribute('stackTypeId')
+        return self._get_attribute(self._SDM_ATT_MAP['StackTypeId'])
 
     @property
     def TemplateName(self):
@@ -74,7 +79,7 @@ class ProtocolTemplate(Base):
         -------
         - str: Indicates the protocol template name that is added to a packet.
         """
-        return self._get_attribute('templateName')
+        return self._get_attribute(self._SDM_ATT_MAP['TemplateName'])
 
     def find(self, DisplayName=None, StackTypeId=None, TemplateName=None):
         """Finds and retrieves protocolTemplate resources from the server.
@@ -97,7 +102,7 @@ class ProtocolTemplate(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of protocolTemplate data from the server.

@@ -31,6 +31,12 @@ class DiscoveredAppliance(Base):
 
     __slots__ = ()
     _SDM_NAME = 'discoveredAppliance'
+    _SDM_ATT_MAP = {
+        'ApplianceName': 'applianceName',
+        'ApplianceType': 'applianceType',
+        'InterfacesNumber': 'interfacesNumber',
+        'ManagementIp': 'managementIp',
+    }
 
     def __init__(self, parent):
         super(DiscoveredAppliance, self).__init__(parent)
@@ -56,7 +62,7 @@ class DiscoveredAppliance(Base):
         -------
         - str: Represents the appliance Name
         """
-        return self._get_attribute('applianceName')
+        return self._get_attribute(self._SDM_ATT_MAP['ApplianceName'])
 
     @property
     def ApplianceType(self):
@@ -65,7 +71,7 @@ class DiscoveredAppliance(Base):
         -------
         - str(qemu | vCenter | vmware): Represents the appliance host type
         """
-        return self._get_attribute('applianceType')
+        return self._get_attribute(self._SDM_ATT_MAP['ApplianceType'])
 
     @property
     def InterfacesNumber(self):
@@ -74,7 +80,7 @@ class DiscoveredAppliance(Base):
         -------
         - number: Represents the number of test interfaces
         """
-        return self._get_attribute('interfacesNumber')
+        return self._get_attribute(self._SDM_ATT_MAP['InterfacesNumber'])
 
     @property
     def ManagementIp(self):
@@ -83,7 +89,7 @@ class DiscoveredAppliance(Base):
         -------
         - str: Represents the management Ip
         """
-        return self._get_attribute('managementIp')
+        return self._get_attribute(self._SDM_ATT_MAP['ManagementIp'])
 
     def find(self, ApplianceName=None, ApplianceType=None, InterfacesNumber=None, ManagementIp=None):
         """Finds and retrieves discoveredAppliance resources from the server.
@@ -107,7 +113,7 @@ class DiscoveredAppliance(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of discoveredAppliance data from the server.

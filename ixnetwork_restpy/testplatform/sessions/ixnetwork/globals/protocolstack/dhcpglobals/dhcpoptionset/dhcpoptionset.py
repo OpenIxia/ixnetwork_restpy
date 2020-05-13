@@ -32,6 +32,12 @@ class DhcpOptionSet(Base):
 
     __slots__ = ()
     _SDM_NAME = 'dhcpOptionSet'
+    _SDM_ATT_MAP = {
+        'Defaultp': 'defaultp',
+        'IpType': 'ipType',
+        'Name': 'name',
+        'ObjectId': 'objectId',
+    }
 
     def __init__(self, parent):
         super(DhcpOptionSet, self).__init__(parent)
@@ -57,10 +63,10 @@ class DhcpOptionSet(Base):
         -------
         - bool: True to assign this option set to new ranges.
         """
-        return self._get_attribute('defaultp')
+        return self._get_attribute(self._SDM_ATT_MAP['Defaultp'])
     @Defaultp.setter
     def Defaultp(self, value):
-        self._set_attribute('defaultp', value)
+        self._set_attribute(self._SDM_ATT_MAP['Defaultp'], value)
 
     @property
     def IpType(self):
@@ -69,10 +75,10 @@ class DhcpOptionSet(Base):
         -------
         - str: The IP version used with this option set.
         """
-        return self._get_attribute('ipType')
+        return self._get_attribute(self._SDM_ATT_MAP['IpType'])
     @IpType.setter
     def IpType(self, value):
-        self._set_attribute('ipType', value)
+        self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
 
     @property
     def Name(self):
@@ -81,10 +87,10 @@ class DhcpOptionSet(Base):
         -------
         - str: Option set name.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
@@ -93,7 +99,7 @@ class DhcpOptionSet(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def update(self, Defaultp=None, IpType=None, Name=None):
         """Updates dhcpOptionSet resource on the server.
@@ -108,7 +114,7 @@ class DhcpOptionSet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Defaultp=None, IpType=None, Name=None):
         """Adds a new dhcpOptionSet resource on the server and adds it to the container.
@@ -127,7 +133,7 @@ class DhcpOptionSet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained dhcpOptionSet resources in this instance from the server.
@@ -161,7 +167,7 @@ class DhcpOptionSet(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of dhcpOptionSet data from the server.

@@ -32,6 +32,15 @@ class AdvancedCVFilters(Base):
 
     __slots__ = ()
     _SDM_NAME = 'advancedCVFilters'
+    _SDM_ATT_MAP = {
+        'AvailableFilterOptions': 'availableFilterOptions',
+        'AvailableGroupingOptions': 'availableGroupingOptions',
+        'Caption': 'caption',
+        'Expression': 'expression',
+        'Grouping': 'grouping',
+        'Protocol': 'protocol',
+        'SortingStats': 'sortingStats',
+    }
 
     def __init__(self, parent):
         super(AdvancedCVFilters, self).__init__(parent)
@@ -43,7 +52,7 @@ class AdvancedCVFilters(Base):
         -------
         - str: Returns a list of all the statistics and the operations available for filtering. Note- A protocol and a grouping must be set in order for this to work.
         """
-        return self._get_attribute('availableFilterOptions')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableFilterOptions'])
 
     @property
     def AvailableGroupingOptions(self):
@@ -52,7 +61,7 @@ class AdvancedCVFilters(Base):
         -------
         - str: Returns all the grouping options available. Note - A protocol must be set in order for this to work.
         """
-        return self._get_attribute('availableGroupingOptions')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableGroupingOptions'])
 
     @property
     def Caption(self):
@@ -61,10 +70,10 @@ class AdvancedCVFilters(Base):
         -------
         - str: Sets a name for the filter.
         """
-        return self._get_attribute('caption')
+        return self._get_attribute(self._SDM_ATT_MAP['Caption'])
     @Caption.setter
     def Caption(self, value):
-        self._set_attribute('caption', value)
+        self._set_attribute(self._SDM_ATT_MAP['Caption'], value)
 
     @property
     def Expression(self):
@@ -73,10 +82,10 @@ class AdvancedCVFilters(Base):
         -------
         - str: Specifies the filter body. This is a string that must have the specific format. This can be empty or no filter.The available operations and statistics can be obtained from availableFilterOptions.
         """
-        return self._get_attribute('expression')
+        return self._get_attribute(self._SDM_ATT_MAP['Expression'])
     @Expression.setter
     def Expression(self, value):
-        self._set_attribute('expression', value)
+        self._set_attribute(self._SDM_ATT_MAP['Expression'], value)
 
     @property
     def Grouping(self):
@@ -85,10 +94,10 @@ class AdvancedCVFilters(Base):
         -------
         - str: Sets a grouping for the filter.
         """
-        return self._get_attribute('grouping')
+        return self._get_attribute(self._SDM_ATT_MAP['Grouping'])
     @Grouping.setter
     def Grouping(self, value):
-        self._set_attribute('grouping', value)
+        self._set_attribute(self._SDM_ATT_MAP['Grouping'], value)
 
     @property
     def Protocol(self):
@@ -97,10 +106,10 @@ class AdvancedCVFilters(Base):
         -------
         - str: Sets a protocol for the filter.
         """
-        return self._get_attribute('protocol')
+        return self._get_attribute(self._SDM_ATT_MAP['Protocol'])
     @Protocol.setter
     def Protocol(self, value):
-        self._set_attribute('protocol', value)
+        self._set_attribute(self._SDM_ATT_MAP['Protocol'], value)
 
     @property
     def SortingStats(self):
@@ -109,10 +118,10 @@ class AdvancedCVFilters(Base):
         -------
         - str: Specifies the list of statistics by which the view is sorted.
         """
-        return self._get_attribute('sortingStats')
+        return self._get_attribute(self._SDM_ATT_MAP['SortingStats'])
     @SortingStats.setter
     def SortingStats(self, value):
-        self._set_attribute('sortingStats', value)
+        self._set_attribute(self._SDM_ATT_MAP['SortingStats'], value)
 
     def update(self, Caption=None, Expression=None, Grouping=None, Protocol=None, SortingStats=None):
         """Updates advancedCVFilters resource on the server.
@@ -129,7 +138,7 @@ class AdvancedCVFilters(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Caption=None, Expression=None, Grouping=None, Protocol=None, SortingStats=None):
         """Adds a new advancedCVFilters resource on the server and adds it to the container.
@@ -150,7 +159,7 @@ class AdvancedCVFilters(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained advancedCVFilters resources in this instance from the server.
@@ -187,7 +196,7 @@ class AdvancedCVFilters(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of advancedCVFilters data from the server.

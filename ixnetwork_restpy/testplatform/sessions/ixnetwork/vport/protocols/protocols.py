@@ -31,6 +31,9 @@ class Protocols(Base):
 
     __slots__ = ()
     _SDM_NAME = 'protocols'
+    _SDM_ATT_MAP = {
+        'ProtocolMaxNodeCount': 'protocolMaxNodeCount',
+    }
 
     def __init__(self, parent):
         super(Protocols, self).__init__(parent)
@@ -40,13 +43,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.arp_4fee329103832d33634d1078aa4a0310.Arp): An instance of the Arp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.arp_02ad3a87af613c0238e23157d241afd5.Arp): An instance of the Arp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.arp_4fee329103832d33634d1078aa4a0310 import Arp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.arp_02ad3a87af613c0238e23157d241afd5 import Arp
         return Arp(self)
 
     @property
@@ -54,13 +57,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bfd_e23ab09912a2ef91e2ded2720f525774.Bfd): An instance of the Bfd class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bfd_d5e88ec401a1941c80be1a5a01aa0e3b.Bfd): An instance of the Bfd class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bfd_e23ab09912a2ef91e2ded2720f525774 import Bfd
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bfd_d5e88ec401a1941c80be1a5a01aa0e3b import Bfd
         return Bfd(self)._select()
 
     @property
@@ -68,13 +71,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bgp_0e8a1570b831f6d92cd7ed1a8442257b.Bgp): An instance of the Bgp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bgp_eaa18e059aea3db7489e5e5975c78393.Bgp): An instance of the Bgp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bgp_0e8a1570b831f6d92cd7ed1a8442257b import Bgp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bgp_eaa18e059aea3db7489e5e5975c78393 import Bgp
         return Bgp(self)._select()
 
     @property
@@ -82,13 +85,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cfm_c1742b75736db9d1da0fb731317ab337.Cfm): An instance of the Cfm class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cfm_a96182d068c89cc1a09d61bc9826454e.Cfm): An instance of the Cfm class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cfm_c1742b75736db9d1da0fb731317ab337 import Cfm
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cfm_a96182d068c89cc1a09d61bc9826454e import Cfm
         return Cfm(self)._select()
 
     @property
@@ -96,13 +99,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.eigrp_6949e2b033460aaef78ccb1fa44a7ab4.Eigrp): An instance of the Eigrp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.eigrp_8c0911879bb0fc33556819b581ef1cd5.Eigrp): An instance of the Eigrp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.eigrp_6949e2b033460aaef78ccb1fa44a7ab4 import Eigrp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.eigrp_8c0911879bb0fc33556819b581ef1cd5 import Eigrp
         return Eigrp(self)._select()
 
     @property
@@ -110,13 +113,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.elmi_de57cbdbc7817247497259f99ad1071f.Elmi): An instance of the Elmi class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.elmi_e04c43a1f4f61fd0c7e21feec7754432.Elmi): An instance of the Elmi class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.elmi_de57cbdbc7817247497259f99ad1071f import Elmi
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.elmi_e04c43a1f4f61fd0c7e21feec7754432 import Elmi
         return Elmi(self)._select()
 
     @property
@@ -124,13 +127,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.igmp_97e223b0e4a22ccebe603523da1eea72.Igmp): An instance of the Igmp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.igmp_7717b21b11446f768180acc03b74bf2f.Igmp): An instance of the Igmp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.igmp_97e223b0e4a22ccebe603523da1eea72 import Igmp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.igmp_7717b21b11446f768180acc03b74bf2f import Igmp
         return Igmp(self)._select()
 
     @property
@@ -138,13 +141,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.isis_29ce49fd418e8cbafce46cc31d9c2c49.Isis): An instance of the Isis class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.isis_ed275f3afdd4b191a3a0bf3a3e4fcf23.Isis): An instance of the Isis class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.isis_29ce49fd418e8cbafce46cc31d9c2c49 import Isis
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.isis_ed275f3afdd4b191a3a0bf3a3e4fcf23 import Isis
         return Isis(self)._select()
 
     @property
@@ -152,13 +155,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lacp_68f2c8c0edab1d36491ddbc7d38749a9.Lacp): An instance of the Lacp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lacp_c536b7fd522e328f25d1b7294149d8d5.Lacp): An instance of the Lacp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lacp_68f2c8c0edab1d36491ddbc7d38749a9 import Lacp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lacp_c536b7fd522e328f25d1b7294149d8d5 import Lacp
         return Lacp(self)._select()
 
     @property
@@ -166,13 +169,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ldp_ebb85dc5fabc8c5084139b88b2c606bb.Ldp): An instance of the Ldp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ldp_896c0d96a713502abc9340d8047a5f9d.Ldp): An instance of the Ldp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ldp_ebb85dc5fabc8c5084139b88b2c606bb import Ldp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ldp_896c0d96a713502abc9340d8047a5f9d import Ldp
         return Ldp(self)._select()
 
     @property
@@ -180,13 +183,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linkoam_818ab0363cf206da8ed88b16971f57ad.LinkOam): An instance of the LinkOam class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linkoam_5924c549b7c15a4bb415f30f997378d2.LinkOam): An instance of the LinkOam class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linkoam_818ab0363cf206da8ed88b16971f57ad import LinkOam
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linkoam_5924c549b7c15a4bb415f30f997378d2 import LinkOam
         return LinkOam(self)._select()
 
     @property
@@ -194,13 +197,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lisp_d301cfea7233ed11239d812f92e92eb2.Lisp): An instance of the Lisp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lisp_7412d0bff0b602ec68ba446d28f90626.Lisp): An instance of the Lisp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lisp_d301cfea7233ed11239d812f92e92eb2 import Lisp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lisp_7412d0bff0b602ec68ba446d28f90626 import Lisp
         return Lisp(self)._select()
 
     @property
@@ -208,13 +211,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mld_1265ede4da37798141cbe0c7663d6baf.Mld): An instance of the Mld class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mld_5565d47e4f085fea1bc35f872bf04d0d.Mld): An instance of the Mld class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mld_1265ede4da37798141cbe0c7663d6baf import Mld
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mld_5565d47e4f085fea1bc35f872bf04d0d import Mld
         return Mld(self)._select()
 
     @property
@@ -222,13 +225,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplsoam_b9d0135a0213e9f8f0788c2977da02f1.MplsOam): An instance of the MplsOam class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplsoam_c5ec6f5217261009d57292d968097bd8.MplsOam): An instance of the MplsOam class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplsoam_b9d0135a0213e9f8f0788c2977da02f1 import MplsOam
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplsoam_c5ec6f5217261009d57292d968097bd8 import MplsOam
         return MplsOam(self)._select()
 
     @property
@@ -236,13 +239,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplstp_bbaf10c4b7d4a48cf2e24e573b52dff7.MplsTp): An instance of the MplsTp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplstp_77f517ba5758139a40ffca4f733d6d7d.MplsTp): An instance of the MplsTp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplstp_bbaf10c4b7d4a48cf2e24e573b52dff7 import MplsTp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplstp_77f517ba5758139a40ffca4f733d6d7d import MplsTp
         return MplsTp(self)._select()
 
     @property
@@ -250,13 +253,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.openflow_1359f2d189d73f1cb1204f83bd22ec2d.OpenFlow): An instance of the OpenFlow class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.openflow_ade3a58bbdcdf92d5bc0db71ff6aa555.OpenFlow): An instance of the OpenFlow class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.openflow_1359f2d189d73f1cb1204f83bd22ec2d import OpenFlow
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.openflow_ade3a58bbdcdf92d5bc0db71ff6aa555 import OpenFlow
         return OpenFlow(self)._select()
 
     @property
@@ -264,13 +267,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ospf_41d7626c630d7a6559bcd053aa7e500e.Ospf): An instance of the Ospf class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ospf_ececb387932f5a00700a5d4ee1d36de9.Ospf): An instance of the Ospf class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ospf_41d7626c630d7a6559bcd053aa7e500e import Ospf
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ospf_ececb387932f5a00700a5d4ee1d36de9 import Ospf
         return Ospf(self)._select()
 
     @property
@@ -278,13 +281,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ospfv3_05c8bf0b9b983dc682c0862ff2aced73.OspfV3): An instance of the OspfV3 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ospfv3_34232cdb18da44847a8884d00dc4b2ba.OspfV3): An instance of the OspfV3 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ospfv3_05c8bf0b9b983dc682c0862ff2aced73 import OspfV3
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ospfv3_34232cdb18da44847a8884d00dc4b2ba import OspfV3
         return OspfV3(self)._select()
 
     @property
@@ -292,13 +295,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pimsm_82b0a1932030387a2e02e3ac4c4b4b4f.Pimsm): An instance of the Pimsm class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pimsm_33ba141f2aa1f04e67b06fb3580eec0d.Pimsm): An instance of the Pimsm class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pimsm_82b0a1932030387a2e02e3ac4c4b4b4f import Pimsm
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pimsm_33ba141f2aa1f04e67b06fb3580eec0d import Pimsm
         return Pimsm(self)._select()
 
     @property
@@ -306,13 +309,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ping_66825393e94292078b55be3ee95ac5c4.Ping): An instance of the Ping class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ping_0ede3677595a61e44be090b8970ef408.Ping): An instance of the Ping class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ping_66825393e94292078b55be3ee95ac5c4 import Ping
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ping_0ede3677595a61e44be090b8970ef408 import Ping
         return Ping(self)
 
     @property
@@ -320,13 +323,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rip_2af6cc81c0016359731788b96d21a306.Rip): An instance of the Rip class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rip_ad63955be154e2f3b80204b8ae6114dc.Rip): An instance of the Rip class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rip_2af6cc81c0016359731788b96d21a306 import Rip
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rip_ad63955be154e2f3b80204b8ae6114dc import Rip
         return Rip(self)._select()
 
     @property
@@ -334,13 +337,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ripng_1d16516d9110a83b1d310b4a1523fbf7.Ripng): An instance of the Ripng class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ripng_cf5e0e826b2079e4dfc76d9c1ce9f4e8.Ripng): An instance of the Ripng class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ripng_1d16516d9110a83b1d310b4a1523fbf7 import Ripng
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ripng_cf5e0e826b2079e4dfc76d9c1ce9f4e8 import Ripng
         return Ripng(self)._select()
 
     @property
@@ -348,13 +351,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rsvp_a2c25e4facabe86f4f47a1790af24f9f.Rsvp): An instance of the Rsvp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rsvp_94f31353a0f6b62a8a1920dfb1c87e99.Rsvp): An instance of the Rsvp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rsvp_a2c25e4facabe86f4f47a1790af24f9f import Rsvp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rsvp_94f31353a0f6b62a8a1920dfb1c87e99 import Rsvp
         return Rsvp(self)._select()
 
     @property
@@ -362,13 +365,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.static_e25e6f710e8423e8461ee5383ae00065.Static): An instance of the Static class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.static_6aeb02f98d8f1810c1a06cf568987348.Static): An instance of the Static class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.static_e25e6f710e8423e8461ee5383ae00065 import Static
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.static_6aeb02f98d8f1810c1a06cf568987348 import Static
         return Static(self)._select()
 
     @property
@@ -376,13 +379,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.stp_4b39b48c36395c2f6a8db957f0f6f7c5.Stp): An instance of the Stp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.stp_4de133a97c1f0320b38f5c69c651d367.Stp): An instance of the Stp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.stp_4b39b48c36395c2f6a8db957f0f6f7c5 import Stp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.stp_4de133a97c1f0320b38f5c69c651d367 import Stp
         return Stp(self)._select()
 
     @property
@@ -392,7 +395,7 @@ class Protocols(Base):
         -------
         - number: Shows maximum number of node.
         """
-        return self._get_attribute('protocolMaxNodeCount')
+        return self._get_attribute(self._SDM_ATT_MAP['ProtocolMaxNodeCount'])
 
     def find(self, ProtocolMaxNodeCount=None):
         """Finds and retrieves protocols resources from the server.
@@ -413,7 +416,7 @@ class Protocols(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of protocols data from the server.

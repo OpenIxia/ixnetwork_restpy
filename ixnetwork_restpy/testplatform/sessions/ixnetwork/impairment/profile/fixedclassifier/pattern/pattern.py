@@ -32,6 +32,15 @@ class Pattern(Base):
 
     __slots__ = ()
     _SDM_NAME = 'pattern'
+    _SDM_ATT_MAP = {
+        'BitOffset': 'bitOffset',
+        'Enabled': 'enabled',
+        'Mask': 'mask',
+        'Name': 'name',
+        'Offset': 'offset',
+        'Value': 'value',
+        'Width': 'width',
+    }
 
     def __init__(self, parent):
         super(Pattern, self).__init__(parent)
@@ -43,10 +52,10 @@ class Pattern(Base):
         -------
         - number: Bit offset within a byte. Starting point of the mask.
         """
-        return self._get_attribute('bitOffset')
+        return self._get_attribute(self._SDM_ATT_MAP['BitOffset'])
     @BitOffset.setter
     def BitOffset(self, value):
-        self._set_attribute('bitOffset', value)
+        self._set_attribute(self._SDM_ATT_MAP['BitOffset'], value)
 
     @property
     def Enabled(self):
@@ -55,10 +64,10 @@ class Pattern(Base):
         -------
         - bool: If true, match incoming packets against this pattern.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Mask(self):
@@ -67,10 +76,10 @@ class Pattern(Base):
         -------
         - str: Bitmask to match against. Same format as value.
         """
-        return self._get_attribute('mask')
+        return self._get_attribute(self._SDM_ATT_MAP['Mask'])
     @Mask.setter
     def Mask(self, value):
-        self._set_attribute('mask', value)
+        self._set_attribute(self._SDM_ATT_MAP['Mask'], value)
 
     @property
     def Name(self):
@@ -79,10 +88,10 @@ class Pattern(Base):
         -------
         - str: Name of pattern.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def Offset(self):
@@ -91,10 +100,10 @@ class Pattern(Base):
         -------
         - number: Byte offset from start of L2 frame.
         """
-        return self._get_attribute('offset')
+        return self._get_attribute(self._SDM_ATT_MAP['Offset'])
     @Offset.setter
     def Offset(self, value):
-        self._set_attribute('offset', value)
+        self._set_attribute(self._SDM_ATT_MAP['Offset'], value)
 
     @property
     def Value(self):
@@ -103,10 +112,10 @@ class Pattern(Base):
         -------
         - str: The field value to match. For MAC, IPv4, and IPv6 addresses, the value is a formatted address. For all other fields, the value is encoded as a string of hex bytes, most significant byte first, and most significant bit first within each byte. Each hex byte must be exactly two hex digits; A-F and a-f are both accepted. The hex bytes must be separated by a single white space. Example: 00 01 02 FF.
         """
-        return self._get_attribute('value')
+        return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
-        self._set_attribute('value', value)
+        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     @property
     def Width(self):
@@ -115,10 +124,10 @@ class Pattern(Base):
         -------
         - number: Width of field, in bits.
         """
-        return self._get_attribute('width')
+        return self._get_attribute(self._SDM_ATT_MAP['Width'])
     @Width.setter
     def Width(self, value):
-        self._set_attribute('width', value)
+        self._set_attribute(self._SDM_ATT_MAP['Width'], value)
 
     def update(self, BitOffset=None, Enabled=None, Mask=None, Name=None, Offset=None, Value=None, Width=None):
         """Updates pattern resource on the server.
@@ -137,7 +146,7 @@ class Pattern(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, BitOffset=None, Enabled=None, Mask=None, Name=None, Offset=None, Value=None, Width=None):
         """Adds a new pattern resource on the server and adds it to the container.
@@ -160,7 +169,7 @@ class Pattern(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained pattern resources in this instance from the server.
@@ -197,7 +206,7 @@ class Pattern(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of pattern data from the server.

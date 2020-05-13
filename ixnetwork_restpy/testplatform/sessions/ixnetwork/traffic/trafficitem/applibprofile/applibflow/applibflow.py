@@ -31,6 +31,16 @@ class AppLibFlow(Base):
 
     __slots__ = ()
     _SDM_NAME = 'appLibFlow'
+    _SDM_ATT_MAP = {
+        'ConfigId': 'configId',
+        'ConnectionCount': 'connectionCount',
+        'Description': 'description',
+        'FlowId': 'flowId',
+        'FlowSize': 'flowSize',
+        'Name': 'name',
+        'Parameters': 'parameters',
+        'Percentage': 'percentage',
+    }
 
     def __init__(self, parent):
         super(AppLibFlow, self).__init__(parent)
@@ -70,7 +80,7 @@ class AppLibFlow(Base):
         -------
         - number: The internal config id asociated with this flow.
         """
-        return self._get_attribute('configId')
+        return self._get_attribute(self._SDM_ATT_MAP['ConfigId'])
 
     @property
     def ConnectionCount(self):
@@ -79,7 +89,7 @@ class AppLibFlow(Base):
         -------
         - number: Number of connections in this flow.
         """
-        return self._get_attribute('connectionCount')
+        return self._get_attribute(self._SDM_ATT_MAP['ConnectionCount'])
 
     @property
     def Description(self):
@@ -88,7 +98,7 @@ class AppLibFlow(Base):
         -------
         - str: Brief description of what the flow does.
         """
-        return self._get_attribute('description')
+        return self._get_attribute(self._SDM_ATT_MAP['Description'])
 
     @property
     def FlowId(self):
@@ -97,7 +107,7 @@ class AppLibFlow(Base):
         -------
         - str: The identifier of the flow.
         """
-        return self._get_attribute('flowId')
+        return self._get_attribute(self._SDM_ATT_MAP['FlowId'])
 
     @property
     def FlowSize(self):
@@ -106,7 +116,7 @@ class AppLibFlow(Base):
         -------
         - number: The size of the flow in bytes.
         """
-        return self._get_attribute('flowSize')
+        return self._get_attribute(self._SDM_ATT_MAP['FlowSize'])
 
     @property
     def Name(self):
@@ -115,7 +125,7 @@ class AppLibFlow(Base):
         -------
         - str: the name of the Flow.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
 
     @property
     def Parameters(self):
@@ -124,7 +134,7 @@ class AppLibFlow(Base):
         -------
         - list(str): Array containing configurable parameters per flow.
         """
-        return self._get_attribute('parameters')
+        return self._get_attribute(self._SDM_ATT_MAP['Parameters'])
 
     @property
     def Percentage(self):
@@ -133,10 +143,10 @@ class AppLibFlow(Base):
         -------
         - number: The amount of traffic generated for this flows.
         """
-        return self._get_attribute('percentage')
+        return self._get_attribute(self._SDM_ATT_MAP['Percentage'])
     @Percentage.setter
     def Percentage(self, value):
-        self._set_attribute('percentage', value)
+        self._set_attribute(self._SDM_ATT_MAP['Percentage'], value)
 
     def update(self, Percentage=None):
         """Updates appLibFlow resource on the server.
@@ -149,7 +159,7 @@ class AppLibFlow(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, ConfigId=None, ConnectionCount=None, Description=None, FlowId=None, FlowSize=None, Name=None, Parameters=None, Percentage=None):
         """Finds and retrieves appLibFlow resources from the server.
@@ -177,7 +187,7 @@ class AppLibFlow(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of appLibFlow data from the server.

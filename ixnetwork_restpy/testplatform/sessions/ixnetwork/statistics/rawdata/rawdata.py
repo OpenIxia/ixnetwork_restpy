@@ -30,6 +30,11 @@ class RawData(Base):
 
     __slots__ = ()
     _SDM_NAME = 'rawData'
+    _SDM_ATT_MAP = {
+        'Enabled': 'enabled',
+        'LastRawDataFolder': 'lastRawDataFolder',
+        'Path': 'path',
+    }
 
     def __init__(self, parent):
         super(RawData, self).__init__(parent)
@@ -55,10 +60,10 @@ class RawData(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def LastRawDataFolder(self):
@@ -67,7 +72,7 @@ class RawData(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute('lastRawDataFolder')
+        return self._get_attribute(self._SDM_ATT_MAP['LastRawDataFolder'])
 
     @property
     def Path(self):
@@ -76,10 +81,10 @@ class RawData(Base):
         -------
         - str: NOT DEFINED
         """
-        return self._get_attribute('path')
+        return self._get_attribute(self._SDM_ATT_MAP['Path'])
     @Path.setter
     def Path(self, value):
-        self._set_attribute('path', value)
+        self._set_attribute(self._SDM_ATT_MAP['Path'], value)
 
     def update(self, Enabled=None, Path=None):
         """Updates rawData resource on the server.
@@ -93,7 +98,7 @@ class RawData(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def StopCollection(self):
         """Executes the stopCollection operation on the server.

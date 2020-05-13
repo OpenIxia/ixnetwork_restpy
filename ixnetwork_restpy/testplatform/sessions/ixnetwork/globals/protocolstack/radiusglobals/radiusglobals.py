@@ -32,6 +32,9 @@ class RadiusGlobals(Base):
 
     __slots__ = ()
     _SDM_NAME = 'radiusGlobals'
+    _SDM_ATT_MAP = {
+        'ObjectId': 'objectId',
+    }
 
     def __init__(self, parent):
         super(RadiusGlobals, self).__init__(parent)
@@ -41,13 +44,13 @@ class RadiusGlobals(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.radiusglobals.dhcpoptionset.dhcpoptionset.DhcpOptionSet): An instance of the DhcpOptionSet class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpglobals.dhcpoptionset.dhcpoptionset.DhcpOptionSet): An instance of the DhcpOptionSet class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.radiusglobals.dhcpoptionset.dhcpoptionset import DhcpOptionSet
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpglobals.dhcpoptionset.dhcpoptionset import DhcpOptionSet
         return DhcpOptionSet(self)
 
     @property
@@ -57,7 +60,7 @@ class RadiusGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def add(self):
         """Adds a new radiusGlobals resource on the server and adds it to the container.
@@ -70,7 +73,7 @@ class RadiusGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained radiusGlobals resources in this instance from the server.
@@ -101,7 +104,7 @@ class RadiusGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of radiusGlobals data from the server.

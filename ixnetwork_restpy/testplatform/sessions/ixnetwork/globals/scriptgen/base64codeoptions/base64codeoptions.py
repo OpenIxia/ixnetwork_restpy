@@ -30,6 +30,10 @@ class Base64CodeOptions(Base):
 
     __slots__ = ()
     _SDM_NAME = 'base64CodeOptions'
+    _SDM_ATT_MAP = {
+        'IncludeSampleCode': 'includeSampleCode',
+        'SampleObjectReferences': 'sampleObjectReferences',
+    }
 
     def __init__(self, parent):
         super(Base64CodeOptions, self).__init__(parent)
@@ -41,10 +45,10 @@ class Base64CodeOptions(Base):
         -------
         - bool: Flag to include sample code
         """
-        return self._get_attribute('includeSampleCode')
+        return self._get_attribute(self._SDM_ATT_MAP['IncludeSampleCode'])
     @IncludeSampleCode.setter
     def IncludeSampleCode(self, value):
-        self._set_attribute('includeSampleCode', value)
+        self._set_attribute(self._SDM_ATT_MAP['IncludeSampleCode'], value)
 
     @property
     def SampleObjectReferences(self):
@@ -53,10 +57,10 @@ class Base64CodeOptions(Base):
         -------
         - list(str[None]): A list of object references used to generate sample code
         """
-        return self._get_attribute('sampleObjectReferences')
+        return self._get_attribute(self._SDM_ATT_MAP['SampleObjectReferences'])
     @SampleObjectReferences.setter
     def SampleObjectReferences(self, value):
-        self._set_attribute('sampleObjectReferences', value)
+        self._set_attribute(self._SDM_ATT_MAP['SampleObjectReferences'], value)
 
     def update(self, IncludeSampleCode=None, SampleObjectReferences=None):
         """Updates base64CodeOptions resource on the server.
@@ -70,4 +74,4 @@ class Base64CodeOptions(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

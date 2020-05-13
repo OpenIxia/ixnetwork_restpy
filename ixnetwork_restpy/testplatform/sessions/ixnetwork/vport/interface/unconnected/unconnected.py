@@ -30,6 +30,9 @@ class Unconnected(Base):
 
     __slots__ = ()
     _SDM_NAME = 'unconnected'
+    _SDM_ATT_MAP = {
+        'ConnectedVia': 'connectedVia',
+    }
 
     def __init__(self, parent):
         super(Unconnected, self).__init__(parent)
@@ -41,10 +44,10 @@ class Unconnected(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The name of a specified connected protocol interface on the link that is directly connected to the DUT.
         """
-        return self._get_attribute('connectedVia')
+        return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
-        self._set_attribute('connectedVia', value)
+        self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     def update(self, ConnectedVia=None):
         """Updates unconnected resource on the server.
@@ -57,4 +60,4 @@ class Unconnected(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -31,6 +31,9 @@ class Instance(Base):
 
     __slots__ = ()
     _SDM_NAME = 'instance'
+    _SDM_ATT_MAP = {
+        'SourceValues': 'sourceValues',
+    }
 
     def __init__(self, parent):
         super(Instance, self).__init__(parent)
@@ -42,7 +45,7 @@ class Instance(Base):
         -------
         - list(str): The source values of the error instance
         """
-        return self._get_attribute('sourceValues')
+        return self._get_attribute(self._SDM_ATT_MAP['SourceValues'])
 
     def find(self, SourceValues=None):
         """Finds and retrieves instance resources from the server.
@@ -63,7 +66,7 @@ class Instance(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of instance data from the server.

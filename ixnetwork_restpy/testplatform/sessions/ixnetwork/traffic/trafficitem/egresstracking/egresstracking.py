@@ -32,6 +32,14 @@ class EgressTracking(Base):
 
     __slots__ = ()
     _SDM_NAME = 'egressTracking'
+    _SDM_ATT_MAP = {
+        'AvailableEncapsulations': 'availableEncapsulations',
+        'AvailableOffsets': 'availableOffsets',
+        'CustomOffsetBits': 'customOffsetBits',
+        'CustomWidthBits': 'customWidthBits',
+        'Encapsulation': 'encapsulation',
+        'Offset': 'offset',
+    }
 
     def __init__(self, parent):
         super(EgressTracking, self).__init__(parent)
@@ -41,13 +49,13 @@ class EgressTracking(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.fieldoffset.fieldoffset.FieldOffset): An instance of the FieldOffset class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.egress.fieldoffset.fieldoffset.FieldOffset): An instance of the FieldOffset class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.fieldoffset.fieldoffset import FieldOffset
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.egress.fieldoffset.fieldoffset import FieldOffset
         return FieldOffset(self)._select()
 
     @property
@@ -57,7 +65,7 @@ class EgressTracking(Base):
         -------
         - list(str): (Read only) Specifies the available Encapsulations for Egress Tracking.
         """
-        return self._get_attribute('availableEncapsulations')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableEncapsulations'])
 
     @property
     def AvailableOffsets(self):
@@ -66,7 +74,7 @@ class EgressTracking(Base):
         -------
         - list(str): (Read only) Specifies the available Offsets for Egress Tracking.
         """
-        return self._get_attribute('availableOffsets')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableOffsets'])
 
     @property
     def CustomOffsetBits(self):
@@ -75,10 +83,10 @@ class EgressTracking(Base):
         -------
         - number: Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
         """
-        return self._get_attribute('customOffsetBits')
+        return self._get_attribute(self._SDM_ATT_MAP['CustomOffsetBits'])
     @CustomOffsetBits.setter
     def CustomOffsetBits(self, value):
-        self._set_attribute('customOffsetBits', value)
+        self._set_attribute(self._SDM_ATT_MAP['CustomOffsetBits'], value)
 
     @property
     def CustomWidthBits(self):
@@ -87,10 +95,10 @@ class EgressTracking(Base):
         -------
         - number: Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
         """
-        return self._get_attribute('customWidthBits')
+        return self._get_attribute(self._SDM_ATT_MAP['CustomWidthBits'])
     @CustomWidthBits.setter
     def CustomWidthBits(self, value):
-        self._set_attribute('customWidthBits', value)
+        self._set_attribute(self._SDM_ATT_MAP['CustomWidthBits'], value)
 
     @property
     def Encapsulation(self):
@@ -99,10 +107,10 @@ class EgressTracking(Base):
         -------
         - str: Specifies the Encapsulation for Egress Tracking.
         """
-        return self._get_attribute('encapsulation')
+        return self._get_attribute(self._SDM_ATT_MAP['Encapsulation'])
     @Encapsulation.setter
     def Encapsulation(self, value):
-        self._set_attribute('encapsulation', value)
+        self._set_attribute(self._SDM_ATT_MAP['Encapsulation'], value)
 
     @property
     def Offset(self):
@@ -111,10 +119,10 @@ class EgressTracking(Base):
         -------
         - str: Specifies the Offset for Egress Tracking.
         """
-        return self._get_attribute('offset')
+        return self._get_attribute(self._SDM_ATT_MAP['Offset'])
     @Offset.setter
     def Offset(self, value):
-        self._set_attribute('offset', value)
+        self._set_attribute(self._SDM_ATT_MAP['Offset'], value)
 
     def update(self, CustomOffsetBits=None, CustomWidthBits=None, Encapsulation=None, Offset=None):
         """Updates egressTracking resource on the server.
@@ -130,7 +138,7 @@ class EgressTracking(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, CustomOffsetBits=None, CustomWidthBits=None, Encapsulation=None, Offset=None):
         """Adds a new egressTracking resource on the server and adds it to the container.
@@ -150,7 +158,7 @@ class EgressTracking(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained egressTracking resources in this instance from the server.
@@ -186,7 +194,7 @@ class EgressTracking(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of egressTracking data from the server.

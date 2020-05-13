@@ -30,6 +30,11 @@ class Dcc(Base):
 
     __slots__ = ()
     _SDM_NAME = 'dcc'
+    _SDM_ATT_MAP = {
+        'Crc': 'crc',
+        'OverheadByte': 'overheadByte',
+        'TimeFill': 'timeFill',
+    }
 
     def __init__(self, parent):
         super(Dcc, self).__init__(parent)
@@ -41,10 +46,10 @@ class Dcc(Base):
         -------
         - str(crc16 | crc32): Choose the type of Cyclic Redundancy Check to be used.
         """
-        return self._get_attribute('crc')
+        return self._get_attribute(self._SDM_ATT_MAP['Crc'])
     @Crc.setter
     def Crc(self, value):
-        self._set_attribute('crc', value)
+        self._set_attribute(self._SDM_ATT_MAP['Crc'], value)
 
     @property
     def OverheadByte(self):
@@ -53,10 +58,10 @@ class Dcc(Base):
         -------
         - str(loh | soh): Choose the type of Overhead bytes to be used for transmitting the DCC packet streams.
         """
-        return self._get_attribute('overheadByte')
+        return self._get_attribute(self._SDM_ATT_MAP['OverheadByte'])
     @OverheadByte.setter
     def OverheadByte(self, value):
-        self._set_attribute('overheadByte', value)
+        self._set_attribute(self._SDM_ATT_MAP['OverheadByte'], value)
 
     @property
     def TimeFill(self):
@@ -65,10 +70,10 @@ class Dcc(Base):
         -------
         - str(flag7E | markIdle): Choose the type of bytes used to fill the gaps between DCC frames.
         """
-        return self._get_attribute('timeFill')
+        return self._get_attribute(self._SDM_ATT_MAP['TimeFill'])
     @TimeFill.setter
     def TimeFill(self, value):
-        self._set_attribute('timeFill', value)
+        self._set_attribute(self._SDM_ATT_MAP['TimeFill'], value)
 
     def update(self, Crc=None, OverheadByte=None, TimeFill=None):
         """Updates dcc resource on the server.
@@ -83,4 +88,4 @@ class Dcc(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

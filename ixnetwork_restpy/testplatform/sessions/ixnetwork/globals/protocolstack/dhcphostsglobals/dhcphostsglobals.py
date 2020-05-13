@@ -32,6 +32,9 @@ class DhcpHostsGlobals(Base):
 
     __slots__ = ()
     _SDM_NAME = 'dhcpHostsGlobals'
+    _SDM_ATT_MAP = {
+        'ObjectId': 'objectId',
+    }
 
     def __init__(self, parent):
         super(DhcpHostsGlobals, self).__init__(parent)
@@ -43,7 +46,7 @@ class DhcpHostsGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def add(self):
         """Adds a new dhcpHostsGlobals resource on the server and adds it to the container.
@@ -56,7 +59,7 @@ class DhcpHostsGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained dhcpHostsGlobals resources in this instance from the server.
@@ -87,7 +90,7 @@ class DhcpHostsGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of dhcpHostsGlobals data from the server.

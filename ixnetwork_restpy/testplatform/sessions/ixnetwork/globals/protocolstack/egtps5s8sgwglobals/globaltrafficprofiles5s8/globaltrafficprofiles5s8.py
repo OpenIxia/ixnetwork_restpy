@@ -32,6 +32,29 @@ class GlobalTrafficProfileS5S8(Base):
 
     __slots__ = ()
     _SDM_NAME = 'globalTrafficProfileS5S8'
+    _SDM_ATT_MAP = {
+        'Apn': 'apn',
+        'Arp': 'arp',
+        'DefaultBearerFallback': 'defaultBearerFallback',
+        'EnableSessionTimeout': 'enableSessionTimeout',
+        'Enabled': 'enabled',
+        'Gbrd': 'gbrd',
+        'Gbru': 'gbru',
+        'IsMsInitiated': 'isMsInitiated',
+        'Mbrd': 'mbrd',
+        'Mbru': 'mbru',
+        'Name': 'name',
+        'ObjectId': 'objectId',
+        'Qci': 'qci',
+        'RunOnDefaultBearer': 'runOnDefaultBearer',
+        'SPCO_Container': 'sPCO_Container',
+        'SPCO_Protocol': 'sPCO_Protocol',
+        'STFTFiltersCustom': 'sTFTFiltersCustom',
+        'SessionTimeoutValue': 'sessionTimeoutValue',
+        'TearDownIndicator': 'tearDownIndicator',
+        'UsePredefinedQCI': 'usePredefinedQCI',
+        'UsePredefinedTFT': 'usePredefinedTFT',
+    }
 
     def __init__(self, parent):
         super(GlobalTrafficProfileS5S8, self).__init__(parent)
@@ -43,10 +66,10 @@ class GlobalTrafficProfileS5S8(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalEgtpApnS5S8): 
         """
-        return self._get_attribute('apn')
+        return self._get_attribute(self._SDM_ATT_MAP['Apn'])
     @Apn.setter
     def Apn(self, value):
-        self._set_attribute('apn', value)
+        self._set_attribute(self._SDM_ATT_MAP['Apn'], value)
 
     @property
     def Arp(self):
@@ -55,10 +78,10 @@ class GlobalTrafficProfileS5S8(Base):
         -------
         - number: Priority of allocation and retention
         """
-        return self._get_attribute('arp')
+        return self._get_attribute(self._SDM_ATT_MAP['Arp'])
     @Arp.setter
     def Arp(self, value):
-        self._set_attribute('arp', value)
+        self._set_attribute(self._SDM_ATT_MAP['Arp'], value)
 
     @property
     def DefaultBearerFallback(self):
@@ -67,10 +90,10 @@ class GlobalTrafficProfileS5S8(Base):
         -------
         - bool: Fallback on default bearer if no dedicated bearer was created for this activity.
         """
-        return self._get_attribute('defaultBearerFallback')
+        return self._get_attribute(self._SDM_ATT_MAP['DefaultBearerFallback'])
     @DefaultBearerFallback.setter
     def DefaultBearerFallback(self, value):
-        self._set_attribute('defaultBearerFallback', value)
+        self._set_attribute(self._SDM_ATT_MAP['DefaultBearerFallback'], value)
 
     @property
     def EnableSessionTimeout(self):
@@ -79,10 +102,10 @@ class GlobalTrafficProfileS5S8(Base):
         -------
         - bool: Deprecated. Kept for TCL bw compatibility
         """
-        return self._get_attribute('enableSessionTimeout')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableSessionTimeout'])
     @EnableSessionTimeout.setter
     def EnableSessionTimeout(self, value):
-        self._set_attribute('enableSessionTimeout', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableSessionTimeout'], value)
 
     @property
     def Enabled(self):
@@ -91,10 +114,10 @@ class GlobalTrafficProfileS5S8(Base):
         -------
         - bool: Disabled ranges won't be configured nor validated.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Gbrd(self):
@@ -103,10 +126,10 @@ class GlobalTrafficProfileS5S8(Base):
         -------
         - number: Guaranteed bitrate for downlink (kbps)
         """
-        return self._get_attribute('gbrd')
+        return self._get_attribute(self._SDM_ATT_MAP['Gbrd'])
     @Gbrd.setter
     def Gbrd(self, value):
-        self._set_attribute('gbrd', value)
+        self._set_attribute(self._SDM_ATT_MAP['Gbrd'], value)
 
     @property
     def Gbru(self):
@@ -115,10 +138,10 @@ class GlobalTrafficProfileS5S8(Base):
         -------
         - number: Guaranteed bitrate for uplink (kbps)
         """
-        return self._get_attribute('gbru')
+        return self._get_attribute(self._SDM_ATT_MAP['Gbru'])
     @Gbru.setter
     def Gbru(self, value):
-        self._set_attribute('gbru', value)
+        self._set_attribute(self._SDM_ATT_MAP['Gbru'], value)
 
     @property
     def IsMsInitiated(self):
@@ -127,10 +150,10 @@ class GlobalTrafficProfileS5S8(Base):
         -------
         - bool: UE initiated service request for this activity. Execute Bearer Resource Command with TFT operation set to Create New. This option will be taken in consideration if no active bearer was found with matching TFT and QoS.
         """
-        return self._get_attribute('isMsInitiated')
+        return self._get_attribute(self._SDM_ATT_MAP['IsMsInitiated'])
     @IsMsInitiated.setter
     def IsMsInitiated(self, value):
-        self._set_attribute('isMsInitiated', value)
+        self._set_attribute(self._SDM_ATT_MAP['IsMsInitiated'], value)
 
     @property
     def Mbrd(self):
@@ -139,10 +162,10 @@ class GlobalTrafficProfileS5S8(Base):
         -------
         - number: Maximum bitrate for downlink (kbps)
         """
-        return self._get_attribute('mbrd')
+        return self._get_attribute(self._SDM_ATT_MAP['Mbrd'])
     @Mbrd.setter
     def Mbrd(self, value):
-        self._set_attribute('mbrd', value)
+        self._set_attribute(self._SDM_ATT_MAP['Mbrd'], value)
 
     @property
     def Mbru(self):
@@ -151,10 +174,10 @@ class GlobalTrafficProfileS5S8(Base):
         -------
         - number: Maximum bitrate for uplink (kbps)
         """
-        return self._get_attribute('mbru')
+        return self._get_attribute(self._SDM_ATT_MAP['Mbru'])
     @Mbru.setter
     def Mbru(self, value):
-        self._set_attribute('mbru', value)
+        self._set_attribute(self._SDM_ATT_MAP['Mbru'], value)
 
     @property
     def Name(self):
@@ -163,10 +186,10 @@ class GlobalTrafficProfileS5S8(Base):
         -------
         - str: GTP needs the name of the activity
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
@@ -175,7 +198,7 @@ class GlobalTrafficProfileS5S8(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def Qci(self):
@@ -184,10 +207,10 @@ class GlobalTrafficProfileS5S8(Base):
         -------
         - number: QoS Class Identifier
         """
-        return self._get_attribute('qci')
+        return self._get_attribute(self._SDM_ATT_MAP['Qci'])
     @Qci.setter
     def Qci(self, value):
-        self._set_attribute('qci', value)
+        self._set_attribute(self._SDM_ATT_MAP['Qci'], value)
 
     @property
     def RunOnDefaultBearer(self):
@@ -196,10 +219,10 @@ class GlobalTrafficProfileS5S8(Base):
         -------
         - bool: Run activity on default bearer only
         """
-        return self._get_attribute('runOnDefaultBearer')
+        return self._get_attribute(self._SDM_ATT_MAP['RunOnDefaultBearer'])
     @RunOnDefaultBearer.setter
     def RunOnDefaultBearer(self, value):
-        self._set_attribute('runOnDefaultBearer', value)
+        self._set_attribute(self._SDM_ATT_MAP['RunOnDefaultBearer'], value)
 
     @property
     def SPCO_Container(self):
@@ -208,10 +231,10 @@ class GlobalTrafficProfileS5S8(Base):
         -------
         - str: Protocol Configuration Options (Container)
         """
-        return self._get_attribute('sPCO_Container')
+        return self._get_attribute(self._SDM_ATT_MAP['SPCO_Container'])
     @SPCO_Container.setter
     def SPCO_Container(self, value):
-        self._set_attribute('sPCO_Container', value)
+        self._set_attribute(self._SDM_ATT_MAP['SPCO_Container'], value)
 
     @property
     def SPCO_Protocol(self):
@@ -220,10 +243,10 @@ class GlobalTrafficProfileS5S8(Base):
         -------
         - str: Protocol Configuration Options (Protocol)
         """
-        return self._get_attribute('sPCO_Protocol')
+        return self._get_attribute(self._SDM_ATT_MAP['SPCO_Protocol'])
     @SPCO_Protocol.setter
     def SPCO_Protocol(self, value):
-        self._set_attribute('sPCO_Protocol', value)
+        self._set_attribute(self._SDM_ATT_MAP['SPCO_Protocol'], value)
 
     @property
     def STFTFiltersCustom(self):
@@ -232,10 +255,10 @@ class GlobalTrafficProfileS5S8(Base):
         -------
         - str: 
         """
-        return self._get_attribute('sTFTFiltersCustom')
+        return self._get_attribute(self._SDM_ATT_MAP['STFTFiltersCustom'])
     @STFTFiltersCustom.setter
     def STFTFiltersCustom(self, value):
-        self._set_attribute('sTFTFiltersCustom', value)
+        self._set_attribute(self._SDM_ATT_MAP['STFTFiltersCustom'], value)
 
     @property
     def SessionTimeoutValue(self):
@@ -244,10 +267,10 @@ class GlobalTrafficProfileS5S8(Base):
         -------
         - number: Deprecated. Kept for TCL bw compatibility
         """
-        return self._get_attribute('sessionTimeoutValue')
+        return self._get_attribute(self._SDM_ATT_MAP['SessionTimeoutValue'])
     @SessionTimeoutValue.setter
     def SessionTimeoutValue(self, value):
-        self._set_attribute('sessionTimeoutValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['SessionTimeoutValue'], value)
 
     @property
     def TearDownIndicator(self):
@@ -256,10 +279,10 @@ class GlobalTrafficProfileS5S8(Base):
         -------
         - bool: Set tear down indicator flag when deleting context for this activity
         """
-        return self._get_attribute('tearDownIndicator')
+        return self._get_attribute(self._SDM_ATT_MAP['TearDownIndicator'])
     @TearDownIndicator.setter
     def TearDownIndicator(self, value):
-        self._set_attribute('tearDownIndicator', value)
+        self._set_attribute(self._SDM_ATT_MAP['TearDownIndicator'], value)
 
     @property
     def UsePredefinedQCI(self):
@@ -268,10 +291,10 @@ class GlobalTrafficProfileS5S8(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('usePredefinedQCI')
+        return self._get_attribute(self._SDM_ATT_MAP['UsePredefinedQCI'])
     @UsePredefinedQCI.setter
     def UsePredefinedQCI(self, value):
-        self._set_attribute('usePredefinedQCI', value)
+        self._set_attribute(self._SDM_ATT_MAP['UsePredefinedQCI'], value)
 
     @property
     def UsePredefinedTFT(self):
@@ -280,10 +303,10 @@ class GlobalTrafficProfileS5S8(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('usePredefinedTFT')
+        return self._get_attribute(self._SDM_ATT_MAP['UsePredefinedTFT'])
     @UsePredefinedTFT.setter
     def UsePredefinedTFT(self, value):
-        self._set_attribute('usePredefinedTFT', value)
+        self._set_attribute(self._SDM_ATT_MAP['UsePredefinedTFT'], value)
 
     def update(self, Apn=None, Arp=None, DefaultBearerFallback=None, EnableSessionTimeout=None, Enabled=None, Gbrd=None, Gbru=None, IsMsInitiated=None, Mbrd=None, Mbru=None, Name=None, Qci=None, RunOnDefaultBearer=None, SPCO_Container=None, SPCO_Protocol=None, STFTFiltersCustom=None, SessionTimeoutValue=None, TearDownIndicator=None, UsePredefinedQCI=None, UsePredefinedTFT=None):
         """Updates globalTrafficProfileS5S8 resource on the server.
@@ -315,7 +338,7 @@ class GlobalTrafficProfileS5S8(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Apn=None, Arp=None, DefaultBearerFallback=None, EnableSessionTimeout=None, Enabled=None, Gbrd=None, Gbru=None, IsMsInitiated=None, Mbrd=None, Mbru=None, Name=None, Qci=None, RunOnDefaultBearer=None, SPCO_Container=None, SPCO_Protocol=None, STFTFiltersCustom=None, SessionTimeoutValue=None, TearDownIndicator=None, UsePredefinedQCI=None, UsePredefinedTFT=None):
         """Adds a new globalTrafficProfileS5S8 resource on the server and adds it to the container.
@@ -351,7 +374,7 @@ class GlobalTrafficProfileS5S8(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained globalTrafficProfileS5S8 resources in this instance from the server.
@@ -402,7 +425,7 @@ class GlobalTrafficProfileS5S8(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of globalTrafficProfileS5S8 data from the server.

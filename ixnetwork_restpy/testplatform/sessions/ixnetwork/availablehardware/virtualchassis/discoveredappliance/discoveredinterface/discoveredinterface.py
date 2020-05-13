@@ -31,6 +31,10 @@ class DiscoveredInterface(Base):
 
     __slots__ = ()
     _SDM_NAME = 'discoveredInterface'
+    _SDM_ATT_MAP = {
+        'InterfaceName': 'interfaceName',
+        'State': 'state',
+    }
 
     def __init__(self, parent):
         super(DiscoveredInterface, self).__init__(parent)
@@ -42,7 +46,7 @@ class DiscoveredInterface(Base):
         -------
         - str: Represents the interface name
         """
-        return self._get_attribute('interfaceName')
+        return self._get_attribute(self._SDM_ATT_MAP['InterfaceName'])
 
     @property
     def State(self):
@@ -51,7 +55,7 @@ class DiscoveredInterface(Base):
         -------
         - str(assigned | available | unusable): Represents the interface state
         """
-        return self._get_attribute('state')
+        return self._get_attribute(self._SDM_ATT_MAP['State'])
 
     def find(self, InterfaceName=None, State=None):
         """Finds and retrieves discoveredInterface resources from the server.
@@ -73,7 +77,7 @@ class DiscoveredInterface(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of discoveredInterface data from the server.

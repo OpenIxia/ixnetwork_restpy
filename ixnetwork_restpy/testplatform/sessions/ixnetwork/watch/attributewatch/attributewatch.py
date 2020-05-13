@@ -32,6 +32,18 @@ class AttributeWatch(Base):
 
     __slots__ = ()
     _SDM_NAME = 'attributeWatch'
+    _SDM_ATT_MAP = {
+        'AttributesToWatch': 'attributesToWatch',
+        'AverageExecutionTime': 'averageExecutionTime',
+        'IsDisabled': 'isDisabled',
+        'LastExecutionTime': 'lastExecutionTime',
+        'LastNotification': 'lastNotification',
+        'MaxExecutionTime': 'maxExecutionTime',
+        'ObjectIdToWatch': 'objectIdToWatch',
+        'PollInterval': 'pollInterval',
+        'Token': 'token',
+        'Topic': 'topic',
+    }
 
     def __init__(self, parent):
         super(AttributeWatch, self).__init__(parent)
@@ -43,10 +55,10 @@ class AttributeWatch(Base):
         -------
         - list(str): 
         """
-        return self._get_attribute('attributesToWatch')
+        return self._get_attribute(self._SDM_ATT_MAP['AttributesToWatch'])
     @AttributesToWatch.setter
     def AttributesToWatch(self, value):
-        self._set_attribute('attributesToWatch', value)
+        self._set_attribute(self._SDM_ATT_MAP['AttributesToWatch'], value)
 
     @property
     def AverageExecutionTime(self):
@@ -55,7 +67,7 @@ class AttributeWatch(Base):
         -------
         - number: 
         """
-        return self._get_attribute('averageExecutionTime')
+        return self._get_attribute(self._SDM_ATT_MAP['AverageExecutionTime'])
 
     @property
     def IsDisabled(self):
@@ -64,7 +76,7 @@ class AttributeWatch(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('isDisabled')
+        return self._get_attribute(self._SDM_ATT_MAP['IsDisabled'])
 
     @property
     def LastExecutionTime(self):
@@ -73,7 +85,7 @@ class AttributeWatch(Base):
         -------
         - number: 
         """
-        return self._get_attribute('lastExecutionTime')
+        return self._get_attribute(self._SDM_ATT_MAP['LastExecutionTime'])
 
     @property
     def LastNotification(self):
@@ -82,7 +94,7 @@ class AttributeWatch(Base):
         -------
         - str: 
         """
-        return self._get_attribute('lastNotification')
+        return self._get_attribute(self._SDM_ATT_MAP['LastNotification'])
 
     @property
     def MaxExecutionTime(self):
@@ -91,10 +103,10 @@ class AttributeWatch(Base):
         -------
         - number: The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         """
-        return self._get_attribute('maxExecutionTime')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxExecutionTime'])
     @MaxExecutionTime.setter
     def MaxExecutionTime(self, value):
-        self._set_attribute('maxExecutionTime', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxExecutionTime'], value)
 
     @property
     def ObjectIdToWatch(self):
@@ -103,10 +115,10 @@ class AttributeWatch(Base):
         -------
         - str(None): 
         """
-        return self._get_attribute('objectIdToWatch')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectIdToWatch'])
     @ObjectIdToWatch.setter
     def ObjectIdToWatch(self, value):
-        self._set_attribute('objectIdToWatch', value)
+        self._set_attribute(self._SDM_ATT_MAP['ObjectIdToWatch'], value)
 
     @property
     def PollInterval(self):
@@ -115,10 +127,10 @@ class AttributeWatch(Base):
         -------
         - number: The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
         """
-        return self._get_attribute('pollInterval')
+        return self._get_attribute(self._SDM_ATT_MAP['PollInterval'])
     @PollInterval.setter
     def PollInterval(self, value):
-        self._set_attribute('pollInterval', value)
+        self._set_attribute(self._SDM_ATT_MAP['PollInterval'], value)
 
     @property
     def Token(self):
@@ -127,7 +139,7 @@ class AttributeWatch(Base):
         -------
         - number: 
         """
-        return self._get_attribute('token')
+        return self._get_attribute(self._SDM_ATT_MAP['Token'])
 
     @property
     def Topic(self):
@@ -136,10 +148,10 @@ class AttributeWatch(Base):
         -------
         - str: 
         """
-        return self._get_attribute('topic')
+        return self._get_attribute(self._SDM_ATT_MAP['Topic'])
     @Topic.setter
     def Topic(self, value):
-        self._set_attribute('topic', value)
+        self._set_attribute(self._SDM_ATT_MAP['Topic'], value)
 
     def update(self, AttributesToWatch=None, MaxExecutionTime=None, ObjectIdToWatch=None, PollInterval=None, Topic=None):
         """Updates attributeWatch resource on the server.
@@ -156,7 +168,7 @@ class AttributeWatch(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AttributesToWatch=None, MaxExecutionTime=None, ObjectIdToWatch=None, PollInterval=None, Topic=None):
         """Adds a new attributeWatch resource on the server and adds it to the container.
@@ -177,7 +189,7 @@ class AttributeWatch(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained attributeWatch resources in this instance from the server.
@@ -217,7 +229,7 @@ class AttributeWatch(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of attributeWatch data from the server.

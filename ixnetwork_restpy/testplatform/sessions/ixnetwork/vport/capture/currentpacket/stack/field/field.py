@@ -31,6 +31,10 @@ class Field(Base):
 
     __slots__ = ()
     _SDM_NAME = 'field'
+    _SDM_ATT_MAP = {
+        'DisplayName': 'displayName',
+        'FieldValue': 'fieldValue',
+    }
 
     def __init__(self, parent):
         super(Field, self).__init__(parent)
@@ -42,7 +46,7 @@ class Field(Base):
         -------
         - str: Refers to the name of the field.
         """
-        return self._get_attribute('displayName')
+        return self._get_attribute(self._SDM_ATT_MAP['DisplayName'])
 
     @property
     def FieldValue(self):
@@ -51,7 +55,7 @@ class Field(Base):
         -------
         - str: Refers to the value displayed in the field.
         """
-        return self._get_attribute('fieldValue')
+        return self._get_attribute(self._SDM_ATT_MAP['FieldValue'])
 
     def find(self, DisplayName=None, FieldValue=None):
         """Finds and retrieves field resources from the server.
@@ -73,7 +77,7 @@ class Field(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of field data from the server.

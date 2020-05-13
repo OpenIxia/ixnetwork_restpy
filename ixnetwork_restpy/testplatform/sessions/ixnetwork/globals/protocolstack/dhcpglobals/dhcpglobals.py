@@ -32,6 +32,41 @@ class DhcpGlobals(Base):
 
     __slots__ = ()
     _SDM_NAME = 'dhcpGlobals'
+    _SDM_ATT_MAP = {
+        'AcceptPartialConfig': 'acceptPartialConfig',
+        'Dhcp4AddrLeaseTime': 'dhcp4AddrLeaseTime',
+        'Dhcp4ClientPort': 'dhcp4ClientPort',
+        'Dhcp4MaxMsgSize': 'dhcp4MaxMsgSize',
+        'Dhcp4NumRetry': 'dhcp4NumRetry',
+        'Dhcp4ResponseTimeout': 'dhcp4ResponseTimeout',
+        'Dhcp4ResponseTimeoutFactor': 'dhcp4ResponseTimeoutFactor',
+        'Dhcp4ServerPort': 'dhcp4ServerPort',
+        'Dhcp6EchoIaInfo': 'dhcp6EchoIaInfo',
+        'Dhcp6RebMaxRt': 'dhcp6RebMaxRt',
+        'Dhcp6RebTimeout': 'dhcp6RebTimeout',
+        'Dhcp6RelMaxRc': 'dhcp6RelMaxRc',
+        'Dhcp6RelTimeout': 'dhcp6RelTimeout',
+        'Dhcp6RenMaxRt': 'dhcp6RenMaxRt',
+        'Dhcp6RenTimeout': 'dhcp6RenTimeout',
+        'Dhcp6ReqMaxRc': 'dhcp6ReqMaxRc',
+        'Dhcp6ReqMaxRt': 'dhcp6ReqMaxRt',
+        'Dhcp6ReqTimeout': 'dhcp6ReqTimeout',
+        'Dhcp6SolMaxRc': 'dhcp6SolMaxRc',
+        'Dhcp6SolMaxRt': 'dhcp6SolMaxRt',
+        'Dhcp6SolTimeout': 'dhcp6SolTimeout',
+        'MaxOutstandingReleases': 'maxOutstandingReleases',
+        'MaxOutstandingRequests': 'maxOutstandingRequests',
+        'ObjectId': 'objectId',
+        'RenewOnLinkUp': 'renewOnLinkUp',
+        'SetupRateIncrement': 'setupRateIncrement',
+        'SetupRateInitial': 'setupRateInitial',
+        'SetupRateMax': 'setupRateMax',
+        'SkipReleaseOnStop': 'skipReleaseOnStop',
+        'TeardownRateIncrement': 'teardownRateIncrement',
+        'TeardownRateInitial': 'teardownRateInitial',
+        'TeardownRateMax': 'teardownRateMax',
+        'WaitForCompletion': 'waitForCompletion',
+    }
 
     def __init__(self, parent):
         super(DhcpGlobals, self).__init__(parent)
@@ -57,10 +92,10 @@ class DhcpGlobals(Base):
         -------
         - bool: This flag controls how the negotiation process reports success or failure.When is true the plugin reports success if at least one address is configured.When is false the plugin reports success only if all address are configured.
         """
-        return self._get_attribute('acceptPartialConfig')
+        return self._get_attribute(self._SDM_ATT_MAP['AcceptPartialConfig'])
     @AcceptPartialConfig.setter
     def AcceptPartialConfig(self, value):
-        self._set_attribute('acceptPartialConfig', value)
+        self._set_attribute(self._SDM_ATT_MAP['AcceptPartialConfig'], value)
 
     @property
     def Dhcp4AddrLeaseTime(self):
@@ -69,10 +104,10 @@ class DhcpGlobals(Base):
         -------
         - number: Period of time (in seconds) for which an IP address is requested by DHCP client.The actual lease time is specified by the DUT in the DHCPACK message.
         """
-        return self._get_attribute('dhcp4AddrLeaseTime')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp4AddrLeaseTime'])
     @Dhcp4AddrLeaseTime.setter
     def Dhcp4AddrLeaseTime(self, value):
-        self._set_attribute('dhcp4AddrLeaseTime', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp4AddrLeaseTime'], value)
 
     @property
     def Dhcp4ClientPort(self):
@@ -81,10 +116,10 @@ class DhcpGlobals(Base):
         -------
         - number: UDP port that the client listens on for DHCP and BOOTP responses.
         """
-        return self._get_attribute('dhcp4ClientPort')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp4ClientPort'])
     @Dhcp4ClientPort.setter
     def Dhcp4ClientPort(self, value):
-        self._set_attribute('dhcp4ClientPort', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp4ClientPort'], value)
 
     @property
     def Dhcp4MaxMsgSize(self):
@@ -93,10 +128,10 @@ class DhcpGlobals(Base):
         -------
         - number: Maximum size of a DHCP packet that the client will send or accept, including IP and UDP headers.According to RFC 2131, the minimum message size that a client should accept is 576 octets.
         """
-        return self._get_attribute('dhcp4MaxMsgSize')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp4MaxMsgSize'])
     @Dhcp4MaxMsgSize.setter
     def Dhcp4MaxMsgSize(self, value):
-        self._set_attribute('dhcp4MaxMsgSize', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp4MaxMsgSize'], value)
 
     @property
     def Dhcp4NumRetry(self):
@@ -105,10 +140,10 @@ class DhcpGlobals(Base):
         -------
         - number: Number of times that the client will retransmit a request for which it has not received a response.When the maximum number of retransmitions is reached, the port will increment the failure counter (DHCPSetupFail).
         """
-        return self._get_attribute('dhcp4NumRetry')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp4NumRetry'])
     @Dhcp4NumRetry.setter
     def Dhcp4NumRetry(self, value):
-        self._set_attribute('dhcp4NumRetry', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp4NumRetry'], value)
 
     @property
     def Dhcp4ResponseTimeout(self):
@@ -117,10 +152,10 @@ class DhcpGlobals(Base):
         -------
         - number: The initial time, in seconds, that the subnet waits to receive a response from a DHCP server.
         """
-        return self._get_attribute('dhcp4ResponseTimeout')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp4ResponseTimeout'])
     @Dhcp4ResponseTimeout.setter
     def Dhcp4ResponseTimeout(self, value):
-        self._set_attribute('dhcp4ResponseTimeout', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp4ResponseTimeout'], value)
 
     @property
     def Dhcp4ResponseTimeoutFactor(self):
@@ -129,10 +164,10 @@ class DhcpGlobals(Base):
         -------
         - number: The factor by which the timeout will be multiplied each time the response timeout has been reached.
         """
-        return self._get_attribute('dhcp4ResponseTimeoutFactor')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp4ResponseTimeoutFactor'])
     @Dhcp4ResponseTimeoutFactor.setter
     def Dhcp4ResponseTimeoutFactor(self, value):
-        self._set_attribute('dhcp4ResponseTimeoutFactor', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp4ResponseTimeoutFactor'], value)
 
     @property
     def Dhcp4ServerPort(self):
@@ -141,10 +176,10 @@ class DhcpGlobals(Base):
         -------
         - number: UDP port that the client addresses server requests to.
         """
-        return self._get_attribute('dhcp4ServerPort')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp4ServerPort'])
     @Dhcp4ServerPort.setter
     def Dhcp4ServerPort(self, value):
-        self._set_attribute('dhcp4ServerPort', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp4ServerPort'], value)
 
     @property
     def Dhcp6EchoIaInfo(self):
@@ -153,10 +188,10 @@ class DhcpGlobals(Base):
         -------
         - bool: If set, the DHCPv6 client will request the exact address as advertised by server.
         """
-        return self._get_attribute('dhcp6EchoIaInfo')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp6EchoIaInfo'])
     @Dhcp6EchoIaInfo.setter
     def Dhcp6EchoIaInfo(self, value):
-        self._set_attribute('dhcp6EchoIaInfo', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp6EchoIaInfo'], value)
 
     @property
     def Dhcp6RebMaxRt(self):
@@ -165,10 +200,10 @@ class DhcpGlobals(Base):
         -------
         - number: RFC 3315 Max Rebind timeout value in seconds
         """
-        return self._get_attribute('dhcp6RebMaxRt')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp6RebMaxRt'])
     @Dhcp6RebMaxRt.setter
     def Dhcp6RebMaxRt(self, value):
-        self._set_attribute('dhcp6RebMaxRt', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp6RebMaxRt'], value)
 
     @property
     def Dhcp6RebTimeout(self):
@@ -177,10 +212,10 @@ class DhcpGlobals(Base):
         -------
         - number: RFC 3315 Initial Rebind timeout seconds
         """
-        return self._get_attribute('dhcp6RebTimeout')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp6RebTimeout'])
     @Dhcp6RebTimeout.setter
     def Dhcp6RebTimeout(self, value):
-        self._set_attribute('dhcp6RebTimeout', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp6RebTimeout'], value)
 
     @property
     def Dhcp6RelMaxRc(self):
@@ -189,10 +224,10 @@ class DhcpGlobals(Base):
         -------
         - number: RFC 3315 Release attempts
         """
-        return self._get_attribute('dhcp6RelMaxRc')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp6RelMaxRc'])
     @Dhcp6RelMaxRc.setter
     def Dhcp6RelMaxRc(self, value):
-        self._set_attribute('dhcp6RelMaxRc', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp6RelMaxRc'], value)
 
     @property
     def Dhcp6RelTimeout(self):
@@ -201,10 +236,10 @@ class DhcpGlobals(Base):
         -------
         - number: RFC 3315 Initial Release timeout in seconds
         """
-        return self._get_attribute('dhcp6RelTimeout')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp6RelTimeout'])
     @Dhcp6RelTimeout.setter
     def Dhcp6RelTimeout(self, value):
-        self._set_attribute('dhcp6RelTimeout', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp6RelTimeout'], value)
 
     @property
     def Dhcp6RenMaxRt(self):
@@ -213,10 +248,10 @@ class DhcpGlobals(Base):
         -------
         - number: RFC 3315 Max Renew timeout value in seconds
         """
-        return self._get_attribute('dhcp6RenMaxRt')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp6RenMaxRt'])
     @Dhcp6RenMaxRt.setter
     def Dhcp6RenMaxRt(self, value):
-        self._set_attribute('dhcp6RenMaxRt', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp6RenMaxRt'], value)
 
     @property
     def Dhcp6RenTimeout(self):
@@ -225,10 +260,10 @@ class DhcpGlobals(Base):
         -------
         - number: RFC 3315 Initial Renew timeout in seconds
         """
-        return self._get_attribute('dhcp6RenTimeout')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp6RenTimeout'])
     @Dhcp6RenTimeout.setter
     def Dhcp6RenTimeout(self, value):
-        self._set_attribute('dhcp6RenTimeout', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp6RenTimeout'], value)
 
     @property
     def Dhcp6ReqMaxRc(self):
@@ -237,10 +272,10 @@ class DhcpGlobals(Base):
         -------
         - number: RFC 3315 Max Request retry attempts
         """
-        return self._get_attribute('dhcp6ReqMaxRc')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp6ReqMaxRc'])
     @Dhcp6ReqMaxRc.setter
     def Dhcp6ReqMaxRc(self, value):
-        self._set_attribute('dhcp6ReqMaxRc', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp6ReqMaxRc'], value)
 
     @property
     def Dhcp6ReqMaxRt(self):
@@ -249,10 +284,10 @@ class DhcpGlobals(Base):
         -------
         - number: RFC 3315 Max Request timeout value in seconds
         """
-        return self._get_attribute('dhcp6ReqMaxRt')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp6ReqMaxRt'])
     @Dhcp6ReqMaxRt.setter
     def Dhcp6ReqMaxRt(self, value):
-        self._set_attribute('dhcp6ReqMaxRt', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp6ReqMaxRt'], value)
 
     @property
     def Dhcp6ReqTimeout(self):
@@ -261,10 +296,10 @@ class DhcpGlobals(Base):
         -------
         - number: RFC 3315 Initial Request timeout in seconds
         """
-        return self._get_attribute('dhcp6ReqTimeout')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp6ReqTimeout'])
     @Dhcp6ReqTimeout.setter
     def Dhcp6ReqTimeout(self, value):
-        self._set_attribute('dhcp6ReqTimeout', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp6ReqTimeout'], value)
 
     @property
     def Dhcp6SolMaxRc(self):
@@ -273,10 +308,10 @@ class DhcpGlobals(Base):
         -------
         - number: RFC 3315 Max Solicit retry attempts
         """
-        return self._get_attribute('dhcp6SolMaxRc')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp6SolMaxRc'])
     @Dhcp6SolMaxRc.setter
     def Dhcp6SolMaxRc(self, value):
-        self._set_attribute('dhcp6SolMaxRc', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp6SolMaxRc'], value)
 
     @property
     def Dhcp6SolMaxRt(self):
@@ -285,10 +320,10 @@ class DhcpGlobals(Base):
         -------
         - number: RFC 3315 Max Solicit timeout value in seconds
         """
-        return self._get_attribute('dhcp6SolMaxRt')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp6SolMaxRt'])
     @Dhcp6SolMaxRt.setter
     def Dhcp6SolMaxRt(self, value):
-        self._set_attribute('dhcp6SolMaxRt', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp6SolMaxRt'], value)
 
     @property
     def Dhcp6SolTimeout(self):
@@ -297,10 +332,10 @@ class DhcpGlobals(Base):
         -------
         - number: RFC 3315 Initial Solicit timeout in seconds
         """
-        return self._get_attribute('dhcp6SolTimeout')
+        return self._get_attribute(self._SDM_ATT_MAP['Dhcp6SolTimeout'])
     @Dhcp6SolTimeout.setter
     def Dhcp6SolTimeout(self, value):
-        self._set_attribute('dhcp6SolTimeout', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dhcp6SolTimeout'], value)
 
     @property
     def MaxOutstandingReleases(self):
@@ -309,10 +344,10 @@ class DhcpGlobals(Base):
         -------
         - number: This is the point at which requests will be restricted. Interfaces are torn down at the configured speed until there are this number of requests in disconnecting stage, at which point additional interfaces are torn down only when others get fully disconnected.
         """
-        return self._get_attribute('maxOutstandingReleases')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'])
     @MaxOutstandingReleases.setter
     def MaxOutstandingReleases(self, value):
-        self._set_attribute('maxOutstandingReleases', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'], value)
 
     @property
     def MaxOutstandingRequests(self):
@@ -321,10 +356,10 @@ class DhcpGlobals(Base):
         -------
         - number: This is the point at which interface setup will be restricted. Interfaces are setup at the configured speed until there are this number of requests in progress, at which point new requests are only added when others are completed.
         """
-        return self._get_attribute('maxOutstandingRequests')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
-        self._set_attribute('maxOutstandingRequests', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
 
     @property
     def ObjectId(self):
@@ -333,7 +368,7 @@ class DhcpGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def RenewOnLinkUp(self):
@@ -342,10 +377,10 @@ class DhcpGlobals(Base):
         -------
         - bool: Indicate to renew the active DHCP sessions after link status goes down and up.
         """
-        return self._get_attribute('renewOnLinkUp')
+        return self._get_attribute(self._SDM_ATT_MAP['RenewOnLinkUp'])
     @RenewOnLinkUp.setter
     def RenewOnLinkUp(self, value):
-        self._set_attribute('renewOnLinkUp', value)
+        self._set_attribute(self._SDM_ATT_MAP['RenewOnLinkUp'], value)
 
     @property
     def SetupRateIncrement(self):
@@ -354,10 +389,10 @@ class DhcpGlobals(Base):
         -------
         - number: This value represents the increment value for setup rate.This value is applied every second and can be negative.
         """
-        return self._get_attribute('setupRateIncrement')
+        return self._get_attribute(self._SDM_ATT_MAP['SetupRateIncrement'])
     @SetupRateIncrement.setter
     def SetupRateIncrement(self, value):
-        self._set_attribute('setupRateIncrement', value)
+        self._set_attribute(self._SDM_ATT_MAP['SetupRateIncrement'], value)
 
     @property
     def SetupRateInitial(self):
@@ -366,10 +401,10 @@ class DhcpGlobals(Base):
         -------
         - number: Setup rate is the number of clients to start in each second.This value represents the initial value for setup rate.
         """
-        return self._get_attribute('setupRateInitial')
+        return self._get_attribute(self._SDM_ATT_MAP['SetupRateInitial'])
     @SetupRateInitial.setter
     def SetupRateInitial(self, value):
-        self._set_attribute('setupRateInitial', value)
+        self._set_attribute(self._SDM_ATT_MAP['SetupRateInitial'], value)
 
     @property
     def SetupRateMax(self):
@@ -378,10 +413,10 @@ class DhcpGlobals(Base):
         -------
         - number: This value represents the final value for setup rate.The setup rate will not change after this value is reached.
         """
-        return self._get_attribute('setupRateMax')
+        return self._get_attribute(self._SDM_ATT_MAP['SetupRateMax'])
     @SetupRateMax.setter
     def SetupRateMax(self, value):
-        self._set_attribute('setupRateMax', value)
+        self._set_attribute(self._SDM_ATT_MAP['SetupRateMax'], value)
 
     @property
     def SkipReleaseOnStop(self):
@@ -390,10 +425,10 @@ class DhcpGlobals(Base):
         -------
         - bool: If enabled, the client does not send a DHCPRELEASE packet when the Stop command is given.
         """
-        return self._get_attribute('skipReleaseOnStop')
+        return self._get_attribute(self._SDM_ATT_MAP['SkipReleaseOnStop'])
     @SkipReleaseOnStop.setter
     def SkipReleaseOnStop(self, value):
-        self._set_attribute('skipReleaseOnStop', value)
+        self._set_attribute(self._SDM_ATT_MAP['SkipReleaseOnStop'], value)
 
     @property
     def TeardownRateIncrement(self):
@@ -402,10 +437,10 @@ class DhcpGlobals(Base):
         -------
         - number: This value represents the increment value for teardown rate.This value is applied every second and can be negative.
         """
-        return self._get_attribute('teardownRateIncrement')
+        return self._get_attribute(self._SDM_ATT_MAP['TeardownRateIncrement'])
     @TeardownRateIncrement.setter
     def TeardownRateIncrement(self, value):
-        self._set_attribute('teardownRateIncrement', value)
+        self._set_attribute(self._SDM_ATT_MAP['TeardownRateIncrement'], value)
 
     @property
     def TeardownRateInitial(self):
@@ -414,10 +449,10 @@ class DhcpGlobals(Base):
         -------
         - number: Teardown rate is the number of clients to stop in each second.This value represents the initial value for teardown rate.
         """
-        return self._get_attribute('teardownRateInitial')
+        return self._get_attribute(self._SDM_ATT_MAP['TeardownRateInitial'])
     @TeardownRateInitial.setter
     def TeardownRateInitial(self, value):
-        self._set_attribute('teardownRateInitial', value)
+        self._set_attribute(self._SDM_ATT_MAP['TeardownRateInitial'], value)
 
     @property
     def TeardownRateMax(self):
@@ -426,10 +461,10 @@ class DhcpGlobals(Base):
         -------
         - number: This value represents the final value for teardown rate.The teardown rate will not change after this value is reached.
         """
-        return self._get_attribute('teardownRateMax')
+        return self._get_attribute(self._SDM_ATT_MAP['TeardownRateMax'])
     @TeardownRateMax.setter
     def TeardownRateMax(self, value):
-        self._set_attribute('teardownRateMax', value)
+        self._set_attribute(self._SDM_ATT_MAP['TeardownRateMax'], value)
 
     @property
     def WaitForCompletion(self):
@@ -438,10 +473,10 @@ class DhcpGlobals(Base):
         -------
         - bool: If true the DHCP plugin is waiting until all DHCP interfaces are configured using DHCP discovery.If is false the configuration will return as soon that the configuration is sent to port.The discovery information can be queried at a later time when is needed.
         """
-        return self._get_attribute('waitForCompletion')
+        return self._get_attribute(self._SDM_ATT_MAP['WaitForCompletion'])
     @WaitForCompletion.setter
     def WaitForCompletion(self, value):
-        self._set_attribute('waitForCompletion', value)
+        self._set_attribute(self._SDM_ATT_MAP['WaitForCompletion'], value)
 
     def update(self, AcceptPartialConfig=None, Dhcp4AddrLeaseTime=None, Dhcp4ClientPort=None, Dhcp4MaxMsgSize=None, Dhcp4NumRetry=None, Dhcp4ResponseTimeout=None, Dhcp4ResponseTimeoutFactor=None, Dhcp4ServerPort=None, Dhcp6EchoIaInfo=None, Dhcp6RebMaxRt=None, Dhcp6RebTimeout=None, Dhcp6RelMaxRc=None, Dhcp6RelTimeout=None, Dhcp6RenMaxRt=None, Dhcp6RenTimeout=None, Dhcp6ReqMaxRc=None, Dhcp6ReqMaxRt=None, Dhcp6ReqTimeout=None, Dhcp6SolMaxRc=None, Dhcp6SolMaxRt=None, Dhcp6SolTimeout=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, RenewOnLinkUp=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None, SkipReleaseOnStop=None, TeardownRateIncrement=None, TeardownRateInitial=None, TeardownRateMax=None, WaitForCompletion=None):
         """Updates dhcpGlobals resource on the server.
@@ -485,7 +520,7 @@ class DhcpGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AcceptPartialConfig=None, Dhcp4AddrLeaseTime=None, Dhcp4ClientPort=None, Dhcp4MaxMsgSize=None, Dhcp4NumRetry=None, Dhcp4ResponseTimeout=None, Dhcp4ResponseTimeoutFactor=None, Dhcp4ServerPort=None, Dhcp6EchoIaInfo=None, Dhcp6RebMaxRt=None, Dhcp6RebTimeout=None, Dhcp6RelMaxRc=None, Dhcp6RelTimeout=None, Dhcp6RenMaxRt=None, Dhcp6RenTimeout=None, Dhcp6ReqMaxRc=None, Dhcp6ReqMaxRt=None, Dhcp6ReqTimeout=None, Dhcp6SolMaxRc=None, Dhcp6SolMaxRt=None, Dhcp6SolTimeout=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, RenewOnLinkUp=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None, SkipReleaseOnStop=None, TeardownRateIncrement=None, TeardownRateInitial=None, TeardownRateMax=None, WaitForCompletion=None):
         """Adds a new dhcpGlobals resource on the server and adds it to the container.
@@ -533,7 +568,7 @@ class DhcpGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained dhcpGlobals resources in this instance from the server.
@@ -596,7 +631,7 @@ class DhcpGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of dhcpGlobals data from the server.

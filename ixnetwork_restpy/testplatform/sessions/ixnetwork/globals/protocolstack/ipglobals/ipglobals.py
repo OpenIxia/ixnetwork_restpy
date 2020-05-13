@@ -32,6 +32,13 @@ class IpGlobals(Base):
 
     __slots__ = ()
     _SDM_NAME = 'ipGlobals'
+    _SDM_ATT_MAP = {
+        'EnableGatewayArp': 'enableGatewayArp',
+        'GatewayArpRequestRate': 'gatewayArpRequestRate',
+        'MaxOutstandingGatewayArpRequests': 'maxOutstandingGatewayArpRequests',
+        'ObjectId': 'objectId',
+        'SendOneArpFromEachInterface': 'sendOneArpFromEachInterface',
+    }
 
     def __init__(self, parent):
         super(IpGlobals, self).__init__(parent)
@@ -43,10 +50,10 @@ class IpGlobals(Base):
         -------
         - bool: When enabled, every IP address will ARP the specified gateway.
         """
-        return self._get_attribute('enableGatewayArp')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableGatewayArp'])
     @EnableGatewayArp.setter
     def EnableGatewayArp(self, value):
-        self._set_attribute('enableGatewayArp', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableGatewayArp'], value)
 
     @property
     def GatewayArpRequestRate(self):
@@ -55,10 +62,10 @@ class IpGlobals(Base):
         -------
         - number: Maximum ARP request rate
         """
-        return self._get_attribute('gatewayArpRequestRate')
+        return self._get_attribute(self._SDM_ATT_MAP['GatewayArpRequestRate'])
     @GatewayArpRequestRate.setter
     def GatewayArpRequestRate(self, value):
-        self._set_attribute('gatewayArpRequestRate', value)
+        self._set_attribute(self._SDM_ATT_MAP['GatewayArpRequestRate'], value)
 
     @property
     def MaxOutstandingGatewayArpRequests(self):
@@ -67,10 +74,10 @@ class IpGlobals(Base):
         -------
         - number: Threshold at which the plugin begins throttling back the number of new ARP requests sent out.
         """
-        return self._get_attribute('maxOutstandingGatewayArpRequests')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingGatewayArpRequests'])
     @MaxOutstandingGatewayArpRequests.setter
     def MaxOutstandingGatewayArpRequests(self, value):
-        self._set_attribute('maxOutstandingGatewayArpRequests', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingGatewayArpRequests'], value)
 
     @property
     def ObjectId(self):
@@ -79,7 +86,7 @@ class IpGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def SendOneArpFromEachInterface(self):
@@ -88,10 +95,10 @@ class IpGlobals(Base):
         -------
         - bool: When set, each interface will send one ARP request.
         """
-        return self._get_attribute('sendOneArpFromEachInterface')
+        return self._get_attribute(self._SDM_ATT_MAP['SendOneArpFromEachInterface'])
     @SendOneArpFromEachInterface.setter
     def SendOneArpFromEachInterface(self, value):
-        self._set_attribute('sendOneArpFromEachInterface', value)
+        self._set_attribute(self._SDM_ATT_MAP['SendOneArpFromEachInterface'], value)
 
     def update(self, EnableGatewayArp=None, GatewayArpRequestRate=None, MaxOutstandingGatewayArpRequests=None, SendOneArpFromEachInterface=None):
         """Updates ipGlobals resource on the server.
@@ -107,7 +114,7 @@ class IpGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, EnableGatewayArp=None, GatewayArpRequestRate=None, MaxOutstandingGatewayArpRequests=None, SendOneArpFromEachInterface=None):
         """Adds a new ipGlobals resource on the server and adds it to the container.
@@ -127,7 +134,7 @@ class IpGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained ipGlobals resources in this instance from the server.
@@ -162,7 +169,7 @@ class IpGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of ipGlobals data from the server.

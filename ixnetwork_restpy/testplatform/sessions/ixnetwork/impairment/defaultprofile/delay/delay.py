@@ -30,6 +30,11 @@ class Delay(Base):
 
     __slots__ = ()
     _SDM_NAME = 'delay'
+    _SDM_ATT_MAP = {
+        'Enabled': 'enabled',
+        'Units': 'units',
+        'Value': 'value',
+    }
 
     def __init__(self, parent):
         super(Delay, self).__init__(parent)
@@ -41,10 +46,10 @@ class Delay(Base):
         -------
         - bool: If true, delay packets.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Units(self):
@@ -53,10 +58,10 @@ class Delay(Base):
         -------
         - str(kilometers | kKilometers | kMicroseconds | kMilliseconds | kSeconds | microseconds | milliseconds | seconds): Specify the units for the delay value.
         """
-        return self._get_attribute('units')
+        return self._get_attribute(self._SDM_ATT_MAP['Units'])
     @Units.setter
     def Units(self, value):
-        self._set_attribute('units', value)
+        self._set_attribute(self._SDM_ATT_MAP['Units'], value)
 
     @property
     def Value(self):
@@ -65,10 +70,10 @@ class Delay(Base):
         -------
         - number: Time to delay each packet.
         """
-        return self._get_attribute('value')
+        return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
-        self._set_attribute('value', value)
+        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Enabled=None, Units=None, Value=None):
         """Updates delay resource on the server.
@@ -83,4 +88,4 @@ class Delay(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

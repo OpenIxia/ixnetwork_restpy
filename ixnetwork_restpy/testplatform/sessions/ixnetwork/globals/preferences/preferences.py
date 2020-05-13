@@ -30,6 +30,14 @@ class Preferences(Base):
 
     __slots__ = ()
     _SDM_NAME = 'preferences'
+    _SDM_ATT_MAP = {
+        'ClientTraceLevel': 'clientTraceLevel',
+        'ConnectPortsOnLoadConfig': 'connectPortsOnLoadConfig',
+        'LatestConfigInDiagEnabled': 'latestConfigInDiagEnabled',
+        'RebootPortsOnConnect': 'rebootPortsOnConnect',
+        'RecentChassisList': 'recentChassisList',
+        'RecentFiles': 'recentFiles',
+    }
 
     def __init__(self, parent):
         super(Preferences, self).__init__(parent)
@@ -41,10 +49,10 @@ class Preferences(Base):
         -------
         - str(debug | error | fatal | info | warn): Set the IxNetwork Client side Log/Trace level
         """
-        return self._get_attribute('clientTraceLevel')
+        return self._get_attribute(self._SDM_ATT_MAP['ClientTraceLevel'])
     @ClientTraceLevel.setter
     def ClientTraceLevel(self, value):
-        self._set_attribute('clientTraceLevel', value)
+        self._set_attribute(self._SDM_ATT_MAP['ClientTraceLevel'], value)
 
     @property
     def ConnectPortsOnLoadConfig(self):
@@ -53,10 +61,10 @@ class Preferences(Base):
         -------
         - bool: If true the application will connect the virtual ports to any assigned hardware ports when the configuration is loaded
         """
-        return self._get_attribute('connectPortsOnLoadConfig')
+        return self._get_attribute(self._SDM_ATT_MAP['ConnectPortsOnLoadConfig'])
     @ConnectPortsOnLoadConfig.setter
     def ConnectPortsOnLoadConfig(self, value):
-        self._set_attribute('connectPortsOnLoadConfig', value)
+        self._set_attribute(self._SDM_ATT_MAP['ConnectPortsOnLoadConfig'], value)
 
     @property
     def LatestConfigInDiagEnabled(self):
@@ -65,10 +73,10 @@ class Preferences(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('latestConfigInDiagEnabled')
+        return self._get_attribute(self._SDM_ATT_MAP['LatestConfigInDiagEnabled'])
     @LatestConfigInDiagEnabled.setter
     def LatestConfigInDiagEnabled(self, value):
-        self._set_attribute('latestConfigInDiagEnabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['LatestConfigInDiagEnabled'], value)
 
     @property
     def RebootPortsOnConnect(self):
@@ -77,10 +85,10 @@ class Preferences(Base):
         -------
         - bool: If true the application will reboot any connected virtual ports when the configuration is loaded
         """
-        return self._get_attribute('rebootPortsOnConnect')
+        return self._get_attribute(self._SDM_ATT_MAP['RebootPortsOnConnect'])
     @RebootPortsOnConnect.setter
     def RebootPortsOnConnect(self, value):
-        self._set_attribute('rebootPortsOnConnect', value)
+        self._set_attribute(self._SDM_ATT_MAP['RebootPortsOnConnect'], value)
 
     @property
     def RecentChassisList(self):
@@ -89,10 +97,10 @@ class Preferences(Base):
         -------
         - list(str): List of recently used chassis
         """
-        return self._get_attribute('recentChassisList')
+        return self._get_attribute(self._SDM_ATT_MAP['RecentChassisList'])
     @RecentChassisList.setter
     def RecentChassisList(self, value):
-        self._set_attribute('recentChassisList', value)
+        self._set_attribute(self._SDM_ATT_MAP['RecentChassisList'], value)
 
     @property
     def RecentFiles(self):
@@ -101,7 +109,7 @@ class Preferences(Base):
         -------
         - list(str): List of recently used files
         """
-        return self._get_attribute('recentFiles')
+        return self._get_attribute(self._SDM_ATT_MAP['RecentFiles'])
 
     def update(self, ClientTraceLevel=None, ConnectPortsOnLoadConfig=None, LatestConfigInDiagEnabled=None, RebootPortsOnConnect=None, RecentChassisList=None):
         """Updates preferences resource on the server.
@@ -118,4 +126,4 @@ class Preferences(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

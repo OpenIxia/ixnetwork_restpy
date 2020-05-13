@@ -30,6 +30,12 @@ class DelayVariation(Base):
 
     __slots__ = ()
     _SDM_NAME = 'delayVariation'
+    _SDM_ATT_MAP = {
+        'Enabled': 'enabled',
+        'LargeSequenceNumberErrorThreshold': 'largeSequenceNumberErrorThreshold',
+        'LatencyMode': 'latencyMode',
+        'StatisticsMode': 'statisticsMode',
+    }
 
     def __init__(self, parent):
         super(DelayVariation, self).__init__(parent)
@@ -41,10 +47,10 @@ class DelayVariation(Base):
         -------
         - bool: If enabled, fetches latency delay variation statistics with average, minimum, and maximum measurements.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def LargeSequenceNumberErrorThreshold(self):
@@ -53,10 +59,10 @@ class DelayVariation(Base):
         -------
         - number: The value for the large sequence number error.
         """
-        return self._get_attribute('largeSequenceNumberErrorThreshold')
+        return self._get_attribute(self._SDM_ATT_MAP['LargeSequenceNumberErrorThreshold'])
     @LargeSequenceNumberErrorThreshold.setter
     def LargeSequenceNumberErrorThreshold(self, value):
-        self._set_attribute('largeSequenceNumberErrorThreshold', value)
+        self._set_attribute(self._SDM_ATT_MAP['LargeSequenceNumberErrorThreshold'], value)
 
     @property
     def LatencyMode(self):
@@ -65,10 +71,10 @@ class DelayVariation(Base):
         -------
         - str(cutThrough | forwardingDelay | mef | storeForward): If enabled, allows to use Cut Through, Forwarding Delay, MEF, and Store and Forward Delay variation statictics measurements.
         """
-        return self._get_attribute('latencyMode')
+        return self._get_attribute(self._SDM_ATT_MAP['LatencyMode'])
     @LatencyMode.setter
     def LatencyMode(self, value):
-        self._set_attribute('latencyMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['LatencyMode'], value)
 
     @property
     def StatisticsMode(self):
@@ -77,10 +83,10 @@ class DelayVariation(Base):
         -------
         - str(rxDelayVariationAverage | rxDelayVariationErrorsAndRate | rxDelayVariationMinMaxAndRate): If enabled, allows to receive delay variation statistics with sequence error measurements.
         """
-        return self._get_attribute('statisticsMode')
+        return self._get_attribute(self._SDM_ATT_MAP['StatisticsMode'])
     @StatisticsMode.setter
     def StatisticsMode(self, value):
-        self._set_attribute('statisticsMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['StatisticsMode'], value)
 
     def update(self, Enabled=None, LargeSequenceNumberErrorThreshold=None, LatencyMode=None, StatisticsMode=None):
         """Updates delayVariation resource on the server.
@@ -96,4 +102,4 @@ class DelayVariation(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

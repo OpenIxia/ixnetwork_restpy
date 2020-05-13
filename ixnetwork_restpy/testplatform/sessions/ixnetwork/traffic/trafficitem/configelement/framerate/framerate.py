@@ -30,6 +30,13 @@ class FrameRate(Base):
 
     __slots__ = ()
     _SDM_NAME = 'frameRate'
+    _SDM_ATT_MAP = {
+        'BitRateUnitsType': 'bitRateUnitsType',
+        'EnforceMinimumInterPacketGap': 'enforceMinimumInterPacketGap',
+        'InterPacketGapUnitsType': 'interPacketGapUnitsType',
+        'Rate': 'rate',
+        'Type': 'type',
+    }
 
     def __init__(self, parent):
         super(FrameRate, self).__init__(parent)
@@ -41,10 +48,10 @@ class FrameRate(Base):
         -------
         - str(bitsPerSec | bytesPerSec | kbitsPerSec | kbytesPerSec | mbitsPerSec | mbytesPerSec): The rate units for transmitting packet.
         """
-        return self._get_attribute('bitRateUnitsType')
+        return self._get_attribute(self._SDM_ATT_MAP['BitRateUnitsType'])
     @BitRateUnitsType.setter
     def BitRateUnitsType(self, value):
-        self._set_attribute('bitRateUnitsType', value)
+        self._set_attribute(self._SDM_ATT_MAP['BitRateUnitsType'], value)
 
     @property
     def EnforceMinimumInterPacketGap(self):
@@ -53,10 +60,10 @@ class FrameRate(Base):
         -------
         - number: Sets the minimum inter-packet gap allowed for Ethernet ports only. The default is 12 bytes.
         """
-        return self._get_attribute('enforceMinimumInterPacketGap')
+        return self._get_attribute(self._SDM_ATT_MAP['EnforceMinimumInterPacketGap'])
     @EnforceMinimumInterPacketGap.setter
     def EnforceMinimumInterPacketGap(self, value):
-        self._set_attribute('enforceMinimumInterPacketGap', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnforceMinimumInterPacketGap'], value)
 
     @property
     def InterPacketGapUnitsType(self):
@@ -65,10 +72,10 @@ class FrameRate(Base):
         -------
         - str(bytes | nanoseconds): The inter-packet gap expressed in units.
         """
-        return self._get_attribute('interPacketGapUnitsType')
+        return self._get_attribute(self._SDM_ATT_MAP['InterPacketGapUnitsType'])
     @InterPacketGapUnitsType.setter
     def InterPacketGapUnitsType(self, value):
-        self._set_attribute('interPacketGapUnitsType', value)
+        self._set_attribute(self._SDM_ATT_MAP['InterPacketGapUnitsType'], value)
 
     @property
     def Rate(self):
@@ -77,10 +84,10 @@ class FrameRate(Base):
         -------
         - number: The rate at which packet is transmitted.
         """
-        return self._get_attribute('rate')
+        return self._get_attribute(self._SDM_ATT_MAP['Rate'])
     @Rate.setter
     def Rate(self, value):
-        self._set_attribute('rate', value)
+        self._set_attribute(self._SDM_ATT_MAP['Rate'], value)
 
     @property
     def Type(self):
@@ -89,10 +96,10 @@ class FrameRate(Base):
         -------
         - str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate): Sets the frame rate types.
         """
-        return self._get_attribute('type')
+        return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
-        self._set_attribute('type', value)
+        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     def update(self, BitRateUnitsType=None, EnforceMinimumInterPacketGap=None, InterPacketGapUnitsType=None, Rate=None, Type=None):
         """Updates frameRate resource on the server.
@@ -109,4 +116,4 @@ class FrameRate(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -30,6 +30,22 @@ class Statistics(Base):
 
     __slots__ = ()
     _SDM_NAME = 'statistics'
+    _SDM_ATT_MAP = {
+        'AdditionalFcoeStat1': 'additionalFcoeStat1',
+        'AdditionalFcoeStat2': 'additionalFcoeStat2',
+        'CsvFilePath': 'csvFilePath',
+        'CsvLogPollIntervalMultiplier': 'csvLogPollIntervalMultiplier',
+        'DataStorePollingIntervalMultiplier': 'dataStorePollingIntervalMultiplier',
+        'EnableAutoDataStore': 'enableAutoDataStore',
+        'EnableCsvLogging': 'enableCsvLogging',
+        'EnableDataCenterSharedStats': 'enableDataCenterSharedStats',
+        'GuardrailEnabled': 'guardrailEnabled',
+        'MaxNumberOfStatsPerCustomGraph': 'maxNumberOfStatsPerCustomGraph',
+        'PollInterval': 'pollInterval',
+        'TimeSynchronization': 'timeSynchronization',
+        'TimestampPrecision': 'timestampPrecision',
+        'UgsTcpPort': 'ugsTcpPort',
+    }
 
     def __init__(self, parent):
         super(Statistics, self).__init__(parent)
@@ -125,10 +141,10 @@ class Statistics(Base):
         -------
         - str(fcoeInvalidDelimiter | fcoeInvalidFrames | fcoeInvalidSize | fcoeNormalSizeBadFcCRC | fcoeNormalSizeGoodFcCRC | fcoeUndersizeBadFcCRC | fcoeUndersizeGoodFcCRC | fcoeValidFrames): Signifies additional FCOE stat 1
         """
-        return self._get_attribute('additionalFcoeStat1')
+        return self._get_attribute(self._SDM_ATT_MAP['AdditionalFcoeStat1'])
     @AdditionalFcoeStat1.setter
     def AdditionalFcoeStat1(self, value):
-        self._set_attribute('additionalFcoeStat1', value)
+        self._set_attribute(self._SDM_ATT_MAP['AdditionalFcoeStat1'], value)
 
     @property
     def AdditionalFcoeStat2(self):
@@ -137,10 +153,10 @@ class Statistics(Base):
         -------
         - str(fcoeInvalidDelimiter | fcoeInvalidFrames | fcoeInvalidSize | fcoeNormalSizeBadFcCRC | fcoeNormalSizeGoodFcCRC | fcoeUndersizeBadFcCRC | fcoeUndersizeGoodFcCRC | fcoeValidFrames): Sets the additional FCoE shared stats.
         """
-        return self._get_attribute('additionalFcoeStat2')
+        return self._get_attribute(self._SDM_ATT_MAP['AdditionalFcoeStat2'])
     @AdditionalFcoeStat2.setter
     def AdditionalFcoeStat2(self, value):
-        self._set_attribute('additionalFcoeStat2', value)
+        self._set_attribute(self._SDM_ATT_MAP['AdditionalFcoeStat2'], value)
 
     @property
     def CsvFilePath(self):
@@ -149,10 +165,10 @@ class Statistics(Base):
         -------
         - str: Sets the CSV file path.
         """
-        return self._get_attribute('csvFilePath')
+        return self._get_attribute(self._SDM_ATT_MAP['CsvFilePath'])
     @CsvFilePath.setter
     def CsvFilePath(self, value):
-        self._set_attribute('csvFilePath', value)
+        self._set_attribute(self._SDM_ATT_MAP['CsvFilePath'], value)
 
     @property
     def CsvLogPollIntervalMultiplier(self):
@@ -161,10 +177,10 @@ class Statistics(Base):
         -------
         - number: Used to specify the time interval between log polling events.
         """
-        return self._get_attribute('csvLogPollIntervalMultiplier')
+        return self._get_attribute(self._SDM_ATT_MAP['CsvLogPollIntervalMultiplier'])
     @CsvLogPollIntervalMultiplier.setter
     def CsvLogPollIntervalMultiplier(self, value):
-        self._set_attribute('csvLogPollIntervalMultiplier', value)
+        self._set_attribute(self._SDM_ATT_MAP['CsvLogPollIntervalMultiplier'], value)
 
     @property
     def DataStorePollingIntervalMultiplier(self):
@@ -173,10 +189,10 @@ class Statistics(Base):
         -------
         - number: The data store polling interval value is the result of the data store polling interval multiplier value multiplied by the polling interval value set for the test.
         """
-        return self._get_attribute('dataStorePollingIntervalMultiplier')
+        return self._get_attribute(self._SDM_ATT_MAP['DataStorePollingIntervalMultiplier'])
     @DataStorePollingIntervalMultiplier.setter
     def DataStorePollingIntervalMultiplier(self, value):
-        self._set_attribute('dataStorePollingIntervalMultiplier', value)
+        self._set_attribute(self._SDM_ATT_MAP['DataStorePollingIntervalMultiplier'], value)
 
     @property
     def EnableAutoDataStore(self):
@@ -185,10 +201,10 @@ class Statistics(Base):
         -------
         - bool: If this option is enabled, StatViewer writes the statistical values in binary format for all test results in a view. The test results is converted into a binary array and written to a file.
         """
-        return self._get_attribute('enableAutoDataStore')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableAutoDataStore'])
     @EnableAutoDataStore.setter
     def EnableAutoDataStore(self, value):
-        self._set_attribute('enableAutoDataStore', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableAutoDataStore'], value)
 
     @property
     def EnableCsvLogging(self):
@@ -197,10 +213,10 @@ class Statistics(Base):
         -------
         - bool: If this option is enabled, StatViewer writes the statistical values in comma separated value format for all test results in a view.
         """
-        return self._get_attribute('enableCsvLogging')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableCsvLogging'])
     @EnableCsvLogging.setter
     def EnableCsvLogging(self, value):
-        self._set_attribute('enableCsvLogging', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableCsvLogging'], value)
 
     @property
     def EnableDataCenterSharedStats(self):
@@ -209,10 +225,10 @@ class Statistics(Base):
         -------
         - bool: If true, enables statistics for Data Center.
         """
-        return self._get_attribute('enableDataCenterSharedStats')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableDataCenterSharedStats'])
     @EnableDataCenterSharedStats.setter
     def EnableDataCenterSharedStats(self, value):
-        self._set_attribute('enableDataCenterSharedStats', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableDataCenterSharedStats'], value)
 
     @property
     def GuardrailEnabled(self):
@@ -221,10 +237,10 @@ class Statistics(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute('guardrailEnabled')
+        return self._get_attribute(self._SDM_ATT_MAP['GuardrailEnabled'])
     @GuardrailEnabled.setter
     def GuardrailEnabled(self, value):
-        self._set_attribute('guardrailEnabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['GuardrailEnabled'], value)
 
     @property
     def MaxNumberOfStatsPerCustomGraph(self):
@@ -233,10 +249,10 @@ class Statistics(Base):
         -------
         - number: The data store polling interval value is the result of the data store polling interval multiplier value multiplied by the polling interval value set for the test.
         """
-        return self._get_attribute('maxNumberOfStatsPerCustomGraph')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxNumberOfStatsPerCustomGraph'])
     @MaxNumberOfStatsPerCustomGraph.setter
     def MaxNumberOfStatsPerCustomGraph(self, value):
-        self._set_attribute('maxNumberOfStatsPerCustomGraph', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxNumberOfStatsPerCustomGraph'], value)
 
     @property
     def PollInterval(self):
@@ -245,10 +261,10 @@ class Statistics(Base):
         -------
         - number: The multiplier used with the frequency (2 seconds), to set the time interval between polling events. The default is 1 (1 times 2 seconds = 2 seconds).
         """
-        return self._get_attribute('pollInterval')
+        return self._get_attribute(self._SDM_ATT_MAP['PollInterval'])
     @PollInterval.setter
     def PollInterval(self, value):
-        self._set_attribute('pollInterval', value)
+        self._set_attribute(self._SDM_ATT_MAP['PollInterval'], value)
 
     @property
     def TimeSynchronization(self):
@@ -257,10 +273,10 @@ class Statistics(Base):
         -------
         - str(syncTimeToSystemClock | syncTimeToTestStart): The statistics polling time can be configured to get synchronized with the system clock or reset it to 0 when the test starts. The time synchronization behavior can be changed only before the test starts and does not apply during test run.
         """
-        return self._get_attribute('timeSynchronization')
+        return self._get_attribute(self._SDM_ATT_MAP['TimeSynchronization'])
     @TimeSynchronization.setter
     def TimeSynchronization(self, value):
-        self._set_attribute('timeSynchronization', value)
+        self._set_attribute(self._SDM_ATT_MAP['TimeSynchronization'], value)
 
     @property
     def TimestampPrecision(self):
@@ -269,10 +285,10 @@ class Statistics(Base):
         -------
         - number: The timestamp precision allows you to change the timestamp precision from microseconds to nanoseconds for specific StatViewer statistics and features. The timestamp precision can be set to have the fstatistics display values with decimals ranging from 0 to 9.
         """
-        return self._get_attribute('timestampPrecision')
+        return self._get_attribute(self._SDM_ATT_MAP['TimestampPrecision'])
     @TimestampPrecision.setter
     def TimestampPrecision(self, value):
-        self._set_attribute('timestampPrecision', value)
+        self._set_attribute(self._SDM_ATT_MAP['TimestampPrecision'], value)
 
     @property
     def UgsTcpPort(self):
@@ -281,7 +297,7 @@ class Statistics(Base):
         -------
         - number: Used to specify the UGS TCP port.
         """
-        return self._get_attribute('ugsTcpPort')
+        return self._get_attribute(self._SDM_ATT_MAP['UgsTcpPort'])
 
     def update(self, AdditionalFcoeStat1=None, AdditionalFcoeStat2=None, CsvFilePath=None, CsvLogPollIntervalMultiplier=None, DataStorePollingIntervalMultiplier=None, EnableAutoDataStore=None, EnableCsvLogging=None, EnableDataCenterSharedStats=None, GuardrailEnabled=None, MaxNumberOfStatsPerCustomGraph=None, PollInterval=None, TimeSynchronization=None, TimestampPrecision=None):
         """Updates statistics resource on the server.
@@ -306,7 +322,7 @@ class Statistics(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def CheckViewTreeGroupExists(self, *args, **kwargs):
         """Executes the checkViewTreeGroupExists operation on the server.

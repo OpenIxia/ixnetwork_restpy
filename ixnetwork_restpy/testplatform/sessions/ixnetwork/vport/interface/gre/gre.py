@@ -30,6 +30,15 @@ class Gre(Base):
 
     __slots__ = ()
     _SDM_NAME = 'gre'
+    _SDM_ATT_MAP = {
+        'Dest': 'dest',
+        'InKey': 'inKey',
+        'OutKey': 'outKey',
+        'Source': 'source',
+        'UseChecksum': 'useChecksum',
+        'UseKey': 'useKey',
+        'UseSequence': 'useSequence',
+    }
 
     def __init__(self, parent):
         super(Gre, self).__init__(parent)
@@ -41,10 +50,10 @@ class Gre(Base):
         -------
         - str: Part of the GRE Delivery Header: The IP address of the Destination router at the remote end of the GRE tunnel.
         """
-        return self._get_attribute('dest')
+        return self._get_attribute(self._SDM_ATT_MAP['Dest'])
     @Dest.setter
     def Dest(self, value):
-        self._set_attribute('dest', value)
+        self._set_attribute(self._SDM_ATT_MAP['Dest'], value)
 
     @property
     def InKey(self):
@@ -53,10 +62,10 @@ class Gre(Base):
         -------
         - number: This is the user-assigned GRE header authentication key value that the receiving router will check for to validate GRE packets being sent via the tunnel. All packets sent via a specific tunnel should contain the same key value (one key per GRE tunnel).
         """
-        return self._get_attribute('inKey')
+        return self._get_attribute(self._SDM_ATT_MAP['InKey'])
     @InKey.setter
     def InKey(self, value):
-        self._set_attribute('inKey', value)
+        self._set_attribute(self._SDM_ATT_MAP['InKey'], value)
 
     @property
     def OutKey(self):
@@ -65,10 +74,10 @@ class Gre(Base):
         -------
         - number: This is the user-assigned GRE header authentication key value that will be included in the GRE packets being sent via the tunnel. All packets sent via a specific tunnel should contain the same key value (one key per GRE tunnel). In most cases, the In Key and Out Key will be the same.
         """
-        return self._get_attribute('outKey')
+        return self._get_attribute(self._SDM_ATT_MAP['OutKey'])
     @OutKey.setter
     def OutKey(self, value):
-        self._set_attribute('outKey', value)
+        self._set_attribute(self._SDM_ATT_MAP['OutKey'], value)
 
     @property
     def Source(self):
@@ -77,10 +86,10 @@ class Gre(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/vport/.../ipv4 | /api/v1/sessions/1/ixnetwork/vport/.../ipv6): Part of the GRE Delivery Header: The IP address of the connected interface associated with the source of this GRE tunnel.
         """
-        return self._get_attribute('source')
+        return self._get_attribute(self._SDM_ATT_MAP['Source'])
     @Source.setter
     def Source(self, value):
-        self._set_attribute('source', value)
+        self._set_attribute(self._SDM_ATT_MAP['Source'], value)
 
     @property
     def UseChecksum(self):
@@ -89,10 +98,10 @@ class Gre(Base):
         -------
         - bool: Enables the use of the optional GRE checksum.
         """
-        return self._get_attribute('useChecksum')
+        return self._get_attribute(self._SDM_ATT_MAP['UseChecksum'])
     @UseChecksum.setter
     def UseChecksum(self, value):
-        self._set_attribute('useChecksum', value)
+        self._set_attribute(self._SDM_ATT_MAP['UseChecksum'], value)
 
     @property
     def UseKey(self):
@@ -101,10 +110,10 @@ class Gre(Base):
         -------
         - bool: Enables the use of the optional GRE header key field.
         """
-        return self._get_attribute('useKey')
+        return self._get_attribute(self._SDM_ATT_MAP['UseKey'])
     @UseKey.setter
     def UseKey(self, value):
-        self._set_attribute('useKey', value)
+        self._set_attribute(self._SDM_ATT_MAP['UseKey'], value)
 
     @property
     def UseSequence(self):
@@ -113,10 +122,10 @@ class Gre(Base):
         -------
         - bool: If more than one GRE tunnel will be used, this is the amount that will be added to create each additional authentication key value to be sent in the GRE packets (one key per GRE tunnel).
         """
-        return self._get_attribute('useSequence')
+        return self._get_attribute(self._SDM_ATT_MAP['UseSequence'])
     @UseSequence.setter
     def UseSequence(self, value):
-        self._set_attribute('useSequence', value)
+        self._set_attribute(self._SDM_ATT_MAP['UseSequence'], value)
 
     def update(self, Dest=None, InKey=None, OutKey=None, Source=None, UseChecksum=None, UseKey=None, UseSequence=None):
         """Updates gre resource on the server.
@@ -135,4 +144,4 @@ class Gre(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

@@ -30,6 +30,11 @@ class Impairment(Base):
 
     __slots__ = ()
     _SDM_NAME = 'impairment'
+    _SDM_ATT_MAP = {
+        'Errors': 'errors',
+        'State': 'state',
+        'Warnings': 'warnings',
+    }
 
     def __init__(self, parent):
         super(Impairment, self).__init__(parent)
@@ -83,7 +88,7 @@ class Impairment(Base):
         -------
         - list(str): List of errors which occurred while applying changes to the impairment configuration.
         """
-        return self._get_attribute('errors')
+        return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
     @property
     def State(self):
@@ -92,7 +97,7 @@ class Impairment(Base):
         -------
         - str(applyingChanges | changesPending | errorOccurred | ready): Indicates whether changes are being applied to the impairment configuration.
         """
-        return self._get_attribute('state')
+        return self._get_attribute(self._SDM_ATT_MAP['State'])
 
     @property
     def Warnings(self):
@@ -101,7 +106,7 @@ class Impairment(Base):
         -------
         - list(str): List of warnings which occurred while applying changes to the impairment configuration.
         """
-        return self._get_attribute('warnings')
+        return self._get_attribute(self._SDM_ATT_MAP['Warnings'])
 
     def Apply(self):
         """Executes the apply operation on the server.

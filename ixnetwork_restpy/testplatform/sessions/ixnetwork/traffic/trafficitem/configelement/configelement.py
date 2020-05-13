@@ -31,6 +31,15 @@ class ConfigElement(Base):
 
     __slots__ = ()
     _SDM_NAME = 'configElement'
+    _SDM_ATT_MAP = {
+        'Crc': 'crc',
+        'DestinationMacMode': 'destinationMacMode',
+        'EnableDisparityError': 'enableDisparityError',
+        'EncapsulationName': 'encapsulationName',
+        'EndpointSetId': 'endpointSetId',
+        'PreambleCustomSize': 'preambleCustomSize',
+        'PreambleFrameSizeMode': 'preambleFrameSizeMode',
+    }
 
     def __init__(self, parent):
         super(ConfigElement, self).__init__(parent)
@@ -138,13 +147,13 @@ class ConfigElement(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.transmissiondistribution.transmissiondistribution.TransmissionDistribution): An instance of the TransmissionDistribution class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.transmissiondistribution.transmissiondistribution.TransmissionDistribution): An instance of the TransmissionDistribution class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.transmissiondistribution.transmissiondistribution import TransmissionDistribution
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.transmissiondistribution.transmissiondistribution import TransmissionDistribution
         return TransmissionDistribution(self)
 
     @property
@@ -154,10 +163,10 @@ class ConfigElement(Base):
         -------
         - str(badCrc | goodCrc): The Cyclic Redundancy Check frame of the configured encapsulation set.
         """
-        return self._get_attribute('crc')
+        return self._get_attribute(self._SDM_ATT_MAP['Crc'])
     @Crc.setter
     def Crc(self, value):
-        self._set_attribute('crc', value)
+        self._set_attribute(self._SDM_ATT_MAP['Crc'], value)
 
     @property
     def DestinationMacMode(self):
@@ -166,10 +175,10 @@ class ConfigElement(Base):
         -------
         - str(arp | manual): The destination MAC address that is to be configured.
         """
-        return self._get_attribute('destinationMacMode')
+        return self._get_attribute(self._SDM_ATT_MAP['DestinationMacMode'])
     @DestinationMacMode.setter
     def DestinationMacMode(self, value):
-        self._set_attribute('destinationMacMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['DestinationMacMode'], value)
 
     @property
     def EnableDisparityError(self):
@@ -178,10 +187,10 @@ class ConfigElement(Base):
         -------
         - bool: If true, enables disparity error
         """
-        return self._get_attribute('enableDisparityError')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableDisparityError'])
     @EnableDisparityError.setter
     def EnableDisparityError(self, value):
-        self._set_attribute('enableDisparityError', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableDisparityError'], value)
 
     @property
     def EncapsulationName(self):
@@ -190,7 +199,7 @@ class ConfigElement(Base):
         -------
         - str: Indicates the name of the encapsulation set.
         """
-        return self._get_attribute('encapsulationName')
+        return self._get_attribute(self._SDM_ATT_MAP['EncapsulationName'])
 
     @property
     def EndpointSetId(self):
@@ -199,7 +208,7 @@ class ConfigElement(Base):
         -------
         - number: Indicates the identification of the endpoint set.
         """
-        return self._get_attribute('endpointSetId')
+        return self._get_attribute(self._SDM_ATT_MAP['EndpointSetId'])
 
     @property
     def PreambleCustomSize(self):
@@ -208,10 +217,10 @@ class ConfigElement(Base):
         -------
         - number: Indicates the customized preamble size of the frame.
         """
-        return self._get_attribute('preambleCustomSize')
+        return self._get_attribute(self._SDM_ATT_MAP['PreambleCustomSize'])
     @PreambleCustomSize.setter
     def PreambleCustomSize(self, value):
-        self._set_attribute('preambleCustomSize', value)
+        self._set_attribute(self._SDM_ATT_MAP['PreambleCustomSize'], value)
 
     @property
     def PreambleFrameSizeMode(self):
@@ -220,10 +229,10 @@ class ConfigElement(Base):
         -------
         - str(auto | custom): The preamble size to synchronize sender and receiver of the configured encapsulation set.
         """
-        return self._get_attribute('preambleFrameSizeMode')
+        return self._get_attribute(self._SDM_ATT_MAP['PreambleFrameSizeMode'])
     @PreambleFrameSizeMode.setter
     def PreambleFrameSizeMode(self, value):
-        self._set_attribute('preambleFrameSizeMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['PreambleFrameSizeMode'], value)
 
     def update(self, Crc=None, DestinationMacMode=None, EnableDisparityError=None, PreambleCustomSize=None, PreambleFrameSizeMode=None):
         """Updates configElement resource on the server.
@@ -240,7 +249,7 @@ class ConfigElement(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, Crc=None, DestinationMacMode=None, EnableDisparityError=None, EncapsulationName=None, EndpointSetId=None, PreambleCustomSize=None, PreambleFrameSizeMode=None):
         """Finds and retrieves configElement resources from the server.
@@ -267,7 +276,7 @@ class ConfigElement(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of configElement data from the server.

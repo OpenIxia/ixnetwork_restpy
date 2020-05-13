@@ -31,6 +31,16 @@ class Ipv4(Base):
 
     __slots__ = ()
     _SDM_NAME = 'ipv4'
+    _SDM_ATT_MAP = {
+        'AvailableWidths': 'availableWidths',
+        'BitmaskCount': 'bitmaskCount',
+        'InnerLoopIncrementBy': 'innerLoopIncrementBy',
+        'InnerLoopLoopCount': 'innerLoopLoopCount',
+        'OuterLoopLoopCount': 'outerLoopLoopCount',
+        'SkipValues': 'skipValues',
+        'StartValue': 'startValue',
+        'Width': 'width',
+    }
 
     def __init__(self, parent):
         super(Ipv4, self).__init__(parent)
@@ -42,7 +52,7 @@ class Ipv4(Base):
         -------
         - list(str): Species all the possible widths available for a UDF in particular Type.
         """
-        return self._get_attribute('availableWidths')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableWidths'])
 
     @property
     def BitmaskCount(self):
@@ -51,10 +61,10 @@ class Ipv4(Base):
         -------
         - number: Specifies the number of bits to be masked to any integer value between 2 to 32.
         """
-        return self._get_attribute('bitmaskCount')
+        return self._get_attribute(self._SDM_ATT_MAP['BitmaskCount'])
     @BitmaskCount.setter
     def BitmaskCount(self, value):
-        self._set_attribute('bitmaskCount', value)
+        self._set_attribute(self._SDM_ATT_MAP['BitmaskCount'], value)
 
     @property
     def InnerLoopIncrementBy(self):
@@ -63,10 +73,10 @@ class Ipv4(Base):
         -------
         - number: Specifies the Step Value by which the Inner Loop will be incremented.
         """
-        return self._get_attribute('innerLoopIncrementBy')
+        return self._get_attribute(self._SDM_ATT_MAP['InnerLoopIncrementBy'])
     @InnerLoopIncrementBy.setter
     def InnerLoopIncrementBy(self, value):
-        self._set_attribute('innerLoopIncrementBy', value)
+        self._set_attribute(self._SDM_ATT_MAP['InnerLoopIncrementBy'], value)
 
     @property
     def InnerLoopLoopCount(self):
@@ -75,10 +85,10 @@ class Ipv4(Base):
         -------
         - number: Specifies the no. of times the inner loop will occur.
         """
-        return self._get_attribute('innerLoopLoopCount')
+        return self._get_attribute(self._SDM_ATT_MAP['InnerLoopLoopCount'])
     @InnerLoopLoopCount.setter
     def InnerLoopLoopCount(self, value):
-        self._set_attribute('innerLoopLoopCount', value)
+        self._set_attribute(self._SDM_ATT_MAP['InnerLoopLoopCount'], value)
 
     @property
     def OuterLoopLoopCount(self):
@@ -87,10 +97,10 @@ class Ipv4(Base):
         -------
         - number: Specifies the no. of times the outer loop will occur.
         """
-        return self._get_attribute('outerLoopLoopCount')
+        return self._get_attribute(self._SDM_ATT_MAP['OuterLoopLoopCount'])
     @OuterLoopLoopCount.setter
     def OuterLoopLoopCount(self, value):
-        self._set_attribute('outerLoopLoopCount', value)
+        self._set_attribute(self._SDM_ATT_MAP['OuterLoopLoopCount'], value)
 
     @property
     def SkipValues(self):
@@ -99,10 +109,10 @@ class Ipv4(Base):
         -------
         - bool: If true, Skip Values option is enabled.
         """
-        return self._get_attribute('skipValues')
+        return self._get_attribute(self._SDM_ATT_MAP['SkipValues'])
     @SkipValues.setter
     def SkipValues(self, value):
-        self._set_attribute('skipValues', value)
+        self._set_attribute(self._SDM_ATT_MAP['SkipValues'], value)
 
     @property
     def StartValue(self):
@@ -111,10 +121,10 @@ class Ipv4(Base):
         -------
         - number: Specifies the start value of the UDF.
         """
-        return self._get_attribute('startValue')
+        return self._get_attribute(self._SDM_ATT_MAP['StartValue'])
     @StartValue.setter
     def StartValue(self, value):
-        self._set_attribute('startValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['StartValue'], value)
 
     @property
     def Width(self):
@@ -123,10 +133,10 @@ class Ipv4(Base):
         -------
         - str(32): Specifies the width of the UDF.
         """
-        return self._get_attribute('width')
+        return self._get_attribute(self._SDM_ATT_MAP['Width'])
     @Width.setter
     def Width(self, value):
-        self._set_attribute('width', value)
+        self._set_attribute(self._SDM_ATT_MAP['Width'], value)
 
     def update(self, BitmaskCount=None, InnerLoopIncrementBy=None, InnerLoopLoopCount=None, OuterLoopLoopCount=None, SkipValues=None, StartValue=None, Width=None):
         """Updates ipv4 resource on the server.
@@ -145,7 +155,7 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, AvailableWidths=None, BitmaskCount=None, InnerLoopIncrementBy=None, InnerLoopLoopCount=None, OuterLoopLoopCount=None, SkipValues=None, StartValue=None, Width=None):
         """Finds and retrieves ipv4 resources from the server.
@@ -173,7 +183,7 @@ class Ipv4(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of ipv4 data from the server.

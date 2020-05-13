@@ -31,6 +31,12 @@ class RangeList(Base):
 
     __slots__ = ()
     _SDM_NAME = 'rangeList'
+    _SDM_ATT_MAP = {
+        'AvailableWidths': 'availableWidths',
+        'BitOffset': 'bitOffset',
+        'StartValueCountStepList': 'startValueCountStepList',
+        'Width': 'width',
+    }
 
     def __init__(self, parent):
         super(RangeList, self).__init__(parent)
@@ -42,7 +48,7 @@ class RangeList(Base):
         -------
         - list(str): Species all the possible widths available for a UDF in particular Type.
         """
-        return self._get_attribute('availableWidths')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableWidths'])
 
     @property
     def BitOffset(self):
@@ -51,10 +57,10 @@ class RangeList(Base):
         -------
         - number: Specifies additional Offset of the UDF in terms of bits. This Offset will start from where the Offset provided in Byte Offset field ends.
         """
-        return self._get_attribute('bitOffset')
+        return self._get_attribute(self._SDM_ATT_MAP['BitOffset'])
     @BitOffset.setter
     def BitOffset(self, value):
-        self._set_attribute('bitOffset', value)
+        self._set_attribute(self._SDM_ATT_MAP['BitOffset'], value)
 
     @property
     def StartValueCountStepList(self):
@@ -63,10 +69,10 @@ class RangeList(Base):
         -------
         - list(number): Specifies the Start Value, Count and Step Value of the UDF.
         """
-        return self._get_attribute('startValueCountStepList')
+        return self._get_attribute(self._SDM_ATT_MAP['StartValueCountStepList'])
     @StartValueCountStepList.setter
     def StartValueCountStepList(self, value):
-        self._set_attribute('startValueCountStepList', value)
+        self._set_attribute(self._SDM_ATT_MAP['StartValueCountStepList'], value)
 
     @property
     def Width(self):
@@ -75,10 +81,10 @@ class RangeList(Base):
         -------
         - str(1 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 2 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 3 | 30 | 31 | 32 | 4 | 5 | 6 | 7 | 8 | 9): Specifies the width of the UDF.
         """
-        return self._get_attribute('width')
+        return self._get_attribute(self._SDM_ATT_MAP['Width'])
     @Width.setter
     def Width(self, value):
-        self._set_attribute('width', value)
+        self._set_attribute(self._SDM_ATT_MAP['Width'], value)
 
     def update(self, BitOffset=None, StartValueCountStepList=None, Width=None):
         """Updates rangeList resource on the server.
@@ -93,7 +99,7 @@ class RangeList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, AvailableWidths=None, BitOffset=None, StartValueCountStepList=None, Width=None):
         """Finds and retrieves rangeList resources from the server.
@@ -117,7 +123,7 @@ class RangeList(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of rangeList data from the server.

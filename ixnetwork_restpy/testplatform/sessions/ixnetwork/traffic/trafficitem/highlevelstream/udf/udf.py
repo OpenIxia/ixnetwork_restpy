@@ -31,6 +31,13 @@ class Udf(Base):
 
     __slots__ = ()
     _SDM_NAME = 'udf'
+    _SDM_ATT_MAP = {
+        'ByteOffset': 'byteOffset',
+        'Chained': 'chained',
+        'ChainedFromUdf': 'chainedFromUdf',
+        'Enabled': 'enabled',
+        'Type': 'type',
+    }
 
     def __init__(self, parent):
         super(Udf, self).__init__(parent)
@@ -126,10 +133,10 @@ class Udf(Base):
         -------
         - number: The offset from the start of the frame in bytes. Default is 0.
         """
-        return self._get_attribute('byteOffset')
+        return self._get_attribute(self._SDM_ATT_MAP['ByteOffset'])
     @ByteOffset.setter
     def ByteOffset(self, value):
-        self._set_attribute('byteOffset', value)
+        self._set_attribute(self._SDM_ATT_MAP['ByteOffset'], value)
 
     @property
     def Chained(self):
@@ -138,7 +145,7 @@ class Udf(Base):
         -------
         - bool: Sets the UDF chain.
         """
-        return self._get_attribute('chained')
+        return self._get_attribute(self._SDM_ATT_MAP['Chained'])
 
     @property
     def ChainedFromUdf(self):
@@ -147,10 +154,10 @@ class Udf(Base):
         -------
         - str(none | udf1 | udf2 | udf3 | udf4 | udf5): Allows to set what UDF the current UDF should chain from. If enabled, the UDF stays in its initial value until the UDF it is chained from reaches its terminating value.
         """
-        return self._get_attribute('chainedFromUdf')
+        return self._get_attribute(self._SDM_ATT_MAP['ChainedFromUdf'])
     @ChainedFromUdf.setter
     def ChainedFromUdf(self, value):
-        self._set_attribute('chainedFromUdf', value)
+        self._set_attribute(self._SDM_ATT_MAP['ChainedFromUdf'], value)
 
     @property
     def Enabled(self):
@@ -159,10 +166,10 @@ class Udf(Base):
         -------
         - bool: If enabled, enables this User Defined Field.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Type(self):
@@ -171,10 +178,10 @@ class Udf(Base):
         -------
         - str(counter | ipv4 | nestedCounter | random | rangeList | valueList): The counter types of this UDF.
         """
-        return self._get_attribute('type')
+        return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
-        self._set_attribute('type', value)
+        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     def update(self, ByteOffset=None, ChainedFromUdf=None, Enabled=None, Type=None):
         """Updates udf resource on the server.
@@ -190,7 +197,7 @@ class Udf(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, ByteOffset=None, Chained=None, ChainedFromUdf=None, Enabled=None, Type=None):
         """Finds and retrieves udf resources from the server.
@@ -215,7 +222,7 @@ class Udf(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of udf data from the server.

@@ -31,6 +31,12 @@ class Egress(Base):
 
     __slots__ = ()
     _SDM_NAME = 'egress'
+    _SDM_ATT_MAP = {
+        'CommitEgressPage': 'commitEgressPage',
+        'CurrentPage': 'currentPage',
+        'RowCount': 'rowCount',
+        'TotalPages': 'totalPages',
+    }
 
     def __init__(self, parent):
         super(Egress, self).__init__(parent)
@@ -56,10 +62,10 @@ class Egress(Base):
         -------
         - bool: Attribute used to commit egress paging from TCL
         """
-        return self._get_attribute('commitEgressPage')
+        return self._get_attribute(self._SDM_ATT_MAP['CommitEgressPage'])
     @CommitEgressPage.setter
     def CommitEgressPage(self, value):
-        self._set_attribute('commitEgressPage', value)
+        self._set_attribute(self._SDM_ATT_MAP['CommitEgressPage'], value)
 
     @property
     def CurrentPage(self):
@@ -68,10 +74,10 @@ class Egress(Base):
         -------
         - number: Determines the current egress page for the indicated ingress page.
         """
-        return self._get_attribute('currentPage')
+        return self._get_attribute(self._SDM_ATT_MAP['CurrentPage'])
     @CurrentPage.setter
     def CurrentPage(self, value):
-        self._set_attribute('currentPage', value)
+        self._set_attribute(self._SDM_ATT_MAP['CurrentPage'], value)
 
     @property
     def RowCount(self):
@@ -80,7 +86,7 @@ class Egress(Base):
         -------
         - number: Displays the particular row number in the view.
         """
-        return self._get_attribute('rowCount')
+        return self._get_attribute(self._SDM_ATT_MAP['RowCount'])
 
     @property
     def TotalPages(self):
@@ -89,7 +95,7 @@ class Egress(Base):
         -------
         - number: The total number of egress pages.
         """
-        return self._get_attribute('totalPages')
+        return self._get_attribute(self._SDM_ATT_MAP['TotalPages'])
 
     def update(self, CommitEgressPage=None, CurrentPage=None):
         """Updates egress resource on the server.
@@ -103,7 +109,7 @@ class Egress(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, CommitEgressPage=None, CurrentPage=None, RowCount=None, TotalPages=None):
         """Finds and retrieves egress resources from the server.
@@ -127,7 +133,7 @@ class Egress(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of egress data from the server.

@@ -32,6 +32,18 @@ class IgmpGroupRange(Base):
 
     __slots__ = ()
     _SDM_NAME = 'igmpGroupRange'
+    _SDM_ATT_MAP = {
+        'Count': 'count',
+        'FilterMode': 'filterMode',
+        'Increment': 'increment',
+        'IpAddress': 'ipAddress',
+        'Name': 'name',
+        'ObjectId': 'objectId',
+        'SourceCount': 'sourceCount',
+        'SourceIncrement': 'sourceIncrement',
+        'SourceIpAddress': 'sourceIpAddress',
+        'Type': 'type',
+    }
 
     def __init__(self, parent):
         super(IgmpGroupRange, self).__init__(parent)
@@ -43,10 +55,10 @@ class IgmpGroupRange(Base):
         -------
         - number: The count of multicast groups in a range.
         """
-        return self._get_attribute('count')
+        return self._get_attribute(self._SDM_ATT_MAP['Count'])
     @Count.setter
     def Count(self, value):
-        self._set_attribute('count', value)
+        self._set_attribute(self._SDM_ATT_MAP['Count'], value)
 
     @property
     def FilterMode(self):
@@ -55,10 +67,10 @@ class IgmpGroupRange(Base):
         -------
         - str: Define the Group Record type included in the Report messages.
         """
-        return self._get_attribute('filterMode')
+        return self._get_attribute(self._SDM_ATT_MAP['FilterMode'])
     @FilterMode.setter
     def FilterMode(self, value):
-        self._set_attribute('filterMode', value)
+        self._set_attribute(self._SDM_ATT_MAP['FilterMode'], value)
 
     @property
     def Increment(self):
@@ -67,10 +79,10 @@ class IgmpGroupRange(Base):
         -------
         - str: The value used to enumerate all the addresses in the range.
         """
-        return self._get_attribute('increment')
+        return self._get_attribute(self._SDM_ATT_MAP['Increment'])
     @Increment.setter
     def Increment(self, value):
-        self._set_attribute('increment', value)
+        self._set_attribute(self._SDM_ATT_MAP['Increment'], value)
 
     @property
     def IpAddress(self):
@@ -79,10 +91,10 @@ class IgmpGroupRange(Base):
         -------
         - str: The IP address of the first multicast group in the range.
         """
-        return self._get_attribute('ipAddress')
+        return self._get_attribute(self._SDM_ATT_MAP['IpAddress'])
     @IpAddress.setter
     def IpAddress(self, value):
-        self._set_attribute('ipAddress', value)
+        self._set_attribute(self._SDM_ATT_MAP['IpAddress'], value)
 
     @property
     def Name(self):
@@ -91,10 +103,10 @@ class IgmpGroupRange(Base):
         -------
         - str: -The name of the range containing multicast groups.
         """
-        return self._get_attribute('name')
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
-        self._set_attribute('name', value)
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
@@ -103,7 +115,7 @@ class IgmpGroupRange(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def SourceCount(self):
@@ -112,10 +124,10 @@ class IgmpGroupRange(Base):
         -------
         - number: The count of sources in the range.
         """
-        return self._get_attribute('sourceCount')
+        return self._get_attribute(self._SDM_ATT_MAP['SourceCount'])
     @SourceCount.setter
     def SourceCount(self, value):
-        self._set_attribute('sourceCount', value)
+        self._set_attribute(self._SDM_ATT_MAP['SourceCount'], value)
 
     @property
     def SourceIncrement(self):
@@ -124,10 +136,10 @@ class IgmpGroupRange(Base):
         -------
         - str: The value used to enumerate all the source addresses in the range.
         """
-        return self._get_attribute('sourceIncrement')
+        return self._get_attribute(self._SDM_ATT_MAP['SourceIncrement'])
     @SourceIncrement.setter
     def SourceIncrement(self, value):
-        self._set_attribute('sourceIncrement', value)
+        self._set_attribute(self._SDM_ATT_MAP['SourceIncrement'], value)
 
     @property
     def SourceIpAddress(self):
@@ -136,10 +148,10 @@ class IgmpGroupRange(Base):
         -------
         - str: The starting IP address of a range of sources.
         """
-        return self._get_attribute('sourceIpAddress')
+        return self._get_attribute(self._SDM_ATT_MAP['SourceIpAddress'])
     @SourceIpAddress.setter
     def SourceIpAddress(self, value):
-        self._set_attribute('sourceIpAddress', value)
+        self._set_attribute(self._SDM_ATT_MAP['SourceIpAddress'], value)
 
     @property
     def Type(self):
@@ -148,10 +160,10 @@ class IgmpGroupRange(Base):
         -------
         - str: The type of the multicast group range.
         """
-        return self._get_attribute('type')
+        return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
-        self._set_attribute('type', value)
+        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     def update(self, Count=None, FilterMode=None, Increment=None, IpAddress=None, Name=None, SourceCount=None, SourceIncrement=None, SourceIpAddress=None, Type=None):
         """Updates igmpGroupRange resource on the server.
@@ -172,7 +184,7 @@ class IgmpGroupRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Count=None, FilterMode=None, Increment=None, IpAddress=None, Name=None, SourceCount=None, SourceIncrement=None, SourceIpAddress=None, Type=None):
         """Adds a new igmpGroupRange resource on the server and adds it to the container.
@@ -197,7 +209,7 @@ class IgmpGroupRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained igmpGroupRange resources in this instance from the server.
@@ -237,7 +249,7 @@ class IgmpGroupRange(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of igmpGroupRange data from the server.

@@ -30,6 +30,14 @@ class RxRateLimit(Base):
 
     __slots__ = ()
     _SDM_NAME = 'rxRateLimit'
+    _SDM_ATT_MAP = {
+        'BufferSizeEnabled': 'bufferSizeEnabled',
+        'BufferSizeUnits': 'bufferSizeUnits',
+        'BufferSizeValue': 'bufferSizeValue',
+        'Enabled': 'enabled',
+        'Units': 'units',
+        'Value': 'value',
+    }
 
     def __init__(self, parent):
         super(RxRateLimit, self).__init__(parent)
@@ -41,10 +49,10 @@ class RxRateLimit(Base):
         -------
         - bool: Allows user to specify a custom buffer size. Default false
         """
-        return self._get_attribute('bufferSizeEnabled')
+        return self._get_attribute(self._SDM_ATT_MAP['BufferSizeEnabled'])
     @BufferSizeEnabled.setter
     def BufferSizeEnabled(self, value):
-        self._set_attribute('bufferSizeEnabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['BufferSizeEnabled'], value)
 
     @property
     def BufferSizeUnits(self):
@@ -53,10 +61,10 @@ class RxRateLimit(Base):
         -------
         - str(kilobytes | kKilobytes | kMegabytes | megabytes): Units (Kilobytes, Megabytes). Default: Kilobytes
         """
-        return self._get_attribute('bufferSizeUnits')
+        return self._get_attribute(self._SDM_ATT_MAP['BufferSizeUnits'])
     @BufferSizeUnits.setter
     def BufferSizeUnits(self, value):
-        self._set_attribute('bufferSizeUnits', value)
+        self._set_attribute(self._SDM_ATT_MAP['BufferSizeUnits'], value)
 
     @property
     def BufferSizeValue(self):
@@ -65,10 +73,10 @@ class RxRateLimit(Base):
         -------
         - number: Burst tolerance buffer size. Default value is 32 KB
         """
-        return self._get_attribute('bufferSizeValue')
+        return self._get_attribute(self._SDM_ATT_MAP['BufferSizeValue'])
     @BufferSizeValue.setter
     def BufferSizeValue(self, value):
-        self._set_attribute('bufferSizeValue', value)
+        self._set_attribute(self._SDM_ATT_MAP['BufferSizeValue'], value)
 
     @property
     def Enabled(self):
@@ -77,10 +85,10 @@ class RxRateLimit(Base):
         -------
         - bool: Enable or disable the receive rate limit impairment.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Units(self):
@@ -89,10 +97,10 @@ class RxRateLimit(Base):
         -------
         - str(kilobitsPerSecond | kKilobitsPerSecond | kMegabitsPerSecond | megabitsPerSecond): Specify the units for the receive rate limit value.
         """
-        return self._get_attribute('units')
+        return self._get_attribute(self._SDM_ATT_MAP['Units'])
     @Units.setter
     def Units(self, value):
-        self._set_attribute('units', value)
+        self._set_attribute(self._SDM_ATT_MAP['Units'], value)
 
     @property
     def Value(self):
@@ -101,10 +109,10 @@ class RxRateLimit(Base):
         -------
         - number: Specify the value of the receive rate limit.
         """
-        return self._get_attribute('value')
+        return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
-        self._set_attribute('value', value)
+        self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, BufferSizeEnabled=None, BufferSizeUnits=None, BufferSizeValue=None, Enabled=None, Units=None, Value=None):
         """Updates rxRateLimit resource on the server.
@@ -122,4 +130,4 @@ class RxRateLimit(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

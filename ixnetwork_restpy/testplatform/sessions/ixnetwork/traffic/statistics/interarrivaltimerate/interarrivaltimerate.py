@@ -30,6 +30,9 @@ class InterArrivalTimeRate(Base):
 
     __slots__ = ()
     _SDM_NAME = 'interArrivalTimeRate'
+    _SDM_ATT_MAP = {
+        'Enabled': 'enabled',
+    }
 
     def __init__(self, parent):
         super(InterArrivalTimeRate, self).__init__(parent)
@@ -41,10 +44,10 @@ class InterArrivalTimeRate(Base):
         -------
         - bool: If enabled, fetches inter-arrival time and rate statistics.
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     def update(self, Enabled=None):
         """Updates interArrivalTimeRate resource on the server.
@@ -57,4 +60,4 @@ class InterArrivalTimeRate(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

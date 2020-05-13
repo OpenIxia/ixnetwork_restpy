@@ -30,6 +30,10 @@ class EthernetImpairment(Base):
 
     __slots__ = ()
     _SDM_NAME = 'ethernetImpairment'
+    _SDM_ATT_MAP = {
+        'EnablePPM': 'enablePPM',
+        'Ppm': 'ppm',
+    }
 
     def __init__(self, parent):
         super(EthernetImpairment, self).__init__(parent)
@@ -41,10 +45,10 @@ class EthernetImpairment(Base):
         -------
         - bool: If true, enables the portsppm.
         """
-        return self._get_attribute('enablePPM')
+        return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
     @EnablePPM.setter
     def EnablePPM(self, value):
-        self._set_attribute('enablePPM', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnablePPM'], value)
 
     @property
     def Ppm(self):
@@ -53,10 +57,10 @@ class EthernetImpairment(Base):
         -------
         - number: Indicates the value that needs to be adjusted for the line transmit frequency.
         """
-        return self._get_attribute('ppm')
+        return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
     @Ppm.setter
     def Ppm(self, value):
-        self._set_attribute('ppm', value)
+        self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     def update(self, EnablePPM=None, Ppm=None):
         """Updates ethernetImpairment resource on the server.
@@ -70,4 +74,4 @@ class EthernetImpairment(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

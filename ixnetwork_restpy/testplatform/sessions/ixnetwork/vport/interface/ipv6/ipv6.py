@@ -32,6 +32,13 @@ class Ipv6(Base):
 
     __slots__ = ()
     _SDM_NAME = 'ipv6'
+    _SDM_ATT_MAP = {
+        'Gateway': 'gateway',
+        'Ip': 'ip',
+        'PrefixLength': 'prefixLength',
+        'TargetLinkLayerAddressOption': 'targetLinkLayerAddressOption',
+        'TrafficClass': 'trafficClass',
+    }
 
     def __init__(self, parent):
         super(Ipv6, self).__init__(parent)
@@ -43,10 +50,10 @@ class Ipv6(Base):
         -------
         - str: The IPv6 address of the Gateway to the network,typically an interface on the DUT.
         """
-        return self._get_attribute('gateway')
+        return self._get_attribute(self._SDM_ATT_MAP['Gateway'])
     @Gateway.setter
     def Gateway(self, value):
-        self._set_attribute('gateway', value)
+        self._set_attribute(self._SDM_ATT_MAP['Gateway'], value)
 
     @property
     def Ip(self):
@@ -55,10 +62,10 @@ class Ipv6(Base):
         -------
         - str: The 128-bit IPv6 address assigned to this unconnected interface.
         """
-        return self._get_attribute('ip')
+        return self._get_attribute(self._SDM_ATT_MAP['Ip'])
     @Ip.setter
     def Ip(self, value):
-        self._set_attribute('ip', value)
+        self._set_attribute(self._SDM_ATT_MAP['Ip'], value)
 
     @property
     def PrefixLength(self):
@@ -67,10 +74,10 @@ class Ipv6(Base):
         -------
         - number: A learned/allocated IPv4 address prefix length (mask) for this interface.
         """
-        return self._get_attribute('prefixLength')
+        return self._get_attribute(self._SDM_ATT_MAP['PrefixLength'])
     @PrefixLength.setter
     def PrefixLength(self, value):
-        self._set_attribute('prefixLength', value)
+        self._set_attribute(self._SDM_ATT_MAP['PrefixLength'], value)
 
     @property
     def TargetLinkLayerAddressOption(self):
@@ -79,10 +86,10 @@ class Ipv6(Base):
         -------
         - bool: Tentative Source Link-Layer Address Options for IPv6 Neighbour Discovery. Upon reception of a Tentative Source Link-Layer Address Option in a Neighbour Solicitation for which the receiver has the Target Address configured, a node checks to see if there is a neighbour cache entry with conflicting link-layer address.
         """
-        return self._get_attribute('targetLinkLayerAddressOption')
+        return self._get_attribute(self._SDM_ATT_MAP['TargetLinkLayerAddressOption'])
     @TargetLinkLayerAddressOption.setter
     def TargetLinkLayerAddressOption(self, value):
-        self._set_attribute('targetLinkLayerAddressOption', value)
+        self._set_attribute(self._SDM_ATT_MAP['TargetLinkLayerAddressOption'], value)
 
     @property
     def TrafficClass(self):
@@ -91,10 +98,10 @@ class Ipv6(Base):
         -------
         - str: This value ,1 byte long, configures the Traffic Class in the IPv6 header for our IPv6 Neighbour Discovery messages. The default value is 0x00 but the user can modify it to any value.
         """
-        return self._get_attribute('trafficClass')
+        return self._get_attribute(self._SDM_ATT_MAP['TrafficClass'])
     @TrafficClass.setter
     def TrafficClass(self, value):
-        self._set_attribute('trafficClass', value)
+        self._set_attribute(self._SDM_ATT_MAP['TrafficClass'], value)
 
     def update(self, Gateway=None, Ip=None, PrefixLength=None, TargetLinkLayerAddressOption=None, TrafficClass=None):
         """Updates ipv6 resource on the server.
@@ -111,7 +118,7 @@ class Ipv6(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Gateway=None, Ip=None, PrefixLength=None, TargetLinkLayerAddressOption=None, TrafficClass=None):
         """Adds a new ipv6 resource on the server and adds it to the container.
@@ -132,7 +139,7 @@ class Ipv6(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained ipv6 resources in this instance from the server.
@@ -167,7 +174,7 @@ class Ipv6(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of ipv6 data from the server.

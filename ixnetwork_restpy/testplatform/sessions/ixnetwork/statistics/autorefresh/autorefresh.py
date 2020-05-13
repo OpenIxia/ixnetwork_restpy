@@ -30,6 +30,10 @@ class AutoRefresh(Base):
 
     __slots__ = ()
     _SDM_NAME = 'autoRefresh'
+    _SDM_ATT_MAP = {
+        'Enabled': 'enabled',
+        'MinRefreshInterval': 'minRefreshInterval',
+    }
 
     def __init__(self, parent):
         super(AutoRefresh, self).__init__(parent)
@@ -41,10 +45,10 @@ class AutoRefresh(Base):
         -------
         - bool: NOT DEFINED
         """
-        return self._get_attribute('enabled')
+        return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
-        self._set_attribute('enabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def MinRefreshInterval(self):
@@ -53,10 +57,10 @@ class AutoRefresh(Base):
         -------
         - number: NOT DEFINED
         """
-        return self._get_attribute('minRefreshInterval')
+        return self._get_attribute(self._SDM_ATT_MAP['MinRefreshInterval'])
     @MinRefreshInterval.setter
     def MinRefreshInterval(self, value):
-        self._set_attribute('minRefreshInterval', value)
+        self._set_attribute(self._SDM_ATT_MAP['MinRefreshInterval'], value)
 
     def update(self, Enabled=None, MinRefreshInterval=None):
         """Updates autoRefresh resource on the server.
@@ -70,4 +74,4 @@ class AutoRefresh(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

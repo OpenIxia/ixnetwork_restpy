@@ -32,6 +32,15 @@ class Layer23NextGenProtocolFilter(Base):
 
     __slots__ = ()
     _SDM_NAME = 'layer23NextGenProtocolFilter'
+    _SDM_ATT_MAP = {
+        'AdvancedCVFilter': 'advancedCVFilter',
+        'AdvancedFilterName': 'advancedFilterName',
+        'AggregationType': 'aggregationType',
+        'AllAdvancedFilters': 'allAdvancedFilters',
+        'MatchingAdvancedFilters': 'matchingAdvancedFilters',
+        'PortFilterIds': 'portFilterIds',
+        'ProtocolFilterIds': 'protocolFilterIds',
+    }
 
     def __init__(self, parent):
         super(Layer23NextGenProtocolFilter, self).__init__(parent)
@@ -71,10 +80,10 @@ class Layer23NextGenProtocolFilter(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../advancedCVFilters): Sets the advanced filter for a custom view. Note: To change the filter on an existing view, you must first disable it.
         """
-        return self._get_attribute('advancedCVFilter')
+        return self._get_attribute(self._SDM_ATT_MAP['AdvancedCVFilter'])
     @AdvancedCVFilter.setter
     def AdvancedCVFilter(self, value):
-        self._set_attribute('advancedCVFilter', value)
+        self._set_attribute(self._SDM_ATT_MAP['AdvancedCVFilter'], value)
 
     @property
     def AdvancedFilterName(self):
@@ -83,10 +92,10 @@ class Layer23NextGenProtocolFilter(Base):
         -------
         - str: Selects an advanced filter from the ones available in the selected drill down view.
         """
-        return self._get_attribute('advancedFilterName')
+        return self._get_attribute(self._SDM_ATT_MAP['AdvancedFilterName'])
     @AdvancedFilterName.setter
     def AdvancedFilterName(self, value):
-        self._set_attribute('advancedFilterName', value)
+        self._set_attribute(self._SDM_ATT_MAP['AdvancedFilterName'], value)
 
     @property
     def AggregationType(self):
@@ -95,10 +104,10 @@ class Layer23NextGenProtocolFilter(Base):
         -------
         - str(perPort | perSession): Signifies the type of aggregation of next gen protocols
         """
-        return self._get_attribute('aggregationType')
+        return self._get_attribute(self._SDM_ATT_MAP['AggregationType'])
     @AggregationType.setter
     def AggregationType(self, value):
-        self._set_attribute('aggregationType', value)
+        self._set_attribute(self._SDM_ATT_MAP['AggregationType'], value)
 
     @property
     def AllAdvancedFilters(self):
@@ -107,7 +116,7 @@ class Layer23NextGenProtocolFilter(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters): Returns a list with all the filters that are present in the selected drill down views. This includes filters that cannot be applied for the current drill down view.
         """
-        return self._get_attribute('allAdvancedFilters')
+        return self._get_attribute(self._SDM_ATT_MAP['AllAdvancedFilters'])
 
     @property
     def MatchingAdvancedFilters(self):
@@ -116,7 +125,7 @@ class Layer23NextGenProtocolFilter(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters): Returns a list that contains only the filters that can be applied on the current drill down view.
         """
-        return self._get_attribute('matchingAdvancedFilters')
+        return self._get_attribute(self._SDM_ATT_MAP['MatchingAdvancedFilters'])
 
     @property
     def PortFilterIds(self):
@@ -125,10 +134,10 @@ class Layer23NextGenProtocolFilter(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter]): Filters the port IDs
         """
-        return self._get_attribute('portFilterIds')
+        return self._get_attribute(self._SDM_ATT_MAP['PortFilterIds'])
     @PortFilterIds.setter
     def PortFilterIds(self, value):
-        self._set_attribute('portFilterIds', value)
+        self._set_attribute(self._SDM_ATT_MAP['PortFilterIds'], value)
 
     @property
     def ProtocolFilterIds(self):
@@ -137,10 +146,10 @@ class Layer23NextGenProtocolFilter(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolFilter]): Filters the protocol IDs
         """
-        return self._get_attribute('protocolFilterIds')
+        return self._get_attribute(self._SDM_ATT_MAP['ProtocolFilterIds'])
     @ProtocolFilterIds.setter
     def ProtocolFilterIds(self, value):
-        self._set_attribute('protocolFilterIds', value)
+        self._set_attribute(self._SDM_ATT_MAP['ProtocolFilterIds'], value)
 
     def update(self, AdvancedCVFilter=None, AdvancedFilterName=None, AggregationType=None, PortFilterIds=None, ProtocolFilterIds=None):
         """Updates layer23NextGenProtocolFilter resource on the server.
@@ -157,7 +166,7 @@ class Layer23NextGenProtocolFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AdvancedCVFilter=None, AdvancedFilterName=None, AggregationType=None, PortFilterIds=None, ProtocolFilterIds=None):
         """Adds a new layer23NextGenProtocolFilter resource on the server and adds it to the container.
@@ -178,7 +187,7 @@ class Layer23NextGenProtocolFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained layer23NextGenProtocolFilter resources in this instance from the server.
@@ -215,7 +224,7 @@ class Layer23NextGenProtocolFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of layer23NextGenProtocolFilter data from the server.

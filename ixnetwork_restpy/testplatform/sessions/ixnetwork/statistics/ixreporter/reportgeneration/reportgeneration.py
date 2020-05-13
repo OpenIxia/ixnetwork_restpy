@@ -30,6 +30,12 @@ class ReportGeneration(Base):
 
     __slots__ = ()
     _SDM_NAME = 'reportGeneration'
+    _SDM_ATT_MAP = {
+        'OutputFile': 'OutputFile',
+        'OutputType': 'OutputType',
+        'Template': 'Template',
+        'TestRunId': 'TestRunId',
+    }
 
     def __init__(self, parent):
         super(ReportGeneration, self).__init__(parent)
@@ -41,10 +47,10 @@ class ReportGeneration(Base):
         -------
         - str: Signifies the output file
         """
-        return self._get_attribute('OutputFile')
+        return self._get_attribute(self._SDM_ATT_MAP['OutputFile'])
     @OutputFile.setter
     def OutputFile(self, value):
-        self._set_attribute('OutputFile', value)
+        self._set_attribute(self._SDM_ATT_MAP['OutputFile'], value)
 
     @property
     def OutputType(self):
@@ -53,10 +59,10 @@ class ReportGeneration(Base):
         -------
         - str(Html | Pdf): Signifies the output type
         """
-        return self._get_attribute('OutputType')
+        return self._get_attribute(self._SDM_ATT_MAP['OutputType'])
     @OutputType.setter
     def OutputType(self, value):
-        self._set_attribute('OutputType', value)
+        self._set_attribute(self._SDM_ATT_MAP['OutputType'], value)
 
     @property
     def Template(self):
@@ -65,10 +71,10 @@ class ReportGeneration(Base):
         -------
         - str: Signifies the template for IxReporter
         """
-        return self._get_attribute('Template')
+        return self._get_attribute(self._SDM_ATT_MAP['Template'])
     @Template.setter
     def Template(self, value):
-        self._set_attribute('Template', value)
+        self._set_attribute(self._SDM_ATT_MAP['Template'], value)
 
     @property
     def TestRunId(self):
@@ -77,10 +83,10 @@ class ReportGeneration(Base):
         -------
         - number: Signifies the identifier for the test run
         """
-        return self._get_attribute('TestRunId')
+        return self._get_attribute(self._SDM_ATT_MAP['TestRunId'])
     @TestRunId.setter
     def TestRunId(self, value):
-        self._set_attribute('TestRunId', value)
+        self._set_attribute(self._SDM_ATT_MAP['TestRunId'], value)
 
     def update(self, OutputFile=None, OutputType=None, Template=None, TestRunId=None):
         """Updates reportGeneration resource on the server.
@@ -96,7 +102,7 @@ class ReportGeneration(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def Start(self):
         """Executes the start operation on the server.

@@ -31,6 +31,13 @@ class Aggregation(Base):
 
     __slots__ = ()
     _SDM_NAME = 'aggregation'
+    _SDM_ATT_MAP = {
+        'ActivePort': 'activePort',
+        'ActivePorts': 'activePorts',
+        'AvailableModes': 'availableModes',
+        'Mode': 'mode',
+        'ResourcePorts': 'resourcePorts',
+    }
 
     def __init__(self, parent):
         super(Aggregation, self).__init__(parent)
@@ -42,7 +49,7 @@ class Aggregation(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port): Deprecated. Use activePorts instead.
         """
-        return self._get_attribute('activePort')
+        return self._get_attribute(self._SDM_ATT_MAP['ActivePort'])
 
     @property
     def ActivePorts(self):
@@ -51,7 +58,7 @@ class Aggregation(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port]): All active ports from Resource Group.
         """
-        return self._get_attribute('activePorts')
+        return self._get_attribute(self._SDM_ATT_MAP['ActivePorts'])
 
     @property
     def AvailableModes(self):
@@ -60,7 +67,7 @@ class Aggregation(Base):
         -------
         - list(str[normal | tenGig | fortyGig | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneEightByFiftyGigFanOut]): Gets the supported resource group modes.
         """
-        return self._get_attribute('availableModes')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableModes'])
 
     @property
     def Mode(self):
@@ -69,10 +76,10 @@ class Aggregation(Base):
         -------
         - str(normal | tenGig | fortyGig | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneEightByFiftyGigFanOut): Resource Group mode.
         """
-        return self._get_attribute('mode')
+        return self._get_attribute(self._SDM_ATT_MAP['Mode'])
     @Mode.setter
     def Mode(self, value):
-        self._set_attribute('mode', value)
+        self._set_attribute(self._SDM_ATT_MAP['Mode'], value)
 
     @property
     def ResourcePorts(self):
@@ -81,7 +88,7 @@ class Aggregation(Base):
         -------
         - list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port]): All ports from Resource Group.
         """
-        return self._get_attribute('resourcePorts')
+        return self._get_attribute(self._SDM_ATT_MAP['ResourcePorts'])
 
     def update(self, Mode=None):
         """Updates aggregation resource on the server.
@@ -94,7 +101,7 @@ class Aggregation(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, ActivePort=None, ActivePorts=None, AvailableModes=None, Mode=None, ResourcePorts=None):
         """Finds and retrieves aggregation resources from the server.
@@ -119,7 +126,7 @@ class Aggregation(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of aggregation data from the server.

@@ -30,6 +30,10 @@ class FramePreemption(Base):
 
     __slots__ = ()
     _SDM_NAME = 'framePreemption'
+    _SDM_ATT_MAP = {
+        'IsFramePreemptionEnabled': 'isFramePreemptionEnabled',
+        'IsSmdVREnabled': 'isSmdVREnabled',
+    }
 
     def __init__(self, parent):
         super(FramePreemption, self).__init__(parent)
@@ -41,10 +45,10 @@ class FramePreemption(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('isFramePreemptionEnabled')
+        return self._get_attribute(self._SDM_ATT_MAP['IsFramePreemptionEnabled'])
     @IsFramePreemptionEnabled.setter
     def IsFramePreemptionEnabled(self, value):
-        self._set_attribute('isFramePreemptionEnabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['IsFramePreemptionEnabled'], value)
 
     @property
     def IsSmdVREnabled(self):
@@ -53,10 +57,10 @@ class FramePreemption(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('isSmdVREnabled')
+        return self._get_attribute(self._SDM_ATT_MAP['IsSmdVREnabled'])
     @IsSmdVREnabled.setter
     def IsSmdVREnabled(self, value):
-        self._set_attribute('isSmdVREnabled', value)
+        self._set_attribute(self._SDM_ATT_MAP['IsSmdVREnabled'], value)
 
     def update(self, IsFramePreemptionEnabled=None, IsSmdVREnabled=None):
         """Updates framePreemption resource on the server.
@@ -70,4 +74,4 @@ class FramePreemption(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

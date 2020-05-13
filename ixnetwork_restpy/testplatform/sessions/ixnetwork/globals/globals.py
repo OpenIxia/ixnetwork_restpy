@@ -30,6 +30,17 @@ class Globals(Base):
 
     __slots__ = ()
     _SDM_NAME = 'globals'
+    _SDM_ATT_MAP = {
+        'BuildNumber': 'buildNumber',
+        'CommandArgs': 'commandArgs',
+        'ConfigFileName': 'configFileName',
+        'ConfigSummary': 'configSummary',
+        'IsConfigDifferent': 'isConfigDifferent',
+        'IxosBuildNumber': 'ixosBuildNumber',
+        'PersistencePath': 'persistencePath',
+        'ProtocolbuildNumber': 'protocolbuildNumber',
+        'Username': 'username',
+    }
 
     def __init__(self, parent):
         super(Globals, self).__init__(parent)
@@ -165,13 +176,13 @@ class Globals(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.topology.Topology): An instance of the Topology class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.topology_678a8dc80c9b4b2b5c741072eab4305d.Topology): An instance of the Topology class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.topology import Topology
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.topology_678a8dc80c9b4b2b5c741072eab4305d import Topology
         return Topology(self)._select()
 
     @property
@@ -181,7 +192,7 @@ class Globals(Base):
         -------
         - str: The IxNetwork software build number.
         """
-        return self._get_attribute('buildNumber')
+        return self._get_attribute(self._SDM_ATT_MAP['BuildNumber'])
 
     @property
     def CommandArgs(self):
@@ -190,7 +201,7 @@ class Globals(Base):
         -------
         - str: 
         """
-        return self._get_attribute('commandArgs')
+        return self._get_attribute(self._SDM_ATT_MAP['CommandArgs'])
 
     @property
     def ConfigFileName(self):
@@ -199,7 +210,7 @@ class Globals(Base):
         -------
         - str: The name of the configuration file.
         """
-        return self._get_attribute('configFileName')
+        return self._get_attribute(self._SDM_ATT_MAP['ConfigFileName'])
 
     @property
     def ConfigSummary(self):
@@ -208,7 +219,7 @@ class Globals(Base):
         -------
         - list(dict(arg1:str,arg2:str,arg3:list[dict(arg1:str,arg2:str)])): A high level summary description of the currently loaded configuration
         """
-        return self._get_attribute('configSummary')
+        return self._get_attribute(self._SDM_ATT_MAP['ConfigSummary'])
 
     @property
     def IsConfigDifferent(self):
@@ -217,7 +228,7 @@ class Globals(Base):
         -------
         - bool: (Read only) If true, then the current IxNetwork configuration is different than the configuration that was previously loaded.
         """
-        return self._get_attribute('isConfigDifferent')
+        return self._get_attribute(self._SDM_ATT_MAP['IsConfigDifferent'])
 
     @property
     def IxosBuildNumber(self):
@@ -226,7 +237,7 @@ class Globals(Base):
         -------
         - str: The IxOS software build number.
         """
-        return self._get_attribute('ixosBuildNumber')
+        return self._get_attribute(self._SDM_ATT_MAP['IxosBuildNumber'])
 
     @property
     def PersistencePath(self):
@@ -235,7 +246,7 @@ class Globals(Base):
         -------
         - str: This attribute returns a directory of the IxNetwork API server machine, where users can drop their files from the client scripts using IxNetwork APIs. To Put files in this directory, users do not require to run IxNetwork API server in administrative mode
         """
-        return self._get_attribute('persistencePath')
+        return self._get_attribute(self._SDM_ATT_MAP['PersistencePath'])
 
     @property
     def ProtocolbuildNumber(self):
@@ -244,7 +255,7 @@ class Globals(Base):
         -------
         - str: The build number of the protocol.
         """
-        return self._get_attribute('protocolbuildNumber')
+        return self._get_attribute(self._SDM_ATT_MAP['ProtocolbuildNumber'])
 
     @property
     def Username(self):
@@ -253,4 +264,4 @@ class Globals(Base):
         -------
         - str: The name of the user.
         """
-        return self._get_attribute('username')
+        return self._get_attribute(self._SDM_ATT_MAP['Username'])

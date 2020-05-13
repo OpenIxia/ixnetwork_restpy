@@ -30,6 +30,11 @@ class FramePayload(Base):
 
     __slots__ = ()
     _SDM_NAME = 'framePayload'
+    _SDM_ATT_MAP = {
+        'CustomPattern': 'customPattern',
+        'CustomRepeat': 'customRepeat',
+        'Type': 'type',
+    }
 
     def __init__(self, parent):
         super(FramePayload, self).__init__(parent)
@@ -41,10 +46,10 @@ class FramePayload(Base):
         -------
         - str: If Frame Payload type is Custom, then this attribute specifies a string in hex format.
         """
-        return self._get_attribute('customPattern')
+        return self._get_attribute(self._SDM_ATT_MAP['CustomPattern'])
     @CustomPattern.setter
     def CustomPattern(self, value):
-        self._set_attribute('customPattern', value)
+        self._set_attribute(self._SDM_ATT_MAP['CustomPattern'], value)
 
     @property
     def CustomRepeat(self):
@@ -53,10 +58,10 @@ class FramePayload(Base):
         -------
         - bool: If true, Custom Pattern is repeated.
         """
-        return self._get_attribute('customRepeat')
+        return self._get_attribute(self._SDM_ATT_MAP['CustomRepeat'])
     @CustomRepeat.setter
     def CustomRepeat(self, value):
-        self._set_attribute('customRepeat', value)
+        self._set_attribute(self._SDM_ATT_MAP['CustomRepeat'], value)
 
     @property
     def Type(self):
@@ -65,10 +70,10 @@ class FramePayload(Base):
         -------
         - str(CJPAT | CRPAT | custom | decrementByte | decrementWord | incrementByte | incrementWord | random): The types of Frame Payload.
         """
-        return self._get_attribute('type')
+        return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
-        self._set_attribute('type', value)
+        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     def update(self, CustomPattern=None, CustomRepeat=None, Type=None):
         """Updates framePayload resource on the server.
@@ -83,4 +88,4 @@ class FramePayload(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

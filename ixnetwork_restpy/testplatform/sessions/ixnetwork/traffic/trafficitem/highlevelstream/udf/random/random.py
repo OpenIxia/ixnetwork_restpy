@@ -31,6 +31,11 @@ class Random(Base):
 
     __slots__ = ()
     _SDM_NAME = 'random'
+    _SDM_ATT_MAP = {
+        'AvailableWidths': 'availableWidths',
+        'Mask': 'mask',
+        'Width': 'width',
+    }
 
     def __init__(self, parent):
         super(Random, self).__init__(parent)
@@ -42,7 +47,7 @@ class Random(Base):
         -------
         - list(str): Species all the possible widths available for a UDF in particular Type.
         """
-        return self._get_attribute('availableWidths')
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableWidths'])
 
     @property
     def Mask(self):
@@ -51,10 +56,10 @@ class Random(Base):
         -------
         - str: Sets the UDF mask.
         """
-        return self._get_attribute('mask')
+        return self._get_attribute(self._SDM_ATT_MAP['Mask'])
     @Mask.setter
     def Mask(self, value):
-        self._set_attribute('mask', value)
+        self._set_attribute(self._SDM_ATT_MAP['Mask'], value)
 
     @property
     def Width(self):
@@ -63,10 +68,10 @@ class Random(Base):
         -------
         - str(16 | 24 | 32 | 8): Specifies the width of the UDF.
         """
-        return self._get_attribute('width')
+        return self._get_attribute(self._SDM_ATT_MAP['Width'])
     @Width.setter
     def Width(self, value):
-        self._set_attribute('width', value)
+        self._set_attribute(self._SDM_ATT_MAP['Width'], value)
 
     def update(self, Mask=None, Width=None):
         """Updates random resource on the server.
@@ -80,7 +85,7 @@ class Random(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, AvailableWidths=None, Mask=None, Width=None):
         """Finds and retrieves random resources from the server.
@@ -103,7 +108,7 @@ class Random(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of random data from the server.

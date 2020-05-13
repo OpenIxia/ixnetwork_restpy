@@ -31,6 +31,9 @@ class AvailableStatisticFilter(Base):
 
     __slots__ = ()
     _SDM_NAME = 'availableStatisticFilter'
+    _SDM_ATT_MAP = {
+        'Caption': 'caption',
+    }
 
     def __init__(self, parent):
         super(AvailableStatisticFilter, self).__init__(parent)
@@ -42,7 +45,7 @@ class AvailableStatisticFilter(Base):
         -------
         - str: Name of the statistic.
         """
-        return self._get_attribute('caption')
+        return self._get_attribute(self._SDM_ATT_MAP['Caption'])
 
     def find(self, Caption=None):
         """Finds and retrieves availableStatisticFilter resources from the server.
@@ -63,7 +66,7 @@ class AvailableStatisticFilter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of availableStatisticFilter data from the server.

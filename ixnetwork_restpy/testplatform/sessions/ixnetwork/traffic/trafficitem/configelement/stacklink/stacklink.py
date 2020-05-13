@@ -31,6 +31,9 @@ class StackLink(Base):
 
     __slots__ = ()
     _SDM_NAME = 'stackLink'
+    _SDM_ATT_MAP = {
+        'LinkedTo': 'linkedTo',
+    }
 
     def __init__(self, parent):
         super(StackLink, self).__init__(parent)
@@ -42,10 +45,10 @@ class StackLink(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../stackLink): Indicates which stack item this is linked to.
         """
-        return self._get_attribute('linkedTo')
+        return self._get_attribute(self._SDM_ATT_MAP['LinkedTo'])
     @LinkedTo.setter
     def LinkedTo(self, value):
-        self._set_attribute('linkedTo', value)
+        self._set_attribute(self._SDM_ATT_MAP['LinkedTo'], value)
 
     def update(self, LinkedTo=None):
         """Updates stackLink resource on the server.
@@ -58,7 +61,7 @@ class StackLink(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, LinkedTo=None):
         """Finds and retrieves stackLink resources from the server.
@@ -79,7 +82,7 @@ class StackLink(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of stackLink data from the server.

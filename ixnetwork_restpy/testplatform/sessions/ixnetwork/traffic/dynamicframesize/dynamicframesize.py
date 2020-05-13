@@ -31,6 +31,14 @@ class DynamicFrameSize(Base):
 
     __slots__ = ()
     _SDM_NAME = 'dynamicFrameSize'
+    _SDM_ATT_MAP = {
+        'FixedSize': 'fixedSize',
+        'HighLevelStreamName': 'highLevelStreamName',
+        'RandomMax': 'randomMax',
+        'RandomMin': 'randomMin',
+        'TrafficItemName': 'trafficItemName',
+        'Type': 'type',
+    }
 
     def __init__(self, parent):
         super(DynamicFrameSize, self).__init__(parent)
@@ -42,10 +50,10 @@ class DynamicFrameSize(Base):
         -------
         - number: Sets all frames to a specified constant size. The default is 64 bytes.
         """
-        return self._get_attribute('fixedSize')
+        return self._get_attribute(self._SDM_ATT_MAP['FixedSize'])
     @FixedSize.setter
     def FixedSize(self, value):
-        self._set_attribute('fixedSize', value)
+        self._set_attribute(self._SDM_ATT_MAP['FixedSize'], value)
 
     @property
     def HighLevelStreamName(self):
@@ -54,7 +62,7 @@ class DynamicFrameSize(Base):
         -------
         - str: The name of the high level stream
         """
-        return self._get_attribute('highLevelStreamName')
+        return self._get_attribute(self._SDM_ATT_MAP['HighLevelStreamName'])
 
     @property
     def RandomMax(self):
@@ -63,10 +71,10 @@ class DynamicFrameSize(Base):
         -------
         - number: Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
         """
-        return self._get_attribute('randomMax')
+        return self._get_attribute(self._SDM_ATT_MAP['RandomMax'])
     @RandomMax.setter
     def RandomMax(self, value):
-        self._set_attribute('randomMax', value)
+        self._set_attribute(self._SDM_ATT_MAP['RandomMax'], value)
 
     @property
     def RandomMin(self):
@@ -75,10 +83,10 @@ class DynamicFrameSize(Base):
         -------
         - number: Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
         """
-        return self._get_attribute('randomMin')
+        return self._get_attribute(self._SDM_ATT_MAP['RandomMin'])
     @RandomMin.setter
     def RandomMin(self, value):
-        self._set_attribute('randomMin', value)
+        self._set_attribute(self._SDM_ATT_MAP['RandomMin'], value)
 
     @property
     def TrafficItemName(self):
@@ -87,7 +95,7 @@ class DynamicFrameSize(Base):
         -------
         - str: The name of the parent traffic item.
         """
-        return self._get_attribute('trafficItemName')
+        return self._get_attribute(self._SDM_ATT_MAP['TrafficItemName'])
 
     @property
     def Type(self):
@@ -96,10 +104,10 @@ class DynamicFrameSize(Base):
         -------
         - str(fixed | random): Sets the frame size to either fixed or random lengths in bytes.
         """
-        return self._get_attribute('type')
+        return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
-        self._set_attribute('type', value)
+        self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     def update(self, FixedSize=None, RandomMax=None, RandomMin=None, Type=None):
         """Updates dynamicFrameSize resource on the server.
@@ -115,7 +123,7 @@ class DynamicFrameSize(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, FixedSize=None, HighLevelStreamName=None, RandomMax=None, RandomMin=None, TrafficItemName=None, Type=None):
         """Finds and retrieves dynamicFrameSize resources from the server.
@@ -141,7 +149,7 @@ class DynamicFrameSize(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of dynamicFrameSize data from the server.

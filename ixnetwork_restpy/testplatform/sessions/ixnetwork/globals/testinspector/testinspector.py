@@ -30,6 +30,10 @@ class TestInspector(Base):
 
     __slots__ = ()
     _SDM_NAME = 'testInspector'
+    _SDM_ATT_MAP = {
+        'EnableTestInspector': 'enableTestInspector',
+        'PollingInterval': 'pollingInterval',
+    }
 
     def __init__(self, parent):
         super(TestInspector, self).__init__(parent)
@@ -55,10 +59,10 @@ class TestInspector(Base):
         -------
         - bool: Enable/Disable Test Inspector
         """
-        return self._get_attribute('enableTestInspector')
+        return self._get_attribute(self._SDM_ATT_MAP['EnableTestInspector'])
     @EnableTestInspector.setter
     def EnableTestInspector(self, value):
-        self._set_attribute('enableTestInspector', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnableTestInspector'], value)
 
     @property
     def PollingInterval(self):
@@ -67,10 +71,10 @@ class TestInspector(Base):
         -------
         - number: Polling Interval
         """
-        return self._get_attribute('pollingInterval')
+        return self._get_attribute(self._SDM_ATT_MAP['PollingInterval'])
     @PollingInterval.setter
     def PollingInterval(self, value):
-        self._set_attribute('pollingInterval', value)
+        self._set_attribute(self._SDM_ATT_MAP['PollingInterval'], value)
 
     def update(self, EnableTestInspector=None, PollingInterval=None):
         """Updates testInspector resource on the server.
@@ -84,4 +88,4 @@ class TestInspector(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

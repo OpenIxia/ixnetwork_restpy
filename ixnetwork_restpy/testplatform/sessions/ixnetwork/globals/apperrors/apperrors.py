@@ -31,6 +31,11 @@ class AppErrors(Base):
 
     __slots__ = ()
     _SDM_NAME = 'appErrors'
+    _SDM_ATT_MAP = {
+        'ErrorCount': 'errorCount',
+        'LastModified': 'lastModified',
+        'WarningCount': 'warningCount',
+    }
 
     def __init__(self, parent):
         super(AppErrors, self).__init__(parent)
@@ -56,7 +61,7 @@ class AppErrors(Base):
         -------
         - number: Total number of errors
         """
-        return self._get_attribute('errorCount')
+        return self._get_attribute(self._SDM_ATT_MAP['ErrorCount'])
 
     @property
     def LastModified(self):
@@ -65,7 +70,7 @@ class AppErrors(Base):
         -------
         - str: Time of latest logged error or warning
         """
-        return self._get_attribute('lastModified')
+        return self._get_attribute(self._SDM_ATT_MAP['LastModified'])
 
     @property
     def WarningCount(self):
@@ -74,7 +79,7 @@ class AppErrors(Base):
         -------
         - number: Total number of warnings
         """
-        return self._get_attribute('warningCount')
+        return self._get_attribute(self._SDM_ATT_MAP['WarningCount'])
 
     def find(self, ErrorCount=None, LastModified=None, WarningCount=None):
         """Finds and retrieves appErrors resources from the server.
@@ -97,7 +102,7 @@ class AppErrors(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of appErrors data from the server.

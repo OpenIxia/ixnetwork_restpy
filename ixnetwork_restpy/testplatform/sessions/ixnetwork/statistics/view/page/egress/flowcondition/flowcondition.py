@@ -32,6 +32,12 @@ class FlowCondition(Base):
 
     __slots__ = ()
     _SDM_NAME = 'flowCondition'
+    _SDM_ATT_MAP = {
+        'Operator': 'operator',
+        'ShowFirstMatchingSet': 'showFirstMatchingSet',
+        'TrackingFilterId': 'trackingFilterId',
+        'Values': 'values',
+    }
 
     def __init__(self, parent):
         super(FlowCondition, self).__init__(parent)
@@ -43,10 +49,10 @@ class FlowCondition(Base):
         -------
         - str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller): The logical operation to be performed.
         """
-        return self._get_attribute('operator')
+        return self._get_attribute(self._SDM_ATT_MAP['Operator'])
     @Operator.setter
     def Operator(self, value):
-        self._set_attribute('operator', value)
+        self._set_attribute(self._SDM_ATT_MAP['Operator'], value)
 
     @property
     def ShowFirstMatchingSet(self):
@@ -55,10 +61,10 @@ class FlowCondition(Base):
         -------
         - bool: If true, displays the first matching set.
         """
-        return self._get_attribute('showFirstMatchingSet')
+        return self._get_attribute(self._SDM_ATT_MAP['ShowFirstMatchingSet'])
     @ShowFirstMatchingSet.setter
     def ShowFirstMatchingSet(self, value):
-        self._set_attribute('showFirstMatchingSet', value)
+        self._set_attribute(self._SDM_ATT_MAP['ShowFirstMatchingSet'], value)
 
     @property
     def TrackingFilterId(self):
@@ -67,10 +73,10 @@ class FlowCondition(Base):
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter): Selected tracking filters from the availableTrackingFilter list.
         """
-        return self._get_attribute('trackingFilterId')
+        return self._get_attribute(self._SDM_ATT_MAP['TrackingFilterId'])
     @TrackingFilterId.setter
     def TrackingFilterId(self, value):
-        self._set_attribute('trackingFilterId', value)
+        self._set_attribute(self._SDM_ATT_MAP['TrackingFilterId'], value)
 
     @property
     def Values(self):
@@ -79,10 +85,10 @@ class FlowCondition(Base):
         -------
         - list(number): Value to be matched for the condition.
         """
-        return self._get_attribute('values')
+        return self._get_attribute(self._SDM_ATT_MAP['Values'])
     @Values.setter
     def Values(self, value):
-        self._set_attribute('values', value)
+        self._set_attribute(self._SDM_ATT_MAP['Values'], value)
 
     def update(self, Operator=None, ShowFirstMatchingSet=None, TrackingFilterId=None, Values=None):
         """Updates flowCondition resource on the server.
@@ -98,7 +104,7 @@ class FlowCondition(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Operator=None, ShowFirstMatchingSet=None, TrackingFilterId=None, Values=None):
         """Adds a new flowCondition resource on the server and adds it to the container.
@@ -118,7 +124,7 @@ class FlowCondition(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained flowCondition resources in this instance from the server.
@@ -152,7 +158,7 @@ class FlowCondition(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of flowCondition data from the server.

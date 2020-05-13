@@ -30,6 +30,9 @@ class NacSettings(Base):
 
     __slots__ = ()
     _SDM_NAME = 'nacSettings'
+    _SDM_ATT_MAP = {
+        'ObjectId': 'objectId',
+    }
 
     def __init__(self, parent):
         super(NacSettings, self).__init__(parent)
@@ -97,4 +100,4 @@ class NacSettings(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])

@@ -32,6 +32,14 @@ class PppoxGlobals(Base):
 
     __slots__ = ()
     _SDM_NAME = 'pppoxGlobals'
+    _SDM_ATT_MAP = {
+        'EnforcePerPortRates': 'enforcePerPortRates',
+        'MaxOutstandingReleases': 'maxOutstandingReleases',
+        'MaxOutstandingRequests': 'maxOutstandingRequests',
+        'ObjectId': 'objectId',
+        'SetupRateInitial': 'setupRateInitial',
+        'TeardownRateInitial': 'teardownRateInitial',
+    }
 
     def __init__(self, parent):
         super(PppoxGlobals, self).__init__(parent)
@@ -43,10 +51,10 @@ class PppoxGlobals(Base):
         -------
         - bool: If false, the setup rate at port group level gets divided by physical ports and then by range (default behavior). If true, we only configure a per-port setup rate that gets enforced, no matter how many ranges are running.
         """
-        return self._get_attribute('enforcePerPortRates')
+        return self._get_attribute(self._SDM_ATT_MAP['EnforcePerPortRates'])
     @EnforcePerPortRates.setter
     def EnforcePerPortRates(self, value):
-        self._set_attribute('enforcePerPortRates', value)
+        self._set_attribute(self._SDM_ATT_MAP['EnforcePerPortRates'], value)
 
     @property
     def MaxOutstandingReleases(self):
@@ -55,10 +63,10 @@ class PppoxGlobals(Base):
         -------
         - number: The maximum number of PPP session releases opened at any time by the PPP plugin.
         """
-        return self._get_attribute('maxOutstandingReleases')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'])
     @MaxOutstandingReleases.setter
     def MaxOutstandingReleases(self, value):
-        self._set_attribute('maxOutstandingReleases', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'], value)
 
     @property
     def MaxOutstandingRequests(self):
@@ -67,10 +75,10 @@ class PppoxGlobals(Base):
         -------
         - number: Threshold at which the plugin begins throttling back the number of new clients being set up.
         """
-        return self._get_attribute('maxOutstandingRequests')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
-        self._set_attribute('maxOutstandingRequests', value)
+        self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
 
     @property
     def ObjectId(self):
@@ -79,7 +87,7 @@ class PppoxGlobals(Base):
         -------
         - str: Unique identifier for this object
         """
-        return self._get_attribute('objectId')
+        return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     @property
     def SetupRateInitial(self):
@@ -88,10 +96,10 @@ class PppoxGlobals(Base):
         -------
         - number: Initial setup rate
         """
-        return self._get_attribute('setupRateInitial')
+        return self._get_attribute(self._SDM_ATT_MAP['SetupRateInitial'])
     @SetupRateInitial.setter
     def SetupRateInitial(self, value):
-        self._set_attribute('setupRateInitial', value)
+        self._set_attribute(self._SDM_ATT_MAP['SetupRateInitial'], value)
 
     @property
     def TeardownRateInitial(self):
@@ -100,10 +108,10 @@ class PppoxGlobals(Base):
         -------
         - number: Initial teardown rate
         """
-        return self._get_attribute('teardownRateInitial')
+        return self._get_attribute(self._SDM_ATT_MAP['TeardownRateInitial'])
     @TeardownRateInitial.setter
     def TeardownRateInitial(self, value):
-        self._set_attribute('teardownRateInitial', value)
+        self._set_attribute(self._SDM_ATT_MAP['TeardownRateInitial'], value)
 
     def update(self, EnforcePerPortRates=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, SetupRateInitial=None, TeardownRateInitial=None):
         """Updates pppoxGlobals resource on the server.
@@ -120,7 +128,7 @@ class PppoxGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, EnforcePerPortRates=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, SetupRateInitial=None, TeardownRateInitial=None):
         """Adds a new pppoxGlobals resource on the server and adds it to the container.
@@ -141,7 +149,7 @@ class PppoxGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._create(locals())
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
         """Deletes all the contained pppoxGlobals resources in this instance from the server.
@@ -177,7 +185,7 @@ class PppoxGlobals(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of pppoxGlobals data from the server.

@@ -30,6 +30,18 @@ class TxLane(Base):
 
     __slots__ = ()
     _SDM_NAME = 'txLane'
+    _SDM_ATT_MAP = {
+        'IsSkewSynchronized': 'isSkewSynchronized',
+        'LaneMappingType': 'laneMappingType',
+        'MaxSkewVal': 'maxSkewVal',
+        'MinSkewVal': 'minSkewVal',
+        'NoOfLanes': 'noOfLanes',
+        'PcsLane': 'pcsLane',
+        'PhysicalLanes': 'physicalLanes',
+        'Resolution': 'resolution',
+        'SkewValues': 'skewValues',
+        'SynchronizedSkewVal': 'synchronizedSkewVal',
+    }
 
     def __init__(self, parent):
         super(TxLane, self).__init__(parent)
@@ -41,10 +53,10 @@ class TxLane(Base):
         -------
         - bool: 
         """
-        return self._get_attribute('isSkewSynchronized')
+        return self._get_attribute(self._SDM_ATT_MAP['IsSkewSynchronized'])
     @IsSkewSynchronized.setter
     def IsSkewSynchronized(self, value):
-        self._set_attribute('isSkewSynchronized', value)
+        self._set_attribute(self._SDM_ATT_MAP['IsSkewSynchronized'], value)
 
     @property
     def LaneMappingType(self):
@@ -53,10 +65,10 @@ class TxLane(Base):
         -------
         - str(custom | decrement | default | increment | random): 
         """
-        return self._get_attribute('laneMappingType')
+        return self._get_attribute(self._SDM_ATT_MAP['LaneMappingType'])
     @LaneMappingType.setter
     def LaneMappingType(self, value):
-        self._set_attribute('laneMappingType', value)
+        self._set_attribute(self._SDM_ATT_MAP['LaneMappingType'], value)
 
     @property
     def MaxSkewVal(self):
@@ -65,7 +77,7 @@ class TxLane(Base):
         -------
         - number: 
         """
-        return self._get_attribute('maxSkewVal')
+        return self._get_attribute(self._SDM_ATT_MAP['MaxSkewVal'])
 
     @property
     def MinSkewVal(self):
@@ -74,7 +86,7 @@ class TxLane(Base):
         -------
         - number: 
         """
-        return self._get_attribute('minSkewVal')
+        return self._get_attribute(self._SDM_ATT_MAP['MinSkewVal'])
 
     @property
     def NoOfLanes(self):
@@ -83,7 +95,7 @@ class TxLane(Base):
         -------
         - number: 
         """
-        return self._get_attribute('noOfLanes')
+        return self._get_attribute(self._SDM_ATT_MAP['NoOfLanes'])
 
     @property
     def PcsLane(self):
@@ -92,10 +104,10 @@ class TxLane(Base):
         -------
         - list(number): 
         """
-        return self._get_attribute('pcsLane')
+        return self._get_attribute(self._SDM_ATT_MAP['PcsLane'])
     @PcsLane.setter
     def PcsLane(self, value):
-        self._set_attribute('pcsLane', value)
+        self._set_attribute(self._SDM_ATT_MAP['PcsLane'], value)
 
     @property
     def PhysicalLanes(self):
@@ -104,7 +116,7 @@ class TxLane(Base):
         -------
         - list(str): 
         """
-        return self._get_attribute('physicalLanes')
+        return self._get_attribute(self._SDM_ATT_MAP['PhysicalLanes'])
 
     @property
     def Resolution(self):
@@ -113,7 +125,7 @@ class TxLane(Base):
         -------
         - number: 
         """
-        return self._get_attribute('resolution')
+        return self._get_attribute(self._SDM_ATT_MAP['Resolution'])
 
     @property
     def SkewValues(self):
@@ -122,10 +134,10 @@ class TxLane(Base):
         -------
         - list(number): 
         """
-        return self._get_attribute('skewValues')
+        return self._get_attribute(self._SDM_ATT_MAP['SkewValues'])
     @SkewValues.setter
     def SkewValues(self, value):
-        self._set_attribute('skewValues', value)
+        self._set_attribute(self._SDM_ATT_MAP['SkewValues'], value)
 
     @property
     def SynchronizedSkewVal(self):
@@ -134,10 +146,10 @@ class TxLane(Base):
         -------
         - number: 
         """
-        return self._get_attribute('synchronizedSkewVal')
+        return self._get_attribute(self._SDM_ATT_MAP['SynchronizedSkewVal'])
     @SynchronizedSkewVal.setter
     def SynchronizedSkewVal(self, value):
-        self._set_attribute('synchronizedSkewVal', value)
+        self._set_attribute(self._SDM_ATT_MAP['SynchronizedSkewVal'], value)
 
     def update(self, IsSkewSynchronized=None, LaneMappingType=None, PcsLane=None, SkewValues=None, SynchronizedSkewVal=None):
         """Updates txLane resource on the server.
@@ -154,4 +166,4 @@ class TxLane(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))

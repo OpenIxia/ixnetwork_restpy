@@ -31,6 +31,11 @@ class Parameter(Base):
 
     __slots__ = ()
     _SDM_NAME = 'parameter'
+    _SDM_ATT_MAP = {
+        'DisplayValue': 'displayValue',
+        'Option': 'option',
+        'SupportedOptions': 'supportedOptions',
+    }
 
     def __init__(self, parent):
         super(Parameter, self).__init__(parent)
@@ -126,7 +131,7 @@ class Parameter(Base):
         -------
         - str: Current parameter UI Display Value
         """
-        return self._get_attribute('displayValue')
+        return self._get_attribute(self._SDM_ATT_MAP['DisplayValue'])
 
     @property
     def Option(self):
@@ -135,10 +140,10 @@ class Parameter(Base):
         -------
         - str(choice | range | value): Each parameter has one or multiple options. Runtime supported options for specific parameter can be retrieved from supportedOptions attribute
         """
-        return self._get_attribute('option')
+        return self._get_attribute(self._SDM_ATT_MAP['Option'])
     @Option.setter
     def Option(self, value):
-        self._set_attribute('option', value)
+        self._set_attribute(self._SDM_ATT_MAP['Option'], value)
 
     @property
     def SupportedOptions(self):
@@ -147,7 +152,7 @@ class Parameter(Base):
         -------
         - list(str[choice | range | value]): Runtime supported options for a specific parameter
         """
-        return self._get_attribute('supportedOptions')
+        return self._get_attribute(self._SDM_ATT_MAP['SupportedOptions'])
 
     def update(self, Option=None):
         """Updates parameter resource on the server.
@@ -160,7 +165,7 @@ class Parameter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._update(locals())
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, DisplayValue=None, Option=None, SupportedOptions=None):
         """Finds and retrieves parameter resources from the server.
@@ -183,7 +188,7 @@ class Parameter(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        return self._select(locals())
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
         """Retrieves a single instance of parameter data from the server.
