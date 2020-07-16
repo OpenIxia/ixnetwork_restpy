@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,8 +31,8 @@ class DataCollection(Base):
     __slots__ = ()
     _SDM_NAME = 'dataCollection'
     _SDM_ATT_MAP = {
-        'Enable': 'Enable',
         'LastRunId': 'LastRunId',
+        'Enable': 'Enable',
     }
 
     def __init__(self, parent):

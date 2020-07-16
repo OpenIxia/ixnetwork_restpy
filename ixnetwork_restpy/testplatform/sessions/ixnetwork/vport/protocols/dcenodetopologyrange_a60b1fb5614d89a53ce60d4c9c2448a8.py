@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,14 +33,14 @@ class DceNodeTopologyRange(Base):
     __slots__ = ()
     _SDM_NAME = 'dceNodeTopologyRange'
     _SDM_ATT_MAP = {
-        'BroadcastPriority': 'broadcastPriority',
         'IncludeL2Topology': 'includeL2Topology',
-        'InternodeNicknameIncrement': 'internodeNicknameIncrement',
-        'NicknameCount': 'nicknameCount',
-        'NoOfTreesToCompute': 'noOfTreesToCompute',
         'StartNickname': 'startNickname',
         'TopologyCount': 'topologyCount',
         'TopologyId': 'topologyId',
+        'NicknameCount': 'nicknameCount',
+        'NoOfTreesToCompute': 'noOfTreesToCompute',
+        'BroadcastPriority': 'broadcastPriority',
+        'InternodeNicknameIncrement': 'internodeNicknameIncrement',
     }
 
     def __init__(self, parent):

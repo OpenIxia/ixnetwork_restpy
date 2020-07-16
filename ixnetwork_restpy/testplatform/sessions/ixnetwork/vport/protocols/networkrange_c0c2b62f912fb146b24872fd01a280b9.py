@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,21 +33,21 @@ class NetworkRange(Base):
     __slots__ = ()
     _SDM_NAME = 'networkRange'
     _SDM_ATT_MAP = {
-        'BBit': 'bBit',
+        'EntryAddress': 'entryAddress',
+        'LinkType': 'linkType',
+        'EntryRow': 'entryRow',
+        'EntryColumn': 'entryColumn',
+        'PrefixMask': 'prefixMask',
+        'NumRows': 'numRows',
+        'IncrementByRid': 'incrementByRid',
+        'Rid': 'rid',
+        'LinkMetric': 'linkMetric',
+        'EntryMaskLength': 'entryMaskLength',
+        'PrefixAddress': 'prefixAddress',
         'EBit': 'eBit',
         'EnableAdvertiseNetworkRange': 'enableAdvertiseNetworkRange',
-        'EntryAddress': 'entryAddress',
-        'EntryColumn': 'entryColumn',
-        'EntryMaskLength': 'entryMaskLength',
-        'EntryRow': 'entryRow',
-        'IncrementByRid': 'incrementByRid',
-        'LinkMetric': 'linkMetric',
-        'LinkType': 'linkType',
         'NumCols': 'numCols',
-        'NumRows': 'numRows',
-        'PrefixAddress': 'prefixAddress',
-        'PrefixMask': 'prefixMask',
-        'Rid': 'rid',
+        'BBit': 'bBit',
     }
 
     def __init__(self, parent):

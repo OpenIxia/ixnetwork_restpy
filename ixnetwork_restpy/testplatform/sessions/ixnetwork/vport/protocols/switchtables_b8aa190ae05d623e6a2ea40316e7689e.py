@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,9 +34,9 @@ class SwitchTables(Base):
     _SDM_NAME = 'switchTables'
     _SDM_ATT_MAP = {
         'MaxEntries': 'maxEntries',
-        'NumberOfTables': 'numberOfTables',
-        'TableId': 'tableId',
         'TableName': 'tableName',
+        'TableId': 'tableId',
+        'NumberOfTables': 'numberOfTables',
     }
 
     def __init__(self, parent):

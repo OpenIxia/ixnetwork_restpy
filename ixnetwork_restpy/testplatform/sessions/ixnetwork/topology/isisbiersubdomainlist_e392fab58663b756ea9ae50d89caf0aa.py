@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,15 +31,15 @@ class IsisBierSubDomainList(Base):
     __slots__ = ()
     _SDM_NAME = 'isisBierSubDomainList'
     _SDM_ATT_MAP = {
-        'BAR': 'BAR',
-        'BFRId': 'BFRId',
-        'IPA': 'IPA',
-        'Active': 'active',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
+        'IPA': 'IPA',
+        'BAR': 'BAR',
         'Name': 'name',
-        'NumberOfBSLen': 'numberOfBSLen',
         'SubDomainId': 'subDomainId',
+        'DescriptiveName': 'descriptiveName',
+        'Active': 'active',
+        'NumberOfBSLen': 'numberOfBSLen',
+        'BFRId': 'BFRId',
     }
 
     def __init__(self, parent):

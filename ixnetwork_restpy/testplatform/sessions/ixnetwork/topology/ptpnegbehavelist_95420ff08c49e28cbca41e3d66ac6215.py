@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,18 +32,18 @@ class PtpNegBehaveList(Base):
     _SDM_NAME = 'ptpNegBehaveList'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'MvActive': 'mvActive',
-        'MvDelay': 'mvDelay',
-        'MvFieldValue': 'mvFieldValue',
-        'MvFieldValue1': 'mvFieldValue1',
-        'MvMsgAction': 'mvMsgAction',
-        'MvPtpMsgField': 'mvPtpMsgField',
-        'MvPtpMsgField1': 'mvPtpMsgField1',
         'Name': 'name',
-        'PtpMsgType': 'ptpMsgType',
+        'MvActive': 'mvActive',
+        'MvPtpMsgField1': 'mvPtpMsgField1',
+        'MvFieldValue': 'mvFieldValue',
         'PtpValueDisPattern': 'ptpValueDisPattern',
+        'MvFieldValue1': 'mvFieldValue1',
         'PtpValueDisPattern1': 'ptpValueDisPattern1',
+        'MvDelay': 'mvDelay',
+        'DescriptiveName': 'descriptiveName',
+        'MvMsgAction': 'mvMsgAction',
+        'PtpMsgType': 'ptpMsgType',
+        'MvPtpMsgField': 'mvPtpMsgField',
     }
 
     def __init__(self, parent):

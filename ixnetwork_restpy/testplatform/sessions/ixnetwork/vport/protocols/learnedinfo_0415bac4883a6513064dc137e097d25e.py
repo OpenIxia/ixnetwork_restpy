@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,37 +32,37 @@ class LearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedInfo'
     _SDM_ATT_MAP = {
-        'ActorCollectingFlag': 'actorCollectingFlag',
-        'ActorDefaultedFlag': 'actorDefaultedFlag',
-        'ActorDistributingFlag': 'actorDistributingFlag',
-        'ActorExpiredFlag': 'actorExpiredFlag',
-        'ActorLacpActivity': 'actorLacpActivity',
-        'ActorLacpTimeout': 'actorLacpTimeout',
-        'ActorLinkAggregationStatus': 'actorLinkAggregationStatus',
-        'ActorOperationalKey': 'actorOperationalKey',
-        'ActorPortNumber': 'actorPortNumber',
-        'ActorPortPriority': 'actorPortPriority',
-        'ActorSyncFlag': 'actorSyncFlag',
-        'ActorSystemId': 'actorSystemId',
-        'ActorSystemPriority': 'actorSystemPriority',
-        'AdministrativeKey': 'administrativeKey',
-        'EnabledAggregation': 'enabledAggregation',
-        'OtherLagMemberCount': 'otherLagMemberCount',
-        'OtherLagMemberDetails': 'otherLagMemberDetails',
-        'PartnerCollectingFlag': 'partnerCollectingFlag',
-        'PartnerCollectorMaxDelay': 'partnerCollectorMaxDelay',
-        'PartnerDefaultedFlag': 'partnerDefaultedFlag',
-        'PartnerDistributingFlag': 'partnerDistributingFlag',
-        'PartnerExpiredFlag': 'partnerExpiredFlag',
-        'PartnerLacpActivity': 'partnerLacpActivity',
-        'PartnerLacpTimeout': 'partnerLacpTimeout',
-        'PartnerLinkAggregationStatus': 'partnerLinkAggregationStatus',
-        'PartnerOperationalKey': 'partnerOperationalKey',
-        'PartnerPortNumber': 'partnerPortNumber',
-        'PartnerPortPriority': 'partnerPortPriority',
         'PartnerSyncFlag': 'partnerSyncFlag',
+        'ActorPortNumber': 'actorPortNumber',
+        'ActorLacpTimeout': 'actorLacpTimeout',
+        'ActorDefaultedFlag': 'actorDefaultedFlag',
         'PartnerSystemId': 'partnerSystemId',
+        'PartnerPortNumber': 'partnerPortNumber',
+        'PartnerExpiredFlag': 'partnerExpiredFlag',
+        'PartnerOperationalKey': 'partnerOperationalKey',
+        'OtherLagMemberDetails': 'otherLagMemberDetails',
+        'OtherLagMemberCount': 'otherLagMemberCount',
+        'PartnerLinkAggregationStatus': 'partnerLinkAggregationStatus',
+        'ActorOperationalKey': 'actorOperationalKey',
+        'PartnerDefaultedFlag': 'partnerDefaultedFlag',
+        'PartnerLacpTimeout': 'partnerLacpTimeout',
+        'ActorExpiredFlag': 'actorExpiredFlag',
+        'ActorSystemId': 'actorSystemId',
+        'ActorLacpActivity': 'actorLacpActivity',
         'PartnerSystemPriority': 'partnerSystemPriority',
+        'PartnerPortPriority': 'partnerPortPriority',
+        'ActorPortPriority': 'actorPortPriority',
+        'PartnerCollectingFlag': 'partnerCollectingFlag',
+        'ActorSystemPriority': 'actorSystemPriority',
+        'ActorSyncFlag': 'actorSyncFlag',
+        'PartnerLacpActivity': 'partnerLacpActivity',
+        'PartnerCollectorMaxDelay': 'partnerCollectorMaxDelay',
+        'PartnerDistributingFlag': 'partnerDistributingFlag',
+        'ActorDistributingFlag': 'actorDistributingFlag',
+        'EnabledAggregation': 'enabledAggregation',
+        'ActorCollectingFlag': 'actorCollectingFlag',
+        'AdministrativeKey': 'administrativeKey',
+        'ActorLinkAggregationStatus': 'actorLinkAggregationStatus',
     }
 
     def __init__(self, parent):

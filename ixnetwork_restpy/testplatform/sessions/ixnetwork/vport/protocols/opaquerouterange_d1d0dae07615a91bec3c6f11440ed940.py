@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,13 +33,13 @@ class OpaqueRouteRange(Base):
     __slots__ = ()
     _SDM_NAME = 'opaqueRouteRange'
     _SDM_ATT_MAP = {
-        'Id__': '__id__',
-        'Enabled': 'enabled',
+        'Status': 'status',
         'ImportedFile': 'importedFile',
+        'Enabled': 'enabled',
         'NextHopAsIs': 'nextHopAsIs',
         'NumberOfRoutes': 'numberOfRoutes',
+        'Id__': '__id__',
         'SendMultiExitDiscovery': 'sendMultiExitDiscovery',
-        'Status': 'status',
     }
 
     def __init__(self, parent):

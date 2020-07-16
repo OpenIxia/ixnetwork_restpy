@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,10 +32,10 @@ class LnsAuthCredentials(Base):
     _SDM_NAME = 'lnsAuthCredentials'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
         'LacHostName': 'lacHostName',
-        'LacSecret': 'lacSecret',
+        'DescriptiveName': 'descriptiveName',
         'Name': 'name',
+        'LacSecret': 'lacSecret',
     }
 
     def __init__(self, parent):

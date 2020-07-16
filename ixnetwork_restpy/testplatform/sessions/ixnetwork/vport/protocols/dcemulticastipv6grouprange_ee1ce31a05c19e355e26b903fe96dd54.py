@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,17 +33,17 @@ class DceMulticastIpv6GroupRange(Base):
     __slots__ = ()
     _SDM_NAME = 'dceMulticastIpv6GroupRange'
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'InterGroupUnicastIpv6Increment': 'interGroupUnicastIpv6Increment',
         'IntraGroupUnicastIpv6Increment': 'intraGroupUnicastIpv6Increment',
-        'MulticastIpv6Count': 'multicastIpv6Count',
-        'MulticastIpv6Step': 'multicastIpv6Step',
-        'SourceGroupMapping': 'sourceGroupMapping',
         'StartMulticastIpv6': 'startMulticastIpv6',
-        'StartUnicastSourceIpv6': 'startUnicastSourceIpv6',
-        'Topology': 'topology',
-        'UnicastSourcesPerMulticastIpv6': 'unicastSourcesPerMulticastIpv6',
+        'MulticastIpv6Step': 'multicastIpv6Step',
+        'Enabled': 'enabled',
         'VlanId': 'vlanId',
+        'StartUnicastSourceIpv6': 'startUnicastSourceIpv6',
+        'UnicastSourcesPerMulticastIpv6': 'unicastSourcesPerMulticastIpv6',
+        'InterGroupUnicastIpv6Increment': 'interGroupUnicastIpv6Increment',
+        'MulticastIpv6Count': 'multicastIpv6Count',
+        'SourceGroupMapping': 'sourceGroupMapping',
+        'Topology': 'topology',
     }
 
     def __init__(self, parent):

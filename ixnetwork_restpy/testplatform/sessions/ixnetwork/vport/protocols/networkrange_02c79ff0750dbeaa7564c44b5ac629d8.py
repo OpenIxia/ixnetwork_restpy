@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,22 +33,22 @@ class NetworkRange(Base):
     __slots__ = ()
     _SDM_NAME = 'networkRange'
     _SDM_ATT_MAP = {
-        'EnableHostName': 'enableHostName',
-        'Enabled': 'enabled',
-        'EntryCol': 'entryCol',
-        'EntryRow': 'entryRow',
-        'GridNodeRoutes': 'gridNodeRoutes',
-        'GridOutsideExLinks': 'gridOutsideExLinks',
         'GridOutsideLinks': 'gridOutsideLinks',
-        'HostNamePrefix': 'hostNamePrefix',
-        'InterfaceIps': 'interfaceIps',
-        'InterfaceMetric': 'interfaceMetric',
-        'Ipv6MtMetric': 'ipv6MtMetric',
         'LinkType': 'linkType',
+        'Ipv6MtMetric': 'ipv6MtMetric',
+        'InterfaceIps': 'interfaceIps',
+        'EntryRow': 'entryRow',
+        'GridOutsideExLinks': 'gridOutsideExLinks',
+        'Enabled': 'enabled',
+        'RouterId': 'routerId',
+        'HostNamePrefix': 'hostNamePrefix',
         'NoOfCols': 'noOfCols',
         'NoOfRows': 'noOfRows',
-        'RouterId': 'routerId',
         'RouterIdIncrement': 'routerIdIncrement',
+        'EnableHostName': 'enableHostName',
+        'EntryCol': 'entryCol',
+        'GridNodeRoutes': 'gridNodeRoutes',
+        'InterfaceMetric': 'interfaceMetric',
         'TePaths': 'tePaths',
         'UseWideMetric': 'useWideMetric',
     }
@@ -149,7 +149,7 @@ class NetworkRange(Base):
         """
         Returns
         -------
-        - list(dict(arg1:number,arg2:number,arg3:str,arg4:list[dict(arg1:str[ipAny | ipv4 | ipv6],arg2:str,arg3:number)],arg5:str,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number)): NOT DEFINED
+        - list(dict(arg1:number,arg2:number,arg3:str,arg4:list[dict(arg1:str[ipAny | ipv4 | ipv6],arg2:str,arg3:number)],arg5:str,arg6:number,arg7:str,arg8:str,arg9:str,arg10:str,arg11:str,arg12:str,arg13:str,arg14:str,arg15:str,arg16:str)): NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP['GridOutsideExLinks'])
     @GridOutsideExLinks.setter
@@ -161,7 +161,7 @@ class NetworkRange(Base):
         """DEPRECATED 
         Returns
         -------
-        - list(dict(arg1:number,arg2:number,arg3:str,arg4:str,arg5:number,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number)): Sets up the outside links between an ISIS grid and another ISIS grid.
+        - list(dict(arg1:number,arg2:number,arg3:str,arg4:str,arg5:number,arg6:str,arg7:str,arg8:str,arg9:str,arg10:str,arg11:str,arg12:str,arg13:str,arg14:str,arg15:str)): Sets up the outside links between an ISIS grid and another ISIS grid.
         """
         return self._get_attribute(self._SDM_ATT_MAP['GridOutsideLinks'])
     @GridOutsideLinks.setter
@@ -281,7 +281,7 @@ class NetworkRange(Base):
         """
         Returns
         -------
-        - list(dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:bool,arg8:str,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number,arg17:number,arg18:number,arg19:number)): Adds a Traffic Engineering (TE) Path to the list.
+        - list(dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:bool,arg8:str,arg9:number,arg10:str,arg11:str,arg12:str,arg13:str,arg14:str,arg15:str,arg16:str,arg17:str,arg18:str,arg19:str)): Adds a Traffic Engineering (TE) Path to the list.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TePaths'])
     @TePaths.setter
@@ -310,8 +310,8 @@ class NetworkRange(Base):
         - EntryCol (number): The simulated router is connected to a router in the grid at a particular row and column location. This option is the column number. (default = 1)
         - EntryRow (number): The simulated router is connected to a router in the grid at a particular row and column location. This option is the row number. (default = 1)
         - GridNodeRoutes (list(dict(arg1:bool,arg2:str[ipAny | ipv4 | ipv6],arg3:str,arg4:number,arg5:number,arg6:number,arg7:number,arg8:bool,arg9:bool,arg10:number))): The set of advertised networks within the grid to be included in isisGrid.
-        - GridOutsideExLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:list[dict(arg1:str[ipAny | ipv4 | ipv6],arg2:str,arg3:number)],arg5:str,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number))): NOT DEFINED
-        - GridOutsideLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:str,arg5:number,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number))): Sets up the outside links between an ISIS grid and another ISIS grid.
+        - GridOutsideExLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:list[dict(arg1:str[ipAny | ipv4 | ipv6],arg2:str,arg3:number)],arg5:str,arg6:number,arg7:str,arg8:str,arg9:str,arg10:str,arg11:str,arg12:str,arg13:str,arg14:str,arg15:str,arg16:str))): NOT DEFINED
+        - GridOutsideLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:str,arg5:number,arg6:str,arg7:str,arg8:str,arg9:str,arg10:str,arg11:str,arg12:str,arg13:str,arg14:str,arg15:str))): Sets up the outside links between an ISIS grid and another ISIS grid.
         - HostNamePrefix (str): Allows to add a host name to this network range. The name prefix is appended by row ID and column ID in .<rowid>.<colid> combination as per the router placed in the emulated network grid behind the Ixia port.
         - InterfaceIps (list(dict(arg1:str[ipAny | ipv4 | ipv6],arg2:str,arg3:number))): The interface IP information for the simulated network.
         - InterfaceMetric (number): The metric cost associated with this emulated ISIS router.
@@ -321,7 +321,7 @@ class NetworkRange(Base):
         - NoOfRows (number): The number of rows in the simulated grid. (default = 3)
         - RouterId (str): The router ID for the first emulated ISIS router in this network range.
         - RouterIdIncrement (str): The increment step to be used for creating the router IDs for the emulated ISIS routers in this network range.
-        - TePaths (list(dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:bool,arg8:str,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number,arg17:number,arg18:number,arg19:number))): Adds a Traffic Engineering (TE) Path to the list.
+        - TePaths (list(dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:bool,arg8:str,arg9:number,arg10:str,arg11:str,arg12:str,arg13:str,arg14:str,arg15:str,arg16:str,arg17:str,arg18:str,arg19:str))): Adds a Traffic Engineering (TE) Path to the list.
         - UseWideMetric (bool): Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (IP routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, Wide Metrics will be enabled automatically. The Wide Metrics may be used without enabling TE, however.
 
         Raises
@@ -340,8 +340,8 @@ class NetworkRange(Base):
         - EntryCol (number): The simulated router is connected to a router in the grid at a particular row and column location. This option is the column number. (default = 1)
         - EntryRow (number): The simulated router is connected to a router in the grid at a particular row and column location. This option is the row number. (default = 1)
         - GridNodeRoutes (list(dict(arg1:bool,arg2:str[ipAny | ipv4 | ipv6],arg3:str,arg4:number,arg5:number,arg6:number,arg7:number,arg8:bool,arg9:bool,arg10:number))): The set of advertised networks within the grid to be included in isisGrid.
-        - GridOutsideExLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:list[dict(arg1:str[ipAny | ipv4 | ipv6],arg2:str,arg3:number)],arg5:str,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number))): NOT DEFINED
-        - GridOutsideLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:str,arg5:number,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number))): Sets up the outside links between an ISIS grid and another ISIS grid.
+        - GridOutsideExLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:list[dict(arg1:str[ipAny | ipv4 | ipv6],arg2:str,arg3:number)],arg5:str,arg6:number,arg7:str,arg8:str,arg9:str,arg10:str,arg11:str,arg12:str,arg13:str,arg14:str,arg15:str,arg16:str))): NOT DEFINED
+        - GridOutsideLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:str,arg5:number,arg6:str,arg7:str,arg8:str,arg9:str,arg10:str,arg11:str,arg12:str,arg13:str,arg14:str,arg15:str))): Sets up the outside links between an ISIS grid and another ISIS grid.
         - HostNamePrefix (str): Allows to add a host name to this network range. The name prefix is appended by row ID and column ID in .<rowid>.<colid> combination as per the router placed in the emulated network grid behind the Ixia port.
         - InterfaceIps (list(dict(arg1:str[ipAny | ipv4 | ipv6],arg2:str,arg3:number))): The interface IP information for the simulated network.
         - InterfaceMetric (number): The metric cost associated with this emulated ISIS router.
@@ -351,7 +351,7 @@ class NetworkRange(Base):
         - NoOfRows (number): The number of rows in the simulated grid. (default = 3)
         - RouterId (str): The router ID for the first emulated ISIS router in this network range.
         - RouterIdIncrement (str): The increment step to be used for creating the router IDs for the emulated ISIS routers in this network range.
-        - TePaths (list(dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:bool,arg8:str,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number,arg17:number,arg18:number,arg19:number))): Adds a Traffic Engineering (TE) Path to the list.
+        - TePaths (list(dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:bool,arg8:str,arg9:number,arg10:str,arg11:str,arg12:str,arg13:str,arg14:str,arg15:str,arg16:str,arg17:str,arg18:str,arg19:str))): Adds a Traffic Engineering (TE) Path to the list.
         - UseWideMetric (bool): Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (IP routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, Wide Metrics will be enabled automatically. The Wide Metrics may be used without enabling TE, however.
 
         Returns
@@ -388,8 +388,8 @@ class NetworkRange(Base):
         - EntryCol (number): The simulated router is connected to a router in the grid at a particular row and column location. This option is the column number. (default = 1)
         - EntryRow (number): The simulated router is connected to a router in the grid at a particular row and column location. This option is the row number. (default = 1)
         - GridNodeRoutes (list(dict(arg1:bool,arg2:str[ipAny | ipv4 | ipv6],arg3:str,arg4:number,arg5:number,arg6:number,arg7:number,arg8:bool,arg9:bool,arg10:number))): The set of advertised networks within the grid to be included in isisGrid.
-        - GridOutsideExLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:list[dict(arg1:str[ipAny | ipv4 | ipv6],arg2:str,arg3:number)],arg5:str,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number))): NOT DEFINED
-        - GridOutsideLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:str,arg5:number,arg6:number,arg7:number,arg8:number,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number))): Sets up the outside links between an ISIS grid and another ISIS grid.
+        - GridOutsideExLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:list[dict(arg1:str[ipAny | ipv4 | ipv6],arg2:str,arg3:number)],arg5:str,arg6:number,arg7:str,arg8:str,arg9:str,arg10:str,arg11:str,arg12:str,arg13:str,arg14:str,arg15:str,arg16:str))): NOT DEFINED
+        - GridOutsideLinks (list(dict(arg1:number,arg2:number,arg3:str,arg4:str,arg5:number,arg6:str,arg7:str,arg8:str,arg9:str,arg10:str,arg11:str,arg12:str,arg13:str,arg14:str,arg15:str))): Sets up the outside links between an ISIS grid and another ISIS grid.
         - HostNamePrefix (str): Allows to add a host name to this network range. The name prefix is appended by row ID and column ID in .<rowid>.<colid> combination as per the router placed in the emulated network grid behind the Ixia port.
         - InterfaceIps (list(dict(arg1:str[ipAny | ipv4 | ipv6],arg2:str,arg3:number))): The interface IP information for the simulated network.
         - InterfaceMetric (number): The metric cost associated with this emulated ISIS router.
@@ -399,7 +399,7 @@ class NetworkRange(Base):
         - NoOfRows (number): The number of rows in the simulated grid. (default = 3)
         - RouterId (str): The router ID for the first emulated ISIS router in this network range.
         - RouterIdIncrement (str): The increment step to be used for creating the router IDs for the emulated ISIS routers in this network range.
-        - TePaths (list(dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:bool,arg8:str,arg9:number,arg10:number,arg11:number,arg12:number,arg13:number,arg14:number,arg15:number,arg16:number,arg17:number,arg18:number,arg19:number))): Adds a Traffic Engineering (TE) Path to the list.
+        - TePaths (list(dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:bool,arg8:str,arg9:number,arg10:str,arg11:str,arg12:str,arg13:str,arg14:str,arg15:str,arg16:str,arg17:str,arg18:str,arg19:str))): Adds a Traffic Engineering (TE) Path to the list.
         - UseWideMetric (bool): Enables the use of extended reachability (wide) metrics (defined to support TE): 32-bits wide for IP reachability (IP routes) and 24-bits wide for IS reachability (IS neighbors). If TE is enabled, Wide Metrics will be enabled automatically. The Wide Metrics may be used without enabling TE, however.
 
         Returns

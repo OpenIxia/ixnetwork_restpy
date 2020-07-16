@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,22 +32,22 @@ class OfChannelSessionPeersLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'ofChannelSessionPeersLearnedInformation'
     _SDM_ATT_MAP = {
-        'AveragePacketInReplyDelay': 'averagePacketInReplyDelay',
-        'ConfiguredPacketInReplyCount': 'configuredPacketInReplyCount',
-        'ConfiguredPacketInSentCount': 'configuredPacketInSentCount',
-        'LocalPortNumber': 'localPortNumber',
-        'MasterFlowRemovedMask': 'masterFlowRemovedMask',
-        'MasterPacketInMask': 'masterPacketInMask',
-        'MasterPortStatusMask': 'masterPortStatusMask',
-        'PacketInTxRate': 'packetInTxRate',
-        'PacketOutRxRate': 'packetOutRxRate',
-        'RemoteIp': 'remoteIp',
-        'RemotePortNumber': 'remotePortNumber',
-        'ReplyState': 'replyState',
-        'Role': 'role',
-        'SlaveFlowRemovedMask': 'slaveFlowRemovedMask',
-        'SlavePacketInMask': 'slavePacketInMask',
         'SlavePortStatusMask': 'slavePortStatusMask',
+        'ConfiguredPacketInSentCount': 'configuredPacketInSentCount',
+        'ConfiguredPacketInReplyCount': 'configuredPacketInReplyCount',
+        'MasterFlowRemovedMask': 'masterFlowRemovedMask',
+        'AveragePacketInReplyDelay': 'averagePacketInReplyDelay',
+        'MasterPortStatusMask': 'masterPortStatusMask',
+        'SlaveFlowRemovedMask': 'slaveFlowRemovedMask',
+        'MasterPacketInMask': 'masterPacketInMask',
+        'SlavePacketInMask': 'slavePacketInMask',
+        'PacketOutRxRate': 'packetOutRxRate',
+        'Role': 'role',
+        'RemoteIp': 'remoteIp',
+        'ReplyState': 'replyState',
+        'LocalPortNumber': 'localPortNumber',
+        'RemotePortNumber': 'remotePortNumber',
+        'PacketInTxRate': 'packetInTxRate',
     }
 
     def __init__(self, parent):

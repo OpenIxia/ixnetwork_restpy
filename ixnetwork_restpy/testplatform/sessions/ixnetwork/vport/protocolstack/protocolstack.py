@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -176,20 +176,6 @@ class ProtocolStack(Base):
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpclientoptions_faed49d1cd6032d1d86c972d66b3a5fe import EgtpClientOptions
         return EgtpClientOptions(self)
-
-    @property
-    def EgtpMmeOptions(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpmmeoptions_d0b2f48d2c09cd884b088d8313d3d04b.EgtpMmeOptions): An instance of the EgtpMmeOptions class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpmmeoptions_d0b2f48d2c09cd884b088d8313d3d04b import EgtpMmeOptions
-        return EgtpMmeOptions(self)
 
     @property
     def EgtpOptionsBase(self):

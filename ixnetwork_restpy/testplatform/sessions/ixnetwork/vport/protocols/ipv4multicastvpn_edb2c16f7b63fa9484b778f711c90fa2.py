@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -24,7 +24,7 @@ from ixnetwork_restpy.files import Files
 
 
 class Ipv4MulticastVpn(Base):
-    """If enabled, this BGP router/peer supports the IPv4 Multicast/VPN address
+    """If enabled, this BGP router/peer supports the IPv4 Multicast/VPN address
 family..
     The Ipv4MulticastVpn class encapsulates a list of ipv4MulticastVpn resources that are managed by the system.
     A list of resources can be retrieved from the server using the Ipv4MulticastVpn.find() method.
@@ -33,32 +33,32 @@ family..
     __slots__ = ()
     _SDM_NAME = 'ipv4MulticastVpn'
     _SDM_ATT_MAP = {
-        'AddressFamily': 'addressFamily',
-        'AddressLength': 'addressLength',
-        'CMcastRouteType': 'cMcastRouteType',
-        'GroupAddress': 'groupAddress',
-        'Neighbor': 'neighbor',
-        'OpaqueLength': 'opaqueLength',
-        'OriginatingRouter': 'originatingRouter',
-        'RootAddress': 'rootAddress',
-        'RouteDistinguisher': 'routeDistinguisher',
-        'RouteKeyGroupAddress': 'routeKeyGroupAddress',
-        'RouteKeyOriginatingRouter': 'routeKeyOriginatingRouter',
-        'RouteKeyRouteDistinguisher': 'routeKeyRouteDistinguisher',
-        'RouteKeyRsvpP2mpExtendedTunnelId': 'routeKeyRsvpP2mpExtendedTunnelId',
-        'RouteKeyRsvpP2mpId': 'routeKeyRsvpP2mpId',
-        'RouteKeyRsvpP2mpTunnelId': 'routeKeyRsvpP2mpTunnelId',
-        'RouteKeySourceAddress': 'routeKeySourceAddress',
         'RouteKeyTunnelType': 'routeKeyTunnelType',
-        'RouteKeyUpstreamLabel': 'routeKeyUpstreamLabel',
-        'RouteType': 'routeType',
-        'RsvpP2mpExtendedTunnelId': 'rsvpP2mpExtendedTunnelId',
-        'RsvpP2mpId': 'rsvpP2mpId',
-        'RsvpP2mpTunnelId': 'rsvpP2mpTunnelId',
-        'SourceAddress': 'sourceAddress',
+        'GroupAddress': 'groupAddress',
+        'RootAddress': 'rootAddress',
         'SourceAs': 'sourceAs',
+        'RouteKeyRsvpP2mpExtendedTunnelId': 'routeKeyRsvpP2mpExtendedTunnelId',
+        'AddressFamily': 'addressFamily',
         'TunnelType': 'tunnelType',
+        'RouteKeyUpstreamLabel': 'routeKeyUpstreamLabel',
+        'RsvpP2mpExtendedTunnelId': 'rsvpP2mpExtendedTunnelId',
+        'RouteKeyOriginatingRouter': 'routeKeyOriginatingRouter',
+        'RouteKeySourceAddress': 'routeKeySourceAddress',
+        'RouteKeyRouteDistinguisher': 'routeKeyRouteDistinguisher',
+        'OriginatingRouter': 'originatingRouter',
+        'RouteKeyRsvpP2mpTunnelId': 'routeKeyRsvpP2mpTunnelId',
+        'CMcastRouteType': 'cMcastRouteType',
+        'AddressLength': 'addressLength',
+        'RouteDistinguisher': 'routeDistinguisher',
+        'RouteKeyRsvpP2mpId': 'routeKeyRsvpP2mpId',
+        'RouteType': 'routeType',
+        'RsvpP2mpTunnelId': 'rsvpP2mpTunnelId',
         'UpstreamLabel': 'upstreamLabel',
+        'RouteKeyGroupAddress': 'routeKeyGroupAddress',
+        'RsvpP2mpId': 'rsvpP2mpId',
+        'OpaqueLength': 'opaqueLength',
+        'Neighbor': 'neighbor',
+        'SourceAddress': 'sourceAddress',
     }
 
     def __init__(self, parent):

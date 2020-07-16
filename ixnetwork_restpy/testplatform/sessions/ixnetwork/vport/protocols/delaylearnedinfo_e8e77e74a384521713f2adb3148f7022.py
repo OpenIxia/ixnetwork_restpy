@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,13 +32,13 @@ class DelayLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'delayLearnedInfo'
     _SDM_ATT_MAP = {
-        'CVlan': 'cVlan',
+        'ValueInSec': 'valueInSec',
+        'SVlan': 'sVlan',
+        'ValueInNanoSec': 'valueInNanoSec',
+        'SrcMacAddress': 'srcMacAddress',
         'DstMacAddress': 'dstMacAddress',
         'MdLevel': 'mdLevel',
-        'SVlan': 'sVlan',
-        'SrcMacAddress': 'srcMacAddress',
-        'ValueInNanoSec': 'valueInNanoSec',
-        'ValueInSec': 'valueInSec',
+        'CVlan': 'cVlan',
     }
 
     def __init__(self, parent):

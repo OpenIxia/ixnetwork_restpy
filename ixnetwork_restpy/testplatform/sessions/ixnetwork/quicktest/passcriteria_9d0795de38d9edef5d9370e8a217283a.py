@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,12 +31,12 @@ class PassCriteria(Base):
     __slots__ = ()
     _SDM_NAME = 'passCriteria'
     _SDM_ATT_MAP = {
-        'EnableJoinFailuresPassFail': 'enableJoinFailuresPassFail',
-        'EnableJoinLatencyPassFail': 'enableJoinLatencyPassFail',
         'EnableLeaveFailuresPassFail': 'enableLeaveFailuresPassFail',
+        'PassFailLeaveLatencyAgg': 'passFailLeaveLatencyAgg',
+        'EnableJoinLatencyPassFail': 'enableJoinLatencyPassFail',
+        'EnableJoinFailuresPassFail': 'enableJoinFailuresPassFail',
         'EnableLeaveLatencyPassFail': 'enableLeaveLatencyPassFail',
         'PassFailJoinLatencyAgg': 'passFailJoinLatencyAgg',
-        'PassFailLeaveLatencyAgg': 'passFailLeaveLatencyAgg',
     }
 
     def __init__(self, parent):

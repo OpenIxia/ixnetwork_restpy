@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,29 +31,33 @@ class TenFortyHundredGigLan(Base):
     __slots__ = ()
     _SDM_NAME = 'tenFortyHundredGigLan'
     _SDM_ATT_MAP = {
-        'AutoInstrumentation': 'autoInstrumentation',
-        'BadBlocksNumber': 'badBlocksNumber',
+        'Ppm': 'ppm',
+        'LoopbackMode': 'loopbackMode',
+        'Speed': 'speed',
+        'TypeAOrderedSets': 'typeAOrderedSets',
         'EnableAutoNegotiation': 'enableAutoNegotiation',
         'EnablePPM': 'enablePPM',
-        'EnableRsFec': 'enableRsFec',
-        'EnableRsFecStats': 'enableRsFecStats',
-        'EnabledFlowControl': 'enabledFlowControl',
-        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
-        'GoodBlocksNumber': 'goodBlocksNumber',
-        'IeeeL1Defaults': 'ieeeL1Defaults',
-        'LaserOn': 'laserOn',
-        'LinkTraining': 'linkTraining',
-        'LoopContinuously': 'loopContinuously',
-        'LoopCountNumber': 'loopCountNumber',
         'Loopback': 'loopback',
-        'LoopbackMode': 'loopbackMode',
-        'Ppm': 'ppm',
+        'EnableRsFecStats': 'enableRsFecStats',
         'SendSetsMode': 'sendSetsMode',
-        'Speed': 'speed',
+        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
+        'IeeeL1Defaults': 'ieeeL1Defaults',
+        'GoodBlocksNumber': 'goodBlocksNumber',
+        'EnabledFlowControl': 'enabledFlowControl',
         'StartErrorInsertion': 'startErrorInsertion',
-        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
-        'TypeAOrderedSets': 'typeAOrderedSets',
+        'LinkTraining': 'linkTraining',
+        'EnableRsFec': 'enableRsFec',
+        'AutoInstrumentation': 'autoInstrumentation',
+        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
         'TypeBOrderedSets': 'typeBOrderedSets',
+        'BadBlocksNumber': 'badBlocksNumber',
+        'AvailableSpeeds': 'availableSpeeds',
+        'LoopCountNumber': 'loopCountNumber',
+        'LaserOn': 'laserOn',
+        'CanModifySpeed': 'canModifySpeed',
+        'LoopContinuously': 'loopContinuously',
+        'SelectedSpeeds': 'selectedSpeeds',
+        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
     }
 
     def __init__(self, parent):
@@ -100,6 +104,15 @@ class TenFortyHundredGigLan(Base):
         self._set_attribute(self._SDM_ATT_MAP['AutoInstrumentation'], value)
 
     @property
+    def AvailableSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[speed100g | speed25g | speed50g | speed10g | speed40g]): Which speeds are available for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableSpeeds'])
+
+    @property
     def BadBlocksNumber(self):
         """
         Returns
@@ -110,6 +123,24 @@ class TenFortyHundredGigLan(Base):
     @BadBlocksNumber.setter
     def BadBlocksNumber(self, value):
         self._set_attribute(self._SDM_ATT_MAP['BadBlocksNumber'], value)
+
+    @property
+    def CanModifySpeed(self):
+        """
+        Returns
+        -------
+        - bool: Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanModifySpeed'])
+
+    @property
+    def CanSetMultipleSpeeds(self):
+        """
+        Returns
+        -------
+        - bool: Can this port selectmultiple speeds for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanSetMultipleSpeeds'])
 
     @property
     def EnableAutoNegotiation(self):
@@ -292,6 +323,18 @@ class TenFortyHundredGigLan(Base):
         self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
+    def SelectedSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[speed100g | speed25g | speed50g | speed10g | speed40g]): Which speeds are selected for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
+    @SelectedSpeeds.setter
+    def SelectedSpeeds(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
+
+    @property
     def SendSetsMode(self):
         """
         Returns
@@ -363,7 +406,7 @@ class TenFortyHundredGigLan(Base):
     def TypeBOrderedSets(self, value):
         self._set_attribute(self._SDM_ATT_MAP['TypeBOrderedSets'], value)
 
-    def update(self, AutoInstrumentation=None, BadBlocksNumber=None, EnableAutoNegotiation=None, EnablePPM=None, EnableRsFec=None, EnableRsFecStats=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, GoodBlocksNumber=None, IeeeL1Defaults=None, LaserOn=None, LinkTraining=None, LoopContinuously=None, LoopCountNumber=None, Loopback=None, LoopbackMode=None, Ppm=None, SendSetsMode=None, Speed=None, StartErrorInsertion=None, TxIgnoreRxLinkFaults=None, TypeAOrderedSets=None, TypeBOrderedSets=None):
+    def update(self, AutoInstrumentation=None, BadBlocksNumber=None, EnableAutoNegotiation=None, EnablePPM=None, EnableRsFec=None, EnableRsFecStats=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, GoodBlocksNumber=None, IeeeL1Defaults=None, LaserOn=None, LinkTraining=None, LoopContinuously=None, LoopCountNumber=None, Loopback=None, LoopbackMode=None, Ppm=None, SelectedSpeeds=None, SendSetsMode=None, Speed=None, StartErrorInsertion=None, TxIgnoreRxLinkFaults=None, TypeAOrderedSets=None, TypeBOrderedSets=None):
         """Updates tenFortyHundredGigLan resource on the server.
 
         Args
@@ -385,6 +428,7 @@ class TenFortyHundredGigLan(Base):
         - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
         - LoopbackMode (str(internalLoopback | lineLoopback | none)): NOT DEFINED
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency
+        - SelectedSpeeds (list(str[speed100g | speed25g | speed50g | speed10g | speed40g])): Which speeds are selected for the current media and AN settings.
         - SendSetsMode (str(alternate | typeAOnly | typeBOnly)): NOT DEFINED
         - Speed (str(speed100g | speed10g | speed25g | speed40g | speed50g)): The speed of the lan
         - StartErrorInsertion (bool): NOT DEFINED

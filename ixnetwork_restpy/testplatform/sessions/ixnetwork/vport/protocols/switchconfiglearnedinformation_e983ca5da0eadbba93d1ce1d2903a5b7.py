@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,17 +32,17 @@ class SwitchConfigLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'switchConfigLearnedInformation'
     _SDM_ATT_MAP = {
-        'ConfigFlags': 'configFlags',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
         'Latency': 'latency',
-        'LocalIp': 'localIp',
-        'MissSendLength': 'missSendLength',
+        'ConfigFlags': 'configFlags',
+        'ErrorType': 'errorType',
         'NegotiatedVersion': 'negotiatedVersion',
+        'ErrorCode': 'errorCode',
+        'LocalIp': 'localIp',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
         'RemoteIp': 'remoteIp',
+        'MissSendLength': 'missSendLength',
         'ReplyState': 'replyState',
+        'DataPathId': 'dataPathId',
     }
 
     def __init__(self, parent):

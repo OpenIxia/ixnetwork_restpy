@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,14 +31,14 @@ class SbfdResponder(Base):
     __slots__ = ()
     _SDM_NAME = 'sbfdResponder'
     _SDM_ATT_MAP = {
-        'Active': 'active',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableLearnedInformation': 'enableLearnedInformation',
-        'MinRxInterval': 'minRxInterval',
         'Name': 'name',
+        'MinRxInterval': 'minRxInterval',
         'SBFDDiscriminator': 'sBFDDiscriminator',
+        'DescriptiveName': 'descriptiveName',
         'SBFDState': 'sBFDState',
+        'Active': 'active',
+        'EnableLearnedInformation': 'enableLearnedInformation',
     }
 
     def __init__(self, parent):

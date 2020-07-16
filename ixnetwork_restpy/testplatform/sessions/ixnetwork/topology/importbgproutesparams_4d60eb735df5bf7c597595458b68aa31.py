@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,12 +31,12 @@ class ImportBgpRoutesParams(Base):
     __slots__ = ()
     _SDM_NAME = 'importBgpRoutesParams'
     _SDM_ATT_MAP = {
-        'BestRoutes': 'bestRoutes',
         'DataFile': 'dataFile',
         'FileType': 'fileType',
         'NextHop': 'nextHop',
-        'RouteDistributionType': 'routeDistributionType',
         'RouteLimit': 'routeLimit',
+        'RouteDistributionType': 'routeDistributionType',
+        'BestRoutes': 'bestRoutes',
     }
 
     def __init__(self, parent):

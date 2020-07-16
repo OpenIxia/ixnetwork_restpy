@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,24 +31,24 @@ class RsvpP2mpIngressSubLsps(Base):
     __slots__ = ()
     _SDM_NAME = 'rsvpP2mpIngressSubLsps'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AppendLeaf': 'appendLeaf',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
+        'AppendLeaf': 'appendLeaf',
+        'SendAsEro': 'sendAsEro',
+        'Name': 'name',
+        'PrefixLengthOfLeaf': 'prefixLengthOfLeaf',
+        'SendAsSero': 'sendAsSero',
+        'P2mpIdAsIp': 'p2mpIdAsIp',
+        'SessionInformation': 'sessionInformation',
         'EnableEro': 'enableEro',
         'LeafIp': 'leafIp',
         'LocalIp': 'localIp',
-        'Name': 'name',
-        'NumberOfEroSubObjects': 'numberOfEroSubObjects',
-        'P2mpIdAsIp': 'p2mpIdAsIp',
-        'P2mpIdAsNum': 'p2mpIdAsNum',
-        'PrefixLengthOfDut': 'prefixLengthOfDut',
-        'PrefixLengthOfLeaf': 'prefixLengthOfLeaf',
-        'PrependDut': 'prependDut',
-        'SendAsEro': 'sendAsEro',
-        'SendAsSero': 'sendAsSero',
-        'SessionInformation': 'sessionInformation',
         'State': 'state',
+        'NumberOfEroSubObjects': 'numberOfEroSubObjects',
+        'DescriptiveName': 'descriptiveName',
+        'P2mpIdAsNum': 'p2mpIdAsNum',
+        'Active': 'active',
+        'PrefixLengthOfDut': 'prefixLengthOfDut',
+        'PrependDut': 'prependDut',
     }
 
     def __init__(self, parent):

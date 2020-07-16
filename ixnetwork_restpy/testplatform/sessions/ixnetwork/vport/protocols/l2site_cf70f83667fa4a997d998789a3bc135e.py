@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,33 +33,33 @@ class L2Site(Base):
     __slots__ = ()
     _SDM_NAME = 'l2Site'
     _SDM_ATT_MAP = {
-        'DistinguishAssignedIncrement': 'distinguishAssignedIncrement',
-        'DistinguishIpIncrement': 'distinguishIpIncrement',
-        'DistinguishNumberIncrementAs': 'distinguishNumberIncrementAs',
-        'EnableBfdVccv': 'enableBfdVccv',
-        'EnableCluster': 'enableCluster',
-        'EnableControlWord': 'enableControlWord',
-        'EnableL2SiteAsTrafficEndpoint': 'enableL2SiteAsTrafficEndpoint',
-        'EnableSequenceDelivery': 'enableSequenceDelivery',
-        'EnableVccvPing': 'enableVccvPing',
-        'Enabled': 'enabled',
-        'IsLearnedInfoRefreshed': 'isLearnedInfoRefreshed',
-        'Mtu': 'mtu',
         'NoOfL2Site': 'noOfL2Site',
-        'RouteDistinguisherAs': 'routeDistinguisherAs',
-        'RouteDistinguisherAssignedNum': 'routeDistinguisherAssignedNum',
-        'RouteDistinguisherIp': 'routeDistinguisherIp',
+        'EnableBfdVccv': 'enableBfdVccv',
+        'DistinguishNumberIncrementAs': 'distinguishNumberIncrementAs',
+        'Mtu': 'mtu',
         'RouteDistinguisherType': 'routeDistinguisherType',
-        'RouteTargetAs': 'routeTargetAs',
-        'RouteTargetAssignedNum': 'routeTargetAssignedNum',
-        'RouteTargetIp': 'routeTargetIp',
+        'RouteDistinguisherIp': 'routeDistinguisherIp',
         'RouteTargetType': 'routeTargetType',
-        'SiteId': 'siteId',
+        'EnableControlWord': 'enableControlWord',
+        'RouteTargetIp': 'routeTargetIp',
+        'RouteTargetAssignedNum': 'routeTargetAssignedNum',
+        'RouteDistinguisherAs': 'routeDistinguisherAs',
         'SiteIdIncrement': 'siteIdIncrement',
         'TargetAssignedNumberIncrement': 'targetAssignedNumberIncrement',
+        'DistinguishIpIncrement': 'distinguishIpIncrement',
+        'RouteTargetAs': 'routeTargetAs',
         'TargetIncrementAs': 'targetIncrementAs',
-        'TargetIpIncrement': 'targetIpIncrement',
+        'SiteId': 'siteId',
+        'DistinguishAssignedIncrement': 'distinguishAssignedIncrement',
+        'EnableVccvPing': 'enableVccvPing',
+        'IsLearnedInfoRefreshed': 'isLearnedInfoRefreshed',
+        'EnableCluster': 'enableCluster',
+        'Enabled': 'enabled',
+        'EnableL2SiteAsTrafficEndpoint': 'enableL2SiteAsTrafficEndpoint',
         'TrafficGroupId': 'trafficGroupId',
+        'EnableSequenceDelivery': 'enableSequenceDelivery',
+        'TargetIpIncrement': 'targetIpIncrement',
+        'RouteDistinguisherAssignedNum': 'routeDistinguisherAssignedNum',
     }
 
     def __init__(self, parent):

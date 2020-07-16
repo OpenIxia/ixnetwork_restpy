@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,20 +33,20 @@ class CrpRange(Base):
     __slots__ = ()
     _SDM_NAME = 'crpRange'
     _SDM_ATT_MAP = {
-        'AdvertisementHoldTime': 'advertisementHoldTime',
-        'BackOffInterval': 'backOffInterval',
-        'CrpAddress': 'crpAddress',
-        'Enabled': 'enabled',
-        'GroupAddress': 'groupAddress',
-        'GroupCount': 'groupCount',
-        'GroupMaskLen': 'groupMaskLen',
-        'MeshingType': 'meshingType',
-        'PeriodicAdvertisementInterval': 'periodicAdvertisementInterval',
-        'PriorityChangeInterval': 'priorityChangeInterval',
         'PriorityType': 'priorityType',
+        'PriorityChangeInterval': 'priorityChangeInterval',
+        'PeriodicAdvertisementInterval': 'periodicAdvertisementInterval',
+        'Enabled': 'enabled',
+        'TriggeredCrpMessageCount': 'triggeredCrpMessageCount',
+        'GroupCount': 'groupCount',
         'PriorityValue': 'priorityValue',
         'RouterCount': 'routerCount',
-        'TriggeredCrpMessageCount': 'triggeredCrpMessageCount',
+        'CrpAddress': 'crpAddress',
+        'BackOffInterval': 'backOffInterval',
+        'GroupAddress': 'groupAddress',
+        'AdvertisementHoldTime': 'advertisementHoldTime',
+        'MeshingType': 'meshingType',
+        'GroupMaskLen': 'groupMaskLen',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,10 +31,10 @@ class LearnedFilter(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedFilter'
     _SDM_ATT_MAP = {
-        'Afi': 'afi',
-        'EnableAfiSafi': 'enableAfiSafi',
         'EnablePrefix': 'enablePrefix',
         'Safi': 'safi',
+        'Afi': 'afi',
+        'EnableAfiSafi': 'enableAfiSafi',
     }
 
     def __init__(self, parent):

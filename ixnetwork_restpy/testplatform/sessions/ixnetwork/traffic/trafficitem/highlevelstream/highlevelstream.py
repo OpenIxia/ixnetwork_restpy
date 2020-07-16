@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,26 +32,27 @@ class HighLevelStream(Base):
     __slots__ = ()
     _SDM_NAME = 'highLevelStream'
     _SDM_ATT_MAP = {
-        'AppliedFrameSize': 'appliedFrameSize',
-        'AppliedPacketCount': 'appliedPacketCount',
-        'Crc': 'crc',
-        'CurrentPacketCount': 'currentPacketCount',
-        'DestinationMacMode': 'destinationMacMode',
-        'Distributions': 'distributions',
-        'Enabled': 'enabled',
-        'EncapsulationName': 'encapsulationName',
         'EndpointSetId': 'endpointSetId',
         'Name': 'name',
-        'OverSubscribed': 'overSubscribed',
-        'Pause': 'pause',
-        'PreambleCustomSize': 'preambleCustomSize',
+        'DestinationMacMode': 'destinationMacMode',
         'PreambleFrameSizeMode': 'preambleFrameSizeMode',
-        'RxPortIds': 'rxPortIds',
+        'PreambleCustomSize': 'preambleCustomSize',
+        'Distributions': 'distributions',
+        'AppliedPacketCount': 'appliedPacketCount',
+        'Enabled': 'enabled',
         'RxPortNames': 'rxPortNames',
-        'State': 'state',
-        'Suspend': 'suspend',
-        'TxPortId': 'txPortId',
+        'EncapsulationName': 'encapsulationName',
         'TxPortName': 'txPortName',
+        'Crc': 'crc',
+        'State': 'state',
+        'Pause': 'pause',
+        'RxPortIds': 'rxPortIds',
+        'TxPortId': 'txPortId',
+        'Suspend': 'suspend',
+        'CurrentPacketCount': 'currentPacketCount',
+        'AppliedFrameRate': 'appliedFrameRate',
+        'AppliedFrameSize': 'appliedFrameSize',
+        'OverSubscribed': 'overSubscribed',
     }
 
     def __init__(self, parent):
@@ -83,7 +84,7 @@ class HighLevelStream(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.framepreemption.framepreemption import FramePreemption
-        return FramePreemption(self)._select()
+        return FramePreemption(self)
 
     @property
     def FrameRate(self):
@@ -182,6 +183,15 @@ class HighLevelStream(Base):
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.udf import Udf
         return Udf(self)
+
+    @property
+    def AppliedFrameRate(self):
+        """
+        Returns
+        -------
+        - str: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['AppliedFrameRate'])
 
     @property
     def AppliedFrameSize(self):
@@ -415,7 +425,7 @@ class HighLevelStream(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, AppliedFrameSize=None, AppliedPacketCount=None, Crc=None, CurrentPacketCount=None, DestinationMacMode=None, Distributions=None, Enabled=None, EncapsulationName=None, EndpointSetId=None, Name=None, OverSubscribed=None, Pause=None, PreambleCustomSize=None, PreambleFrameSizeMode=None, RxPortIds=None, RxPortNames=None, State=None, Suspend=None, TxPortId=None, TxPortName=None):
+    def find(self, AppliedFrameRate=None, AppliedFrameSize=None, AppliedPacketCount=None, Crc=None, CurrentPacketCount=None, DestinationMacMode=None, Distributions=None, Enabled=None, EncapsulationName=None, EndpointSetId=None, Name=None, OverSubscribed=None, Pause=None, PreambleCustomSize=None, PreambleFrameSizeMode=None, RxPortIds=None, RxPortNames=None, State=None, Suspend=None, TxPortId=None, TxPortName=None):
         """Finds and retrieves highLevelStream resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve highLevelStream resources from the server.
@@ -424,6 +434,7 @@ class HighLevelStream(Base):
 
         Args
         ----
+        - AppliedFrameRate (str): 
         - AppliedFrameSize (str): (Read only) Indicates the applied frame size of the high level stream.
         - AppliedPacketCount (number): (Read only) Indicates the aplied packet count of the high level stream.
         - Crc (str(badCrc | goodCrc)): The Cyclic Redundancy Check frame of the configured high level stream.
@@ -485,6 +496,64 @@ class HighLevelStream(Base):
         """
         payload = { "Arg1": self }
         return self._execute('deleteQuickFlowGroups', payload=payload, response_object=None)
+
+    def DuplicateQuickFlowGroups(self, *args, **kwargs):
+        """Executes the duplicateQuickFlowGroups operation on the server.
+
+        Duplicate selected quick flows with the count provided.
+
+        duplicateQuickFlowGroups(Arg2=number)
+        -------------------------------------
+        - Arg2 (number): Duplicate count
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('duplicateQuickFlowGroups', payload=payload, response_object=None)
+
+    def GetPacketViewInHex(self, *args, **kwargs):
+        """Executes the getPacketViewInHex operation on the server.
+
+        Gets packet in Hex format for selected highLevelstream and for the given packet index
+
+        getPacketViewInHex(Arg2=number)string
+        -------------------------------------
+        - Arg2 (number): Packet Index (0 based)
+        - Returns str: Packet in Hex format
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPacketViewInHex', payload=payload, response_object=None)
+
+    def PauseStatelessTraffic(self, *args, **kwargs):
+        """Executes the pauseStatelessTraffic operation on the server.
+
+        Pause or Resume stateless traffic.
+
+        pauseStatelessTraffic(Arg2=bool)
+        --------------------------------
+        - Arg2 (bool): If true, it will pause running traffic. If false, it will resume previously paused traffic.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('pauseStatelessTraffic', payload=payload, response_object=None)
 
     def PreviewFlowPackets(self, *args, **kwargs):
         """Executes the previewFlowPackets operation on the server.

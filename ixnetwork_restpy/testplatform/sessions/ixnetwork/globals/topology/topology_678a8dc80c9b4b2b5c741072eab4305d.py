@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,10 +33,10 @@ class Topology(Base):
     _SDM_ATT_MAP = {
         'ApplyOnTheFlyState': 'applyOnTheFlyState',
         'NgpfProtocolRateMode': 'ngpfProtocolRateMode',
-        'ProtocolActionsInProgress': 'protocolActionsInProgress',
         'ProtocolStackingMode': 'protocolStackingMode',
-        'Status': 'status',
         'Vports': 'vports',
+        'ProtocolActionsInProgress': 'protocolActionsInProgress',
+        'Status': 'status',
     }
 
     def __init__(self, parent):
@@ -117,13 +117,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.cfmbridge.cfmbridge_5a766feceb65e8a778ac169056aee211.CfmBridge): An instance of the CfmBridge class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.cfmbridge.cfmbridge_9363686425d10105a01699246014d27d.CfmBridge): An instance of the CfmBridge class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.cfmbridge.cfmbridge_5a766feceb65e8a778ac169056aee211 import CfmBridge
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.cfmbridge.cfmbridge_9363686425d10105a01699246014d27d import CfmBridge
         return CfmBridge(self)._select()
 
     @property
@@ -281,6 +281,20 @@ class Topology(Base):
         return Ere(self)._select()
 
     @property
+    def Esmc(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.esmc.esmc_a6e91ae9ab0a9252a7e1dbcd069fcc86.Esmc): An instance of the Esmc class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.esmc.esmc_a6e91ae9ab0a9252a7e1dbcd069fcc86 import Esmc
+        return Esmc(self)._select()
+
+    @property
     def Ethernet(self):
         """
         Returns
@@ -383,13 +397,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.ipv6_9ee2c8c326320b0e54798382e4a461fc.Ipv6): An instance of the Ipv6 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.ipv6_a9f2dfb33a5d9c10d60b9830b8455095.Ipv6): An instance of the Ipv6 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.ipv6_9ee2c8c326320b0e54798382e4a461fc import Ipv6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.ipv6_a9f2dfb33a5d9c10d60b9830b8455095 import Ipv6
         return Ipv6(self)._select()
 
     @property
@@ -467,13 +481,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.lac.lac_fe4fa4d3548a30e94562708df32e1ef0.Lac): An instance of the Lac class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.lac.lac_8a6ae7a66f1fba21c9a7af820795ad38.Lac): An instance of the Lac class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.lac.lac_fe4fa4d3548a30e94562708df32e1ef0 import Lac
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.lac.lac_8a6ae7a66f1fba21c9a7af820795ad38 import Lac
         return Lac(self)._select()
 
     @property
@@ -593,14 +607,42 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.lns.lns_0fb5ecdd32557c4b05f6459e73d58ab7.Lns): An instance of the Lns class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.lns.lns_14b5a82b54457c522a1ed86b71521526.Lns): An instance of the Lns class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.lns.lns_0fb5ecdd32557c4b05f6459e73d58ab7 import Lns
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.lns.lns_14b5a82b54457c522a1ed86b71521526 import Lns
         return Lns(self)._select()
+
+    @property
+    def Macsec(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.macsec.macsec_8998c1b41f29384c2c688534cb45d85d.Macsec): An instance of the Macsec class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.macsec.macsec_8998c1b41f29384c2c688534cb45d85d import Macsec
+        return Macsec(self)._select()
+
+    @property
+    def Mka(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.mka.mka_aedde1a3ca5c00a7f6b976a4fce2c20d.Mka): An instance of the Mka class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.mka.mka_aedde1a3ca5c00a7f6b976a4fce2c20d import Mka
+        return Mka(self)._select()
 
     @property
     def MldHost(self):
@@ -789,14 +831,28 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pcc.pcc_fbd1211776d1cce0a336795b8ee5e5c7.Pcc): An instance of the Pcc class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pcc.pcc_91c1343cca1ebf407382f361cdaac3e7.Pcc): An instance of the Pcc class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pcc.pcc_fbd1211776d1cce0a336795b8ee5e5c7 import Pcc
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pcc.pcc_91c1343cca1ebf407382f361cdaac3e7 import Pcc
         return Pcc(self)._select()
+
+    @property
+    def Pce(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pce.pce_5defd13c57ea406c73fd4b2cb010a30f.Pce): An instance of the Pce class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pce.pce_5defd13c57ea406c73fd4b2cb010a30f import Pce
+        return Pce(self)._select()
 
     @property
     def PimRouter(self):
@@ -895,6 +951,20 @@ class Topology(Base):
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.staticlag.staticlag_bb394020ab7d7a51040dbbf42e2f75d1 import StaticLag
         return StaticLag(self)._select()
+
+    @property
+    def StaticMacsec(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.staticmacsec.staticmacsec_9ab47bdf2b3b33d22965d0aa28f2bb3d.StaticMacsec): An instance of the StaticMacsec class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.staticmacsec.staticmacsec_9ab47bdf2b3b33d22965d0aa28f2bb3d import StaticMacsec
+        return StaticMacsec(self)._select()
 
     @property
     def Vxlan(self):
@@ -1040,9 +1110,11 @@ class Topology(Base):
     def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
         """Executes the fetchAndUpdateConfigFromCloud operation on the server.
 
+        Learn MAC / IP address for a topology running on VM ports, deployed in AWS.
+
         fetchAndUpdateConfigFromCloud(Mode=string)
         ------------------------------------------
-        - Mode (str): 
+        - Mode (str): Mode. Options are: cmdrefreshall, cmdrefreshmac, cmdrefreshipv4
 
         Raises
         ------

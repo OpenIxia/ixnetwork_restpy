@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,21 +33,21 @@ class MacAddressRange(Base):
     __slots__ = ()
     _SDM_NAME = 'macAddressRange'
     _SDM_ATT_MAP = {
-        'EnableVlan': 'enableVlan',
-        'Enabled': 'enabled',
-        'IncrementVlan': 'incrementVlan',
-        'IncrementVlanMode': 'incrementVlanMode',
-        'IncremetVlanMode': 'incremetVlanMode',
-        'MacCount': 'macCount',
-        'MacCountPerL2Site': 'macCountPerL2Site',
-        'MacIncrement': 'macIncrement',
-        'SkipVlanIdZero': 'skipVlanIdZero',
-        'StartMacAddress': 'startMacAddress',
-        'TotalMacCount': 'totalMacCount',
         'Tpid': 'tpid',
-        'VlanCount': 'vlanCount',
-        'VlanId': 'vlanId',
+        'Enabled': 'enabled',
         'VlanPriority': 'vlanPriority',
+        'IncrementVlanMode': 'incrementVlanMode',
+        'MacCountPerL2Site': 'macCountPerL2Site',
+        'VlanId': 'vlanId',
+        'StartMacAddress': 'startMacAddress',
+        'IncrementVlan': 'incrementVlan',
+        'SkipVlanIdZero': 'skipVlanIdZero',
+        'EnableVlan': 'enableVlan',
+        'IncremetVlanMode': 'incremetVlanMode',
+        'TotalMacCount': 'totalMacCount',
+        'MacIncrement': 'macIncrement',
+        'VlanCount': 'vlanCount',
+        'MacCount': 'macCount',
     }
 
     def __init__(self, parent):

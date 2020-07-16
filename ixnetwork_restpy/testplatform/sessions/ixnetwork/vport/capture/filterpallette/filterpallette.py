@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,22 +31,22 @@ class FilterPallette(Base):
     __slots__ = ()
     _SDM_NAME = 'filterPallette'
     _SDM_ATT_MAP = {
-        'DA1': 'DA1',
         'DA2': 'DA2',
-        'DAMask1': 'DAMask1',
-        'DAMask2': 'DAMask2',
-        'SA1': 'SA1',
-        'SA2': 'SA2',
-        'SAMask1': 'SAMask1',
-        'SAMask2': 'SAMask2',
-        'Pattern1': 'pattern1',
-        'Pattern2': 'pattern2',
-        'PatternMask1': 'patternMask1',
+        'PatternOffsetType1': 'patternOffsetType1',
         'PatternMask2': 'patternMask2',
         'PatternOffset1': 'patternOffset1',
+        'PatternMask1': 'patternMask1',
+        'Pattern2': 'pattern2',
         'PatternOffset2': 'patternOffset2',
-        'PatternOffsetType1': 'patternOffsetType1',
+        'SAMask1': 'SAMask1',
+        'Pattern1': 'pattern1',
+        'SAMask2': 'SAMask2',
+        'DA1': 'DA1',
+        'DAMask2': 'DAMask2',
         'PatternOffsetType2': 'patternOffsetType2',
+        'SA2': 'SA2',
+        'SA1': 'SA1',
+        'DAMask1': 'DAMask1',
     }
 
     def __init__(self, parent):

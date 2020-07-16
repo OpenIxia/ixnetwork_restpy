@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,15 +34,15 @@ class AttributeWatch(Base):
     _SDM_NAME = 'attributeWatch'
     _SDM_ATT_MAP = {
         'AttributesToWatch': 'attributesToWatch',
-        'AverageExecutionTime': 'averageExecutionTime',
         'IsDisabled': 'isDisabled',
+        'AverageExecutionTime': 'averageExecutionTime',
+        'Topic': 'topic',
+        'Token': 'token',
         'LastExecutionTime': 'lastExecutionTime',
         'LastNotification': 'lastNotification',
         'MaxExecutionTime': 'maxExecutionTime',
-        'ObjectIdToWatch': 'objectIdToWatch',
         'PollInterval': 'pollInterval',
-        'Token': 'token',
-        'Topic': 'topic',
+        'ObjectIdToWatch': 'objectIdToWatch',
     }
 
     def __init__(self, parent):
@@ -125,7 +125,7 @@ class AttributeWatch(Base):
         """
         Returns
         -------
-        - number: The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
+        - number: The interval in milliseconds the watch will be polled. Minimum value is 100ms.
         """
         return self._get_attribute(self._SDM_ATT_MAP['PollInterval'])
     @PollInterval.setter
@@ -161,7 +161,7 @@ class AttributeWatch(Base):
         - AttributesToWatch (list(str)): 
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         - ObjectIdToWatch (str(None)): 
-        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
+        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
         - Topic (str): 
 
         Raises
@@ -178,7 +178,7 @@ class AttributeWatch(Base):
         - AttributesToWatch (list(str)): 
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         - ObjectIdToWatch (str(None)): 
-        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
+        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
         - Topic (str): 
 
         Returns
@@ -217,7 +217,7 @@ class AttributeWatch(Base):
         - LastNotification (str): 
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         - ObjectIdToWatch (str(None)): 
-        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
+        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
         - Token (number): 
         - Topic (str): 
 

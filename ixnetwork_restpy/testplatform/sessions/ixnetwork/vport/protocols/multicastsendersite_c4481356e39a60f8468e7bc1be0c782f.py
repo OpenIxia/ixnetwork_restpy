@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,30 +33,30 @@ class MulticastSenderSite(Base):
     __slots__ = ()
     _SDM_NAME = 'multicastSenderSite'
     _SDM_ATT_MAP = {
-        'AddressFamilyType': 'addressFamilyType',
-        'Enabled': 'enabled',
-        'GroupAddressCount': 'groupAddressCount',
-        'GroupMaskWidth': 'groupMaskWidth',
-        'IncludeIpv6ExplicitNullLabel': 'includeIpv6ExplicitNullLabel',
-        'MplsAssignedUpstreamLabel': 'mplsAssignedUpstreamLabel',
-        'MplsAssignedUpstreamLabelStep': 'mplsAssignedUpstreamLabelStep',
-        'SPmsiRsvpP2mpId': 'sPmsiRsvpP2mpId',
-        'SPmsiRsvpP2mpIdAsNumber': 'sPmsiRsvpP2mpIdAsNumber',
-        'SPmsiRsvpP2mpIdStep': 'sPmsiRsvpP2mpIdStep',
-        'SPmsiRsvpTunnelCount': 'sPmsiRsvpTunnelCount',
-        'SPmsiRsvpTunnelId': 'sPmsiRsvpTunnelId',
         'SPmsiRsvpTunnelIdStep': 'sPmsiRsvpTunnelIdStep',
-        'SPmsiTrafficGroupId': 'sPmsiTrafficGroupId',
-        'SPmsiTunnelCount': 'sPmsiTunnelCount',
-        'SendTriggeredSourceActiveAdRoute': 'sendTriggeredSourceActiveAdRoute',
-        'SetLeafInformationRequiredBit': 'setLeafInformationRequiredBit',
-        'SourceAddressCount': 'sourceAddressCount',
+        'GroupAddressCount': 'groupAddressCount',
         'SourceGroupMapping': 'sourceGroupMapping',
         'SourceMaskWidth': 'sourceMaskWidth',
-        'StartGroupAddress': 'startGroupAddress',
-        'StartSourceAddress': 'startSourceAddress',
+        'SendTriggeredSourceActiveAdRoute': 'sendTriggeredSourceActiveAdRoute',
+        'SPmsiTunnelCount': 'sPmsiTunnelCount',
+        'SPmsiTrafficGroupId': 'sPmsiTrafficGroupId',
+        'SetLeafInformationRequiredBit': 'setLeafInformationRequiredBit',
+        'SPmsiRsvpP2mpIdAsNumber': 'sPmsiRsvpP2mpIdAsNumber',
+        'AddressFamilyType': 'addressFamilyType',
+        'MplsAssignedUpstreamLabel': 'mplsAssignedUpstreamLabel',
+        'SPmsiRsvpTunnelCount': 'sPmsiRsvpTunnelCount',
+        'SourceAddressCount': 'sourceAddressCount',
         'TuunelType': 'tuunelType',
+        'IncludeIpv6ExplicitNullLabel': 'includeIpv6ExplicitNullLabel',
+        'MplsAssignedUpstreamLabelStep': 'mplsAssignedUpstreamLabelStep',
+        'Enabled': 'enabled',
+        'StartSourceAddress': 'startSourceAddress',
+        'SPmsiRsvpP2mpIdStep': 'sPmsiRsvpP2mpIdStep',
         'UseUpstreamAssignedLabel': 'useUpstreamAssignedLabel',
+        'SPmsiRsvpTunnelId': 'sPmsiRsvpTunnelId',
+        'SPmsiRsvpP2mpId': 'sPmsiRsvpP2mpId',
+        'GroupMaskWidth': 'groupMaskWidth',
+        'StartGroupAddress': 'startGroupAddress',
     }
 
     def __init__(self, parent):

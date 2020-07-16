@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,14 +31,14 @@ class IsisSRTunnelList(Base):
     __slots__ = ()
     _SDM_NAME = 'isisSRTunnelList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
-        'NumberOfSegments': 'numberOfSegments',
         'SourceIpv4': 'sourceIpv4',
         'SourceIpv6': 'sourceIpv6',
+        'Name': 'name',
+        'NumberOfSegments': 'numberOfSegments',
+        'DescriptiveName': 'descriptiveName',
         'TunnelDescription': 'tunnelDescription',
+        'Active': 'active',
         'UsingHeadEndNodePrefix': 'usingHeadEndNodePrefix',
     }
 

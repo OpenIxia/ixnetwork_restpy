@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,33 +33,33 @@ class Bgp4VpnBgpAdVplsRange(Base):
     __slots__ = ()
     _SDM_NAME = 'bgp4VpnBgpAdVplsRange'
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'RouteDistinguisherAsNumber': 'routeDistinguisherAsNumber',
-        'RouteDistinguisherAsNumberStep': 'routeDistinguisherAsNumberStep',
-        'RouteDistinguisherAssignedNumber': 'routeDistinguisherAssignedNumber',
-        'RouteDistinguisherAssignedNumberStep': 'routeDistinguisherAssignedNumberStep',
-        'RouteDistinguisherIpAddress': 'routeDistinguisherIpAddress',
-        'RouteDistinguisherIpAddressStep': 'routeDistinguisherIpAddressStep',
-        'RouteDistinguisherType': 'routeDistinguisherType',
-        'RouteTargetAsNumber': 'routeTargetAsNumber',
-        'RouteTargetAsNumberStep': 'routeTargetAsNumberStep',
-        'RouteTargetAssignedNumber': 'routeTargetAssignedNumber',
-        'RouteTargetAssignedNumberStep': 'routeTargetAssignedNumberStep',
-        'RouteTargetIpAddress': 'routeTargetIpAddress',
-        'RouteTargetIpAddressStep': 'routeTargetIpAddressStep',
-        'RouteTargetType': 'routeTargetType',
-        'UseRouteDistinguisherAsRouteTarget': 'useRouteDistinguisherAsRouteTarget',
-        'UseVplsIdAsRouteDistinguisher': 'useVplsIdAsRouteDistinguisher',
-        'VplsCount': 'vplsCount',
-        'VplsIdAsNumber': 'vplsIdAsNumber',
-        'VplsIdAsNumberStep': 'vplsIdAsNumberStep',
         'VplsIdAssignedNumber': 'vplsIdAssignedNumber',
-        'VplsIdAssignedNumberStep': 'vplsIdAssignedNumberStep',
-        'VplsIdIpAddress': 'vplsIdIpAddress',
+        'RouteTargetIpAddressStep': 'routeTargetIpAddressStep',
+        'VplsIdAsNumberStep': 'vplsIdAsNumberStep',
+        'UseRouteDistinguisherAsRouteTarget': 'useRouteDistinguisherAsRouteTarget',
+        'RouteDistinguisherType': 'routeDistinguisherType',
+        'RouteDistinguisherAssignedNumberStep': 'routeDistinguisherAssignedNumberStep',
+        'RouteTargetType': 'routeTargetType',
+        'RouteTargetAssignedNumber': 'routeTargetAssignedNumber',
+        'RouteDistinguisherAsNumber': 'routeDistinguisherAsNumber',
+        'RouteTargetIpAddress': 'routeTargetIpAddress',
         'VplsIdIpAddressStep': 'vplsIdIpAddressStep',
-        'VplsIdType': 'vplsIdType',
         'VsiId': 'vsiId',
+        'UseVplsIdAsRouteDistinguisher': 'useVplsIdAsRouteDistinguisher',
+        'VplsIdAssignedNumberStep': 'vplsIdAssignedNumberStep',
+        'RouteTargetAsNumber': 'routeTargetAsNumber',
+        'RouteTargetAssignedNumberStep': 'routeTargetAssignedNumberStep',
+        'VplsCount': 'vplsCount',
+        'RouteDistinguisherIpAddressStep': 'routeDistinguisherIpAddressStep',
+        'RouteTargetAsNumberStep': 'routeTargetAsNumberStep',
+        'VplsIdAsNumber': 'vplsIdAsNumber',
+        'RouteDistinguisherAssignedNumber': 'routeDistinguisherAssignedNumber',
+        'RouteDistinguisherAsNumberStep': 'routeDistinguisherAsNumberStep',
+        'VplsIdIpAddress': 'vplsIdIpAddress',
+        'Enabled': 'enabled',
         'VsiIdAssignedNumber': 'vsiIdAssignedNumber',
+        'VplsIdType': 'vplsIdType',
+        'RouteDistinguisherIpAddress': 'routeDistinguisherIpAddress',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,36 +31,36 @@ class BroadcastDomainV6(Base):
     __slots__ = ()
     _SDM_NAME = 'broadcastDomainV6'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdRouteLabel': 'adRouteLabel',
-        'AdvSrv6SidInIgp': 'advSrv6SidInIgp',
-        'AdvertiseSRv6SID': 'advertiseSRv6SID',
-        'BVlanId': 'bVlanId',
-        'BVlanPriority': 'bVlanPriority',
-        'BVlanTpid': 'bVlanTpid',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableVlanAwareService': 'enableVlanAwareService',
-        'EthernetTagId': 'ethernetTagId',
-        'GroupAddress': 'groupAddress',
-        'Name': 'name',
-        'NoOfMacPools': 'noOfMacPools',
-        'RootAddress': 'rootAddress',
-        'RsvpP2mpId': 'rsvpP2mpId',
+        'Srv6SidReserved2': 'srv6SidReserved2',
         'RsvpP2mpIdAsNumber': 'rsvpP2mpIdAsNumber',
-        'RsvpTunnelId': 'rsvpTunnelId',
-        'SendSRv6SIDOptionalInfo': 'sendSRv6SIDOptionalInfo',
-        'SenderAddressPRootNodeAddress': 'senderAddressPRootNodeAddress',
+        'RsvpP2mpId': 'rsvpP2mpId',
+        'BVlanId': 'bVlanId',
+        'Srv6SidLoc': 'srv6SidLoc',
+        'AdRouteLabel': 'adRouteLabel',
+        'RootAddress': 'rootAddress',
+        'AdvSrv6SidInIgp': 'advSrv6SidInIgp',
+        'UsebVlan': 'usebVlan',
+        'BVlanTpid': 'bVlanTpid',
+        'Srv6SidFlags': 'srv6SidFlags',
+        'AdvertiseSRv6SID': 'advertiseSRv6SID',
         'Srv6EndpointBehavior': 'srv6EndpointBehavior',
         'Srv6SIDOptionalInformation': 'srv6SIDOptionalInformation',
-        'Srv6SidFlags': 'srv6SidFlags',
-        'Srv6SidLoc': 'srv6SidLoc',
-        'Srv6SidLocLen': 'srv6SidLocLen',
-        'Srv6SidLocMetric': 'srv6SidLocMetric',
-        'Srv6SidReserved': 'srv6SidReserved',
+        'EnableVlanAwareService': 'enableVlanAwareService',
+        'EthernetTagId': 'ethernetTagId',
         'Srv6SidReserved1': 'srv6SidReserved1',
-        'Srv6SidReserved2': 'srv6SidReserved2',
-        'UsebVlan': 'usebVlan',
+        'SenderAddressPRootNodeAddress': 'senderAddressPRootNodeAddress',
+        'BVlanPriority': 'bVlanPriority',
+        'GroupAddress': 'groupAddress',
+        'Active': 'active',
+        'Count': 'count',
+        'Srv6SidLocMetric': 'srv6SidLocMetric',
+        'Name': 'name',
+        'Srv6SidLocLen': 'srv6SidLocLen',
+        'SendSRv6SIDOptionalInfo': 'sendSRv6SIDOptionalInfo',
+        'NoOfMacPools': 'noOfMacPools',
+        'Srv6SidReserved': 'srv6SidReserved',
+        'DescriptiveName': 'descriptiveName',
+        'RsvpTunnelId': 'rsvpTunnelId',
     }
 
     def __init__(self, parent):
@@ -466,6 +466,31 @@ class BroadcastDomainV6(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('advertiseAliasing', payload=payload, response_object=None)
 
+    def AdvertiseAliasingPerBroadcastDomain(self, *args, **kwargs):
+        """Executes the advertiseAliasingPerBroadcastDomain operation on the server.
+
+        Advertise Aliasing Per Broadcast Domain
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        advertiseAliasingPerBroadcastDomain(SessionIndices=list)
+        --------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        advertiseAliasingPerBroadcastDomain(SessionIndices=string)
+        ----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('advertiseAliasingPerBroadcastDomain', payload=payload, response_object=None)
+
     def WithdrawAliasing(self, *args, **kwargs):
         """Executes the withdrawAliasing operation on the server.
 
@@ -485,3 +510,28 @@ class BroadcastDomainV6(Base):
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('withdrawAliasing', payload=payload, response_object=None)
+
+    def WithdrawAliasingPerBroadcastDomain(self, *args, **kwargs):
+        """Executes the withdrawAliasingPerBroadcastDomain operation on the server.
+
+        Advertise Aliasing Per Broadcast Domain
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        withdrawAliasingPerBroadcastDomain(SessionIndices=list)
+        -------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        withdrawAliasingPerBroadcastDomain(SessionIndices=string)
+        ---------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('withdrawAliasingPerBroadcastDomain', payload=payload, response_object=None)

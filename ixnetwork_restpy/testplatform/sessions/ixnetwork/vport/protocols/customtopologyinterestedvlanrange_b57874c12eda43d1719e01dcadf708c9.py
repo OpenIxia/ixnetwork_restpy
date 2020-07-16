@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,15 +33,15 @@ class CustomTopologyInterestedVlanRange(Base):
     __slots__ = ()
     _SDM_NAME = 'customTopologyInterestedVlanRange'
     _SDM_ATT_MAP = {
-        'IncludeInterestedVlan': 'includeInterestedVlan',
-        'InterNodeVlanStep': 'interNodeVlanStep',
-        'M4BitEnabled': 'm4BitEnabled',
-        'M6BitEnabled': 'm6BitEnabled',
         'NumberOfSpanningTreeRoots': 'numberOfSpanningTreeRoots',
-        'StartSpanningTreeRootBridgeId': 'startSpanningTreeRootBridgeId',
-        'StartVlanId': 'startVlanId',
-        'VlanCount': 'vlanCount',
+        'M4BitEnabled': 'm4BitEnabled',
+        'IncludeInterestedVlan': 'includeInterestedVlan',
         'VlanIdStep': 'vlanIdStep',
+        'M6BitEnabled': 'm6BitEnabled',
+        'StartVlanId': 'startVlanId',
+        'InterNodeVlanStep': 'interNodeVlanStep',
+        'VlanCount': 'vlanCount',
+        'StartSpanningTreeRootBridgeId': 'startSpanningTreeRootBridgeId',
     }
 
     def __init__(self, parent):

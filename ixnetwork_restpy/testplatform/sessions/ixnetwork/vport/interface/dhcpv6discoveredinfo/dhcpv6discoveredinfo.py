@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,11 +32,11 @@ class DhcpV6DiscoveredInfo(Base):
     _SDM_NAME = 'dhcpV6DiscoveredInfo'
     _SDM_ATT_MAP = {
         'IaRebindTime': 'iaRebindTime',
-        'IaRenewTime': 'iaRenewTime',
+        'Tlvs': 'tlvs',
         'Ipv6Address': 'ipv6Address',
         'IsDhcpV6LearnedInfoRefreshed': 'isDhcpV6LearnedInfoRefreshed',
+        'IaRenewTime': 'iaRenewTime',
         'ProtocolInterface': 'protocolInterface',
-        'Tlvs': 'tlvs',
     }
 
     def __init__(self, parent):

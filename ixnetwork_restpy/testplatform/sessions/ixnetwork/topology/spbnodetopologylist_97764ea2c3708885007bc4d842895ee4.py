@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,17 +31,17 @@ class SpbNodeTopologyList(Base):
     __slots__ = ()
     _SDM_NAME = 'spbNodeTopologyList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'BaseVIDCount': 'baseVIDCount',
-        'CistExternalRootCost': 'cistExternalRootCost',
-        'CistRootId': 'cistRootId',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
         'NumberOfPorts': 'numberOfPorts',
-        'PortIdentifier': 'portIdentifier',
+        'Name': 'name',
         'TopologyId': 'topologyId',
         'Vbit': 'vbit',
+        'BaseVIDCount': 'baseVIDCount',
+        'PortIdentifier': 'portIdentifier',
+        'CistRootId': 'cistRootId',
+        'DescriptiveName': 'descriptiveName',
+        'Active': 'active',
+        'CistExternalRootCost': 'cistExternalRootCost',
     }
 
     def __init__(self, parent):

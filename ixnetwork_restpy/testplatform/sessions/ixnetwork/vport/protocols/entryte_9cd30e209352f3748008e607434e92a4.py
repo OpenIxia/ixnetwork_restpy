@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,14 +31,14 @@ class EntryTe(Base):
     __slots__ = ()
     _SDM_NAME = 'entryTe'
     _SDM_ATT_MAP = {
-        'EnableEntryTe': 'enableEntryTe',
+        'EteRouterIdIncrement': 'eteRouterIdIncrement',
+        'EteMaxReserveBandWidth': 'eteMaxReserveBandWidth',
         'EteAdmGroup': 'eteAdmGroup',
         'EteLinkMetric': 'eteLinkMetric',
         'EteMaxBandWidth': 'eteMaxBandWidth',
-        'EteMaxReserveBandWidth': 'eteMaxReserveBandWidth',
-        'EteRouterId': 'eteRouterId',
-        'EteRouterIdIncrement': 'eteRouterIdIncrement',
         'EteUnreservedBandWidth': 'eteUnreservedBandWidth',
+        'EnableEntryTe': 'enableEntryTe',
+        'EteRouterId': 'eteRouterId',
     }
 
     def __init__(self, parent):
@@ -85,7 +85,7 @@ class EntryTe(Base):
         """
         Returns
         -------
-        - number: For setting the Maximum link bandwidth (sub-TLV 9) allowed for this link in this direction. It is a 32-bit IEEE floating point value, in bytes/sec. The default is 0.00.
+        - str: For setting the Maximum link bandwidth (sub-TLV 9) allowed for this link in this direction. It is a 32-bit IEEE floating point value, in bytes/sec. The default is 0.00.
         """
         return self._get_attribute(self._SDM_ATT_MAP['EteMaxBandWidth'])
     @EteMaxBandWidth.setter
@@ -97,7 +97,7 @@ class EntryTe(Base):
         """
         Returns
         -------
-        - number: For setting the Maximum reservable link bandwidth sub-TLV 10). It is the maximum bandwidth that can be reserved for this link in this direction. It is a 32-bit IEEE floating point value, in bytes/sec. The default is 0.00.
+        - str: For setting the Maximum reservable link bandwidth sub-TLV 10). It is the maximum bandwidth that can be reserved for this link in this direction. It is a 32-bit IEEE floating point value, in bytes/sec. The default is 0.00.
         """
         return self._get_attribute(self._SDM_ATT_MAP['EteMaxReserveBandWidth'])
     @EteMaxReserveBandWidth.setter
@@ -133,7 +133,7 @@ class EntryTe(Base):
         """
         Returns
         -------
-        - list(number): There are eight levels, one for each possible priority level (for colors or resource classes). The values specify the amount of bandwidth that can be reserved for each of 8 priority levels (0 through 7). The bandwidth values are 32-bit IEEE floating point values, in bytes/sec.The default is 0.00. The total bandwidth for all 8 priority levels may exceed the bandwidth of the link, in cases where the user wants to oversubscribe the link.
+        - list(str): There are eight levels, one for each possible priority level (for colors or resource classes). The values specify the amount of bandwidth that can be reserved for each of 8 priority levels (0 through 7). The bandwidth values are 32-bit IEEE floating point values, in bytes/sec.The default is 0.00. The total bandwidth for all 8 priority levels may exceed the bandwidth of the link, in cases where the user wants to oversubscribe the link.
         """
         return self._get_attribute(self._SDM_ATT_MAP['EteUnreservedBandWidth'])
     @EteUnreservedBandWidth.setter
@@ -148,11 +148,11 @@ class EntryTe(Base):
         - EnableEntryTe (bool): If enabled, the Entry TE configuration values specified in the ISIS Advanced Router Settings TE dialog may be overridden, and replaced by the values specified in this dialog.
         - EteAdmGroup (str): For setting the administrative group sub-TLV (sub-TLV 3). It is a 4-octet user-defined bit mask used to assign administrative group numbers to the interface., for use in assigning colors and resource classes. Each set bit corresponds to a single administrative group for this interface. The settings translate into group numbers which range from 0 to 31 (integers).The default value is 00 00 00 00 (hex)
         - EteLinkMetric (number): A user-defined metric for the link.
-        - EteMaxBandWidth (number): For setting the Maximum link bandwidth (sub-TLV 9) allowed for this link in this direction. It is a 32-bit IEEE floating point value, in bytes/sec. The default is 0.00.
-        - EteMaxReserveBandWidth (number): For setting the Maximum reservable link bandwidth sub-TLV 10). It is the maximum bandwidth that can be reserved for this link in this direction. It is a 32-bit IEEE floating point value, in bytes/sec. The default is 0.00.
+        - EteMaxBandWidth (str): For setting the Maximum link bandwidth (sub-TLV 9) allowed for this link in this direction. It is a 32-bit IEEE floating point value, in bytes/sec. The default is 0.00.
+        - EteMaxReserveBandWidth (str): For setting the Maximum reservable link bandwidth sub-TLV 10). It is the maximum bandwidth that can be reserved for this link in this direction. It is a 32-bit IEEE floating point value, in bytes/sec. The default is 0.00.
         - EteRouterId (str): This attribute is the TE router ID of the first router in the grid (at row = 0, column = 0), in IPv4 format.
         - EteRouterIdIncrement (str): The increment step to be used for creating the router IDs for the emulated ISIS routers in this network range.
-        - EteUnreservedBandWidth (list(number)): There are eight levels, one for each possible priority level (for colors or resource classes). The values specify the amount of bandwidth that can be reserved for each of 8 priority levels (0 through 7). The bandwidth values are 32-bit IEEE floating point values, in bytes/sec.The default is 0.00. The total bandwidth for all 8 priority levels may exceed the bandwidth of the link, in cases where the user wants to oversubscribe the link.
+        - EteUnreservedBandWidth (list(str)): There are eight levels, one for each possible priority level (for colors or resource classes). The values specify the amount of bandwidth that can be reserved for each of 8 priority levels (0 through 7). The bandwidth values are 32-bit IEEE floating point values, in bytes/sec.The default is 0.00. The total bandwidth for all 8 priority levels may exceed the bandwidth of the link, in cases where the user wants to oversubscribe the link.
 
         Raises
         ------

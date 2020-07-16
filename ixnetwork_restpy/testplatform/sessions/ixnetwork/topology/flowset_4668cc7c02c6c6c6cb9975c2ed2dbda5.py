@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,20 +32,20 @@ class FlowSet(Base):
     __slots__ = ()
     _SDM_NAME = 'flowSet'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Cookie': 'cookie',
-        'CookieMask': 'cookieMask',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'FlowAdvertise': 'flowAdvertise',
-        'FlowFlags': 'flowFlags',
+        'Priority': 'priority',
         'FlowMatchType': 'flowMatchType',
-        'FlowSetId': 'flowSetId',
+        'CookieMask': 'cookieMask',
         'HardTimeout': 'hardTimeout',
         'IdleTimeout': 'idleTimeout',
-        'Name': 'name',
+        'FlowSetId': 'flowSetId',
+        'FlowFlags': 'flowFlags',
         'NumberOfFlows': 'numberOfFlows',
-        'Priority': 'priority',
+        'Cookie': 'cookie',
+        'FlowAdvertise': 'flowAdvertise',
+        'Active': 'active',
+        'DescriptiveName': 'descriptiveName',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

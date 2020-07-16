@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,21 +33,21 @@ class Ipv6Autoconfiguration(Base):
     __slots__ = ()
     _SDM_NAME = 'ipv6Autoconfiguration'
     _SDM_ATT_MAP = {
-        'Address': 'address',
-        'ConnectedVia': 'connectedVia',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Errors': 'errors',
-        'GatewayIp': 'gatewayIp',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'Prefix': 'prefix',
-        'ResolvedGatewayMac': 'resolvedGatewayMac',
-        'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
         'Status': 'status',
+        'Errors': 'errors',
+        'Name': 'name',
+        'StackedLayers': 'stackedLayers',
+        'Multiplier': 'multiplier',
+        'GatewayIp': 'gatewayIp',
+        'ResolvedGatewayMac': 'resolvedGatewayMac',
+        'Prefix': 'prefix',
+        'ConnectedVia': 'connectedVia',
+        'DescriptiveName': 'descriptiveName',
+        'Address': 'address',
+        'SessionInfo': 'sessionInfo',
+        'StateCounts': 'stateCounts',
+        'SessionStatus': 'sessionStatus',
     }
 
     def __init__(self, parent):
@@ -72,13 +72,13 @@ class Ipv6Autoconfiguration(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_233d018ff70759c1f356b7faa2633d85.BgpIpv6Peer): An instance of the BgpIpv6Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d4ac277d9da759fd5a152b8e6eb0ab20.BgpIpv6Peer): An instance of the BgpIpv6Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_233d018ff70759c1f356b7faa2633d85 import BgpIpv6Peer
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d4ac277d9da759fd5a152b8e6eb0ab20 import BgpIpv6Peer
         return BgpIpv6Peer(self)
 
     @property
@@ -411,6 +411,31 @@ class Ipv6Autoconfiguration(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def RestartDown(self, *args, **kwargs):
         """Executes the restartDown operation on the server.
 
@@ -420,7 +445,7 @@ class Ipv6Autoconfiguration(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -450,7 +475,7 @@ class Ipv6Autoconfiguration(Base):
         sendNs(DestIP=string, SessionIndices=list)
         ------------------------------------------
         - DestIP (str): This parameter requires a destIP of type kString
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendNs(SessionIndices=string, DestIP=string)
         --------------------------------------------
@@ -482,7 +507,7 @@ class Ipv6Autoconfiguration(Base):
         sendPing(DestIP=string, SessionIndices=list)list
         ------------------------------------------------
         - DestIP (str): This parameter requires a destIP of type kString
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
         - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
         sendPing(SessionIndices=string, DestIP=string)list
@@ -510,7 +535,7 @@ class Ipv6Autoconfiguration(Base):
 
         sendRs(SessionIndices=list)
         ---------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendRs(SessionIndices=string)
         -----------------------------
@@ -529,13 +554,13 @@ class Ipv6Autoconfiguration(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected protocols.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -554,13 +579,13 @@ class Ipv6Autoconfiguration(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected protocols.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,41 +32,41 @@ class IsisL3RouteProperty(Base):
     __slots__ = ()
     _SDM_NAME = 'isisL3RouteProperty'
     _SDM_ATT_MAP = {
+        'VFlag': 'vFlag',
+        'NoOfSidperPrefix': 'noOfSidperPrefix',
         'BAR': 'BAR',
-        'BFRId': 'BFRId',
+        'Ipv6SID': 'ipv6SID',
+        'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
+        'NFlag': 'nFlag',
         'BFRIdStep': 'BFRIdStep',
         'BIERBitStringLength': 'BIERBitStringLength',
-        'IPA': 'IPA',
-        'Active': 'active',
-        'AdvIPv6Prefix': 'advIPv6Prefix',
-        'Algorithm': 'algorithm',
-        'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
-        'Count': 'count',
-        'DBitInsideSRv6SidTLV': 'dBitInsideSRv6SidTLV',
-        'DescriptiveName': 'descriptiveName',
         'EFlag': 'eFlag',
-        'Funcflags': 'funcflags',
-        'Function': 'function',
-        'IncludeBIERInfo': 'includeBIERInfo',
-        'IncludeBSLObject': 'includeBSLObject',
-        'Ipv6SID': 'ipv6SID',
-        'Ipv6Srh': 'ipv6Srh',
-        'LFlag': 'lFlag',
         'LabelRangeSize': 'labelRangeSize',
-        'LabelStart': 'labelStart',
         'LocalSystemID': 'localSystemID',
-        'Metric': 'metric',
-        'NFlag': 'nFlag',
-        'Name': 'name',
-        'NoOfSidperPrefix': 'noOfSidperPrefix',
-        'PFlag': 'pFlag',
-        'RFlag': 'rFlag',
-        'Redistribution': 'redistribution',
+        'Funcflags': 'funcflags',
+        'BFRId': 'BFRId',
         'ReservedInsideFlagsOfSRv6SidTLV': 'reservedInsideFlagsOfSRv6SidTLV',
+        'IncludeBSLObject': 'includeBSLObject',
+        'Ipv6Srh': 'ipv6Srh',
+        'Metric': 'metric',
+        'LFlag': 'lFlag',
+        'Function': 'function',
+        'DBitInsideSRv6SidTLV': 'dBitInsideSRv6SidTLV',
+        'IncludeBIERInfo': 'includeBIERInfo',
+        'PFlag': 'pFlag',
+        'Active': 'active',
         'RouteOrigin': 'routeOrigin',
-        'SIDIndexLabel': 'sIDIndexLabel',
+        'Count': 'count',
+        'IPA': 'IPA',
+        'Name': 'name',
+        'Algorithm': 'algorithm',
         'SubDomainId': 'subDomainId',
-        'VFlag': 'vFlag',
+        'LabelStart': 'labelStart',
+        'DescriptiveName': 'descriptiveName',
+        'AdvIPv6Prefix': 'advIPv6Prefix',
+        'Redistribution': 'redistribution',
+        'RFlag': 'rFlag',
+        'SIDIndexLabel': 'sIDIndexLabel',
     }
 
     def __init__(self, parent):
@@ -77,13 +77,13 @@ class IsisL3RouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_f91a37c8058302050a67e05790d01c7a.CMacProperties): An instance of the CMacProperties class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180.CMacProperties): An instance of the CMacProperties class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_f91a37c8058302050a67e05790d01c7a import CMacProperties
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
         return CMacProperties(self)
 
     @property
@@ -119,13 +119,13 @@ class IsisL3RouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3prefixessrsid_5680d4dcae9c9ccaa0568083625af797.IsisL3PrefixesSrSid): An instance of the IsisL3PrefixesSrSid class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3prefixessrsid_d90ea659336c02c3669004f4825a6c15.IsisL3PrefixesSrSid): An instance of the IsisL3PrefixesSrSid class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3prefixessrsid_5680d4dcae9c9ccaa0568083625af797 import IsisL3PrefixesSrSid
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3prefixessrsid_d90ea659336c02c3669004f4825a6c15 import IsisL3PrefixesSrSid
         return IsisL3PrefixesSrSid(self)._select()
 
     @property
@@ -591,6 +591,19 @@ class IsisL3RouteProperty(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
+
     def AgeOutRoutes(self, *args, **kwargs):
         """Executes the ageOutRoutes operation on the server.
 
@@ -605,7 +618,7 @@ class IsisL3RouteProperty(Base):
         ageOutRoutes(Percentage=number, SessionIndices=list)
         ----------------------------------------------------
         - Percentage (number): This parameter requires a percentage of type kInteger
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         ageOutRoutes(SessionIndices=string, Percentage=number)
         ------------------------------------------------------
@@ -652,7 +665,7 @@ class IsisL3RouteProperty(Base):
 
         readvertiseRoutes(SessionIndices=list)
         --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         readvertiseRoutes(SessionIndices=string)
         ----------------------------------------
@@ -691,13 +704,13 @@ class IsisL3RouteProperty(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start ISIS L3 Route Range
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -716,13 +729,13 @@ class IsisL3RouteProperty(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop ISIS L3 Route Range
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

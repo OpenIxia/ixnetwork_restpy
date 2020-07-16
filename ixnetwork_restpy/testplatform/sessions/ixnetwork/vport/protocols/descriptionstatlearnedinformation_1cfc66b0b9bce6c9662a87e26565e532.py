@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,20 +32,20 @@ class DescriptionStatLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'descriptionStatLearnedInformation'
     _SDM_ATT_MAP = {
-        'DataPathDescription': 'dataPathDescription',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'HardwareDescription': 'hardwareDescription',
+        'SoftwareDescription': 'softwareDescription',
         'Latency': 'latency',
-        'LocalIp': 'localIp',
+        'DataPathDescription': 'dataPathDescription',
+        'SerialNumber': 'serialNumber',
+        'HardwareDescription': 'hardwareDescription',
         'ManufacturerDescription': 'manufacturerDescription',
+        'ErrorType': 'errorType',
         'NegotiatedVersion': 'negotiatedVersion',
+        'ErrorCode': 'errorCode',
+        'LocalIp': 'localIp',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
         'RemoteIp': 'remoteIp',
         'ReplyState': 'replyState',
-        'SerialNumber': 'serialNumber',
-        'SoftwareDescription': 'softwareDescription',
+        'DataPathId': 'dataPathId',
     }
 
     def __init__(self, parent):

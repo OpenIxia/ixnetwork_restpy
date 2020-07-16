@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,19 +31,23 @@ class NovusTenGigLan(Base):
     __slots__ = ()
     _SDM_NAME = 'novusTenGigLan'
     _SDM_ATT_MAP = {
-        'AutoInstrumentation': 'autoInstrumentation',
-        'AutoNegotiate': 'autoNegotiate',
         'EnablePPM': 'enablePPM',
-        'EnabledFlowControl': 'enabledFlowControl',
-        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
         'Loopback': 'loopback',
-        'LoopbackMode': 'loopbackMode',
-        'MasterSlaveMode': 'masterSlaveMode',
         'Media': 'media',
-        'Ppm': 'ppm',
-        'Speed': 'speed',
-        'SpeedAuto': 'speedAuto',
+        'AvailableSpeeds': 'availableSpeeds',
         'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
+        'EnabledFlowControl': 'enabledFlowControl',
+        'Ppm': 'ppm',
+        'CanModifySpeed': 'canModifySpeed',
+        'MasterSlaveMode': 'masterSlaveMode',
+        'LoopbackMode': 'loopbackMode',
+        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
+        'SpeedAuto': 'speedAuto',
+        'SelectedSpeeds': 'selectedSpeeds',
+        'AutoInstrumentation': 'autoInstrumentation',
+        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
+        'Speed': 'speed',
+        'AutoNegotiate': 'autoNegotiate',
     }
 
     def __init__(self, parent):
@@ -100,6 +104,33 @@ class NovusTenGigLan(Base):
     @AutoNegotiate.setter
     def AutoNegotiate(self, value):
         self._set_attribute(self._SDM_ATT_MAP['AutoNegotiate'], value)
+
+    @property
+    def AvailableSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[speed100fd | speed1000 | speed2.5g | speed5g | speed10g]): Which speeds are available for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableSpeeds'])
+
+    @property
+    def CanModifySpeed(self):
+        """
+        Returns
+        -------
+        - bool: Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanModifySpeed'])
+
+    @property
+    def CanSetMultipleSpeeds(self):
+        """
+        Returns
+        -------
+        - bool: Can this port selectmultiple speeds for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanSetMultipleSpeeds'])
 
     @property
     def EnablePPM(self):
@@ -198,6 +229,18 @@ class NovusTenGigLan(Base):
         self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
+    def SelectedSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[speed100fd | speed1000 | speed2.5g | speed5g | speed10g]): Which speeds are selected for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
+    @SelectedSpeeds.setter
+    def SelectedSpeeds(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
+
+    @property
     def Speed(self):
         """
         Returns
@@ -233,7 +276,7 @@ class NovusTenGigLan(Base):
     def TxIgnoreRxLinkFaults(self, value):
         self._set_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'], value)
 
-    def update(self, AutoInstrumentation=None, AutoNegotiate=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, LoopbackMode=None, MasterSlaveMode=None, Media=None, Ppm=None, Speed=None, SpeedAuto=None, TxIgnoreRxLinkFaults=None):
+    def update(self, AutoInstrumentation=None, AutoNegotiate=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, LoopbackMode=None, MasterSlaveMode=None, Media=None, Ppm=None, SelectedSpeeds=None, Speed=None, SpeedAuto=None, TxIgnoreRxLinkFaults=None):
         """Updates novusTenGigLan resource on the server.
 
         Args
@@ -248,6 +291,7 @@ class NovusTenGigLan(Base):
         - MasterSlaveMode (str(master | slave)): 
         - Media (str(copper | fiber | sgmii)): Available only for cards that support this dual-PHY capability.
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - SelectedSpeeds (list(str[speed100fd | speed1000 | speed2.5g | speed5g | speed10g])): Which speeds are selected for the current media and AN settings.
         - Speed (str(speed1000 | speed100fd | speed10g | speed2.5g | speed5g)): NOT DEFINED
         - SpeedAuto (list(str[speed1000 | speed100fd | speed10g | speed2.5g | speed5g])): 
         - TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.

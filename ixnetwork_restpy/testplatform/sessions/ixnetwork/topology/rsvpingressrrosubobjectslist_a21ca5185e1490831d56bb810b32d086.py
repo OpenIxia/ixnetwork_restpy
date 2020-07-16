@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,21 +32,21 @@ class RsvpIngressRroSubObjectsList(Base):
     __slots__ = ()
     _SDM_NAME = 'rsvpIngressRroSubObjectsList'
     _SDM_ATT_MAP = {
-        'BandwidthProtection': 'bandwidthProtection',
-        'CType': 'cType',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'GlobalLabel': 'globalLabel',
-        'Ip': 'ip',
-        'Label': 'label',
-        'LocalIp': 'localIp',
         'Name': 'name',
-        'NodeProtection': 'nodeProtection',
+        'LocalIp': 'localIp',
+        'Ip': 'ip',
         'P2mpIdAsIp': 'p2mpIdAsIp',
         'P2mpIdAsNum': 'p2mpIdAsNum',
-        'ProtectionAvailable': 'protectionAvailable',
+        'GlobalLabel': 'globalLabel',
+        'Label': 'label',
+        'BandwidthProtection': 'bandwidthProtection',
+        'NodeProtection': 'nodeProtection',
+        'DescriptiveName': 'descriptiveName',
+        'CType': 'cType',
         'ProtectionInUse': 'protectionInUse',
         'Type': 'type',
+        'ProtectionAvailable': 'protectionAvailable',
     }
 
     def __init__(self, parent):

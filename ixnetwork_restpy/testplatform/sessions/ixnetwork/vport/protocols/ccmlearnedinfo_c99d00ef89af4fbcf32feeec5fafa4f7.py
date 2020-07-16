@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,31 +32,31 @@ class CcmLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'ccmLearnedInfo'
     _SDM_ATT_MAP = {
-        'AllRmepDead': 'allRmepDead',
-        'CVlan': 'cVlan',
-        'CciInterval': 'cciInterval',
-        'ErrCcmDefect': 'errCcmDefect',
-        'ErrCcmDefectCount': 'errCcmDefectCount',
-        'IfaceTlvDefectCount': 'ifaceTlvDefectCount',
-        'MdLevel': 'mdLevel',
-        'MdName': 'mdName',
+        'ReceivedPortTlvDefect': 'receivedPortTlvDefect',
+        'RemoteMepDefectCount': 'remoteMepDefectCount',
         'MdNameFormat': 'mdNameFormat',
-        'MepId': 'mepId',
-        'MepMacAddress': 'mepMacAddress',
-        'OutOfSequenceCcmCount': 'outOfSequenceCcmCount',
+        'MdName': 'mdName',
         'PortTlvDefectCount': 'portTlvDefectCount',
         'RdiRxCount': 'rdiRxCount',
-        'RdiRxState': 'rdiRxState',
-        'ReceivedAis': 'receivedAis',
-        'ReceivedIfaceTlvDefect': 'receivedIfaceTlvDefect',
-        'ReceivedPortTlvDefect': 'receivedPortTlvDefect',
+        'SomeRmepDefect': 'someRmepDefect',
+        'AllRmepDead': 'allRmepDead',
+        'ErrCcmDefectCount': 'errCcmDefectCount',
+        'IfaceTlvDefectCount': 'ifaceTlvDefectCount',
         'ReceivedRdi': 'receivedRdi',
-        'RemoteMepDefectCount': 'remoteMepDefectCount',
-        'RmepCcmDefect': 'rmepCcmDefect',
+        'MepId': 'mepId',
+        'MepMacAddress': 'mepMacAddress',
         'SVlan': 'sVlan',
         'ShortMaName': 'shortMaName',
+        'ErrCcmDefect': 'errCcmDefect',
+        'ReceivedIfaceTlvDefect': 'receivedIfaceTlvDefect',
         'ShortMaNameFormat': 'shortMaNameFormat',
-        'SomeRmepDefect': 'someRmepDefect',
+        'CVlan': 'cVlan',
+        'RmepCcmDefect': 'rmepCcmDefect',
+        'ReceivedAis': 'receivedAis',
+        'CciInterval': 'cciInterval',
+        'RdiRxState': 'rdiRxState',
+        'MdLevel': 'mdLevel',
+        'OutOfSequenceCcmCount': 'outOfSequenceCcmCount',
     }
 
     def __init__(self, parent):

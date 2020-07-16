@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,46 +33,46 @@ class MplsOam(Base):
     __slots__ = ()
     _SDM_NAME = 'mplsOam'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'BfdCvType': 'bfdCvType',
-        'BfdDiscriminatorEnd': 'bfdDiscriminatorEnd',
-        'BfdDiscriminatorStart': 'bfdDiscriminatorStart',
-        'ConnectedVia': 'connectedVia',
-        'ControlChannel': 'controlChannel',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DestinationAddressIpv4': 'destinationAddressIpv4',
-        'DownstreamAddressType': 'downstreamAddressType',
-        'DownstreamInterfaceAddressNumbered': 'downstreamInterfaceAddressNumbered',
-        'DownstreamInterfaceAddressUnnumbered': 'downstreamInterfaceAddressUnnumbered',
-        'DownstreamIpAddress': 'downstreamIpAddress',
-        'EchoRequestInterval': 'echoRequestInterval',
-        'EchoResponseTimeout': 'echoResponseTimeout',
-        'EnableDSIflag': 'enableDSIflag',
-        'EnableDownstreamMappingTlv': 'enableDownstreamMappingTlv',
-        'EnableDsNflag': 'enableDsNflag',
-        'EnableFecValidation': 'enableFecValidation',
-        'EnablePeriodicPing': 'enablePeriodicPing',
-        'EnableSBfdResponder': 'enableSBfdResponder',
-        'Errors': 'errors',
-        'FlapTxIntervals': 'flapTxIntervals',
-        'IncludePadTlv': 'includePadTlv',
-        'IncludeVendorEnterpriseNumbeTlv': 'includeVendorEnterpriseNumbeTlv',
-        'InitiatorSBFDSessionCount': 'initiatorSBFDSessionCount',
-        'LocalRouterId': 'localRouterId',
-        'MinRxInterval': 'minRxInterval',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
         'PadTlvFirstOctet': 'padTlvFirstOctet',
-        'PadTlvLength': 'padTlvLength',
-        'ReplyMode': 'replyMode',
-        'SessionStatus': 'sessionStatus',
+        'DownstreamAddressType': 'downstreamAddressType',
+        'DownstreamInterfaceAddressUnnumbered': 'downstreamInterfaceAddressUnnumbered',
+        'BfdDiscriminatorStart': 'bfdDiscriminatorStart',
+        'IncludePadTlv': 'includePadTlv',
         'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
+        'ConnectedVia': 'connectedVia',
+        'ReplyMode': 'replyMode',
+        'DestinationAddressIpv4': 'destinationAddressIpv4',
+        'SessionStatus': 'sessionStatus',
+        'ControlChannel': 'controlChannel',
+        'Errors': 'errors',
+        'DownstreamInterfaceAddressNumbered': 'downstreamInterfaceAddressNumbered',
+        'BfdCvType': 'bfdCvType',
         'Status': 'status',
-        'TimeoutMultiplier': 'timeoutMultiplier',
+        'EnableDSIflag': 'enableDSIflag',
+        'MinRxInterval': 'minRxInterval',
+        'BfdDiscriminatorEnd': 'bfdDiscriminatorEnd',
+        'LocalRouterId': 'localRouterId',
+        'EchoRequestInterval': 'echoRequestInterval',
+        'EnableDownstreamMappingTlv': 'enableDownstreamMappingTlv',
+        'StateCounts': 'stateCounts',
+        'Multiplier': 'multiplier',
+        'Active': 'active',
+        'InitiatorSBFDSessionCount': 'initiatorSBFDSessionCount',
         'TxInterval': 'txInterval',
+        'Count': 'count',
+        'DownstreamIpAddress': 'downstreamIpAddress',
+        'Name': 'name',
+        'EnableFecValidation': 'enableFecValidation',
+        'EnableSBfdResponder': 'enableSBfdResponder',
+        'FlapTxIntervals': 'flapTxIntervals',
+        'EchoResponseTimeout': 'echoResponseTimeout',
         'VendorEnterpriseNumber': 'vendorEnterpriseNumber',
+        'TimeoutMultiplier': 'timeoutMultiplier',
+        'EnableDsNflag': 'enableDsNflag',
+        'DescriptiveName': 'descriptiveName',
+        'IncludeVendorEnterpriseNumbeTlv': 'includeVendorEnterpriseNumbeTlv',
+        'EnablePeriodicPing': 'enablePeriodicPing',
+        'PadTlvLength': 'padTlvLength',
     }
 
     def __init__(self, parent):
@@ -689,6 +689,31 @@ class MplsOam(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def ClearAllLearnedInfo(self, *args, **kwargs):
         """Executes the clearAllLearnedInfo operation on the server.
 
@@ -738,7 +763,7 @@ class MplsOam(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -757,13 +782,13 @@ class MplsOam(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Activate Interface
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -782,13 +807,13 @@ class MplsOam(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Deactivate Interface
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

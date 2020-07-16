@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,36 +31,36 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpSRTEPoliciesTunnelEncapsulationListV4'
     _SDM_ATT_MAP = {
-        'ENLPValue': 'ENLPValue',
-        'IPv6SID': 'IPv6SID',
-        'SID4Octet': 'SID4Octet',
-        'Active': 'active',
-        'AddressFamily': 'addressFamily',
-        'As4Number': 'as4Number',
-        'BindingSIDType': 'bindingSIDType',
-        'ColorCOBits': 'colorCOBits',
-        'ColorReservedBits': 'colorReservedBits',
-        'ColorValue': 'colorValue',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
         'EnBindingTLV': 'enBindingTLV',
-        'EnColorTLV': 'enColorTLV',
-        'EnENLPTLV': 'enENLPTLV',
-        'EnPolicyNameTLV': 'enPolicyNameTLV',
-        'EnPolicyPrioritySubTLV': 'enPolicyPrioritySubTLV',
         'EnPrefTLV': 'enPrefTLV',
-        'EnRemoteEndPointTLV': 'enRemoteEndPointTLV',
-        'Name': 'name',
-        'NumberOfActiveSegmentList': 'numberOfActiveSegmentList',
-        'NumberOfSegmentListV4': 'numberOfSegmentListV4',
-        'PolicyName': 'policyName',
-        'PrefValue': 'prefValue',
-        'Priority': 'priority',
-        'RemoteEndpointIPv4': 'remoteEndpointIPv4',
-        'RemoteEndpointIPv6': 'remoteEndpointIPv6',
+        'SID4Octet': 'SID4Octet',
+        'ColorReservedBits': 'colorReservedBits',
         'SrtepolicyName': 'srtepolicyName',
+        'ColorCOBits': 'colorCOBits',
+        'AddressFamily': 'addressFamily',
+        'PolicyName': 'policyName',
         'TunnelType': 'tunnelType',
+        'Priority': 'priority',
+        'EnColorTLV': 'enColorTLV',
+        'BindingSIDType': 'bindingSIDType',
+        'EnPolicyPrioritySubTLV': 'enPolicyPrioritySubTLV',
+        'IPv6SID': 'IPv6SID',
+        'EnPolicyNameTLV': 'enPolicyNameTLV',
+        'RemoteEndpointIPv6': 'remoteEndpointIPv6',
+        'RemoteEndpointIPv4': 'remoteEndpointIPv4',
+        'ENLPValue': 'ENLPValue',
         'UseAsMPLSLabel': 'useAsMPLSLabel',
+        'EnRemoteEndPointTLV': 'enRemoteEndPointTLV',
+        'EnENLPTLV': 'enENLPTLV',
+        'Active': 'active',
+        'Count': 'count',
+        'NumberOfActiveSegmentList': 'numberOfActiveSegmentList',
+        'Name': 'name',
+        'As4Number': 'as4Number',
+        'NumberOfSegmentListV4': 'numberOfSegmentListV4',
+        'PrefValue': 'prefValue',
+        'DescriptiveName': 'descriptiveName',
+        'ColorValue': 'colorValue',
     }
 
     def __init__(self, parent):

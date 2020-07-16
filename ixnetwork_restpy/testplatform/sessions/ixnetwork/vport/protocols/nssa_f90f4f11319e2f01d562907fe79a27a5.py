@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,13 +32,13 @@ class Nssa(Base):
     __slots__ = ()
     _SDM_NAME = 'nssa'
     _SDM_ATT_MAP = {
-        'EBit': 'eBit',
-        'ForwardingAddress': 'forwardingAddress',
-        'IncrementLinkStateIdBy': 'incrementLinkStateIdBy',
         'Metric': 'metric',
-        'NetworkMask': 'networkMask',
         'NumberOfLsa': 'numberOfLsa',
         'RouteTag': 'routeTag',
+        'IncrementLinkStateIdBy': 'incrementLinkStateIdBy',
+        'NetworkMask': 'networkMask',
+        'EBit': 'eBit',
+        'ForwardingAddress': 'forwardingAddress',
     }
 
     def __init__(self, parent):

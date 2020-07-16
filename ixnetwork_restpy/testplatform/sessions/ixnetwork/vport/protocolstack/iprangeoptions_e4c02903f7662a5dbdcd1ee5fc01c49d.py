@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,13 +33,13 @@ class IpRangeOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'ipRangeOptions'
     _SDM_ATT_MAP = {
-        'GatewayArpRequestRate': 'gatewayArpRequestRate',
         'Icmpv6DiscardRouterAdvertisements': 'icmpv6DiscardRouterAdvertisements',
+        'ObjectId': 'objectId',
         'Ipv6AddressMode': 'ipv6AddressMode',
+        'MaxOutstandingGatewayArpRequests': 'maxOutstandingGatewayArpRequests',
         'Ipv6ConfigRate': 'ipv6ConfigRate',
         'Ipv6ConfigRateEnable': 'ipv6ConfigRateEnable',
-        'MaxOutstandingGatewayArpRequests': 'maxOutstandingGatewayArpRequests',
-        'ObjectId': 'objectId',
+        'GatewayArpRequestRate': 'gatewayArpRequestRate',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,53 +33,53 @@ class Ldpvplsbgpad(Base):
     __slots__ = ()
     _SDM_NAME = 'ldpvplsbgpad'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AsNumberVplsId': 'asNumberVplsId',
-        'AssignedNumberVplsId': 'assignedNumberVplsId',
-        'AutoPeerID': 'autoPeerID',
-        'AutoPeerId': 'autoPeerId',
-        'BfdPwCV': 'bfdPwCV',
-        'BfdUdpCV': 'bfdUdpCV',
-        'CBitEnabled': 'cBitEnabled',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescEnabled': 'descEnabled',
-        'Description': 'description',
-        'DescriptiveName': 'descriptiveName',
-        'DownInterval': 'downInterval',
-        'DownStart': 'downStart',
         'EnableCCCVNegotiation': 'enableCCCVNegotiation',
-        'EnablePWStatus': 'enablePWStatus',
-        'Errors': 'errors',
-        'GroupId': 'groupId',
-        'InterfaceType': 'interfaceType',
-        'IpAddressVplsId': 'ipAddressVplsId',
-        'Ipv6PeerId': 'ipv6PeerId',
-        'LSPPingCV': 'lSPPingCV',
-        'Label': 'label',
-        'LocalRouterID': 'localRouterID',
-        'Mtu': 'mtu',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'PWACHCC': 'pWACHCC',
-        'PWStatusCode': 'pWStatusCode',
-        'PeerId': 'peerId',
-        'ProvisioningModelType': 'provisioningModelType',
-        'PwStatusSendNotification': 'pwStatusSendNotification',
         'RepeatCount': 'repeatCount',
-        'RouterAlertCC': 'routerAlertCC',
-        'SessionStatus': 'sessionStatus',
-        'SourceAIIType': 'sourceAIIType',
-        'SourceAIIasIP': 'sourceAIIasIP',
-        'SourceAIIasNumber': 'sourceAIIasNumber',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'TargetAIIType': 'targetAIIType',
-        'TargetAIIasIP': 'targetAIIasIP',
-        'TargetAIIasNumber': 'targetAIIasNumber',
-        'TypeVplsId': 'typeVplsId',
         'UpInterval': 'upInterval',
+        'Multiplier': 'multiplier',
+        'StackedLayers': 'stackedLayers',
+        'BfdPwCV': 'bfdPwCV',
+        'SourceAIIasIP': 'sourceAIIasIP',
+        'ConnectedVia': 'connectedVia',
+        'InterfaceType': 'interfaceType',
+        'TargetAIIType': 'targetAIIType',
+        'AutoPeerID': 'autoPeerID',
+        'SessionStatus': 'sessionStatus',
+        'TypeVplsId': 'typeVplsId',
+        'BfdUdpCV': 'bfdUdpCV',
+        'Errors': 'errors',
+        'DescEnabled': 'descEnabled',
+        'LocalRouterID': 'localRouterID',
+        'PwStatusSendNotification': 'pwStatusSendNotification',
+        'Label': 'label',
+        'SourceAIIasNumber': 'sourceAIIasNumber',
+        'AutoPeerId': 'autoPeerId',
+        'PeerId': 'peerId',
+        'EnablePWStatus': 'enablePWStatus',
+        'ProvisioningModelType': 'provisioningModelType',
+        'Status': 'status',
+        'TargetAIIasIP': 'targetAIIasIP',
+        'Description': 'description',
+        'RouterAlertCC': 'routerAlertCC',
+        'AssignedNumberVplsId': 'assignedNumberVplsId',
+        'PWACHCC': 'pWACHCC',
+        'DownStart': 'downStart',
+        'Active': 'active',
+        'SourceAIIType': 'sourceAIIType',
+        'CBitEnabled': 'cBitEnabled',
+        'GroupId': 'groupId',
+        'Count': 'count',
+        'Ipv6PeerId': 'ipv6PeerId',
+        'Name': 'name',
+        'PWStatusCode': 'pWStatusCode',
+        'TargetAIIasNumber': 'targetAIIasNumber',
+        'Mtu': 'mtu',
+        'DownInterval': 'downInterval',
+        'DescriptiveName': 'descriptiveName',
+        'IpAddressVplsId': 'ipAddressVplsId',
+        'LSPPingCV': 'lSPPingCV',
+        'StateCounts': 'stateCounts',
+        'AsNumberVplsId': 'asNumberVplsId',
     }
 
     def __init__(self, parent):
@@ -839,6 +839,31 @@ class Ldpvplsbgpad(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def PurgeVCRanges(self, *args, **kwargs):
         """Executes the purgeVCRanges operation on the server.
 
@@ -848,7 +873,7 @@ class Ldpvplsbgpad(Base):
 
         purgeVCRanges(SessionIndices=list)
         ----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         purgeVCRanges(SessionIndices=string)
         ------------------------------------
@@ -900,7 +925,7 @@ class Ldpvplsbgpad(Base):
         ---------------------------------------------------------------
         - Mac_count (number): This parameter requires a mac_count of type kInteger
         - Mac (str): This parameter requires a mac of type kString
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         purgeVPLSMac(SessionIndices=string, Mac_count=number, Mac=string)
         -----------------------------------------------------------------
@@ -934,7 +959,7 @@ class Ldpvplsbgpad(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -953,13 +978,13 @@ class Ldpvplsbgpad(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Activate VC
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -978,13 +1003,13 @@ class Ldpvplsbgpad(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Deactivate VC
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

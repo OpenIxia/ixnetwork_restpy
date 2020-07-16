@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,34 +32,34 @@ class EventNotificationLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'eventNotificationLearnedInfo'
     _SDM_ATT_MAP = {
+        'RemoteFrameEventRunningTotal': 'remoteFrameEventRunningTotal',
+        'RemoteSymbolPeriodEventRunningTotal': 'remoteSymbolPeriodEventRunningTotal',
+        'RemoteSymbolPeriodErrorRunningTotal': 'remoteSymbolPeriodErrorRunningTotal',
+        'RemoteFrameThreshold': 'remoteFrameThreshold',
         'LocalFrameErrorRunningTotal': 'localFrameErrorRunningTotal',
+        'LocalFrameSecSumErrorRunningTotal': 'localFrameSecSumErrorRunningTotal',
+        'RemoteFramePeriodEventRunningTotal': 'remoteFramePeriodEventRunningTotal',
+        'RemoteFrameWindow': 'remoteFrameWindow',
+        'RemoteFramePeriodWindow': 'remoteFramePeriodWindow',
+        'RemoteSymbolPeriodThreshold': 'remoteSymbolPeriodThreshold',
         'LocalFrameEventRunningTotal': 'localFrameEventRunningTotal',
+        'RemoteFrameSecSumError': 'remoteFrameSecSumError',
+        'RemoteFramePeriodError': 'remoteFramePeriodError',
+        'LocalFrameSecSumEventRunningTotal': 'localFrameSecSumEventRunningTotal',
+        'RemoteFrameSecSumErrorRunningTotal': 'remoteFrameSecSumErrorRunningTotal',
+        'RemoteFramePeriodThreshold': 'remoteFramePeriodThreshold',
+        'RemoteSymbolPeriodErrors': 'remoteSymbolPeriodErrors',
+        'RemoteFrameError': 'remoteFrameError',
+        'RemoteFrameSecSumWindow': 'remoteFrameSecSumWindow',
+        'RemoteFramePeriodErrorRunningTotal': 'remoteFramePeriodErrorRunningTotal',
+        'LocalSymbolPeriodErrorRunningTotal': 'localSymbolPeriodErrorRunningTotal',
+        'RemoteFrameErrorRunningTotal': 'remoteFrameErrorRunningTotal',
+        'LocalSymbolPeriodEventRunningTotal': 'localSymbolPeriodEventRunningTotal',
+        'RemoteSymbolPeriodWindow': 'remoteSymbolPeriodWindow',
+        'RemoteFrameSecSumThreshold': 'remoteFrameSecSumThreshold',
+        'RemoteFrameSecSumEventRunningTotal': 'remoteFrameSecSumEventRunningTotal',
         'LocalFramePeriodErrorRunningTotal': 'localFramePeriodErrorRunningTotal',
         'LocalFramePeriodEventRunningTotal': 'localFramePeriodEventRunningTotal',
-        'LocalFrameSecSumErrorRunningTotal': 'localFrameSecSumErrorRunningTotal',
-        'LocalFrameSecSumEventRunningTotal': 'localFrameSecSumEventRunningTotal',
-        'LocalSymbolPeriodErrorRunningTotal': 'localSymbolPeriodErrorRunningTotal',
-        'LocalSymbolPeriodEventRunningTotal': 'localSymbolPeriodEventRunningTotal',
-        'RemoteFrameError': 'remoteFrameError',
-        'RemoteFrameErrorRunningTotal': 'remoteFrameErrorRunningTotal',
-        'RemoteFrameEventRunningTotal': 'remoteFrameEventRunningTotal',
-        'RemoteFramePeriodError': 'remoteFramePeriodError',
-        'RemoteFramePeriodErrorRunningTotal': 'remoteFramePeriodErrorRunningTotal',
-        'RemoteFramePeriodEventRunningTotal': 'remoteFramePeriodEventRunningTotal',
-        'RemoteFramePeriodThreshold': 'remoteFramePeriodThreshold',
-        'RemoteFramePeriodWindow': 'remoteFramePeriodWindow',
-        'RemoteFrameSecSumError': 'remoteFrameSecSumError',
-        'RemoteFrameSecSumErrorRunningTotal': 'remoteFrameSecSumErrorRunningTotal',
-        'RemoteFrameSecSumEventRunningTotal': 'remoteFrameSecSumEventRunningTotal',
-        'RemoteFrameSecSumThreshold': 'remoteFrameSecSumThreshold',
-        'RemoteFrameSecSumWindow': 'remoteFrameSecSumWindow',
-        'RemoteFrameThreshold': 'remoteFrameThreshold',
-        'RemoteFrameWindow': 'remoteFrameWindow',
-        'RemoteSymbolPeriodErrorRunningTotal': 'remoteSymbolPeriodErrorRunningTotal',
-        'RemoteSymbolPeriodErrors': 'remoteSymbolPeriodErrors',
-        'RemoteSymbolPeriodEventRunningTotal': 'remoteSymbolPeriodEventRunningTotal',
-        'RemoteSymbolPeriodThreshold': 'remoteSymbolPeriodThreshold',
-        'RemoteSymbolPeriodWindow': 'remoteSymbolPeriodWindow',
     }
 
     def __init__(self, parent):

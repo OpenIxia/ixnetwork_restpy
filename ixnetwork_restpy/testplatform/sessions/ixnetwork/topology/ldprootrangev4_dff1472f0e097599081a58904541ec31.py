@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -24,29 +24,29 @@ from ixnetwork_restpy.files import Files
 
 
 class LdpRootRangeV4(Base):
-    """Ldp Targeted RootRange V4 Configuration
+    """LDP Basic RootRange V4 Configuration
     The LdpRootRangeV4 class encapsulates a required ldpRootRangeV4 resource which will be retrieved from the server every time the property is accessed.
     """
 
     __slots__ = ()
     _SDM_NAME = 'ldpRootRangeV4'
     _SDM_ATT_MAP = {
-        'ContinuousIncrementOVAcrossRoot': 'continuousIncrementOVAcrossRoot',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'FilterOnGroupAddress': 'filterOnGroupAddress',
-        'GroupCountPerLSP': 'groupCountPerLSP',
-        'LspCountPerRoot': 'lspCountPerRoot',
-        'Name': 'name',
-        'NumberOfTLVs': 'numberOfTLVs',
-        'RootAddress': 'rootAddress',
-        'RootAddressCount': 'rootAddressCount',
         'RootAddressStep': 'rootAddressStep',
         'SourceAddressV4': 'sourceAddressV4',
-        'SourceAddressV6': 'sourceAddressV6',
+        'Name': 'name',
+        'LspCountPerRoot': 'lspCountPerRoot',
         'SourceCountPerLSP': 'sourceCountPerLSP',
+        'FilterOnGroupAddress': 'filterOnGroupAddress',
+        'GroupCountPerLSP': 'groupCountPerLSP',
         'StartGroupAddressV4': 'startGroupAddressV4',
+        'ContinuousIncrementOVAcrossRoot': 'continuousIncrementOVAcrossRoot',
         'StartGroupAddressV6': 'startGroupAddressV6',
+        'RootAddress': 'rootAddress',
+        'DescriptiveName': 'descriptiveName',
+        'SourceAddressV6': 'sourceAddressV6',
+        'NumberOfTLVs': 'numberOfTLVs',
+        'RootAddressCount': 'rootAddressCount',
     }
 
     def __init__(self, parent):
@@ -65,6 +65,20 @@ class LdpRootRangeV4(Base):
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptlvlist_30bf84fe9b838fe1c5800e633f13cff2 import LdpTLVList
         return LdpTLVList(self)
+
+    @property
+    def Tag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d.Tag): An instance of the Tag class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        return Tag(self)
 
     @property
     def ContinuousIncrementOVAcrossRoot(self):

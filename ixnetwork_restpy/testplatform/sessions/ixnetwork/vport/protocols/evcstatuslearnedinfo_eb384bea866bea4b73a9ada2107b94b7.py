@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,33 +32,33 @@ class EvcStatusLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'evcStatusLearnedInfo'
     _SDM_ATT_MAP = {
-        'CbsMagnitude': 'cbsMagnitude',
-        'CbsMultiplier': 'cbsMultiplier',
-        'Cf': 'cf',
-        'CirMagnitude': 'cirMagnitude',
-        'CirMultiplier': 'cirMultiplier',
-        'Cm': 'cm',
-        'DefaultEvc': 'defaultEvc',
-        'EbsMagnitude': 'ebsMagnitude',
-        'EbsMultiplier': 'ebsMultiplier',
-        'EirMagnitude': 'eirMagnitude',
-        'EirMultiplier': 'eirMultiplier',
-        'EvcId': 'evcId',
-        'EvcIdLength': 'evcIdLength',
-        'EvcType': 'evcType',
-        'PerCos': 'perCos',
         'ReferenceId': 'referenceId',
-        'StatusType': 'statusType',
-        'UntaggedPriorityTag': 'untaggedPriorityTag',
-        'UserPriorityBits000': 'userPriorityBits000',
-        'UserPriorityBits001': 'userPriorityBits001',
-        'UserPriorityBits010': 'userPriorityBits010',
-        'UserPriorityBits011': 'userPriorityBits011',
-        'UserPriorityBits100': 'userPriorityBits100',
+        'Cm': 'cm',
+        'EvcIdLength': 'evcIdLength',
+        'CirMagnitude': 'cirMagnitude',
+        'Cf': 'cf',
         'UserPriorityBits101': 'userPriorityBits101',
+        'PerCos': 'perCos',
+        'UntaggedPriorityTag': 'untaggedPriorityTag',
+        'CbsMagnitude': 'cbsMagnitude',
+        'EbsMagnitude': 'ebsMagnitude',
+        'CbsMultiplier': 'cbsMultiplier',
         'UserPriorityBits110': 'userPriorityBits110',
         'UserPriorityBits111': 'userPriorityBits111',
+        'UserPriorityBits011': 'userPriorityBits011',
+        'UserPriorityBits010': 'userPriorityBits010',
+        'EvcType': 'evcType',
+        'CirMultiplier': 'cirMultiplier',
+        'EirMultiplier': 'eirMultiplier',
         'VlanId': 'vlanId',
+        'DefaultEvc': 'defaultEvc',
+        'EbsMultiplier': 'ebsMultiplier',
+        'UserPriorityBits100': 'userPriorityBits100',
+        'EvcId': 'evcId',
+        'UserPriorityBits000': 'userPriorityBits000',
+        'UserPriorityBits001': 'userPriorityBits001',
+        'EirMagnitude': 'eirMagnitude',
+        'StatusType': 'statusType',
     }
 
     def __init__(self, parent):

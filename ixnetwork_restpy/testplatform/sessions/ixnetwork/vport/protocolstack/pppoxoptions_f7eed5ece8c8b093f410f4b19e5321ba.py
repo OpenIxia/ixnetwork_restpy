@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,23 +33,23 @@ class PppoxOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'pppoxOptions'
     _SDM_ATT_MAP = {
-        'Associates': 'associates',
-        'EnablePerSessionStatGeneration': 'enablePerSessionStatGeneration',
-        'FilterDataPlaneBeforeL7': 'filterDataPlaneBeforeL7',
-        'Ipv6GlobalAddressMode': 'ipv6GlobalAddressMode',
-        'MaxOutstandingReleases': 'maxOutstandingReleases',
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
-        'ObjectId': 'objectId',
-        'OverrideGlobalRateControls': 'overrideGlobalRateControls',
-        'PerSessionStatFilePrefix': 'perSessionStatFilePrefix',
         'RaTimeout': 'raTimeout',
+        'MaxOutstandingRequests': 'maxOutstandingRequests',
+        'PerSessionStatFilePrefix': 'perSessionStatFilePrefix',
+        'EnablePerSessionStatGeneration': 'enablePerSessionStatGeneration',
         'ReConnectOnLinkUp': 'reConnectOnLinkUp',
-        'Role': 'role',
-        'SetupRateInitial': 'setupRateInitial',
-        'TeardownRateInitial': 'teardownRateInitial',
+        'ObjectId': 'objectId',
         'UseWaitForCompletionTimeout': 'useWaitForCompletionTimeout',
-        'WaitForCompletionTimeout': 'waitForCompletionTimeout',
         'WaitingTimeUntilReconnect': 'waitingTimeUntilReconnect',
+        'WaitForCompletionTimeout': 'waitForCompletionTimeout',
+        'MaxOutstandingReleases': 'maxOutstandingReleases',
+        'OverrideGlobalRateControls': 'overrideGlobalRateControls',
+        'Associates': 'associates',
+        'Role': 'role',
+        'Ipv6GlobalAddressMode': 'ipv6GlobalAddressMode',
+        'TeardownRateInitial': 'teardownRateInitial',
+        'FilterDataPlaneBeforeL7': 'filterDataPlaneBeforeL7',
+        'SetupRateInitial': 'setupRateInitial',
     }
 
     def __init__(self, parent):

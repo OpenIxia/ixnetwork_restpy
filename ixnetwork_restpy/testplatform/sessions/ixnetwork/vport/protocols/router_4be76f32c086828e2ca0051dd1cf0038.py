@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,23 +33,23 @@ class Router(Base):
     __slots__ = ()
     _SDM_NAME = 'router'
     _SDM_ATT_MAP = {
-        'DiscardLearnedLsa': 'discardLearnedLsa',
-        'Enabled': 'enabled',
-        'GenerateRouterLsa': 'generateRouterLsa',
+        'StrictLsaChecking': 'strictLsaChecking',
         'GracefulRestart': 'gracefulRestart',
+        'SupportForRfc3623': 'supportForRfc3623',
+        'RebuildAdjForLsdbChange': 'rebuildAdjForLsdbChange',
+        'SupportReasonUnknown': 'supportReasonUnknown',
+        'MaxFloodLsUpdatesPerBurst': 'maxFloodLsUpdatesPerBurst',
+        'GenerateRouterLsa': 'generateRouterLsa',
+        'Enabled': 'enabled',
+        'DiscardLearnedLsa': 'discardLearnedLsa',
+        'TrafficGroupId': 'trafficGroupId',
+        'RouterId': 'routerId',
+        'SupportReasonSoftReloadUpgrade': 'supportReasonSoftReloadUpgrade',
+        'SupportReasonSwotchRedundantCntrlProcessor': 'supportReasonSwotchRedundantCntrlProcessor',
+        'LsaRetransmitTime': 'lsaRetransmitTime',
         'InterFloodLsUpdateBurstGap': 'interFloodLsUpdateBurstGap',
         'LsaRefreshTime': 'lsaRefreshTime',
-        'LsaRetransmitTime': 'lsaRetransmitTime',
-        'MaxFloodLsUpdatesPerBurst': 'maxFloodLsUpdatesPerBurst',
-        'RebuildAdjForLsdbChange': 'rebuildAdjForLsdbChange',
-        'RouterId': 'routerId',
-        'StrictLsaChecking': 'strictLsaChecking',
-        'SupportForRfc3623': 'supportForRfc3623',
-        'SupportReasonSoftReloadUpgrade': 'supportReasonSoftReloadUpgrade',
         'SupportReasonSoftRestart': 'supportReasonSoftRestart',
-        'SupportReasonSwotchRedundantCntrlProcessor': 'supportReasonSwotchRedundantCntrlProcessor',
-        'SupportReasonUnknown': 'supportReasonUnknown',
-        'TrafficGroupId': 'trafficGroupId',
     }
 
     def __init__(self, parent):
@@ -74,13 +74,13 @@ class Router(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_c3fd4db3043d80d0e9546e4f39322001.RouteRange): An instance of the RouteRange class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_2c9ff03ab2e44705c6af83f3c7265f53.RouteRange): An instance of the RouteRange class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_c3fd4db3043d80d0e9546e4f39322001 import RouteRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_2c9ff03ab2e44705c6af83f3c7265f53 import RouteRange
         return RouteRange(self)
 
     @property

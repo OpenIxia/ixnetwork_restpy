@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,32 +33,32 @@ class WebAuthGlobals(Base):
     __slots__ = ()
     _SDM_NAME = 'webAuthGlobals'
     _SDM_ATT_MAP = {
-        'AuthFailure': 'authFailure',
-        'AuthSuccess': 'authSuccess',
-        'AuthTimeout': 'authTimeout',
-        'DefaultFields': 'defaultFields',
-        'DelayDhcp': 'delayDhcp',
-        'DisableArpResponse': 'disableArpResponse',
-        'EnableMaxOutstanding': 'enableMaxOutstanding',
-        'InputField1': 'inputField1',
-        'InputField2': 'inputField2',
-        'InputField3': 'inputField3',
-        'MaxClientsPerSecond': 'maxClientsPerSecond',
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
-        'NumRetry': 'numRetry',
-        'ObjectId': 'objectId',
-        'PolicyEnable': 'policyEnable',
-        'PolicySuccess': 'policySuccess',
-        'PolicyTimeout': 'policyTimeout',
-        'Port': 'port',
         'Protocol': 'protocol',
+        'AuthTimeout': 'authTimeout',
+        'Port': 'port',
+        'PolicyEnable': 'policyEnable',
+        'DisableArpResponse': 'disableArpResponse',
+        'DelayDhcp': 'delayDhcp',
+        'InputField1': 'inputField1',
+        'ObjectId': 'objectId',
+        'AuthFailure': 'authFailure',
+        'ResponseDelay': 'responseDelay',
+        'EnableMaxOutstanding': 'enableMaxOutstanding',
+        'WaitForCompletion': 'waitForCompletion',
+        'InputField3': 'inputField3',
+        'PolicySuccess': 'policySuccess',
+        'InputField2': 'inputField2',
+        'RequestUrl': 'requestUrl',
+        'PolicyTimeout': 'policyTimeout',
+        'WaitBeforeRun': 'waitBeforeRun',
+        'AuthSuccess': 'authSuccess',
+        'DefaultFields': 'defaultFields',
+        'MaxOutstandingRequests': 'maxOutstandingRequests',
+        'MaxClientsPerSecond': 'maxClientsPerSecond',
         'RedirectFailureUrl': 'redirectFailureUrl',
         'RedirectLoginUrl': 'redirectLoginUrl',
+        'NumRetry': 'numRetry',
         'RenewDhcp': 'renewDhcp',
-        'RequestUrl': 'requestUrl',
-        'ResponseDelay': 'responseDelay',
-        'WaitBeforeRun': 'waitBeforeRun',
-        'WaitForCompletion': 'waitForCompletion',
     }
 
     def __init__(self, parent):

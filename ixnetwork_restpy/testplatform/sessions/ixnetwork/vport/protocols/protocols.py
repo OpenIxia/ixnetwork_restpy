@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -127,13 +127,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.igmp_7717b21b11446f768180acc03b74bf2f.Igmp): An instance of the Igmp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.igmp_9e398aa1578ce37d86fcb3bff949b26a.Igmp): An instance of the Igmp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.igmp_7717b21b11446f768180acc03b74bf2f import Igmp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.igmp_9e398aa1578ce37d86fcb3bff949b26a import Igmp
         return Igmp(self)._select()
 
     @property
@@ -211,13 +211,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mld_5565d47e4f085fea1bc35f872bf04d0d.Mld): An instance of the Mld class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mld_f1161f34d4a4d525e0d1c8288951f7e6.Mld): An instance of the Mld class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mld_5565d47e4f085fea1bc35f872bf04d0d import Mld
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mld_f1161f34d4a4d525e0d1c8288951f7e6 import Mld
         return Mld(self)._select()
 
     @property

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,26 +33,26 @@ class JoinPrune(Base):
     __slots__ = ()
     _SDM_NAME = 'joinPrune'
     _SDM_ATT_MAP = {
-        'DiscardRegisterStates': 'discardRegisterStates',
-        'Enabled': 'enabled',
-        'EnabledDataMdt': 'enabledDataMdt',
-        'FlapEnabled': 'flapEnabled',
-        'FlapInterval': 'flapInterval',
-        'GroupAddress': 'groupAddress',
-        'GroupCount': 'groupCount',
-        'GroupMappingMode': 'groupMappingMode',
-        'GroupMaskWidth': 'groupMaskWidth',
-        'GroupRange': 'groupRange',
-        'NumRegToReceivePerSg': 'numRegToReceivePerSg',
-        'PackGroupsEnabled': 'packGroupsEnabled',
-        'PruneSourceAddress': 'pruneSourceAddress',
-        'PruneSourceCount': 'pruneSourceCount',
-        'PruneSourceMaskWidth': 'pruneSourceMaskWidth',
-        'RpAddress': 'rpAddress',
         'SourceAddress': 'sourceAddress',
-        'SourceCount': 'sourceCount',
+        'GroupRange': 'groupRange',
+        'PruneSourceAddress': 'pruneSourceAddress',
+        'RpAddress': 'rpAddress',
+        'GroupCount': 'groupCount',
+        'EnabledDataMdt': 'enabledDataMdt',
+        'NumRegToReceivePerSg': 'numRegToReceivePerSg',
+        'Enabled': 'enabled',
+        'FlapInterval': 'flapInterval',
         'SourceMaskWidth': 'sourceMaskWidth',
+        'PackGroupsEnabled': 'packGroupsEnabled',
+        'GroupMappingMode': 'groupMappingMode',
+        'SourceCount': 'sourceCount',
+        'DiscardRegisterStates': 'discardRegisterStates',
+        'FlapEnabled': 'flapEnabled',
+        'PruneSourceMaskWidth': 'pruneSourceMaskWidth',
+        'GroupAddress': 'groupAddress',
         'SptSwitchoverInterval': 'sptSwitchoverInterval',
+        'PruneSourceCount': 'pruneSourceCount',
+        'GroupMaskWidth': 'groupMaskWidth',
     }
 
     def __init__(self, parent):

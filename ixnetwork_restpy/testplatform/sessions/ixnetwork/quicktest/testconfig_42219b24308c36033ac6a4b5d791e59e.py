@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,24 +31,24 @@ class TestConfig(Base):
     __slots__ = ()
     _SDM_NAME = 'testConfig'
     _SDM_ATT_MAP = {
-        'Duration': 'duration',
-        'EnableAllSlavesStatus': 'enableAllSlavesStatus',
-        'EnableExpectedGrandMasterStatus': 'enableExpectedGrandMasterStatus',
-        'EnableNonExpectedMasterStatus': 'enableNonExpectedMasterStatus',
-        'ExpectedMasterClockId': 'expectedMasterClockId',
-        'ExpectedMasterPort': 'expectedMasterPort',
-        'GrandMasterStatus': 'grandMasterStatus',
-        'MasterPorts': 'masterPorts',
         'MaxOutstanding': 'maxOutstanding',
-        'NonExpectedMasterStatus': 'nonExpectedMasterStatus',
-        'Numtrials': 'numtrials',
-        'ProtocolItem': 'protocolItem',
-        'Runmode': 'runmode',
-        'SetupRate': 'setupRate',
-        'SlavePorts': 'slavePorts',
+        'EnableNonExpectedMasterStatus': 'enableNonExpectedMasterStatus',
+        'MasterPorts': 'masterPorts',
         'StartTraffic': 'startTraffic',
+        'SetupRate': 'setupRate',
+        'EnableExpectedGrandMasterStatus': 'enableExpectedGrandMasterStatus',
+        'EnableAllSlavesStatus': 'enableAllSlavesStatus',
+        'Runmode': 'runmode',
+        'ExpectedMasterClockId': 'expectedMasterClockId',
+        'GrandMasterStatus': 'grandMasterStatus',
+        'ProtocolItem': 'protocolItem',
+        'Numtrials': 'numtrials',
+        'Duration': 'duration',
+        'ExpectedMasterPort': 'expectedMasterPort',
         'TeardownRate': 'teardownRate',
         'UseExistingSetupRate': 'useExistingSetupRate',
+        'NonExpectedMasterStatus': 'nonExpectedMasterStatus',
+        'SlavePorts': 'slavePorts',
     }
 
     def __init__(self, parent):

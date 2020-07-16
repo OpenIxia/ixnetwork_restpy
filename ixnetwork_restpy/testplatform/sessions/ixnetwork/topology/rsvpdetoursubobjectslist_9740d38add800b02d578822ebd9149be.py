@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,11 +32,11 @@ class RsvpDetourSubObjectsList(Base):
     __slots__ = ()
     _SDM_NAME = 'rsvpDetourSubObjectsList'
     _SDM_ATT_MAP = {
-        'AvoidNodeId': 'avoidNodeId',
         'Count': 'count',
+        'PlrId': 'plrId',
+        'AvoidNodeId': 'avoidNodeId',
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
-        'PlrId': 'plrId',
     }
 
     def __init__(self, parent):

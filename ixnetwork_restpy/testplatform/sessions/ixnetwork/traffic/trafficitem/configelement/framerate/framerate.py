@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,8 +33,8 @@ class FrameRate(Base):
     _SDM_ATT_MAP = {
         'BitRateUnitsType': 'bitRateUnitsType',
         'EnforceMinimumInterPacketGap': 'enforceMinimumInterPacketGap',
-        'InterPacketGapUnitsType': 'interPacketGapUnitsType',
         'Rate': 'rate',
+        'InterPacketGapUnitsType': 'interPacketGapUnitsType',
         'Type': 'type',
     }
 

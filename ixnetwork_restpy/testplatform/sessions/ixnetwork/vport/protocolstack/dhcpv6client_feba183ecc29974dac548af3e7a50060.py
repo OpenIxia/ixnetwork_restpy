@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -24,7 +24,7 @@ from ixnetwork_restpy.files import Files
 
 
 class Dhcpv6Client(Base):
-    """Network stack element plugin that manages dynamic IPv4 and IPv6 addresses
+    """Network stack element plugin that manages dynamic IPv4 and IPv6 addresses
     as a list of address blocks or 'ranges'.
     The Dhcpv6Client class encapsulates a list of dhcpv6Client resources that are managed by the user.
     A list of resources can be retrieved from the server using the Dhcpv6Client.find() method.

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,22 +31,22 @@ class PassCriteria(Base):
     __slots__ = ()
     _SDM_NAME = 'passCriteria'
     _SDM_ATT_MAP = {
-        'DataErrorThresholdValue': 'dataErrorThresholdValue',
-        'EnableDataIntegrityPassFail': 'enableDataIntegrityPassFail',
-        'EnableLatencyPassFail': 'enableLatencyPassFail',
-        'EnablePassFail': 'enablePassFail',
-        'EnableRatePassFail': 'enableRatePassFail',
-        'EnableSequenceErrorsPassFail': 'enableSequenceErrorsPassFail',
-        'EnableStandardDeviationPassFail': 'enableStandardDeviationPassFail',
-        'LatencyThresholdMode': 'latencyThresholdMode',
-        'LatencyThresholdScale': 'latencyThresholdScale',
         'LatencyThresholdValue': 'latencyThresholdValue',
+        'DataErrorThresholdValue': 'dataErrorThresholdValue',
+        'EnableRatePassFail': 'enableRatePassFail',
         'LatencyVarThresholdMode': 'latencyVarThresholdMode',
         'LatencyVariationThresholdScale': 'latencyVariationThresholdScale',
         'LatencyVariationThresholdValue': 'latencyVariationThresholdValue',
+        'EnableSequenceErrorsPassFail': 'enableSequenceErrorsPassFail',
         'PassCriteriaLoadRateScale': 'passCriteriaLoadRateScale',
-        'PassCriteriaLoadRateValue': 'passCriteriaLoadRateValue',
+        'EnableLatencyPassFail': 'enableLatencyPassFail',
+        'LatencyThresholdScale': 'latencyThresholdScale',
+        'EnableStandardDeviationPassFail': 'enableStandardDeviationPassFail',
+        'EnablePassFail': 'enablePassFail',
         'SeqErrorsThresholdValue': 'seqErrorsThresholdValue',
+        'EnableDataIntegrityPassFail': 'enableDataIntegrityPassFail',
+        'PassCriteriaLoadRateValue': 'passCriteriaLoadRateValue',
+        'LatencyThresholdMode': 'latencyThresholdMode',
     }
 
     def __init__(self, parent):

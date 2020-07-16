@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,22 +32,22 @@ class Ipv6Multicast(Base):
     __slots__ = ()
     _SDM_NAME = 'ipv6Multicast'
     _SDM_ATT_MAP = {
-        'AsPath': 'asPath',
-        'BlockOffset': 'blockOffset',
-        'BlockSize': 'blockSize',
         'ControlWordEnabled': 'controlWordEnabled',
-        'IpPrefix': 'ipPrefix',
-        'LabelBase': 'labelBase',
-        'LocalPreference': 'localPreference',
-        'MaxLabel': 'maxLabel',
-        'MultiExitDiscriminator': 'multiExitDiscriminator',
-        'Neighbor': 'neighbor',
+        'BlockOffset': 'blockOffset',
         'NextHop': 'nextHop',
-        'OriginType': 'originType',
-        'PrefixLength': 'prefixLength',
         'RouteDistinguisher': 'routeDistinguisher',
-        'SeqDeliveryEnabled': 'seqDeliveryEnabled',
+        'LabelBase': 'labelBase',
+        'BlockSize': 'blockSize',
+        'AsPath': 'asPath',
+        'IpPrefix': 'ipPrefix',
+        'PrefixLength': 'prefixLength',
+        'MaxLabel': 'maxLabel',
+        'LocalPreference': 'localPreference',
+        'Neighbor': 'neighbor',
         'SiteId': 'siteId',
+        'MultiExitDiscriminator': 'multiExitDiscriminator',
+        'OriginType': 'originType',
+        'SeqDeliveryEnabled': 'seqDeliveryEnabled',
     }
 
     def __init__(self, parent):

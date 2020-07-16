@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,32 +31,32 @@ class TestConfig(Base):
     __slots__ = ()
     _SDM_NAME = 'testConfig'
     _SDM_ATT_MAP = {
-        'CalculateJitter': 'calculateJitter',
-        'CalculateLatency': 'calculateLatency',
-        'CustomLoadUnit': 'customLoadUnit',
-        'DetailedResultsEnabled': 'detailedResultsEnabled',
-        'Duration': 'duration',
+        'FixedFrameSize': 'fixedFrameSize',
         'EnableDataIntegrity': 'enableDataIntegrity',
         'EnableLayer1Rate': 'enableLayer1Rate',
-        'FixedFrameSize': 'fixedFrameSize',
+        'LoadType': 'loadType',
+        'IncrementFramesizeStep': 'incrementFramesizeStep',
+        'ProtocolItem': 'protocolItem',
+        'Duration': 'duration',
+        'FrameSizeMode': 'frameSizeMode',
+        'LatencyType': 'latencyType',
+        'IpRatioMode': 'ipRatioMode',
+        'CustomLoadUnit': 'customLoadUnit',
+        'LoadRateValue': 'loadRateValue',
+        'ReportTputRateUnit': 'reportTputRateUnit',
         'FloodedFramesEnabled': 'floodedFramesEnabled',
         'ForceContinuosTraffic': 'forceContinuosTraffic',
-        'FrameSizeMode': 'frameSizeMode',
-        'Gap': 'gap',
-        'IncrementFramesizeFrom': 'incrementFramesizeFrom',
-        'IncrementFramesizeStep': 'incrementFramesizeStep',
         'IncrementFramesizeTo': 'incrementFramesizeTo',
-        'IpRatioMode': 'ipRatioMode',
-        'Ipv4rate': 'ipv4rate',
+        'Gap': 'gap',
         'Ipv6rate': 'ipv6rate',
-        'LatencyType': 'latencyType',
-        'LoadRateValue': 'loadRateValue',
-        'LoadType': 'loadType',
         'Numtrials': 'numtrials',
-        'ProtocolItem': 'protocolItem',
+        'DetailedResultsEnabled': 'detailedResultsEnabled',
+        'IncrementFramesizeFrom': 'incrementFramesizeFrom',
         'ReportSequenceError': 'reportSequenceError',
-        'ReportTputRateUnit': 'reportTputRateUnit',
         'TrafficType': 'trafficType',
+        'CalculateJitter': 'calculateJitter',
+        'CalculateLatency': 'calculateLatency',
+        'Ipv4rate': 'ipv4rate',
     }
 
     def __init__(self, parent):

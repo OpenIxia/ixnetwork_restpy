@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,42 +32,42 @@ class OspfPseudoInterface(Base):
     __slots__ = ()
     _SDM_NAME = 'ospfPseudoInterface'
     _SDM_ATT_MAP = {
-        'AdjSID': 'adjSID',
-        'AdministratorGroup': 'administratorGroup',
-        'BFlag': 'bFlag',
-        'BandwidthPriority0': 'bandwidthPriority0',
-        'BandwidthPriority1': 'bandwidthPriority1',
-        'BandwidthPriority2': 'bandwidthPriority2',
-        'BandwidthPriority3': 'bandwidthPriority3',
-        'BandwidthPriority4': 'bandwidthPriority4',
-        'BandwidthPriority5': 'bandwidthPriority5',
-        'BandwidthPriority6': 'bandwidthPriority6',
         'BandwidthPriority7': 'bandwidthPriority7',
-        'Count': 'count',
-        'Dedicated1Plus1': 'dedicated1Plus1',
-        'Dedicated1To1': 'dedicated1To1',
-        'DescriptiveName': 'descriptiveName',
-        'EnLinkProtection': 'enLinkProtection',
-        'Enable': 'enable',
-        'EnableAdjSID': 'enableAdjSID',
-        'EnableSRLG': 'enableSRLG',
-        'Enhanced': 'enhanced',
-        'ExtraTraffic': 'extraTraffic',
-        'LFlag': 'lFlag',
-        'MaxBandwidth': 'maxBandwidth',
-        'MaxReservableBandwidth': 'maxReservableBandwidth',
+        'BandwidthPriority6': 'bandwidthPriority6',
+        'BandwidthPriority5': 'bandwidthPriority5',
+        'BandwidthPriority4': 'bandwidthPriority4',
+        'BandwidthPriority3': 'bandwidthPriority3',
+        'BandwidthPriority2': 'bandwidthPriority2',
+        'BandwidthPriority1': 'bandwidthPriority1',
+        'BandwidthPriority0': 'bandwidthPriority0',
         'Metric': 'metric',
-        'MetricLevel': 'metricLevel',
-        'Name': 'name',
-        'PFlag': 'pFlag',
-        'Reserved40': 'reserved40',
-        'Reserved80': 'reserved80',
-        'SFlag': 'sFlag',
-        'Shared': 'shared',
-        'SrlgCount': 'srlgCount',
+        'EnLinkProtection': 'enLinkProtection',
         'Unprotected': 'unprotected',
-        'VFlag': 'vFlag',
+        'Enhanced': 'enhanced',
+        'EnableSRLG': 'enableSRLG',
+        'ExtraTraffic': 'extraTraffic',
+        'MaxReservableBandwidth': 'maxReservableBandwidth',
         'Weight': 'weight',
+        'VFlag': 'vFlag',
+        'BFlag': 'bFlag',
+        'MetricLevel': 'metricLevel',
+        'SFlag': 'sFlag',
+        'Reserved40': 'reserved40',
+        'LFlag': 'lFlag',
+        'Enable': 'enable',
+        'AdjSID': 'adjSID',
+        'Shared': 'shared',
+        'EnableAdjSID': 'enableAdjSID',
+        'AdministratorGroup': 'administratorGroup',
+        'Count': 'count',
+        'PFlag': 'pFlag',
+        'Name': 'name',
+        'SrlgCount': 'srlgCount',
+        'Reserved80': 'reserved80',
+        'DescriptiveName': 'descriptiveName',
+        'Dedicated1To1': 'dedicated1To1',
+        'MaxBandwidth': 'maxBandwidth',
+        'Dedicated1Plus1': 'dedicated1Plus1',
     }
 
     def __init__(self, parent):
@@ -559,6 +559,19 @@ class OspfPseudoInterface(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
+
     def Disconnect(self, *args, **kwargs):
         """Executes the disconnect operation on the server.
 
@@ -568,7 +581,7 @@ class OspfPseudoInterface(Base):
 
         disconnect(SessionIndices=list)
         -------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         disconnect(SessionIndices=string)
         ---------------------------------
@@ -593,7 +606,7 @@ class OspfPseudoInterface(Base):
 
         reconnect(SessionIndices=list)
         ------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         reconnect(SessionIndices=string)
         --------------------------------

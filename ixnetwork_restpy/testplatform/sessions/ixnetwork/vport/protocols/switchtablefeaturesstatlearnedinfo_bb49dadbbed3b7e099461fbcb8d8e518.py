@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,29 +32,29 @@ class SwitchTableFeaturesStatLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'switchTableFeaturesStatLearnedInfo'
     _SDM_ATT_MAP = {
-        'ApplyActions': 'applyActions',
-        'ApplyActionsMiss': 'applyActionsMiss',
-        'ApplySetField': 'applySetField',
-        'ApplySetFieldMiss': 'applySetFieldMiss',
-        'Config': 'config',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'Instruction': 'instruction',
-        'InstructionMiss': 'instructionMiss',
         'LocalIp': 'localIp',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
+        'InstructionMiss': 'instructionMiss',
+        'WriteActions': 'writeActions',
+        'NextTable': 'nextTable',
+        'ApplyActions': 'applyActions',
+        'WildCards': 'wildCards',
+        'Config': 'config',
         'Match': 'match',
         'MaxEntries': 'maxEntries',
-        'MetadataMatch': 'metadataMatch',
-        'MetadataWrite': 'metadataWrite',
-        'Name': 'name',
-        'NextTable': 'nextTable',
-        'NextTableMiss': 'nextTableMiss',
-        'TableId': 'tableId',
-        'WildCards': 'wildCards',
-        'WriteActions': 'writeActions',
-        'WriteActionsMiss': 'writeActionsMiss',
         'WriteSetField': 'writeSetField',
+        'NextTableMiss': 'nextTableMiss',
+        'ApplySetField': 'applySetField',
+        'MetadataWrite': 'metadataWrite',
+        'WriteActionsMiss': 'writeActionsMiss',
         'WriteSetFieldMiss': 'writeSetFieldMiss',
+        'Name': 'name',
+        'Instruction': 'instruction',
+        'TableId': 'tableId',
+        'ApplySetFieldMiss': 'applySetFieldMiss',
+        'ApplyActionsMiss': 'applyActionsMiss',
+        'DataPathId': 'dataPathId',
+        'MetadataMatch': 'metadataMatch',
     }
 
     def __init__(self, parent):

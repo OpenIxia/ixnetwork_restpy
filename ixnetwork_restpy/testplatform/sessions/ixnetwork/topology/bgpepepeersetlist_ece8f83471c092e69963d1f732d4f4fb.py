@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,18 +32,18 @@ class BgpEpePeerSetList(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpEpePeerSetList'
     _SDM_ATT_MAP = {
-        'BBit': 'bBit',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
         'LBit': 'lBit',
-        'Name': 'name',
-        'PBit': 'pBit',
         'Reserved': 'reserved',
-        'RsvdBits': 'rsvdBits',
-        'SidIndex': 'sidIndex',
-        'SidIndexValue': 'sidIndexValue',
-        'VBit': 'vBit',
+        'Name': 'name',
         'Weight': 'weight',
+        'VBit': 'vBit',
+        'PBit': 'pBit',
+        'SidIndexValue': 'sidIndexValue',
+        'SidIndex': 'sidIndex',
+        'RsvdBits': 'rsvdBits',
+        'DescriptiveName': 'descriptiveName',
+        'BBit': 'bBit',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,20 +33,20 @@ class L2tpOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'l2tpOptions'
     _SDM_ATT_MAP = {
-        'Associates': 'associates',
-        'EnablePerSessionStatGeneration': 'enablePerSessionStatGeneration',
-        'Ipv6GlobalAddressMode': 'ipv6GlobalAddressMode',
-        'MaxOutstandingReleases': 'maxOutstandingReleases',
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
-        'ObjectId': 'objectId',
-        'OverrideGlobalRateControls': 'overrideGlobalRateControls',
-        'PerSessionStatFilePrefix': 'perSessionStatFilePrefix',
         'RaTimeout': 'raTimeout',
-        'Role': 'role',
-        'SetupRateInitial': 'setupRateInitial',
-        'TeardownRateInitial': 'teardownRateInitial',
+        'MaxOutstandingRequests': 'maxOutstandingRequests',
+        'PerSessionStatFilePrefix': 'perSessionStatFilePrefix',
+        'EnablePerSessionStatGeneration': 'enablePerSessionStatGeneration',
+        'ObjectId': 'objectId',
         'UseWaitForCompletionTimeout': 'useWaitForCompletionTimeout',
         'WaitForCompletionTimeout': 'waitForCompletionTimeout',
+        'MaxOutstandingReleases': 'maxOutstandingReleases',
+        'OverrideGlobalRateControls': 'overrideGlobalRateControls',
+        'Associates': 'associates',
+        'Role': 'role',
+        'Ipv6GlobalAddressMode': 'ipv6GlobalAddressMode',
+        'TeardownRateInitial': 'teardownRateInitial',
+        'SetupRateInitial': 'setupRateInitial',
     }
 
     def __init__(self, parent):

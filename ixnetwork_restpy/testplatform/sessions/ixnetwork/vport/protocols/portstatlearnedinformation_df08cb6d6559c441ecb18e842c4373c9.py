@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,30 +32,30 @@ class PortStatLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'portStatLearnedInformation'
     _SDM_ATT_MAP = {
-        'Collisions': 'collisions',
-        'CrcErrors': 'crcErrors',
-        'DataPathId': 'dataPathId',
+        'FrameAlignmentErrors': 'frameAlignmentErrors',
+        'ReceivedPackets': 'receivedPackets',
+        'NegotiatedVersion': 'negotiatedVersion',
+        'ErrorCode': 'errorCode',
+        'LocalIp': 'localIp',
         'DataPathIdAsHex': 'dataPathIdAsHex',
         'Duration': 'duration',
-        'DurationInNsec': 'durationInNsec',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'FrameAlignmentErrors': 'frameAlignmentErrors',
+        'TransmittedBytes': 'transmittedBytes',
         'Latency': 'latency',
-        'LocalIp': 'localIp',
-        'NegotiatedVersion': 'negotiatedVersion',
+        'Collisions': 'collisions',
+        'DurationInNsec': 'durationInNsec',
+        'ReceivedErrors': 'receivedErrors',
         'PacketsDroppedByRx': 'packetsDroppedByRx',
+        'ErrorType': 'errorType',
+        'ReceivedBytes': 'receivedBytes',
+        'ReplyState': 'replyState',
         'PacketsDroppedByTx': 'packetsDroppedByTx',
         'PacketsWithRxOverrun': 'packetsWithRxOverrun',
         'PortNo': 'portNo',
-        'ReceivedBytes': 'receivedBytes',
-        'ReceivedErrors': 'receivedErrors',
-        'ReceivedPackets': 'receivedPackets',
+        'CrcErrors': 'crcErrors',
         'RemoteIp': 'remoteIp',
-        'ReplyState': 'replyState',
-        'TransmitErrors': 'transmitErrors',
-        'TransmittedBytes': 'transmittedBytes',
         'TransmittedPackets': 'transmittedPackets',
+        'TransmitErrors': 'transmitErrors',
+        'DataPathId': 'dataPathId',
     }
 
     def __init__(self, parent):

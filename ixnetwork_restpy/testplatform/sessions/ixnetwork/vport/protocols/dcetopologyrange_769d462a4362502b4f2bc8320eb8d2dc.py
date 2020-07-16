@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,13 +33,13 @@ class DceTopologyRange(Base):
     __slots__ = ()
     _SDM_NAME = 'dceTopologyRange'
     _SDM_ATT_MAP = {
-        'EnableFtag': 'enableFtag',
-        'Enabled': 'enabled',
-        'NicknameList': 'nicknameList',
-        'NoOfTreesToCompute': 'noOfTreesToCompute',
-        'StartFtagValue': 'startFtagValue',
         'TopologyCount': 'topologyCount',
+        'EnableFtag': 'enableFtag',
         'TopologyId': 'topologyId',
+        'StartFtagValue': 'startFtagValue',
+        'Enabled': 'enabled',
+        'NoOfTreesToCompute': 'noOfTreesToCompute',
+        'NicknameList': 'nicknameList',
         'TopologyIdStep': 'topologyIdStep',
     }
 

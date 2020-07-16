@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,13 +32,13 @@ class Counter(Base):
     __slots__ = ()
     _SDM_NAME = 'counter'
     _SDM_ATT_MAP = {
-        'AvailableWidths': 'availableWidths',
-        'BitOffset': 'bitOffset',
         'Count': 'count',
+        'AvailableWidths': 'availableWidths',
         'Direction': 'direction',
-        'StartValue': 'startValue',
         'StepValue': 'stepValue',
+        'BitOffset': 'bitOffset',
         'Width': 'width',
+        'StartValue': 'startValue',
     }
 
     def __init__(self, parent):

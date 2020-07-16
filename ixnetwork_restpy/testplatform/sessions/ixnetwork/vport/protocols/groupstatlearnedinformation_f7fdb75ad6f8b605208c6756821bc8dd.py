@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,22 +32,22 @@ class GroupStatLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'groupStatLearnedInformation'
     _SDM_ATT_MAP = {
-        'ByteCount': 'byteCount',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'DurationInNSec': 'durationInNSec',
-        'DurationInSec': 'durationInSec',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'GroupId': 'groupId',
-        'Latency': 'latency',
-        'LocalIp': 'localIp',
-        'NegotiatedVersion': 'negotiatedVersion',
         'NumberOfBucketStats': 'numberOfBucketStats',
-        'PacketCount': 'packetCount',
-        'ReferenceCount': 'referenceCount',
+        'Latency': 'latency',
+        'ErrorType': 'errorType',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
+        'GroupId': 'groupId',
+        'ErrorCode': 'errorCode',
+        'LocalIp': 'localIp',
+        'ByteCount': 'byteCount',
+        'NegotiatedVersion': 'negotiatedVersion',
         'RemoteIp': 'remoteIp',
+        'PacketCount': 'packetCount',
         'ReplyState': 'replyState',
+        'ReferenceCount': 'referenceCount',
+        'DataPathId': 'dataPathId',
+        'DurationInSec': 'durationInSec',
+        'DurationInNSec': 'durationInNSec',
     }
 
     def __init__(self, parent):

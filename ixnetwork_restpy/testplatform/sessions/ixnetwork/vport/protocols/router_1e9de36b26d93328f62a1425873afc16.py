@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,23 +33,23 @@ class Router(Base):
     __slots__ = ()
     _SDM_NAME = 'router'
     _SDM_ATT_MAP = {
-        'ActiveTime': 'activeTime',
-        'AsNumber': 'asNumber',
+        'RouterId': 'routerId',
         'DiscardLearnedRoutes': 'discardLearnedRoutes',
-        'EigrpAddressFamily': 'eigrpAddressFamily',
-        'EigrpMajorVersion': 'eigrpMajorVersion',
-        'EigrpMinorVersion': 'eigrpMinorVersion',
+        'ActiveTime': 'activeTime',
         'EnablePiggyBack': 'enablePiggyBack',
+        'EigrpMinorVersion': 'eigrpMinorVersion',
+        'K4': 'k4',
         'Enabled': 'enabled',
         'IosMajorVersion': 'iosMajorVersion',
-        'IosMinorVersion': 'iosMinorVersion',
-        'IsRefreshComplete': 'isRefreshComplete',
-        'K1': 'k1',
-        'K2': 'k2',
         'K3': 'k3',
-        'K4': 'k4',
+        'IosMinorVersion': 'iosMinorVersion',
+        'K1': 'k1',
+        'EigrpAddressFamily': 'eigrpAddressFamily',
+        'IsRefreshComplete': 'isRefreshComplete',
         'K5': 'k5',
-        'RouterId': 'routerId',
+        'AsNumber': 'asNumber',
+        'K2': 'k2',
+        'EigrpMajorVersion': 'eigrpMajorVersion',
         'TrafficGroupId': 'trafficGroupId',
     }
 

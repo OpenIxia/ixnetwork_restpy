@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,56 +32,56 @@ class Ospfv2Router(Base):
     __slots__ = ()
     _SDM_NAME = 'ospfv2Router'
     _SDM_ATT_MAP = {
-        'BIERPrefix': 'BIERPrefix',
-        'Active': 'active',
-        'Algorithm': 'algorithm',
-        'BBit': 'bBit',
-        'BierAFlag': 'bierAFlag',
-        'BierNFlag': 'bierNFlag',
+        'Status': 'status',
+        'VFlag': 'vFlag',
         'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DiscardLearnedLsa': 'discardLearnedLsa',
-        'DoNotGenerateRouterLsa': 'doNotGenerateRouterLsa',
-        'EBit': 'eBit',
+        'BIERPrefix': 'BIERPrefix',
         'EFlag': 'eFlag',
-        'EnableBIER': 'enableBIER',
-        'EnableMappingServer': 'enableMappingServer',
-        'EnableMappingServerPreference': 'enableMappingServerPreference',
-        'EnableSegmentRouting': 'enableSegmentRouting',
-        'EnableSrlb': 'enableSrlb',
-        'Errors': 'errors',
-        'GracefulRestart': 'gracefulRestart',
-        'HighPerfLearningModeForSR': 'highPerfLearningModeForSR',
-        'InterFloodLsUpdateBurstGap': 'interFloodLsUpdateBurstGap',
-        'LFlag': 'lFlag',
-        'LocalRouterID': 'localRouterID',
-        'LoopBackAddress': 'loopBackAddress',
-        'LsaRefreshTime': 'lsaRefreshTime',
+        'DoNotGenerateRouterLsa': 'doNotGenerateRouterLsa',
+        'SupportReasonUnknown': 'supportReasonUnknown',
         'LsaRetransmitTime': 'lsaRetransmitTime',
+        'SupportReasonSoftReloadUpgrade': 'supportReasonSoftReloadUpgrade',
+        'SessionStatus': 'sessionStatus',
+        'GracefulRestart': 'gracefulRestart',
+        'SupportForRfc3623': 'supportForRfc3623',
+        'Errors': 'errors',
         'MFlag': 'mFlag',
         'MappingServerPreferenceValue': 'mappingServerPreferenceValue',
-        'MaxLsUpdatesPerBurst': 'maxLsUpdatesPerBurst',
-        'Name': 'name',
         'NoOfAddressPrefix': 'noOfAddressPrefix',
-        'NoOfBIERSubDomains': 'noOfBIERSubDomains',
-        'NpFlag': 'npFlag',
-        'OobResyncBreakout': 'oobResyncBreakout',
-        'SRAlgorithmCount': 'sRAlgorithmCount',
-        'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
-        'SidIndexLabel': 'sidIndexLabel',
         'SrgbRangeCount': 'srgbRangeCount',
+        'BierNFlag': 'bierNFlag',
+        'EnableBIER': 'enableBIER',
+        'EnableSegmentRouting': 'enableSegmentRouting',
+        'SRAlgorithmCount': 'sRAlgorithmCount',
+        'InterFloodLsUpdateBurstGap': 'interFloodLsUpdateBurstGap',
+        'LFlag': 'lFlag',
+        'OobResyncBreakout': 'oobResyncBreakout',
+        'LoopBackAddress': 'loopBackAddress',
+        'BierAFlag': 'bierAFlag',
+        'SupportReasonSwitchRedundantCntrlProcessor': 'supportReasonSwitchRedundantCntrlProcessor',
+        'NoOfBIERSubDomains': 'noOfBIERSubDomains',
+        'DiscardLearnedLsa': 'discardLearnedLsa',
+        'EnableMappingServer': 'enableMappingServer',
+        'Active': 'active',
+        'LocalRouterID': 'localRouterID',
+        'SupportReasonSoftRestart': 'supportReasonSoftRestart',
+        'Name': 'name',
+        'Count': 'count',
+        'EnableMappingServerPreference': 'enableMappingServerPreference',
+        'HighPerfLearningModeForSR': 'highPerfLearningModeForSR',
+        'Algorithm': 'algorithm',
         'SrlbRangeCount': 'srlbRangeCount',
         'StateCounts': 'stateCounts',
-        'Status': 'status',
         'StrictLsaChecking': 'strictLsaChecking',
-        'SupportForRfc3623': 'supportForRfc3623',
-        'SupportReasonSoftReloadUpgrade': 'supportReasonSoftReloadUpgrade',
-        'SupportReasonSoftRestart': 'supportReasonSoftRestart',
-        'SupportReasonSwitchRedundantCntrlProcessor': 'supportReasonSwitchRedundantCntrlProcessor',
-        'SupportReasonUnknown': 'supportReasonUnknown',
-        'VFlag': 'vFlag',
+        'EnableSrlb': 'enableSrlb',
+        'DescriptiveName': 'descriptiveName',
+        'NpFlag': 'npFlag',
+        'SidIndexLabel': 'sidIndexLabel',
+        'MaxLsUpdatesPerBurst': 'maxLsUpdatesPerBurst',
+        'EBit': 'eBit',
+        'SessionInfo': 'sessionInfo',
+        'LsaRefreshTime': 'lsaRefreshTime',
+        'BBit': 'bBit',
     }
 
     def __init__(self, parent):
@@ -783,6 +783,31 @@ class Ospfv2Router(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def OspfStartRouter(self, *args, **kwargs):
         """Executes the ospfStartRouter operation on the server.
 
@@ -792,7 +817,7 @@ class Ospfv2Router(Base):
 
         ospfStartRouter(SessionIndices=list)
         ------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         ospfStartRouter(SessionIndices=string)
         --------------------------------------
@@ -817,7 +842,7 @@ class Ospfv2Router(Base):
 
         ospfStopRouter(SessionIndices=list)
         -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         ospfStopRouter(SessionIndices=string)
         -------------------------------------
@@ -842,7 +867,7 @@ class Ospfv2Router(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -861,13 +886,13 @@ class Ospfv2Router(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected protocols.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -886,13 +911,13 @@ class Ospfv2Router(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected protocols.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

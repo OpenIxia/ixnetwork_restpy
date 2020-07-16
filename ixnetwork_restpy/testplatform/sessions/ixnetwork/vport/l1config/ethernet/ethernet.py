@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,18 +31,22 @@ class Ethernet(Base):
     __slots__ = ()
     _SDM_NAME = 'ethernet'
     _SDM_ATT_MAP = {
-        'AutoInstrumentation': 'autoInstrumentation',
-        'AutoNegotiate': 'autoNegotiate',
         'EnablePPM': 'enablePPM',
-        'EnabledFlowControl': 'enabledFlowControl',
-        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
         'Loopback': 'loopback',
-        'MasterSlaveMode': 'masterSlaveMode',
         'Media': 'media',
-        'NegotiateMasterSlave': 'negotiateMasterSlave',
+        'AvailableSpeeds': 'availableSpeeds',
+        'EnabledFlowControl': 'enabledFlowControl',
         'Ppm': 'ppm',
-        'Speed': 'speed',
+        'CanModifySpeed': 'canModifySpeed',
+        'MasterSlaveMode': 'masterSlaveMode',
+        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
         'SpeedAuto': 'speedAuto',
+        'SelectedSpeeds': 'selectedSpeeds',
+        'AutoInstrumentation': 'autoInstrumentation',
+        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
+        'Speed': 'speed',
+        'AutoNegotiate': 'autoNegotiate',
+        'NegotiateMasterSlave': 'negotiateMasterSlave',
     }
 
     def __init__(self, parent):
@@ -113,6 +117,33 @@ class Ethernet(Base):
     @AutoNegotiate.setter
     def AutoNegotiate(self, value):
         self._set_attribute(self._SDM_ATT_MAP['AutoNegotiate'], value)
+
+    @property
+    def AvailableSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[speed10fd | speed10hd | speed100fd | speed100hd | speed1000]): Which speeds are available for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableSpeeds'])
+
+    @property
+    def CanModifySpeed(self):
+        """
+        Returns
+        -------
+        - bool: Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanModifySpeed'])
+
+    @property
+    def CanSetMultipleSpeeds(self):
+        """
+        Returns
+        -------
+        - bool: Can this port selectmultiple speeds for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanSetMultipleSpeeds'])
 
     @property
     def EnablePPM(self):
@@ -211,6 +242,18 @@ class Ethernet(Base):
         self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
+    def SelectedSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[speed10fd | speed10hd | speed100fd | speed100hd | speed1000]): Which speeds are selected for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
+    @SelectedSpeeds.setter
+    def SelectedSpeeds(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
+
+    @property
     def Speed(self):
         """
         Returns
@@ -234,7 +277,7 @@ class Ethernet(Base):
     def SpeedAuto(self, value):
         self._set_attribute(self._SDM_ATT_MAP['SpeedAuto'], value)
 
-    def update(self, AutoInstrumentation=None, AutoNegotiate=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, MasterSlaveMode=None, Media=None, NegotiateMasterSlave=None, Ppm=None, Speed=None, SpeedAuto=None):
+    def update(self, AutoInstrumentation=None, AutoNegotiate=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, MasterSlaveMode=None, Media=None, NegotiateMasterSlave=None, Ppm=None, SelectedSpeeds=None, Speed=None, SpeedAuto=None):
         """Updates ethernet resource on the server.
 
         Args
@@ -249,6 +292,7 @@ class Ethernet(Base):
         - Media (str(copper | fiber | sgmii)): Available only for Ethernet cards that support this dual-PHY capability.
         - NegotiateMasterSlave (bool): NOT DEFINED
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency
+        - SelectedSpeeds (list(str[speed10fd | speed10hd | speed100fd | speed100hd | speed1000])): Which speeds are selected for the current media and AN settings.
         - Speed (str(auto | speed1000 | speed100fd | speed100hd | speed10fd | speed10hd)): The speed and duplex operation options.
         - SpeedAuto (list(str[all | speed1000 | speed100fd | speed100hd | speed10fd | speed10hd])): If selected, allows auto negotiation between ports for speed and duplex operation based on the various choices. The selected capabilities are advertised during AutoNegotiation.
 

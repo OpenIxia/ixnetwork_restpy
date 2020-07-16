@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,17 +31,17 @@ class LearnFrames(Base):
     __slots__ = ()
     _SDM_NAME = 'learnFrames'
     _SDM_ATT_MAP = {
-        'FastPathEnable': 'fastPathEnable',
-        'FastPathNumFrames': 'fastPathNumFrames',
+        'LearnWaitTimeBeforeTransmit': 'learnWaitTimeBeforeTransmit',
         'FastPathRate': 'fastPathRate',
-        'LearnFrameSize': 'learnFrameSize',
-        'LearnFrequency': 'learnFrequency',
         'LearnNumFrames': 'learnNumFrames',
-        'LearnRate': 'learnRate',
+        'LearnFrameSize': 'learnFrameSize',
+        'FastPathNumFrames': 'fastPathNumFrames',
         'LearnSendMacOnly': 'learnSendMacOnly',
         'LearnSendRouterSolicitation': 'learnSendRouterSolicitation',
+        'LearnRate': 'learnRate',
+        'LearnFrequency': 'learnFrequency',
+        'FastPathEnable': 'fastPathEnable',
         'LearnWaitTime': 'learnWaitTime',
-        'LearnWaitTimeBeforeTransmit': 'learnWaitTimeBeforeTransmit',
     }
 
     def __init__(self, parent):

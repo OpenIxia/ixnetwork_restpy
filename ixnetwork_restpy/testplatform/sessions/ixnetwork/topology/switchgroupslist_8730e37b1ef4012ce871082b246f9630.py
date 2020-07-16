@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,29 +32,29 @@ class SwitchGroupsList(Base):
     __slots__ = ()
     _SDM_NAME = 'switchGroupsList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ApplyGroup': 'applyGroup',
-        'CopyTtlIn': 'copyTtlIn',
-        'CopyTtlOut': 'copyTtlOut',
-        'Count': 'count',
-        'DecrementMplsTtl': 'decrementMplsTtl',
+        'SetNetwork': 'setNetwork',
         'DecrementNetwork': 'decrementNetwork',
-        'DescriptiveName': 'descriptiveName',
-        'GroupType': 'groupType',
-        'MaxNumberOfGroups': 'maxNumberOfGroups',
-        'Name': 'name',
-        'Output': 'output',
+        'SetMplsTtl': 'setMplsTtl',
         'ParentSwitch': 'parentSwitch',
+        'SetField': 'setField',
+        'MaxNumberOfGroups': 'maxNumberOfGroups',
         'PopMpls': 'popMpls',
+        'ApplyGroup': 'applyGroup',
+        'CopyTtlOut': 'copyTtlOut',
         'PopPbb': 'popPbb',
         'PopVlan': 'popVlan',
+        'GroupType': 'groupType',
         'PushMpls': 'pushMpls',
         'PushPbb': 'pushPbb',
+        'Active': 'active',
+        'CopyTtlIn': 'copyTtlIn',
         'PushVlan': 'pushVlan',
-        'SetField': 'setField',
-        'SetMplsTtl': 'setMplsTtl',
-        'SetNetwork': 'setNetwork',
         'SetQueue': 'setQueue',
+        'Count': 'count',
+        'Name': 'name',
+        'DecrementMplsTtl': 'decrementMplsTtl',
+        'DescriptiveName': 'descriptiveName',
+        'Output': 'output',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,101 +31,101 @@ class RsvpP2PIngressLsps(Base):
     __slots__ = ()
     _SDM_NAME = 'rsvpP2PIngressLsps'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AssociationId': 'associationId',
-        'AutoGenerateSessionName': 'autoGenerateSessionName',
-        'AutorouteTraffic': 'autorouteTraffic',
-        'BackupLspEnableEro': 'backupLspEnableEro',
-        'BackupLspId': 'backupLspId',
-        'BackupLspMaximumPacketSize': 'backupLspMaximumPacketSize',
-        'BackupLspMinimumPolicedUnit': 'backupLspMinimumPolicedUnit',
-        'BackupLspNumberOfEroSubObjects': 'backupLspNumberOfEroSubObjects',
-        'BackupLspPeakDataRate': 'backupLspPeakDataRate',
-        'BackupLspPrefixLength': 'backupLspPrefixLength',
-        'BackupLspPrependDutToEro': 'backupLspPrependDutToEro',
-        'BackupLspSessionId': 'backupLspSessionId',
-        'BackupLspTokenBucketRate': 'backupLspTokenBucketRate',
-        'BackupLspTokenBucketSize': 'backupLspTokenBucketSize',
-        'Bandwidth': 'bandwidth',
-        'BandwidthProtectionDesired': 'bandwidthProtectionDesired',
-        'ConfigureSyncLspObject': 'configureSyncLspObject',
-        'Count': 'count',
-        'DelayLspSwitchOver': 'delayLspSwitchOver',
-        'DescriptiveName': 'descriptiveName',
-        'DoMBBOnApplyChanges': 'doMBBOnApplyChanges',
-        'EnableBfdMpls': 'enableBfdMpls',
-        'EnableEro': 'enableEro',
-        'EnableFastReroute': 'enableFastReroute',
-        'EnableLspPing': 'enableLspPing',
-        'EnableLspSelfPing': 'enableLspSelfPing',
-        'EnablePathReOptimization': 'enablePathReOptimization',
-        'EnablePeriodicReEvaluationRequest': 'enablePeriodicReEvaluationRequest',
-        'EroSameAsPrimary': 'eroSameAsPrimary',
-        'ExcludeAny': 'excludeAny',
-        'FacilityBackupDesired': 'facilityBackupDesired',
-        'FastRerouteBandwidth': 'fastRerouteBandwidth',
-        'FastRerouteExcludeAny': 'fastRerouteExcludeAny',
-        'FastRerouteHoldingPriority': 'fastRerouteHoldingPriority',
-        'FastRerouteIncludeAll': 'fastRerouteIncludeAll',
-        'FastRerouteIncludeAny': 'fastRerouteIncludeAny',
-        'FastRerouteSetupPriority': 'fastRerouteSetupPriority',
-        'HoldingPriority': 'holdingPriority',
-        'HopLimit': 'hopLimit',
-        'IncludeAll': 'includeAll',
-        'IncludeAny': 'includeAny',
-        'IncludeAssociation': 'includeAssociation',
-        'InitialDelegation': 'initialDelegation',
-        'InsertIPv6ExplicitNull': 'insertIPv6ExplicitNull',
-        'IpDSCPofLspSelfPing': 'ipDSCPofLspSelfPing',
-        'IpTTLofLspSelfPing': 'ipTTLofLspSelfPing',
-        'LabelRecordingDesired': 'labelRecordingDesired',
         'LocalIp': 'localIp',
-        'LocalProtectionDesired': 'localProtectionDesired',
-        'LspCount': 'lspCount',
-        'LspDelegationState': 'lspDelegationState',
-        'LspId': 'lspId',
-        'LspOperativeMode': 'lspOperativeMode',
-        'LspSelfPingRetryCount': 'lspSelfPingRetryCount',
-        'LspSelfPingRetryInterval': 'lspSelfPingRetryInterval',
-        'LspSelfPingSessionId': 'lspSelfPingSessionId',
-        'LspSelfPingStatus': 'lspSelfPingStatus',
-        'LspSwitchOverDelayTime': 'lspSwitchOverDelayTime',
-        'MaximumPacketSize': 'maximumPacketSize',
-        'MinimumPolicedUnit': 'minimumPolicedUnit',
-        'Name': 'name',
-        'NodeProtectionDesired': 'nodeProtectionDesired',
-        'NumberOfDetourSubObjects': 'numberOfDetourSubObjects',
-        'NumberOfEroSubObjects': 'numberOfEroSubObjects',
-        'NumberOfRroSubObjects': 'numberOfRroSubObjects',
-        'OneToOneBackupDesired': 'oneToOneBackupDesired',
-        'PccIp': 'pccIp',
-        'PeakDataRate': 'peakDataRate',
-        'PpagTLVType': 'ppagTLVType',
-        'PrefixLength': 'prefixLength',
-        'PrependDutToEro': 'prependDutToEro',
-        'ProtectionLsp': 'protectionLsp',
-        'ReDelegationTimerStatus': 'reDelegationTimerStatus',
-        'ReEvaluationRequestInterval': 'reEvaluationRequestInterval',
-        'RedelegationTimeoutInterval': 'redelegationTimeoutInterval',
-        'RefreshInterval': 'refreshInterval',
-        'RemoteIp': 'remoteIp',
-        'ResourceAffinities': 'resourceAffinities',
-        'SeStyleDesired': 'seStyleDesired',
-        'SendDetour': 'sendDetour',
-        'SendRro': 'sendRro',
-        'SessionInformation': 'sessionInformation',
-        'SessionName': 'sessionName',
-        'SetupPriority': 'setupPriority',
-        'SourceIp': 'sourceIp',
-        'SourceIpv6': 'sourceIpv6',
-        'StandbyMode': 'standbyMode',
-        'State': 'state',
-        'TSpecSameAsPrimary': 'tSpecSameAsPrimary',
-        'TimeoutMultiplier': 'timeoutMultiplier',
-        'TokenBucketRate': 'tokenBucketRate',
-        'TokenBucketSize': 'tokenBucketSize',
-        'TunnelId': 'tunnelId',
+        'Bandwidth': 'bandwidth',
+        'BackupLspSessionId': 'backupLspSessionId',
+        'AutorouteTraffic': 'autorouteTraffic',
+        'EnablePeriodicReEvaluationRequest': 'enablePeriodicReEvaluationRequest',
         'UsingHeadendIp': 'usingHeadendIp',
+        'BackupLspPrependDutToEro': 'backupLspPrependDutToEro',
+        'PpagTLVType': 'ppagTLVType',
+        'FastRerouteIncludeAny': 'fastRerouteIncludeAny',
+        'RedelegationTimeoutInterval': 'redelegationTimeoutInterval',
+        'DoMBBOnApplyChanges': 'doMBBOnApplyChanges',
+        'ExcludeAny': 'excludeAny',
+        'TokenBucketRate': 'tokenBucketRate',
+        'FacilityBackupDesired': 'facilityBackupDesired',
+        'ResourceAffinities': 'resourceAffinities',
+        'ReEvaluationRequestInterval': 'reEvaluationRequestInterval',
+        'EnableLspSelfPing': 'enableLspSelfPing',
+        'LspOperativeMode': 'lspOperativeMode',
+        'Name': 'name',
+        'SetupPriority': 'setupPriority',
+        'IpTTLofLspSelfPing': 'ipTTLofLspSelfPing',
+        'IpDSCPofLspSelfPing': 'ipDSCPofLspSelfPing',
+        'LspSelfPingRetryInterval': 'lspSelfPingRetryInterval',
+        'AssociationId': 'associationId',
+        'ProtectionLsp': 'protectionLsp',
+        'LspDelegationState': 'lspDelegationState',
+        'BackupLspTokenBucketRate': 'backupLspTokenBucketRate',
+        'NodeProtectionDesired': 'nodeProtectionDesired',
+        'FastRerouteIncludeAll': 'fastRerouteIncludeAll',
+        'BandwidthProtectionDesired': 'bandwidthProtectionDesired',
+        'State': 'state',
+        'ReDelegationTimerStatus': 'reDelegationTimerStatus',
+        'NumberOfRroSubObjects': 'numberOfRroSubObjects',
+        'TSpecSameAsPrimary': 'tSpecSameAsPrimary',
+        'InitialDelegation': 'initialDelegation',
+        'AutoGenerateSessionName': 'autoGenerateSessionName',
+        'EnableLspPing': 'enableLspPing',
+        'FastRerouteBandwidth': 'fastRerouteBandwidth',
+        'StandbyMode': 'standbyMode',
+        'Active': 'active',
+        'PrefixLength': 'prefixLength',
+        'LspSelfPingSessionId': 'lspSelfPingSessionId',
+        'TunnelId': 'tunnelId',
+        'IncludeAny': 'includeAny',
+        'DescriptiveName': 'descriptiveName',
+        'SeStyleDesired': 'seStyleDesired',
+        'SessionName': 'sessionName',
+        'RefreshInterval': 'refreshInterval',
+        'LspCount': 'lspCount',
+        'TokenBucketSize': 'tokenBucketSize',
+        'BackupLspId': 'backupLspId',
+        'EnablePathReOptimization': 'enablePathReOptimization',
+        'FastRerouteHoldingPriority': 'fastRerouteHoldingPriority',
+        'ConfigureSyncLspObject': 'configureSyncLspObject',
+        'IncludeAssociation': 'includeAssociation',
+        'LocalProtectionDesired': 'localProtectionDesired',
+        'LspSelfPingRetryCount': 'lspSelfPingRetryCount',
+        'BackupLspPrefixLength': 'backupLspPrefixLength',
+        'BackupLspNumberOfEroSubObjects': 'backupLspNumberOfEroSubObjects',
+        'DelayLspSwitchOver': 'delayLspSwitchOver',
+        'LspId': 'lspId',
+        'InsertIPv6ExplicitNull': 'insertIPv6ExplicitNull',
+        'EnableBfdMpls': 'enableBfdMpls',
+        'BackupLspMinimumPolicedUnit': 'backupLspMinimumPolicedUnit',
+        'EroSameAsPrimary': 'eroSameAsPrimary',
+        'Count': 'count',
+        'MinimumPolicedUnit': 'minimumPolicedUnit',
+        'NumberOfDetourSubObjects': 'numberOfDetourSubObjects',
+        'MaximumPacketSize': 'maximumPacketSize',
+        'RemoteIp': 'remoteIp',
+        'HoldingPriority': 'holdingPriority',
+        'EnableFastReroute': 'enableFastReroute',
+        'LspSwitchOverDelayTime': 'lspSwitchOverDelayTime',
+        'IncludeAll': 'includeAll',
+        'PccIp': 'pccIp',
+        'SendRro': 'sendRro',
+        'BackupLspEnableEro': 'backupLspEnableEro',
+        'SourceIpv6': 'sourceIpv6',
+        'FastRerouteExcludeAny': 'fastRerouteExcludeAny',
+        'NumberOfEroSubObjects': 'numberOfEroSubObjects',
+        'PeakDataRate': 'peakDataRate',
+        'BackupLspPeakDataRate': 'backupLspPeakDataRate',
+        'FastRerouteSetupPriority': 'fastRerouteSetupPriority',
+        'SendDetour': 'sendDetour',
+        'BackupLspTokenBucketSize': 'backupLspTokenBucketSize',
+        'PrependDutToEro': 'prependDutToEro',
+        'HopLimit': 'hopLimit',
+        'TimeoutMultiplier': 'timeoutMultiplier',
+        'OneToOneBackupDesired': 'oneToOneBackupDesired',
+        'EnableEro': 'enableEro',
+        'SessionInformation': 'sessionInformation',
+        'LspSelfPingStatus': 'lspSelfPingStatus',
+        'LabelRecordingDesired': 'labelRecordingDesired',
+        'SourceIp': 'sourceIp',
+        'BackupLspMaximumPacketSize': 'backupLspMaximumPacketSize',
     }
 
     def __init__(self, parent):
@@ -1291,7 +1291,7 @@ class RsvpP2PIngressLsps(Base):
 
         initiatePathReoptimization(SessionIndices=list)
         -----------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         initiatePathReoptimization(SessionIndices=string)
         -------------------------------------------------
@@ -1321,7 +1321,7 @@ class RsvpP2PIngressLsps(Base):
 
         makeBeforeBreak(SessionIndices=list)
         ------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         makeBeforeBreak(SessionIndices=string)
         --------------------------------------
@@ -1351,7 +1351,7 @@ class RsvpP2PIngressLsps(Base):
 
         pcepDelegate(SessionIndices=list)
         ---------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         pcepDelegate(SessionIndices=string)
         -----------------------------------
@@ -1381,7 +1381,7 @@ class RsvpP2PIngressLsps(Base):
 
         pcepRevokeDelegation(SessionIndices=list)
         -----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         pcepRevokeDelegation(SessionIndices=string)
         -------------------------------------------
@@ -1411,7 +1411,7 @@ class RsvpP2PIngressLsps(Base):
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -1441,7 +1441,7 @@ class RsvpP2PIngressLsps(Base):
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

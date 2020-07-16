@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,38 +33,38 @@ class Bridge(Base):
     __slots__ = ()
     _SDM_NAME = 'bridge'
     _SDM_ATT_MAP = {
-        'AutoPickBridgeMac': 'autoPickBridgeMac',
-        'BridgeMac': 'bridgeMac',
+        'MessageAge': 'messageAge',
+        'VlanPortPriority': 'vlanPortPriority',
+        'CistRemainingHop': 'cistRemainingHop',
         'BridgePriority': 'bridgePriority',
+        'RootMac': 'rootMac',
+        'IsRefreshComplete': 'isRefreshComplete',
+        'ExternalRootMac': 'externalRootMac',
+        'VlanRootPathCost': 'vlanRootPathCost',
+        'ExternalRootCost': 'externalRootCost',
+        'AutoPickBridgeMac': 'autoPickBridgeMac',
+        'ForwardDelay': 'forwardDelay',
+        'PortPriority': 'portPriority',
+        'ExternalRootPriority': 'externalRootPriority',
+        'VlanRootMac': 'vlanRootMac',
+        'Mode': 'mode',
+        'PvstpMode': 'pvstpMode',
         'BridgeSystemId': 'bridgeSystemId',
+        'CistRegRootPriority': 'cistRegRootPriority',
+        'VlanRootPriority': 'vlanRootPriority',
+        'MaxAge': 'maxAge',
+        'BridgeMac': 'bridgeMac',
         'BridgeType': 'bridgeType',
         'CistRegRootCost': 'cistRegRootCost',
-        'CistRegRootMac': 'cistRegRootMac',
-        'CistRegRootPriority': 'cistRegRootPriority',
-        'CistRemainingHop': 'cistRemainingHop',
-        'Enabled': 'enabled',
-        'ExternalRootCost': 'externalRootCost',
-        'ExternalRootMac': 'externalRootMac',
-        'ExternalRootPriority': 'externalRootPriority',
-        'ForwardDelay': 'forwardDelay',
-        'HelloInterval': 'helloInterval',
-        'IsRefreshComplete': 'isRefreshComplete',
-        'MaxAge': 'maxAge',
-        'MessageAge': 'messageAge',
-        'Mode': 'mode',
-        'MstcName': 'mstcName',
-        'MstcRevisionNumber': 'mstcRevisionNumber',
-        'PortPriority': 'portPriority',
-        'PvstpMode': 'pvstpMode',
         'RootCost': 'rootCost',
-        'RootMac': 'rootMac',
-        'RootPriority': 'rootPriority',
-        'RootSystemId': 'rootSystemId',
         'UpdateRequired': 'updateRequired',
-        'VlanPortPriority': 'vlanPortPriority',
-        'VlanRootMac': 'vlanRootMac',
-        'VlanRootPathCost': 'vlanRootPathCost',
-        'VlanRootPriority': 'vlanRootPriority',
+        'RootPriority': 'rootPriority',
+        'HelloInterval': 'helloInterval',
+        'RootSystemId': 'rootSystemId',
+        'MstcName': 'mstcName',
+        'Enabled': 'enabled',
+        'CistRegRootMac': 'cistRegRootMac',
+        'MstcRevisionNumber': 'mstcRevisionNumber',
     }
 
     def __init__(self, parent):

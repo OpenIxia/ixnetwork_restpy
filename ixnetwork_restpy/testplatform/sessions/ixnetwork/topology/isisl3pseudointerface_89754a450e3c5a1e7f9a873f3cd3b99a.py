@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,65 +32,65 @@ class IsisL3PseudoInterface(Base):
     __slots__ = ()
     _SDM_NAME = 'isisL3PseudoInterface'
     _SDM_ATT_MAP = {
-        'AdjSID': 'adjSID',
-        'AdjSidCount': 'adjSidCount',
-        'AdministratorGroup': 'administratorGroup',
-        'AdvertiseLinkMsd': 'advertiseLinkMsd',
-        'BFlag': 'bFlag',
-        'BandwidthPriority0_Bps': 'bandwidthPriority0_Bps',
-        'BandwidthPriority1_Bps': 'bandwidthPriority1_Bps',
-        'BandwidthPriority2_Bps': 'bandwidthPriority2_Bps',
-        'BandwidthPriority3_Bps': 'bandwidthPriority3_Bps',
-        'BandwidthPriority4_Bps': 'bandwidthPriority4_Bps',
-        'BandwidthPriority5_Bps': 'bandwidthPriority5_Bps',
-        'BandwidthPriority6_Bps': 'bandwidthPriority6_Bps',
-        'BandwidthPriority7_Bps': 'bandwidthPriority7_Bps',
-        'Count': 'count',
-        'DedicatedOnePlusOne': 'dedicatedOnePlusOne',
-        'DedicatedOneToOne': 'dedicatedOneToOne',
-        'DescriptiveName': 'descriptiveName',
-        'EnableAdjSID': 'enableAdjSID',
-        'EnableAppSpecSrlg': 'enableAppSpecSrlg',
-        'EnableIPv6SID': 'enableIPv6SID',
-        'EnableLinkProtection': 'enableLinkProtection',
-        'EnableMT': 'enableMT',
-        'EnableSRLG': 'enableSRLG',
-        'Enhanced': 'enhanced',
-        'ExtraTraffic': 'extraTraffic',
-        'FFlag': 'fFlag',
-        'Funcflags': 'funcflags',
-        'Function': 'function',
-        'IncludeMaxSlMsd': 'includeMaxSlMsd',
-        'IncludeMaximumEndDMsd': 'includeMaximumEndDMsd',
-        'IncludeMaximumEndPopMsd': 'includeMaximumEndPopMsd',
-        'IncludeMaximumTEncapMsd': 'includeMaximumTEncapMsd',
-        'IncludeMaximumTInsertMsd': 'includeMaximumTInsertMsd',
-        'Ipv6SidValue': 'ipv6SidValue',
-        'LFlag': 'lFlag',
         'LinkType': 'linkType',
         'MaxBandwidth_Bps': 'maxBandwidth_Bps',
-        'MaxEndDMsd': 'maxEndDMsd',
-        'MaxEndPopMsd': 'maxEndPopMsd',
-        'MaxReservableBandwidth_Bps': 'maxReservableBandwidth_Bps',
-        'MaxSlMsd': 'maxSlMsd',
+        'BandwidthPriority4_Bps': 'bandwidthPriority4_Bps',
+        'IncludeMaximumTEncapMsd': 'includeMaximumTEncapMsd',
+        'Weight': 'weight',
+        'VFlag': 'vFlag',
         'MaxTEncap': 'maxTEncap',
-        'MaxTInsertMsd': 'maxTInsertMsd',
-        'MetricLevel': 'metricLevel',
-        'MtCount': 'mtCount',
-        'Name': 'name',
-        'NoOfAppSpecSrlg': 'noOfAppSpecSrlg',
+        'SrlgCount': 'srlgCount',
+        'EnableAppSpecSrlg': 'enableAppSpecSrlg',
+        'MaxEndDMsd': 'maxEndDMsd',
+        'IncludeMaximumEndDMsd': 'includeMaximumEndDMsd',
+        'AdvertiseLinkMsd': 'advertiseLinkMsd',
         'NoOfTeProfile': 'noOfTeProfile',
+        'Funcflags': 'funcflags',
+        'MaxEndPopMsd': 'maxEndPopMsd',
+        'Enhanced': 'enhanced',
+        'EnableSRLG': 'enableSRLG',
+        'EnableMT': 'enableMT',
+        'ExtraTraffic': 'extraTraffic',
+        'Srv6SidFlags': 'srv6SidFlags',
+        'MaxTInsertMsd': 'maxTInsertMsd',
+        'BandwidthPriority0_Bps': 'bandwidthPriority0_Bps',
+        'EnableLinkProtection': 'enableLinkProtection',
         'OverrideFFlag': 'overrideFFlag',
+        'DedicatedOneToOne': 'dedicatedOneToOne',
+        'BFlag': 'bFlag',
+        'BandwidthPriority5_Bps': 'bandwidthPriority5_Bps',
+        'MetricLevel': 'metricLevel',
+        'BandwidthPriority1_Bps': 'bandwidthPriority1_Bps',
+        'EnableIPv6SID': 'enableIPv6SID',
+        'BandwidthPriority7_Bps': 'bandwidthPriority7_Bps',
+        'DedicatedOnePlusOne': 'dedicatedOnePlusOne',
+        'LFlag': 'lFlag',
+        'Function': 'function',
+        'Reserved0x80': 'reserved0x80',
+        'BandwidthPriority6_Bps': 'bandwidthPriority6_Bps',
+        'BandwidthPriority3_Bps': 'bandwidthPriority3_Bps',
+        'MaxSlMsd': 'maxSlMsd',
+        'AdjSID': 'adjSID',
+        'IncludeMaxSlMsd': 'includeMaxSlMsd',
         'PFlag': 'pFlag',
         'Reserved0x40': 'reserved0x40',
-        'Reserved0x80': 'reserved0x80',
-        'SFlag': 'sFlag',
+        'NoOfAppSpecSrlg': 'noOfAppSpecSrlg',
         'Shared': 'shared',
-        'SrlgCount': 'srlgCount',
-        'Srv6SidFlags': 'srv6SidFlags',
+        'EnableAdjSID': 'enableAdjSID',
+        'BandwidthPriority2_Bps': 'bandwidthPriority2_Bps',
+        'MaxReservableBandwidth_Bps': 'maxReservableBandwidth_Bps',
+        'SFlag': 'sFlag',
+        'AdministratorGroup': 'administratorGroup',
+        'Count': 'count',
+        'IncludeMaximumEndPopMsd': 'includeMaximumEndPopMsd',
+        'FFlag': 'fFlag',
+        'Name': 'name',
+        'Ipv6SidValue': 'ipv6SidValue',
         'Unprotected': 'unprotected',
-        'VFlag': 'vFlag',
-        'Weight': 'weight',
+        'AdjSidCount': 'adjSidCount',
+        'DescriptiveName': 'descriptiveName',
+        'IncludeMaximumTInsertMsd': 'includeMaximumTInsertMsd',
+        'MtCount': 'mtCount',
     }
 
     def __init__(self, parent):
@@ -1010,6 +1010,19 @@ class IsisL3PseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
+
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
 
     def Start(self):
         """Executes the start operation on the server.

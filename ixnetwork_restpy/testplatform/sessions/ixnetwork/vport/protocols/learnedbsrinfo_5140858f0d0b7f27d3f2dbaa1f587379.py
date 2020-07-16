@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,10 +32,10 @@ class LearnedBsrInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedBsrInfo'
     _SDM_ATT_MAP = {
-        'BsrAddress': 'bsrAddress',
-        'LastBsmSendRecv': 'lastBsmSendRecv',
-        'OurBsrState': 'ourBsrState',
         'Priority': 'priority',
+        'OurBsrState': 'ourBsrState',
+        'LastBsmSendRecv': 'lastBsmSendRecv',
+        'BsrAddress': 'bsrAddress',
     }
 
     def __init__(self, parent):

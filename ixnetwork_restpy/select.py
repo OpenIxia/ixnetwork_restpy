@@ -56,7 +56,7 @@ class Select(object):
 
     def __init__(self, connection, from_url, from_properties=['*'], children=[], inlines=[]):
         self._connection = connection
-        self._url = '%s/operations/select' % from_url[0:from_url.index('ixnetwork') + len('ixnetwork')]
+        self._url = '%s/operations/select?xpath=true' % from_url[0:from_url.index('ixnetwork') + len('ixnetwork')]
         self._payload = {
             'selects': [
                 {

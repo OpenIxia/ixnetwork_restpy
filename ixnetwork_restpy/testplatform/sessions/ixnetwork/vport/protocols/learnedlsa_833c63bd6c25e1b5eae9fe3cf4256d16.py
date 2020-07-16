@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,14 +32,14 @@ class LearnedLsa(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedLsa'
     _SDM_ATT_MAP = {
-        'AdvRouterId': 'advRouterId',
-        'Age': 'age',
-        'LinkStateId': 'linkStateId',
-        'PrefixLength': 'prefixLength',
-        'PrefixV4Address': 'prefixV4Address',
         'PrefixV6Address': 'prefixV6Address',
         'SequenceNo': 'sequenceNo',
+        'Age': 'age',
+        'AdvRouterId': 'advRouterId',
+        'PrefixV4Address': 'prefixV4Address',
         'Type': 'type',
+        'LinkStateId': 'linkStateId',
+        'PrefixLength': 'prefixLength',
     }
 
     def __init__(self, parent):

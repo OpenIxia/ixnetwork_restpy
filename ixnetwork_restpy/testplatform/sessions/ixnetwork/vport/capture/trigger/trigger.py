@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,15 +31,15 @@ class Trigger(Base):
     __slots__ = ()
     _SDM_NAME = 'trigger'
     _SDM_ATT_MAP = {
-        'CaptureTriggerDA': 'captureTriggerDA',
-        'CaptureTriggerEnable': 'captureTriggerEnable',
-        'CaptureTriggerError': 'captureTriggerError',
-        'CaptureTriggerExpressionString': 'captureTriggerExpressionString',
-        'CaptureTriggerFrameSizeEnable': 'captureTriggerFrameSizeEnable',
         'CaptureTriggerFrameSizeFrom': 'captureTriggerFrameSizeFrom',
-        'CaptureTriggerFrameSizeTo': 'captureTriggerFrameSizeTo',
         'CaptureTriggerPattern': 'captureTriggerPattern',
+        'CaptureTriggerEnable': 'captureTriggerEnable',
         'CaptureTriggerSA': 'captureTriggerSA',
+        'CaptureTriggerDA': 'captureTriggerDA',
+        'CaptureTriggerFrameSizeTo': 'captureTriggerFrameSizeTo',
+        'CaptureTriggerFrameSizeEnable': 'captureTriggerFrameSizeEnable',
+        'CaptureTriggerExpressionString': 'captureTriggerExpressionString',
+        'CaptureTriggerError': 'captureTriggerError',
     }
 
     def __init__(self, parent):

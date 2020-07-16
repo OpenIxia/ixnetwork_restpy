@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,15 +31,15 @@ class ExpectedInitiatedLspList(Base):
     __slots__ = ()
     _SDM_NAME = 'expectedInitiatedLspList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'InsertIpv6ExplicitNull': 'insertIpv6ExplicitNull',
-        'MaxExpectedSegmentCount': 'maxExpectedSegmentCount',
         'Name': 'name',
-        'SourceIpv4Address': 'sourceIpv4Address',
-        'SourceIpv6Address': 'sourceIpv6Address',
+        'MaxExpectedSegmentCount': 'maxExpectedSegmentCount',
+        'InsertIpv6ExplicitNull': 'insertIpv6ExplicitNull',
         'SymbolicPathName': 'symbolicPathName',
+        'SourceIpv4Address': 'sourceIpv4Address',
+        'DescriptiveName': 'descriptiveName',
+        'Active': 'active',
+        'SourceIpv6Address': 'sourceIpv6Address',
     }
 
     def __init__(self, parent):

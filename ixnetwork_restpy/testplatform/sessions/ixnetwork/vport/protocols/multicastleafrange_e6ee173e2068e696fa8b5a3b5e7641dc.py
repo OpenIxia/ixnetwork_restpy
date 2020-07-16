@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,15 +33,15 @@ class MulticastLeafRange(Base):
     __slots__ = ()
     _SDM_NAME = 'multicastLeafRange'
     _SDM_ATT_MAP = {
-        'ContinuousIncrOpaqueValuesAcrossRoot': 'continuousIncrOpaqueValuesAcrossRoot',
-        'Enabled': 'enabled',
-        'LabelValueStart': 'labelValueStart',
-        'LabelValueStep': 'labelValueStep',
-        'LspCountPerRoot': 'lspCountPerRoot',
-        'LspType': 'lspType',
         'RootAddrCount': 'rootAddrCount',
-        'RootAddrStep': 'rootAddrStep',
+        'LabelValueStart': 'labelValueStart',
+        'LspType': 'lspType',
+        'Enabled': 'enabled',
+        'ContinuousIncrOpaqueValuesAcrossRoot': 'continuousIncrOpaqueValuesAcrossRoot',
+        'LabelValueStep': 'labelValueStep',
         'RootAddress': 'rootAddress',
+        'LspCountPerRoot': 'lspCountPerRoot',
+        'RootAddrStep': 'rootAddrStep',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,13 +32,13 @@ class SwitchHostRangeLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'switchHostRangeLearnedInfo'
     _SDM_ATT_MAP = {
-        'DestinationHostIpv4Address': 'destinationHostIpv4Address',
-        'DestinationHostMac': 'destinationHostMac',
-        'PacketType': 'packetType',
-        'Path': 'path',
+        'Status': 'status',
         'SourceHostIpv4Address': 'sourceHostIpv4Address',
         'SourceHostMac': 'sourceHostMac',
-        'Status': 'status',
+        'DestinationHostMac': 'destinationHostMac',
+        'Path': 'path',
+        'PacketType': 'packetType',
+        'DestinationHostIpv4Address': 'destinationHostIpv4Address',
     }
 
     def __init__(self, parent):

@@ -11,6 +11,21 @@ class Mocks(object):
     _PLATFORM = 'windows'
 
     REQUEST_RESPONSE = {
+        'api/v1/redirect': {
+            'GET': {
+                'data': [
+                    {
+                        'href': 'api/v1/sessions/1',
+                        'id': '1',
+                        'userId': 'admin',
+                        'userName': 'admin',
+                        'applicationType': 'ixnetwork',
+                        'state': 'ACTIVE'
+                    }
+                ],
+                'status_code': 307
+            }
+        },
         'api/v1/sessions': {
             'GET': {
                 'data': [
@@ -388,7 +403,8 @@ class Mocks(object):
             'GET': {
                 'data': {
                     'href': 'api/v1/sessions/1/ixnetwork/globals',
-                    'buildNumber': '9.00.0.1314'
+                    'buildNumber': '9.00.0.1314',
+                    'username': 'tests/mocks/username-sessionid-processid'
                 },
                 'status_code': 200
             }

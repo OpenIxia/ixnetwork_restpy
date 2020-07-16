@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,16 +31,16 @@ class VxlanStaticInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'vxlanStaticInfo'
     _SDM_ATT_MAP = {
-        'Active': 'active',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'LocalVNI': 'localVNI',
-        'MacStaticConfig': 'macStaticConfig',
-        'Name': 'name',
         'RemoteVmStaticIpv4': 'remoteVmStaticIpv4',
-        'RemoteVmStaticMac': 'remoteVmStaticMac',
-        'RemoteVtepIpv4': 'remoteVtepIpv4',
+        'Name': 'name',
+        'MacStaticConfig': 'macStaticConfig',
         'SuppressArp': 'suppressArp',
+        'LocalVNI': 'localVNI',
+        'RemoteVtepIpv4': 'remoteVtepIpv4',
+        'RemoteVmStaticMac': 'remoteVmStaticMac',
+        'DescriptiveName': 'descriptiveName',
+        'Active': 'active',
     }
 
     def __init__(self, parent):

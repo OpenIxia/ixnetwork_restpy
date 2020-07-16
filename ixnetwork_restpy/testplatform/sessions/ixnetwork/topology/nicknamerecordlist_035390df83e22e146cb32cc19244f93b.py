@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,13 +31,13 @@ class NicknameRecordList(Base):
     __slots__ = ()
     _SDM_NAME = 'nicknameRecordList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'BroadcastRootPriority': 'broadcastRootPriority',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
-        'Nickname': 'nickname',
         'Priority': 'priority',
+        'Name': 'name',
+        'BroadcastRootPriority': 'broadcastRootPriority',
+        'DescriptiveName': 'descriptiveName',
+        'Active': 'active',
+        'Nickname': 'nickname',
     }
 
     def __init__(self, parent):

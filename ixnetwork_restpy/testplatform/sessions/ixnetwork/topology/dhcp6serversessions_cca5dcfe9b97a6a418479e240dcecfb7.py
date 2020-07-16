@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,37 +31,37 @@ class Dhcp6ServerSessions(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcp6ServerSessions'
     _SDM_ATT_MAP = {
-        'AddressDuidMask': 'addressDuidMask',
-        'AddressDuidPattern': 'addressDuidPattern',
-        'AddressesPerIA': 'addressesPerIA',
-        'Count': 'count',
-        'CustomRebindTime': 'customRebindTime',
-        'CustomRenewTime': 'customRenewTime',
-        'DefaultLeaseTime': 'defaultLeaseTime',
-        'DescriptiveName': 'descriptiveName',
-        'EnableAddressMatchDuid': 'enableAddressMatchDuid',
         'EnablePrefixMatchDuid': 'enablePrefixMatchDuid',
-        'IaType': 'iaType',
-        'Ignore': 'ignore',
-        'IgnoreMask': 'ignoreMask',
         'IgnorePattern': 'ignorePattern',
-        'IpAddress': 'ipAddress',
-        'IpAddressIncrement': 'ipAddressIncrement',
-        'IpAddressPD': 'ipAddressPD',
-        'IpPrefix': 'ipPrefix',
-        'IpPrefixIncrement': 'ipPrefixIncrement',
-        'LeaseTimeIncrement': 'leaseTimeIncrement',
-        'Nak': 'nak',
-        'NakMask': 'nakMask',
-        'NakPattern': 'nakPattern',
-        'Name': 'name',
-        'PoolPrefixSize': 'poolPrefixSize',
-        'PoolSize': 'poolSize',
-        'PrefixDuidIncrement': 'prefixDuidIncrement',
-        'PrefixDuidStart': 'prefixDuidStart',
-        'PrefixLength': 'prefixLength',
+        'DefaultLeaseTime': 'defaultLeaseTime',
+        'AddressesPerIA': 'addressesPerIA',
+        'AddressDuidPattern': 'addressDuidPattern',
+        'CustomRebindTime': 'customRebindTime',
         'PrefixesPerIA': 'prefixesPerIA',
+        'PrefixDuidStart': 'prefixDuidStart',
+        'IaType': 'iaType',
+        'Nak': 'nak',
+        'PoolSize': 'poolSize',
+        'PoolPrefixSize': 'poolPrefixSize',
+        'NakMask': 'nakMask',
+        'IgnoreMask': 'ignoreMask',
+        'EnableAddressMatchDuid': 'enableAddressMatchDuid',
         'UseCustomTimes': 'useCustomTimes',
+        'LeaseTimeIncrement': 'leaseTimeIncrement',
+        'IpPrefixIncrement': 'ipPrefixIncrement',
+        'PrefixLength': 'prefixLength',
+        'Count': 'count',
+        'IpAddressPD': 'ipAddressPD',
+        'Name': 'name',
+        'CustomRenewTime': 'customRenewTime',
+        'AddressDuidMask': 'addressDuidMask',
+        'IpAddressIncrement': 'ipAddressIncrement',
+        'IpPrefix': 'ipPrefix',
+        'Ignore': 'ignore',
+        'PrefixDuidIncrement': 'prefixDuidIncrement',
+        'DescriptiveName': 'descriptiveName',
+        'IpAddress': 'ipAddress',
+        'NakPattern': 'nakPattern',
     }
 
     def __init__(self, parent):

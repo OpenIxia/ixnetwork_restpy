@@ -21,3 +21,6 @@ class TestPorts(unittest.TestCase):
         ]
         connected_ports = ixnetwork.AssignPorts(test_ports, [], vport, True)
         assert(len(connected_ports) == 2)
+        
+if __name__ == '__main__':
+    unittest.main()

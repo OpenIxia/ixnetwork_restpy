@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,9 +34,9 @@ class Rfc3918scaleGroup(Base):
     _SDM_NAME = 'rfc3918scaleGroup'
     _SDM_ATT_MAP = {
         'ForceApplyQTConfig': 'forceApplyQTConfig',
-        'InputParameters': 'inputParameters',
         'Mode': 'mode',
         'Name': 'name',
+        'InputParameters': 'inputParameters',
     }
 
     def __init__(self, parent):
@@ -97,6 +97,20 @@ class Rfc3918scaleGroup(Base):
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_d541ffdedb30ebd0a43d113f4ca8555f import TestConfig
         return TestConfig(self)._select()
+
+    @property
+    def TrafficSelection(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.trafficselection_22c0efed3052ed5002942a33e331fb3b.TrafficSelection): An instance of the TrafficSelection class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.trafficselection_22c0efed3052ed5002942a33e331fb3b import TrafficSelection
+        return TrafficSelection(self)
 
     @property
     def ForceApplyQTConfig(self):

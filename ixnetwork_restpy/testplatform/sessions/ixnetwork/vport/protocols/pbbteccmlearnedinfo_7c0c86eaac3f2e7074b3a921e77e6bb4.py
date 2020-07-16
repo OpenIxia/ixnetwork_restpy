@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,31 +32,31 @@ class PbbTeCcmLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'pbbTeCcmLearnedInfo'
     _SDM_ATT_MAP = {
-        'BVlan': 'bVlan',
-        'CciInterval': 'cciInterval',
-        'ErrCcmDefect': 'errCcmDefect',
-        'ErrCcmDefectCount': 'errCcmDefectCount',
-        'IfaceTlvDefectCount': 'ifaceTlvDefectCount',
-        'MdLevel': 'mdLevel',
-        'MdName': 'mdName',
+        'ReceivedPortTlvDefect': 'receivedPortTlvDefect',
         'MdNameFormat': 'mdNameFormat',
-        'OutOfSequenceCcmCount': 'outOfSequenceCcmCount',
+        'MdName': 'mdName',
         'PortTlvDefectCount': 'portTlvDefectCount',
         'RdiRxCount': 'rdiRxCount',
-        'RdiRxState': 'rdiRxState',
-        'RdiTxCount': 'rdiTxCount',
         'RdiTxState': 'rdiTxState',
-        'ReceivedIfaceTlvDefect': 'receivedIfaceTlvDefect',
-        'ReceivedPortTlvDefect': 'receivedPortTlvDefect',
-        'ReceivedRdi': 'receivedRdi',
         'RemoteMacAddress': 'remoteMacAddress',
-        'RemoteMepDefectCount': 'remoteMepDefectCount',
-        'RemoteMepId': 'remoteMepId',
-        'RmepCcmDefect': 'rmepCcmDefect',
-        'ShortMaName': 'shortMaName',
-        'ShortMaNameFormat': 'shortMaNameFormat',
         'SrcMacAddress': 'srcMacAddress',
+        'ErrCcmDefectCount': 'errCcmDefectCount',
+        'IfaceTlvDefectCount': 'ifaceTlvDefectCount',
+        'RemoteMepId': 'remoteMepId',
         'SrcMepId': 'srcMepId',
+        'ReceivedRdi': 'receivedRdi',
+        'RemoteMepDefectCount': 'remoteMepDefectCount',
+        'ShortMaName': 'shortMaName',
+        'ErrCcmDefect': 'errCcmDefect',
+        'ReceivedIfaceTlvDefect': 'receivedIfaceTlvDefect',
+        'BVlan': 'bVlan',
+        'ShortMaNameFormat': 'shortMaNameFormat',
+        'RmepCcmDefect': 'rmepCcmDefect',
+        'RdiTxCount': 'rdiTxCount',
+        'CciInterval': 'cciInterval',
+        'RdiRxState': 'rdiRxState',
+        'MdLevel': 'mdLevel',
+        'OutOfSequenceCcmCount': 'outOfSequenceCcmCount',
     }
 
     def __init__(self, parent):

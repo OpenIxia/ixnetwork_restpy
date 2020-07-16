@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,22 +32,22 @@ class Capabilities(Base):
     _SDM_NAME = 'capabilities'
     _SDM_ATT_MAP = {
         'AdVpls': 'adVpls',
-        'Evpn': 'evpn',
-        'FetchDetailedIpV4UnicastInfo': 'fetchDetailedIpV4UnicastInfo',
-        'FetchDetailedIpV6UnicastInfo': 'fetchDetailedIpV6UnicastInfo',
-        'IpV4Mpls': 'ipV4Mpls',
-        'IpV4MplsVpn': 'ipV4MplsVpn',
-        'IpV4Multicast': 'ipV4Multicast',
-        'IpV4MulticastMplsVpn': 'ipV4MulticastMplsVpn',
-        'IpV4MulticastVpn': 'ipV4MulticastVpn',
-        'IpV4Unicast': 'ipV4Unicast',
-        'IpV6Mpls': 'ipV6Mpls',
-        'IpV6MplsVpn': 'ipV6MplsVpn',
-        'IpV6Multicast': 'ipV6Multicast',
-        'IpV6MulticastMplsVpn': 'ipV6MulticastMplsVpn',
-        'IpV6MulticastVpn': 'ipV6MulticastVpn',
         'IpV6Unicast': 'ipV6Unicast',
+        'IpV6Mpls': 'ipV6Mpls',
+        'IpV6MulticastVpn': 'ipV6MulticastVpn',
+        'FetchDetailedIpV6UnicastInfo': 'fetchDetailedIpV6UnicastInfo',
+        'IpV6Multicast': 'ipV6Multicast',
+        'IpV4MulticastVpn': 'ipV4MulticastVpn',
+        'IpV4Mpls': 'ipV4Mpls',
         'Vpls': 'vpls',
+        'FetchDetailedIpV4UnicastInfo': 'fetchDetailedIpV4UnicastInfo',
+        'IpV4MulticastMplsVpn': 'ipV4MulticastMplsVpn',
+        'IpV4MplsVpn': 'ipV4MplsVpn',
+        'IpV6MulticastMplsVpn': 'ipV6MulticastMplsVpn',
+        'IpV4Multicast': 'ipV4Multicast',
+        'IpV4Unicast': 'ipV4Unicast',
+        'Evpn': 'evpn',
+        'IpV6MplsVpn': 'ipV6MplsVpn',
     }
 
     def __init__(self, parent):

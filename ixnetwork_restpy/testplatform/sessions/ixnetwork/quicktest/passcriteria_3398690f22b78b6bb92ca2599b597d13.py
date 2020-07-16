@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,14 +31,14 @@ class PassCriteria(Base):
     __slots__ = ()
     _SDM_NAME = 'passCriteria'
     _SDM_ATT_MAP = {
+        'LossThresholdValue': 'lossThresholdValue',
+        'PassFailFrequency': 'passFailFrequency',
+        'PassCriteriaLoadRateMode': 'passCriteriaLoadRateMode',
+        'PassFailMeasureUnit': 'passFailMeasureUnit',
         'EnableFrameLossPassFail': 'enableFrameLossPassFail',
         'LossThresholdMode': 'lossThresholdMode',
-        'LossThresholdValue': 'lossThresholdValue',
-        'PassCriteriaLoadRateMode': 'passCriteriaLoadRateMode',
-        'PassCriteriaLoadRateScale': 'passCriteriaLoadRateScale',
         'PassCriteriaLoadRateValue': 'passCriteriaLoadRateValue',
-        'PassFailFrequency': 'passFailFrequency',
-        'PassFailMeasureUnit': 'passFailMeasureUnit',
+        'PassCriteriaLoadRateScale': 'passCriteriaLoadRateScale',
     }
 
     def __init__(self, parent):

@@ -111,7 +111,7 @@ class Connection(object):
         self._scheme = self._determine_test_tool_platform(platform)
 
     def _determine_test_tool_platform(self, platform):
-        self._info('The package will automatically determine the test tool platform and rest_port using the %s address.' % self._hostname)
+        self._info('Determining the platform and rest_port using the %s address...' % self._hostname)
         if platform is not None:
             self._warn('The `platform` parameter is deprecated and the value `%s` will be ignored.' % platform)
         self._platform = None
@@ -138,8 +138,8 @@ class Connection(object):
                     else:
                         raise Exception()
                 except Exception as e:
-                    self._warn('Unable to connect to test tool at %s://%s:%s.' % (scheme, self._hostname, rest_port))
-        raise ConnectionError('Unable to connect to %s. Check the ip address and consider using the rest_port parameter.' % self._hostname)
+                    self._warn('Unable to connect to %s://%s:%s.' % (scheme, self._hostname, rest_port))
+        raise ConnectionError('Unable to connect to %s. Check the ip address and consider the rest_port parameter.' % self._hostname)
 
     @property
     def trace(self):
@@ -294,6 +294,16 @@ class Connection(object):
         else:
             self._process_response_status_code(url, headers, response)
 
+    def _delete_file(self, url, remote_filename):
+        headers = self._headers
+        url = '%s/files?filename=%s' % (url, remote_filename)
+        connection, url = self._normalize_url(url)
+        response = self._session.request('DELETE', url, headers=headers, verify=self._verify_cert)
+        if response.status_code == 204:
+            return
+        else:
+            self._process_response_status_code(url, headers, response)
+
     def _process_response_status_code(self, url, headers, response, async_status=False):
         errors = []
         # add the initial error
@@ -317,7 +327,8 @@ class Connection(object):
                 errors.append(response.text)
         # add any /globals/appErrors/error items
         try:
-            url = url[0:url.find('/ixnetwork')] + '/ixnetwork/globals/appErrors/error'
+            preamble = url[0:url.find('/', url.find('/sessions/')+len('/sessions/'))]
+            url = preamble + '/ixnetwork/globals/appErrors/error'
             error_response = self._session.request('GET', url, headers=headers, verify=self._verify_cert, allow_redirects=False)
             server_info = '\tCurrent Server Errors/Warnings:'
             for error in error_response.json():
@@ -375,7 +386,8 @@ class Connection(object):
                 self._hostname = url[url.find('://')+3:url.find('/', url.find('://')+3)]
                 if self._scheme == 'https':
                     self._rest_port = 443
-                host_pieces = self._hostname.split(':')
+                splitter = ']:' if ']' in self._hostname else ':'
+                host_pieces = self._hostname.split(splitter)
                 if len(host_pieces) > 1:
                     self._hostname = host_pieces[0]
                     self._rest_port = host_pieces[1]

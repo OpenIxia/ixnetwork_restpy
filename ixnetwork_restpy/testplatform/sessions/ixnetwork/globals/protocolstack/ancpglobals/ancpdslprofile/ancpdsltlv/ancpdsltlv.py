@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,12 +34,12 @@ class AncpDslTlv(Base):
     _SDM_NAME = 'ancpDslTlv'
     _SDM_ATT_MAP = {
         'Code': 'code',
-        'MaxValue': 'maxValue',
-        'MinValue': 'minValue',
         'Name': 'name',
         'ObjectId': 'objectId',
-        'Type': 'type',
+        'MaxValue': 'maxValue',
         'Value': 'value',
+        'MinValue': 'minValue',
+        'Type': 'type',
     }
 
     def __init__(self, parent):

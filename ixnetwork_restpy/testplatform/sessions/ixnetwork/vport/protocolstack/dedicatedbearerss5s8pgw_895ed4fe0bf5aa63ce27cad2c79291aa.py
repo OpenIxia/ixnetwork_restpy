@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,27 +33,27 @@ class DedicatedBearersS5S8Pgw(Base):
     __slots__ = ()
     _SDM_NAME = 'dedicatedBearersS5S8Pgw'
     _SDM_ATT_MAP = {
-        'ApnAmbrUpdateValue': 'apnAmbrUpdateValue',
         'Arp': 'arp',
-        'Custom_tft': 'custom_tft',
+        'QosUpdateValue': 'qosUpdateValue',
         'EnableLifetime': 'enableLifetime',
-        'Enabled': 'enabled',
-        'Gbrd': 'gbrd',
-        'Gbru': 'gbru',
-        'Lifetime': 'lifetime',
-        'Mbrd': 'mbrd',
-        'Mbru': 'mbru',
-        'Mode': 'mode',
-        'Name': 'name',
         'ObjectId': 'objectId',
-        'PreemptionCapability': 'preemptionCapability',
-        'PreemptionVulnerability': 'preemptionVulnerability',
+        'Gbrd': 'gbrd',
+        'Mbru': 'mbru',
         'PriorityLevel': 'priorityLevel',
+        'TimeoutAction': 'timeoutAction',
+        'ApnAmbrUpdateValue': 'apnAmbrUpdateValue',
+        'Enabled': 'enabled',
+        'Tft': 'tft',
+        'Mbrd': 'mbrd',
+        'PreemptionCapability': 'preemptionCapability',
+        'Custom_tft': 'custom_tft',
+        'Mode': 'mode',
+        'Lifetime': 'lifetime',
+        'Gbru': 'gbru',
         'Qci': 'qci',
         'QosLabel': 'qosLabel',
-        'QosUpdateValue': 'qosUpdateValue',
-        'Tft': 'tft',
-        'TimeoutAction': 'timeoutAction',
+        'PreemptionVulnerability': 'preemptionVulnerability',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

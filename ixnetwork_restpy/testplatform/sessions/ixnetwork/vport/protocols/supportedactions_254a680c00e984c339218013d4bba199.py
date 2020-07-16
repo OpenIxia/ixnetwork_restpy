@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,18 +31,18 @@ class SupportedActions(Base):
     __slots__ = ()
     _SDM_NAME = 'supportedActions'
     _SDM_ATT_MAP = {
-        'Enqueue': 'enqueue',
         'EthernetDestination': 'ethernetDestination',
-        'EthernetSource': 'ethernetSource',
-        'IpDscp': 'ipDscp',
-        'Ipv4Destination': 'ipv4Destination',
-        'Ipv4Source': 'ipv4Source',
-        'Output': 'output',
-        'StripVlanHeader': 'stripVlanHeader',
         'TransportDestination': 'transportDestination',
+        'Ipv4Source': 'ipv4Source',
         'TransportSource': 'transportSource',
+        'EthernetSource': 'ethernetSource',
         'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
+        'Enqueue': 'enqueue',
+        'IpDscp': 'ipDscp',
+        'StripVlanHeader': 'stripVlanHeader',
+        'Output': 'output',
+        'Ipv4Destination': 'ipv4Destination',
     }
 
     def __init__(self, parent):

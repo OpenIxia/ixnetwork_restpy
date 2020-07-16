@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,29 +33,29 @@ class Ipv6TrafficEndPoint(Base):
     __slots__ = ()
     _SDM_NAME = 'ipv6TrafficEndPoint'
     _SDM_ATT_MAP = {
-        'ArpViaInterface': 'arpViaInterface',
-        'DestinationPort': 'destinationPort',
-        'EnableVlan': 'enableVlan',
-        'GatewayMac': 'gatewayMac',
-        'Ipv6Address': 'ipv6Address',
-        'Ipv6AddressMask': 'ipv6AddressMask',
-        'Ipv6CustomHeaderLength': 'ipv6CustomHeaderLength',
-        'Ipv6CustomHeaderValue': 'ipv6CustomHeaderValue',
-        'Ipv6CustomNextHeader': 'ipv6CustomNextHeader',
-        'Ipv6Dscp': 'ipv6Dscp',
-        'Ipv6Ecn': 'ipv6Ecn',
-        'Ipv6FlowLabel': 'ipv6FlowLabel',
-        'Ipv6NextHeader': 'ipv6NextHeader',
         'MacAddress': 'macAddress',
-        'Name': 'name',
-        'ProtocolInterface': 'protocolInterface',
-        'RangeSize': 'rangeSize',
-        'SourcePort': 'sourcePort',
-        'UdpDestination': 'udpDestination',
-        'UdpSource': 'udpSource',
-        'VlanCount': 'vlanCount',
-        'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
+        'Ipv6Ecn': 'ipv6Ecn',
+        'GatewayMac': 'gatewayMac',
+        'Ipv6CustomNextHeader': 'ipv6CustomNextHeader',
+        'EnableVlan': 'enableVlan',
+        'UdpSource': 'udpSource',
+        'ArpViaInterface': 'arpViaInterface',
+        'Ipv6CustomHeaderValue': 'ipv6CustomHeaderValue',
+        'Ipv6FlowLabel': 'ipv6FlowLabel',
+        'ProtocolInterface': 'protocolInterface',
+        'Ipv6NextHeader': 'ipv6NextHeader',
+        'Ipv6CustomHeaderLength': 'ipv6CustomHeaderLength',
+        'VlanId': 'vlanId',
+        'Ipv6AddressMask': 'ipv6AddressMask',
+        'DestinationPort': 'destinationPort',
+        'SourcePort': 'sourcePort',
+        'VlanCount': 'vlanCount',
+        'Name': 'name',
+        'Ipv6Address': 'ipv6Address',
+        'UdpDestination': 'udpDestination',
+        'RangeSize': 'rangeSize',
+        'Ipv6Dscp': 'ipv6Dscp',
     }
 
     def __init__(self, parent):

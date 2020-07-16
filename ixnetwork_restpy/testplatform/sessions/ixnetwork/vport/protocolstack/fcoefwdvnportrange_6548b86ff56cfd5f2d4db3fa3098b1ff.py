@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,23 +31,23 @@ class FcoeFwdVnPortRange(Base):
     __slots__ = ()
     _SDM_NAME = 'fcoeFwdVnPortRange'
     _SDM_ATT_MAP = {
-        'B2bRxSize': 'b2bRxSize',
         'Count': 'count',
-        'Enabled': 'enabled',
-        'Name': 'name',
-        'NodeWwnIncrement': 'nodeWwnIncrement',
         'NodeWwnStart': 'nodeWwnStart',
+        'Name': 'name',
         'ObjectId': 'objectId',
-        'PlogiDestId': 'plogiDestId',
-        'PlogiEnabled': 'plogiEnabled',
-        'PlogiMeshMode': 'plogiMeshMode',
-        'PlogiTargetName': 'plogiTargetName',
         'PortIdIncrement': 'portIdIncrement',
         'PortIdStart': 'portIdStart',
-        'PortWwnIncrement': 'portWwnIncrement',
-        'PortWwnStart': 'portWwnStart',
+        'PlogiTargetName': 'plogiTargetName',
         'Simulated': 'simulated',
+        'Enabled': 'enabled',
+        'PlogiEnabled': 'plogiEnabled',
+        'B2bRxSize': 'b2bRxSize',
+        'NodeWwnIncrement': 'nodeWwnIncrement',
+        'PortWwnStart': 'portWwnStart',
         'VxPortName': 'vxPortName',
+        'PlogiMeshMode': 'plogiMeshMode',
+        'PortWwnIncrement': 'portWwnIncrement',
+        'PlogiDestId': 'plogiDestId',
     }
 
     def __init__(self, parent):

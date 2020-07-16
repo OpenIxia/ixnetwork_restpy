@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,12 +33,12 @@ class EgressTracking(Base):
     __slots__ = ()
     _SDM_NAME = 'egressTracking'
     _SDM_ATT_MAP = {
-        'AvailableEncapsulations': 'availableEncapsulations',
-        'AvailableOffsets': 'availableOffsets',
-        'CustomOffsetBits': 'customOffsetBits',
         'CustomWidthBits': 'customWidthBits',
-        'Encapsulation': 'encapsulation',
+        'AvailableOffsets': 'availableOffsets',
+        'AvailableEncapsulations': 'availableEncapsulations',
+        'CustomOffsetBits': 'customOffsetBits',
         'Offset': 'offset',
+        'Encapsulation': 'encapsulation',
     }
 
     def __init__(self, parent):

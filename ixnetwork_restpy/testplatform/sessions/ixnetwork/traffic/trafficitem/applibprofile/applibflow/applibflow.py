@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,14 +32,14 @@ class AppLibFlow(Base):
     __slots__ = ()
     _SDM_NAME = 'appLibFlow'
     _SDM_ATT_MAP = {
-        'ConfigId': 'configId',
         'ConnectionCount': 'connectionCount',
         'Description': 'description',
-        'FlowId': 'flowId',
-        'FlowSize': 'flowSize',
-        'Name': 'name',
         'Parameters': 'parameters',
+        'FlowSize': 'flowSize',
+        'FlowId': 'flowId',
+        'ConfigId': 'configId',
         'Percentage': 'percentage',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

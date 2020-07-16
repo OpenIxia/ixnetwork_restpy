@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,29 +31,29 @@ class PimV4JoinPruneList(Base):
     __slots__ = ()
     _SDM_NAME = 'pimV4JoinPruneList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableFlapInfo': 'enableFlapInfo',
-        'EnablePack': 'enablePack',
-        'FlapInterval': 'flapInterval',
-        'GroupAddressCount': 'groupAddressCount',
-        'GroupV4Address': 'groupV4Address',
-        'GroupV4MaskWidth': 'groupV4MaskWidth',
-        'LocalRouterId': 'localRouterId',
-        'Name': 'name',
-        'PruneSourceAddressCount': 'pruneSourceAddressCount',
-        'PruneSourceV4Address': 'pruneSourceV4Address',
-        'PruneSourceV4MaskWidth': 'pruneSourceV4MaskWidth',
         'RangeType': 'rangeType',
-        'RegisterStopTriggerCount': 'registerStopTriggerCount',
-        'RpV4Address': 'rpV4Address',
-        'SourceAddressCount': 'sourceAddressCount',
-        'SourceGroupMappingType': 'sourceGroupMappingType',
-        'SourceV4Address': 'sourceV4Address',
-        'SourceV4MaskWidth': 'sourceV4MaskWidth',
-        'Status': 'status',
         'SwitchOverInterval': 'switchOverInterval',
+        'PruneSourceV4MaskWidth': 'pruneSourceV4MaskWidth',
+        'SourceV4MaskWidth': 'sourceV4MaskWidth',
+        'SourceGroupMappingType': 'sourceGroupMappingType',
+        'GroupAddressCount': 'groupAddressCount',
+        'GroupV4MaskWidth': 'groupV4MaskWidth',
+        'EnablePack': 'enablePack',
+        'EnableFlapInfo': 'enableFlapInfo',
+        'RpV4Address': 'rpV4Address',
+        'RegisterStopTriggerCount': 'registerStopTriggerCount',
+        'Status': 'status',
+        'SourceV4Address': 'sourceV4Address',
+        'PruneSourceV4Address': 'pruneSourceV4Address',
+        'Active': 'active',
+        'GroupV4Address': 'groupV4Address',
+        'Count': 'count',
+        'PruneSourceAddressCount': 'pruneSourceAddressCount',
+        'SourceAddressCount': 'sourceAddressCount',
+        'Name': 'name',
+        'FlapInterval': 'flapInterval',
+        'DescriptiveName': 'descriptiveName',
+        'LocalRouterId': 'localRouterId',
     }
 
     def __init__(self, parent):
@@ -363,7 +363,7 @@ class PimV4JoinPruneList(Base):
 
         join(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         join(SessionIndices=string)
         ---------------------------
@@ -393,7 +393,7 @@ class PimV4JoinPruneList(Base):
 
         leave(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         leave(SessionIndices=string)
         ----------------------------
@@ -423,7 +423,7 @@ class PimV4JoinPruneList(Base):
 
         resumePeriodicJoin(SessionIndices=list)
         ---------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         resumePeriodicJoin(SessionIndices=string)
         -----------------------------------------
@@ -453,7 +453,7 @@ class PimV4JoinPruneList(Base):
 
         stopPeriodicJoin(SessionIndices=list)
         -------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stopPeriodicJoin(SessionIndices=string)
         ---------------------------------------

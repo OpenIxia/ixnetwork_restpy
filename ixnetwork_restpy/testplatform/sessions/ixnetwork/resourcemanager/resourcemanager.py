@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -30,6 +30,8 @@ class ResourceManager(Base):
 
     __slots__ = ()
     _SDM_NAME = 'resourceManager'
+    _SDM_ATT_MAP = {
+    }
 
     def __init__(self, parent):
         super(ResourceManager, self).__init__(parent)
@@ -91,12 +93,13 @@ class ResourceManager(Base):
         - Arg3 (bool): True to create a new configuration, false to update the current configuration
         - Returns list(str): A list of errors that occurred during import
 
-        importConfig(Arg2=string, Arg3=bool, Arg4=enum)list
-        ---------------------------------------------------
+        importConfig(Arg2=string, Arg3=bool, Arg4=enum, Arg5=bool)string
+        ----------------------------------------------------------------
         - Arg2 (str): 
         - Arg3 (bool): 
         - Arg4 (str(suppressErrorsWarnings | suppressNothing | suppressWarnings)): 
-        - Returns list(dict(arg1:str,arg2:str,arg3:str)): A list of errata that occurred during the import
+        - Arg5 (bool): 
+        - Returns str: A list of errata that occurred during the import
 
         Raises
         ------
@@ -121,12 +124,13 @@ class ResourceManager(Base):
         - Arg3 (bool): 
         - Returns list(str): A list of errata that occurred during the import
 
-        importConfigFile(Arg2=href, Arg3=bool, Arg4=enum)list
-        -----------------------------------------------------
+        importConfigFile(Arg2=href, Arg3=bool, Arg4=enum, Arg5=bool)string
+        ------------------------------------------------------------------
         - Arg2 (obj(ixnetwork_restpy.files.Files)): 
         - Arg3 (bool): 
         - Arg4 (str(suppressErrorsWarnings | suppressNothing | suppressWarnings)): 
-        - Returns list(dict(arg1:str,arg2:str,arg3:str)): A list of errata that occurred during the import
+        - Arg5 (bool): 
+        - Returns str: A list of errata that occurred during the import
 
         Raises
         ------

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,37 +32,37 @@ class PcepEroSubObjectsList(Base):
     __slots__ = ()
     _SDM_NAME = 'pcepEroSubObjectsList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AsNumber': 'asNumber',
-        'Bos': 'bos',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'FBit': 'fBit',
-        'Ipv4NodeId': 'ipv4NodeId',
         'Ipv4Prefix': 'ipv4Prefix',
-        'Ipv6NodeId': 'ipv6NodeId',
-        'Ipv6Prefix': 'ipv6Prefix',
-        'LocalInterfaceId': 'localInterfaceId',
-        'LocalIpv4Address': 'localIpv4Address',
-        'LocalIpv6Address': 'localIpv6Address',
-        'LocalNodeId': 'localNodeId',
-        'LooseHop': 'looseHop',
-        'MplsLabel': 'mplsLabel',
-        'NaiType': 'naiType',
-        'Name': 'name',
-        'PrefixLength': 'prefixLength',
-        'RemoteInterfaceId': 'remoteInterfaceId',
-        'RemoteIpv4Address': 'remoteIpv4Address',
         'RemoteIpv6Address': 'remoteIpv6Address',
-        'RemoteNodeId': 'remoteNodeId',
-        'Sid': 'sid',
-        'SidType': 'sidType',
-        'Srv6FunctionCode': 'srv6FunctionCode',
         'Srv6Identifier': 'srv6Identifier',
-        'Srv6NaiType': 'srv6NaiType',
         'SubObjectType': 'subObjectType',
-        'Tc': 'tc',
         'Ttl': 'ttl',
+        'LocalIpv4Address': 'localIpv4Address',
+        'FBit': 'fBit',
+        'LooseHop': 'looseHop',
+        'RemoteInterfaceId': 'remoteInterfaceId',
+        'MplsLabel': 'mplsLabel',
+        'Ipv4NodeId': 'ipv4NodeId',
+        'Ipv6NodeId': 'ipv6NodeId',
+        'Sid': 'sid',
+        'Tc': 'tc',
+        'RemoteIpv4Address': 'remoteIpv4Address',
+        'LocalIpv6Address': 'localIpv6Address',
+        'Srv6FunctionCode': 'srv6FunctionCode',
+        'Srv6NaiType': 'srv6NaiType',
+        'Active': 'active',
+        'LocalNodeId': 'localNodeId',
+        'SidType': 'sidType',
+        'PrefixLength': 'prefixLength',
+        'LocalInterfaceId': 'localInterfaceId',
+        'Name': 'name',
+        'Count': 'count',
+        'Ipv6Prefix': 'ipv6Prefix',
+        'Bos': 'bos',
+        'AsNumber': 'asNumber',
+        'DescriptiveName': 'descriptiveName',
+        'NaiType': 'naiType',
+        'RemoteNodeId': 'remoteNodeId',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,18 +32,18 @@ class Dhcpv4client(Base):
     _SDM_NAME = 'dhcpv4client'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Dhcp4ArpGw': 'dhcp4ArpGw',
         'Dhcp4ClientPort': 'dhcp4ClientPort',
-        'Dhcp4MaxDiscoverTimeout': 'dhcp4MaxDiscoverTimeout',
-        'Dhcp4NumRetry': 'dhcp4NumRetry',
+        'RenewOnLinkUp': 'renewOnLinkUp',
         'Dhcp4ResponseTimeout': 'dhcp4ResponseTimeout',
+        'Name': 'name',
         'Dhcp4ResponseTimeoutFactor': 'dhcp4ResponseTimeoutFactor',
         'Dhcp4ServerPort': 'dhcp4ServerPort',
-        'Name': 'name',
-        'RenewOnLinkUp': 'renewOnLinkUp',
-        'RowNames': 'rowNames',
+        'Dhcp4MaxDiscoverTimeout': 'dhcp4MaxDiscoverTimeout',
+        'Dhcp4NumRetry': 'dhcp4NumRetry',
+        'DescriptiveName': 'descriptiveName',
         'SkipReleaseOnStop': 'skipReleaseOnStop',
+        'RowNames': 'rowNames',
+        'Dhcp4ArpGw': 'dhcp4ArpGw',
     }
 
     def __init__(self, parent):
@@ -54,13 +54,13 @@ class Dhcpv4client(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv4client.sessionlifetime.sessionlifetime_a2ff4cf9740cdad8ec90e94ccf681c32.SessionLifetime): An instance of the SessionLifetime class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv4client.sessionlifetime.sessionlifetime_c56c3cca82dcd438a26eb5e7980bb00a.SessionLifetime): An instance of the SessionLifetime class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv4client.sessionlifetime.sessionlifetime_a2ff4cf9740cdad8ec90e94ccf681c32 import SessionLifetime
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv4client.sessionlifetime.sessionlifetime_c56c3cca82dcd438a26eb5e7980bb00a import SessionLifetime
         return SessionLifetime(self)._select()
 
     @property

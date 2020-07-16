@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,21 +32,21 @@ class BgpLsExtendedCommunitiesList(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpLsExtendedCommunitiesList'
     _SDM_ATT_MAP = {
+        'Count': 'count',
+        'AssignedNumber4Bytes': 'assignedNumber4Bytes',
+        'Name': 'name',
+        'LinkBandwidth': 'linkBandwidth',
+        'Ip': 'ip',
+        'AssignedNumber2Bytes': 'assignedNumber2Bytes',
         'AsNumber2Bytes': 'asNumber2Bytes',
         'AsNumber4Bytes': 'asNumber4Bytes',
-        'AssignedNumber2Bytes': 'assignedNumber2Bytes',
-        'AssignedNumber4Bytes': 'assignedNumber4Bytes',
-        'ColorCOBits': 'colorCOBits',
-        'ColorReservedBits': 'colorReservedBits',
-        'ColorValue': 'colorValue',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Ip': 'ip',
-        'LinkBandwidth': 'linkBandwidth',
-        'Name': 'name',
-        'OpaqueData': 'opaqueData',
         'SubType': 'subType',
+        'OpaqueData': 'opaqueData',
+        'DescriptiveName': 'descriptiveName',
         'Type': 'type',
+        'ColorReservedBits': 'colorReservedBits',
+        'ColorCOBits': 'colorCOBits',
+        'ColorValue': 'colorValue',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,13 +32,13 @@ class BondedGRE(Base):
     _SDM_NAME = 'bondedGRE'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'HaapRouter': 'haapRouter',
-        'Key': 'key',
         'Name': 'name',
+        'WaitForLTE': 'waitForLTE',
+        'HaapRouter': 'haapRouter',
+        'DescriptiveName': 'descriptiveName',
+        'Key': 'key',
         'RouterMac': 'routerMac',
         'RowNames': 'rowNames',
-        'WaitForLTE': 'waitForLTE',
     }
 
     def __init__(self, parent):

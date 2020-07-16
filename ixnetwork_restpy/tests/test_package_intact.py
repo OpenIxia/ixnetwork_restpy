@@ -43,3 +43,5 @@ class TestPackageIntegrity(unittest.TestCase):
         except:
             raise Exception('Issue with steps package')
     
+if __name__ == '__main__':
+    unittest.main()

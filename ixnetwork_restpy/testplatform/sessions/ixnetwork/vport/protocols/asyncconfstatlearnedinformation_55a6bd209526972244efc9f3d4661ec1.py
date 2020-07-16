@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,21 +32,21 @@ class AsyncConfStatLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'asyncConfStatLearnedInformation'
     _SDM_ATT_MAP = {
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'FlowRemovedMaskMaster': 'flowRemovedMaskMaster',
-        'FlowRemovedMaskSlave': 'flowRemovedMaskSlave',
         'Latency': 'latency',
+        'FlowRemovedMaskMaster': 'flowRemovedMaskMaster',
         'LocalIp': 'localIp',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'PacketInMaskMaster': 'packetInMaskMaster',
-        'PacketInMaskSlave': 'packetInMaskSlave',
-        'PortStatusMaskMaster': 'portStatusMaskMaster',
-        'PortStatusMaskSlave': 'portStatusMaskSlave',
-        'RemoteIp': 'remoteIp',
         'ReplyState': 'replyState',
+        'ErrorType': 'errorType',
+        'NegotiatedVersion': 'negotiatedVersion',
+        'PortStatusMaskSlave': 'portStatusMaskSlave',
+        'ErrorCode': 'errorCode',
+        'FlowRemovedMaskSlave': 'flowRemovedMaskSlave',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
+        'RemoteIp': 'remoteIp',
+        'PortStatusMaskMaster': 'portStatusMaskMaster',
+        'PacketInMaskMaster': 'packetInMaskMaster',
+        'DataPathId': 'dataPathId',
+        'PacketInMaskSlave': 'packetInMaskSlave',
     }
 
     def __init__(self, parent):

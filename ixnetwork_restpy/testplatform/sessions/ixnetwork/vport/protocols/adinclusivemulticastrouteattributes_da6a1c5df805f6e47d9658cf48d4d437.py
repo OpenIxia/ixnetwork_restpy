@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,31 +31,31 @@ class AdInclusiveMulticastRouteAttributes(Base):
     __slots__ = ()
     _SDM_NAME = 'adInclusiveMulticastRouteAttributes'
     _SDM_ATT_MAP = {
+        'Origin': 'origin',
+        'LocalPref': 'localPref',
+        'NextHopMode': 'nextHopMode',
+        'ExtendedCommunity': 'extendedCommunity',
+        'Community': 'community',
+        'Cluster': 'cluster',
+        'EnableOrigin': 'enableOrigin',
+        'EnableAggregator': 'enableAggregator',
+        'SetNextHop': 'setNextHop',
+        'EnableOriginator': 'enableOriginator',
+        'EnableAsPath': 'enableAsPath',
+        'EnableAtomicAggregate': 'enableAtomicAggregate',
         'AggregatorAs': 'aggregatorAs',
         'AggregatorId': 'aggregatorId',
         'AsPath': 'asPath',
-        'AsSetMode': 'asSetMode',
-        'Cluster': 'cluster',
-        'Community': 'community',
-        'EnableAggregator': 'enableAggregator',
-        'EnableAsPath': 'enableAsPath',
-        'EnableAtomicAggregate': 'enableAtomicAggregate',
-        'EnableCluster': 'enableCluster',
-        'EnableCommunity': 'enableCommunity',
-        'EnableLocalPref': 'enableLocalPref',
-        'EnableMultiExit': 'enableMultiExit',
-        'EnableNextHop': 'enableNextHop',
-        'EnableOrigin': 'enableOrigin',
-        'EnableOriginator': 'enableOriginator',
-        'ExtendedCommunity': 'extendedCommunity',
-        'LocalPref': 'localPref',
         'MultiExit': 'multiExit',
-        'NextHop': 'nextHop',
+        'EnableNextHop': 'enableNextHop',
+        'EnableCommunity': 'enableCommunity',
         'NextHopIpType': 'nextHopIpType',
-        'NextHopMode': 'nextHopMode',
-        'Origin': 'origin',
+        'AsSetMode': 'asSetMode',
+        'NextHop': 'nextHop',
         'OriginatorId': 'originatorId',
-        'SetNextHop': 'setNextHop',
+        'EnableCluster': 'enableCluster',
+        'EnableMultiExit': 'enableMultiExit',
+        'EnableLocalPref': 'enableLocalPref',
     }
 
     def __init__(self, parent):

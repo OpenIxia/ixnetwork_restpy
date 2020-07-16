@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,13 +32,13 @@ class PcepMetricSubObjectsList(Base):
     __slots__ = ()
     _SDM_NAME = 'pcepMetricSubObjectsList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'BFlag': 'bFlag',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'MetricType': 'metricType',
         'MetricValue': 'metricValue',
         'Name': 'name',
+        'BFlag': 'bFlag',
+        'MetricType': 'metricType',
+        'DescriptiveName': 'descriptiveName',
+        'Active': 'active',
     }
 
     def __init__(self, parent):

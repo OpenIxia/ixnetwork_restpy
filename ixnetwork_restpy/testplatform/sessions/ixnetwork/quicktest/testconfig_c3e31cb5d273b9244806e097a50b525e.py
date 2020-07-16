@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,38 +31,38 @@ class TestConfig(Base):
     __slots__ = ()
     _SDM_NAME = 'testConfig'
     _SDM_ATT_MAP = {
-        'CustomLoadUnit': 'customLoadUnit',
-        'DataPlaneJitterWindow': 'dataPlaneJitterWindow',
-        'Duration': 'duration',
-        'EnableBFD': 'enableBFD',
-        'EnableTolerance': 'enableTolerance',
         'FixedFrameSize': 'fixedFrameSize',
-        'ForceContinuosTraffic': 'forceContinuosTraffic',
         'FrameSizeMode': 'frameSizeMode',
-        'Framesize': 'framesize',
-        'HoldDownTimer': 'holdDownTimer',
-        'IpRatioMode': 'ipRatioMode',
-        'Ipv4rate': 'ipv4rate',
-        'Ipv6rate': 'ipv6rate',
-        'LoadRateValue': 'loadRateValue',
+        'NumberOfIterations': 'numberOfIterations',
         'LoadType': 'loadType',
+        'Threshold': 'threshold',
+        'ProtocolItem': 'protocolItem',
         'NetworkGroupRoutesType': 'networkGroupRoutesType',
-        'NetworkGroupSizeListIpv4': 'networkGroupSizeListIpv4',
-        'NetworkGroupSizeListIpv6': 'networkGroupSizeListIpv6',
+        'Duration': 'duration',
+        'ReportConvergenceUnit': 'reportConvergenceUnit',
+        'WaitBeforeAdvertise': 'waitBeforeAdvertise',
         'NetworkGroupSizeModeIpv4': 'networkGroupSizeModeIpv4',
         'NetworkGroupSizeModeIpv6': 'networkGroupSizeModeIpv6',
-        'NumberOfIterations': 'numberOfIterations',
-        'Numtrials': 'numtrials',
-        'ProtocolItem': 'protocolItem',
-        'ReportConvergenceUnit': 'reportConvergenceUnit',
+        'HoldDownTimer': 'holdDownTimer',
+        'CustomLoadUnit': 'customLoadUnit',
+        'LoadRateValue': 'loadRateValue',
+        'NetworkGroupSizeListIpv4': 'networkGroupSizeListIpv4',
+        'NetworkGroupSizeListIpv6': 'networkGroupSizeListIpv6',
+        'EnableBFD': 'enableBFD',
         'ReportTputRateUnit': 'reportTputRateUnit',
-        'RoutesDistribution': 'routesDistribution',
-        'TestTrafficType': 'testTrafficType',
-        'Threshold': 'threshold',
+        'EnableTolerance': 'enableTolerance',
+        'DataPlaneJitterWindow': 'dataPlaneJitterWindow',
         'Tolerance': 'tolerance',
-        'TrafficType': 'trafficType',
+        'ForceContinuosTraffic': 'forceContinuosTraffic',
+        'Framesize': 'framesize',
+        'IpRatioMode': 'ipRatioMode',
+        'Ipv6rate': 'ipv6rate',
+        'Numtrials': 'numtrials',
+        'TestTrafficType': 'testTrafficType',
         'WaitAfterThresholdReached': 'waitAfterThresholdReached',
-        'WaitBeforeAdvertise': 'waitBeforeAdvertise',
+        'TrafficType': 'trafficType',
+        'RoutesDistribution': 'routesDistribution',
+        'Ipv4rate': 'ipv4rate',
     }
 
     def __init__(self, parent):

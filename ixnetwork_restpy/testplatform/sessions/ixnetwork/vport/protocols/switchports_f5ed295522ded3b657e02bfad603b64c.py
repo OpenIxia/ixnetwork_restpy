@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,18 +33,18 @@ class SwitchPorts(Base):
     __slots__ = ()
     _SDM_NAME = 'switchPorts'
     _SDM_ATT_MAP = {
-        'ConnectionType': 'connectionType',
-        'CurrentSpeed': 'currentSpeed',
-        'Enabled': 'enabled',
-        'EthernetAddress': 'ethernetAddress',
-        'MaxSpeed': 'maxSpeed',
         'NumberOfPorts': 'numberOfPorts',
-        'PortLivenessSupport': 'portLivenessSupport',
-        'PortName': 'portName',
-        'PortNumber': 'portNumber',
+        'MaxSpeed': 'maxSpeed',
+        'EthernetAddress': 'ethernetAddress',
         'RemoteSwitch': 'remoteSwitch',
-        'RemoteSwitchPort': 'remoteSwitchPort',
+        'PortLivenessSupport': 'portLivenessSupport',
+        'Enabled': 'enabled',
+        'ConnectionType': 'connectionType',
         'TransmissionDelay': 'transmissionDelay',
+        'RemoteSwitchPort': 'remoteSwitchPort',
+        'PortNumber': 'portNumber',
+        'PortName': 'portName',
+        'CurrentSpeed': 'currentSpeed',
     }
 
     def __init__(self, parent):

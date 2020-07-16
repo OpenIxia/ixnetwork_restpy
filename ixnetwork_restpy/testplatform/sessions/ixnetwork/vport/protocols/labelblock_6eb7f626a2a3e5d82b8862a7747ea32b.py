@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,13 +33,13 @@ class LabelBlock(Base):
     __slots__ = ()
     _SDM_NAME = 'labelBlock'
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'LabelBlockOffsetIncrementAcrossL2Site': 'labelBlockOffsetIncrementAcrossL2Site',
         'LabelStartIncrementAcrossL2Site': 'labelStartIncrementAcrossL2Site',
-        'NumberOfLabels': 'numberOfLabels',
-        'Offset': 'offset',
-        'Start': 'start',
         'TotalLabelCount': 'totalLabelCount',
+        'Enabled': 'enabled',
+        'Start': 'start',
+        'Offset': 'offset',
+        'LabelBlockOffsetIncrementAcrossL2Site': 'labelBlockOffsetIncrementAcrossL2Site',
+        'NumberOfLabels': 'numberOfLabels',
     }
 
     def __init__(self, parent):

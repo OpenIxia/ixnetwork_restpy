@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,23 +33,23 @@ class BgpMVpnSenderSitesIpv4(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpMVpnSenderSitesIpv4'
     _SDM_ATT_MAP = {
-        'Active': 'active',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableNextHop': 'enableNextHop',
-        'GroupAddressCount': 'groupAddressCount',
-        'GroupMaskWidth': 'groupMaskWidth',
-        'Ipv4NextHop': 'ipv4NextHop',
-        'Ipv6NextHop': 'ipv6NextHop',
-        'Name': 'name',
-        'SendTriggeredSourceActiveADRoute': 'sendTriggeredSourceActiveADRoute',
-        'SetNextHop': 'setNextHop',
-        'SetNextHopIpType': 'setNextHopIpType',
-        'SourceAddressCount': 'sourceAddressCount',
-        'SourceGroupMapping': 'sourceGroupMapping',
-        'SourceMaskWidth': 'sourceMaskWidth',
-        'StartGroupAddressIpv4': 'startGroupAddressIpv4',
         'StartSourceAddressIpv4': 'startSourceAddressIpv4',
+        'SourceAddressCount': 'sourceAddressCount',
+        'Name': 'name',
+        'SetNextHop': 'setNextHop',
+        'StartGroupAddressIpv4': 'startGroupAddressIpv4',
+        'Ipv6NextHop': 'ipv6NextHop',
+        'SourceMaskWidth': 'sourceMaskWidth',
+        'Ipv4NextHop': 'ipv4NextHop',
+        'DescriptiveName': 'descriptiveName',
+        'SendTriggeredSourceActiveADRoute': 'sendTriggeredSourceActiveADRoute',
+        'Active': 'active',
+        'GroupAddressCount': 'groupAddressCount',
+        'EnableNextHop': 'enableNextHop',
+        'SourceGroupMapping': 'sourceGroupMapping',
+        'GroupMaskWidth': 'groupMaskWidth',
+        'SetNextHopIpType': 'setNextHopIpType',
     }
 
     def __init__(self, parent):
@@ -60,13 +60,13 @@ class BgpMVpnSenderSitesIpv4(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_f91a37c8058302050a67e05790d01c7a.CMacProperties): An instance of the CMacProperties class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180.CMacProperties): An instance of the CMacProperties class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_f91a37c8058302050a67e05790d01c7a import CMacProperties
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
         return CMacProperties(self)
 
     @property
@@ -398,16 +398,29 @@ class BgpMVpnSenderSitesIpv4(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
+
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected protocols.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -426,13 +439,13 @@ class BgpMVpnSenderSitesIpv4(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected protocols.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------
@@ -457,7 +470,7 @@ class BgpMVpnSenderSitesIpv4(Base):
 
         switchToSpmsi(SessionIndices=list)
         ----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         switchToSpmsi(SessionIndices=string)
         ------------------------------------

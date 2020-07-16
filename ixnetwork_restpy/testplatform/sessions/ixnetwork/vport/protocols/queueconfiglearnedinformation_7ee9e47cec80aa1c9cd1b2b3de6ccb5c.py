@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,23 +32,23 @@ class QueueConfigLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'queueConfigLearnedInformation'
     _SDM_ATT_MAP = {
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
         'ExperimenterData': 'experimenterData',
-        'ExperimenterDataLength': 'experimenterDataLength',
-        'ExperimenterId': 'experimenterId',
         'Latency': 'latency',
-        'LocalIp': 'localIp',
+        'QueueProperty': 'queueProperty',
+        'QueueId': 'queueId',
+        'ExperimenterId': 'experimenterId',
+        'ErrorType': 'errorType',
+        'ExperimenterDataLength': 'experimenterDataLength',
+        'QueuePortNumber': 'queuePortNumber',
         'NegotiatedVersion': 'negotiatedVersion',
+        'ErrorCode': 'errorCode',
+        'LocalIp': 'localIp',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
         'PortNumber': 'portNumber',
         'PropertyRate': 'propertyRate',
-        'QueueId': 'queueId',
-        'QueuePortNumber': 'queuePortNumber',
-        'QueueProperty': 'queueProperty',
-        'RemoteIp': 'remoteIp',
         'ReplyState': 'replyState',
+        'DataPathId': 'dataPathId',
+        'RemoteIp': 'remoteIp',
     }
 
     def __init__(self, parent):

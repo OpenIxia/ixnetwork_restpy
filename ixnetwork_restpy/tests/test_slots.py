@@ -30,4 +30,6 @@ class TestSlots(unittest.TestCase):
             assert('Broken __slots__')
         except AttributeError as e:
             print('Successfully denied getting dynamic Abcd attribute')
-        
+
+if __name__ == '__main__':
+    unittest.main()     

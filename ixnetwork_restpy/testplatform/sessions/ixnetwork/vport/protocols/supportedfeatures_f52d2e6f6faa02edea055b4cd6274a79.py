@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,22 +31,22 @@ class SupportedFeatures(Base):
     __slots__ = ()
     _SDM_NAME = 'supportedFeatures'
     _SDM_ATT_MAP = {
-        'HundredGbFd': '100GbFd',
         'HundredMbFd': '100MbFd',
-        'HundredMbHd': '100MbHd',
-        'TenGbFd': '10GbFd',
-        'TenMbFd': '10MbFd',
+        'AutoNegotiation': 'autoNegotiation',
         'TenMbHd': '10MbHd',
+        'TenMbFd': '10MbFd',
+        'OneTbFd': '1TbFd',
+        'HundredMbHd': '100MbHd',
+        'FiberMedium': 'fiberMedium',
+        'AsymmetricPause': 'asymmetricPause',
+        'Pause': 'pause',
         'OneGbFd': '1GbFd',
         'OneGbHd': '1GbHd',
-        'OneTbFd': '1TbFd',
-        'FortyGbFd': '40GbFd',
-        'AsymmetricPause': 'asymmetricPause',
-        'AutoNegotiation': 'autoNegotiation',
-        'CopperMedium': 'copperMedium',
-        'FiberMedium': 'fiberMedium',
+        'TenGbFd': '10GbFd',
         'OtherRate': 'otherRate',
-        'Pause': 'pause',
+        'FortyGbFd': '40GbFd',
+        'CopperMedium': 'copperMedium',
+        'HundredGbFd': '100GbFd',
     }
 
     def __init__(self, parent):

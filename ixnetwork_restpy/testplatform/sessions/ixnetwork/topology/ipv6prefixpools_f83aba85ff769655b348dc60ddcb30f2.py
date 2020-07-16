@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,16 +33,16 @@ class Ipv6PrefixPools(Base):
     __slots__ = ()
     _SDM_NAME = 'ipv6PrefixPools'
     _SDM_ATT_MAP = {
-        'AddrStepSupported': 'addrStepSupported',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'LastNetworkAddress': 'lastNetworkAddress',
-        'Name': 'name',
         'NetworkAddress': 'networkAddress',
-        'NumberOfAddresses': 'numberOfAddresses',
-        'NumberOfAddressesAsy': 'numberOfAddressesAsy',
+        'Name': 'name',
         'PrefixAddrStep': 'prefixAddrStep',
+        'NumberOfAddresses': 'numberOfAddresses',
+        'DescriptiveName': 'descriptiveName',
+        'AddrStepSupported': 'addrStepSupported',
+        'LastNetworkAddress': 'lastNetworkAddress',
         'PrefixLength': 'prefixLength',
+        'NumberOfAddressesAsy': 'numberOfAddressesAsy',
     }
 
     def __init__(self, parent):
@@ -53,13 +53,13 @@ class Ipv6PrefixPools(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpiprouteproperty_5946ea11e0349f8c7a53a1834510ee2b.BgpIPRouteProperty): An instance of the BgpIPRouteProperty class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpiprouteproperty_ffd9071ae88c6283e9f54ec948882405.BgpIPRouteProperty): An instance of the BgpIPRouteProperty class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpiprouteproperty_5946ea11e0349f8c7a53a1834510ee2b import BgpIPRouteProperty
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpiprouteproperty_ffd9071ae88c6283e9f54ec948882405 import BgpIPRouteProperty
         return BgpIPRouteProperty(self)
 
     @property
@@ -137,13 +137,13 @@ class Ipv6PrefixPools(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6iprouteproperty_258a6b9f28603250cafea13fb507a121.BgpV6IPRouteProperty): An instance of the BgpV6IPRouteProperty class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6iprouteproperty_3bc5aff598784532c6b5ff0b601d2985.BgpV6IPRouteProperty): An instance of the BgpV6IPRouteProperty class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6iprouteproperty_258a6b9f28603250cafea13fb507a121 import BgpV6IPRouteProperty
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6iprouteproperty_3bc5aff598784532c6b5ff0b601d2985 import BgpV6IPRouteProperty
         return BgpV6IPRouteProperty(self)
 
     @property
@@ -151,13 +151,13 @@ class Ipv6PrefixPools(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6l3vpnrouteproperty_b7e2f119ecb30546f2dfb9b7741e28f0.BgpV6L3VpnRouteProperty): An instance of the BgpV6L3VpnRouteProperty class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6l3vpnrouteproperty_f7d29da5d82b8aa29c3f1f6dd1e5780f.BgpV6L3VpnRouteProperty): An instance of the BgpV6L3VpnRouteProperty class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6l3vpnrouteproperty_b7e2f119ecb30546f2dfb9b7741e28f0 import BgpV6L3VpnRouteProperty
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6l3vpnrouteproperty_f7d29da5d82b8aa29c3f1f6dd1e5780f import BgpV6L3VpnRouteProperty
         return BgpV6L3VpnRouteProperty(self)
 
     @property
@@ -165,13 +165,13 @@ class Ipv6PrefixPools(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_f91a37c8058302050a67e05790d01c7a.CMacProperties): An instance of the CMacProperties class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180.CMacProperties): An instance of the CMacProperties class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_f91a37c8058302050a67e05790d01c7a import CMacProperties
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
         return CMacProperties(self)
 
     @property
@@ -530,6 +530,19 @@ class Ipv6PrefixPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
+
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
 
     def Start(self):
         """Executes the start operation on the server.

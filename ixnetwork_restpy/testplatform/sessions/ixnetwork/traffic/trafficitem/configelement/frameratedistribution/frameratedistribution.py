@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,8 +31,8 @@ class FrameRateDistribution(Base):
     __slots__ = ()
     _SDM_NAME = 'frameRateDistribution'
     _SDM_ATT_MAP = {
-        'PortDistribution': 'portDistribution',
         'StreamDistribution': 'streamDistribution',
+        'PortDistribution': 'portDistribution',
     }
 
     def __init__(self, parent):

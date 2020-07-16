@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,35 +31,66 @@ class Ppp(Base):
     __slots__ = ()
     _SDM_NAME = 'ppp'
     _SDM_ATT_MAP = {
-        'ConfigurationRetries': 'configurationRetries',
-        'EnableAccmNegotiation': 'enableAccmNegotiation',
-        'EnableIpV4': 'enableIpV4',
-        'EnableIpV6': 'enableIpV6',
-        'EnableLqm': 'enableLqm',
-        'EnableMpls': 'enableMpls',
-        'EnableOsi': 'enableOsi',
-        'Enabled': 'enabled',
-        'LocalIpAddress': 'localIpAddress',
-        'LocalIpV6IdType': 'localIpV6IdType',
-        'LocalIpV6Iid': 'localIpV6Iid',
-        'LocalIpV6MacBasedIid': 'localIpV6MacBasedIid',
         'LocalIpV6NegotiationMode': 'localIpV6NegotiationMode',
         'LqmReportInterval': 'lqmReportInterval',
-        'PeerIpV6IdType': 'peerIpV6IdType',
-        'PeerIpV6Iid': 'peerIpV6Iid',
-        'PeerIpV6MacBasedIid': 'peerIpV6MacBasedIid',
-        'PeerIpV6NegotiationMode': 'peerIpV6NegotiationMode',
-        'PppLinkState': 'pppLinkState',
-        'RetryTimeout': 'retryTimeout',
-        'RxAlignment': 'rxAlignment',
-        'RxMaxReceiveUnit': 'rxMaxReceiveUnit',
-        'TxAlignment': 'txAlignment',
-        'TxMaxReceiveUnit': 'txMaxReceiveUnit',
+        'Enabled': 'enabled',
+        'EnableLqm': 'enableLqm',
+        'EnableMpls': 'enableMpls',
+        'EnableAccmNegotiation': 'enableAccmNegotiation',
         'UseMagicNumber': 'useMagicNumber',
+        'RetryTimeout': 'retryTimeout',
+        'EnableIpV6': 'enableIpV6',
+        'EnableIpV4': 'enableIpV4',
+        'TxAlignment': 'txAlignment',
+        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
+        'EnableOsi': 'enableOsi',
+        'PeerIpV6NegotiationMode': 'peerIpV6NegotiationMode',
+        'LocalIpV6IdType': 'localIpV6IdType',
+        'RxMaxReceiveUnit': 'rxMaxReceiveUnit',
+        'PeerIpV6IdType': 'peerIpV6IdType',
+        'TxMaxReceiveUnit': 'txMaxReceiveUnit',
+        'PeerIpV6Iid': 'peerIpV6Iid',
+        'RxAlignment': 'rxAlignment',
+        'ConfigurationRetries': 'configurationRetries',
+        'PppLinkState': 'pppLinkState',
+        'LocalIpV6MacBasedIid': 'localIpV6MacBasedIid',
+        'PeerIpV6MacBasedIid': 'peerIpV6MacBasedIid',
+        'AvailableSpeeds': 'availableSpeeds',
+        'LocalIpV6Iid': 'localIpV6Iid',
+        'CanModifySpeed': 'canModifySpeed',
+        'LocalIpAddress': 'localIpAddress',
+        'SelectedSpeeds': 'selectedSpeeds',
     }
 
     def __init__(self, parent):
         super(Ppp, self).__init__(parent)
+
+    @property
+    def AvailableSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[]): Which speeds are available for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableSpeeds'])
+
+    @property
+    def CanModifySpeed(self):
+        """
+        Returns
+        -------
+        - bool: Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanModifySpeed'])
+
+    @property
+    def CanSetMultipleSpeeds(self):
+        """
+        Returns
+        -------
+        - bool: Can this port selectmultiple speeds for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanSetMultipleSpeeds'])
 
     @property
     def ConfigurationRetries(self):
@@ -323,6 +354,18 @@ class Ppp(Base):
         self._set_attribute(self._SDM_ATT_MAP['RxMaxReceiveUnit'], value)
 
     @property
+    def SelectedSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[]): Which speeds are selected for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
+    @SelectedSpeeds.setter
+    def SelectedSpeeds(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
+
+    @property
     def TxAlignment(self):
         """
         Returns
@@ -358,7 +401,7 @@ class Ppp(Base):
     def UseMagicNumber(self, value):
         self._set_attribute(self._SDM_ATT_MAP['UseMagicNumber'], value)
 
-    def update(self, ConfigurationRetries=None, EnableAccmNegotiation=None, EnableIpV4=None, EnableIpV6=None, EnableLqm=None, EnableMpls=None, EnableOsi=None, Enabled=None, LocalIpAddress=None, LocalIpV6IdType=None, LocalIpV6Iid=None, LocalIpV6MacBasedIid=None, LocalIpV6NegotiationMode=None, LqmReportInterval=None, PeerIpV6IdType=None, PeerIpV6Iid=None, PeerIpV6MacBasedIid=None, PeerIpV6NegotiationMode=None, RetryTimeout=None, RxAlignment=None, RxMaxReceiveUnit=None, TxAlignment=None, TxMaxReceiveUnit=None, UseMagicNumber=None):
+    def update(self, ConfigurationRetries=None, EnableAccmNegotiation=None, EnableIpV4=None, EnableIpV6=None, EnableLqm=None, EnableMpls=None, EnableOsi=None, Enabled=None, LocalIpAddress=None, LocalIpV6IdType=None, LocalIpV6Iid=None, LocalIpV6MacBasedIid=None, LocalIpV6NegotiationMode=None, LqmReportInterval=None, PeerIpV6IdType=None, PeerIpV6Iid=None, PeerIpV6MacBasedIid=None, PeerIpV6NegotiationMode=None, RetryTimeout=None, RxAlignment=None, RxMaxReceiveUnit=None, SelectedSpeeds=None, TxAlignment=None, TxMaxReceiveUnit=None, UseMagicNumber=None):
         """Updates ppp resource on the server.
 
         Args
@@ -384,6 +427,7 @@ class Ppp(Base):
         - RetryTimeout (number): The time, in seconds, between retransmissions of successive configuration or termination requests. The default is 8 seconds.
         - RxAlignment (number): The byte alignment desired for Receive, in bytes. The default is 0 bytes.
         - RxMaxReceiveUnit (number): The maximum transmit frame size desired, in bytes. The default is 65,535 bytes.
+        - SelectedSpeeds (list(str[])): Which speeds are selected for the current media and AN settings.
         - TxAlignment (number): The byte alignment desired for Transmit, in bytes. The default is 0 bytes.
         - TxMaxReceiveUnit (number): The maximum transmit frame size desired, in bytes. The default is 65,535 bytes.
         - UseMagicNumber (bool): If enabled, magic number handling is enabled for negotiation and usage. The magic number is used primarily to detect looped connections.

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,30 +33,30 @@ class FlowRange(Base):
     __slots__ = ()
     _SDM_NAME = 'flowRange'
     _SDM_ATT_MAP = {
-        'CheckOverlap': 'checkOverlap',
-        'Description': 'description',
-        'DontAddOnChannelUp': 'dontAddOnChannelUp',
-        'EmergencyFlow': 'emergencyFlow',
+        'VlanPriority': 'vlanPriority',
+        'TransportSourceIcmpType': 'transportSourceIcmpType',
         'Enabled': 'enabled',
-        'EthernetDestination': 'ethernetDestination',
-        'EthernetSource': 'ethernetSource',
-        'EthernetType': 'ethernetType',
-        'FlowModStatus': 'flowModStatus',
         'HardTimeout': 'hardTimeout',
-        'IdleTimeout': 'idleTimeout',
+        'DontAddOnChannelUp': 'dontAddOnChannelUp',
+        'Ipv4Destination': 'ipv4Destination',
+        'TransportDestinationIcmpCode': 'transportDestinationIcmpCode',
+        'Ipv4Source': 'ipv4Source',
+        'Priority': 'priority',
+        'MatchType': 'matchType',
+        'EthernetDestination': 'ethernetDestination',
+        'EmergencyFlow': 'emergencyFlow',
+        'Description': 'description',
         'InPort': 'inPort',
         'IpDscp': 'ipDscp',
+        'VlanId': 'vlanId',
         'IpProtocol': 'ipProtocol',
-        'Ipv4Destination': 'ipv4Destination',
-        'Ipv4Source': 'ipv4Source',
-        'MatchType': 'matchType',
-        'Priority': 'priority',
         'SendFlowRemoved': 'sendFlowRemoved',
         'TotalFlowCount': 'totalFlowCount',
-        'TransportDestinationIcmpCode': 'transportDestinationIcmpCode',
-        'TransportSourceIcmpType': 'transportSourceIcmpType',
-        'VlanId': 'vlanId',
-        'VlanPriority': 'vlanPriority',
+        'EthernetSource': 'ethernetSource',
+        'CheckOverlap': 'checkOverlap',
+        'EthernetType': 'ethernetType',
+        'IdleTimeout': 'idleTimeout',
+        'FlowModStatus': 'flowModStatus',
     }
 
     def __init__(self, parent):

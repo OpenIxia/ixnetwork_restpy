@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,13 +31,44 @@ class Dcc(Base):
     __slots__ = ()
     _SDM_NAME = 'dcc'
     _SDM_ATT_MAP = {
-        'Crc': 'crc',
         'OverheadByte': 'overheadByte',
+        'AvailableSpeeds': 'availableSpeeds',
+        'CanModifySpeed': 'canModifySpeed',
+        'Crc': 'crc',
         'TimeFill': 'timeFill',
+        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
+        'SelectedSpeeds': 'selectedSpeeds',
     }
 
     def __init__(self, parent):
         super(Dcc, self).__init__(parent)
+
+    @property
+    def AvailableSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[]): Which speeds are available for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableSpeeds'])
+
+    @property
+    def CanModifySpeed(self):
+        """
+        Returns
+        -------
+        - bool: Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanModifySpeed'])
+
+    @property
+    def CanSetMultipleSpeeds(self):
+        """
+        Returns
+        -------
+        - bool: Can this port selectmultiple speeds for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanSetMultipleSpeeds'])
 
     @property
     def Crc(self):
@@ -64,6 +95,18 @@ class Dcc(Base):
         self._set_attribute(self._SDM_ATT_MAP['OverheadByte'], value)
 
     @property
+    def SelectedSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[]): Which speeds are selected for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
+    @SelectedSpeeds.setter
+    def SelectedSpeeds(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
+
+    @property
     def TimeFill(self):
         """
         Returns
@@ -75,13 +118,14 @@ class Dcc(Base):
     def TimeFill(self, value):
         self._set_attribute(self._SDM_ATT_MAP['TimeFill'], value)
 
-    def update(self, Crc=None, OverheadByte=None, TimeFill=None):
+    def update(self, Crc=None, OverheadByte=None, SelectedSpeeds=None, TimeFill=None):
         """Updates dcc resource on the server.
 
         Args
         ----
         - Crc (str(crc16 | crc32)): Choose the type of Cyclic Redundancy Check to be used.
         - OverheadByte (str(loh | soh)): Choose the type of Overhead bytes to be used for transmitting the DCC packet streams.
+        - SelectedSpeeds (list(str[])): Which speeds are selected for the current media and AN settings.
         - TimeFill (str(flag7E | markIdle)): Choose the type of bytes used to fill the gaps between DCC frames.
 
         Raises

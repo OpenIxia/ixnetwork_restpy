@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,15 +33,15 @@ class IxVmPort(Base):
     __slots__ = ()
     _SDM_NAME = 'ixVmPort'
     _SDM_ATT_MAP = {
-        'Interface': 'interface',
-        'IpAddress': 'ipAddress',
         'MacAddress': 'macAddress',
+        'PromiscMode': 'promiscMode',
+        'PortId': 'portId',
+        'PortState': 'portState',
         'Mtu': 'mtu',
         'Owner': 'owner',
-        'PortId': 'portId',
         'PortName': 'portName',
-        'PortState': 'portState',
-        'PromiscMode': 'promiscMode',
+        'Interface': 'interface',
+        'IpAddress': 'ipAddress',
     }
 
     def __init__(self, parent):

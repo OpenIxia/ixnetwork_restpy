@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,44 +32,44 @@ class IsisTrillRouter(Base):
     __slots__ = ()
     _SDM_NAME = 'isisTrillRouter'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AreaAddresses': 'areaAddresses',
-        'AreaAuthenticationType': 'areaAuthenticationType',
-        'AreaTransmitPasswordOrMD5Key': 'areaTransmitPasswordOrMD5Key',
-        'Attached': 'attached',
-        'CSNPInterval': 'cSNPInterval',
-        'CapabilityRouterId': 'capabilityRouterId',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DiscardLSPs': 'discardLSPs',
-        'EnableHelloPadding': 'enableHelloPadding',
-        'EnableHostName': 'enableHostName',
         'EnableMtuProbe': 'enableMtuProbe',
-        'EnableWideMetric': 'enableWideMetric',
-        'Errors': 'errors',
+        'MaxLSPSize': 'maxLSPSize',
         'HostName': 'hostName',
-        'IgnoreReceiveMD5': 'ignoreReceiveMD5',
-        'InterLSPsOrMGroupPDUBurstGap': 'interLSPsOrMGroupPDUBurstGap',
-        'LSPLifetime': 'lSPLifetime',
-        'LSPRefreshRate': 'lSPRefreshRate',
+        'EnableWideMetric': 'enableWideMetric',
         'LSPorMGroupPDUMinTransmissionInterval': 'lSPorMGroupPDUMinTransmissionInterval',
         'LocalSystemID': 'localSystemID',
-        'MaxAreaAddresses': 'maxAreaAddresses',
-        'MaxLSPSize': 'maxLSPSize',
-        'MaxLSPsOrMGroupPDUsPerBurst': 'maxLSPsOrMGroupPDUsPerBurst',
-        'Name': 'name',
-        'NoOfMtuProbes': 'noOfMtuProbes',
-        'OrigLspBufSize': 'origLspBufSize',
-        'Overloaded': 'overloaded',
-        'PSNPInterval': 'pSNPInterval',
-        'PartitionRepair': 'partitionRepair',
-        'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
+        'InterLSPsOrMGroupPDUBurstGap': 'interLSPsOrMGroupPDUBurstGap',
+        'EnableHostName': 'enableHostName',
+        'CSNPInterval': 'cSNPInterval',
+        'Errors': 'errors',
+        'AreaTransmitPasswordOrMD5Key': 'areaTransmitPasswordOrMD5Key',
         'TrillMCastIpv4GroupCount': 'trillMCastIpv4GroupCount',
+        'Status': 'status',
+        'CapabilityRouterId': 'capabilityRouterId',
+        'SessionStatus': 'sessionStatus',
+        'LSPRefreshRate': 'lSPRefreshRate',
+        'EnableHelloPadding': 'enableHelloPadding',
+        'OrigLspBufSize': 'origLspBufSize',
+        'IgnoreReceiveMD5': 'ignoreReceiveMD5',
         'TrillMCastIpv6GroupCount': 'trillMCastIpv6GroupCount',
+        'MaxLSPsOrMGroupPDUsPerBurst': 'maxLSPsOrMGroupPDUsPerBurst',
         'TrillMCastMacGroupCount': 'trillMCastMacGroupCount',
+        'Active': 'active',
+        'AreaAuthenticationType': 'areaAuthenticationType',
+        'PartitionRepair': 'partitionRepair',
+        'Count': 'count',
+        'Name': 'name',
+        'PSNPInterval': 'pSNPInterval',
+        'MaxAreaAddresses': 'maxAreaAddresses',
+        'AreaAddresses': 'areaAddresses',
+        'Overloaded': 'overloaded',
+        'Attached': 'attached',
+        'DiscardLSPs': 'discardLSPs',
+        'DescriptiveName': 'descriptiveName',
+        'LSPLifetime': 'lSPLifetime',
+        'SessionInfo': 'sessionInfo',
+        'StateCounts': 'stateCounts',
+        'NoOfMtuProbes': 'noOfMtuProbes',
     }
 
     def __init__(self, parent):
@@ -625,6 +625,31 @@ class IsisTrillRouter(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def IsisStartRouter(self, *args, **kwargs):
         """Executes the isisStartRouter operation on the server.
 
@@ -634,7 +659,7 @@ class IsisTrillRouter(Base):
 
         isisStartRouter(SessionIndices=list)
         ------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         isisStartRouter(SessionIndices=string)
         --------------------------------------
@@ -659,7 +684,7 @@ class IsisTrillRouter(Base):
 
         isisStopRouter(SessionIndices=list)
         -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         isisStopRouter(SessionIndices=string)
         -------------------------------------
@@ -684,7 +709,7 @@ class IsisTrillRouter(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -703,13 +728,13 @@ class IsisTrillRouter(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected protocols.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -728,13 +753,13 @@ class IsisTrillRouter(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected protocols.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

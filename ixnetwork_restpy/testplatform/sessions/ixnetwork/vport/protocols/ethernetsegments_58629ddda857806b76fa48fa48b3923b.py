@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,25 +33,25 @@ class EthernetSegments(Base):
     __slots__ = ()
     _SDM_NAME = 'ethernetSegments'
     _SDM_ATT_MAP = {
-        'AutoConfigureEsImport': 'autoConfigureEsImport',
-        'BMacPrefix': 'bMacPrefix',
-        'BMacPrefixLength': 'bMacPrefixLength',
-        'DfElectionMethod': 'dfElectionMethod',
-        'DfElectionTimer': 'dfElectionTimer',
-        'EnableActiveStandby': 'enableActiveStandby',
+        'SupportFastConvergence': 'supportFastConvergence',
         'EnableRootLeaf': 'enableRootLeaf',
         'EnableSecondLabel': 'enableSecondLabel',
-        'Enabled': 'enabled',
-        'EsImport': 'esImport',
-        'Esi': 'esi',
-        'EsiLabel': 'esiLabel',
+        'DfElectionTimer': 'dfElectionTimer',
         'FirstLabel': 'firstLabel',
         'IncludeMacMobilityExtendedCommunity': 'includeMacMobilityExtendedCommunity',
+        'AutoConfigureEsImport': 'autoConfigureEsImport',
         'SecondLabel': 'secondLabel',
-        'SupportFastConvergence': 'supportFastConvergence',
-        'SupportMultiHomedEsAutoDiscovery': 'supportMultiHomedEsAutoDiscovery',
         'TypeOfEthernetVpn': 'typeOfEthernetVpn',
+        'DfElectionMethod': 'dfElectionMethod',
+        'BMacPrefixLength': 'bMacPrefixLength',
+        'SupportMultiHomedEsAutoDiscovery': 'supportMultiHomedEsAutoDiscovery',
         'UseSameSequenceNumber': 'useSameSequenceNumber',
+        'BMacPrefix': 'bMacPrefix',
+        'EsiLabel': 'esiLabel',
+        'EsImport': 'esImport',
+        'EnableActiveStandby': 'enableActiveStandby',
+        'Enabled': 'enabled',
+        'Esi': 'esi',
     }
 
     def __init__(self, parent):

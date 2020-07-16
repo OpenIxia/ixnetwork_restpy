@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,15 +31,15 @@ class Lisp(Base):
     __slots__ = ()
     _SDM_NAME = 'lisp'
     _SDM_ATT_MAP = {
-        'BurstIntervalInMs': 'burstIntervalInMs',
         'Enabled': 'enabled',
-        'Ipv4MapRegisterPacketsPerBurst': 'ipv4MapRegisterPacketsPerBurst',
-        'Ipv4MapRequestPacketsPerBurst': 'ipv4MapRequestPacketsPerBurst',
-        'Ipv4SmrPacketsPerBurst': 'ipv4SmrPacketsPerBurst',
-        'Ipv6MapRegisterPacketsPerBurst': 'ipv6MapRegisterPacketsPerBurst',
         'Ipv6MapRequestPacketsPerBurst': 'ipv6MapRequestPacketsPerBurst',
-        'Ipv6SmrPacketsPerBurst': 'ipv6SmrPacketsPerBurst',
         'ProtocolState': 'protocolState',
+        'Ipv4MapRegisterPacketsPerBurst': 'ipv4MapRegisterPacketsPerBurst',
+        'BurstIntervalInMs': 'burstIntervalInMs',
+        'Ipv6SmrPacketsPerBurst': 'ipv6SmrPacketsPerBurst',
+        'Ipv4MapRequestPacketsPerBurst': 'ipv4MapRequestPacketsPerBurst',
+        'Ipv6MapRegisterPacketsPerBurst': 'ipv6MapRegisterPacketsPerBurst',
+        'Ipv4SmrPacketsPerBurst': 'ipv4SmrPacketsPerBurst',
     }
 
     def __init__(self, parent):

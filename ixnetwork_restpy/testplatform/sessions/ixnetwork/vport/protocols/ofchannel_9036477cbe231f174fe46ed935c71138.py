@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,36 +33,36 @@ class OfChannel(Base):
     __slots__ = ()
     _SDM_NAME = 'ofChannel'
     _SDM_ATT_MAP = {
-        'CalculateFlows': 'calculateFlows',
         'CalculatePacketInReplyDelay': 'calculatePacketInReplyDelay',
-        'DataPathId': 'dataPathId',
-        'DataPathIdInHex': 'dataPathIdInHex',
-        'DatapathDescritpion': 'datapathDescritpion',
-        'Description': 'description',
-        'EnableCalculateFlowsPerSecondUsingBarrierReq': 'enableCalculateFlowsPerSecondUsingBarrierReq',
-        'EnableHelloElement': 'enableHelloElement',
-        'EnableStartupEmptyTableFeatureRequest': 'enableStartupEmptyTableFeatureRequest',
-        'Enabled': 'enabled',
-        'FlowTxBurstSize': 'flowTxBurstSize',
         'HardwareDescription': 'hardwareDescription',
-        'InterFlowBurstGap': 'interFlowBurstGap',
-        'InterPacketInBurstGap': 'interPacketInBurstGap',
+        'DataPathIdInHex': 'dataPathIdInHex',
         'LocalIp': 'localIp',
-        'ManufacturerDescription': 'manufacturerDescription',
         'MaximumNumberOfFlowsProcessed': 'maximumNumberOfFlowsProcessed',
-        'MaximumPacketInBytes': 'maximumPacketInBytes',
-        'NumberOfBuffers': 'numberOfBuffers',
-        'PacketInReplyTimeout': 'packetInReplyTimeout',
         'PacketInTxBurstSize': 'packetInTxBurstSize',
-        'RemoteIp': 'remoteIp',
-        'SerialNumber': 'serialNumber',
+        'EnableStartupEmptyTableFeatureRequest': 'enableStartupEmptyTableFeatureRequest',
         'SoftwareDescription': 'softwareDescription',
         'StartUpGenerationId': 'startUpGenerationId',
+        'ManufacturerDescription': 'manufacturerDescription',
+        'InterFlowBurstGap': 'interFlowBurstGap',
+        'DatapathDescritpion': 'datapathDescritpion',
         'StartUpRoleRequest': 'startUpRoleRequest',
+        'FlowTxBurstSize': 'flowTxBurstSize',
+        'PacketInReplyTimeout': 'packetInReplyTimeout',
+        'NumberOfBuffers': 'numberOfBuffers',
+        'EnableHelloElement': 'enableHelloElement',
+        'Description': 'description',
         'StartupFeatureRequest': 'startupFeatureRequest',
-        'StoreFlows': 'storeFlows',
-        'UseDataPathIdAsChannelIdentifier': 'useDataPathIdAsChannelIdentifier',
+        'MaximumPacketInBytes': 'maximumPacketInBytes',
+        'InterPacketInBurstGap': 'interPacketInBurstGap',
         'UseDatapathId': 'useDatapathId',
+        'UseDataPathIdAsChannelIdentifier': 'useDataPathIdAsChannelIdentifier',
+        'SerialNumber': 'serialNumber',
+        'Enabled': 'enabled',
+        'CalculateFlows': 'calculateFlows',
+        'RemoteIp': 'remoteIp',
+        'StoreFlows': 'storeFlows',
+        'DataPathId': 'dataPathId',
+        'EnableCalculateFlowsPerSecondUsingBarrierReq': 'enableCalculateFlowsPerSecondUsingBarrierReq',
     }
 
     def __init__(self, parent):

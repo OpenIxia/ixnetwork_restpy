@@ -47,14 +47,17 @@ class Sessions(Base):
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.ixnetwork import Ixnetwork
         ixnetwork = Ixnetwork(self)
-        build_number = ixnetwork._connection._read('%s/ixnetwork/globals' % self.href)['buildNumber']
+        response = ixnetwork._connection._read('%s/ixnetwork/globals' % self.href)
+        build_number = response['buildNumber']
+        user_name = response['username']
         from distutils.version import LooseVersion
         if len(build_number) == 0:
-            self.warn('using IxNetwork api server version DEBUG')
+            self.warn('Using DEBUG version of IxNetwork api server')
         elif LooseVersion(build_number) < LooseVersion('8.52'):
-            raise ValueError('IxNetwork server version %s is not supported. The minimum version supported is 8.52' % build_number)
+            raise ValueError('IxNetwork api server version %s is not supported. The minimum version supported is 8.52' % build_number)
         else:
-            self.info('using IxNetwork api server version %s' % build_number)
+            self.info('Using IxNetwork api server version %s' % (build_number))
+            self.info('User info %s' % (user_name))
         ixnetwork._set_properties(ixnetwork._connection._read('%s/%s' % (self.href, Ixnetwork._SDM_NAME)))
         return ixnetwork
     
@@ -334,7 +337,10 @@ class Sessions(Base):
         -------
         - str: the local file name
         """
-        return self._connection._get_file('%s/ixnetwork' % self.href, remote_filename=remote_filename, local_filename=local_filename)
+        if self._parent.Platform == 'linux':
+            remote_filename = remote_filename.replace('\\', '/')
+        return self._connection._get_file('%s/ixnetwork' % self.href, 
+            remote_filename=remote_filename, local_filename=local_filename)
     
     def UploadFile(self, local_filename, remote_filename=None):
         """Upload a file to the IxNetwork session instance
@@ -348,4 +354,7 @@ class Sessions(Base):
         -------
         - dict(filename, filesize): Details of the file that was uploaded
         """
-        return self._connection._put_file('%s/ixnetwork' % self.href, local_filename=local_filename, remote_filename=remote_filename)
+        if self._parent.Platform == 'linux' and remote_filename is not None:
+            remote_filename = remote_filename.replace('\\', '/')
+        return self._connection._put_file('%s/ixnetwork' % self.href, 
+            local_filename=local_filename, remote_filename=remote_filename)

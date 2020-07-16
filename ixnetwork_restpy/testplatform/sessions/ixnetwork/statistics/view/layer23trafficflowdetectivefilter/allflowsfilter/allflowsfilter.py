@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,8 +34,8 @@ class AllFlowsFilter(Base):
     _SDM_NAME = 'allFlowsFilter'
     _SDM_ATT_MAP = {
         'NumberOfResults': 'numberOfResults',
-        'SortByStatisticId': 'sortByStatisticId',
         'SortingCondition': 'sortingCondition',
+        'SortByStatisticId': 'sortByStatisticId',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,24 +33,24 @@ class GroupFeatureStatLearnedInformation(Base):
     _SDM_NAME = 'groupFeatureStatLearnedInformation'
     _SDM_ATT_MAP = {
         'ActionsAll': 'actionsAll',
-        'ActionsFastFailOver': 'actionsFastFailOver',
-        'ActionsIndirect': 'actionsIndirect',
-        'ActionsSelect': 'actionsSelect',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'DatapathId': 'datapathId',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'GroupCapabilities': 'groupCapabilities',
         'GroupType': 'groupType',
-        'Latency': 'latency',
-        'LocalIp': 'localIp',
         'MaxGroupsAll': 'maxGroupsAll',
-        'MaxGroupsFastFailOver': 'maxGroupsFastFailOver',
-        'MaxGroupsIndirect': 'maxGroupsIndirect',
+        'ActionsSelect': 'actionsSelect',
         'MaxGroupsSelect': 'maxGroupsSelect',
+        'Latency': 'latency',
+        'DatapathId': 'datapathId',
+        'ErrorType': 'errorType',
         'NegotiatedVersion': 'negotiatedVersion',
+        'ErrorCode': 'errorCode',
+        'LocalIp': 'localIp',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
+        'MaxGroupsFastFailOver': 'maxGroupsFastFailOver',
         'RemoteIp': 'remoteIp',
+        'MaxGroupsIndirect': 'maxGroupsIndirect',
         'ReplyState': 'replyState',
+        'GroupCapabilities': 'groupCapabilities',
+        'ActionsIndirect': 'actionsIndirect',
+        'ActionsFastFailOver': 'actionsFastFailOver',
     }
 
     def __init__(self, parent):

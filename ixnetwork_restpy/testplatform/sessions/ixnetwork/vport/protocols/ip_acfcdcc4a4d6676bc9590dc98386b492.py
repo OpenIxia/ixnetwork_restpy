@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,13 +34,13 @@ class Ip(Base):
     _SDM_NAME = 'ip'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'Enabled': 'enabled',
-        'IpStart': 'ipStart',
         'IpType': 'ipType',
+        'IpStart': 'ipStart',
+        'Enabled': 'enabled',
         'Mask': 'mask',
-        'ProtocolInterface': 'protocolInterface',
-        'Step': 'step',
         'TrafficGroupId': 'trafficGroupId',
+        'Step': 'step',
+        'ProtocolInterface': 'protocolInterface',
     }
 
     def __init__(self, parent):

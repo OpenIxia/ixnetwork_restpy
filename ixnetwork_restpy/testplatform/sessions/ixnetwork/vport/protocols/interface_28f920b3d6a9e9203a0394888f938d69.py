@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,33 +33,33 @@ class Interface(Base):
     __slots__ = ()
     _SDM_NAME = 'interface'
     _SDM_ATT_MAP = {
-        'BfdCvType': 'bfdCvType',
-        'BfdDiscriminatorEnd': 'bfdDiscriminatorEnd',
+        'PadTlvFirstOctet': 'padTlvFirstOctet',
+        'DownStreamIpAddress': 'downStreamIpAddress',
         'BfdDiscriminatorStart': 'bfdDiscriminatorStart',
-        'ControlChannel': 'controlChannel',
+        'IncludePadTlv': 'includePadTlv',
+        'ReplyMode': 'replyMode',
         'DestinationAddressIpv4': 'destinationAddressIpv4',
         'DownStreamAddressType': 'downStreamAddressType',
-        'DownStreamInterfaceAddress': 'downStreamInterfaceAddress',
-        'DownStreamIpAddress': 'downStreamIpAddress',
-        'EchoRequestInterval': 'echoRequestInterval',
-        'EchoResponseTimeout': 'echoResponseTimeout',
+        'ControlChannel': 'controlChannel',
         'EnableDownStreamMappingTlv': 'enableDownStreamMappingTlv',
-        'EnableDsIflag': 'enableDsIflag',
-        'EnableDsNflag': 'enableDsNflag',
-        'EnableFecValidation': 'enableFecValidation',
-        'EnablePeriodicPing': 'enablePeriodicPing',
+        'BfdCvType': 'bfdCvType',
         'Enabled': 'enabled',
-        'FlapTxIntervals': 'flapTxIntervals',
-        'IncludePadTlv': 'includePadTlv',
-        'IncludeVendorEnterpriseNumberTlv': 'includeVendorEnterpriseNumberTlv',
+        'BfdDiscriminatorEnd': 'bfdDiscriminatorEnd',
         'Interfaces': 'interfaces',
         'MinRxInterval': 'minRxInterval',
+        'EchoRequestInterval': 'echoRequestInterval',
         'Multiplier': 'multiplier',
-        'PadTlvFirstOctet': 'padTlvFirstOctet',
-        'PadTlvLength': 'padTlvLength',
-        'ReplyMode': 'replyMode',
         'TxInterval': 'txInterval',
+        'EnableFecValidation': 'enableFecValidation',
+        'EnableDsIflag': 'enableDsIflag',
+        'FlapTxIntervals': 'flapTxIntervals',
+        'EchoResponseTimeout': 'echoResponseTimeout',
         'VendorEnterpriseNumber': 'vendorEnterpriseNumber',
+        'EnableDsNflag': 'enableDsNflag',
+        'IncludeVendorEnterpriseNumberTlv': 'includeVendorEnterpriseNumberTlv',
+        'EnablePeriodicPing': 'enablePeriodicPing',
+        'DownStreamInterfaceAddress': 'downStreamInterfaceAddress',
+        'PadTlvLength': 'padTlvLength',
     }
 
     def __init__(self, parent):

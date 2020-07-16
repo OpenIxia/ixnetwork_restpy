@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,17 +32,17 @@ class PcepIroSubObjectsList(Base):
     __slots__ = ()
     _SDM_NAME = 'pcepIroSubObjectsList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AsNumber': 'asNumber',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'InterfaceId': 'interfaceId',
         'Ipv4Address': 'ipv4Address',
-        'Ipv6Address': 'ipv6Address',
         'Name': 'name',
-        'PrefixLength': 'prefixLength',
+        'Ipv6Address': 'ipv6Address',
+        'InterfaceId': 'interfaceId',
         'RouterId': 'routerId',
+        'AsNumber': 'asNumber',
+        'DescriptiveName': 'descriptiveName',
         'SubObjectType': 'subObjectType',
+        'Active': 'active',
+        'PrefixLength': 'prefixLength',
     }
 
     def __init__(self, parent):

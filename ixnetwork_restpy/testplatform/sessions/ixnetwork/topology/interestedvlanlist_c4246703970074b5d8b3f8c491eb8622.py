@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,21 +31,21 @@ class InterestedVlanList(Base):
     __slots__ = ()
     _SDM_NAME = 'interestedVlanList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
+        'NoOfSpanningTreeRoots': 'noOfSpanningTreeRoots',
+        'VlanIdIncr': 'vlanIdIncr',
+        'Name': 'name',
+        'StartVlanId': 'startVlanId',
+        'M4BitEnabled': 'm4BitEnabled',
         'IncludeInLSP': 'includeInLSP',
+        'DescriptiveName': 'descriptiveName',
+        'M6BitEnabled': 'm6BitEnabled',
         'IncludeInMGroupPDU': 'includeInMGroupPDU',
         'InterNodeVlanIdIncr': 'interNodeVlanIdIncr',
-        'M4BitEnabled': 'm4BitEnabled',
-        'M6BitEnabled': 'm6BitEnabled',
-        'Name': 'name',
+        'Active': 'active',
         'Nickname': 'nickname',
-        'NoOfSpanningTreeRoots': 'noOfSpanningTreeRoots',
-        'StartSpanningTreeRootBridgeId': 'startSpanningTreeRootBridgeId',
-        'StartVlanId': 'startVlanId',
         'VlanCount': 'vlanCount',
-        'VlanIdIncr': 'vlanIdIncr',
+        'StartSpanningTreeRootBridgeId': 'startSpanningTreeRootBridgeId',
     }
 
     def __init__(self, parent):

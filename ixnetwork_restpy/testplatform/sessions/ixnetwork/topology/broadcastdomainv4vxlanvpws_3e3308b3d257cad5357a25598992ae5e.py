@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,32 +31,32 @@ class BroadcastDomainV4VxlanVpws(Base):
     __slots__ = ()
     _SDM_NAME = 'broadcastDomainV4VxlanVpws'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdRouteLabel': 'adRouteLabel',
+        'RsvpP2mpIdAsNumber': 'rsvpP2mpIdAsNumber',
+        'RsvpP2mpId': 'rsvpP2mpId',
         'BVlanId': 'bVlanId',
-        'BVlanPriority': 'bVlanPriority',
-        'BVlanTpid': 'bVlanTpid',
-        'BackupFlag': 'backupFlag',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableVlanAwareService': 'enableVlanAwareService',
-        'EthernetTagId': 'ethernetTagId',
-        'FxcType': 'fxcType',
-        'GroupAddress': 'groupAddress',
-        'IncludeVpwsL2AttrExtComm': 'includeVpwsL2AttrExtComm',
-        'L2Mtu': 'l2Mtu',
-        'Name': 'name',
-        'NoOfMacPools': 'noOfMacPools',
-        'PrimaryPE': 'primaryPE',
-        'RemoteServiceId': 'remoteServiceId',
+        'AdRouteLabel': 'adRouteLabel',
         'RequireCW': 'requireCW',
         'RootAddress': 'rootAddress',
-        'RsvpP2mpId': 'rsvpP2mpId',
-        'RsvpP2mpIdAsNumber': 'rsvpP2mpIdAsNumber',
-        'RsvpTunnelId': 'rsvpTunnelId',
+        'L2Mtu': 'l2Mtu',
+        'BVlanTpid': 'bVlanTpid',
+        'PrimaryPE': 'primaryPE',
+        'IncludeVpwsL2AttrExtComm': 'includeVpwsL2AttrExtComm',
+        'BackupFlag': 'backupFlag',
+        'EthernetTagId': 'ethernetTagId',
         'SenderAddressPRootNodeAddress': 'senderAddressPRootNodeAddress',
-        'UsebVlan': 'usebVlan',
+        'RsvpTunnelId': 'rsvpTunnelId',
+        'RemoteServiceId': 'remoteServiceId',
         'VidNormalization': 'vidNormalization',
+        'BVlanPriority': 'bVlanPriority',
+        'GroupAddress': 'groupAddress',
+        'Active': 'active',
+        'Count': 'count',
+        'FxcType': 'fxcType',
+        'Name': 'name',
+        'NoOfMacPools': 'noOfMacPools',
+        'UsebVlan': 'usebVlan',
+        'DescriptiveName': 'descriptiveName',
+        'EnableVlanAwareService': 'enableVlanAwareService',
     }
 
     def __init__(self, parent):

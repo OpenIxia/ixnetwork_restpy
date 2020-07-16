@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,43 +31,43 @@ class IsisPseudoSRv6AdjSIDList(Base):
     __slots__ = ()
     _SDM_NAME = 'isisPseudoSRv6AdjSIDList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ActiveTo': 'activeTo',
-        'AdvertiseCustomSubTLV': 'advertiseCustomSubTLV',
-        'AdvertiseCustomSubTLVTo': 'advertiseCustomSubTLVTo',
-        'Algorithm': 'algorithm',
-        'AlgorithmTo': 'algorithmTo',
-        'ArgumentLength': 'argumentLength',
-        'ArgumentLengthTo': 'argumentLengthTo',
-        'BFlag': 'bFlag',
-        'BFlagTo': 'bFlagTo',
-        'Count': 'count',
-        'CustomEndPointFunction': 'customEndPointFunction',
-        'CustomEndPointFunctionTo': 'customEndPointFunctionTo',
-        'CustomSubTlv': 'customSubTlv',
-        'CustomSubTlvTo': 'customSubTlvTo',
-        'DescriptiveName': 'descriptiveName',
-        'EndPointFunction': 'endPointFunction',
-        'EndPointFunctionTo': 'endPointFunctionTo',
-        'FunctionLength': 'functionLength',
-        'FunctionLengthTo': 'functionLengthTo',
-        'IncludeSRv6SIDStructureSubSubTlv': 'includeSRv6SIDStructureSubSubTlv',
-        'IncludeSRv6SIDStructureSubSubTlvTo': 'includeSRv6SIDStructureSubSubTlvTo',
-        'Ipv6AdjSid': 'ipv6AdjSid',
-        'Ipv6AdjSidTo': 'ipv6AdjSidTo',
-        'LocatorBlockLength': 'locatorBlockLength',
-        'LocatorBlockLengthTo': 'locatorBlockLengthTo',
         'LocatorNodeLength': 'locatorNodeLength',
-        'LocatorNodeLengthTo': 'locatorNodeLengthTo',
-        'Name': 'name',
-        'PFlag': 'pFlag',
-        'PFlagTo': 'pFlagTo',
         'Reserved': 'reserved',
-        'ReservedTo': 'reservedTo',
-        'SFlag': 'sFlag',
-        'SFlagTo': 'sFlagTo',
         'Weight': 'weight',
+        'CustomSubTlv': 'customSubTlv',
+        'CustomEndPointFunction': 'customEndPointFunction',
+        'IncludeSRv6SIDStructureSubSubTlvTo': 'includeSRv6SIDStructureSubSubTlvTo',
+        'EndPointFunction': 'endPointFunction',
+        'ArgumentLength': 'argumentLength',
         'WeightTo': 'weightTo',
+        'CustomEndPointFunctionTo': 'customEndPointFunctionTo',
+        'IncludeSRv6SIDStructureSubSubTlv': 'includeSRv6SIDStructureSubSubTlv',
+        'BFlag': 'bFlag',
+        'AlgorithmTo': 'algorithmTo',
+        'ReservedTo': 'reservedTo',
+        'LocatorNodeLengthTo': 'locatorNodeLengthTo',
+        'SFlag': 'sFlag',
+        'EndPointFunctionTo': 'endPointFunctionTo',
+        'LocatorBlockLengthTo': 'locatorBlockLengthTo',
+        'Ipv6AdjSid': 'ipv6AdjSid',
+        'AdvertiseCustomSubTLVTo': 'advertiseCustomSubTLVTo',
+        'ActiveTo': 'activeTo',
+        'Ipv6AdjSidTo': 'ipv6AdjSidTo',
+        'Active': 'active',
+        'PFlagTo': 'pFlagTo',
+        'FunctionLengthTo': 'functionLengthTo',
+        'Count': 'count',
+        'FunctionLength': 'functionLength',
+        'PFlag': 'pFlag',
+        'CustomSubTlvTo': 'customSubTlvTo',
+        'Name': 'name',
+        'Algorithm': 'algorithm',
+        'BFlagTo': 'bFlagTo',
+        'AdvertiseCustomSubTLV': 'advertiseCustomSubTLV',
+        'DescriptiveName': 'descriptiveName',
+        'ArgumentLengthTo': 'argumentLengthTo',
+        'SFlagTo': 'sFlagTo',
+        'LocatorBlockLength': 'locatorBlockLength',
     }
 
     def __init__(self, parent):
@@ -511,6 +511,19 @@ class IsisPseudoSRv6AdjSIDList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
+
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
 
     def Start(self):
         """Executes the start operation on the server.

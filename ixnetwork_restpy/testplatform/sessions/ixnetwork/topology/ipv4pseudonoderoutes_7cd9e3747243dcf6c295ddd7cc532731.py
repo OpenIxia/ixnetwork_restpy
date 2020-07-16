@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,25 +32,25 @@ class IPv4PseudoNodeRoutes(Base):
     __slots__ = ()
     _SDM_NAME = 'IPv4PseudoNodeRoutes'
     _SDM_ATT_MAP = {
-        'Active': 'active',
+        'Count': 'count',
+        'Ipv4VFlag': 'ipv4VFlag',
+        'NetworkAddress': 'networkAddress',
+        'Name': 'name',
         'Algorithm': 'algorithm',
         'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Ipv4EFlag': 'ipv4EFlag',
-        'Ipv4LFlag': 'ipv4LFlag',
-        'Ipv4Metric': 'ipv4Metric',
-        'Ipv4NFlag': 'ipv4NFlag',
-        'Ipv4PFlag': 'ipv4PFlag',
-        'Ipv4RFlag': 'ipv4RFlag',
         'Ipv4Redistribution': 'ipv4Redistribution',
+        'Ipv4LFlag': 'ipv4LFlag',
+        'Ipv4EFlag': 'ipv4EFlag',
+        'Ipv4PFlag': 'ipv4PFlag',
+        'DescriptiveName': 'descriptiveName',
+        'Ipv4RFlag': 'ipv4RFlag',
+        'Active': 'active',
         'Ipv4RouteOrigin': 'ipv4RouteOrigin',
-        'Ipv4VFlag': 'ipv4VFlag',
-        'Name': 'name',
-        'NetworkAddress': 'networkAddress',
+        'Ipv4NFlag': 'ipv4NFlag',
+        'SIDIndexLabel': 'sIDIndexLabel',
         'PrefixLength': 'prefixLength',
         'RangeSize': 'rangeSize',
-        'SIDIndexLabel': 'sIDIndexLabel',
+        'Ipv4Metric': 'ipv4Metric',
     }
 
     def __init__(self, parent):
@@ -351,6 +351,19 @@ class IPv4PseudoNodeRoutes(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
+
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
 
     def Start(self):
         """Executes the start operation on the server.

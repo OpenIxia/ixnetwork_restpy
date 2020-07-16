@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,43 +33,43 @@ class Dhcpv6client(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcpv6client'
     _SDM_ATT_MAP = {
-        'ComputedIapdAddresses': 'computedIapdAddresses',
+        'Dhcp6IaT2': 'dhcp6IaT2',
+        'Dhcp6IaT1': 'dhcp6IaT1',
+        'DiscoveredPrefix': 'discoveredPrefix',
+        'Dhcp6DuidType': 'dhcp6DuidType',
+        'StackedLayers': 'stackedLayers',
+        'Dhcp6GatewayMac': 'dhcp6GatewayMac',
+        'Dhcp6IAPDCount': 'dhcp6IAPDCount',
         'ConnectedVia': 'connectedVia',
-        'Count': 'count',
         'CustomLinkLocalAddress': 'customLinkLocalAddress',
+        'MaxNoPerClient': 'maxNoPerClient',
+        'DiscoveredPrefixLength': 'discoveredPrefixLength',
+        'SessionStatus': 'sessionStatus',
+        'Dhcp6DuidVendorId': 'dhcp6DuidVendorId',
+        'NoOfPrefixes': 'noOfPrefixes',
+        'Dhcp6IaId': 'dhcp6IaId',
+        'Dhcp6GatewayAddress': 'dhcp6GatewayAddress',
+        'DiscoveredAddresses': 'discoveredAddresses',
+        'UseRapidCommit': 'useRapidCommit',
+        'Status': 'status',
+        'Dhcp6IANACount': 'dhcp6IANACount',
+        'ComputedIapdAddresses': 'computedIapdAddresses',
+        'Dhcp6IaIdInc': 'dhcp6IaIdInc',
+        'EnableStateless': 'enableStateless',
+        'Dhcp6IaType': 'dhcp6IaType',
+        'Errors': 'errors',
+        'Multiplier': 'multiplier',
+        'Count': 'count',
+        'Name': 'name',
+        'StateCounts': 'stateCounts',
+        'DiscoveredGateways': 'discoveredGateways',
+        'Dhcp6UsePDGlobalAddress': 'dhcp6UsePDGlobalAddress',
+        'NoOfAddresses': 'noOfAddresses',
         'DescriptiveName': 'descriptiveName',
         'Dhcp6DuidEnterpriseId': 'dhcp6DuidEnterpriseId',
-        'Dhcp6DuidType': 'dhcp6DuidType',
-        'Dhcp6DuidVendorId': 'dhcp6DuidVendorId',
-        'Dhcp6GatewayAddress': 'dhcp6GatewayAddress',
-        'Dhcp6GatewayMac': 'dhcp6GatewayMac',
-        'Dhcp6IANACount': 'dhcp6IANACount',
-        'Dhcp6IAPDCount': 'dhcp6IAPDCount',
-        'Dhcp6IaId': 'dhcp6IaId',
-        'Dhcp6IaIdInc': 'dhcp6IaIdInc',
-        'Dhcp6IaT1': 'dhcp6IaT1',
-        'Dhcp6IaT2': 'dhcp6IaT2',
-        'Dhcp6IaType': 'dhcp6IaType',
-        'Dhcp6UsePDGlobalAddress': 'dhcp6UsePDGlobalAddress',
-        'DiscoveredAddresses': 'discoveredAddresses',
-        'DiscoveredGateways': 'discoveredGateways',
-        'DiscoveredPrefix': 'discoveredPrefix',
-        'DiscoveredPrefixLength': 'discoveredPrefixLength',
-        'EnableStateless': 'enableStateless',
-        'Errors': 'errors',
-        'MaxNoPerClient': 'maxNoPerClient',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NoOfAddresses': 'noOfAddresses',
-        'NoOfPrefixes': 'noOfPrefixes',
-        'RenewTimer': 'renewTimer',
-        'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
         'UseCustomLinkLocalAddress': 'useCustomLinkLocalAddress',
-        'UseRapidCommit': 'useRapidCommit',
+        'SessionInfo': 'sessionInfo',
+        'RenewTimer': 'renewTimer',
     }
 
     def __init__(self, parent):
@@ -94,13 +94,13 @@ class Dhcpv6client(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_233d018ff70759c1f356b7faa2633d85.BgpIpv6Peer): An instance of the BgpIpv6Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d4ac277d9da759fd5a152b8e6eb0ab20.BgpIpv6Peer): An instance of the BgpIpv6Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_233d018ff70759c1f356b7faa2633d85 import BgpIpv6Peer
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d4ac277d9da759fd5a152b8e6eb0ab20 import BgpIpv6Peer
         return BgpIpv6Peer(self)
 
     @property
@@ -954,6 +954,31 @@ class Dhcpv6client(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def Rebind(self, *args, **kwargs):
         """Executes the rebind operation on the server.
 
@@ -963,7 +988,7 @@ class Dhcpv6client(Base):
 
         rebind(SessionIndices=list)
         ---------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         rebind(SessionIndices=string)
         -----------------------------
@@ -988,7 +1013,7 @@ class Dhcpv6client(Base):
 
         renew(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         renew(SessionIndices=string)
         ----------------------------
@@ -1013,7 +1038,7 @@ class Dhcpv6client(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -1044,7 +1069,7 @@ class Dhcpv6client(Base):
         sendPing(DestIP=string, SessionIndices=list)list
         ------------------------------------------------
         - DestIP (str): This parameter requires a destIP of type kString
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
         - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
         sendPing(SessionIndices=string, DestIP=string)list
@@ -1066,13 +1091,13 @@ class Dhcpv6client(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected protocols.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -1091,13 +1116,13 @@ class Dhcpv6client(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected protocols.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

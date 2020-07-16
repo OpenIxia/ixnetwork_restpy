@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,26 +31,26 @@ class PimV4SourcesList(Base):
     __slots__ = ()
     _SDM_NAME = 'pimV4SourcesList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
+        'SourceAddress': 'sourceAddress',
+        'SwitchOverInterval': 'switchOverInterval',
+        'SupressionTime': 'supressionTime',
+        'Name': 'name',
+        'RpAddress': 'rpAddress',
         'DiscardSgJoinStates': 'discardSgJoinStates',
-        'GroupAddress': 'groupAddress',
+        'SendNullRegAtBegin': 'sendNullRegAtBegin',
         'GroupCount': 'groupCount',
+        'SourceCount': 'sourceCount',
+        'UdpDestinationPort': 'udpDestinationPort',
+        'Status': 'status',
+        'DescriptiveName': 'descriptiveName',
+        'RegisterProbeTime': 'registerProbeTime',
+        'UdpSourcePort': 'udpSourcePort',
+        'GroupAddress': 'groupAddress',
+        'Active': 'active',
         'LocalRouterId': 'localRouterId',
         'MulticastDataLength': 'multicastDataLength',
-        'Name': 'name',
-        'RegisterProbeTime': 'registerProbeTime',
-        'RpAddress': 'rpAddress',
-        'SendNullRegAtBegin': 'sendNullRegAtBegin',
-        'SourceAddress': 'sourceAddress',
-        'SourceCount': 'sourceCount',
-        'Status': 'status',
-        'SupressionTime': 'supressionTime',
-        'SwitchOverInterval': 'switchOverInterval',
         'TxIterationGap': 'txIterationGap',
-        'UdpDestinationPort': 'udpDestinationPort',
-        'UdpSourcePort': 'udpSourcePort',
     }
 
     def __init__(self, parent):
@@ -327,7 +327,7 @@ class PimV4SourcesList(Base):
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -357,7 +357,7 @@ class PimV4SourcesList(Base):
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

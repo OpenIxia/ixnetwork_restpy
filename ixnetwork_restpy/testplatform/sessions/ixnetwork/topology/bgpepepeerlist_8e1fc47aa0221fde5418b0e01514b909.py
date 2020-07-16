@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,30 +31,30 @@ class BgpEpePeerList(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpEpePeerList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'BBit': 'bBit',
-        'BgpLocalRouterId': 'bgpLocalRouterId',
-        'BgpRemoteRouterId': 'bgpRemoteRouterId',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnablePeerNodeSid': 'enablePeerNodeSid',
-        'LBit': 'lBit',
         'LocalAsn': 'localAsn',
-        'Name': 'name',
-        'NoOfPeerSet': 'noOfPeerSet',
-        'NoOflinks': 'noOflinks',
-        'PBit': 'pBit',
-        'PeerName': 'peerName',
-        'PeerSetGroup': 'peerSetGroup',
-        'RemoteAsn': 'remoteAsn',
         'Reserved': 'reserved',
-        'RsvdBits': 'rsvdBits',
-        'SidIndex': 'sidIndex',
-        'SidIndexValue': 'sidIndexValue',
-        'UseLocalConfedId': 'useLocalConfedId',
-        'UseRemoteConfedId': 'useRemoteConfedId',
-        'VBit': 'vBit',
         'Weight': 'weight',
+        'SidIndex': 'sidIndex',
+        'RsvdBits': 'rsvdBits',
+        'BgpLocalRouterId': 'bgpLocalRouterId',
+        'UseLocalConfedId': 'useLocalConfedId',
+        'VBit': 'vBit',
+        'PBit': 'pBit',
+        'EnablePeerNodeSid': 'enablePeerNodeSid',
+        'PeerSetGroup': 'peerSetGroup',
+        'LBit': 'lBit',
+        'BgpRemoteRouterId': 'bgpRemoteRouterId',
+        'PeerName': 'peerName',
+        'SidIndexValue': 'sidIndexValue',
+        'UseRemoteConfedId': 'useRemoteConfedId',
+        'Active': 'active',
+        'Count': 'count',
+        'Name': 'name',
+        'NoOflinks': 'noOflinks',
+        'DescriptiveName': 'descriptiveName',
+        'RemoteAsn': 'remoteAsn',
+        'NoOfPeerSet': 'noOfPeerSet',
+        'BBit': 'bBit',
     }
 
     def __init__(self, parent):

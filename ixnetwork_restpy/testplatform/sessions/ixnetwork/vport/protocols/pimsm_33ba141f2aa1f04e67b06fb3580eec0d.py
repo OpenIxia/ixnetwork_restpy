@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,21 +31,21 @@ class Pimsm(Base):
     __slots__ = ()
     _SDM_NAME = 'pimsm'
     _SDM_ATT_MAP = {
-        'BsmFramePerInterval': 'bsmFramePerInterval',
-        'CrpFramePerInterval': 'crpFramePerInterval',
         'DataMdtFramePerInterval': 'dataMdtFramePerInterval',
-        'DenyGrePimIpPrefix': 'denyGrePimIpPrefix',
-        'EnableDiscardJoinPruneProcessing': 'enableDiscardJoinPruneProcessing',
-        'EnableRateControl': 'enableRateControl',
-        'Enabled': 'enabled',
-        'GreFilterType': 'greFilterType',
-        'HelloMsgsPerInterval': 'helloMsgsPerInterval',
+        'BsmFramePerInterval': 'bsmFramePerInterval',
         'Interval': 'interval',
-        'JoinPruneMessagesPerInterval': 'joinPruneMessagesPerInterval',
-        'OverrideSourceIpForSmInterface': 'overrideSourceIpForSmInterface',
-        'RegisterMessagesPerInterval': 'registerMessagesPerInterval',
+        'HelloMsgsPerInterval': 'helloMsgsPerInterval',
         'RegisterStopMessagesPerInterval': 'registerStopMessagesPerInterval',
         'RunningState': 'runningState',
+        'EnableRateControl': 'enableRateControl',
+        'Enabled': 'enabled',
+        'JoinPruneMessagesPerInterval': 'joinPruneMessagesPerInterval',
+        'EnableDiscardJoinPruneProcessing': 'enableDiscardJoinPruneProcessing',
+        'RegisterMessagesPerInterval': 'registerMessagesPerInterval',
+        'DenyGrePimIpPrefix': 'denyGrePimIpPrefix',
+        'CrpFramePerInterval': 'crpFramePerInterval',
+        'GreFilterType': 'greFilterType',
+        'OverrideSourceIpForSmInterface': 'overrideSourceIpForSmInterface',
     }
 
     def __init__(self, parent):

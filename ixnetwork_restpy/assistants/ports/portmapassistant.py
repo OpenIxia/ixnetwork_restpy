@@ -1,7 +1,9 @@
 """ Assistant class to simplify the task of virtual ports to test ports connections
 """
 import time
-from ixnetwork_restpy.testplatform.sessions.ixnetwork.ixnetwork import Ixnetwork
+import json
+from ixnetwork_restpy.select import Select
+from ixnetwork_restpy.assistants.statistics.statviewassistant import StatViewAssistant
 
 
 class PortMapAssistant(object):
@@ -12,12 +14,15 @@ class PortMapAssistant(object):
         ----
         - IxNetwork (obj (ixnetwork_restpy.testplatform.sessions.ixnetwork.Ixnetwork)): An Ixnetwork object
         """
-        assert(isinstance(IxNetwork, Ixnetwork))
+        self._map = {}
         self._IxNetwork = IxNetwork
-        self._vports = []
-        self._locations = []
+        self._location_supported = True
+        try:
+            self._IxNetwork._connection._options(self._IxNetwork.href + '/locations')
+        except:
+            self._location_supported = False
 
-    def Map(self, IpAddress='127.0.0.1', CardId=1, PortId=1, Name=None, Port=None):
+    def Map(self, IpAddress='127.0.0.1', CardId=1, PortId=1, Name=None, Port=None, Location=None):
         """Map a test port to a virtual port
         
         Examples
@@ -26,6 +31,8 @@ class PortMapAssistant(object):
             Map(Name='Tx', Port=('10.36.74.26', 2, 13))
             Map('10.36.74.26', 2, 13, Name='Tx')
             Map('10.36.74.26', 2, 14, Name=vport.Name)
+            Map(Location='10.36.74.26;1;1', Name='Tx')
+            Map(Location='localuhd/1', Name='Tx')
 
         Args
         ----
@@ -41,8 +48,11 @@ class PortMapAssistant(object):
             The found or created vport will then be mapped.
         - Port (tuple(IpAddress,CardId,PortId)): A test port location tuple consisting of an IpAddress, CardId, PortId.
             Use this parameter instead of specifying the individual IpAddress, CardId, PortId parameters.
-            If this parameter is present it will override any IpAddress, CardId, PortId parameters.
-        
+            If this parameter is not None it will override any IpAddress, CardId, PortId parameter values.
+        - Location (str): A test port location using the new 9.10 location syntax
+            The location syntax for test ports can be discovered by using the /locations API
+            If this parameter is not None it will override any IpAddress, CardId, PortId, Port parameter values
+
         Returns
         -------
         - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.vport.Vport): A Vport object
@@ -50,6 +60,7 @@ class PortMapAssistant(object):
         Raises
         ------
         - ValueError: a PortId was not provided
+        - RuntimeError: Location API is not supported on the server
         - ServerError: an unexpected error occurred on the server
         """	
         if Port is not None:
@@ -60,14 +71,10 @@ class PortMapAssistant(object):
             vport = self._IxNetwork.Vport.find(Name='^%s$' % Name)
         if Name is None or len(vport) == 0:
             vport = self._IxNetwork.Vport.add(Name=Name)
-        self._vports.append(vport)
-        self._locations.append(
-            {
-                'arg1': IpAddress,
-                'arg2': CardId,
-                'arg3': PortId
-            }
-        )
+        self._map[vport.Name] = {
+            'location': Location if Location is not None else '%s;%s;%s' % (IpAddress, CardId, PortId),
+            'vport': vport
+        }  
         return vport
 
     def Clear(self, Disconnect=False):
@@ -79,66 +86,155 @@ class PortMapAssistant(object):
         """
         if Disconnect is True:
             self.Disconnect()
-        self._vports = []
-        self._locations = []
+        self._map = {}
         return self
 
-    def Connect(self, ForceOwnership=True, ChassisTimeout=60):
-        """Connect mapped test ports to virtual ports
-
-        The server method that connects test ports to virtual ports does the following:
-        - connects to each unique chassis in the map
-        - checks that the Ixnetwork.AvailableHardware.Chassis.State is 'ready' (timeout for all chassis is 16 minutes)
-        - for each map pair, sets the Ixnetwork.Vport.ConnectedTo property to an AvailableHardware.Chassis.Card.Port
-        - checks that the IxNetwork.Vport.ConnectionState is in ['connectedLinkUp', 'connectedLinkDown'] (timeout for all ports is 10 minutes) 
-        - checks that the Port Statistics view is ready and all test ports are present as row labels in the view (timeout for all ports is 90 seconds)
+    def Connect(self, ForceOwnership=True, HostReadyTimeout=60, LinkUpTimeout=300):
+        """Connect virtual ports to test ports
 
         Args
         ----
-        - ForceOwnership (bool): Forcefully clear ownership of the test port
-        - ChassisTimeout (int): The amount of seconds to wait for all unique chassis to be in a 'ready' state
-            The default is None which will use the server timeout of 16 minutes
+        - ForceOwnership (bool): Forcefully clear ownership of the test ports
+        - HostReadyTimeout (bool): The number of seconds to wait for all 
+            test port hosts to achieve a state of 'ready'
+        - LinkUpTimeout (int): The number of seconds to wait for all 
+            virtual port links to achieve a state of 'Link Up'
 
         Raises
         ------
-        - BadRequestError:
-        - RuntimeError: when the ChassisTimeout value has been execeeded 
-        - ServerError: 
+        - obj(ixnetwork_restpy.errors.NotFoundError): the HostReadyTimeout or LinkUpTimeout value has been exceeded 
+        - obj(ixnetwork_restpy.errors.ServerError): an unexpected error occurred on the server
         """
-        if ChassisTimeout is not None:
-            chassis = self._IxNetwork.AvailableHardware.Chassis
-            ip_addresses = []
-            for location in self._locations:
-                ip_addresses.append(location['arg1'])
-            ip_addresses = set(ip_addresses)
-            for ip_address in ip_addresses:
-                chassis.add(Hostname=ip_address)
-            start_time = time.time()
-            hostname_pattern = '^(%s)$' % '|'.join(ip_addresses)
-            while True:
-                matches = chassis.find(Hostname=hostname_pattern, State='ready')
-                if len(matches) == len(ip_addresses):
-                    break
-                if time.time() - start_time > ChassisTimeout:
-                    not_ready = []
-                    for match in chassis.find(State='^(?!ready).*$'):
-                        not_ready.append(match.Hostname)
-                    raise RuntimeError('After %s seconds, chassis [%s] are not in a ready state' % (ChassisTimeout, ', '.join(not_ready)))
-                time.sleep(3)
-        self._IxNetwork.AssignPorts(self._locations, [], self._vports, ForceOwnership)
+        start = time.time()
+        self._add_hosts(HostReadyTimeout)
+        self._IxNetwork.info('PortMapAssistant._add_hosts duration: %ssecs' % (time.time() - start))
+        start = time.time()
+        self._connect_ports(ForceOwnership)
+        self._IxNetwork.info('PortMapAssistant._connect_ports duration: %ssecs' % (time.time() - start))
+        start = time.time()
+        self._check_link_state(LinkUpTimeout)
+        self._IxNetwork.info('PortMapAssistant._check_link_state duration: %ssecs' % (time.time() - start))
         return self
+
+    def _add_hosts(self, HostReadyTimeout):
+        ip_addresses = []
+        for map in self._map.values():
+            if ';' in map['location']:
+                chassis_address = map['location'].split(';')[0]
+                ip_addresses.append(chassis_address)
+        ip_addresses = set(ip_addresses)
+        if len(ip_addresses) > 0:
+            self._IxNetwork.info('Adding test port hosts [%s]...' % ', '.join(ip_addresses))
+            url = self._IxNetwork.href + '/availableHardware/chassis'
+            for ip_address in ip_addresses:
+                payload = {'hostname': ip_address}
+                self._IxNetwork._connection._create(url, payload)
+            start_time = time.time()
+            while True:
+                select = self._select_chassis('^(%s)$' % '|'.join(ip_addresses))
+                not_ready = []
+                for chassis in select['chassis']:
+                    if chassis['state'] != 'ready':
+                        not_ready.append(chassis['hostname'])
+                if len(not_ready) == 0:
+                    break
+                if time.time() - start_time > HostReadyTimeout:
+                    raise RuntimeError('After %s seconds, test port hosts [%s] are not in a ready state' % (HostReadyTimeout, ', '.join(not_ready)))
+                time.sleep(3)
+
+    def _get_name_regex(self):
+        names = []
+        for name in self._map:
+            names.append(name)
+        regex = '^(%s)$' % ('|'.join(names))
+        return regex
+
+    def _select_chassis(self, filter):
+        children = [
+            {
+                'child': 'chassis',
+                'properties': ['state', 'hostname'],
+                'filters': [{'property': 'hostname', 'regex': filter}]
+            }
+        ]
+        select = Select(self._IxNetwork._connection, 
+            self._IxNetwork.href + '/availableHardware', 
+            children=children)
+        return select.go()[0]
+
+    def _select_vports(self):
+        children = [
+            {
+                'child': '^vport$',
+                'properties': ['name', 'connectionState'],
+                'filters': [
+                    {
+                        'property': 'name', 
+                        'regex': self._get_name_regex()
+                    }
+                ]
+            },
+            {
+                'child': '^(availableHardware|chassis|card|port)$',
+                'properties': [],
+                'filters': []
+            }
+        ]
+        select = Select(self._IxNetwork._connection, self._IxNetwork.href, 
+            children=children)
+        return select.go()[0]
+
+    def _find_xpath(self, nested_dict, card_port):
+        for k, v in nested_dict.items():
+            if isinstance(v, list):
+                for d in v:
+                    xpath = self._find_xpath(d, card_port) 
+                    if xpath is not None:
+                        return xpath
+            elif isinstance(v, dict):
+                xpath = self._find_xpath(v, card_port)
+                if xpath is not None:
+                    return xpath
+            elif isinstance(v, str) and card_port in v: 
+                return nested_dict['xpath']
+        return None
+
+    def _connect_ports(self, ForceOwnership):
+        method = 'location' if self._location_supported else 'connectedTo' 
+        self._IxNetwork.info('Connecting virtual ports to test ports using %s' % method)
+        payload = []
+        select = self._select_vports()
+        for vport in select['vport']:
+            location = self._map[vport['name']]['location']
+            if self._location_supported is True:
+                vport['location'] = location
+                payload.append({'xpath': vport['xpath'], 'location': location})
+            else:
+                (hostname, cardid, portid) = location.split(';')
+                card_port = "/card/%s/port/%s" % (cardid, portid)
+                xpath = self._find_xpath(select['availableHardware'], card_port)
+                payload.append({'xpath': vport['xpath'], 'connectedTo': xpath})
+        self._IxNetwork.ResourceManager.ImportConfig(json.dumps(payload), False)
+        if ForceOwnership is True:
+            self._IxNetwork.Vport.find(Name=self._get_name_regex()).ConnectPorts(ForceOwnership)
+    
+    def _check_link_state(self, LinkUpTimeout):
+        self._IxNetwork.info('Checking virtual port link states')
+        view = StatViewAssistant(self._IxNetwork, 'Port Statistics', Timeout=LinkUpTimeout)
+        view.AddRowFilter('Port Name', StatViewAssistant.REGEX, self._get_name_regex())
+        view.CheckCondition('Link State', StatViewAssistant.REGEX, '^Link Up$', Timeout=LinkUpTimeout)
 
     def Disconnect(self):
         """Disconnect all mapped virtual ports from test port locations
         """
-        for vport in self._vports:
-            vport.ReleasePort()
+        self._IxNetwork.info('Disconnecting virtual ports from test ports')
+        self._IxNetwork.Vport.find(Name=self._get_name_regex()).UnassignPorts(False)
         return self
 
     def __str__(self):
-        map = ''
-        for vport, location in zip(self._vports, self._locations):
-            vport.refresh()
-            map += 'Vport.Name[%s] -> location[%s;%s;%s] -> Vport.ConnectionState[%s]\n' % \
-                (vport.Name, location['arg1'], location['arg2'], location['arg3'], vport.ConnectionState)
-        return map
+        map_str = ''
+        template = 'Vport[%s] -> TestPort[%s] -> Vport.ConnectionState[%s]\n'
+        for vport in self._select_vports()['vport']:
+            name = vport['name']
+            map_str += template % (name, self._map[name]['location'], vport['connectionState'])
+        return map_str.rstrip()

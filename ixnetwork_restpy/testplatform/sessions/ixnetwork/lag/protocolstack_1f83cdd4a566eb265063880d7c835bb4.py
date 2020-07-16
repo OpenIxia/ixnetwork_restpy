@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,12 +34,12 @@ class ProtocolStack(Base):
     _SDM_NAME = 'protocolStack'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Enabled': 'enabled',
-        'Errors': 'errors',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
         'Status': 'status',
+        'Errors': 'errors',
+        'Name': 'name',
+        'Enabled': 'enabled',
+        'DescriptiveName': 'descriptiveName',
+        'Multiplier': 'multiplier',
     }
 
     def __init__(self, parent):
@@ -237,6 +237,19 @@ class ProtocolStack(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
+
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
 
     def CopyPaste(self, *args, **kwargs):
         """Executes the copyPaste operation on the server.

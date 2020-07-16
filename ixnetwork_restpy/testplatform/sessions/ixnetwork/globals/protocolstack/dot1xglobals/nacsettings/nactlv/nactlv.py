@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,14 +33,14 @@ class NacTlv(Base):
     __slots__ = ()
     _SDM_NAME = 'nacTlv'
     _SDM_ATT_MAP = {
-        'AppCode': 'appCode',
+        'VendorId': 'vendorId',
         'AppType': 'appType',
-        'AvpType': 'avpType',
         'Name': 'name',
         'ObjectId': 'objectId',
         'Selected': 'selected',
         'Value': 'value',
-        'VendorId': 'vendorId',
+        'AvpType': 'avpType',
+        'AppCode': 'appCode',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,33 +34,33 @@ class Dhcpv6PdClientGlobals(Base):
     _SDM_NAME = 'dhcpv6PdClientGlobals'
     _SDM_ATT_MAP = {
         'AcceptPartialConfig': 'acceptPartialConfig',
-        'Dhcp6EchoIaInfo': 'dhcp6EchoIaInfo',
-        'Dhcp6InfMaxRc': 'dhcp6InfMaxRc',
-        'Dhcp6InfMaxRt': 'dhcp6InfMaxRt',
-        'Dhcp6InfTimeout': 'dhcp6InfTimeout',
-        'Dhcp6RebMaxRt': 'dhcp6RebMaxRt',
-        'Dhcp6RebTimeout': 'dhcp6RebTimeout',
-        'Dhcp6RelMaxRc': 'dhcp6RelMaxRc',
-        'Dhcp6RelTimeout': 'dhcp6RelTimeout',
         'Dhcp6RenMaxRt': 'dhcp6RenMaxRt',
-        'Dhcp6RenTimeout': 'dhcp6RenTimeout',
-        'Dhcp6ReqMaxRc': 'dhcp6ReqMaxRc',
-        'Dhcp6ReqMaxRt': 'dhcp6ReqMaxRt',
-        'Dhcp6ReqTimeout': 'dhcp6ReqTimeout',
-        'Dhcp6SolMaxRc': 'dhcp6SolMaxRc',
-        'Dhcp6SolMaxRt': 'dhcp6SolMaxRt',
-        'Dhcp6SolTimeout': 'dhcp6SolTimeout',
+        'Dhcp6InfMaxRt': 'dhcp6InfMaxRt',
         'MaxOutstandingReleases': 'maxOutstandingReleases',
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
-        'ObjectId': 'objectId',
-        'RenewOnLinkUp': 'renewOnLinkUp',
-        'SetupRateIncrement': 'setupRateIncrement',
-        'SetupRateInitial': 'setupRateInitial',
-        'SetupRateMax': 'setupRateMax',
-        'TeardownRateIncrement': 'teardownRateIncrement',
-        'TeardownRateInitial': 'teardownRateInitial',
+        'Dhcp6RelTimeout': 'dhcp6RelTimeout',
         'TeardownRateMax': 'teardownRateMax',
+        'Dhcp6RelMaxRc': 'dhcp6RelMaxRc',
+        'Dhcp6InfMaxRc': 'dhcp6InfMaxRc',
+        'Dhcp6ReqTimeout': 'dhcp6ReqTimeout',
+        'Dhcp6ReqMaxRt': 'dhcp6ReqMaxRt',
+        'ObjectId': 'objectId',
+        'Dhcp6ReqMaxRc': 'dhcp6ReqMaxRc',
+        'Dhcp6SolMaxRc': 'dhcp6SolMaxRc',
+        'RenewOnLinkUp': 'renewOnLinkUp',
+        'Dhcp6EchoIaInfo': 'dhcp6EchoIaInfo',
+        'MaxOutstandingRequests': 'maxOutstandingRequests',
+        'TeardownRateInitial': 'teardownRateInitial',
+        'Dhcp6RenTimeout': 'dhcp6RenTimeout',
+        'TeardownRateIncrement': 'teardownRateIncrement',
+        'Dhcp6RebMaxRt': 'dhcp6RebMaxRt',
+        'SetupRateIncrement': 'setupRateIncrement',
+        'SetupRateMax': 'setupRateMax',
+        'Dhcp6SolMaxRt': 'dhcp6SolMaxRt',
+        'Dhcp6InfTimeout': 'dhcp6InfTimeout',
+        'Dhcp6SolTimeout': 'dhcp6SolTimeout',
         'WaitForCompletion': 'waitForCompletion',
+        'Dhcp6RebTimeout': 'dhcp6RebTimeout',
+        'SetupRateInitial': 'setupRateInitial',
     }
 
     def __init__(self, parent):

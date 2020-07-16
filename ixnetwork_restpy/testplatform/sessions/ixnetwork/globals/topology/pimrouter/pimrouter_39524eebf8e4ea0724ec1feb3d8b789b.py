@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,19 +31,19 @@ class PimRouter(Base):
     __slots__ = ()
     _SDM_NAME = 'pimRouter'
     _SDM_ATT_MAP = {
-        'BootstrapMessagePerInterval': 'bootstrapMessagePerInterval',
-        'CRpAdvertiseMessagePerInterval': 'cRpAdvertiseMessagePerInterval',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DiscardJoinPruneProcessing': 'discardJoinPruneProcessing',
-        'EnableRateControl': 'enableRateControl',
-        'HelloMessagePerInterval': 'helloMessagePerInterval',
         'Interval': 'interval',
-        'JoinPruneMessagePerInterval': 'joinPruneMessagePerInterval',
         'Name': 'name',
         'RegisterMessagePerInterval': 'registerMessagePerInterval',
-        'RegisterStopMessagePerInterval': 'registerStopMessagePerInterval',
+        'EnableRateControl': 'enableRateControl',
+        'BootstrapMessagePerInterval': 'bootstrapMessagePerInterval',
+        'HelloMessagePerInterval': 'helloMessagePerInterval',
+        'CRpAdvertiseMessagePerInterval': 'cRpAdvertiseMessagePerInterval',
+        'DescriptiveName': 'descriptiveName',
+        'DiscardJoinPruneProcessing': 'discardJoinPruneProcessing',
+        'JoinPruneMessagePerInterval': 'joinPruneMessagePerInterval',
         'RowNames': 'rowNames',
+        'RegisterStopMessagePerInterval': 'registerStopMessagePerInterval',
     }
 
     def __init__(self, parent):

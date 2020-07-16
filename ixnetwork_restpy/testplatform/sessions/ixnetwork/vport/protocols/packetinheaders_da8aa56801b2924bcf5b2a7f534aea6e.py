@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,22 +31,22 @@ class PacketInHeaders(Base):
     __slots__ = ()
     _SDM_NAME = 'packetInHeaders'
     _SDM_ATT_MAP = {
-        'EthernetDestinationAddress': 'ethernetDestinationAddress',
-        'EthernetSourceAddress': 'ethernetSourceAddress',
-        'EthernetType': 'ethernetType',
-        'Ipv4DestinationAddress': 'ipv4DestinationAddress',
         'Ipv4Protocol': 'ipv4Protocol',
-        'Ipv4SourceAddress': 'ipv4SourceAddress',
-        'Ipv6DestinationAddress': 'ipv6DestinationAddress',
-        'Ipv6FlowLabel': 'ipv6FlowLabel',
-        'Ipv6SourceAddress': 'ipv6SourceAddress',
-        'TcpDestinationPort': 'tcpDestinationPort',
         'TcpSourcePort': 'tcpSourcePort',
-        'UdpDestinationPort': 'udpDestinationPort',
+        'Ipv4SourceAddress': 'ipv4SourceAddress',
         'UdpSourcePort': 'udpSourcePort',
-        'UniquePacketCount': 'uniquePacketCount',
-        'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
+        'TcpDestinationPort': 'tcpDestinationPort',
+        'UniquePacketCount': 'uniquePacketCount',
+        'Ipv6DestinationAddress': 'ipv6DestinationAddress',
+        'VlanId': 'vlanId',
+        'Ipv6SourceAddress': 'ipv6SourceAddress',
+        'EthernetType': 'ethernetType',
+        'Ipv6FlowLabel': 'ipv6FlowLabel',
+        'EthernetDestinationAddress': 'ethernetDestinationAddress',
+        'Ipv4DestinationAddress': 'ipv4DestinationAddress',
+        'UdpDestinationPort': 'udpDestinationPort',
+        'EthernetSourceAddress': 'ethernetSourceAddress',
     }
 
     def __init__(self, parent):

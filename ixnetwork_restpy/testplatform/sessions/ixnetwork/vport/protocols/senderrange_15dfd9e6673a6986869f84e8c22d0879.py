@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,52 +33,52 @@ class SenderRange(Base):
     __slots__ = ()
     _SDM_NAME = 'senderRange'
     _SDM_ATT_MAP = {
-        'AutoGenerateSessionName': 'autoGenerateSessionName',
-        'BackupLspIdPoolStart': 'backupLspIdPoolStart',
-        'Bandwidth': 'bandwidth',
-        'BandwidthProtectionDesired': 'bandwidthProtectionDesired',
-        'EnableBfdMpls': 'enableBfdMpls',
-        'EnableFastReroute': 'enableFastReroute',
-        'EnableLspPing': 'enableLspPing',
-        'EnablePathReoptimization': 'enablePathReoptimization',
-        'EnablePeriodicReEvaluationRequest': 'enablePeriodicReEvaluationRequest',
-        'EnableResourceAffinities': 'enableResourceAffinities',
-        'Enabled': 'enabled',
-        'ExcludeAny': 'excludeAny',
-        'FastRerouteBandwidth': 'fastRerouteBandwidth',
-        'FastRerouteDetour': 'fastRerouteDetour',
+        'LspIdStart': 'lspIdStart',
+        'IpStart': 'ipStart',
+        'MaximumPacketSize': 'maximumPacketSize',
         'FastRerouteExcludeAny': 'fastRerouteExcludeAny',
+        'Bandwidth': 'bandwidth',
+        'NodeProtectionDesired': 'nodeProtectionDesired',
+        'FastRerouteDetour': 'fastRerouteDetour',
+        'FastRerouteHopLimit': 'fastRerouteHopLimit',
+        'EnablePeriodicReEvaluationRequest': 'enablePeriodicReEvaluationRequest',
+        'FastRerouteIncludeAll': 'fastRerouteIncludeAll',
         'FastRerouteFacilityBackupDesired': 'fastRerouteFacilityBackupDesired',
         'FastRerouteHoldingPriority': 'fastRerouteHoldingPriority',
-        'FastRerouteHopLimit': 'fastRerouteHopLimit',
-        'FastRerouteIncludeAll': 'fastRerouteIncludeAll',
-        'FastRerouteIncludeAny': 'fastRerouteIncludeAny',
-        'FastRerouteOne2OneBackupDesired': 'fastRerouteOne2OneBackupDesired',
-        'FastRerouteSendDetour': 'fastRerouteSendDetour',
-        'FastRerouteSetupPriority': 'fastRerouteSetupPriority',
-        'HoldingPriority': 'holdingPriority',
-        'IncludeAll': 'includeAll',
-        'IncludeAny': 'includeAny',
-        'IpCount': 'ipCount',
-        'IpStart': 'ipStart',
-        'LabelRecordingDesired': 'labelRecordingDesired',
-        'LocalProtectionDesired': 'localProtectionDesired',
-        'LspIdCount': 'lspIdCount',
-        'LspIdStart': 'lspIdStart',
-        'MaximumPacketSize': 'maximumPacketSize',
-        'MinimumPolicedUnit': 'minimumPolicedUnit',
-        'NodeProtectionDesired': 'nodeProtectionDesired',
-        'PathTearTlv': 'pathTearTlv',
-        'PathTlv': 'pathTlv',
+        'BackupLspIdPoolStart': 'backupLspIdPoolStart',
         'PeakDataRate': 'peakDataRate',
-        'ReEvaluationRequestInterval': 'reEvaluationRequestInterval',
-        'RefreshInterval': 'refreshInterval',
-        'SeStyleDesired': 'seStyleDesired',
+        'BandwidthProtectionDesired': 'bandwidthProtectionDesired',
+        'FastRerouteSetupPriority': 'fastRerouteSetupPriority',
+        'LocalProtectionDesired': 'localProtectionDesired',
+        'PathTearTlv': 'pathTearTlv',
+        'EnablePathReoptimization': 'enablePathReoptimization',
+        'FastRerouteIncludeAny': 'fastRerouteIncludeAny',
         'SessionName': 'sessionName',
-        'SetupPriority': 'setupPriority',
         'TimeoutMultiplier': 'timeoutMultiplier',
+        'AutoGenerateSessionName': 'autoGenerateSessionName',
+        'EnableLspPing': 'enableLspPing',
+        'ExcludeAny': 'excludeAny',
+        'FastRerouteBandwidth': 'fastRerouteBandwidth',
         'TokenBucketRate': 'tokenBucketRate',
+        'EnableBfdMpls': 'enableBfdMpls',
         'TokenBucketSize': 'tokenBucketSize',
+        'LspIdCount': 'lspIdCount',
+        'ReEvaluationRequestInterval': 'reEvaluationRequestInterval',
+        'LabelRecordingDesired': 'labelRecordingDesired',
+        'PathTlv': 'pathTlv',
+        'IpCount': 'ipCount',
+        'IncludeAny': 'includeAny',
+        'EnableResourceAffinities': 'enableResourceAffinities',
+        'SetupPriority': 'setupPriority',
+        'MinimumPolicedUnit': 'minimumPolicedUnit',
+        'FastRerouteSendDetour': 'fastRerouteSendDetour',
+        'Enabled': 'enabled',
+        'FastRerouteOne2OneBackupDesired': 'fastRerouteOne2OneBackupDesired',
+        'SeStyleDesired': 'seStyleDesired',
+        'HoldingPriority': 'holdingPriority',
+        'RefreshInterval': 'refreshInterval',
+        'EnableFastReroute': 'enableFastReroute',
+        'IncludeAll': 'includeAll',
     }
 
     def __init__(self, parent):
@@ -141,7 +141,7 @@ class SenderRange(Base):
         """
         Returns
         -------
-        - number: The bandwidth requested for the connection, expressed in kbits/sec.
+        - str: The bandwidth requested for the connection, expressed in kbits/sec.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Bandwidth'])
     @Bandwidth.setter
@@ -261,7 +261,7 @@ class SenderRange(Base):
         """
         Returns
         -------
-        - number: An estimate of the bandwidth needed for the protection path.
+        - str: An estimate of the bandwidth needed for the protection path.
         """
         return self._get_attribute(self._SDM_ATT_MAP['FastRerouteBandwidth'])
     @FastRerouteBandwidth.setter
@@ -671,7 +671,7 @@ class SenderRange(Base):
         ----
         - AutoGenerateSessionName (bool): If enabled, the session name is generated automatically. If it is not enabled, the session name field is activated and must be filled in.
         - BackupLspIdPoolStart (number): It helps to set the LSP Id for the re-optimized LSP.
-        - Bandwidth (number): The bandwidth requested for the connection, expressed in kbits/sec.
+        - Bandwidth (str): The bandwidth requested for the connection, expressed in kbits/sec.
         - BandwidthProtectionDesired (bool): Indicates that PLRs should skip at least the next node for a backup path.
         - EnableBfdMpls (bool): NOT DEFINED
         - EnableFastReroute (bool): Enables the use of the fast reroute feature.
@@ -681,7 +681,7 @@ class SenderRange(Base):
         - EnableResourceAffinities (bool): Enables the use of RSVP resource class affinities for LSP tunnels.
         - Enabled (bool): Enables the sender range entry.
         - ExcludeAny (number): Represents a set of attribute filters associated with a tunnel, any of which renders a link unacceptable.
-        - FastRerouteBandwidth (number): An estimate of the bandwidth needed for the protection path.
+        - FastRerouteBandwidth (str): An estimate of the bandwidth needed for the protection path.
         - FastRerouteDetour (list(dict(arg1:str,arg2:str))): Used to provide backup LSP tunnels for local repair of LSP tunnels, in the event of failure of a node or link. Contains the specifics of the detour LSPs: nodes to use and nodes to avoid.
         - FastRerouteExcludeAny (number): Capability filters used to dictate which backup paths are acceptable or unacceptable.
         - FastRerouteFacilityBackupDesired (bool): If enabled, indicates that facility backup should be used. With this method, the MPLS label stack allows the creation of a bypass tunnel to protect a set of LSPs with similar characteristics/constraints. Protects both links and nodes.
@@ -729,7 +729,7 @@ class SenderRange(Base):
         ----
         - AutoGenerateSessionName (bool): If enabled, the session name is generated automatically. If it is not enabled, the session name field is activated and must be filled in.
         - BackupLspIdPoolStart (number): It helps to set the LSP Id for the re-optimized LSP.
-        - Bandwidth (number): The bandwidth requested for the connection, expressed in kbits/sec.
+        - Bandwidth (str): The bandwidth requested for the connection, expressed in kbits/sec.
         - BandwidthProtectionDesired (bool): Indicates that PLRs should skip at least the next node for a backup path.
         - EnableBfdMpls (bool): NOT DEFINED
         - EnableFastReroute (bool): Enables the use of the fast reroute feature.
@@ -739,7 +739,7 @@ class SenderRange(Base):
         - EnableResourceAffinities (bool): Enables the use of RSVP resource class affinities for LSP tunnels.
         - Enabled (bool): Enables the sender range entry.
         - ExcludeAny (number): Represents a set of attribute filters associated with a tunnel, any of which renders a link unacceptable.
-        - FastRerouteBandwidth (number): An estimate of the bandwidth needed for the protection path.
+        - FastRerouteBandwidth (str): An estimate of the bandwidth needed for the protection path.
         - FastRerouteDetour (list(dict(arg1:str,arg2:str))): Used to provide backup LSP tunnels for local repair of LSP tunnels, in the event of failure of a node or link. Contains the specifics of the detour LSPs: nodes to use and nodes to avoid.
         - FastRerouteExcludeAny (number): Capability filters used to dictate which backup paths are acceptable or unacceptable.
         - FastRerouteFacilityBackupDesired (bool): If enabled, indicates that facility backup should be used. With this method, the MPLS label stack allows the creation of a bypass tunnel to protect a set of LSPs with similar characteristics/constraints. Protects both links and nodes.
@@ -805,7 +805,7 @@ class SenderRange(Base):
         ----
         - AutoGenerateSessionName (bool): If enabled, the session name is generated automatically. If it is not enabled, the session name field is activated and must be filled in.
         - BackupLspIdPoolStart (number): It helps to set the LSP Id for the re-optimized LSP.
-        - Bandwidth (number): The bandwidth requested for the connection, expressed in kbits/sec.
+        - Bandwidth (str): The bandwidth requested for the connection, expressed in kbits/sec.
         - BandwidthProtectionDesired (bool): Indicates that PLRs should skip at least the next node for a backup path.
         - EnableBfdMpls (bool): NOT DEFINED
         - EnableFastReroute (bool): Enables the use of the fast reroute feature.
@@ -815,7 +815,7 @@ class SenderRange(Base):
         - EnableResourceAffinities (bool): Enables the use of RSVP resource class affinities for LSP tunnels.
         - Enabled (bool): Enables the sender range entry.
         - ExcludeAny (number): Represents a set of attribute filters associated with a tunnel, any of which renders a link unacceptable.
-        - FastRerouteBandwidth (number): An estimate of the bandwidth needed for the protection path.
+        - FastRerouteBandwidth (str): An estimate of the bandwidth needed for the protection path.
         - FastRerouteDetour (list(dict(arg1:str,arg2:str))): Used to provide backup LSP tunnels for local repair of LSP tunnels, in the event of failure of a node or link. Contains the specifics of the detour LSPs: nodes to use and nodes to avoid.
         - FastRerouteExcludeAny (number): Capability filters used to dictate which backup paths are acceptable or unacceptable.
         - FastRerouteFacilityBackupDesired (bool): If enabled, indicates that facility backup should be used. With this method, the MPLS label stack allows the creation of a bypass tunnel to protect a set of LSPs with similar characteristics/constraints. Protects both links and nodes.

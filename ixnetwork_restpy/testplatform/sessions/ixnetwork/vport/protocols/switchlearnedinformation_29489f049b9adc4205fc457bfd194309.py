@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,29 +31,29 @@ class SwitchLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'switchLearnedInformation'
     _SDM_ATT_MAP = {
-        'EnableVendorExperimenterMessage': 'enableVendorExperimenterMessage',
-        'EthernetDestination': 'ethernetDestination',
-        'EthernetSource': 'ethernetSource',
-        'EthernetType': 'ethernetType',
-        'InPort': 'inPort',
-        'IpDscp': 'ipDscp',
-        'IpProtocol': 'ipProtocol',
-        'Ipv4Source': 'ipv4Source',
-        'Ipv4destination': 'ipv4destination',
-        'IsOfChannelLearnedInformationRefreshed': 'isOfChannelLearnedInformationRefreshed',
-        'IsOfFlowsLearnedInformationRefreshed': 'isOfFlowsLearnedInformationRefreshed',
-        'OutPort': 'outPort',
-        'OutPortInputMode': 'outPortInputMode',
-        'TableId': 'tableId',
-        'TableIdInputMode': 'tableIdInputMode',
-        'TansportSource': 'tansportSource',
-        'TransportDestination': 'transportDestination',
-        'VendorExperimenterId': 'vendorExperimenterId',
         'VendorExperimenterType': 'vendorExperimenterType',
-        'VendorMessage': 'vendorMessage',
-        'VendorMessageLength': 'vendorMessageLength',
-        'VlanId': 'vlanId',
+        'VendorExperimenterId': 'vendorExperimenterId',
         'VlanPriority': 'vlanPriority',
+        'TransportDestination': 'transportDestination',
+        'EnableVendorExperimenterMessage': 'enableVendorExperimenterMessage',
+        'Ipv4Source': 'ipv4Source',
+        'TableId': 'tableId',
+        'Ipv4destination': 'ipv4destination',
+        'EthernetDestination': 'ethernetDestination',
+        'VlanId': 'vlanId',
+        'IpDscp': 'ipDscp',
+        'InPort': 'inPort',
+        'TableIdInputMode': 'tableIdInputMode',
+        'IpProtocol': 'ipProtocol',
+        'OutPort': 'outPort',
+        'EthernetSource': 'ethernetSource',
+        'IsOfChannelLearnedInformationRefreshed': 'isOfChannelLearnedInformationRefreshed',
+        'VendorMessageLength': 'vendorMessageLength',
+        'EthernetType': 'ethernetType',
+        'VendorMessage': 'vendorMessage',
+        'TansportSource': 'tansportSource',
+        'OutPortInputMode': 'outPortInputMode',
+        'IsOfFlowsLearnedInformationRefreshed': 'isOfFlowsLearnedInformationRefreshed',
     }
 
     def __init__(self, parent):

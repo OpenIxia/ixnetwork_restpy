@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,20 +31,20 @@ class DceSimulatedMCastIpv6GroupList(Base):
     __slots__ = ()
     _SDM_NAME = 'dceSimulatedMCastIpv6GroupList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
         'InterGrpUcastAddrIncr': 'interGrpUcastAddrIncr',
-        'McastAddrCnt': 'mcastAddrCnt',
-        'McastAddrIncr': 'mcastAddrIncr',
         'Name': 'name',
-        'SrcGrpMapping': 'srcGrpMapping',
+        'McastAddrCnt': 'mcastAddrCnt',
         'StartMcastAddr': 'startMcastAddr',
-        'StartUcastAddr': 'startUcastAddr',
-        'TopologyId': 'topologyId',
-        'UcastAddrIncr': 'ucastAddrIncr',
         'UcastSrcCnt': 'ucastSrcCnt',
+        'SrcGrpMapping': 'srcGrpMapping',
+        'StartUcastAddr': 'startUcastAddr',
+        'DescriptiveName': 'descriptiveName',
         'VlanId': 'vlanId',
+        'UcastAddrIncr': 'ucastAddrIncr',
+        'Active': 'active',
+        'TopologyId': 'topologyId',
+        'McastAddrIncr': 'mcastAddrIncr',
     }
 
     def __init__(self, parent):

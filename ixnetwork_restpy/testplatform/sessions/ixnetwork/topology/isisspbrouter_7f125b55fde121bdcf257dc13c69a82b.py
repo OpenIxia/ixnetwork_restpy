@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,43 +33,43 @@ class IsisSpbRouter(Base):
     __slots__ = ()
     _SDM_NAME = 'isisSpbRouter'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AreaAddresses': 'areaAddresses',
-        'AreaAuthenticationType': 'areaAuthenticationType',
-        'AreaTransmitPasswordOrMD5Key': 'areaTransmitPasswordOrMD5Key',
-        'Attached': 'attached',
-        'CSNPInterval': 'cSNPInterval',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DiscardLSPs': 'discardLSPs',
-        'EnableHelloPadding': 'enableHelloPadding',
-        'EnableHitlessRestart': 'enableHitlessRestart',
-        'EnableHostName': 'enableHostName',
-        'EnableWideMetric': 'enableWideMetric',
-        'Errors': 'errors',
-        'HitlessRestartMode': 'hitlessRestartMode',
-        'HitlessRestartTime': 'hitlessRestartTime',
-        'HitlessRestartVersion': 'hitlessRestartVersion',
+        'Status': 'status',
+        'MaxLSPSize': 'maxLSPSize',
         'HostName': 'hostName',
-        'IgnoreMTPortCapability': 'ignoreMTPortCapability',
-        'IgnoreReceiveMD5': 'ignoreReceiveMD5',
-        'InterLSPsOrMGroupPDUBurstGap': 'interLSPsOrMGroupPDUBurstGap',
-        'LSPLifetime': 'lSPLifetime',
-        'LSPRefreshRate': 'lSPRefreshRate',
+        'EnableWideMetric': 'enableWideMetric',
         'LSPorMGroupPDUMinTransmissionInterval': 'lSPorMGroupPDUMinTransmissionInterval',
         'LocalSystemID': 'localSystemID',
-        'MaxAreaAddresses': 'maxAreaAddresses',
-        'MaxLSPSize': 'maxLSPSize',
-        'MaxLSPsOrMGroupPDUsPerBurst': 'maxLSPsOrMGroupPDUsPerBurst',
-        'Name': 'name',
-        'Overloaded': 'overloaded',
-        'PSNPInterval': 'pSNPInterval',
-        'PartitionRepair': 'partitionRepair',
-        'SessionInfo': 'sessionInfo',
+        'InterLSPsOrMGroupPDUBurstGap': 'interLSPsOrMGroupPDUBurstGap',
+        'EnableHostName': 'enableHostName',
+        'CSNPInterval': 'cSNPInterval',
+        'IgnoreMTPortCapability': 'ignoreMTPortCapability',
+        'Errors': 'errors',
+        'EnableHitlessRestart': 'enableHitlessRestart',
+        'AreaTransmitPasswordOrMD5Key': 'areaTransmitPasswordOrMD5Key',
+        'HitlessRestartTime': 'hitlessRestartTime',
         'SessionStatus': 'sessionStatus',
+        'LSPRefreshRate': 'lSPRefreshRate',
+        'EnableHelloPadding': 'enableHelloPadding',
+        'HitlessRestartVersion': 'hitlessRestartVersion',
+        'IgnoreReceiveMD5': 'ignoreReceiveMD5',
+        'MaxLSPsOrMGroupPDUsPerBurst': 'maxLSPsOrMGroupPDUsPerBurst',
+        'HitlessRestartMode': 'hitlessRestartMode',
+        'Active': 'active',
+        'AreaAuthenticationType': 'areaAuthenticationType',
+        'PartitionRepair': 'partitionRepair',
+        'Count': 'count',
         'SpbTopologyCount': 'spbTopologyCount',
+        'Name': 'name',
+        'PSNPInterval': 'pSNPInterval',
+        'MaxAreaAddresses': 'maxAreaAddresses',
+        'AreaAddresses': 'areaAddresses',
+        'Overloaded': 'overloaded',
+        'Attached': 'attached',
+        'DiscardLSPs': 'discardLSPs',
+        'DescriptiveName': 'descriptiveName',
+        'LSPLifetime': 'lSPLifetime',
+        'SessionInfo': 'sessionInfo',
         'StateCounts': 'stateCounts',
-        'Status': 'status',
     }
 
     def __init__(self, parent):
@@ -594,6 +594,31 @@ class IsisSpbRouter(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def IsisStartRouter(self, *args, **kwargs):
         """Executes the isisStartRouter operation on the server.
 
@@ -603,7 +628,7 @@ class IsisSpbRouter(Base):
 
         isisStartRouter(SessionIndices=list)
         ------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         isisStartRouter(SessionIndices=string)
         --------------------------------------
@@ -628,7 +653,7 @@ class IsisSpbRouter(Base):
 
         isisStopRouter(SessionIndices=list)
         -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         isisStopRouter(SessionIndices=string)
         -------------------------------------
@@ -653,7 +678,7 @@ class IsisSpbRouter(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -672,13 +697,13 @@ class IsisSpbRouter(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected protocols.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -697,13 +722,13 @@ class IsisSpbRouter(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected protocols.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

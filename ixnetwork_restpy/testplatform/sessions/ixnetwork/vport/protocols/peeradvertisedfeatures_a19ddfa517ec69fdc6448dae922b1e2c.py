@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,17 +32,17 @@ class PeerAdvertisedFeatures(Base):
     _SDM_NAME = 'peerAdvertisedFeatures'
     _SDM_ATT_MAP = {
         'HundredMbFd': '100MbFd',
-        'HundredMbHd': '100MbHd',
-        'TenGbFd': '10GbFd',
-        'TenMbFd': '10MbFd',
-        'TenMbHd': '10MbHd',
-        'OneGbFd': '1GbFd',
-        'OneGbHd': '1GbHd',
-        'AsymmetricPause': 'asymmetricPause',
         'AutoNegotiation': 'autoNegotiation',
-        'CopperMedium': 'copperMedium',
+        'TenMbHd': '10MbHd',
+        'TenMbFd': '10MbFd',
+        'HundredMbHd': '100MbHd',
         'FiberMedium': 'fiberMedium',
         'Pause': 'pause',
+        'OneGbFd': '1GbFd',
+        'OneGbHd': '1GbHd',
+        'TenGbFd': '10GbFd',
+        'CopperMedium': 'copperMedium',
+        'AsymmetricPause': 'asymmetricPause',
     }
 
     def __init__(self, parent):

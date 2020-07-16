@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,32 +31,32 @@ class TestConfig(Base):
     __slots__ = ()
     _SDM_NAME = 'testConfig'
     _SDM_ATT_MAP = {
-        'CpDpConvergenceFactorScale': 'cpDpConvergenceFactorScale',
-        'CpDpConvergenceTime': 'cpDpConvergenceTime',
-        'CustomFramesizeValue': 'customFramesizeValue',
-        'CustomLoadUnit': 'customLoadUnit',
-        'DelayAfterFailover': 'delayAfterFailover',
-        'DelayBeforeFailover': 'delayBeforeFailover',
-        'DeleteFlowsAtStartup': 'deleteFlowsAtStartup',
-        'DpDpConvergenceFactorScale': 'dpDpConvergenceFactorScale',
-        'DpDpConvergenceTime': 'dpDpConvergenceTime',
-        'EnableCpDpPassFail': 'enableCpDpPassFail',
-        'EnableDpDpPassFail': 'enableDpDpPassFail',
+        'FrameSizeMode': 'frameSizeMode',
         'EnableMinFrameSize': 'enableMinFrameSize',
         'FailureMode': 'failureMode',
-        'FailureType': 'failureType',
-        'ForceContinuosTraffic': 'forceContinuosTraffic',
-        'FrameSizeMode': 'frameSizeMode',
-        'Gap': 'gap',
-        'LoadRateValue': 'loadRateValue',
-        'MaxRandomFrameSize': 'maxRandomFrameSize',
-        'MinRandomFrameSize': 'minRandomFrameSize',
-        'Numtrials': 'numtrials',
         'ProtocolItem': 'protocolItem',
         'ReportConvergenceUnit': 'reportConvergenceUnit',
         'ReportTputRateUnit': 'reportTputRateUnit',
-        'SecondaryRxPort': 'secondaryRxPort',
+        'DeleteFlowsAtStartup': 'deleteFlowsAtStartup',
+        'MaxRandomFrameSize': 'maxRandomFrameSize',
+        'CpDpConvergenceTime': 'cpDpConvergenceTime',
+        'CustomLoadUnit': 'customLoadUnit',
+        'LoadRateValue': 'loadRateValue',
+        'DelayBeforeFailover': 'delayBeforeFailover',
+        'CustomFramesizeValue': 'customFramesizeValue',
+        'CpDpConvergenceFactorScale': 'cpDpConvergenceFactorScale',
+        'MinRandomFrameSize': 'minRandomFrameSize',
+        'EnableDpDpPassFail': 'enableDpDpPassFail',
+        'ForceContinuosTraffic': 'forceContinuosTraffic',
+        'DelayAfterFailover': 'delayAfterFailover',
+        'Gap': 'gap',
+        'Numtrials': 'numtrials',
         'TestTrafficType': 'testTrafficType',
+        'EnableCpDpPassFail': 'enableCpDpPassFail',
+        'DpDpConvergenceTime': 'dpDpConvergenceTime',
+        'FailureType': 'failureType',
+        'DpDpConvergenceFactorScale': 'dpDpConvergenceFactorScale',
+        'SecondaryRxPort': 'secondaryRxPort',
     }
 
     def __init__(self, parent):

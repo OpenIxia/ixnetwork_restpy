@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,45 +32,47 @@ class Field(Base):
     __slots__ = ()
     _SDM_NAME = 'field'
     _SDM_ATT_MAP = {
-        'Id__': '__id__',
-        'ActiveFieldChoice': 'activeFieldChoice',
-        'Auto': 'auto',
-        'CountValue': 'countValue',
-        'DefaultValue': 'defaultValue',
-        'DisplayName': 'displayName',
-        'EnumValues': 'enumValues',
-        'FieldChoice': 'fieldChoice',
-        'FieldTypeId': 'fieldTypeId',
-        'FieldValue': 'fieldValue',
-        'FixedBits': 'fixedBits',
-        'FormattedFieldValue': 'formattedFieldValue',
-        'FullMesh': 'fullMesh',
-        'Length': 'length',
-        'Level': 'level',
-        'MaxValue': 'maxValue',
-        'MinValue': 'minValue',
-        'Name': 'name',
-        'Offset': 'offset',
-        'OffsetFromRoot': 'offsetFromRoot',
-        'OnTheFlyMask': 'onTheFlyMask',
-        'Optional': 'optional',
-        'OptionalEnabled': 'optionalEnabled',
         'RandomMask': 'randomMask',
+        'ValueType': 'valueType',
         'RateVaried': 'rateVaried',
-        'ReadOnly': 'readOnly',
-        'RequiresUdf': 'requiresUdf',
+        'MinValue': 'minValue',
+        'AvailableValueTypes': 'availableValueTypes',
         'Seed': 'seed',
         'SingleValue': 'singleValue',
-        'StartValue': 'startValue',
         'StepValue': 'stepValue',
-        'SupportsAuto': 'supportsAuto',
-        'SupportsNonRepeatableRandom': 'supportsNonRepeatableRandom',
-        'SupportsOnTheFlyMask': 'supportsOnTheFlyMask',
-        'SupportsRepeatableRandomRange': 'supportsRepeatableRandomRange',
-        'TrackingEnabled': 'trackingEnabled',
+        'DefaultValue': 'defaultValue',
+        'EnumValues': 'enumValues',
+        'ActiveFieldChoice': 'activeFieldChoice',
+        'Id__': '__id__',
+        'FieldChoice': 'fieldChoice',
+        'FieldTypeId': 'fieldTypeId',
+        'FullMesh': 'fullMesh',
+        'OffsetFromRoot': 'offsetFromRoot',
+        'CountValue': 'countValue',
         'ValueFormat': 'valueFormat',
+        'Auto': 'auto',
+        'FieldGroupName': 'fieldGroupName',
+        'MaxValue': 'maxValue',
+        'TrackingEnabled': 'trackingEnabled',
+        'ReadOnly': 'readOnly',
+        'SupportsAuto': 'supportsAuto',
+        'Offset': 'offset',
+        'FormattedFieldValue': 'formattedFieldValue',
+        'Optional': 'optional',
+        'FixedBits': 'fixedBits',
+        'OptionalEnabled': 'optionalEnabled',
+        'RequiresUdf': 'requiresUdf',
+        'DisplayName': 'displayName',
+        'Name': 'name',
+        'SupportsNonRepeatableRandom': 'supportsNonRepeatableRandom',
+        'Level': 'level',
+        'StartValue': 'startValue',
+        'Length': 'length',
+        'OnTheFlyMask': 'onTheFlyMask',
         'ValueList': 'valueList',
-        'ValueType': 'valueType',
+        'SupportsRepeatableRandomRange': 'supportsRepeatableRandomRange',
+        'FieldValue': 'fieldValue',
+        'SupportsOnTheFlyMask': 'supportsOnTheFlyMask',
     }
 
     def __init__(self, parent):
@@ -108,6 +110,15 @@ class Field(Base):
     @Auto.setter
     def Auto(self, value):
         self._set_attribute(self._SDM_ATT_MAP['Auto'], value)
+
+    @property
+    def AvailableValueTypes(self):
+        """
+        Returns
+        -------
+        - list(str[decrement | increment | nonRepeatableRandom | random | repeatableRandomRange | singleValue | valueList]): 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableValueTypes'])
 
     @property
     def CountValue(self):
@@ -156,6 +167,15 @@ class Field(Base):
         - bool: It is true for all the field options active in the GUI.
         """
         return self._get_attribute(self._SDM_ATT_MAP['FieldChoice'])
+
+    @property
+    def FieldGroupName(self):
+        """
+        Returns
+        -------
+        - str: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['FieldGroupName'])
 
     @property
     def FieldTypeId(self):
@@ -511,7 +531,7 @@ class Field(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Id__=None, ActiveFieldChoice=None, Auto=None, CountValue=None, DefaultValue=None, DisplayName=None, EnumValues=None, FieldChoice=None, FieldTypeId=None, FieldValue=None, FixedBits=None, FormattedFieldValue=None, FullMesh=None, Length=None, Level=None, MaxValue=None, MinValue=None, Name=None, Offset=None, OffsetFromRoot=None, OnTheFlyMask=None, Optional=None, OptionalEnabled=None, RandomMask=None, RateVaried=None, ReadOnly=None, RequiresUdf=None, Seed=None, SingleValue=None, StartValue=None, StepValue=None, SupportsAuto=None, SupportsNonRepeatableRandom=None, SupportsOnTheFlyMask=None, SupportsRepeatableRandomRange=None, TrackingEnabled=None, ValueFormat=None, ValueList=None, ValueType=None):
+    def find(self, Id__=None, ActiveFieldChoice=None, Auto=None, AvailableValueTypes=None, CountValue=None, DefaultValue=None, DisplayName=None, EnumValues=None, FieldChoice=None, FieldGroupName=None, FieldTypeId=None, FieldValue=None, FixedBits=None, FormattedFieldValue=None, FullMesh=None, Length=None, Level=None, MaxValue=None, MinValue=None, Name=None, Offset=None, OffsetFromRoot=None, OnTheFlyMask=None, Optional=None, OptionalEnabled=None, RandomMask=None, RateVaried=None, ReadOnly=None, RequiresUdf=None, Seed=None, SingleValue=None, StartValue=None, StepValue=None, SupportsAuto=None, SupportsNonRepeatableRandom=None, SupportsOnTheFlyMask=None, SupportsRepeatableRandomRange=None, TrackingEnabled=None, ValueFormat=None, ValueList=None, ValueType=None):
         """Finds and retrieves field resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve field resources from the server.
@@ -523,11 +543,13 @@ class Field(Base):
         - Id__ (str): An alphanumeric string that defines the internal field ID.
         - ActiveFieldChoice (bool): It is used to select a particular option out of multiple field choice options. The activeFieldChoice will be true only for the fields of the option which is active in GUI.
         - Auto (bool): If true, value for the particular field is considered automatically. If false, user can set values for the particular field.
+        - AvailableValueTypes (list(str[decrement | increment | nonRepeatableRandom | random | repeatableRandomRange | singleValue | valueList])): 
         - CountValue (str): It is used to get the count value of the field.
         - DefaultValue (str): It is used to get the default value of the field.
         - DisplayName (str): It is used to get the name of the particular field as available in Packet/Qos
         - EnumValues (list(str)): If the field has string options, then each string is associated with a particular integer value. This attribute is used to get the mapping of integer value with the corresponding string option.
         - FieldChoice (bool): It is true for all the field options active in the GUI.
+        - FieldGroupName (str): 
         - FieldTypeId (str): 
         - FieldValue (str): An alphanumeric string that returns the value of the field.
         - FixedBits (str): Sets all the fields to a constant specified size.

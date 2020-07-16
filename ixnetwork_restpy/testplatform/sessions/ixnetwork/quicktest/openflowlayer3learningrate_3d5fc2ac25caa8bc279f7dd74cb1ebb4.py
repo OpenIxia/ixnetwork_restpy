@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,9 +34,9 @@ class OpenFlowLayer3LearningRate(Base):
     _SDM_NAME = 'openFlowLayer3LearningRate'
     _SDM_ATT_MAP = {
         'ForceApplyQTConfig': 'forceApplyQTConfig',
-        'InputParameters': 'inputParameters',
         'Mode': 'mode',
         'Name': 'name',
+        'InputParameters': 'inputParameters',
     }
 
     def __init__(self, parent):
@@ -69,6 +69,20 @@ class OpenFlowLayer3LearningRate(Base):
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_8b873c4d94f4a47db58d359eb441ce2c import TestConfig
         return TestConfig(self)._select()
+
+    @property
+    def TrafficSelection(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.trafficselection_e70293c1d497ca3a4de220ed6cf2ab95.TrafficSelection): An instance of the TrafficSelection class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.trafficselection_e70293c1d497ca3a4de220ed6cf2ab95 import TrafficSelection
+        return TrafficSelection(self)
 
     @property
     def ForceApplyQTConfig(self):

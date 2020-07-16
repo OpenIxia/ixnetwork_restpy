@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,27 +31,27 @@ class RsvpP2PEgressLsps(Base):
     __slots__ = ()
     _SDM_NAME = 'rsvpP2PEgressLsps'
     _SDM_ATT_MAP = {
-        'Active': 'active',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableFixedLabelForReservations': 'enableFixedLabelForReservations',
-        'EnableReplyingLspPing': 'enableReplyingLspPing',
-        'EndPointIpv6': 'endPointIpv6',
-        'ForwardLspSelfPing': 'forwardLspSelfPing',
-        'InitialLspSelfPingDropCount': 'initialLspSelfPingDropCount',
-        'IpTTLDecrementCount': 'ipTTLDecrementCount',
-        'LabelValue': 'labelValue',
-        'LocalIp': 'localIp',
-        'LspSelfPingIPDSCP': 'lspSelfPingIPDSCP',
-        'Name': 'name',
-        'NumberOfRroSubObjects': 'numberOfRroSubObjects',
         'ReflectRro': 'reflectRro',
-        'RefreshInterval': 'refreshInterval',
+        'NumberOfRroSubObjects': 'numberOfRroSubObjects',
+        'Name': 'name',
+        'InitialLspSelfPingDropCount': 'initialLspSelfPingDropCount',
+        'LspSelfPingIPDSCP': 'lspSelfPingIPDSCP',
         'ReservationStyle': 'reservationStyle',
-        'RetainLspSelfPingDSCP': 'retainLspSelfPingDSCP',
-        'SendReservationConfirmation': 'sendReservationConfirmation',
-        'State': 'state',
+        'IpTTLDecrementCount': 'ipTTLDecrementCount',
         'TimeoutMultiplier': 'timeoutMultiplier',
+        'LabelValue': 'labelValue',
+        'EndPointIpv6': 'endPointIpv6',
+        'LocalIp': 'localIp',
+        'State': 'state',
+        'DescriptiveName': 'descriptiveName',
+        'RetainLspSelfPingDSCP': 'retainLspSelfPingDSCP',
+        'RefreshInterval': 'refreshInterval',
+        'Active': 'active',
+        'ForwardLspSelfPing': 'forwardLspSelfPing',
+        'EnableReplyingLspPing': 'enableReplyingLspPing',
+        'EnableFixedLabelForReservations': 'enableFixedLabelForReservations',
+        'SendReservationConfirmation': 'sendReservationConfirmation',
     }
 
     def __init__(self, parent):
@@ -355,7 +355,7 @@ class RsvpP2PEgressLsps(Base):
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -385,7 +385,7 @@ class RsvpP2PEgressLsps(Base):
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

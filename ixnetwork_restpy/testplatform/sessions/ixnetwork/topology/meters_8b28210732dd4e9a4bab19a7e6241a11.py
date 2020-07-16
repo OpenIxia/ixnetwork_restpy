@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,15 +32,15 @@ class Meters(Base):
     __slots__ = ()
     _SDM_NAME = 'meters'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Advertise': 'advertise',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Flags': 'flags',
-        'MeterDesc': 'meterDesc',
-        'MeterId': 'meterId',
-        'Multiplier': 'multiplier',
         'Name': 'name',
+        'MeterDesc': 'meterDesc',
+        'DescriptiveName': 'descriptiveName',
+        'Multiplier': 'multiplier',
+        'Active': 'active',
+        'Flags': 'flags',
+        'Advertise': 'advertise',
+        'MeterId': 'meterId',
         'NumberOfBands': 'numberOfBands',
     }
 

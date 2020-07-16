@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -30,6 +30,8 @@ class Static(Base):
 
     __slots__ = ()
     _SDM_NAME = 'static'
+    _SDM_ATT_MAP = {
+    }
 
     def __init__(self, parent):
         super(Static, self).__init__(parent)
@@ -95,11 +97,11 @@ class Static(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lan_15bc5e3c9ccf99b12640be2ffc0336c3.Lan): An instance of the Lan class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lan_4d193b8edf8a184f36859f87c27564fa.Lan): An instance of the Lan class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lan_15bc5e3c9ccf99b12640be2ffc0336c3 import Lan
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lan_4d193b8edf8a184f36859f87c27564fa import Lan
         return Lan(self)

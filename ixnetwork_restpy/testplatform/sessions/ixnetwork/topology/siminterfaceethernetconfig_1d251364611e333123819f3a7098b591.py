@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,15 +33,29 @@ class SimInterfaceEthernetConfig(Base):
     _SDM_NAME = 'simInterfaceEthernetConfig'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'FromMac': 'fromMac',
         'Name': 'name',
         'ToMac': 'toMac',
+        'DescriptiveName': 'descriptiveName',
+        'FromMac': 'fromMac',
         'VlanCount': 'vlanCount',
     }
 
     def __init__(self, parent):
         super(SimInterfaceEthernetConfig, self).__init__(parent)
+
+    @property
+    def CfmSimulatedLinks(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmsimulatedlinks_ed9491a56ff2748e2dde581267b5d86e.CfmSimulatedLinks): An instance of the CfmSimulatedLinks class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmsimulatedlinks_ed9491a56ff2748e2dde581267b5d86e import CfmSimulatedLinks
+        return CfmSimulatedLinks(self)
 
     @property
     def Vlan(self):
@@ -195,6 +209,19 @@ class SimInterfaceEthernetConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
+
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
 
     def Start(self):
         """Executes the start operation on the server.

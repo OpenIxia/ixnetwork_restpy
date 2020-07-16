@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,17 +33,17 @@ class AncpDslResyncTlv(Base):
     __slots__ = ()
     _SDM_NAME = 'ancpDslResyncTlv'
     _SDM_ATT_MAP = {
-        'Code': 'code',
-        'FirstValue': 'firstValue',
+        'StepValue': 'stepValue',
         'LastValue': 'lastValue',
-        'MaxValue': 'maxValue',
-        'MinValue': 'minValue',
-        'Mode': 'mode',
+        'Code': 'code',
         'Name': 'name',
         'ObjectId': 'objectId',
-        'StepValue': 'stepValue',
-        'Type': 'type',
+        'MaxValue': 'maxValue',
         'Value': 'value',
+        'MinValue': 'minValue',
+        'Mode': 'mode',
+        'Type': 'type',
+        'FirstValue': 'firstValue',
     }
 
     def __init__(self, parent):

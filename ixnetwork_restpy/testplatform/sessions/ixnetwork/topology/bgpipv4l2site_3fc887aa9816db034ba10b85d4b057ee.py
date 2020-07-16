@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,39 +33,39 @@ class BgpIpv4L2Site(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpIpv4L2Site'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DistinguishAsNumber': 'distinguishAsNumber',
-        'DistinguishAssignedNumber': 'distinguishAssignedNumber',
-        'DistinguishIpAddr': 'distinguishIpAddr',
-        'DutIp': 'dutIp',
-        'EnCluster': 'enCluster',
-        'EnControlWord': 'enControlWord',
-        'EnSeqDelivery': 'enSeqDelivery',
-        'EnableBfdVccv': 'enableBfdVccv',
-        'EnableVccvPing': 'enableVccvPing',
-        'EncapsulationType': 'encapsulationType',
-        'Errors': 'errors',
-        'LocalIp': 'localIp',
-        'LocalRouterID': 'localRouterID',
-        'MtuL2Site': 'mtuL2Site',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NumClusterPerL2Site': 'numClusterPerL2Site',
-        'NumL2Sites': 'numL2Sites',
-        'NumLabelBlocksPerL2Site': 'numLabelBlocksPerL2Site',
-        'SessionStatus': 'sessionStatus',
-        'SiteId': 'siteId',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'TargetAsNumber': 'targetAsNumber',
         'TargetAssignedNumber': 'targetAssignedNumber',
-        'TargetIpAddr': 'targetIpAddr',
         'TypeDistinguish': 'typeDistinguish',
+        'NumLabelBlocksPerL2Site': 'numLabelBlocksPerL2Site',
+        'EnableBfdVccv': 'enableBfdVccv',
+        'LocalIp': 'localIp',
+        'ConnectedVia': 'connectedVia',
+        'MtuL2Site': 'mtuL2Site',
+        'SessionStatus': 'sessionStatus',
+        'Errors': 'errors',
+        'EncapsulationType': 'encapsulationType',
+        'DistinguishAssignedNumber': 'distinguishAssignedNumber',
+        'EnCluster': 'enCluster',
+        'DistinguishAsNumber': 'distinguishAsNumber',
+        'NumClusterPerL2Site': 'numClusterPerL2Site',
+        'Status': 'status',
+        'NumL2Sites': 'numL2Sites',
+        'StackedLayers': 'stackedLayers',
+        'SiteId': 'siteId',
+        'Multiplier': 'multiplier',
+        'Active': 'active',
+        'TargetAsNumber': 'targetAsNumber',
+        'EnSeqDelivery': 'enSeqDelivery',
+        'LocalRouterID': 'localRouterID',
+        'EnableVccvPing': 'enableVccvPing',
+        'Count': 'count',
+        'Name': 'name',
         'TypeTarget': 'typeTarget',
+        'DutIp': 'dutIp',
+        'DistinguishIpAddr': 'distinguishIpAddr',
+        'DescriptiveName': 'descriptiveName',
+        'EnControlWord': 'enControlWord',
+        'StateCounts': 'stateCounts',
+        'TargetIpAddr': 'targetIpAddr',
         'VpnName': 'vpnName',
     }
 
@@ -615,6 +615,31 @@ class BgpIpv4L2Site(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def RestartDown(self, *args, **kwargs):
         """Executes the restartDown operation on the server.
 
@@ -624,7 +649,7 @@ class BgpIpv4L2Site(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -643,13 +668,13 @@ class BgpIpv4L2Site(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start BGP VPLS L2Site
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -668,13 +693,13 @@ class BgpIpv4L2Site(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop BGP VPLS L2Site
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

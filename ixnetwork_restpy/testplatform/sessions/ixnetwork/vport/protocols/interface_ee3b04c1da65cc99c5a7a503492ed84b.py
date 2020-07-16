@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,23 +33,23 @@ class Interface(Base):
     __slots__ = ()
     _SDM_NAME = 'interface'
     _SDM_ATT_MAP = {
-        'Area': 'area',
-        'DeadInterval': 'deadInterval',
-        'EnableBfdRegistration': 'enableBfdRegistration',
         'EnableFastHello': 'enableFastHello',
-        'EnableIgnoreDbDescMtu': 'enableIgnoreDbDescMtu',
-        'Enabled': 'enabled',
-        'HelloInterval': 'helloInterval',
-        'HelloMultiplier': 'helloMultiplier',
-        'InstanceId': 'instanceId',
-        'InterfaceIndex': 'interfaceIndex',
-        'InterfaceType': 'interfaceType',
-        'InterfaceTypes': 'interfaceTypes',
-        'Interfaces': 'interfaces',
         'LinkMetric': 'linkMetric',
+        'HelloInterval': 'helloInterval',
+        'EnableIgnoreDbDescMtu': 'enableIgnoreDbDescMtu',
+        'InstanceId': 'instanceId',
+        'HelloMultiplier': 'helloMultiplier',
+        'Area': 'area',
+        'Enabled': 'enabled',
+        'EnableBfdRegistration': 'enableBfdRegistration',
+        'InterfaceIndex': 'interfaceIndex',
         'Priority': 'priority',
-        'ProtocolInterface': 'protocolInterface',
+        'InterfaceType': 'interfaceType',
+        'DeadInterval': 'deadInterval',
+        'InterfaceTypes': 'interfaceTypes',
         'RouterOptions': 'routerOptions',
+        'ProtocolInterface': 'protocolInterface',
+        'Interfaces': 'interfaces',
     }
 
     def __init__(self, parent):

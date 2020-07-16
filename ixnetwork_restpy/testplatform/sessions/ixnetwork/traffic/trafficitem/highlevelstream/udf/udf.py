@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,11 +32,11 @@ class Udf(Base):
     __slots__ = ()
     _SDM_NAME = 'udf'
     _SDM_ATT_MAP = {
+        'ChainedFromUdf': 'chainedFromUdf',
+        'Type': 'type',
+        'Enabled': 'enabled',
         'ByteOffset': 'byteOffset',
         'Chained': 'chained',
-        'ChainedFromUdf': 'chainedFromUdf',
-        'Enabled': 'enabled',
-        'Type': 'type',
     }
 
     def __init__(self, parent):

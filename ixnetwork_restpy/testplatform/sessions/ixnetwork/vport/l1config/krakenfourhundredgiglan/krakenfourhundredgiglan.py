@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,42 +31,60 @@ class KrakenFourHundredGigLan(Base):
     __slots__ = ()
     _SDM_NAME = 'krakenFourHundredGigLan'
     _SDM_ATT_MAP = {
-        'AutoInstrumentation': 'autoInstrumentation',
-        'BadBlocksNumber': 'badBlocksNumber',
+        'RsFecRequest': 'rsFecRequest',
+        'RsFecForceOn': 'rsFecForceOn',
+        'Ppm': 'ppm',
+        'LoopbackMode': 'loopbackMode',
+        'ForceDisableFEC': 'forceDisableFEC',
+        'EnableRsFecStats': 'enableRsFecStats',
+        'FirecodeForceOn': 'firecodeForceOn',
+        'UseANResults': 'useANResults',
+        'TypeAOrderedSets': 'typeAOrderedSets',
         'EnableAutoNegotiation': 'enableAutoNegotiation',
         'EnablePPM': 'enablePPM',
-        'EnableRsFec': 'enableRsFec',
-        'EnableRsFecStats': 'enableRsFecStats',
-        'EnabledFlowControl': 'enabledFlowControl',
-        'FirecodeAdvertise': 'firecodeAdvertise',
-        'FirecodeForceOff': 'firecodeForceOff',
-        'FirecodeForceOn': 'firecodeForceOn',
-        'FirecodeRequest': 'firecodeRequest',
-        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
-        'ForceDisableFEC': 'forceDisableFEC',
-        'GoodBlocksNumber': 'goodBlocksNumber',
-        'IeeeL1Defaults': 'ieeeL1Defaults',
-        'LaserOn': 'laserOn',
-        'LinkTraining': 'linkTraining',
-        'LoopContinuously': 'loopContinuously',
-        'LoopCountNumber': 'loopCountNumber',
         'Loopback': 'loopback',
-        'LoopbackMode': 'loopbackMode',
-        'Ppm': 'ppm',
-        'RsFecAdvertise': 'rsFecAdvertise',
-        'RsFecForceOn': 'rsFecForceOn',
-        'RsFecRequest': 'rsFecRequest',
-        'SendSetsMode': 'sendSetsMode',
         'Speed': 'speed',
+        'RsFecAdvertise': 'rsFecAdvertise',
+        'FirecodeAdvertise': 'firecodeAdvertise',
+        'SendSetsMode': 'sendSetsMode',
+        'FirecodeRequest': 'firecodeRequest',
+        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
+        'IeeeL1Defaults': 'ieeeL1Defaults',
+        'GoodBlocksNumber': 'goodBlocksNumber',
+        'LoopCountNumber': 'loopCountNumber',
+        'EnabledFlowControl': 'enabledFlowControl',
         'StartErrorInsertion': 'startErrorInsertion',
-        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
-        'TypeAOrderedSets': 'typeAOrderedSets',
+        'LinkTraining': 'linkTraining',
+        'SelectedSpeeds': 'selectedSpeeds',
+        'AutoInstrumentation': 'autoInstrumentation',
+        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
         'TypeBOrderedSets': 'typeBOrderedSets',
-        'UseANResults': 'useANResults',
+        'BadBlocksNumber': 'badBlocksNumber',
+        'AvailableSpeeds': 'availableSpeeds',
+        'FirecodeForceOff': 'firecodeForceOff',
+        'LaserOn': 'laserOn',
+        'CanModifySpeed': 'canModifySpeed',
+        'LoopContinuously': 'loopContinuously',
+        'EnableRsFec': 'enableRsFec',
+        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
     }
 
     def __init__(self, parent):
         super(KrakenFourHundredGigLan, self).__init__(parent)
+
+    @property
+    def Fcoe(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.fcoe.fcoe.Fcoe): An instance of the Fcoe class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.fcoe.fcoe import Fcoe
+        return Fcoe(self)._select()
 
     @property
     def AutoInstrumentation(self):
@@ -81,6 +99,15 @@ class KrakenFourHundredGigLan(Base):
         self._set_attribute(self._SDM_ATT_MAP['AutoInstrumentation'], value)
 
     @property
+    def AvailableSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[speed100g | speed50g | speed200g | speed400g]): Which speeds are available for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableSpeeds'])
+
+    @property
     def BadBlocksNumber(self):
         """
         Returns
@@ -91,6 +118,24 @@ class KrakenFourHundredGigLan(Base):
     @BadBlocksNumber.setter
     def BadBlocksNumber(self, value):
         self._set_attribute(self._SDM_ATT_MAP['BadBlocksNumber'], value)
+
+    @property
+    def CanModifySpeed(self):
+        """
+        Returns
+        -------
+        - bool: Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanModifySpeed'])
+
+    @property
+    def CanSetMultipleSpeeds(self):
+        """
+        Returns
+        -------
+        - bool: Can this port selectmultiple speeds for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanSetMultipleSpeeds'])
 
     @property
     def EnableAutoNegotiation(self):
@@ -360,6 +405,18 @@ class KrakenFourHundredGigLan(Base):
         self._set_attribute(self._SDM_ATT_MAP['RsFecRequest'], value)
 
     @property
+    def SelectedSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[speed100g | speed50g | speed200g | speed400g]): Which speeds are selected for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
+    @SelectedSpeeds.setter
+    def SelectedSpeeds(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
+
+    @property
     def SendSetsMode(self):
         """
         Returns
@@ -443,7 +500,7 @@ class KrakenFourHundredGigLan(Base):
     def UseANResults(self, value):
         self._set_attribute(self._SDM_ATT_MAP['UseANResults'], value)
 
-    def update(self, AutoInstrumentation=None, BadBlocksNumber=None, EnablePPM=None, EnableRsFec=None, EnableRsFecStats=None, EnabledFlowControl=None, FirecodeAdvertise=None, FirecodeForceOff=None, FirecodeForceOn=None, FirecodeRequest=None, FlowControlDirectedAddress=None, ForceDisableFEC=None, GoodBlocksNumber=None, LaserOn=None, LoopContinuously=None, LoopCountNumber=None, Loopback=None, LoopbackMode=None, Ppm=None, RsFecAdvertise=None, RsFecForceOn=None, RsFecRequest=None, SendSetsMode=None, Speed=None, StartErrorInsertion=None, TxIgnoreRxLinkFaults=None, TypeAOrderedSets=None, TypeBOrderedSets=None, UseANResults=None):
+    def update(self, AutoInstrumentation=None, BadBlocksNumber=None, EnablePPM=None, EnableRsFec=None, EnableRsFecStats=None, EnabledFlowControl=None, FirecodeAdvertise=None, FirecodeForceOff=None, FirecodeForceOn=None, FirecodeRequest=None, FlowControlDirectedAddress=None, ForceDisableFEC=None, GoodBlocksNumber=None, LaserOn=None, LoopContinuously=None, LoopCountNumber=None, Loopback=None, LoopbackMode=None, Ppm=None, RsFecAdvertise=None, RsFecForceOn=None, RsFecRequest=None, SelectedSpeeds=None, SendSetsMode=None, Speed=None, StartErrorInsertion=None, TxIgnoreRxLinkFaults=None, TypeAOrderedSets=None, TypeBOrderedSets=None, UseANResults=None):
         """Updates krakenFourHundredGigLan resource on the server.
 
         Args
@@ -470,6 +527,7 @@ class KrakenFourHundredGigLan(Base):
         - RsFecAdvertise (bool): NOT DEFINED
         - RsFecForceOn (bool): NOT DEFINED
         - RsFecRequest (bool): NOT DEFINED
+        - SelectedSpeeds (list(str[speed100g | speed50g | speed200g | speed400g])): Which speeds are selected for the current media and AN settings.
         - SendSetsMode (str(alternate | typeAOnly | typeBOnly)): NOT DEFINED
         - Speed (str(speed100g | speed200g | speed400g | speed50g)): NOT DEFINED
         - StartErrorInsertion (bool): NOT DEFINED

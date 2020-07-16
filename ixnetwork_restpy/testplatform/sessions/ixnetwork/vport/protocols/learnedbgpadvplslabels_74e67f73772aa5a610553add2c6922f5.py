@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,17 +32,17 @@ class LearnedBgpAdVplsLabels(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedBgpAdVplsLabels'
     _SDM_ATT_MAP = {
-        'CBit': 'cBit',
-        'GroupId': 'groupId',
-        'Label': 'label',
-        'LocalPwSubState': 'localPwSubState',
-        'Mtu': 'mtu',
-        'PeerAddress': 'peerAddress',
         'PwState': 'pwState',
-        'RemotePwSubState': 'remotePwSubState',
+        'PeerAddress': 'peerAddress',
+        'CBit': 'cBit',
         'SourceAii': 'sourceAii',
-        'TargetAii': 'targetAii',
+        'Mtu': 'mtu',
         'VplsId': 'vplsId',
+        'TargetAii': 'targetAii',
+        'LocalPwSubState': 'localPwSubState',
+        'Label': 'label',
+        'RemotePwSubState': 'remotePwSubState',
+        'GroupId': 'groupId',
     }
 
     def __init__(self, parent):

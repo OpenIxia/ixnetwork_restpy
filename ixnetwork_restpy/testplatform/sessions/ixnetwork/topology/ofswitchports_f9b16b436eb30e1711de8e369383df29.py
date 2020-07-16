@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,33 +31,33 @@ class OfSwitchPorts(Base):
     __slots__ = ()
     _SDM_NAME = 'ofSwitchPorts'
     _SDM_ATT_MAP = {
+        'TransmissionDelay': 'transmissionDelay',
+        'RemoteSwitch': 'remoteSwitch',
         'Active': 'active',
-        'AdvertisedFeatures': 'advertisedFeatures',
-        'Config': 'config',
-        'Count': 'count',
-        'CurrentConnectionType': 'currentConnectionType',
-        'CurrentFeatures': 'currentFeatures',
+        'RemoteSwitchPort': 'remoteSwitchPort',
+        'PortNumber': 'portNumber',
+        'ParentSwitch': 'parentSwitch',
+        'PortIndex': 'portIndex',
+        'PeerAdvertisedFeatures': 'peerAdvertisedFeatures',
+        'State': 'state',
+        'RemoteSwitchIndex': 'remoteSwitchIndex',
         'CurrentSpeed': 'currentSpeed',
-        'DescriptiveName': 'descriptiveName',
-        'EtherAddr': 'etherAddr',
+        'CurrentConnectionType': 'currentConnectionType',
+        'NumQueueRange': 'numQueueRange',
         'ForcedConnectionType': 'forcedConnectionType',
+        'SwitchIndex': 'switchIndex',
+        'PortName': 'portName',
+        'Count': 'count',
+        'CurrentFeatures': 'currentFeatures',
         'MaxSpeed': 'maxSpeed',
         'Name': 'name',
-        'NumQueueRange': 'numQueueRange',
-        'ParentSwitch': 'parentSwitch',
-        'PeerAdvertisedFeatures': 'peerAdvertisedFeatures',
-        'PortIndex': 'portIndex',
+        'Config': 'config',
+        'AdvertisedFeatures': 'advertisedFeatures',
         'PortLivenessSupport': 'portLivenessSupport',
-        'PortName': 'portName',
-        'PortNumber': 'portNumber',
+        'EtherAddr': 'etherAddr',
         'RemotePortIndex': 'remotePortIndex',
-        'RemoteSwitch': 'remoteSwitch',
-        'RemoteSwitchIndex': 'remoteSwitchIndex',
-        'RemoteSwitchPort': 'remoteSwitchPort',
-        'State': 'state',
+        'DescriptiveName': 'descriptiveName',
         'SupportedFeatures': 'supportedFeatures',
-        'SwitchIndex': 'switchIndex',
-        'TransmissionDelay': 'transmissionDelay',
     }
 
     def __init__(self, parent):

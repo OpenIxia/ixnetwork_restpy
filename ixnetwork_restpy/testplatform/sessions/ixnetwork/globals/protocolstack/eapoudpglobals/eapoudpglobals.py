@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,19 +33,19 @@ class EapoUdpGlobals(Base):
     __slots__ = ()
     _SDM_NAME = 'eapoUdpGlobals'
     _SDM_ATT_MAP = {
-        'ChangeStatusQuery': 'changeStatusQuery',
-        'CookieSize': 'cookieSize',
-        'FragmentSize': 'fragmentSize',
-        'MaxClientsPerSecond': 'maxClientsPerSecond',
         'MaxOutstandingRequests': 'maxOutstandingRequests',
+        'ChangeStatusQuery': 'changeStatusQuery',
         'ObjectId': 'objectId',
-        'Port': 'port',
-        'Timeout': 'timeout',
+        'MaxClientsPerSecond': 'maxClientsPerSecond',
+        'CookieSize': 'cookieSize',
         'TriggerCount': 'triggerCount',
-        'TriggerOrigin': 'triggerOrigin',
         'TriggerType': 'triggerType',
         'WaitBeforeRun': 'waitBeforeRun',
+        'Timeout': 'timeout',
+        'FragmentSize': 'fragmentSize',
         'WaitForCompletion': 'waitForCompletion',
+        'Port': 'port',
+        'TriggerOrigin': 'triggerOrigin',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,11 +33,11 @@ class Ipv6(Base):
     __slots__ = ()
     _SDM_NAME = 'ipv6'
     _SDM_ATT_MAP = {
-        'Gateway': 'gateway',
         'Ip': 'ip',
-        'PrefixLength': 'prefixLength',
-        'TargetLinkLayerAddressOption': 'targetLinkLayerAddressOption',
         'TrafficClass': 'trafficClass',
+        'PrefixLength': 'prefixLength',
+        'Gateway': 'gateway',
+        'TargetLinkLayerAddressOption': 'targetLinkLayerAddressOption',
     }
 
     def __init__(self, parent):

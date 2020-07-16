@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,23 +32,23 @@ class TestConfig(Base):
     _SDM_NAME = 'testConfig'
     _SDM_ATT_MAP = {
         'CorrectionFactorMode': 'correctionFactorMode',
-        'CorrectionFactorScale': 'correctionFactorScale',
-        'Duration': 'duration',
-        'EnableCorrectionFactorPassFail': 'enableCorrectionFactorPassFail',
         'MaxOutstanding': 'maxOutstanding',
-        'MeasuredResidenceTime': 'measuredResidenceTime',
-        'NumberCorrectionFactorPassFail': 'numberCorrectionFactorPassFail',
-        'Numtrials': 'numtrials',
-        'OffsetGraph': 'offsetGraph',
+        'TestConfiguration': 'testConfiguration',
+        'EnableCorrectionFactorPassFail': 'enableCorrectionFactorPassFail',
         'PathDelayGraphing': 'pathDelayGraphing',
-        'ProtocolItem': 'protocolItem',
-        'ResidenceTime': 'residenceTime',
-        'Runmode': 'runmode',
         'SetupRate': 'setupRate',
         'StartTraffic': 'startTraffic',
-        'TeardownRate': 'teardownRate',
-        'TestConfiguration': 'testConfiguration',
+        'CorrectionFactorScale': 'correctionFactorScale',
         'UseExistingSetupRate': 'useExistingSetupRate',
+        'OffsetGraph': 'offsetGraph',
+        'Runmode': 'runmode',
+        'ProtocolItem': 'protocolItem',
+        'Numtrials': 'numtrials',
+        'Duration': 'duration',
+        'MeasuredResidenceTime': 'measuredResidenceTime',
+        'TeardownRate': 'teardownRate',
+        'ResidenceTime': 'residenceTime',
+        'NumberCorrectionFactorPassFail': 'numberCorrectionFactorPassFail',
     }
 
     def __init__(self, parent):

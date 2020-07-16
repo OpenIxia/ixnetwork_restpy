@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,14 +33,14 @@ class AdvFecRange(Base):
     __slots__ = ()
     _SDM_NAME = 'advFecRange'
     _SDM_ATT_MAP = {
-        'EnablePacking': 'enablePacking',
-        'EnableReplyingLspPing': 'enableReplyingLspPing',
-        'Enabled': 'enabled',
-        'FirstNetwork': 'firstNetwork',
-        'LabelMode': 'labelMode',
-        'LabelValueStart': 'labelValueStart',
         'MaskWidth': 'maskWidth',
+        'FirstNetwork': 'firstNetwork',
+        'Enabled': 'enabled',
+        'LabelValueStart': 'labelValueStart',
         'NumberOfNetworks': 'numberOfNetworks',
+        'EnableReplyingLspPing': 'enableReplyingLspPing',
+        'LabelMode': 'labelMode',
+        'EnablePacking': 'enablePacking',
     }
 
     def __init__(self, parent):

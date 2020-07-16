@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,17 +33,17 @@ class Interface(Base):
     __slots__ = ()
     _SDM_NAME = 'interface'
     _SDM_ATT_MAP = {
-        'AutoPick': 'autoPick',
-        'BdpuGap': 'bdpuGap',
-        'Cost': 'cost',
-        'Enabled': 'enabled',
-        'InterfaceId': 'interfaceId',
-        'JitterEnabled': 'jitterEnabled',
-        'JitterPercentage': 'jitterPercentage',
         'LinkType': 'linkType',
-        'MstiOrVlanId': 'mstiOrVlanId',
+        'InterfaceId': 'interfaceId',
+        'BdpuGap': 'bdpuGap',
         'PortNo': 'portNo',
+        'Enabled': 'enabled',
+        'MstiOrVlanId': 'mstiOrVlanId',
         'Pvid': 'pvid',
+        'JitterPercentage': 'jitterPercentage',
+        'Cost': 'cost',
+        'AutoPick': 'autoPick',
+        'JitterEnabled': 'jitterEnabled',
     }
 
     def __init__(self, parent):

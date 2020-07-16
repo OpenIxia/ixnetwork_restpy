@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,6 +32,8 @@ class PgwS5S8PcrfSecondaryRange(Base):
 
     __slots__ = ()
     _SDM_NAME = 'pgwS5S8PcrfSecondaryRange'
+    _SDM_ATT_MAP = {
+    }
 
     def __init__(self, parent):
         super(PgwS5S8PcrfSecondaryRange, self).__init__(parent)

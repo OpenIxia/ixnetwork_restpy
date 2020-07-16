@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,12 +31,12 @@ class DhcpV4DiscoveredInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcpV4DiscoveredInfo'
     _SDM_ATT_MAP = {
-        'Gateway': 'gateway',
         'Ipv4Address': 'ipv4Address',
         'Ipv4Mask': 'ipv4Mask',
-        'IsDhcpV4LearnedInfoRefreshed': 'isDhcpV4LearnedInfoRefreshed',
         'LeaseDuration': 'leaseDuration',
+        'IsDhcpV4LearnedInfoRefreshed': 'isDhcpV4LearnedInfoRefreshed',
         'ProtocolInterface': 'protocolInterface',
+        'Gateway': 'gateway',
         'Tlv': 'tlv',
     }
 

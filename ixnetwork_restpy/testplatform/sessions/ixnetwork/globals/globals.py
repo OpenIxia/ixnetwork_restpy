@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,15 +31,18 @@ class Globals(Base):
     __slots__ = ()
     _SDM_NAME = 'globals'
     _SDM_ATT_MAP = {
-        'BuildNumber': 'buildNumber',
-        'CommandArgs': 'commandArgs',
-        'ConfigFileName': 'configFileName',
-        'ConfigSummary': 'configSummary',
+        'ApplicationName': 'applicationName',
         'IsConfigDifferent': 'isConfigDifferent',
-        'IxosBuildNumber': 'ixosBuildNumber',
-        'PersistencePath': 'persistencePath',
+        'CommandArgs': 'commandArgs',
         'ProtocolbuildNumber': 'protocolbuildNumber',
         'Username': 'username',
+        'RpfPort': 'rpfPort',
+        'PersistencePath': 'persistencePath',
+        'BuildNumber': 'buildNumber',
+        'ConfigSummary': 'configSummary',
+        'ProductVersion': 'productVersion',
+        'ConfigFileName': 'configFileName',
+        'IxosBuildNumber': 'ixosBuildNumber',
     }
 
     def __init__(self, parent):
@@ -116,6 +119,20 @@ class Globals(Base):
         return Licensing(self)._select()
 
     @property
+    def PortTestOptions(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.porttestoptions.porttestoptions.PortTestOptions): An instance of the PortTestOptions class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.porttestoptions.porttestoptions import PortTestOptions
+        return PortTestOptions(self)._select()
+
+    @property
     def Preferences(self):
         """
         Returns
@@ -172,6 +189,20 @@ class Globals(Base):
         return TestInspector(self)._select()
 
     @property
+    def Testworkflow(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.testworkflow.testworkflow.Testworkflow): An instance of the Testworkflow class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.testworkflow.testworkflow import Testworkflow
+        return Testworkflow(self)._select()
+
+    @property
     def Topology(self):
         """
         Returns
@@ -184,6 +215,15 @@ class Globals(Base):
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.topology_678a8dc80c9b4b2b5c741072eab4305d import Topology
         return Topology(self)._select()
+
+    @property
+    def ApplicationName(self):
+        """
+        Returns
+        -------
+        - str: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['ApplicationName'])
 
     @property
     def BuildNumber(self):
@@ -249,6 +289,15 @@ class Globals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PersistencePath'])
 
     @property
+    def ProductVersion(self):
+        """
+        Returns
+        -------
+        - str: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['ProductVersion'])
+
+    @property
     def ProtocolbuildNumber(self):
         """
         Returns
@@ -256,6 +305,15 @@ class Globals(Base):
         - str: The build number of the protocol.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolbuildNumber'])
+
+    @property
+    def RpfPort(self):
+        """
+        Returns
+        -------
+        - number: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['RpfPort'])
 
     @property
     def Username(self):

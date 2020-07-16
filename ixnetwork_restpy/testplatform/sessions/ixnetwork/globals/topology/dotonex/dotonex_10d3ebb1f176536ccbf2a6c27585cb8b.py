@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,35 +31,35 @@ class DotOneX(Base):
     __slots__ = ()
     _SDM_NAME = 'dotOneX'
     _SDM_ATT_MAP = {
-        'AltName': 'altName',
-        'AuthOnNoResponse': 'authOnNoResponse',
-        'AuthWaitPeriod': 'authWaitPeriod',
-        'City': 'city',
-        'Company': 'company',
-        'Count': 'count',
-        'Country': 'country',
-        'Department': 'department',
-        'DescriptiveName': 'descriptiveName',
-        'DisableLogoff': 'disableLogoff',
-        'DutTestMode': 'dutTestMode',
-        'FragmentSize': 'fragmentSize',
-        'GetCACertOnly': 'getCACertOnly',
         'KeySize': 'keySize',
-        'KeyUsage': 'keyUsage',
+        'GetCACertOnly': 'getCACertOnly',
+        'City': 'city',
+        'DisableLogoff': 'disableLogoff',
         'MacAuthPrefix': 'macAuthPrefix',
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
+        'State': 'state',
+        'AuthWaitPeriod': 'authWaitPeriod',
+        'KeyUsage': 'keyUsage',
+        'RowNames': 'rowNames',
+        'DutTestMode': 'dutTestMode',
         'MaxSetupRate': 'maxSetupRate',
+        'Department': 'department',
+        'SuccessiveStart': 'successiveStart',
+        'Company': 'company',
+        'FragmentSize': 'fragmentSize',
+        'ServerURL': 'serverURL',
         'MaxStart': 'maxStart',
+        'WaitBeforeRun': 'waitBeforeRun',
+        'AltName': 'altName',
+        'UseVlanIdentify': 'useVlanIdentify',
+        'Count': 'count',
+        'MaxOutstandingRequests': 'maxOutstandingRequests',
         'MaxTeardownRate': 'maxTeardownRate',
         'Name': 'name',
-        'OnlyMulticast': 'onlyMulticast',
-        'RowNames': 'rowNames',
-        'ServerURL': 'serverURL',
+        'AuthOnNoResponse': 'authOnNoResponse',
         'StartPeriod': 'startPeriod',
-        'State': 'state',
-        'SuccessiveStart': 'successiveStart',
-        'UseVlanIdentify': 'useVlanIdentify',
-        'WaitBeforeRun': 'waitBeforeRun',
+        'DescriptiveName': 'descriptiveName',
+        'OnlyMulticast': 'onlyMulticast',
+        'Country': 'country',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,38 +33,41 @@ class TrafficItem(Base):
     __slots__ = ()
     _SDM_NAME = 'trafficItem'
     _SDM_ATT_MAP = {
-        'AllowSelfDestined': 'allowSelfDestined',
-        'BiDirectional': 'biDirectional',
-        'EgressEnabled': 'egressEnabled',
-        'EnableDynamicMplsLabelValues': 'enableDynamicMplsLabelValues',
-        'Enabled': 'enabled',
-        'Errors': 'errors',
-        'FlowGroupCount': 'flowGroupCount',
-        'FrerDuplicateElimination': 'frerDuplicateElimination',
-        'HasOpenFlow': 'hasOpenFlow',
-        'HostsPerNetwork': 'hostsPerNetwork',
-        'InterAsBgpPreference': 'interAsBgpPreference',
-        'InterAsLdpPreference': 'interAsLdpPreference',
-        'MaxNumberOfVpnLabelStack': 'maxNumberOfVpnLabelStack',
-        'MergeDestinations': 'mergeDestinations',
-        'MulticastForwardingMode': 'multicastForwardingMode',
-        'Name': 'name',
-        'NumVlansForMulticastReplication': 'numVlansForMulticastReplication',
-        'OrdinalNo': 'ordinalNo',
-        'OriginatorType': 'originatorType',
-        'RoundRobinPacketOrdering': 'roundRobinPacketOrdering',
-        'RouteMesh': 'routeMesh',
-        'SrcDestMesh': 'srcDestMesh',
-        'State': 'state',
         'Suspend': 'suspend',
         'TrafficItemType': 'trafficItemType',
-        'TrafficType': 'trafficType',
         'TransmitMode': 'transmitMode',
-        'TransportLdpPreference': 'transportLdpPreference',
+        'MergeDestinations': 'mergeDestinations',
         'TransportRsvpTePreference': 'transportRsvpTePreference',
-        'UseControlPlaneFrameSize': 'useControlPlaneFrameSize',
-        'UseControlPlaneRate': 'useControlPlaneRate',
+        'EnableDynamicMplsLabelValues': 'enableDynamicMplsLabelValues',
+        'TrafficType': 'trafficType',
+        'Errors': 'errors',
+        'OriginatorType': 'originatorType',
+        'RegenerateCount': 'regenerateCount',
+        'LabelPreferences': 'labelPreferences',
+        'HostsPerNetwork': 'hostsPerNetwork',
+        'MulticastForwardingMode': 'multicastForwardingMode',
+        'State': 'state',
+        'InterAsBgpPreference': 'interAsBgpPreference',
+        'OrdinalNo': 'ordinalNo',
+        'FrerDuplicateElimination': 'frerDuplicateElimination',
+        'SrcDestMesh': 'srcDestMesh',
         'Warnings': 'warnings',
+        'MaxNumberOfVpnLabelStack': 'maxNumberOfVpnLabelStack',
+        'AllowSelfDestined': 'allowSelfDestined',
+        'UseControlPlaneRate': 'useControlPlaneRate',
+        'FlowGroupCount': 'flowGroupCount',
+        'EnableMacsecEgressOnlyAutoConfig': 'enableMacsecEgressOnlyAutoConfig',
+        'UseControlPlaneFrameSize': 'useControlPlaneFrameSize',
+        'InterAsLdpPreference': 'interAsLdpPreference',
+        'Name': 'name',
+        'EgressEnabled': 'egressEnabled',
+        'TransportLdpPreference': 'transportLdpPreference',
+        'Enabled': 'enabled',
+        'RoundRobinPacketOrdering': 'roundRobinPacketOrdering',
+        'HasOpenFlow': 'hasOpenFlow',
+        'RouteMesh': 'routeMesh',
+        'BiDirectional': 'biDirectional',
+        'NumVlansForMulticastReplication': 'numVlansForMulticastReplication',
     }
 
     def __init__(self, parent):
@@ -231,6 +234,18 @@ class TrafficItem(Base):
         self._set_attribute(self._SDM_ATT_MAP['EnableDynamicMplsLabelValues'], value)
 
     @property
+    def EnableMacsecEgressOnlyAutoConfig(self):
+        """
+        Returns
+        -------
+        - bool: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['EnableMacsecEgressOnlyAutoConfig'])
+    @EnableMacsecEgressOnlyAutoConfig.setter
+    def EnableMacsecEgressOnlyAutoConfig(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['EnableMacsecEgressOnlyAutoConfig'], value)
+
+    @property
     def Enabled(self):
         """
         Returns
@@ -298,10 +313,10 @@ class TrafficItem(Base):
 
     @property
     def InterAsBgpPreference(self):
-        """
+        """DEPRECATED 
         Returns
         -------
-        - str(one | two): Signifies the inter as BGP prefence
+        - str(one | two): This attribute is deprecated. Use labelPreferences attribute instead.
         """
         return self._get_attribute(self._SDM_ATT_MAP['InterAsBgpPreference'])
     @InterAsBgpPreference.setter
@@ -310,15 +325,27 @@ class TrafficItem(Base):
 
     @property
     def InterAsLdpPreference(self):
-        """
+        """DEPRECATED 
         Returns
         -------
-        - str(one | two): Preferences inter as LDP
+        - str(one | two): This attribute is deprecated. Use labelPreferences attribute instead.
         """
         return self._get_attribute(self._SDM_ATT_MAP['InterAsLdpPreference'])
     @InterAsLdpPreference.setter
     def InterAsLdpPreference(self, value):
         self._set_attribute(self._SDM_ATT_MAP['InterAsLdpPreference'], value)
+
+    @property
+    def LabelPreferences(self):
+        """
+        Returns
+        -------
+        - list(dict(labelCategory:str[interAsRegionLsp | interAsRegionLspClassic | ipTransportLsp | transportLspClassic | vpnTransportLsp],labelPreferenceInput:str[auto | custom | none],labelProviderList:list[str[bgpLuSr | bgpLuSrInterAs | bgpv6LuSr | isisSr | ldp | ospfSr | ospfv3Sr | rsvp | targetedLdpInterAs]])): List of label preferences per Label Category defined as List[Label Category, Label Category input type, List of Label Providers in the preferred order]
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['LabelPreferences'])
+    @LabelPreferences.setter
+    def LabelPreferences(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['LabelPreferences'], value)
 
     @property
     def MaxNumberOfVpnLabelStack(self):
@@ -403,6 +430,15 @@ class TrafficItem(Base):
     @OriginatorType.setter
     def OriginatorType(self, value):
         self._set_attribute(self._SDM_ATT_MAP['OriginatorType'], value)
+
+    @property
+    def RegenerateCount(self):
+        """
+        Returns
+        -------
+        - number: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['RegenerateCount'])
 
     @property
     def RoundRobinPacketOrdering(self):
@@ -499,10 +535,10 @@ class TrafficItem(Base):
 
     @property
     def TransportLdpPreference(self):
-        """
+        """DEPRECATED 
         Returns
         -------
-        - str(one | two): Transports LDP preference
+        - str(one | two): This attribute is deprecated. Use labelPreferences attribute instead.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TransportLdpPreference'])
     @TransportLdpPreference.setter
@@ -511,10 +547,10 @@ class TrafficItem(Base):
 
     @property
     def TransportRsvpTePreference(self):
-        """
+        """DEPRECATED 
         Returns
         -------
-        - str(one | two): Transports RSVP TE preference
+        - str(one | two): This attribute is deprecated. Use labelPreferences attribute instead.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TransportRsvpTePreference'])
     @TransportRsvpTePreference.setter
@@ -554,7 +590,7 @@ class TrafficItem(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Warnings'])
 
-    def update(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, Enabled=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None):
+    def update(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, EnableMacsecEgressOnlyAutoConfig=None, Enabled=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, LabelPreferences=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None):
         """Updates trafficItem resource on the server.
 
         Args
@@ -563,12 +599,14 @@ class TrafficItem(Base):
         - BiDirectional (bool): If true, this enables traffic to be sent in forward and reverse destination.
         - EgressEnabled (bool): Enables the egress.
         - EnableDynamicMplsLabelValues (bool): Enables the dynamic MPLS label values.
+        - EnableMacsecEgressOnlyAutoConfig (bool): 
         - Enabled (bool): If true, this enables the selected traffic item.
         - FrerDuplicateElimination (bool): 
         - HasOpenFlow (bool): Indicates whether or not this trafficItem has openflow.
         - HostsPerNetwork (number): The number of emulated hosts for the traffic stream.
-        - InterAsBgpPreference (str(one | two)): Signifies the inter as BGP prefence
-        - InterAsLdpPreference (str(one | two)): Preferences inter as LDP
+        - InterAsBgpPreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
+        - InterAsLdpPreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
+        - LabelPreferences (list(dict(labelCategory:str[interAsRegionLsp | interAsRegionLspClassic | ipTransportLsp | transportLspClassic | vpnTransportLsp],labelPreferenceInput:str[auto | custom | none],labelProviderList:list[str[bgpLuSr | bgpLuSrInterAs | bgpv6LuSr | isisSr | ldp | ospfSr | ospfv3Sr | rsvp | targetedLdpInterAs]]))): List of label preferences per Label Category defined as List[Label Category, Label Category input type, List of Label Providers in the preferred order]
         - MaxNumberOfVpnLabelStack (number): Signifies the maximum number of VPN label stack
         - MergeDestinations (bool): If true, merges the traffic flow in the destination ranges.
         - MulticastForwardingMode (str(loadBalancing | replication)): 
@@ -583,8 +621,8 @@ class TrafficItem(Base):
         - TrafficItemType (str(application | applicationLibrary | l2L3 | quick)): Helps to configure and edit a traffic item that is sent across Ixia ports.
         - TrafficType (str(atm | avb1722 | avbRaw | ethernetVlan | fc | fcoe | frameRelay | hdlc | ipv4 | ipv4ApplicationTraffic | ipv6 | ipv6ApplicationTraffic | ppp | raw)): Helps to select the type of traffic endpoint to be configured.
         - TransmitMode (str(interleaved | sequential)): The transmit mode for this traffic item
-        - TransportLdpPreference (str(one | two)): Transports LDP preference
-        - TransportRsvpTePreference (str(one | two)): Transports RSVP TE preference
+        - TransportLdpPreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
+        - TransportRsvpTePreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
         - UseControlPlaneFrameSize (bool): 
         - UseControlPlaneRate (bool): 
 
@@ -594,7 +632,7 @@ class TrafficItem(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, Enabled=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None):
+    def add(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, EnableMacsecEgressOnlyAutoConfig=None, Enabled=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, LabelPreferences=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None):
         """Adds a new trafficItem resource on the server and adds it to the container.
 
         Args
@@ -603,12 +641,14 @@ class TrafficItem(Base):
         - BiDirectional (bool): If true, this enables traffic to be sent in forward and reverse destination.
         - EgressEnabled (bool): Enables the egress.
         - EnableDynamicMplsLabelValues (bool): Enables the dynamic MPLS label values.
+        - EnableMacsecEgressOnlyAutoConfig (bool): 
         - Enabled (bool): If true, this enables the selected traffic item.
         - FrerDuplicateElimination (bool): 
         - HasOpenFlow (bool): Indicates whether or not this trafficItem has openflow.
         - HostsPerNetwork (number): The number of emulated hosts for the traffic stream.
-        - InterAsBgpPreference (str(one | two)): Signifies the inter as BGP prefence
-        - InterAsLdpPreference (str(one | two)): Preferences inter as LDP
+        - InterAsBgpPreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
+        - InterAsLdpPreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
+        - LabelPreferences (list(dict(labelCategory:str[interAsRegionLsp | interAsRegionLspClassic | ipTransportLsp | transportLspClassic | vpnTransportLsp],labelPreferenceInput:str[auto | custom | none],labelProviderList:list[str[bgpLuSr | bgpLuSrInterAs | bgpv6LuSr | isisSr | ldp | ospfSr | ospfv3Sr | rsvp | targetedLdpInterAs]]))): List of label preferences per Label Category defined as List[Label Category, Label Category input type, List of Label Providers in the preferred order]
         - MaxNumberOfVpnLabelStack (number): Signifies the maximum number of VPN label stack
         - MergeDestinations (bool): If true, merges the traffic flow in the destination ranges.
         - MulticastForwardingMode (str(loadBalancing | replication)): 
@@ -623,8 +663,8 @@ class TrafficItem(Base):
         - TrafficItemType (str(application | applicationLibrary | l2L3 | quick)): Helps to configure and edit a traffic item that is sent across Ixia ports.
         - TrafficType (str(atm | avb1722 | avbRaw | ethernetVlan | fc | fcoe | frameRelay | hdlc | ipv4 | ipv4ApplicationTraffic | ipv6 | ipv6ApplicationTraffic | ppp | raw)): Helps to select the type of traffic endpoint to be configured.
         - TransmitMode (str(interleaved | sequential)): The transmit mode for this traffic item
-        - TransportLdpPreference (str(one | two)): Transports LDP preference
-        - TransportRsvpTePreference (str(one | two)): Transports RSVP TE preference
+        - TransportLdpPreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
+        - TransportRsvpTePreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
         - UseControlPlaneFrameSize (bool): 
         - UseControlPlaneRate (bool): 
 
@@ -648,7 +688,7 @@ class TrafficItem(Base):
         """
         self._delete()
 
-    def find(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, Enabled=None, Errors=None, FlowGroupCount=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, State=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None, Warnings=None):
+    def find(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, EnableMacsecEgressOnlyAutoConfig=None, Enabled=None, Errors=None, FlowGroupCount=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, LabelPreferences=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RegenerateCount=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, State=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None, Warnings=None):
         """Finds and retrieves trafficItem resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve trafficItem resources from the server.
@@ -661,14 +701,16 @@ class TrafficItem(Base):
         - BiDirectional (bool): If true, this enables traffic to be sent in forward and reverse destination.
         - EgressEnabled (bool): Enables the egress.
         - EnableDynamicMplsLabelValues (bool): Enables the dynamic MPLS label values.
+        - EnableMacsecEgressOnlyAutoConfig (bool): 
         - Enabled (bool): If true, this enables the selected traffic item.
         - Errors (list(str)): Displays the errors.
         - FlowGroupCount (number): Indicates the number of flow groups.
         - FrerDuplicateElimination (bool): 
         - HasOpenFlow (bool): Indicates whether or not this trafficItem has openflow.
         - HostsPerNetwork (number): The number of emulated hosts for the traffic stream.
-        - InterAsBgpPreference (str(one | two)): Signifies the inter as BGP prefence
-        - InterAsLdpPreference (str(one | two)): Preferences inter as LDP
+        - InterAsBgpPreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
+        - InterAsLdpPreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
+        - LabelPreferences (list(dict(labelCategory:str[interAsRegionLsp | interAsRegionLspClassic | ipTransportLsp | transportLspClassic | vpnTransportLsp],labelPreferenceInput:str[auto | custom | none],labelProviderList:list[str[bgpLuSr | bgpLuSrInterAs | bgpv6LuSr | isisSr | ldp | ospfSr | ospfv3Sr | rsvp | targetedLdpInterAs]]))): List of label preferences per Label Category defined as List[Label Category, Label Category input type, List of Label Providers in the preferred order]
         - MaxNumberOfVpnLabelStack (number): Signifies the maximum number of VPN label stack
         - MergeDestinations (bool): If true, merges the traffic flow in the destination ranges.
         - MulticastForwardingMode (str(loadBalancing | replication)): 
@@ -676,6 +718,7 @@ class TrafficItem(Base):
         - NumVlansForMulticastReplication (number): Set the number of vlans for multicast replication
         - OrdinalNo (number): Signifies the ordinal number
         - OriginatorType (str(endUser | quickTest)): Indicates who created this trafficItem.
+        - RegenerateCount (number): 
         - RoundRobinPacketOrdering (bool): This option enables Round Robin Packet Ordering within endpoints across Rx ports.
         - RouteMesh (str(fullMesh | oneToOne)): The traffic flow type between each pair of source route endpoint and destination route endpoint.
         - SrcDestMesh (str(fullMesh | manyToMany | none | oneToOne)): Select the options to set the traffic mesh type between the Source Endpoint and Destination endpoint.
@@ -684,8 +727,8 @@ class TrafficItem(Base):
         - TrafficItemType (str(application | applicationLibrary | l2L3 | quick)): Helps to configure and edit a traffic item that is sent across Ixia ports.
         - TrafficType (str(atm | avb1722 | avbRaw | ethernetVlan | fc | fcoe | frameRelay | hdlc | ipv4 | ipv4ApplicationTraffic | ipv6 | ipv6ApplicationTraffic | ppp | raw)): Helps to select the type of traffic endpoint to be configured.
         - TransmitMode (str(interleaved | sequential)): The transmit mode for this traffic item
-        - TransportLdpPreference (str(one | two)): Transports LDP preference
-        - TransportRsvpTePreference (str(one | two)): Transports RSVP TE preference
+        - TransportLdpPreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
+        - TransportRsvpTePreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
         - UseControlPlaneFrameSize (bool): 
         - UseControlPlaneRate (bool): 
         - Warnings (list(str)): Displays the warnings.
@@ -777,6 +820,25 @@ class TrafficItem(Base):
         """
         payload = { "Arg1": self }
         return self._execute('generate', payload=payload, response_object=None)
+
+    def PauseStatelessTraffic(self, *args, **kwargs):
+        """Executes the pauseStatelessTraffic operation on the server.
+
+        Pause or Resume stateless traffic.
+
+        pauseStatelessTraffic(Arg2=bool)
+        --------------------------------
+        - Arg2 (bool): If true, it will pause running traffic. If false, it will resume previously paused traffic.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('pauseStatelessTraffic', payload=payload, response_object=None)
 
     def ResolveAptixiaEndpoints(self):
         """Executes the resolveAptixiaEndpoints operation on the server.

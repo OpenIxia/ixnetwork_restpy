@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,22 +33,24 @@ class EndpointSet(Base):
     __slots__ = ()
     _SDM_NAME = 'endpointSet'
     _SDM_ATT_MAP = {
-        'AllowEmptyTopologySets': 'allowEmptyTopologySets',
-        'DestinationFilter': 'destinationFilter',
-        'Destinations': 'destinations',
-        'DestinationsDescription': 'destinationsDescription',
-        'FullyMeshedEndpoints': 'fullyMeshedEndpoints',
-        'FullyMeshedEndpointsDescription': 'fullyMeshedEndpointsDescription',
-        'MulticastDestinations': 'multicastDestinations',
-        'MulticastReceivers': 'multicastReceivers',
-        'Name': 'name',
-        'NgpfFilters': 'ngpfFilters',
-        'ScalableDestinations': 'scalableDestinations',
-        'ScalableSources': 'scalableSources',
         'SourceFilter': 'sourceFilter',
-        'Sources': 'sources',
+        'Name': 'name',
+        'ErrorString': 'errorString',
+        'DestinationFilter': 'destinationFilter',
+        'AllowEmptyTopologySets': 'allowEmptyTopologySets',
+        'ScalableSources': 'scalableSources',
+        'MulticastReceivers': 'multicastReceivers',
+        'FullyMeshedEndpointsDescription': 'fullyMeshedEndpointsDescription',
         'SourcesDescription': 'sourcesDescription',
+        'DestinationsDescription': 'destinationsDescription',
+        'ScalableDestinations': 'scalableDestinations',
+        'NgpfFilters': 'ngpfFilters',
+        'MulticastDestinations': 'multicastDestinations',
+        'FullyMeshedEndpoints': 'fullyMeshedEndpoints',
+        'Error': 'error',
+        'Sources': 'sources',
         'TrafficGroups': 'trafficGroups',
+        'Destinations': 'destinations',
     }
 
     def __init__(self, parent):
@@ -98,6 +100,24 @@ class EndpointSet(Base):
         - str: Summary description of destination endpoints.
         """
         return self._get_attribute(self._SDM_ATT_MAP['DestinationsDescription'])
+
+    @property
+    def Error(self):
+        """
+        Returns
+        -------
+        - bool: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['Error'])
+
+    @property
+    def ErrorString(self):
+        """
+        Returns
+        -------
+        - str: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['ErrorString'])
 
     @property
     def FullyMeshedEndpoints(self):
@@ -301,7 +321,7 @@ class EndpointSet(Base):
         """
         self._delete()
 
-    def find(self, AllowEmptyTopologySets=None, DestinationFilter=None, Destinations=None, DestinationsDescription=None, FullyMeshedEndpoints=None, FullyMeshedEndpointsDescription=None, MulticastDestinations=None, MulticastReceivers=None, Name=None, NgpfFilters=None, ScalableDestinations=None, ScalableSources=None, SourceFilter=None, Sources=None, SourcesDescription=None, TrafficGroups=None):
+    def find(self, AllowEmptyTopologySets=None, DestinationFilter=None, Destinations=None, DestinationsDescription=None, Error=None, ErrorString=None, FullyMeshedEndpoints=None, FullyMeshedEndpointsDescription=None, MulticastDestinations=None, MulticastReceivers=None, Name=None, NgpfFilters=None, ScalableDestinations=None, ScalableSources=None, SourceFilter=None, Sources=None, SourcesDescription=None, TrafficGroups=None):
         """Finds and retrieves endpointSet resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve endpointSet resources from the server.
@@ -314,6 +334,8 @@ class EndpointSet(Base):
         - DestinationFilter (str): The list of conditions used for filtering destinations endpoints.
         - Destinations (list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*])): Indicates the number of destination endpoints configured.
         - DestinationsDescription (str): Summary description of destination endpoints.
+        - Error (bool): 
+        - ErrorString (str): 
         - FullyMeshedEndpoints (list(str[None | /api/v1/sessions/1/ixnetwork/lag/.../* | /api/v1/sessions/1/ixnetwork/topology/.../* | /api/v1/sessions/1/ixnetwork/traffic/.../* | /api/v1/sessions/1/ixnetwork/vport/.../*])): 
         - FullyMeshedEndpointsDescription (str): Summary description of fully meshed endpoints.
         - MulticastDestinations (list(dict(arg1:bool,arg2:str[igmp | mld | none],arg3:str,arg4:str,arg5:number))): A compact representation of many virtual multicast destinations. Each list item consists of 5 values where the first two, a bool value and enum value, can be defaulted to false and none. The next two values are a starting address and step address which can be either an ipv4, ipv6 or streamId and the last value is a count of addresses.

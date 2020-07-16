@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,15 +32,15 @@ class Dhcpv4server(Base):
     _SDM_NAME = 'dhcpv4server'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'ForceRenewFactor': 'forceRenewFactor',
         'ForceRenewMaxRc': 'forceRenewMaxRc',
-        'InitForceRenewTimeout': 'initForceRenewTimeout',
         'Name': 'name',
+        'PingTimeout': 'pingTimeout',
+        'DescriptiveName': 'descriptiveName',
         'OfferTimeout': 'offerTimeout',
         'PingCheck': 'pingCheck',
-        'PingTimeout': 'pingTimeout',
+        'InitForceRenewTimeout': 'initForceRenewTimeout',
         'RowNames': 'rowNames',
+        'ForceRenewFactor': 'forceRenewFactor',
     }
 
     def __init__(self, parent):

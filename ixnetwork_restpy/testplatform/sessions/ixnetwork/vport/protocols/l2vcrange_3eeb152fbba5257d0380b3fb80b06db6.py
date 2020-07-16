@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,72 +33,72 @@ class L2VcRange(Base):
     __slots__ = ()
     _SDM_NAME = 'l2VcRange'
     _SDM_ATT_MAP = {
-        'CapableOfReassembly': 'capableOfReassembly',
-        'Cas': 'cas',
-        'CeIpAddress': 'ceIpAddress',
-        'CemOption': 'cemOption',
-        'CemPayload': 'cemPayload',
-        'Count': 'count',
-        'Description': 'description',
-        'DoNotExpandIntoVcs': 'doNotExpandIntoVcs',
-        'DownInterval': 'downInterval',
+        'VplsIdAssignedNumber': 'vplsIdAssignedNumber',
         'DownStartInterval': 'downStartInterval',
-        'EnableBfdIpUdpCv': 'enableBfdIpUdpCv',
-        'EnableBfdPwAchCv': 'enableBfdPwAchCv',
-        'EnableCBit': 'enableCBit',
-        'EnableCccvNegotiation': 'enableCccvNegotiation',
-        'EnableCemOption': 'enableCemOption',
-        'EnableCemPayload': 'enableCemPayload',
-        'EnableDescriptionPresent': 'enableDescriptionPresent',
-        'EnableLspPingCv': 'enableLspPingCv',
-        'EnableMaxAtmPresent': 'enableMaxAtmPresent',
-        'EnableMtuPresent': 'enableMtuPresent',
-        'EnablePacking': 'enablePacking',
-        'EnablePwAchCc': 'enablePwAchCc',
-        'EnablePwStatusTlv': 'enablePwStatusTlv',
+        'Ssrc': 'ssrc',
+        'TargetAiiAsIp': 'targetAiiAsIp',
+        'IncludeTdmBitrate': 'includeTdmBitrate',
+        'PwStatusCode': 'pwStatusCode',
+        'PeerAddress': 'peerAddress',
         'EnableRouterAlertCc': 'enableRouterAlertCc',
-        'Enabled': 'enabled',
+        'EnableLspPingCv': 'enableLspPingCv',
+        'TargetAiiAsNumber': 'targetAiiAsNumber',
+        'EnableMaxAtmPresent': 'enableMaxAtmPresent',
+        'IncludeTdmPayload': 'includeTdmPayload',
         'FecType': 'fecType',
         'Frequency': 'frequency',
-        'IncludeRtpHeader': 'includeRtpHeader',
-        'IncludeSsrc': 'includeSsrc',
-        'IncludeTdmBitrate': 'includeTdmBitrate',
-        'IncludeTdmOption': 'includeTdmOption',
-        'IncludeTdmPayload': 'includeTdmPayload',
-        'IpType': 'ipType',
-        'LabelMode': 'labelMode',
-        'LabelStart': 'labelStart',
-        'MaxNumberOfAtmCells': 'maxNumberOfAtmCells',
-        'Mtu': 'mtu',
-        'PayloadType': 'payloadType',
-        'PeerAddress': 'peerAddress',
-        'ProvisioningModel': 'provisioningModel',
-        'PwStatusCode': 'pwStatusCode',
-        'RepeatCount': 'repeatCount',
-        'SendPwStatus': 'sendPwStatus',
-        'SourceAiiAsIp': 'sourceAiiAsIp',
-        'SourceAiiAsNumber': 'sourceAiiAsNumber',
-        'SourceAiiType': 'sourceAiiType',
-        'Sp': 'sp',
-        'Ssrc': 'ssrc',
-        'Step': 'step',
-        'TargetAiiAsIp': 'targetAiiAsIp',
-        'TargetAiiAsNumber': 'targetAiiAsNumber',
+        'VplsIdIpAddressStep': 'vplsIdIpAddressStep',
+        'VplsIdAssignedNumberStep': 'vplsIdAssignedNumberStep',
         'TargetAiiType': 'targetAiiType',
-        'TdmBitrate': 'tdmBitrate',
-        'TdmDataSize': 'tdmDataSize',
+        'SourceAiiAsIp': 'sourceAiiAsIp',
+        'VplsIdAsNumberStep': 'vplsIdAsNumberStep',
+        'EnableCBit': 'enableCBit',
         'TimestampMode': 'timestampMode',
+        'SourceAiiType': 'sourceAiiType',
+        'SendPwStatus': 'sendPwStatus',
+        'EnablePwStatusTlv': 'enablePwStatusTlv',
+        'EnableMtuPresent': 'enableMtuPresent',
+        'IncludeRtpHeader': 'includeRtpHeader',
+        'MaxNumberOfAtmCells': 'maxNumberOfAtmCells',
+        'RepeatCount': 'repeatCount',
+        'Mtu': 'mtu',
+        'CeIpAddress': 'ceIpAddress',
+        'VplsIdIpAddress': 'vplsIdIpAddress',
+        'EnableCemOption': 'enableCemOption',
+        'LabelMode': 'labelMode',
+        'EnablePacking': 'enablePacking',
+        'EnableCemPayload': 'enableCemPayload',
+        'CemPayload': 'cemPayload',
+        'Description': 'description',
+        'IncludeSsrc': 'includeSsrc',
+        'CemOption': 'cemOption',
+        'DoNotExpandIntoVcs': 'doNotExpandIntoVcs',
+        'VplsIdAsNumber': 'vplsIdAsNumber',
+        'VplsIdCount': 'vplsIdCount',
+        'EnablePwAchCc': 'enablePwAchCc',
+        'Step': 'step',
+        'EnableDescriptionPresent': 'enableDescriptionPresent',
+        'ProvisioningModel': 'provisioningModel',
+        'EnableBfdIpUdpCv': 'enableBfdIpUdpCv',
+        'Count': 'count',
+        'EnableCccvNegotiation': 'enableCccvNegotiation',
+        'CapableOfReassembly': 'capableOfReassembly',
+        'IpType': 'ipType',
+        'PayloadType': 'payloadType',
+        'Cas': 'cas',
+        'VcIdStep': 'vcIdStep',
+        'IncludeTdmOption': 'includeTdmOption',
+        'Sp': 'sp',
+        'Enabled': 'enabled',
+        'TdmBitrate': 'tdmBitrate',
+        'EnableBfdPwAchCv': 'enableBfdPwAchCv',
+        'LabelStart': 'labelStart',
+        'TdmDataSize': 'tdmDataSize',
+        'DownInterval': 'downInterval',
+        'VplsIdType': 'vplsIdType',
+        'SourceAiiAsNumber': 'sourceAiiAsNumber',
         'UpInterval': 'upInterval',
         'VcId': 'vcId',
-        'VcIdStep': 'vcIdStep',
-        'VplsIdAsNumber': 'vplsIdAsNumber',
-        'VplsIdAsNumberStep': 'vplsIdAsNumberStep',
-        'VplsIdAssignedNumber': 'vplsIdAssignedNumber',
-        'VplsIdAssignedNumberStep': 'vplsIdAssignedNumberStep',
-        'VplsIdCount': 'vplsIdCount',
-        'VplsIdIpAddress': 'vplsIdIpAddress',
-        'VplsIdIpAddressStep': 'vplsIdIpAddressStep',
-        'VplsIdType': 'vplsIdType',
     }
 
     def __init__(self, parent):
@@ -131,6 +131,20 @@ class L2VcRange(Base):
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l2vciprange_b16a8fc51e54b59051680c68da42d9ab import L2VcIpRange
         return L2VcIpRange(self)._select()
+
+    @property
+    def TrafficGroupId(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trafficgroupid_dbbea754aa76dde537237a1dd3913088.TrafficGroupId): An instance of the TrafficGroupId class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trafficgroupid_dbbea754aa76dde537237a1dd3913088 import TrafficGroupId
+        return TrafficGroupId(self)
 
     @property
     def CapableOfReassembly(self):

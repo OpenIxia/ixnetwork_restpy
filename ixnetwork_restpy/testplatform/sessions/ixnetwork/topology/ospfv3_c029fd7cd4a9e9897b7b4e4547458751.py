@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,51 +33,51 @@ class Ospfv3(Base):
     __slots__ = ()
     _SDM_NAME = 'ospfv3'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdjSID': 'adjSID',
-        'AreaId': 'areaId',
+        'VFlag': 'vFlag',
+        'V6': 'v6',
+        'Weight': 'weight',
+        'EnableIgnoreDbDescMtu': 'enableIgnoreDbDescMtu',
+        'InstanceId': 'instanceId',
+        'StackedLayers': 'stackedLayers',
+        'EnableAdjSID': 'enableAdjSID',
+        'ConnectedVia': 'connectedVia',
+        'SessionStatus': 'sessionStatus',
+        'Errors': 'errors',
+        'HelloInterval': 'helloInterval',
+        'LocalRouterID': 'localRouterID',
+        'HelloMultiplier': 'helloMultiplier',
+        'BFlag': 'bFlag',
+        'Priority': 'priority',
         'AreaIdIp': 'areaIdIp',
         'AuthAlgo': 'authAlgo',
-        'BFlag': 'bFlag',
-        'ConnectedVia': 'connectedVia',
+        'LFlag': 'lFlag',
+        'Status': 'status',
+        'Ospfv3IfaceState': 'ospfv3IfaceState',
+        'AreaId': 'areaId',
+        'SaId': 'saId',
+        'EnableAuthentication': 'enableAuthentication',
+        'NssaCapability': 'nssaCapability',
+        'AdjSID': 'adjSID',
+        'Ospfv3NeighborState': 'ospfv3NeighborState',
+        'Key': 'key',
+        'Multiplier': 'multiplier',
+        'GFlag': 'gFlag',
+        'NetworkType': 'networkType',
+        'Active': 'active',
         'Count': 'count',
-        'DeadInterval': 'deadInterval',
+        'EnableFastHello': 'enableFastHello',
+        'PFlag': 'pFlag',
+        'Name': 'name',
+        'ExternalCapability': 'externalCapability',
+        'TypeAreaId': 'typeAreaId',
+        'EnableBfdRegistration': 'enableBfdRegistration',
         'DemandCircuit': 'demandCircuit',
         'DescriptiveName': 'descriptiveName',
-        'EnableAdjSID': 'enableAdjSID',
-        'EnableAuthentication': 'enableAuthentication',
-        'EnableBfdRegistration': 'enableBfdRegistration',
-        'EnableFastHello': 'enableFastHello',
-        'EnableIgnoreDbDescMtu': 'enableIgnoreDbDescMtu',
-        'Errors': 'errors',
-        'ExternalCapability': 'externalCapability',
-        'GFlag': 'gFlag',
-        'HelloInterval': 'helloInterval',
-        'HelloMultiplier': 'helloMultiplier',
-        'InstanceId': 'instanceId',
-        'Key': 'key',
-        'LFlag': 'lFlag',
+        'DeadInterval': 'deadInterval',
         'LinkMetric': 'linkMetric',
-        'LocalRouterID': 'localRouterID',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NetworkType': 'networkType',
-        'NssaCapability': 'nssaCapability',
-        'Ospfv3IfaceState': 'ospfv3IfaceState',
-        'Ospfv3NeighborState': 'ospfv3NeighborState',
-        'PFlag': 'pFlag',
-        'Priority': 'priority',
         'Router': 'router',
-        'SaId': 'saId',
         'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
         'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'TypeAreaId': 'typeAreaId',
-        'V6': 'v6',
-        'VFlag': 'vFlag',
-        'Weight': 'weight',
     }
 
     def __init__(self, parent):
@@ -710,6 +710,31 @@ class Ospfv3(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def ClearAllLearnedInfo(self, *args, **kwargs):
         """Executes the clearAllLearnedInfo operation on the server.
 
@@ -719,7 +744,7 @@ class Ospfv3(Base):
 
         clearAllLearnedInfo(SessionIndices=list)
         ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         clearAllLearnedInfo(SessionIndices=string)
         ------------------------------------------
@@ -764,7 +789,7 @@ class Ospfv3(Base):
 
         getBasicLearnedInfo(SessionIndices=list)
         ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         getBasicLearnedInfo(SessionIndices=string)
         ------------------------------------------
@@ -794,7 +819,7 @@ class Ospfv3(Base):
 
         getDetailedLearnedInfo(SessionIndices=list)
         -------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         getDetailedLearnedInfo(SessionIndices=string)
         ---------------------------------------------
@@ -824,7 +849,7 @@ class Ospfv3(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -849,7 +874,7 @@ class Ospfv3(Base):
 
         resumeHello(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         resumeHello(SessionIndices=string)
         ----------------------------------
@@ -888,13 +913,13 @@ class Ospfv3(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start OSPFv3 Interface
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -913,13 +938,13 @@ class Ospfv3(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop OSPF Interface
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------
@@ -944,7 +969,7 @@ class Ospfv3(Base):
 
         stopHello(SessionIndices=list)
         ------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stopHello(SessionIndices=string)
         --------------------------------

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,17 +33,17 @@ class Locator(Base):
     __slots__ = ()
     _SDM_NAME = 'locator'
     _SDM_ATT_MAP = {
-        'Address': 'address',
-        'Enabled': 'enabled',
-        'Family': 'family',
         'LispInterfaceId': 'lispInterfaceId',
-        'LocalLocator': 'localLocator',
-        'MPriority': 'mPriority',
         'MWeight': 'mWeight',
-        'Priority': 'priority',
+        'Family': 'family',
         'ProtocolInterfaceIpItemId': 'protocolInterfaceIpItemId',
-        'Reachability': 'reachability',
+        'LocalLocator': 'localLocator',
+        'Enabled': 'enabled',
         'Weight': 'weight',
+        'Priority': 'priority',
+        'Reachability': 'reachability',
+        'Address': 'address',
+        'MPriority': 'mPriority',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,27 +33,27 @@ class Querier(Base):
     __slots__ = ()
     _SDM_NAME = 'querier'
     _SDM_ATT_MAP = {
-        'DiscardLearnedInfo': 'discardLearnedInfo',
-        'Enabled': 'enabled',
-        'GeneralQueryInterval': 'generalQueryInterval',
-        'GqResponseInterval': 'gqResponseInterval',
+        'RouterAlert': 'routerAlert',
         'InterfaceId': 'interfaceId',
-        'InterfaceIndex': 'interfaceIndex',
-        'InterfaceType': 'interfaceType',
+        'StartupQueryCount': 'startupQueryCount',
+        'QuerierAddress': 'querierAddress',
+        'RobustnessVariable': 'robustnessVariable',
+        'SupportElection': 'supportElection',
         'Interfaces': 'interfaces',
+        'Enabled': 'enabled',
+        'DiscardLearnedInfo': 'discardLearnedInfo',
+        'SupportOlderVersionHost': 'supportOlderVersionHost',
+        'InterfaceIndex': 'interfaceIndex',
         'IsQuerier': 'isQuerier',
         'IsRefreshComplete': 'isRefreshComplete',
-        'QuerierAddress': 'querierAddress',
-        'QuerierWorkingVersion': 'querierWorkingVersion',
-        'RobustnessVariable': 'robustnessVariable',
-        'RouterAlert': 'routerAlert',
-        'SqResponseInterval': 'sqResponseInterval',
-        'SqTransmissionCount': 'sqTransmissionCount',
-        'StartupQueryCount': 'startupQueryCount',
-        'SupportElection': 'supportElection',
-        'SupportOlderVersionHost': 'supportOlderVersionHost',
-        'SupportOlderVersionQuerier': 'supportOlderVersionQuerier',
         'Version': 'version',
+        'GqResponseInterval': 'gqResponseInterval',
+        'SqResponseInterval': 'sqResponseInterval',
+        'SupportOlderVersionQuerier': 'supportOlderVersionQuerier',
+        'InterfaceType': 'interfaceType',
+        'SqTransmissionCount': 'sqTransmissionCount',
+        'GeneralQueryInterval': 'generalQueryInterval',
+        'QuerierWorkingVersion': 'querierWorkingVersion',
     }
 
     def __init__(self, parent):

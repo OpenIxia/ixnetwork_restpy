@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,13 +32,13 @@ class PceUpdateRsvpEroSubObjectList(Base):
     __slots__ = ()
     _SDM_NAME = 'pceUpdateRsvpEroSubObjectList'
     _SDM_ATT_MAP = {
+        'LooseHop': 'looseHop',
+        'Ipv6Prefix': 'ipv6Prefix',
+        'Ipv4Prefix': 'ipv4Prefix',
         'ActiveThisEro': 'activeThisEro',
         'AsNumber': 'asNumber',
-        'Ipv4Prefix': 'ipv4Prefix',
-        'Ipv6Prefix': 'ipv6Prefix',
-        'LooseHop': 'looseHop',
-        'PrefixLength': 'prefixLength',
         'SubObjectType': 'subObjectType',
+        'PrefixLength': 'prefixLength',
     }
 
     def __init__(self, parent):

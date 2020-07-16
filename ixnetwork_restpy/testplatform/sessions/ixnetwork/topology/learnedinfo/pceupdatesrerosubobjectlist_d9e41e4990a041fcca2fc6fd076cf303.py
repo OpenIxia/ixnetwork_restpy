@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,27 +32,27 @@ class PceUpdateSrEroSubObjectList(Base):
     __slots__ = ()
     _SDM_NAME = 'pceUpdateSrEroSubObjectList'
     _SDM_ATT_MAP = {
-        'ActiveThisEro': 'activeThisEro',
-        'Bos': 'bos',
-        'FBit': 'fBit',
-        'Ipv4NodeId': 'ipv4NodeId',
-        'Ipv6NodeId': 'ipv6NodeId',
-        'LocalInterfaceId': 'localInterfaceId',
-        'LocalIpv4Address': 'localIpv4Address',
-        'LocalIpv6Address': 'localIpv6Address',
-        'LocalNodeId': 'localNodeId',
-        'LooseHop': 'looseHop',
-        'MplsLabel': 'mplsLabel',
-        'MplsLabel32': 'mplsLabel32',
-        'NaiType': 'naiType',
-        'RemoteInterfaceId': 'remoteInterfaceId',
         'RemoteIpv4Address': 'remoteIpv4Address',
-        'RemoteIpv6Address': 'remoteIpv6Address',
-        'RemoteNodeId': 'remoteNodeId',
+        'LooseHop': 'looseHop',
         'Sid': 'sid',
+        'MplsLabel32': 'mplsLabel32',
+        'RemoteNodeId': 'remoteNodeId',
+        'Ttl': 'ttl',
+        'RemoteInterfaceId': 'remoteInterfaceId',
+        'Bos': 'bos',
         'SidType': 'sidType',
         'Tc': 'tc',
-        'Ttl': 'ttl',
+        'RemoteIpv6Address': 'remoteIpv6Address',
+        'ActiveThisEro': 'activeThisEro',
+        'Ipv4NodeId': 'ipv4NodeId',
+        'LocalIpv6Address': 'localIpv6Address',
+        'Ipv6NodeId': 'ipv6NodeId',
+        'NaiType': 'naiType',
+        'LocalIpv4Address': 'localIpv4Address',
+        'LocalNodeId': 'localNodeId',
+        'FBit': 'fBit',
+        'LocalInterfaceId': 'localInterfaceId',
+        'MplsLabel': 'mplsLabel',
     }
 
     def __init__(self, parent):

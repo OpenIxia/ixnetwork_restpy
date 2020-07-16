@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,18 +32,18 @@ class LossLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'lossLearnedInfo'
     _SDM_ATT_MAP = {
+        'LmrReceived': 'lmrReceived',
+        'NearEndLoss': 'nearEndLoss',
+        'SVlan': 'sVlan',
+        'NearEndLossRatio': 'nearEndLossRatio',
         'BVlan': 'bVlan',
+        'SourceMacAddress': 'sourceMacAddress',
+        'FarEndLoss': 'farEndLoss',
+        'SourceMepId': 'sourceMepId',
+        'MdLevel': 'mdLevel',
         'CVlan': 'cVlan',
         'DestinationMacAddress': 'destinationMacAddress',
-        'FarEndLoss': 'farEndLoss',
         'FarEndLossRatio': 'farEndLossRatio',
-        'LmrReceived': 'lmrReceived',
-        'MdLevel': 'mdLevel',
-        'NearEndLoss': 'nearEndLoss',
-        'NearEndLossRatio': 'nearEndLossRatio',
-        'SVlan': 'sVlan',
-        'SourceMacAddress': 'sourceMacAddress',
-        'SourceMepId': 'sourceMepId',
     }
 
     def __init__(self, parent):

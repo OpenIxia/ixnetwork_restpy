@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,12 +33,12 @@ class Profile(Base):
     __slots__ = ()
     _SDM_NAME = 'profile'
     _SDM_ATT_MAP = {
-        'Links__': '__links__',
-        'AllLinks': 'allLinks',
-        'Enabled': 'enabled',
         'Name': 'name',
+        'Enabled': 'enabled',
         'Priority': 'priority',
         'ProfileId': 'profileId',
+        'AllLinks': 'allLinks',
+        'Links__': '__links__',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,22 +31,22 @@ class NtpServers(Base):
     __slots__ = ()
     _SDM_NAME = 'ntpServers'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AuthDelay': 'authDelay',
-        'Authentication': 'authentication',
         'AuthenticationKey': 'authenticationKey',
-        'BurstMode': 'burstMode',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
+        'AuthDelay': 'authDelay',
         'InitialBurstMode': 'initialBurstMode',
         'IsParentV6': 'isParentV6',
-        'KeyId': 'keyId',
-        'MaxPollInterval': 'maxPollInterval',
-        'MinPollInterval': 'minPollInterval',
-        'Name': 'name',
-        'ParticipateInClockSelect': 'participateInClockSelect',
+        'BurstMode': 'burstMode',
         'ServerIPAddress': 'serverIPAddress',
+        'MinPollInterval': 'minPollInterval',
+        'ParticipateInClockSelect': 'participateInClockSelect',
+        'Name': 'name',
+        'Authentication': 'authentication',
+        'KeyId': 'keyId',
+        'DescriptiveName': 'descriptiveName',
+        'Active': 'active',
         'ServerIPv6Address': 'serverIPv6Address',
+        'MaxPollInterval': 'maxPollInterval',
     }
 
     def __init__(self, parent):
@@ -271,7 +271,7 @@ class NtpServers(Base):
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -301,7 +301,7 @@ class NtpServers(Base):
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

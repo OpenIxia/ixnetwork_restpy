@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,12 +31,12 @@ class Bgpv4BMacMappedIpList(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpv4BMacMappedIpList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'IpAddress': 'ipAddress',
         'IpType': 'ipType',
         'Ipv6Address': 'ipv6Address',
+        'DescriptiveName': 'descriptiveName',
+        'Active': 'active',
+        'IpAddress': 'ipAddress',
         'Name': 'name',
     }
 

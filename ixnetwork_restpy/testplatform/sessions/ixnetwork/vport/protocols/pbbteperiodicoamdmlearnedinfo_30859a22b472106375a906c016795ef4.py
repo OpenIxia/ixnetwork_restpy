@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,21 +32,21 @@ class PbbTePeriodicOamDmLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'pbbTePeriodicOamDmLearnedInfo'
     _SDM_ATT_MAP = {
-        'AverageDelayNanoSec': 'averageDelayNanoSec',
-        'AverageDelaySec': 'averageDelaySec',
-        'AverageDelayVariationNanoSec': 'averageDelayVariationNanoSec',
-        'AverageDelayVariationSec': 'averageDelayVariationSec',
-        'BVlan': 'bVlan',
-        'DmmCountSent': 'dmmCountSent',
-        'DstMacAddress': 'dstMacAddress',
-        'MdLevel': 'mdLevel',
-        'NoReplyCount': 'noReplyCount',
-        'OneDmReceivedCount': 'oneDmReceivedCount',
-        'RecentDelayNanoSec': 'recentDelayNanoSec',
-        'RecentDelaySec': 'recentDelaySec',
-        'RecentDelayVariationNanoSec': 'recentDelayVariationNanoSec',
         'RecentDelayVariationSec': 'recentDelayVariationSec',
+        'RecentDelaySec': 'recentDelaySec',
+        'RecentDelayNanoSec': 'recentDelayNanoSec',
+        'NoReplyCount': 'noReplyCount',
+        'DstMacAddress': 'dstMacAddress',
         'SrcMacAddress': 'srcMacAddress',
+        'AverageDelaySec': 'averageDelaySec',
+        'BVlan': 'bVlan',
+        'RecentDelayVariationNanoSec': 'recentDelayVariationNanoSec',
+        'AverageDelayVariationSec': 'averageDelayVariationSec',
+        'AverageDelayNanoSec': 'averageDelayNanoSec',
+        'AverageDelayVariationNanoSec': 'averageDelayVariationNanoSec',
+        'MdLevel': 'mdLevel',
+        'DmmCountSent': 'dmmCountSent',
+        'OneDmReceivedCount': 'oneDmReceivedCount',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,30 +33,30 @@ class Link(Base):
     __slots__ = ()
     _SDM_NAME = 'link'
     _SDM_ATT_MAP = {
-        'ActorKey': 'actorKey',
-        'ActorPortNumber': 'actorPortNumber',
-        'ActorPortPriority': 'actorPortPriority',
-        'ActorSystemId': 'actorSystemId',
-        'ActorSystemPriority': 'actorSystemPriority',
-        'AdministrativeKey': 'administrativeKey',
-        'AggregationFlagState': 'aggregationFlagState',
-        'AutoPickPortMac': 'autoPickPortMac',
-        'CollectingFlag': 'collectingFlag',
-        'CollectorMaxDelay': 'collectorMaxDelay',
-        'DistributingFlag': 'distributingFlag',
-        'Enabled': 'enabled',
-        'InterMarkerPduDelay': 'interMarkerPduDelay',
-        'LacpActivity': 'lacpActivity',
-        'LacpTimeout': 'lacpTimeout',
-        'LacpduPeriodicTimeInterval': 'lacpduPeriodicTimeInterval',
         'MarkerRequestMode': 'markerRequestMode',
-        'MarkerResponseWaitTime': 'markerResponseWaitTime',
-        'PortMac': 'portMac',
-        'SendMarkerRequestOnLagChange': 'sendMarkerRequestOnLagChange',
-        'SendPeriodicMarkerRequest': 'sendPeriodicMarkerRequest',
+        'ActorPortNumber': 'actorPortNumber',
+        'AggregationFlagState': 'aggregationFlagState',
         'SupportRespondingToMarker': 'supportRespondingToMarker',
-        'SyncFlag': 'syncFlag',
         'UpdateRequired': 'updateRequired',
+        'SyncFlag': 'syncFlag',
+        'SendMarkerRequestOnLagChange': 'sendMarkerRequestOnLagChange',
+        'AutoPickPortMac': 'autoPickPortMac',
+        'InterMarkerPduDelay': 'interMarkerPduDelay',
+        'CollectorMaxDelay': 'collectorMaxDelay',
+        'LacpTimeout': 'lacpTimeout',
+        'PortMac': 'portMac',
+        'ActorKey': 'actorKey',
+        'LacpActivity': 'lacpActivity',
+        'CollectingFlag': 'collectingFlag',
+        'ActorSystemId': 'actorSystemId',
+        'DistributingFlag': 'distributingFlag',
+        'MarkerResponseWaitTime': 'markerResponseWaitTime',
+        'ActorPortPriority': 'actorPortPriority',
+        'ActorSystemPriority': 'actorSystemPriority',
+        'Enabled': 'enabled',
+        'SendPeriodicMarkerRequest': 'sendPeriodicMarkerRequest',
+        'LacpduPeriodicTimeInterval': 'lacpduPeriodicTimeInterval',
+        'AdministrativeKey': 'administrativeKey',
     }
 
     def __init__(self, parent):

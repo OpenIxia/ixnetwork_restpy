@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,13 +31,13 @@ class BgpCustomAfiSafiv6(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpCustomAfiSafiv6'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AfiValue': 'afiValue',
         'Count': 'count',
-        'DataValue': 'dataValue',
-        'DescriptiveName': 'descriptiveName',
-        'LengthOfData': 'lengthOfData',
         'Name': 'name',
+        'DataValue': 'dataValue',
+        'AfiValue': 'afiValue',
+        'LengthOfData': 'lengthOfData',
+        'DescriptiveName': 'descriptiveName',
+        'Active': 'active',
         'SafiValue': 'safiValue',
     }
 

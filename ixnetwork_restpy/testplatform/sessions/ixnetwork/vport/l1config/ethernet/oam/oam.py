@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,17 +31,17 @@ class Oam(Base):
     __slots__ = ()
     _SDM_NAME = 'oam'
     _SDM_ATT_MAP = {
-        'EnableTlvOption': 'enableTlvOption',
-        'Enabled': 'enabled',
-        'IdleTimer': 'idleTimer',
         'LinkEvents': 'linkEvents',
-        'Loopback': 'loopback',
         'MacAddress': 'macAddress',
-        'MaxOAMPDUSize': 'maxOAMPDUSize',
-        'OrganizationUniqueIdentifier': 'organizationUniqueIdentifier',
+        'VendorSpecificInformation': 'vendorSpecificInformation',
+        'Loopback': 'loopback',
+        'Enabled': 'enabled',
         'TlvType': 'tlvType',
         'TlvValue': 'tlvValue',
-        'VendorSpecificInformation': 'vendorSpecificInformation',
+        'EnableTlvOption': 'enableTlvOption',
+        'MaxOAMPDUSize': 'maxOAMPDUSize',
+        'IdleTimer': 'idleTimer',
+        'OrganizationUniqueIdentifier': 'organizationUniqueIdentifier',
     }
 
     def __init__(self, parent):

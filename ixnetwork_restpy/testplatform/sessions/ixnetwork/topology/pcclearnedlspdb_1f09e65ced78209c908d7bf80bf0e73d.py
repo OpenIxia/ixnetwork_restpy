@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -222,6 +222,20 @@ class PccLearnedLspDb(Base):
         return MplsLabel(self)._select()
 
     @property
+    def NaiType(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.naitype_53c2cdf91ca50e9351d06a63484d2cf1.NaiType): An instance of the NaiType class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.naitype_53c2cdf91ca50e9351d06a63484d2cf1 import NaiType
+        return NaiType(self)._select()
+
+    @property
     def PlspId(self):
         """
         Returns
@@ -318,20 +332,6 @@ class PccLearnedLspDb(Base):
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.sid_8c2f535b036e46b302b17150b1058608 import Sid
         return Sid(self)._select()
-
-    @property
-    def SidType(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.sidtype_579b966f4e4c3d833da37f5f97dc08ee.SidType): An instance of the SidType class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.sidtype_579b966f4e4c3d833da37f5f97dc08ee import SidType
-        return SidType(self)._select()
 
     @property
     def SidType(self):

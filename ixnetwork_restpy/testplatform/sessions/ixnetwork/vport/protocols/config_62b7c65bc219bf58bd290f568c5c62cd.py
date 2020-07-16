@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,12 +31,12 @@ class Config(Base):
     __slots__ = ()
     _SDM_NAME = 'config'
     _SDM_ATT_MAP = {
-        'NoFlood': 'noFlood',
-        'NoForward': 'noForward',
         'NoPacketIn': 'noPacketIn',
         'NoReceive': 'noReceive',
         'NoReceiveStp': 'noReceiveStp',
+        'NoFlood': 'noFlood',
         'NoStp': 'noStp',
+        'NoForward': 'noForward',
         'PortDown': 'portDown',
     }
 

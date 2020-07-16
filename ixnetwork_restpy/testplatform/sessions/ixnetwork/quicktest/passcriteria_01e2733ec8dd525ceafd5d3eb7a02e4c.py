@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,26 +31,26 @@ class PassCriteria(Base):
     __slots__ = ()
     _SDM_NAME = 'passCriteria'
     _SDM_ATT_MAP = {
-        'DataErrorThresholdMode': 'dataErrorThresholdMode',
-        'DataErrorThresholdValue': 'dataErrorThresholdValue',
-        'EnableDataIntegrityPassFail': 'enableDataIntegrityPassFail',
-        'EnableLatencyPassFail': 'enableLatencyPassFail',
-        'EnablePassFail': 'enablePassFail',
-        'EnableRatePassFail': 'enableRatePassFail',
-        'EnableSequenceErrorsPassFail': 'enableSequenceErrorsPassFail',
-        'EnableStandardDeviationPassFail': 'enableStandardDeviationPassFail',
-        'LatencyThresholdMode': 'latencyThresholdMode',
-        'LatencyThresholdScale': 'latencyThresholdScale',
         'LatencyThresholdValue': 'latencyThresholdValue',
+        'DataErrorThresholdValue': 'dataErrorThresholdValue',
+        'EnableRatePassFail': 'enableRatePassFail',
         'LatencyVarThresholdMode': 'latencyVarThresholdMode',
         'LatencyVariationThresholdScale': 'latencyVariationThresholdScale',
         'LatencyVariationThresholdValue': 'latencyVariationThresholdValue',
-        'PassCriteriaLoadRateMode': 'passCriteriaLoadRateMode',
-        'PassCriteriaLoadRateScale': 'passCriteriaLoadRateScale',
-        'PassCriteriaLoadRateValue': 'passCriteriaLoadRateValue',
+        'EnableSequenceErrorsPassFail': 'enableSequenceErrorsPassFail',
         'PassFailFrequency': 'passFailFrequency',
-        'SeqErrorsThresholdMode': 'seqErrorsThresholdMode',
+        'PassCriteriaLoadRateMode': 'passCriteriaLoadRateMode',
+        'EnableLatencyPassFail': 'enableLatencyPassFail',
+        'DataErrorThresholdMode': 'dataErrorThresholdMode',
+        'LatencyThresholdScale': 'latencyThresholdScale',
+        'EnableStandardDeviationPassFail': 'enableStandardDeviationPassFail',
+        'EnablePassFail': 'enablePassFail',
         'SeqErrorsThresholdValue': 'seqErrorsThresholdValue',
+        'EnableDataIntegrityPassFail': 'enableDataIntegrityPassFail',
+        'SeqErrorsThresholdMode': 'seqErrorsThresholdMode',
+        'PassCriteriaLoadRateValue': 'passCriteriaLoadRateValue',
+        'LatencyThresholdMode': 'latencyThresholdMode',
+        'PassCriteriaLoadRateScale': 'passCriteriaLoadRateScale',
     }
 
     def __init__(self, parent):

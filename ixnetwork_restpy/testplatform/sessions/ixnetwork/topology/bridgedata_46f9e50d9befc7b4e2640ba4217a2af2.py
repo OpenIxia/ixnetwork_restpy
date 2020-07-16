@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,9 +33,9 @@ class BridgeData(Base):
     _SDM_NAME = 'bridgeData'
     _SDM_ATT_MAP = {
         'Count': 'count',
+        'SystemId': 'systemId',
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
-        'SystemId': 'systemId',
     }
 
     def __init__(self, parent):

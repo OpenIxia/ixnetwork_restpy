@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,30 +33,30 @@ class NeighborPair(Base):
     __slots__ = ()
     _SDM_NAME = 'neighborPair'
     _SDM_ATT_MAP = {
-        'ActualRestartTime': 'actualRestartTime',
-        'DutIp': 'dutIp',
-        'EnableBfdRegistration': 'enableBfdRegistration',
-        'EnableBundleMessageSending': 'enableBundleMessageSending',
-        'EnableGracefulRestartHelperMode': 'enableGracefulRestartHelperMode',
-        'EnableGracefulRestartingMode': 'enableGracefulRestartingMode',
-        'EnableHello': 'enableHello',
-        'Enabled': 'enabled',
-        'GracefulRestartStartTime': 'gracefulRestartStartTime',
-        'GracefulRestartUpTime': 'gracefulRestartUpTime',
-        'HelloInterval': 'helloInterval',
-        'HelloTimeoutMultiplier': 'helloTimeoutMultiplier',
         'HelloTlvs': 'helloTlvs',
-        'IsAssignedInfoRefreshed': 'isAssignedInfoRefreshed',
-        'IsLearnedInfoRefreshed': 'isLearnedInfoRefreshed',
+        'RecoveryTimeInterval': 'recoveryTimeInterval',
+        'Enabled': 'enabled',
+        'RefreshReduction': 'refreshReduction',
+        'OurIp': 'ourIp',
         'LabelSpaceEnd': 'labelSpaceEnd',
+        'HelloInterval': 'helloInterval',
+        'EnableGracefulRestartHelperMode': 'enableGracefulRestartHelperMode',
+        'GracefulRestartStartTime': 'gracefulRestartStartTime',
+        'RestartTimeInterval': 'restartTimeInterval',
+        'EnableGracefulRestartingMode': 'enableGracefulRestartingMode',
+        'IsAssignedInfoRefreshed': 'isAssignedInfoRefreshed',
+        'EnableBundleMessageSending': 'enableBundleMessageSending',
+        'ActualRestartTime': 'actualRestartTime',
         'LabelSpaceStart': 'labelSpaceStart',
         'NumberOfGracefulRestarts': 'numberOfGracefulRestarts',
-        'OurIp': 'ourIp',
-        'RecoveryTimeInterval': 'recoveryTimeInterval',
-        'RefreshReduction': 'refreshReduction',
-        'RestartTimeInterval': 'restartTimeInterval',
-        'SummaryRefreshInterval': 'summaryRefreshInterval',
+        'IsLearnedInfoRefreshed': 'isLearnedInfoRefreshed',
+        'DutIp': 'dutIp',
+        'GracefulRestartUpTime': 'gracefulRestartUpTime',
+        'EnableHello': 'enableHello',
+        'EnableBfdRegistration': 'enableBfdRegistration',
         'TrafficGroupId': 'trafficGroupId',
+        'HelloTimeoutMultiplier': 'helloTimeoutMultiplier',
+        'SummaryRefreshInterval': 'summaryRefreshInterval',
     }
 
     def __init__(self, parent):

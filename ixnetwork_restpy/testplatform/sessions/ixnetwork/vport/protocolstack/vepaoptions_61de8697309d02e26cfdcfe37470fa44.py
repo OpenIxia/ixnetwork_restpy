@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,15 +33,15 @@ class VepaOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'vepaOptions'
     _SDM_ATT_MAP = {
+        'OverrideGlobalVsiRateControl': 'overrideGlobalVsiRateControl',
+        'ObjectId': 'objectId',
+        'MaxVdpCommands': 'maxVdpCommands',
+        'SetupRate': 'setupRate',
+        'LldpEvbDestinationMac': 'lldpEvbDestinationMac',
         'EcpDestinationMac': 'ecpDestinationMac',
         'EcpEthertype': 'ecpEthertype',
-        'LldpCdcpDestinationMac': 'lldpCdcpDestinationMac',
-        'LldpEvbDestinationMac': 'lldpEvbDestinationMac',
-        'MaxVdpCommands': 'maxVdpCommands',
-        'ObjectId': 'objectId',
-        'OverrideGlobalVsiRateControl': 'overrideGlobalVsiRateControl',
-        'SetupRate': 'setupRate',
         'TeardownRate': 'teardownRate',
+        'LldpCdcpDestinationMac': 'lldpCdcpDestinationMac',
     }
 
     def __init__(self, parent):

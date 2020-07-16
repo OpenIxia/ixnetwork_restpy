@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,20 +34,20 @@ class MacRanges(Base):
     _SDM_NAME = 'macRanges'
     _SDM_ATT_MAP = {
         'CVlanId': 'cVlanId',
-        'CVlanPriority': 'cVlanPriority',
-        'CVlanTpId': 'cVlanTpId',
         'Count': 'count',
-        'EnableVlan': 'enableVlan',
+        'CVlanTpId': 'cVlanTpId',
+        'Step': 'step',
+        'Type': 'type',
         'Enabled': 'enabled',
-        'ITagethernetType': 'iTagethernetType',
-        'ITagiSid': 'iTagiSid',
-        'SVlanId': 'sVlanId',
         'SVlanPriority': 'sVlanPriority',
+        'SVlanId': 'sVlanId',
+        'TrafficGroupId': 'trafficGroupId',
         'SVlanTpId': 'sVlanTpId',
         'StartMacAddress': 'startMacAddress',
-        'Step': 'step',
-        'TrafficGroupId': 'trafficGroupId',
-        'Type': 'type',
+        'ITagethernetType': 'iTagethernetType',
+        'EnableVlan': 'enableVlan',
+        'ITagiSid': 'iTagiSid',
+        'CVlanPriority': 'cVlanPriority',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,21 +32,21 @@ class TableStatLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'tableStatLearnedInformation'
     _SDM_ATT_MAP = {
-        'ActiveCount': 'activeCount',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'Latency': 'latency',
-        'LocalIp': 'localIp',
-        'LookupCount': 'lookupCount',
-        'MatchedCount': 'matchedCount',
         'MaxEntries': 'maxEntries',
+        'ErrorCode': 'errorCode',
+        'MatchedCount': 'matchedCount',
+        'Latency': 'latency',
+        'LookupCount': 'lookupCount',
+        'ErrorType': 'errorType',
+        'TableName': 'tableName',
         'NegotiatedVersion': 'negotiatedVersion',
+        'ActiveCount': 'activeCount',
+        'LocalIp': 'localIp',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
+        'TableId': 'tableId',
         'RemoteIp': 'remoteIp',
         'ReplyState': 'replyState',
-        'TableId': 'tableId',
-        'TableName': 'tableName',
+        'DataPathId': 'dataPathId',
         'Wildcards': 'wildcards',
     }
 

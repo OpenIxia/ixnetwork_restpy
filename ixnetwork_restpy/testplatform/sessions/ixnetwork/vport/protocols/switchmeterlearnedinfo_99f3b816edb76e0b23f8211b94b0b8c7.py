@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,17 +32,17 @@ class SwitchMeterLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'switchMeterLearnedInfo'
     _SDM_ATT_MAP = {
-        'BytesInInput': 'bytesInInput',
-        'DatapathId': 'datapathId',
-        'DatapathIdAsHex': 'datapathIdAsHex',
-        'DurationNSec': 'durationNSec',
-        'DurationSec': 'durationSec',
-        'FlowCount': 'flowCount',
-        'LocalIp': 'localIp',
-        'MeterConfigurationFlags': 'meterConfigurationFlags',
-        'MeterId': 'meterId',
         'NumOfBands': 'numOfBands',
+        'BytesInInput': 'bytesInInput',
         'PacketsInInput': 'packetsInInput',
+        'MeterConfigurationFlags': 'meterConfigurationFlags',
+        'DurationSec': 'durationSec',
+        'LocalIp': 'localIp',
+        'DatapathIdAsHex': 'datapathIdAsHex',
+        'FlowCount': 'flowCount',
+        'DurationNSec': 'durationNSec',
+        'MeterId': 'meterId',
+        'DatapathId': 'datapathId',
     }
 
     def __init__(self, parent):

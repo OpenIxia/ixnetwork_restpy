@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,31 +31,31 @@ class BgpEpePeerLinkList(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpEpePeerLinkList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'BBit': 'bBit',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableLinkAddress': 'enableLinkAddress',
-        'EnableLinkIdentifier': 'enableLinkIdentifier',
-        'EnablePeerAdjSid': 'enablePeerAdjSid',
-        'LBit': 'lBit',
-        'LinkAddressType': 'linkAddressType',
-        'LinkLocalIdentifier': 'linkLocalIdentifier',
-        'LinkNumber': 'linkNumber',
-        'LinkRemoteIdentifier': 'linkRemoteIdentifier',
-        'LocalIpv4LinkAddress': 'localIpv4LinkAddress',
-        'LocalIpv6LinkAddress': 'localIpv6LinkAddress',
-        'Name': 'name',
-        'PBit': 'pBit',
-        'PeerName': 'peerName',
-        'RemoteIpv4LinkAddress': 'remoteIpv4LinkAddress',
-        'RemoteIpv6LinkAddress': 'remoteIpv6LinkAddress',
         'Reserved': 'reserved',
-        'RsvdBits': 'rsvdBits',
-        'SidIndex': 'sidIndex',
-        'SidIndexValue': 'sidIndexValue',
-        'VBit': 'vBit',
         'Weight': 'weight',
+        'LocalIpv4LinkAddress': 'localIpv4LinkAddress',
+        'SidIndex': 'sidIndex',
+        'RsvdBits': 'rsvdBits',
+        'VBit': 'vBit',
+        'PBit': 'pBit',
+        'LinkNumber': 'linkNumber',
+        'LBit': 'lBit',
+        'LinkLocalIdentifier': 'linkLocalIdentifier',
+        'RemoteIpv4LinkAddress': 'remoteIpv4LinkAddress',
+        'PeerName': 'peerName',
+        'LocalIpv6LinkAddress': 'localIpv6LinkAddress',
+        'EnablePeerAdjSid': 'enablePeerAdjSid',
+        'SidIndexValue': 'sidIndexValue',
+        'LinkAddressType': 'linkAddressType',
+        'Active': 'active',
+        'Count': 'count',
+        'LinkRemoteIdentifier': 'linkRemoteIdentifier',
+        'Name': 'name',
+        'EnableLinkAddress': 'enableLinkAddress',
+        'DescriptiveName': 'descriptiveName',
+        'EnableLinkIdentifier': 'enableLinkIdentifier',
+        'RemoteIpv6LinkAddress': 'remoteIpv6LinkAddress',
+        'BBit': 'bBit',
     }
 
     def __init__(self, parent):

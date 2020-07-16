@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,20 +31,20 @@ class TransmissionControl(Base):
     __slots__ = ()
     _SDM_NAME = 'transmissionControl'
     _SDM_ATT_MAP = {
-        'BurstPacketCount': 'burstPacketCount',
-        'Duration': 'duration',
-        'EnableInterBurstGap': 'enableInterBurstGap',
-        'EnableInterStreamGap': 'enableInterStreamGap',
-        'FrameCount': 'frameCount',
         'InterBurstGap': 'interBurstGap',
+        'RepeatBurst': 'repeatBurst',
+        'EnableInterStreamGap': 'enableInterStreamGap',
         'InterBurstGapUnits': 'interBurstGapUnits',
-        'InterStreamGap': 'interStreamGap',
         'IterationCount': 'iterationCount',
         'MinGapBytes': 'minGapBytes',
-        'RepeatBurst': 'repeatBurst',
         'StartDelay': 'startDelay',
-        'StartDelayUnits': 'startDelayUnits',
+        'EnableInterBurstGap': 'enableInterBurstGap',
+        'Duration': 'duration',
+        'InterStreamGap': 'interStreamGap',
         'Type': 'type',
+        'StartDelayUnits': 'startDelayUnits',
+        'FrameCount': 'frameCount',
+        'BurstPacketCount': 'burstPacketCount',
     }
 
     def __init__(self, parent):

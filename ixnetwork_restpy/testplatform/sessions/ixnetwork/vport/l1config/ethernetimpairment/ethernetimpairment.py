@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,11 +32,42 @@ class EthernetImpairment(Base):
     _SDM_NAME = 'ethernetImpairment'
     _SDM_ATT_MAP = {
         'EnablePPM': 'enablePPM',
+        'AvailableSpeeds': 'availableSpeeds',
         'Ppm': 'ppm',
+        'CanModifySpeed': 'canModifySpeed',
+        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
+        'SelectedSpeeds': 'selectedSpeeds',
     }
 
     def __init__(self, parent):
         super(EthernetImpairment, self).__init__(parent)
+
+    @property
+    def AvailableSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[]): Which speeds are available for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableSpeeds'])
+
+    @property
+    def CanModifySpeed(self):
+        """
+        Returns
+        -------
+        - bool: Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanModifySpeed'])
+
+    @property
+    def CanSetMultipleSpeeds(self):
+        """
+        Returns
+        -------
+        - bool: Can this port selectmultiple speeds for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanSetMultipleSpeeds'])
 
     @property
     def EnablePPM(self):
@@ -62,13 +93,26 @@ class EthernetImpairment(Base):
     def Ppm(self, value):
         self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
-    def update(self, EnablePPM=None, Ppm=None):
+    @property
+    def SelectedSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[]): Which speeds are selected for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
+    @SelectedSpeeds.setter
+    def SelectedSpeeds(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
+
+    def update(self, EnablePPM=None, Ppm=None, SelectedSpeeds=None):
         """Updates ethernetImpairment resource on the server.
 
         Args
         ----
         - EnablePPM (bool): If true, enables the portsppm.
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - SelectedSpeeds (list(str[])): Which speeds are selected for the current media and AN settings.
 
         Raises
         ------

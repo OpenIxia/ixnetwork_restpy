@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,62 +33,62 @@ class Ldpotherpws(Base):
     __slots__ = ()
     _SDM_NAME = 'ldpotherpws'
     _SDM_ATT_MAP = {
-        'ATMPresent': 'aTMPresent',
-        'Active': 'active',
-        'AutoPeerID': 'autoPeerID',
-        'AutoPeerId': 'autoPeerId',
-        'BfdPwCV': 'bfdPwCV',
-        'BfdUdpCV': 'bfdUdpCV',
-        'CAS': 'cAS',
-        'CBitEnabled': 'cBitEnabled',
-        'CEMOption': 'cEMOption',
-        'CEMOptionPresent': 'cEMOptionPresent',
-        'CEMPayLoadEnable': 'cEMPayLoadEnable',
-        'CEMPayload': 'cEMPayload',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescEnabled': 'descEnabled',
-        'Description': 'description',
-        'DescriptiveName': 'descriptiveName',
-        'DownInterval': 'downInterval',
-        'DownStart': 'downStart',
         'EnableCCCVNegotiation': 'enableCCCVNegotiation',
-        'EnablePWStatus': 'enablePWStatus',
-        'Errors': 'errors',
-        'Frequency': 'frequency',
-        'GroupId': 'groupId',
-        'IfaceType': 'ifaceType',
-        'IncludeRTPHeader': 'includeRTPHeader',
-        'IncludeSSRC': 'includeSSRC',
-        'IncludeTDMBitrate': 'includeTDMBitrate',
-        'IncludeTDMOption': 'includeTDMOption',
-        'IncludeTDMPayload': 'includeTDMPayload',
-        'Ipv6PeerId': 'ipv6PeerId',
-        'LSPPingCV': 'lSPPingCV',
-        'Label': 'label',
-        'LocalRouterID': 'localRouterID',
-        'MaxATMCells': 'maxATMCells',
-        'Mtu': 'mtu',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'PWACHCC': 'pWACHCC',
-        'PWStatusCode': 'pWStatusCode',
-        'PayloadType': 'payloadType',
-        'PeerId': 'peerId',
-        'PwStatusSendNotification': 'pwStatusSendNotification',
         'RepeatCount': 'repeatCount',
-        'RouterAlertCC': 'routerAlertCC',
-        'SP': 'sP',
-        'SSRC': 'sSRC',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'TDMBitrate': 'tDMBitrate',
-        'TDMDataSize': 'tDMDataSize',
-        'TimestampMode': 'timestampMode',
         'UpInterval': 'upInterval',
+        'Frequency': 'frequency',
+        'StackedLayers': 'stackedLayers',
+        'BfdPwCV': 'bfdPwCV',
+        'PayloadType': 'payloadType',
+        'TDMBitrate': 'tDMBitrate',
+        'ConnectedVia': 'connectedVia',
+        'AutoPeerID': 'autoPeerID',
+        'MaxATMCells': 'maxATMCells',
+        'TimestampMode': 'timestampMode',
+        'SP': 'sP',
+        'IfaceType': 'ifaceType',
+        'BfdUdpCV': 'bfdUdpCV',
+        'Errors': 'errors',
+        'DescEnabled': 'descEnabled',
+        'CAS': 'cAS',
+        'LocalRouterID': 'localRouterID',
+        'IncludeTDMOption': 'includeTDMOption',
+        'PwStatusSendNotification': 'pwStatusSendNotification',
+        'Label': 'label',
+        'TDMDataSize': 'tDMDataSize',
+        'AutoPeerId': 'autoPeerId',
+        'PeerId': 'peerId',
+        'IncludeTDMBitrate': 'includeTDMBitrate',
+        'SessionStatus': 'sessionStatus',
+        'EnablePWStatus': 'enablePWStatus',
+        'Status': 'status',
+        'CEMPayload': 'cEMPayload',
+        'Description': 'description',
+        'RouterAlertCC': 'routerAlertCC',
+        'CEMOptionPresent': 'cEMOptionPresent',
+        'CEMOption': 'cEMOption',
+        'IncludeTDMPayload': 'includeTDMPayload',
         'VCIDStart': 'vCIDStart',
+        'Multiplier': 'multiplier',
+        'Active': 'active',
+        'CBitEnabled': 'cBitEnabled',
+        'GroupId': 'groupId',
+        'Count': 'count',
+        'PWACHCC': 'pWACHCC',
+        'Ipv6PeerId': 'ipv6PeerId',
+        'SSRC': 'sSRC',
+        'Name': 'name',
+        'PWStatusCode': 'pWStatusCode',
+        'ATMPresent': 'aTMPresent',
+        'CEMPayLoadEnable': 'cEMPayLoadEnable',
+        'IncludeRTPHeader': 'includeRTPHeader',
+        'Mtu': 'mtu',
+        'IncludeSSRC': 'includeSSRC',
+        'DownInterval': 'downInterval',
+        'DescriptiveName': 'descriptiveName',
+        'DownStart': 'downStart',
+        'StateCounts': 'stateCounts',
+        'LSPPingCV': 'lSPPingCV',
     }
 
     def __init__(self, parent):
@@ -933,6 +933,31 @@ class Ldpotherpws(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def PurgeVCRanges(self, *args, **kwargs):
         """Executes the purgeVCRanges operation on the server.
 
@@ -942,7 +967,7 @@ class Ldpotherpws(Base):
 
         purgeVCRanges(SessionIndices=list)
         ----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         purgeVCRanges(SessionIndices=string)
         ------------------------------------
@@ -994,7 +1019,7 @@ class Ldpotherpws(Base):
         ---------------------------------------------------------------
         - Mac_count (number): This parameter requires a mac_count of type kInteger
         - Mac (str): This parameter requires a mac of type kString
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         purgeVPLSMac(SessionIndices=string, Mac_count=number, Mac=string)
         -----------------------------------------------------------------
@@ -1028,7 +1053,7 @@ class Ldpotherpws(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -1047,13 +1072,13 @@ class Ldpotherpws(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Activate VC
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -1072,13 +1097,13 @@ class Ldpotherpws(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Deactivate VC
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

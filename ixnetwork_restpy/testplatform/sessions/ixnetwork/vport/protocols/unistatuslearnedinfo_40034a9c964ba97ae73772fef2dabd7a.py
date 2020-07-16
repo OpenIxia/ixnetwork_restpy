@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,28 +32,28 @@ class UniStatusLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'uniStatusLearnedInfo'
     _SDM_ATT_MAP = {
-        'CbsMagnitude': 'cbsMagnitude',
-        'CbsMultiplier': 'cbsMultiplier',
-        'Cf': 'cf',
-        'CirMagnitude': 'cirMagnitude',
-        'CirMultiplier': 'cirMultiplier',
         'Cm': 'cm',
-        'EbsMagnitude': 'ebsMagnitude',
-        'EbsMultiplier': 'ebsMultiplier',
-        'EirMagnitude': 'eirMagnitude',
-        'EirMultiplier': 'eirMultiplier',
-        'EvcMapType': 'evcMapType',
+        'CbsMagnitude': 'cbsMagnitude',
+        'CirMagnitude': 'cirMagnitude',
+        'Cf': 'cf',
         'PerCos': 'perCos',
-        'UniId': 'uniId',
-        'UniIdLength': 'uniIdLength',
-        'UserPriorityBits000': 'userPriorityBits000',
-        'UserPriorityBits001': 'userPriorityBits001',
-        'UserPriorityBits010': 'userPriorityBits010',
-        'UserPriorityBits011': 'userPriorityBits011',
-        'UserPriorityBits100': 'userPriorityBits100',
         'UserPriorityBits101': 'userPriorityBits101',
+        'EbsMagnitude': 'ebsMagnitude',
+        'CbsMultiplier': 'cbsMultiplier',
         'UserPriorityBits110': 'userPriorityBits110',
         'UserPriorityBits111': 'userPriorityBits111',
+        'UserPriorityBits011': 'userPriorityBits011',
+        'UserPriorityBits010': 'userPriorityBits010',
+        'UniIdLength': 'uniIdLength',
+        'CirMultiplier': 'cirMultiplier',
+        'EirMultiplier': 'eirMultiplier',
+        'UniId': 'uniId',
+        'EvcMapType': 'evcMapType',
+        'EbsMultiplier': 'ebsMultiplier',
+        'UserPriorityBits100': 'userPriorityBits100',
+        'UserPriorityBits000': 'userPriorityBits000',
+        'UserPriorityBits001': 'userPriorityBits001',
+        'EirMagnitude': 'eirMagnitude',
     }
 
     def __init__(self, parent):

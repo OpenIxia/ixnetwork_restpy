@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,27 +31,27 @@ class IsisMappingServerIPV4List(Base):
     __slots__ = ()
     _SDM_NAME = 'isisMappingServerIPV4List'
     _SDM_ATT_MAP = {
-        'AFlag': 'aFlag',
-        'Active': 'active',
-        'Algorithm': 'algorithm',
         'Count': 'count',
-        'DFlag': 'dFlag',
-        'DescriptiveName': 'descriptiveName',
-        'EFlag': 'eFlag',
-        'FECPrefix': 'fECPrefix',
-        'LFlag': 'lFlag',
         'LastFECAddress': 'lastFECAddress',
-        'MFlag': 'mFlag',
-        'NFlag': 'nFlag',
-        'Name': 'name',
         'PFlag': 'pFlag',
+        'Weight': 'weight',
+        'MFlag': 'mFlag',
+        'Algorithm': 'algorithm',
+        'DFlag': 'dFlag',
+        'VFlag': 'vFlag',
+        'NFlag': 'nFlag',
+        'EFlag': 'eFlag',
+        'Name': 'name',
+        'Range': 'range',
+        'DescriptiveName': 'descriptiveName',
+        'StartSIDLabel': 'startSIDLabel',
+        'Active': 'active',
+        'SFlag': 'sFlag',
+        'AFlag': 'aFlag',
+        'FECPrefix': 'fECPrefix',
         'PrefixLength': 'prefixLength',
         'RFlag': 'rFlag',
-        'Range': 'range',
-        'SFlag': 'sFlag',
-        'StartSIDLabel': 'startSIDLabel',
-        'VFlag': 'vFlag',
-        'Weight': 'weight',
+        'LFlag': 'lFlag',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,23 +33,24 @@ class View(Base):
     __slots__ = ()
     _SDM_NAME = 'view'
     _SDM_ATT_MAP = {
-        'AutoRefresh': 'autoRefresh',
-        'AutoUpdate': 'autoUpdate',
-        'AvailableStatsSelectorColumns': 'availableStatsSelectorColumns',
-        'Caption': 'caption',
-        'CsvFileName': 'csvFileName',
-        'EnableCsvLogging': 'enableCsvLogging',
-        'Enabled': 'enabled',
-        'EnabledStatsSelectorColumns': 'enabledStatsSelectorColumns',
-        'OnDemandRefreshView': 'onDemandRefreshView',
-        'PageTimeout': 'pageTimeout',
-        'ReadOnly': 'readOnly',
-        'TimeSeries': 'timeSeries',
-        'TreeViewNodeName': 'treeViewNodeName',
-        'Type': 'type',
-        'TypeDescription': 'typeDescription',
         'ViewCategory': 'viewCategory',
+        'AutoRefresh': 'autoRefresh',
+        'AvailableStatsSelectorColumns': 'availableStatsSelectorColumns',
+        'PageTimeout': 'pageTimeout',
+        'StatsSelectorManager': 'statsSelectorManager',
+        'Enabled': 'enabled',
+        'TreeViewNodeName': 'treeViewNodeName',
+        'EnabledStatsSelectorColumns': 'enabledStatsSelectorColumns',
+        'Caption': 'caption',
+        'ReadOnly': 'readOnly',
+        'CsvFileName': 'csvFileName',
         'Visible': 'visible',
+        'TimeSeries': 'timeSeries',
+        'OnDemandRefreshView': 'onDemandRefreshView',
+        'AutoUpdate': 'autoUpdate',
+        'TypeDescription': 'typeDescription',
+        'Type': 'type',
+        'EnableCsvLogging': 'enableCsvLogging',
     }
 
     def __init__(self, parent):
@@ -420,7 +421,7 @@ class View(Base):
         """
         Returns
         -------
-        - list(str): NOT DEFINED
+        - list(str): Columns available to be added from Stat Selector Manager
         """
         return self._get_attribute(self._SDM_ATT_MAP['AvailableStatsSelectorColumns'])
 
@@ -477,7 +478,7 @@ class View(Base):
         """
         Returns
         -------
-        - list(str): NOT DEFINED
+        - list(str): Columns added from Stat Selector Manager
         """
         return self._get_attribute(self._SDM_ATT_MAP['EnabledStatsSelectorColumns'])
     @EnabledStatsSelectorColumns.setter
@@ -513,6 +514,15 @@ class View(Base):
         - bool: The default views created by the application will have this attribute set to false. Tcl SV created by user has this value set to true. Based on this attribute value, the user is allowed to modify the SV attributes.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ReadOnly'])
+
+    @property
+    def StatsSelectorManager(self):
+        """
+        Returns
+        -------
+        - bool: Flag that denotes whether Stats Selector Manager is enabled for this view or not
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['StatsSelectorManager'])
 
     @property
     def TimeSeries(self):
@@ -591,7 +601,7 @@ class View(Base):
         - CsvFileName (str): Specifies the file name which is used by the CSV Logging feature. The default value is the caption of the view.
         - EnableCsvLogging (bool): If the CSV Logging feature is enabled the statistics values from a view will be written in a comma separated value format.
         - Enabled (bool): If true, enables the view that is created from the tcl script.
-        - EnabledStatsSelectorColumns (list(str)): NOT DEFINED
+        - EnabledStatsSelectorColumns (list(str)): Columns added from Stat Selector Manager
         - PageTimeout (number): The statistics view page is timed out based on the time specified. default = 25,000 ms
         - TimeSeries (bool): If false, then it displays non-timeseries grid views. If true, displays, timeseries line chart view. default = false (non-timeseries)
         - TreeViewNodeName (str): Displays the name of the tree view node.
@@ -615,7 +625,7 @@ class View(Base):
         - CsvFileName (str): Specifies the file name which is used by the CSV Logging feature. The default value is the caption of the view.
         - EnableCsvLogging (bool): If the CSV Logging feature is enabled the statistics values from a view will be written in a comma separated value format.
         - Enabled (bool): If true, enables the view that is created from the tcl script.
-        - EnabledStatsSelectorColumns (list(str)): NOT DEFINED
+        - EnabledStatsSelectorColumns (list(str)): Columns added from Stat Selector Manager
         - PageTimeout (number): The statistics view page is timed out based on the time specified. default = 25,000 ms
         - TimeSeries (bool): If false, then it displays non-timeseries grid views. If true, displays, timeseries line chart view. default = false (non-timeseries)
         - TreeViewNodeName (str): Displays the name of the tree view node.
@@ -642,7 +652,7 @@ class View(Base):
         """
         self._delete()
 
-    def find(self, AutoRefresh=None, AutoUpdate=None, AvailableStatsSelectorColumns=None, Caption=None, CsvFileName=None, EnableCsvLogging=None, Enabled=None, EnabledStatsSelectorColumns=None, OnDemandRefreshView=None, PageTimeout=None, ReadOnly=None, TimeSeries=None, TreeViewNodeName=None, Type=None, TypeDescription=None, ViewCategory=None, Visible=None):
+    def find(self, AutoRefresh=None, AutoUpdate=None, AvailableStatsSelectorColumns=None, Caption=None, CsvFileName=None, EnableCsvLogging=None, Enabled=None, EnabledStatsSelectorColumns=None, OnDemandRefreshView=None, PageTimeout=None, ReadOnly=None, StatsSelectorManager=None, TimeSeries=None, TreeViewNodeName=None, Type=None, TypeDescription=None, ViewCategory=None, Visible=None):
         """Finds and retrieves view resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve view resources from the server.
@@ -653,15 +663,16 @@ class View(Base):
         ----
         - AutoRefresh (bool): If true, automatically refreshes the statistics values. Default = true
         - AutoUpdate (bool): If true, automatically refreshes the statistics values. Default = true
-        - AvailableStatsSelectorColumns (list(str)): NOT DEFINED
+        - AvailableStatsSelectorColumns (list(str)): Columns available to be added from Stat Selector Manager
         - Caption (str): This is the name that will appear in the GUI stats view window header or in the added view tree from tcl. The caption must be unique.
         - CsvFileName (str): Specifies the file name which is used by the CSV Logging feature. The default value is the caption of the view.
         - EnableCsvLogging (bool): If the CSV Logging feature is enabled the statistics values from a view will be written in a comma separated value format.
         - Enabled (bool): If true, enables the view that is created from the tcl script.
-        - EnabledStatsSelectorColumns (list(str)): NOT DEFINED
+        - EnabledStatsSelectorColumns (list(str)): Columns added from Stat Selector Manager
         - OnDemandRefreshView (bool): 
         - PageTimeout (number): The statistics view page is timed out based on the time specified. default = 25,000 ms
         - ReadOnly (bool): The default views created by the application will have this attribute set to false. Tcl SV created by user has this value set to true. Based on this attribute value, the user is allowed to modify the SV attributes.
+        - StatsSelectorManager (bool): Flag that denotes whether Stats Selector Manager is enabled for this view or not
         - TimeSeries (bool): If false, then it displays non-timeseries grid views. If true, displays, timeseries line chart view. default = false (non-timeseries)
         - TreeViewNodeName (str): Displays the name of the tree view node.
         - Type (str(layer23NextGenProtocol | layer23ProtocolAuthAccess | layer23ProtocolPort | layer23ProtocolRouting | layer23ProtocolStack | layer23TrafficFlow | layer23TrafficFlowDetective | layer23TrafficItem | layer23TrafficPort | layer47AppLibraryTraffic | sVReadOnly)): The type of view the user wants to create from tcl.

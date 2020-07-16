@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,17 +34,17 @@ class Field(Base):
     _SDM_NAME = 'field'
     _SDM_ATT_MAP = {
         'Count': 'count',
+        'SizeType': 'sizeType',
         'Description': 'description',
+        'IsEditable': 'isEditable',
         'Encoding': 'encoding',
         'Enum': 'enum',
-        'IsEditable': 'isEditable',
-        'IsRepeatable': 'isRepeatable',
-        'IsRequired': 'isRequired',
-        'Name': 'name',
-        'SingleValue': 'singleValue',
-        'Size': 'size',
-        'SizeType': 'sizeType',
         'Value': 'value',
+        'IsRequired': 'isRequired',
+        'Size': 'size',
+        'SingleValue': 'singleValue',
+        'IsRepeatable': 'isRepeatable',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

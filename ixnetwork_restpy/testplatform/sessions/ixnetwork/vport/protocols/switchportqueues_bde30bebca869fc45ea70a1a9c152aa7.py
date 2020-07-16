@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,10 +33,10 @@ class SwitchPortQueues(Base):
     __slots__ = ()
     _SDM_NAME = 'switchPortQueues'
     _SDM_ATT_MAP = {
+        'QueueId': 'queueId',
         'MaxRate': 'maxRate',
         'MinRate': 'minRate',
         'NumberOfQueues': 'numberOfQueues',
-        'QueueId': 'queueId',
     }
 
     def __init__(self, parent):

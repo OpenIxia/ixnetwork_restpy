@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,19 +32,19 @@ class PeriodicOamLtLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'periodicOamLtLearnedInfo'
     _SDM_ATT_MAP = {
-        'AverageHopCount': 'averageHopCount',
-        'CVlan': 'cVlan',
-        'CompleteReplyCount': 'completeReplyCount',
-        'DstMacAddress': 'dstMacAddress',
-        'LtmSentCount': 'ltmSentCount',
-        'MdLevel': 'mdLevel',
         'NoReplyCount': 'noReplyCount',
-        'PartialReplyCount': 'partialReplyCount',
-        'RecentHopCount': 'recentHopCount',
-        'RecentHops': 'recentHops',
-        'RecentReplyStatus': 'recentReplyStatus',
+        'AverageHopCount': 'averageHopCount',
         'SVlan': 'sVlan',
+        'DstMacAddress': 'dstMacAddress',
         'SrcMacAddress': 'srcMacAddress',
+        'RecentReplyStatus': 'recentReplyStatus',
+        'LtmSentCount': 'ltmSentCount',
+        'RecentHopCount': 'recentHopCount',
+        'PartialReplyCount': 'partialReplyCount',
+        'CompleteReplyCount': 'completeReplyCount',
+        'MdLevel': 'mdLevel',
+        'CVlan': 'cVlan',
+        'RecentHops': 'recentHops',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,24 +33,24 @@ class Router(Base):
     __slots__ = ()
     _SDM_NAME = 'router'
     _SDM_ATT_MAP = {
-        'EnableBfdMplsLearnedLsp': 'enableBfdMplsLearnedLsp',
-        'EnableFilterFec': 'enableFilterFec',
-        'EnableGracefulRestart': 'enableGracefulRestart',
-        'EnableLspPingLearnedLsp': 'enableLspPingLearnedLsp',
-        'EnableOverrideRbit': 'enableOverrideRbit',
-        'EnableP2mpCapabilty': 'enableP2mpCapabilty',
-        'EnablePduRateControl': 'enablePduRateControl',
-        'EnableVcFecs': 'enableVcFecs',
-        'EnableVcGroupMatch': 'enableVcGroupMatch',
-        'Enabled': 'enabled',
-        'InterPduGap': 'interPduGap',
+        'TransportAddress': 'transportAddress',
         'IsBgpAdVplsLearnedInfoRefreshed': 'isBgpAdVplsLearnedInfoRefreshed',
-        'ReconnectTime': 'reconnectTime',
-        'RecoveryTime': 'recoveryTime',
+        'EnableFilterFec': 'enableFilterFec',
+        'EnableVcFecs': 'enableVcFecs',
+        'EnableBfdMplsLearnedLsp': 'enableBfdMplsLearnedLsp',
+        'Enabled': 'enabled',
+        'UseTransportAddress': 'useTransportAddress',
+        'EnableGracefulRestart': 'enableGracefulRestart',
+        'EnableVcGroupMatch': 'enableVcGroupMatch',
         'RouterId': 'routerId',
         'TrafficGroupId': 'trafficGroupId',
-        'TransportAddress': 'transportAddress',
-        'UseTransportAddress': 'useTransportAddress',
+        'InterPduGap': 'interPduGap',
+        'EnableP2mpCapabilty': 'enableP2mpCapabilty',
+        'ReconnectTime': 'reconnectTime',
+        'EnableOverrideRbit': 'enableOverrideRbit',
+        'EnablePduRateControl': 'enablePduRateControl',
+        'RecoveryTime': 'recoveryTime',
+        'EnableLspPingLearnedLsp': 'enableLspPingLearnedLsp',
     }
 
     def __init__(self, parent):

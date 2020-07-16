@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,23 +31,23 @@ class CertInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'certInfo'
     _SDM_ATT_MAP = {
-        'AltName': 'altName',
+        'State': 'state',
         'CertFormat': 'certFormat',
-        'CertPath': 'certPath',
+        'ObjectId': 'objectId',
         'City': 'city',
-        'Company': 'company',
         'Country': 'country',
+        'Company': 'company',
+        'UseCertServer': 'useCertServer',
+        'SendCACertOnly': 'sendCACertOnly',
+        'ServerUrl': 'serverUrl',
+        'SameKeyFile': 'sameKeyFile',
+        'KeyUsage': 'keyUsage',
+        'CertPath': 'certPath',
+        'KeySize': 'keySize',
+        'AltName': 'altName',
         'Department': 'department',
         'GetCACertOnly': 'getCACertOnly',
         'KeyPath': 'keyPath',
-        'KeySize': 'keySize',
-        'KeyUsage': 'keyUsage',
-        'ObjectId': 'objectId',
-        'SameKeyFile': 'sameKeyFile',
-        'SendCACertOnly': 'sendCACertOnly',
-        'ServerUrl': 'serverUrl',
-        'State': 'state',
-        'UseCertServer': 'useCertServer',
     }
 
     def __init__(self, parent):

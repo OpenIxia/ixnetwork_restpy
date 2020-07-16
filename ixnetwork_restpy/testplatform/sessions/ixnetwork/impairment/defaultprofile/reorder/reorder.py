@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,9 +32,9 @@ class Reorder(Base):
     _SDM_NAME = 'reorder'
     _SDM_ATT_MAP = {
         'ClusterSize': 'clusterSize',
+        'SkipCount': 'skipCount',
         'Enabled': 'enabled',
         'PercentRate': 'percentRate',
-        'SkipCount': 'skipCount',
     }
 
     def __init__(self, parent):

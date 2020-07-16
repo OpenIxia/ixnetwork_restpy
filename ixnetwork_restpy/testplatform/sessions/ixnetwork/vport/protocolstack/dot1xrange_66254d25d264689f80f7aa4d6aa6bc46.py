@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,19 +33,19 @@ class Dot1xRange(Base):
     __slots__ = ()
     _SDM_NAME = 'dot1xRange'
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'FastInnerMethod': 'fastInnerMethod',
+        'UserName': 'userName',
         'FastProvisionMode': 'fastProvisionMode',
-        'FastStatelessResume': 'fastStatelessResume',
-        'HostAuthMode': 'hostAuthMode',
-        'HostName': 'hostName',
-        'HostPassword': 'hostPassword',
-        'NacSequence': 'nacSequence',
+        'Protocol': 'protocol',
         'Name': 'name',
         'ObjectId': 'objectId',
-        'Protocol': 'protocol',
-        'UserName': 'userName',
         'UserPassword': 'userPassword',
+        'HostName': 'hostName',
+        'Enabled': 'enabled',
+        'FastInnerMethod': 'fastInnerMethod',
+        'HostAuthMode': 'hostAuthMode',
+        'NacSequence': 'nacSequence',
+        'FastStatelessResume': 'fastStatelessResume',
+        'HostPassword': 'hostPassword',
         'WaitId': 'waitId',
     }
 

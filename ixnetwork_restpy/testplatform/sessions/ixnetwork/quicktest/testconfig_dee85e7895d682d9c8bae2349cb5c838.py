@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,34 +31,34 @@ class TestConfig(Base):
     __slots__ = ()
     _SDM_NAME = 'testConfig'
     _SDM_ATT_MAP = {
-        'BinaryLoadUnit': 'binaryLoadUnit',
-        'BinaryResolution': 'binaryResolution',
-        'CalculateLatency': 'calculateLatency',
-        'CustomFramesizeValue': 'customFramesizeValue',
-        'CustomLoadUnit': 'customLoadUnit',
-        'DelayBeforeStartTransmit': 'delayBeforeStartTransmit',
-        'DeleteFlowsAtStartup': 'deleteFlowsAtStartup',
-        'EnableMinFrameSize': 'enableMinFrameSize',
-        'EnableTrafficValidation': 'enableTrafficValidation',
         'FrameSizeMode': 'frameSizeMode',
-        'Gap': 'gap',
-        'InitialBinaryLoadIntegerValues': 'initialBinaryLoadIntegerValues',
-        'InitialStepIntegerValues': 'initialStepIntegerValues',
-        'LatencyType': 'latencyType',
-        'LoadRateValue': 'loadRateValue',
+        'EnableMinFrameSize': 'enableMinFrameSize',
         'LoadType': 'loadType',
         'MaxBinaryLoadIntegerValue': 'maxBinaryLoadIntegerValue',
-        'MaxRandomFrameSize': 'maxRandomFrameSize',
-        'MaxStepIntegerValues': 'maxStepIntegerValues',
-        'MinAddressTableSize': 'minAddressTableSize',
-        'MinBinaryLoadIntegerValues': 'minBinaryLoadIntegerValues',
-        'MinRandomFrameSize': 'minRandomFrameSize',
-        'Numtrials': 'numtrials',
-        'PacketsPerFlow': 'packetsPerFlow',
+        'EnableTrafficValidation': 'enableTrafficValidation',
         'ProtocolItem': 'protocolItem',
-        'RangeCount': 'rangeCount',
-        'StepLoadUnit': 'stepLoadUnit',
+        'PacketsPerFlow': 'packetsPerFlow',
+        'LatencyType': 'latencyType',
+        'DeleteFlowsAtStartup': 'deleteFlowsAtStartup',
+        'MaxRandomFrameSize': 'maxRandomFrameSize',
+        'CustomLoadUnit': 'customLoadUnit',
+        'LoadRateValue': 'loadRateValue',
+        'CustomFramesizeValue': 'customFramesizeValue',
+        'MaxStepIntegerValues': 'maxStepIntegerValues',
+        'MinRandomFrameSize': 'minRandomFrameSize',
         'StepStepIntegerValues': 'stepStepIntegerValues',
+        'BinaryResolution': 'binaryResolution',
+        'BinaryLoadUnit': 'binaryLoadUnit',
+        'DelayBeforeStartTransmit': 'delayBeforeStartTransmit',
+        'Numtrials': 'numtrials',
+        'MinAddressTableSize': 'minAddressTableSize',
+        'Gap': 'gap',
+        'InitialBinaryLoadIntegerValues': 'initialBinaryLoadIntegerValues',
+        'RangeCount': 'rangeCount',
+        'InitialStepIntegerValues': 'initialStepIntegerValues',
+        'StepLoadUnit': 'stepLoadUnit',
+        'MinBinaryLoadIntegerValues': 'minBinaryLoadIntegerValues',
+        'CalculateLatency': 'calculateLatency',
         'WaitAffterFlowAdd': 'waitAffterFlowAdd',
     }
 

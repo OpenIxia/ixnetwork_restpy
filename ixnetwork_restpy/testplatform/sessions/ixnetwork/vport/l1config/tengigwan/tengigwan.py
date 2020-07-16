@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,18 +31,22 @@ class TenGigWan(Base):
     __slots__ = ()
     _SDM_NAME = 'tenGigWan'
     _SDM_ATT_MAP = {
-        'AutoInstrumentation': 'autoInstrumentation',
-        'C2Expected': 'c2Expected',
-        'C2Tx': 'c2Tx',
         'EnablePPM': 'enablePPM',
-        'EnabledFlowControl': 'enabledFlowControl',
-        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
-        'IfsStretch': 'ifsStretch',
-        'InterfaceType': 'interfaceType',
-        'Loopback': 'loopback',
-        'Ppm': 'ppm',
         'TransmitClocking': 'transmitClocking',
+        'Loopback': 'loopback',
+        'AvailableSpeeds': 'availableSpeeds',
         'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
+        'EnabledFlowControl': 'enabledFlowControl',
+        'Ppm': 'ppm',
+        'CanModifySpeed': 'canModifySpeed',
+        'C2Tx': 'c2Tx',
+        'InterfaceType': 'interfaceType',
+        'C2Expected': 'c2Expected',
+        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
+        'SelectedSpeeds': 'selectedSpeeds',
+        'IfsStretch': 'ifsStretch',
+        'AutoInstrumentation': 'autoInstrumentation',
+        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
     }
 
     def __init__(self, parent):
@@ -89,6 +93,15 @@ class TenGigWan(Base):
         self._set_attribute(self._SDM_ATT_MAP['AutoInstrumentation'], value)
 
     @property
+    def AvailableSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[]): Which speeds are available for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableSpeeds'])
+
+    @property
     def C2Expected(self):
         """
         Returns
@@ -111,6 +124,24 @@ class TenGigWan(Base):
     @C2Tx.setter
     def C2Tx(self, value):
         self._set_attribute(self._SDM_ATT_MAP['C2Tx'], value)
+
+    @property
+    def CanModifySpeed(self):
+        """
+        Returns
+        -------
+        - bool: Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanModifySpeed'])
+
+    @property
+    def CanSetMultipleSpeeds(self):
+        """
+        Returns
+        -------
+        - bool: Can this port selectmultiple speeds for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanSetMultipleSpeeds'])
 
     @property
     def EnablePPM(self):
@@ -197,6 +228,18 @@ class TenGigWan(Base):
         self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
+    def SelectedSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[]): Which speeds are selected for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
+    @SelectedSpeeds.setter
+    def SelectedSpeeds(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
+
+    @property
     def TransmitClocking(self):
         """
         Returns
@@ -220,7 +263,7 @@ class TenGigWan(Base):
     def TxIgnoreRxLinkFaults(self, value):
         self._set_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'], value)
 
-    def update(self, AutoInstrumentation=None, C2Expected=None, C2Tx=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, IfsStretch=None, InterfaceType=None, Loopback=None, Ppm=None, TransmitClocking=None, TxIgnoreRxLinkFaults=None):
+    def update(self, AutoInstrumentation=None, C2Expected=None, C2Tx=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, IfsStretch=None, InterfaceType=None, Loopback=None, Ppm=None, SelectedSpeeds=None, TransmitClocking=None, TxIgnoreRxLinkFaults=None):
         """Updates tenGigWan resource on the server.
 
         Args
@@ -235,6 +278,7 @@ class TenGigWan(Base):
         - InterfaceType (str(wanSdh | wanSonet)): The 10G WAN interface type for the port.
         - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - SelectedSpeeds (list(str[])): Which speeds are selected for the current media and AN settings.
         - TransmitClocking (str(external | internal | recovered)): The transmit clocking type for this 10G WAN port.
         - TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
 

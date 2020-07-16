@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,9 +34,9 @@ class Rfc7747failover(Base):
     _SDM_NAME = 'rfc7747failover'
     _SDM_ATT_MAP = {
         'ForceApplyQTConfig': 'forceApplyQTConfig',
-        'InputParameters': 'inputParameters',
         'Mode': 'mode',
         'Name': 'name',
+        'InputParameters': 'inputParameters',
     }
 
     def __init__(self, parent):
@@ -75,14 +75,28 @@ class Rfc7747failover(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_2015bfdd1fd2071ca9cb62b9960e882f.TestConfig): An instance of the TestConfig class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_2dcd356d312516c27ccfadc9770632ee.TestConfig): An instance of the TestConfig class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_2015bfdd1fd2071ca9cb62b9960e882f import TestConfig
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_2dcd356d312516c27ccfadc9770632ee import TestConfig
         return TestConfig(self)._select()
+
+    @property
+    def TrafficSelection(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.trafficselection_22c0efed3052ed5002942a33e331fb3b.TrafficSelection): An instance of the TrafficSelection class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.trafficselection_22c0efed3052ed5002942a33e331fb3b import TrafficSelection
+        return TrafficSelection(self)
 
     @property
     def ForceApplyQTConfig(self):

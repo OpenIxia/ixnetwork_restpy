@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -35,18 +35,18 @@ class CustomTopologySpbNodeIsidRange(Base):
     _SDM_ATT_MAP = {
         'CMacAddressCount': 'cMacAddressCount',
         'CMacAddressStep': 'cMacAddressStep',
-        'EnableIsid': 'enableIsid',
-        'InterNodeCmacAddress': 'interNodeCmacAddress',
-        'InterNodeCvlan': 'interNodeCvlan',
-        'InterNodeIsIdIncrement': 'interNodeIsIdIncrement',
-        'InterNodeSvlan': 'interNodeSvlan',
-        'Isid': 'isid',
-        'RBit': 'rBit',
-        'StartCmacAddress': 'startCmacAddress',
-        'StartCvlan': 'startCvlan',
         'StartSvlan': 'startSvlan',
         'TBit': 'tBit',
+        'InterNodeCvlan': 'interNodeCvlan',
+        'RBit': 'rBit',
+        'EnableIsid': 'enableIsid',
+        'InterNodeIsIdIncrement': 'interNodeIsIdIncrement',
+        'Isid': 'isid',
+        'StartCvlan': 'startCvlan',
+        'StartCmacAddress': 'startCmacAddress',
+        'InterNodeCmacAddress': 'interNodeCmacAddress',
         'TransmissionType': 'transmissionType',
+        'InterNodeSvlan': 'interNodeSvlan',
         'VlanType': 'vlanType',
     }
 

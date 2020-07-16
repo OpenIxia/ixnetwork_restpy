@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,37 +32,37 @@ class TableFeaturesLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'tableFeaturesLearnedInformation'
     _SDM_ATT_MAP = {
-        'ApplyActions': 'applyActions',
-        'ApplyActionsMiss': 'applyActionsMiss',
-        'ApplySetField': 'applySetField',
-        'ApplySetFieldMiss': 'applySetFieldMiss',
-        'Config': 'config',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
+        'NegotiatedVersion': 'negotiatedVersion',
         'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'Experimenter': 'experimenter',
-        'ExperimenterMiss': 'experimenterMiss',
-        'Instruction': 'instruction',
-        'InstructionMiss': 'instructionMiss',
-        'Latency': 'latency',
         'LocalIp': 'localIp',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
+        'InstructionMiss': 'instructionMiss',
+        'WriteActions': 'writeActions',
+        'NextTable': 'nextTable',
+        'Latency': 'latency',
+        'WriteSetField': 'writeSetField',
+        'ApplyActions': 'applyActions',
+        'ReplyState': 'replyState',
+        'Config': 'config',
         'Match': 'match',
         'MaxEntries': 'maxEntries',
-        'MetadataMatch': 'metadataMatch',
-        'MetadataWrite': 'metadataWrite',
-        'Name': 'name',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'NextTable': 'nextTable',
-        'NextTableMiss': 'nextTableMiss',
-        'RemoteIp': 'remoteIp',
-        'ReplyState': 'replyState',
-        'TableId': 'tableId',
         'WildCards': 'wildCards',
-        'WriteActions': 'writeActions',
-        'WriteActionsMiss': 'writeActionsMiss',
-        'WriteSetField': 'writeSetField',
+        'NextTableMiss': 'nextTableMiss',
+        'ErrorType': 'errorType',
+        'ApplySetField': 'applySetField',
+        'Experimenter': 'experimenter',
+        'MetadataWrite': 'metadataWrite',
         'WriteSetFieldMiss': 'writeSetFieldMiss',
+        'WriteActionsMiss': 'writeActionsMiss',
+        'ExperimenterMiss': 'experimenterMiss',
+        'Name': 'name',
+        'Instruction': 'instruction',
+        'TableId': 'tableId',
+        'RemoteIp': 'remoteIp',
+        'ApplySetFieldMiss': 'applySetFieldMiss',
+        'ApplyActionsMiss': 'applyActionsMiss',
+        'DataPathId': 'dataPathId',
+        'MetadataMatch': 'metadataMatch',
     }
 
     def __init__(self, parent):

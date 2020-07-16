@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,16 +33,16 @@ class SpbNetworkRange(Base):
     __slots__ = ()
     _SDM_NAME = 'spbNetworkRange'
     _SDM_ATT_MAP = {
-        'EnableAdvertiseNetworkRange': 'enableAdvertiseNetworkRange',
-        'EnableHostName': 'enableHostName',
-        'EntryColumn': 'entryColumn',
         'EntryRow': 'entryRow',
-        'HostNamePrefix': 'hostNamePrefix',
-        'InterfaceMetric': 'interfaceMetric',
-        'NoOfColumns': 'noOfColumns',
-        'NoOfRows': 'noOfRows',
-        'StartSystemId': 'startSystemId',
+        'EntryColumn': 'entryColumn',
         'SystemIdIncrementBy': 'systemIdIncrementBy',
+        'NoOfColumns': 'noOfColumns',
+        'HostNamePrefix': 'hostNamePrefix',
+        'NoOfRows': 'noOfRows',
+        'EnableHostName': 'enableHostName',
+        'EnableAdvertiseNetworkRange': 'enableAdvertiseNetworkRange',
+        'StartSystemId': 'startSystemId',
+        'InterfaceMetric': 'interfaceMetric',
     }
 
     def __init__(self, parent):

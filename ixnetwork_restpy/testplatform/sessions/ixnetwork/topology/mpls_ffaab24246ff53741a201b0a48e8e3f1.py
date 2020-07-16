@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,27 +33,27 @@ class Mpls(Base):
     __slots__ = ()
     _SDM_NAME = 'mpls'
     _SDM_ATT_MAP = {
-        'Bos': 'bos',
-        'ConnectedVia': 'connectedVia',
-        'Cos': 'cos',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DestMac': 'destMac',
-        'Enablecw': 'enablecw',
-        'Errors': 'errors',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'Overridecos': 'overridecos',
-        'RxLabelValue': 'rxLabelValue',
-        'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
         'Status': 'status',
-        'TransportType': 'transportType',
+        'Cos': 'cos',
+        'Errors': 'errors',
+        'Name': 'name',
+        'SessionInfo': 'sessionInfo',
         'Ttl': 'ttl',
-        'TxLabelValue': 'txLabelValue',
+        'DestMac': 'destMac',
+        'Bos': 'bos',
+        'StackedLayers': 'stackedLayers',
+        'TransportType': 'transportType',
+        'ConnectedVia': 'connectedVia',
+        'DescriptiveName': 'descriptiveName',
+        'SessionStatus': 'sessionStatus',
+        'Multiplier': 'multiplier',
         'UpperLayer': 'upperLayer',
+        'Overridecos': 'overridecos',
+        'Enablecw': 'enablecw',
+        'StateCounts': 'stateCounts',
+        'TxLabelValue': 'txLabelValue',
+        'RxLabelValue': 'rxLabelValue',
     }
 
     def __init__(self, parent):
@@ -78,13 +78,13 @@ class Mpls(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmbridge_43b20c6912f671cacace508ed8995f46.CfmBridge): An instance of the CfmBridge class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmbridge_0d1f83a1e9fee8ee7d444b2a33a0e03b.CfmBridge): An instance of the CfmBridge class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmbridge_43b20c6912f671cacace508ed8995f46 import CfmBridge
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmbridge_0d1f83a1e9fee8ee7d444b2a33a0e03b import CfmBridge
         return CfmBridge(self)
 
     @property
@@ -190,13 +190,13 @@ class Mpls(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6_2e22849ddf0d6f1e43481bc88715b967.Ipv6): An instance of the Ipv6 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6_abda0a2a4cac3d529994b093916059a4.Ipv6): An instance of the Ipv6 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6_2e22849ddf0d6f1e43481bc88715b967 import Ipv6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6_abda0a2a4cac3d529994b093916059a4 import Ipv6
         return Ipv6(self)
 
     @property
@@ -366,6 +366,20 @@ class Mpls(Base):
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lagportstaticlag_f67759421ceee90b665b41bf19b8202d import Lagportstaticlag
         return Lagportstaticlag(self)
+
+    @property
+    def Mka(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_d0af5e39c81cb01eb75d4a693187a9ca.Mka): An instance of the Mka class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_d0af5e39c81cb01eb75d4a693187a9ca import Mka
+        return Mka(self)
 
     @property
     def Mpls(self):
@@ -791,6 +805,31 @@ class Mpls(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def RestartDown(self, *args, **kwargs):
         """Executes the restartDown operation on the server.
 
@@ -800,7 +839,7 @@ class Mpls(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -819,13 +858,13 @@ class Mpls(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected protocols.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -844,13 +883,13 @@ class Mpls(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected protocols.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

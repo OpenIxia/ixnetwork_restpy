@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,25 +33,25 @@ class Ipv4(Base):
     __slots__ = ()
     _SDM_NAME = 'ipv4'
     _SDM_ATT_MAP = {
-        'Address': 'address',
-        'ConnectedVia': 'connectedVia',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableGratarpRarp': 'enableGratarpRarp',
-        'Errors': 'errors',
-        'GatewayIp': 'gatewayIp',
-        'Ipv4GratarpRarp': 'ipv4GratarpRarp',
         'ManualGatewayMac': 'manualGatewayMac',
-        'Multiplier': 'multiplier',
+        'Status': 'status',
+        'Errors': 'errors',
         'Name': 'name',
+        'ResolvedGatewayMac': 'resolvedGatewayMac',
+        'EnableGratarpRarp': 'enableGratarpRarp',
+        'StackedLayers': 'stackedLayers',
+        'Multiplier': 'multiplier',
+        'GatewayIp': 'gatewayIp',
         'Prefix': 'prefix',
         'ResolveGateway': 'resolveGateway',
-        'ResolvedGatewayMac': 'resolvedGatewayMac',
+        'Ipv4GratarpRarp': 'ipv4GratarpRarp',
+        'ConnectedVia': 'connectedVia',
+        'DescriptiveName': 'descriptiveName',
+        'Address': 'address',
         'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
         'StateCounts': 'stateCounts',
-        'Status': 'status',
+        'SessionStatus': 'sessionStatus',
     }
 
     def __init__(self, parent):
@@ -90,13 +90,13 @@ class Ipv4(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_34add767bd8277550d248ffa11fdfd4b.BgpIpv4Peer): An instance of the BgpIpv4Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_9dd9eddcf2bd784d82d8a016e392f035.BgpIpv4Peer): An instance of the BgpIpv4Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_34add767bd8277550d248ffa11fdfd4b import BgpIpv4Peer
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_9dd9eddcf2bd784d82d8a016e392f035 import BgpIpv4Peer
         return BgpIpv4Peer(self)
 
     @property
@@ -216,13 +216,13 @@ class Ipv4(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lac_317dd78e5e747f1719b1661566709df1.Lac): An instance of the Lac class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lac_92ac6d7a9bf02ade5331532b27bfa0ea.Lac): An instance of the Lac class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lac_317dd78e5e747f1719b1661566709df1 import Lac
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lac_92ac6d7a9bf02ade5331532b27bfa0ea import Lac
         return Lac(self)
 
     @property
@@ -272,13 +272,13 @@ class Ipv4(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lns_a1fe4830b76ba312a8a535cf73a0a3f1.Lns): An instance of the Lns class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lns_a4b3be663ffb1dfb1f114cda5dbbcd4e.Lns): An instance of the Lns class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lns_a1fe4830b76ba312a8a535cf73a0a3f1 import Lns
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lns_a4b3be663ffb1dfb1f114cda5dbbcd4e import Lns
         return Lns(self)
 
     @property
@@ -412,13 +412,13 @@ class Ipv4(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_a78b7b774b8fb2e713fb26ae87e2629a.Pcc): An instance of the Pcc class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_9346785b55d17399fecd6fe36c418219.Pcc): An instance of the Pcc class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_a78b7b774b8fb2e713fb26ae87e2629a import Pcc
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_9346785b55d17399fecd6fe36c418219 import Pcc
         return Pcc(self)
 
     @property
@@ -454,13 +454,13 @@ class Ipv4(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_1a240a2a810fb5ecfbfea26734a33bb7.Ptp): An instance of the Ptp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_26111dde679ed88af879687d76db2401.Ptp): An instance of the Ptp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_1a240a2a810fb5ecfbfea26734a33bb7 import Ptp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_26111dde679ed88af879687d76db2401 import Ptp
         return Ptp(self)
 
     @property
@@ -834,12 +834,39 @@ class Ipv4(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
         """Executes the fetchAndUpdateConfigFromCloud operation on the server.
 
+        Learn MAC / IP address for a topology running on VM ports, deployed in AWS.
+
         fetchAndUpdateConfigFromCloud(Mode=string)
         ------------------------------------------
-        - Mode (str): 
+        - Mode (str): Mode. Options are: cmdrefreshall, cmdrefreshmac, cmdrefreshipv4
 
         Raises
         ------
@@ -860,7 +887,7 @@ class Ipv4(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -885,7 +912,7 @@ class Ipv4(Base):
 
         sendArp(SessionIndices=list)
         ----------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendArp(SessionIndices=string)
         ------------------------------
@@ -916,7 +943,7 @@ class Ipv4(Base):
         sendArpManual(DestIP=string, SessionIndices=list)list
         -----------------------------------------------------
         - DestIP (str): This parameter requires a destIP of type kString
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
         - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
         sendArpManual(SessionIndices=string, DestIP=string)list
@@ -944,7 +971,7 @@ class Ipv4(Base):
 
         sendGratArp(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendGratArp(SessionIndices=string)
         ----------------------------------
@@ -975,7 +1002,7 @@ class Ipv4(Base):
         sendPing(DestIP=string, SessionIndices=list)list
         ------------------------------------------------
         - DestIP (str): This parameter requires a destIP of type kString
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
         - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
         sendPing(SessionIndices=string, DestIP=string)list
@@ -1003,7 +1030,7 @@ class Ipv4(Base):
 
         sendRarp(SessionIndices=list)
         -----------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendRarp(SessionIndices=string)
         -------------------------------
@@ -1022,13 +1049,13 @@ class Ipv4(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected protocols.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -1047,13 +1074,13 @@ class Ipv4(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected protocols.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

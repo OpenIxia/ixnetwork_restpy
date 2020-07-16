@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,42 +33,42 @@ class ECpriRec(Base):
     __slots__ = ()
     _SDM_NAME = 'eCpriRec'
     _SDM_ATT_MAP = {
-        'ActionType': 'actionType',
-        'Active': 'active',
-        'Address': 'address',
-        'CompensationValue': 'compensationValue',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DelayMeasurementId': 'delayMeasurementId',
-        'DescriptiveName': 'descriptiveName',
-        'DummyBytesLength': 'dummyBytesLength',
-        'ElementId': 'elementId',
-        'Errors': 'errors',
-        'EventId': 'eventId',
-        'EventSequenceNumber': 'eventSequenceNumber',
-        'EventType': 'eventType',
-        'MessageType': 'messageType',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NumberOfFaultSubObjects': 'numberOfFaultSubObjects',
-        'ReadWriteType': 'readWriteType',
-        'RemoteResetId': 'remoteResetId',
-        'ReservedActionType': 'reservedActionType',
-        'ReservedEventType': 'reservedEventType',
-        'ReservedResetCode': 'reservedResetCode',
-        'ResetCodeOp': 'resetCodeOp',
-        'RmaAction': 'rmaAction',
         'RmaDataLength': 'rmaDataLength',
-        'RtcDataLength': 'rtcDataLength',
         'SequenceId': 'sequenceId',
-        'SessionStatus': 'sessionStatus',
+        'EventSequenceNumber': 'eventSequenceNumber',
+        'RmaAction': 'rmaAction',
+        'EventType': 'eventType',
+        'Address': 'address',
         'StackedLayers': 'stackedLayers',
+        'MessageType': 'messageType',
+        'ConnectedVia': 'connectedVia',
+        'ActionType': 'actionType',
+        'DummyBytesLength': 'dummyBytesLength',
         'StartingRmaId': 'startingRmaId',
-        'StartingRtcId': 'startingRtcId',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
+        'SessionStatus': 'sessionStatus',
+        'EventId': 'eventId',
+        'Errors': 'errors',
+        'ReadWriteType': 'readWriteType',
         'TimeStamp': 'timeStamp',
+        'NumberOfFaultSubObjects': 'numberOfFaultSubObjects',
+        'RtcDataLength': 'rtcDataLength',
+        'Status': 'status',
+        'CompensationValue': 'compensationValue',
+        'ReservedActionType': 'reservedActionType',
+        'DelayMeasurementId': 'delayMeasurementId',
+        'ResetCodeOp': 'resetCodeOp',
+        'StartingRtcId': 'startingRtcId',
+        'Multiplier': 'multiplier',
+        'Active': 'active',
+        'RemoteResetId': 'remoteResetId',
+        'ReservedResetCode': 'reservedResetCode',
+        'Count': 'count',
+        'Name': 'name',
+        'ReservedEventType': 'reservedEventType',
         'VendorSpecificPayloadLength': 'vendorSpecificPayloadLength',
+        'DescriptiveName': 'descriptiveName',
+        'StateCounts': 'stateCounts',
+        'ElementId': 'elementId',
     }
 
     def __init__(self, parent):
@@ -236,7 +236,7 @@ class ECpriRec(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Event Type value ranges from 0x00 to 0xFF, where 0x00 represents Fault(s) Indication, 0x01 represents Fault(s) Indication Acknowledge, 0x02 represents Notification(s) Indication, 0x03 represents Synchronization Request, 0x04 represents Synchronization Acknowledge, 0x05 represents Synchronization End Indication and values are from 0x06 to 0xFF are Reserved.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Event Type value ranges from 0x00 to 0xFF, where 0x00 represents Fault(s) Indication, 0x01 represents Fault(s) Indication Acknowledge, 0x02 represents Notification(s) Indication, 0x03 represents Synchronization Request, 0x04 represents Synchronization Acknowledge, 0x05 represents Synchronization End Indication and values from 0x06 to 0xFF are Reserved.
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EventType']))
@@ -304,7 +304,7 @@ class ECpriRec(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Depending on implementation the Reset ID could be used for instance to point out a specific instance of a generic hardware function. How to allocate values to Reset ID is vendor specific.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Depending on implementation the Reset ID could be used for instance to point out a specific instance of a generic hardware function. Value allocation to Reset ID is vendor specific.
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemoteResetId']))
@@ -324,7 +324,7 @@ class ECpriRec(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved Event Type values are from 0x06 to 0xFF are Reserved.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved Event Type values from 0x06 to 0xFF are Reserved.
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservedEventType']))
@@ -344,7 +344,7 @@ class ECpriRec(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): The Reset Code Op is a 1-byte value. Values 0x00 Reserved, 0x01 Remote reset request, 0x02 Remote reset response, 0x03 to 0xFF Reserved.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The Reset Code Op is a 1-byte value. Value 0x00 represents Reserved, 0x01 represents Remote Reset Request, 0x02 represents Remote Reset Response.Values from 0x03 to 0xFF is Reserved.
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ResetCodeOp']))
@@ -364,7 +364,7 @@ class ECpriRec(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of bytes(0 to 255) to be read or write from or to remote node.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of bytes(0 to 255) to read or write from or to remote node.
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RmaDataLength']))
@@ -384,7 +384,7 @@ class ECpriRec(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): An identifier of each message in a series of Real-Time Control Data messages. For example, identifier of message sequence, links between request and response messages,etc. How to allocate values to SEQ_ID is vendor specific.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): An identifier of each message in a series of Real-Time Control Data messages. For example, identifier of message sequence, links between request and response messages,etc. Value allocation to SEQ_ID is vendor specific.
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SequenceId']))
@@ -614,6 +614,31 @@ class ECpriRec(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def RestartDown(self, *args, **kwargs):
         """Executes the restartDown operation on the server.
 
@@ -623,7 +648,7 @@ class ECpriRec(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -642,13 +667,13 @@ class ECpriRec(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected protocols.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -667,13 +692,13 @@ class ECpriRec(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected protocols.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

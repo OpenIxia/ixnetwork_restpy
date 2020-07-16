@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,14 +31,14 @@ class SpbSimEdgeIsidList(Base):
     __slots__ = ()
     _SDM_NAME = 'spbSimEdgeIsidList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Isid': 'isid',
-        'ItagEthernetType': 'itagEthernetType',
         'Name': 'name',
-        'Rbit': 'rbit',
         'Tbit': 'tbit',
+        'Rbit': 'rbit',
+        'Isid': 'isid',
+        'DescriptiveName': 'descriptiveName',
+        'ItagEthernetType': 'itagEthernetType',
+        'Active': 'active',
         'TransmissionType': 'transmissionType',
     }
 

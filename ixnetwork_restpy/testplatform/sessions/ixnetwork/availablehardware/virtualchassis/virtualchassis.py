@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,10 +32,10 @@ class VirtualChassis(Base):
     _SDM_NAME = 'virtualChassis'
     _SDM_ATT_MAP = {
         'EnableLicenseCheck': 'enableLicenseCheck',
+        'StartTxDelay': 'startTxDelay',
+        'NtpServer': 'ntpServer',
         'Hostname': 'hostname',
         'LicenseServer': 'licenseServer',
-        'NtpServer': 'ntpServer',
-        'StartTxDelay': 'startTxDelay',
     }
 
     def __init__(self, parent):

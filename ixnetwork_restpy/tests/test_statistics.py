@@ -31,4 +31,6 @@ class TestStatistics(unittest.TestCase):
             StatViewAssistant(ixnetwork, 'Port Stattics', Timeout=5)
         except NotFoundError as e:
             ixnetwork.info(e)
-    
+
+if __name__ == '__main__':
+    unittest.main() 

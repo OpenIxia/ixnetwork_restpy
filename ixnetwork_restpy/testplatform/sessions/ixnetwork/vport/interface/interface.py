@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,11 +33,11 @@ class Interface(Base):
     __slots__ = ()
     _SDM_NAME = 'interface'
     _SDM_ATT_MAP = {
-        'Description': 'description',
-        'Enabled': 'enabled',
         'Eui64Id': 'eui64Id',
-        'Mtu': 'mtu',
         'Type': 'type',
+        'Enabled': 'enabled',
+        'Description': 'description',
+        'Mtu': 'mtu',
     }
 
     def __init__(self, parent):

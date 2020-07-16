@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,25 +33,25 @@ class DceNetworkRange(Base):
     __slots__ = ()
     _SDM_NAME = 'dceNetworkRange'
     _SDM_ATT_MAP = {
-        'AdvertiseNetworkRange': 'advertiseNetworkRange',
-        'BroadcastRootPriorityStep': 'broadcastRootPriorityStep',
-        'CapabilityRouterId': 'capabilityRouterId',
-        'EnableHostName': 'enableHostName',
-        'EnableMultiTopology': 'enableMultiTopology',
-        'EntryCol': 'entryCol',
-        'EntryRow': 'entryRow',
-        'HostNamePrefix': 'hostNamePrefix',
-        'InterfaceMetric': 'interfaceMetric',
         'LinkType': 'linkType',
-        'NoOfCols': 'noOfCols',
-        'NoOfRows': 'noOfRows',
-        'NumberOfMultiDestinationTrees': 'numberOfMultiDestinationTrees',
-        'StartBroadcastRootPriority': 'startBroadcastRootPriority',
-        'StartSwitchId': 'startSwitchId',
-        'StartSystemId': 'startSystemId',
-        'SwitchIdPriority': 'switchIdPriority',
-        'SwitchIdStep': 'switchIdStep',
         'SystemIdIncrementBy': 'systemIdIncrementBy',
+        'SwitchIdStep': 'switchIdStep',
+        'BroadcastRootPriorityStep': 'broadcastRootPriorityStep',
+        'AdvertiseNetworkRange': 'advertiseNetworkRange',
+        'EntryRow': 'entryRow',
+        'NumberOfMultiDestinationTrees': 'numberOfMultiDestinationTrees',
+        'SwitchIdPriority': 'switchIdPriority',
+        'StartSystemId': 'startSystemId',
+        'HostNamePrefix': 'hostNamePrefix',
+        'NoOfCols': 'noOfCols',
+        'CapabilityRouterId': 'capabilityRouterId',
+        'NoOfRows': 'noOfRows',
+        'EnableHostName': 'enableHostName',
+        'StartSwitchId': 'startSwitchId',
+        'EntryCol': 'entryCol',
+        'StartBroadcastRootPriority': 'startBroadcastRootPriority',
+        'EnableMultiTopology': 'enableMultiTopology',
+        'InterfaceMetric': 'interfaceMetric',
     }
 
     def __init__(self, parent):

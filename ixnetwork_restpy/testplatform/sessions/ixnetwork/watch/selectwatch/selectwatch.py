@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,15 +33,15 @@ class SelectWatch(Base):
     __slots__ = ()
     _SDM_NAME = 'selectWatch'
     _SDM_ATT_MAP = {
-        'AverageExecutionTime': 'averageExecutionTime',
+        'Selects': 'selects',
         'IsDisabled': 'isDisabled',
+        'AverageExecutionTime': 'averageExecutionTime',
+        'Topic': 'topic',
+        'Token': 'token',
         'LastExecutionTime': 'lastExecutionTime',
         'LastNotification': 'lastNotification',
         'MaxExecutionTime': 'maxExecutionTime',
         'PollInterval': 'pollInterval',
-        'Selects': 'selects',
-        'Token': 'token',
-        'Topic': 'topic',
     }
 
     def __init__(self, parent):
@@ -100,7 +100,7 @@ class SelectWatch(Base):
         """
         Returns
         -------
-        - number: The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
+        - number: The interval in milliseconds the watch will be polled. Minimum value is 100ms.
         """
         return self._get_attribute(self._SDM_ATT_MAP['PollInterval'])
     @PollInterval.setter
@@ -146,7 +146,7 @@ class SelectWatch(Base):
         Args
         ----
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
-        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
+        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
         - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])]))): 
         - Topic (str): 
 
@@ -162,7 +162,7 @@ class SelectWatch(Base):
         Args
         ----
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
-        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
+        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
         - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])]))): 
         - Topic (str): 
 
@@ -200,7 +200,7 @@ class SelectWatch(Base):
         - LastExecutionTime (number): 
         - LastNotification (str): 
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
-        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
+        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
         - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])]))): 
         - Token (number): 
         - Topic (str): 

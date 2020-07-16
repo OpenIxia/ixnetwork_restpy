@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,12 +33,12 @@ class CustomTopologyNode(Base):
     __slots__ = ()
     _SDM_NAME = 'customTopologyNode'
     _SDM_ATT_MAP = {
-        'BridgePriority': 'bridgePriority',
         'EdgeBridge': 'edgeBridge',
         'Enabled': 'enabled',
-        'Nickname': 'nickname',
+        'BridgePriority': 'bridgePriority',
         'Priority': 'priority',
         'SpSrcId': 'spSrcId',
+        'Nickname': 'nickname',
     }
 
     def __init__(self, parent):

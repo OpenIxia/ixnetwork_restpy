@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,9 +31,9 @@ class Licensing(Base):
     __slots__ = ()
     _SDM_NAME = 'licensing'
     _SDM_ATT_MAP = {
+        'Tier': 'tier',
         'LicensingServers': 'licensingServers',
         'Mode': 'mode',
-        'Tier': 'tier',
     }
 
     def __init__(self, parent):
@@ -56,7 +56,7 @@ class Licensing(Base):
         """
         Returns
         -------
-        - str(mixed | perpetual | subscription): Set license mode to either perpetual or subscription
+        - str(aggregation | mixed | perpetual | subscription): Set license mode to either of perpetual,subscription,mixed or aggregation
         """
         return self._get_attribute(self._SDM_ATT_MAP['Mode'])
     @Mode.setter
@@ -68,7 +68,7 @@ class Licensing(Base):
         """
         Returns
         -------
-        - str: set or get the tier level, using the tier ID. Available IDs are: tier3-10g, tier3, tier2, tier1
+        - str: set or get the tier level, using the tier ID.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Tier'])
     @Tier.setter
@@ -81,8 +81,8 @@ class Licensing(Base):
         Args
         ----
         - LicensingServers (list(str)): List of license servers to use
-        - Mode (str(mixed | perpetual | subscription)): Set license mode to either perpetual or subscription
-        - Tier (str): set or get the tier level, using the tier ID. Available IDs are: tier3-10g, tier3, tier2, tier1
+        - Mode (str(aggregation | mixed | perpetual | subscription)): Set license mode to either of perpetual,subscription,mixed or aggregation
+        - Tier (str): set or get the tier level, using the tier ID.
 
         Raises
         ------

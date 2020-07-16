@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,39 +32,39 @@ class GeneralLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'generalLearnedInfo'
     _SDM_ATT_MAP = {
-        'AverageRtt': 'averageRtt',
-        'BfdSessionMyState': 'bfdSessionMyState',
-        'BfdSessionPeerState': 'bfdSessionPeerState',
-        'CcInUse': 'ccInUse',
-        'CvInUse': 'cvInUse',
-        'Fec': 'fec',
-        'IncomingLabelStack': 'incomingLabelStack',
-        'IncomingLspLabel': 'incomingLspLabel',
-        'IncomingPwLabel': 'incomingPwLabel',
-        'LspPingReachability': 'lspPingReachability',
         'MaxRtt': 'maxRtt',
+        'IncomingLspLabel': 'incomingLspLabel',
         'MinRtt': 'minRtt',
-        'MyDiscriminator': 'myDiscriminator',
+        'PingSuccess': 'pingSuccess',
         'MyIpAddress': 'myIpAddress',
+        'IncomingPwLabel': 'incomingPwLabel',
+        'PingAttempts': 'pingAttempts',
+        'PingRequestRx': 'pingRequestRx',
+        'Fec': 'fec',
+        'LspPingReachability': 'lspPingReachability',
+        'CvInUse': 'cvInUse',
+        'PingFailures': 'pingFailures',
+        'ReceivedMinRxInterval': 'receivedMinRxInterval',
+        'IncomingLabelStack': 'incomingLabelStack',
+        'ReceivedPeerFlags': 'receivedPeerFlags',
+        'PingReplyTx': 'pingReplyTx',
+        'PeerIpAddress': 'peerIpAddress',
         'OutgoingLabelStack': 'outgoingLabelStack',
         'OutgoingLspLabel': 'outgoingLspLabel',
-        'OutgoingPwLabel': 'outgoingPwLabel',
-        'PeerDiscriminator': 'peerDiscriminator',
-        'PeerIpAddress': 'peerIpAddress',
-        'PingAttempts': 'pingAttempts',
-        'PingFailures': 'pingFailures',
-        'PingReplyTx': 'pingReplyTx',
-        'PingRequestRx': 'pingRequestRx',
-        'PingSuccess': 'pingSuccess',
-        'ReceivedMinRxInterval': 'receivedMinRxInterval',
-        'ReceivedMultiplier': 'receivedMultiplier',
-        'ReceivedPeerFlags': 'receivedPeerFlags',
-        'ReceivedTxInterval': 'receivedTxInterval',
+        'TunnelType': 'tunnelType',
+        'CcInUse': 'ccInUse',
+        'BfdSessionMyState': 'bfdSessionMyState',
+        'AverageRtt': 'averageRtt',
+        'SignalingProtocol': 'signalingProtocol',
         'ReturnCode': 'returnCode',
         'ReturnSubcode': 'returnSubcode',
-        'SignalingProtocol': 'signalingProtocol',
+        'BfdSessionPeerState': 'bfdSessionPeerState',
+        'ReceivedTxInterval': 'receivedTxInterval',
+        'MyDiscriminator': 'myDiscriminator',
+        'PeerDiscriminator': 'peerDiscriminator',
+        'ReceivedMultiplier': 'receivedMultiplier',
+        'OutgoingPwLabel': 'outgoingPwLabel',
         'TunnelEndpointType': 'tunnelEndpointType',
-        'TunnelType': 'tunnelType',
     }
 
     def __init__(self, parent):

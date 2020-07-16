@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,27 +33,27 @@ class Dhcpv4client(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcpv4client'
     _SDM_ATT_MAP = {
-        'ConnectedVia': 'connectedVia',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Dhcp4Broadcast': 'dhcp4Broadcast',
-        'Dhcp4GatewayAddress': 'dhcp4GatewayAddress',
-        'Dhcp4GatewayMac': 'dhcp4GatewayMac',
-        'Dhcp4ServerAddress': 'dhcp4ServerAddress',
         'Dhcp4UseFirstServer': 'dhcp4UseFirstServer',
-        'DiscoveredAddresses': 'discoveredAddresses',
-        'DiscoveredGateways': 'discoveredGateways',
-        'DiscoveredPrefix': 'discoveredPrefix',
         'Errors': 'errors',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'RenewTimer': 'renewTimer',
-        'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
+        'DiscoveredPrefix': 'discoveredPrefix',
+        'Dhcp4Broadcast': 'dhcp4Broadcast',
         'Status': 'status',
+        'StateCounts': 'stateCounts',
+        'Multiplier': 'multiplier',
+        'StackedLayers': 'stackedLayers',
         'UseRapidCommit': 'useRapidCommit',
+        'Dhcp4ServerAddress': 'dhcp4ServerAddress',
+        'DiscoveredGateways': 'discoveredGateways',
+        'Dhcp4GatewayAddress': 'dhcp4GatewayAddress',
+        'ConnectedVia': 'connectedVia',
+        'DescriptiveName': 'descriptiveName',
+        'SessionStatus': 'sessionStatus',
+        'Dhcp4GatewayMac': 'dhcp4GatewayMac',
+        'DiscoveredAddresses': 'discoveredAddresses',
+        'SessionInfo': 'sessionInfo',
+        'RenewTimer': 'renewTimer',
+        'Name': 'name',
     }
 
     def __init__(self, parent):
@@ -78,13 +78,13 @@ class Dhcpv4client(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_34add767bd8277550d248ffa11fdfd4b.BgpIpv4Peer): An instance of the BgpIpv4Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_9dd9eddcf2bd784d82d8a016e392f035.BgpIpv4Peer): An instance of the BgpIpv4Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_34add767bd8277550d248ffa11fdfd4b import BgpIpv4Peer
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_9dd9eddcf2bd784d82d8a016e392f035 import BgpIpv4Peer
         return BgpIpv4Peer(self)
 
     @property
@@ -218,13 +218,13 @@ class Dhcpv4client(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_a78b7b774b8fb2e713fb26ae87e2629a.Pcc): An instance of the Pcc class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_9346785b55d17399fecd6fe36c418219.Pcc): An instance of the Pcc class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_a78b7b774b8fb2e713fb26ae87e2629a import Pcc
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_9346785b55d17399fecd6fe36c418219 import Pcc
         return Pcc(self)
 
     @property
@@ -632,6 +632,31 @@ class Dhcpv4client(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def Rebind(self, *args, **kwargs):
         """Executes the rebind operation on the server.
 
@@ -641,7 +666,7 @@ class Dhcpv4client(Base):
 
         rebind(SessionIndices=list)
         ---------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         rebind(SessionIndices=string)
         -----------------------------
@@ -666,7 +691,7 @@ class Dhcpv4client(Base):
 
         renew(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         renew(SessionIndices=string)
         ----------------------------
@@ -691,7 +716,7 @@ class Dhcpv4client(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -706,6 +731,31 @@ class Dhcpv4client(Base):
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('restartDown', payload=payload, response_object=None)
+
+    def SendArp(self, *args, **kwargs):
+        """Executes the sendArp operation on the server.
+
+        Sends Arp for its corresponding gateway
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendArp(SessionIndices=list)
+        ----------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        sendArp(SessionIndices=string)
+        ------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendArp', payload=payload, response_object=None)
 
     def SendPing(self, *args, **kwargs):
         """Executes the sendPing operation on the server.
@@ -722,7 +772,7 @@ class Dhcpv4client(Base):
         sendPing(DestIP=string, SessionIndices=list)list
         ------------------------------------------------
         - DestIP (str): This parameter requires a destIP of type kString
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
         - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
         sendPing(SessionIndices=string, DestIP=string)list
@@ -744,13 +794,13 @@ class Dhcpv4client(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected protocols.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -769,13 +819,13 @@ class Dhcpv4client(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected protocols.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

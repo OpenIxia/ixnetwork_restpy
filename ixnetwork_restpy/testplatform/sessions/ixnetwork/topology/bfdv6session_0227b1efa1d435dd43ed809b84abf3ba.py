@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,23 +31,23 @@ class Bfdv6Session(Base):
     __slots__ = ()
     _SDM_NAME = 'bfdv6Session'
     _SDM_ATT_MAP = {
-        'Active': 'active',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
         'EnableAutoChooseSourceIp': 'enableAutoChooseSourceIp',
-        'EnableOVSDBCommunication': 'enableOVSDBCommunication',
-        'EnableRemoteDiscriminatorLearned': 'enableRemoteDiscriminatorLearned',
-        'LearnedRemoteMac': 'learnedRemoteMac',
-        'LocalRouterId': 'localRouterId',
-        'MyDiscriminator': 'myDiscriminator',
         'Name': 'name',
-        'RemoteDiscriminator': 'remoteDiscriminator',
-        'RemoteIp6': 'remoteIp6',
-        'RemoteMac': 'remoteMac',
-        'SessionInfo': 'sessionInfo',
+        'LearnedRemoteMac': 'learnedRemoteMac',
+        'MyDiscriminator': 'myDiscriminator',
+        'EnableRemoteDiscriminatorLearned': 'enableRemoteDiscriminatorLearned',
         'SessionType': 'sessionType',
-        'SourceIp6': 'sourceIp6',
         'Vni': 'vni',
+        'RemoteIp6': 'remoteIp6',
+        'SourceIp6': 'sourceIp6',
+        'DescriptiveName': 'descriptiveName',
+        'RemoteDiscriminator': 'remoteDiscriminator',
+        'Active': 'active',
+        'EnableOVSDBCommunication': 'enableOVSDBCommunication',
+        'SessionInfo': 'sessionInfo',
+        'LocalRouterId': 'localRouterId',
+        'RemoteMac': 'remoteMac',
     }
 
     def __init__(self, parent):
@@ -273,7 +273,7 @@ class Bfdv6Session(Base):
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -303,7 +303,7 @@ class Bfdv6Session(Base):
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

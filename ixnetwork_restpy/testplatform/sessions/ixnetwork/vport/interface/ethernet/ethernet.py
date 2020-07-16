@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,8 +32,8 @@ class Ethernet(Base):
     _SDM_NAME = 'ethernet'
     _SDM_ATT_MAP = {
         'MacAddress': 'macAddress',
-        'Mtu': 'mtu',
         'UidFromMac': 'uidFromMac',
+        'Mtu': 'mtu',
     }
 
     def __init__(self, parent):

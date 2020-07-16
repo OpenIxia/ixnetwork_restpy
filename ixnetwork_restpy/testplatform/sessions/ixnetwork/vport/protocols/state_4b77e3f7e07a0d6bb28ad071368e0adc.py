@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,13 +31,13 @@ class State(Base):
     __slots__ = ()
     _SDM_NAME = 'state'
     _SDM_ATT_MAP = {
-        'Blocked': 'blocked',
-        'LinkDown': 'linkDown',
         'LiveForFastFailoverGroup': 'liveForFastFailoverGroup',
+        'LinkDown': 'linkDown',
         'StpBlock': 'stpBlock',
-        'StpForward': 'stpForward',
         'StpLearn': 'stpLearn',
+        'StpForward': 'stpForward',
         'StpListen': 'stpListen',
+        'Blocked': 'blocked',
     }
 
     def __init__(self, parent):

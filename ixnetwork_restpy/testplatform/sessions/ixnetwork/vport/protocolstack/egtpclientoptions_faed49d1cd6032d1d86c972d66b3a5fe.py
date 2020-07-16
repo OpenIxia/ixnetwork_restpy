@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,15 +33,15 @@ class EgtpClientOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'egtpClientOptions'
     _SDM_ATT_MAP = {
-        'AlwaysIncludeRecoveryIE': 'alwaysIncludeRecoveryIE',
-        'DeleteIdleBearers': 'deleteIdleBearers',
-        'MaxOutstandingReleases': 'maxOutstandingReleases',
         'MaxOutstandingRequests': 'maxOutstandingRequests',
         'ObjectId': 'objectId',
+        'MaxOutstandingReleases': 'maxOutstandingReleases',
         'OverrideGlobalRateControls': 'overrideGlobalRateControls',
-        'PcpuLogLevel': 'pcpuLogLevel',
-        'SetupRateInitial': 'setupRateInitial',
+        'AlwaysIncludeRecoveryIE': 'alwaysIncludeRecoveryIE',
         'TeardownRateInitial': 'teardownRateInitial',
+        'SetupRateInitial': 'setupRateInitial',
+        'DeleteIdleBearers': 'deleteIdleBearers',
+        'PcpuLogLevel': 'pcpuLogLevel',
     }
 
     def __init__(self, parent):

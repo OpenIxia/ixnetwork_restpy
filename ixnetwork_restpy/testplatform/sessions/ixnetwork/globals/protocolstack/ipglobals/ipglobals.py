@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,10 +34,10 @@ class IpGlobals(Base):
     _SDM_NAME = 'ipGlobals'
     _SDM_ATT_MAP = {
         'EnableGatewayArp': 'enableGatewayArp',
-        'GatewayArpRequestRate': 'gatewayArpRequestRate',
         'MaxOutstandingGatewayArpRequests': 'maxOutstandingGatewayArpRequests',
-        'ObjectId': 'objectId',
         'SendOneArpFromEachInterface': 'sendOneArpFromEachInterface',
+        'GatewayArpRequestRate': 'gatewayArpRequestRate',
+        'ObjectId': 'objectId',
     }
 
     def __init__(self, parent):

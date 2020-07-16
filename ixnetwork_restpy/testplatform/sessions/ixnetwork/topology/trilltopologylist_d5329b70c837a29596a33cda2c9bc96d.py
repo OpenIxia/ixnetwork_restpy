@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,15 +31,15 @@ class TrillTopologyList(Base):
     __slots__ = ()
     _SDM_NAME = 'trillTopologyList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'InterestedVlanRangeCount': 'interestedVlanRangeCount',
-        'LocalSystemID': 'localSystemID',
         'Name': 'name',
+        'TopologyId': 'topologyId',
         'NicknameCount': 'nicknameCount',
         'NoOfTreesToCompute': 'noOfTreesToCompute',
-        'TopologyId': 'topologyId',
+        'LocalSystemID': 'localSystemID',
+        'InterestedVlanRangeCount': 'interestedVlanRangeCount',
+        'DescriptiveName': 'descriptiveName',
+        'Active': 'active',
     }
 
     def __init__(self, parent):

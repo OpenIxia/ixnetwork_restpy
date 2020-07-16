@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,22 +32,22 @@ class QueueStatLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'queueStatLearnedInformation'
     _SDM_ATT_MAP = {
-        'BytesTx': 'bytesTx',
-        'DataPathId': 'dataPathId',
+        'Latency': 'latency',
+        'TxErrors': 'txErrors',
+        'QueueId': 'queueId',
+        'ErrorType': 'errorType',
         'DataPathIdAsHex': 'dataPathIdAsHex',
-        'Duration': 'duration',
+        'PacketsTx': 'packetsTx',
         'DurationInNsec': 'durationInNsec',
         'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'Latency': 'latency',
         'LocalIp': 'localIp',
+        'BytesTx': 'bytesTx',
         'NegotiatedVersion': 'negotiatedVersion',
-        'PacketsTx': 'packetsTx',
-        'PortNumber': 'portNumber',
-        'QueueId': 'queueId',
         'RemoteIp': 'remoteIp',
         'ReplyState': 'replyState',
-        'TxErrors': 'txErrors',
+        'Duration': 'duration',
+        'PortNumber': 'portNumber',
+        'DataPathId': 'dataPathId',
     }
 
     def __init__(self, parent):

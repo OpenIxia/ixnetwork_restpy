@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -35,9 +35,9 @@ class PtpOptions(Base):
     _SDM_ATT_MAP = {
         'MaxOutstanding': 'maxOutstanding',
         'ObjectId': 'objectId',
-        'OverrideGlobalRateOptions': 'overrideGlobalRateOptions',
-        'Role': 'role',
         'SetupRate': 'setupRate',
+        'Role': 'role',
+        'OverrideGlobalRateOptions': 'overrideGlobalRateOptions',
         'TeardownRate': 'teardownRate',
     }
 

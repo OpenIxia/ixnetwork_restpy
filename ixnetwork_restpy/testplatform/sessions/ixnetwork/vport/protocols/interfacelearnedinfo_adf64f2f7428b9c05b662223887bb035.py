@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -24,7 +24,7 @@ from ixnetwork_restpy.files import Files
 
 
 class InterfaceLearnedInfo(Base):
-    """This objects contains the learned information from the
+    """This objects contains the learned information from the
 interface.
     The InterfaceLearnedInfo class encapsulates a required interfaceLearnedInfo resource which will be retrieved from the server every time the property is accessed.
     """
@@ -32,10 +32,10 @@ interface.
     __slots__ = ()
     _SDM_NAME = 'interfaceLearnedInfo'
     _SDM_ATT_MAP = {
+        'PrefixLength': 'prefixLength',
         'GatewayIp': 'gatewayIp',
         'IpType': 'ipType',
         'OwnIp': 'ownIp',
-        'PrefixLength': 'prefixLength',
     }
 
     def __init__(self, parent):

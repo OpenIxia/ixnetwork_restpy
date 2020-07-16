@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,17 +33,17 @@ class DceMulticastIpv4GroupRange(Base):
     __slots__ = ()
     _SDM_NAME = 'dceMulticastIpv4GroupRange'
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'InterGroupUnicastIpv4Increment': 'interGroupUnicastIpv4Increment',
-        'IntraGroupUnicastIpv4Increment': 'intraGroupUnicastIpv4Increment',
-        'MulticastIpv4Count': 'multicastIpv4Count',
-        'MulticastIpv4Step': 'multicastIpv4Step',
-        'SourceGroupMapping': 'sourceGroupMapping',
         'StartMulticastIpv4': 'startMulticastIpv4',
-        'StartUnicastSourceIpv4': 'startUnicastSourceIpv4',
-        'Topology': 'topology',
-        'UnicastSourcesPerMulticastIpv4': 'unicastSourcesPerMulticastIpv4',
+        'SourceGroupMapping': 'sourceGroupMapping',
+        'Enabled': 'enabled',
         'VlanId': 'vlanId',
+        'UnicastSourcesPerMulticastIpv4': 'unicastSourcesPerMulticastIpv4',
+        'StartUnicastSourceIpv4': 'startUnicastSourceIpv4',
+        'MulticastIpv4Count': 'multicastIpv4Count',
+        'InterGroupUnicastIpv4Increment': 'interGroupUnicastIpv4Increment',
+        'MulticastIpv4Step': 'multicastIpv4Step',
+        'IntraGroupUnicastIpv4Increment': 'intraGroupUnicastIpv4Increment',
+        'Topology': 'topology',
     }
 
     def __init__(self, parent):

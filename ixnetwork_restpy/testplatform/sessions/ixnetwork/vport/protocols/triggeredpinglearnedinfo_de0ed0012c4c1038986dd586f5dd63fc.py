@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,14 +32,14 @@ class TriggeredPingLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'triggeredPingLearnedInfo'
     _SDM_ATT_MAP = {
-        'Fec': 'fec',
-        'IncomingLabelStack': 'incomingLabelStack',
-        'OutgoingLabelStack': 'outgoingLabelStack',
-        'PeerIpAddress': 'peerIpAddress',
-        'Reachability': 'reachability',
         'ReturnCode': 'returnCode',
+        'IncomingLabelStack': 'incomingLabelStack',
+        'Fec': 'fec',
         'ReturnSubCode': 'returnSubCode',
         'Rtt': 'rtt',
+        'PeerIpAddress': 'peerIpAddress',
+        'Reachability': 'reachability',
+        'OutgoingLabelStack': 'outgoingLabelStack',
     }
 
     def __init__(self, parent):

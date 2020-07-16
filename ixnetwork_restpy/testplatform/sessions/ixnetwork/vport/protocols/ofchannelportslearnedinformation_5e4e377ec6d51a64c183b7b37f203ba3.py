@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,21 +32,21 @@ class OfChannelPortsLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'ofChannelPortsLearnedInformation'
     _SDM_ATT_MAP = {
-        'AdvertisedFeatures': 'advertisedFeatures',
-        'Config': 'config',
         'CurrentFeatures': 'currentFeatures',
+        'EthernetAddress': 'ethernetAddress',
+        'Name': 'name',
         'CurrentSpeed': 'currentSpeed',
         'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'EthernetAddress': 'ethernetAddress',
-        'LocalIp': 'localIp',
+        'AdvertisedFeatures': 'advertisedFeatures',
         'MaximumSpeed': 'maximumSpeed',
-        'Name': 'name',
-        'PeerAdvertisedFeatures': 'peerAdvertisedFeatures',
+        'State': 'state',
+        'LocalIp': 'localIp',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
         'PortNumber': 'portNumber',
         'RemoteIp': 'remoteIp',
-        'State': 'state',
         'SupportedFeatures': 'supportedFeatures',
+        'Config': 'config',
+        'PeerAdvertisedFeatures': 'peerAdvertisedFeatures',
     }
 
     def __init__(self, parent):

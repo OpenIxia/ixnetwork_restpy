@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,15 +32,15 @@ class LtLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'ltLearnedInfo'
     _SDM_ATT_MAP = {
-        'CVlan': 'cVlan',
-        'DstMacAddress': 'dstMacAddress',
-        'HopCount': 'hopCount',
-        'Hops': 'hops',
-        'MdLevel': 'mdLevel',
-        'ReplyStatus': 'replyStatus',
-        'SVlan': 'sVlan',
-        'SrcMacAddress': 'srcMacAddress',
         'TransactionId': 'transactionId',
+        'Hops': 'hops',
+        'SVlan': 'sVlan',
+        'DstMacAddress': 'dstMacAddress',
+        'SrcMacAddress': 'srcMacAddress',
+        'ReplyStatus': 'replyStatus',
+        'HopCount': 'hopCount',
+        'MdLevel': 'mdLevel',
+        'CVlan': 'cVlan',
     }
 
     def __init__(self, parent):

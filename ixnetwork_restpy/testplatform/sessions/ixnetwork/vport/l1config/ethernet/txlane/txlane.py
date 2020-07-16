@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,16 +31,16 @@ class TxLane(Base):
     __slots__ = ()
     _SDM_NAME = 'txLane'
     _SDM_ATT_MAP = {
-        'IsSkewSynchronized': 'isSkewSynchronized',
-        'LaneMappingType': 'laneMappingType',
-        'MaxSkewVal': 'maxSkewVal',
-        'MinSkewVal': 'minSkewVal',
-        'NoOfLanes': 'noOfLanes',
-        'PcsLane': 'pcsLane',
-        'PhysicalLanes': 'physicalLanes',
-        'Resolution': 'resolution',
-        'SkewValues': 'skewValues',
         'SynchronizedSkewVal': 'synchronizedSkewVal',
+        'PcsLane': 'pcsLane',
+        'LaneMappingType': 'laneMappingType',
+        'IsSkewSynchronized': 'isSkewSynchronized',
+        'PhysicalLanes': 'physicalLanes',
+        'NoOfLanes': 'noOfLanes',
+        'MinSkewVal': 'minSkewVal',
+        'SkewValues': 'skewValues',
+        'MaxSkewVal': 'maxSkewVal',
+        'Resolution': 'resolution',
     }
 
     def __init__(self, parent):

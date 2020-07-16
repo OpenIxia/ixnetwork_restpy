@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,20 +32,20 @@ class EidToRlocMapCacheInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'eidToRlocMapCacheInfo'
     _SDM_ATT_MAP = {
-        'Action': 'action',
         'ExpiresAfter': 'expiresAfter',
         'InstanceId': 'instanceId',
-        'MapReplyRx': 'mapReplyRx',
         'MapRequestTx': 'mapRequestTx',
-        'MapVersionNumber': 'mapVersionNumber',
-        'NegativeMapReplyRx': 'negativeMapReplyRx',
         'RemoteEidMappingStatus': 'remoteEidMappingStatus',
-        'RemoteEidPrefix': 'remoteEidPrefix',
         'RemoteEidPrefixAfi': 'remoteEidPrefixAfi',
+        'MapVersionNumber': 'mapVersionNumber',
+        'RlocProbeRequestTx': 'rlocProbeRequestTx',
         'RemoteEidPrefixLength': 'remoteEidPrefixLength',
         'ResponderIp': 'responderIp',
+        'RemoteEidPrefix': 'remoteEidPrefix',
+        'Action': 'action',
         'RlocProbeReplyRx': 'rlocProbeReplyRx',
-        'RlocProbeRequestTx': 'rlocProbeRequestTx',
+        'MapReplyRx': 'mapReplyRx',
+        'NegativeMapReplyRx': 'negativeMapReplyRx',
     }
 
     def __init__(self, parent):

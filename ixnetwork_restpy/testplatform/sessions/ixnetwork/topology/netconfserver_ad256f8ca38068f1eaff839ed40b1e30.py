@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,49 +33,49 @@ class NetconfServer(Base):
     __slots__ = ()
     _SDM_NAME = 'netconfServer'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'CapabilitiesBase1Dot0': 'capabilitiesBase1Dot0',
-        'CapabilitiesBase1Dot1': 'capabilitiesBase1Dot1',
-        'CapabilitiesCandidate': 'capabilitiesCandidate',
         'CapabilitiesConfirmedCommit': 'capabilitiesConfirmedCommit',
-        'CapabilitiesInterleave': 'capabilitiesInterleave',
-        'CapabilitiesNotification': 'capabilitiesNotification',
-        'CapabilitiesRollbackOnError': 'capabilitiesRollbackOnError',
-        'CapabilitiesStartup': 'capabilitiesStartup',
-        'CapabilitiesUrl': 'capabilitiesUrl',
-        'CapabilitiesValidate': 'capabilitiesValidate',
-        'CapabilitiesWritableRunning': 'capabilitiesWritableRunning',
-        'CapabilitiesXpath': 'capabilitiesXpath',
-        'ClientIpv4Address': 'clientIpv4Address',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DecryptedCapture': 'decryptedCapture',
-        'DescriptiveName': 'descriptiveName',
-        'ErrorInfo': 'errorInfo',
-        'ErrorPercentage': 'errorPercentage',
-        'ErrorSeverity': 'errorSeverity',
-        'ErrorTag': 'errorTag',
-        'ErrorType': 'errorType',
-        'Errors': 'errors',
-        'GetConfigReplyXML': 'getConfigReplyXML',
-        'IncludeErrorInfo': 'includeErrorInfo',
-        'IncludeRxTimestampInReplyMsg': 'includeRxTimestampInReplyMsg',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NetconfSessionState': 'netconfSessionState',
-        'OutputDirectory': 'outputDirectory',
-        'Password': 'password',
-        'PortNumber': 'portNumber',
-        'PublicKeyDirectory': 'publicKeyDirectory',
-        'PublicKeyFileName': 'publicKeyFileName',
-        'ResponseXMLDirectory': 'responseXMLDirectory',
         'SendOkResponse': 'sendOkResponse',
-        'SessionStatus': 'sessionStatus',
-        'SshAuthenticationMechanism': 'sshAuthenticationMechanism',
         'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
+        'CapabilitiesRollbackOnError': 'capabilitiesRollbackOnError',
+        'ConnectedVia': 'connectedVia',
+        'PortNumber': 'portNumber',
+        'PublicKeyFileName': 'publicKeyFileName',
+        'ErrorTag': 'errorTag',
+        'PublicKeyDirectory': 'publicKeyDirectory',
+        'SessionStatus': 'sessionStatus',
+        'IncludeRxTimestampInReplyMsg': 'includeRxTimestampInReplyMsg',
+        'CapabilitiesBase1Dot0': 'capabilitiesBase1Dot0',
+        'CapabilitiesUrl': 'capabilitiesUrl',
+        'Errors': 'errors',
+        'ErrorSeverity': 'errorSeverity',
+        'CapabilitiesInterleave': 'capabilitiesInterleave',
+        'GetConfigReplyXML': 'getConfigReplyXML',
+        'NetconfSessionState': 'netconfSessionState',
+        'SshAuthenticationMechanism': 'sshAuthenticationMechanism',
+        'CapabilitiesCandidate': 'capabilitiesCandidate',
+        'ResponseXMLDirectory': 'responseXMLDirectory',
+        'CapabilitiesStartup': 'capabilitiesStartup',
         'Status': 'status',
         'UserName': 'userName',
+        'CapabilitiesNotification': 'capabilitiesNotification',
+        'ErrorType': 'errorType',
+        'CapabilitiesXpath': 'capabilitiesXpath',
+        'IncludeErrorInfo': 'includeErrorInfo',
+        'Multiplier': 'multiplier',
+        'Active': 'active',
+        'ErrorInfo': 'errorInfo',
+        'CapabilitiesValidate': 'capabilitiesValidate',
+        'Name': 'name',
+        'Count': 'count',
+        'ClientIpv4Address': 'clientIpv4Address',
+        'DecryptedCapture': 'decryptedCapture',
+        'OutputDirectory': 'outputDirectory',
+        'CapabilitiesWritableRunning': 'capabilitiesWritableRunning',
+        'CapabilitiesBase1Dot1': 'capabilitiesBase1Dot1',
+        'Password': 'password',
+        'DescriptiveName': 'descriptiveName',
+        'StateCounts': 'stateCounts',
+        'ErrorPercentage': 'errorPercentage',
     }
 
     def __init__(self, parent):
@@ -661,6 +661,31 @@ class NetconfServer(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def GetDecryptedCapture(self, *args, **kwargs):
         """Executes the getDecryptedCapture operation on the server.
 
@@ -691,7 +716,7 @@ class NetconfServer(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -716,7 +741,7 @@ class NetconfServer(Base):
 
         resumeRPCReply(SessionIndices=list)
         -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         resumeRPCReply(SessionIndices=string)
         -------------------------------------
@@ -746,7 +771,7 @@ class NetconfServer(Base):
 
         sendRPCReplyWithWrongCharacterCount(SessionIndices=list)
         --------------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendRPCReplyWithWrongCharacterCount(SessionIndices=string)
         ----------------------------------------------------------
@@ -776,7 +801,7 @@ class NetconfServer(Base):
 
         sendRPCReplyWithWrongMessageId(SessionIndices=list)
         ---------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendRPCReplyWithWrongMessageId(SessionIndices=string)
         -----------------------------------------------------
@@ -800,13 +825,13 @@ class NetconfServer(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected protocols.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -825,13 +850,13 @@ class NetconfServer(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected protocols.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------
@@ -856,7 +881,7 @@ class NetconfServer(Base):
 
         stopRPCReplyDropOutstandingRequests(SessionIndices=list)
         --------------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stopRPCReplyDropOutstandingRequests(SessionIndices=string)
         ----------------------------------------------------------
@@ -886,7 +911,7 @@ class NetconfServer(Base):
 
         stopRPCReplyStoreOutstandingRequests(SessionIndices=list)
         ---------------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stopRPCReplyStoreOutstandingRequests(SessionIndices=string)
         -----------------------------------------------------------

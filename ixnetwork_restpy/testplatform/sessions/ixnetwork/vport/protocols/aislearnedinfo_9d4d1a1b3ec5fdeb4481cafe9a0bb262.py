@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,16 +32,16 @@ class AisLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'aisLearnedInfo'
     _SDM_ATT_MAP = {
-        'BVlan': 'bVlan',
-        'CVlan': 'cVlan',
-        'MepMacAddress': 'mepMacAddress',
-        'RemoteMepMacAddress': 'remoteMepMacAddress',
-        'RxCount': 'rxCount',
-        'RxInterval': 'rxInterval',
         'RxState': 'rxState',
-        'SVlan': 'sVlan',
-        'TxCount': 'txCount',
+        'RemoteMepMacAddress': 'remoteMepMacAddress',
         'TxState': 'txState',
+        'MepMacAddress': 'mepMacAddress',
+        'RxCount': 'rxCount',
+        'SVlan': 'sVlan',
+        'RxInterval': 'rxInterval',
+        'BVlan': 'bVlan',
+        'TxCount': 'txCount',
+        'CVlan': 'cVlan',
     }
 
     def __init__(self, parent):

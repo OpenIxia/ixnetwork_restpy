@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,16 +31,16 @@ class Scriptgen(Base):
     __slots__ = ()
     _SDM_NAME = 'scriptgen'
     _SDM_ATT_MAP = {
-        'ConnectHostname': 'connectHostname',
-        'ConnectPort': 'connectPort',
         'ConnectVersion': 'connectVersion',
         'IncludeConnect': 'includeConnect',
-        'IncludeTestComposer': 'includeTestComposer',
+        'ScriptFilename': 'scriptFilename',
         'Language': 'language',
         'LinePerAttribute': 'linePerAttribute',
-        'OverwriteScriptFilename': 'overwriteScriptFilename',
-        'ScriptFilename': 'scriptFilename',
+        'IncludeTestComposer': 'includeTestComposer',
         'SerializationType': 'serializationType',
+        'ConnectPort': 'connectPort',
+        'OverwriteScriptFilename': 'overwriteScriptFilename',
+        'ConnectHostname': 'connectHostname',
     }
 
     def __init__(self, parent):

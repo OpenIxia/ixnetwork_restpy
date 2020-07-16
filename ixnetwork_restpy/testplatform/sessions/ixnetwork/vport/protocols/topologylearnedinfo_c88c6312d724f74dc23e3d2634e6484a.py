@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,18 +32,18 @@ class TopologyLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'topologyLearnedInfo'
     _SDM_ATT_MAP = {
-        'InDataPathId': 'inDataPathId',
-        'InDataPathIdAshex': 'inDataPathIdAshex',
-        'InIp': 'inIp',
-        'InPortEthernetAddress': 'inPortEthernetAddress',
-        'InPortName': 'inPortName',
-        'InPortNumber': 'inPortNumber',
-        'OutDataPathId': 'outDataPathId',
-        'OutDataPathIdAsHex': 'outDataPathIdAsHex',
         'OutIp': 'outIp',
-        'OutPortEthernetAddress': 'outPortEthernetAddress',
-        'OutPortName': 'outPortName',
+        'InPortName': 'inPortName',
+        'InIp': 'inIp',
         'OutPortNumber': 'outPortNumber',
+        'OutDataPathIdAsHex': 'outDataPathIdAsHex',
+        'OutDataPathId': 'outDataPathId',
+        'InDataPathId': 'inDataPathId',
+        'InPortEthernetAddress': 'inPortEthernetAddress',
+        'InDataPathIdAshex': 'inDataPathIdAshex',
+        'OutPortName': 'outPortName',
+        'OutPortEthernetAddress': 'outPortEthernetAddress',
+        'InPortNumber': 'inPortNumber',
     }
 
     def __init__(self, parent):

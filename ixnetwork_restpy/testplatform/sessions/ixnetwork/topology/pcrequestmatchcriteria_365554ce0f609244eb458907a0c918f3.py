@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,17 +31,17 @@ class PcRequestMatchCriteria(Base):
     __slots__ = ()
     _SDM_NAME = 'pcRequestMatchCriteria'
     _SDM_ATT_MAP = {
-        'Active': 'active',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DestIpv4Address': 'destIpv4Address',
-        'DestIpv6Address': 'destIpv6Address',
-        'IpVersion': 'ipVersion',
-        'IroType': 'iroType',
         'MatchEndPoints': 'matchEndPoints',
-        'Name': 'name',
-        'SrcIpv4Address': 'srcIpv4Address',
+        'DestIpv4Address': 'destIpv4Address',
+        'IpVersion': 'ipVersion',
         'SrcIpv6Address': 'srcIpv6Address',
+        'DescriptiveName': 'descriptiveName',
+        'DestIpv6Address': 'destIpv6Address',
+        'SrcIpv4Address': 'srcIpv4Address',
+        'Active': 'active',
+        'IroType': 'iroType',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

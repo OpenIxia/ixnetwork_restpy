@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,40 +33,40 @@ class DotOneX(Base):
     __slots__ = ()
     _SDM_NAME = 'dotOneX'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'CaCert': 'caCert',
-        'CertDir': 'certDir',
-        'CertificateKeySameFile': 'certificateKeySameFile',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Errors': 'errors',
-        'FastInnerMethod': 'fastInnerMethod',
-        'FastProMode': 'fastProMode',
-        'Faststateless': 'faststateless',
-        'HostAuthMode': 'hostAuthMode',
-        'HostCert': 'hostCert',
-        'HostKey': 'hostKey',
+        'Protocol': 'protocol',
         'HostName': 'hostName',
-        'HostPwd': 'hostPwd',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
+        'StackedLayers': 'stackedLayers',
         'ParentEth': 'parentEth',
+        'RunTimeCertGen': 'runTimeCertGen',
+        'ConnectedVia': 'connectedVia',
+        'HostKey': 'hostKey',
+        'SessionStatus': 'sessionStatus',
+        'HostPwd': 'hostPwd',
+        'VerifyPeer': 'verifyPeer',
+        'Errors': 'errors',
+        'WaitId': 'waitId',
+        'SendCACertOnly': 'sendCACertOnly',
+        'FastInnerMethod': 'fastInnerMethod',
+        'Faststateless': 'faststateless',
+        'CaCert': 'caCert',
+        'UserPwd': 'userPwd',
+        'HostCert': 'hostCert',
+        'Status': 'status',
+        'UserName': 'userName',
+        'CertificateKeySameFile': 'certificateKeySameFile',
         'PeerCert': 'peerCert',
         'PrivateKey': 'privateKey',
-        'Protocol': 'protocol',
-        'RunTimeCertGen': 'runTimeCertGen',
-        'SendCACertOnly': 'sendCACertOnly',
-        'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
+        'Multiplier': 'multiplier',
+        'Active': 'active',
         'TlsVersion': 'tlsVersion',
-        'UserName': 'userName',
-        'UserPwd': 'userPwd',
-        'VerifyPeer': 'verifyPeer',
-        'WaitId': 'waitId',
+        'FastProMode': 'fastProMode',
+        'Count': 'count',
+        'CertDir': 'certDir',
+        'Name': 'name',
+        'DescriptiveName': 'descriptiveName',
+        'HostAuthMode': 'hostAuthMode',
+        'SessionInfo': 'sessionInfo',
+        'StateCounts': 'stateCounts',
     }
 
     def __init__(self, parent):
@@ -91,13 +91,13 @@ class DotOneX(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmbridge_43b20c6912f671cacace508ed8995f46.CfmBridge): An instance of the CfmBridge class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmbridge_0d1f83a1e9fee8ee7d444b2a33a0e03b.CfmBridge): An instance of the CfmBridge class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmbridge_43b20c6912f671cacace508ed8995f46 import CfmBridge
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmbridge_0d1f83a1e9fee8ee7d444b2a33a0e03b import CfmBridge
         return CfmBridge(self)
 
     @property
@@ -157,6 +157,20 @@ class DotOneX(Base):
         return ECpriRec(self)
 
     @property
+    def Esmc(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.esmc_4d9a2f8edc72794b61857303b0afb00d.Esmc): An instance of the Esmc class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.esmc_4d9a2f8edc72794b61857303b0afb00d import Esmc
+        return Esmc(self)
+
+    @property
     def Ipv4(self):
         """
         Returns
@@ -175,13 +189,13 @@ class DotOneX(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6_2e22849ddf0d6f1e43481bc88715b967.Ipv6): An instance of the Ipv6 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6_abda0a2a4cac3d529994b093916059a4.Ipv6): An instance of the Ipv6 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6_2e22849ddf0d6f1e43481bc88715b967 import Ipv6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6_abda0a2a4cac3d529994b093916059a4 import Ipv6
         return Ipv6(self)
 
     @property
@@ -367,6 +381,34 @@ class DotOneX(Base):
         return LightweightDhcpv6relayAgent(self)
 
     @property
+    def Macsec(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.macsec_891ab8fedc3be480b832edf82a4047a7.Macsec): An instance of the Macsec class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.macsec_891ab8fedc3be480b832edf82a4047a7 import Macsec
+        return Macsec(self)
+
+    @property
+    def Mka(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_d0af5e39c81cb01eb75d4a693187a9ca.Mka): An instance of the Mka class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_d0af5e39c81cb01eb75d4a693187a9ca import Mka
+        return Mka(self)
+
+    @property
     def Mpls(self):
         """
         Returns
@@ -413,13 +455,13 @@ class DotOneX(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_bb5f520cf6ef2f4b0df11c1a79257f7a.Pppoxclient): An instance of the Pppoxclient class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_57c51b5ca094121e33c3a9ba5033980f.Pppoxclient): An instance of the Pppoxclient class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_bb5f520cf6ef2f4b0df11c1a79257f7a import Pppoxclient
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_57c51b5ca094121e33c3a9ba5033980f import Pppoxclient
         return Pppoxclient(self)
 
     @property
@@ -441,13 +483,13 @@ class DotOneX(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_1a240a2a810fb5ecfbfea26734a33bb7.Ptp): An instance of the Ptp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_26111dde679ed88af879687d76db2401.Ptp): An instance of the Ptp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_1a240a2a810fb5ecfbfea26734a33bb7 import Ptp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_26111dde679ed88af879687d76db2401 import Ptp
         return Ptp(self)
 
     @property
@@ -463,6 +505,20 @@ class DotOneX(Base):
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticlag_d16a8997708d466db9c9f007ce04724e import StaticLag
         return StaticLag(self)
+
+    @property
+    def StaticMacsec(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_89175be6eeaf724ac873ac56e1db38b0.StaticMacsec): An instance of the StaticMacsec class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_89175be6eeaf724ac873ac56e1db38b0 import StaticMacsec
+        return StaticMacsec(self)
 
     @property
     def Streams(self):
@@ -963,6 +1019,31 @@ class DotOneX(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def RestartDown(self, *args, **kwargs):
         """Executes the restartDown operation on the server.
 
@@ -972,7 +1053,7 @@ class DotOneX(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -991,13 +1072,13 @@ class DotOneX(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected protocols.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -1016,13 +1097,13 @@ class DotOneX(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected protocols.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

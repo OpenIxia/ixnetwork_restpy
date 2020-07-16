@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,8 +32,8 @@ class QuickTest(Base):
     _SDM_NAME = 'quickTest'
     _SDM_ATT_MAP = {
         'RunningTest': 'runningTest',
-        'RunningTestObj': 'runningTestObj',
         'TestIds': 'testIds',
+        'RunningTestObj': 'runningTestObj',
     }
 
     def __init__(self, parent):

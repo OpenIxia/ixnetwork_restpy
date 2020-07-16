@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,13 +32,13 @@ class Ipv4Prefixes(Base):
     __slots__ = ()
     _SDM_NAME = 'ipv4Prefixes'
     _SDM_ATT_MAP = {
+        'LspId': 'lspId',
+        'SequenceNumber': 'sequenceNumber',
+        'Ipv4Prefix': 'ipv4Prefix',
         'Age': 'age',
         'HostName': 'hostName',
-        'Ipv4Prefix': 'ipv4Prefix',
         'LearnedVia': 'learnedVia',
-        'LspId': 'lspId',
         'Metric': 'metric',
-        'SequenceNumber': 'sequenceNumber',
     }
 
     def __init__(self, parent):

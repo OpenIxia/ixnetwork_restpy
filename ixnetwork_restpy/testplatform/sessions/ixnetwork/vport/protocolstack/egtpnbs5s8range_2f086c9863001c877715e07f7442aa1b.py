@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,23 +31,23 @@ class EgtpNbS5S8Range(Base):
     __slots__ = ()
     _SDM_NAME = 'egtpNbS5S8Range'
     _SDM_ATT_MAP = {
-        'ECI': 'eCI',
-        'Enabled': 'enabled',
-        'MCC': 'mCC',
-        'MNC': 'mNC',
+        'RAIMNC3': 'rAIMNC3',
+        'RAIMNC2': 'rAIMNC2',
+        'RAIMNC1': 'rAIMNC1',
+        'ParentSgw': 'parentSgw',
         'Name': 'name',
         'ObjectId': 'objectId',
+        'Enabled': 'enabled',
+        'RAIRAC': 'rAIRAC',
+        'MCC': 'mCC',
+        'ECI': 'eCI',
         'ParentMme': 'parentMme',
-        'ParentSgw': 'parentSgw',
+        'RAIMCC2': 'rAIMCC2',
         'RAILAC': 'rAILAC',
         'RAIMCC1': 'rAIMCC1',
-        'RAIMCC2': 'rAIMCC2',
-        'RAIMCC3': 'rAIMCC3',
-        'RAIMNC1': 'rAIMNC1',
-        'RAIMNC2': 'rAIMNC2',
-        'RAIMNC3': 'rAIMNC3',
-        'RAIRAC': 'rAIRAC',
         'TAC': 'tAC',
+        'MNC': 'mNC',
+        'RAIMCC3': 'rAIMCC3',
     }
 
     def __init__(self, parent):

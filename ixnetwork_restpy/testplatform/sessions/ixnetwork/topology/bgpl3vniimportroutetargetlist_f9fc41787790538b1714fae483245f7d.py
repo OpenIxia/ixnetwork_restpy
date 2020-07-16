@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,13 +33,13 @@ class BgpL3VNIImportRouteTargetList(Base):
     _SDM_NAME = 'bgpL3VNIImportRouteTargetList'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
+        'TargetAssignedNumber': 'targetAssignedNumber',
         'Name': 'name',
+        'TargetType': 'targetType',
+        'TargetIpAddress': 'targetIpAddress',
+        'DescriptiveName': 'descriptiveName',
         'TargetAs4Number': 'targetAs4Number',
         'TargetAsNumber': 'targetAsNumber',
-        'TargetAssignedNumber': 'targetAssignedNumber',
-        'TargetIpAddress': 'targetIpAddress',
-        'TargetType': 'targetType',
     }
 
     def __init__(self, parent):

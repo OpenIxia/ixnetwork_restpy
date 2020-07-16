@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,33 +31,33 @@ class Bgp(Base):
     __slots__ = ()
     _SDM_NAME = 'bgp'
     _SDM_ATT_MAP = {
-        'AutoFillUpDutIp': 'autoFillUpDutIp',
-        'DisableReceivedUpdateValidation': 'disableReceivedUpdateValidation',
-        'EVpnAfi': 'eVpnAfi',
-        'EVpnSafi': 'eVpnSafi',
-        'EnableAdVplsPrefixLengthInBits': 'enableAdVplsPrefixLengthInBits',
-        'EnableExternalActiveConnect': 'enableExternalActiveConnect',
-        'EnableInternalActiveConnect': 'enableInternalActiveConnect',
-        'EnableLabelExchangeOverLsp': 'enableLabelExchangeOverLsp',
-        'EnableVpnLabelExchangeOverLsp': 'enableVpnLabelExchangeOverLsp',
-        'Enabled': 'enabled',
-        'EsImportRouteTargetSubType': 'esImportRouteTargetSubType',
-        'EsImportRouteTargetType': 'esImportRouteTargetType',
-        'EsiLabelExtendedCommunitySubType': 'esiLabelExtendedCommunitySubType',
-        'EsiLabelExtendedCommunityType': 'esiLabelExtendedCommunityType',
-        'EvpnIpAddressLengthUnit': 'evpnIpAddressLengthUnit',
-        'ExternalRetries': 'externalRetries',
-        'ExternalRetryDelay': 'externalRetryDelay',
-        'InternalRetries': 'internalRetries',
-        'InternalRetryDelay': 'internalRetryDelay',
-        'MacMobilityExtendedCommunitySubType': 'macMobilityExtendedCommunitySubType',
-        'MacMobilityExtendedCommunityType': 'macMobilityExtendedCommunityType',
-        'MldpP2mpFecType': 'mldpP2mpFecType',
-        'RunningState': 'runningState',
-        'Tester4ByteAsForIbgp': 'tester4ByteAsForIbgp',
-        'TesterAsForIbgp': 'testerAsForIbgp',
-        'TriggerVplsPwInitiation': 'triggerVplsPwInitiation',
         'VrfRouteImportExtendedCommunitySubType': 'vrfRouteImportExtendedCommunitySubType',
+        'InternalRetries': 'internalRetries',
+        'TriggerVplsPwInitiation': 'triggerVplsPwInitiation',
+        'ExternalRetryDelay': 'externalRetryDelay',
+        'EvpnIpAddressLengthUnit': 'evpnIpAddressLengthUnit',
+        'EsImportRouteTargetType': 'esImportRouteTargetType',
+        'EnableExternalActiveConnect': 'enableExternalActiveConnect',
+        'ExternalRetries': 'externalRetries',
+        'EsiLabelExtendedCommunityType': 'esiLabelExtendedCommunityType',
+        'AutoFillUpDutIp': 'autoFillUpDutIp',
+        'RunningState': 'runningState',
+        'TesterAsForIbgp': 'testerAsForIbgp',
+        'MacMobilityExtendedCommunityType': 'macMobilityExtendedCommunityType',
+        'InternalRetryDelay': 'internalRetryDelay',
+        'EnableInternalActiveConnect': 'enableInternalActiveConnect',
+        'EnableAdVplsPrefixLengthInBits': 'enableAdVplsPrefixLengthInBits',
+        'EsImportRouteTargetSubType': 'esImportRouteTargetSubType',
+        'EnableVpnLabelExchangeOverLsp': 'enableVpnLabelExchangeOverLsp',
+        'EVpnSafi': 'eVpnSafi',
+        'EVpnAfi': 'eVpnAfi',
+        'MacMobilityExtendedCommunitySubType': 'macMobilityExtendedCommunitySubType',
+        'DisableReceivedUpdateValidation': 'disableReceivedUpdateValidation',
+        'Tester4ByteAsForIbgp': 'tester4ByteAsForIbgp',
+        'EnableLabelExchangeOverLsp': 'enableLabelExchangeOverLsp',
+        'Enabled': 'enabled',
+        'EsiLabelExtendedCommunitySubType': 'esiLabelExtendedCommunitySubType',
+        'MldpP2mpFecType': 'mldpP2mpFecType',
     }
 
     def __init__(self, parent):

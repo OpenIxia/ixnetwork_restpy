@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,19 +34,19 @@ class LocalEidRange(Base):
     _SDM_NAME = 'localEidRange'
     _SDM_ATT_MAP = {
         'Count': 'count',
+        'UseAllInterfaceAddressesAsLocator': 'useAllInterfaceAddressesAsLocator',
+        'QuickRegistrationPeriod': 'quickRegistrationPeriod',
+        'Family': 'family',
+        'Enabled': 'enabled',
         'EnableProxyMapReplyBit': 'enableProxyMapReplyBit',
         'EnableWantMapNotifyBit': 'enableWantMapNotifyBit',
-        'Enabled': 'enabled',
-        'Family': 'family',
-        'MaxRecordPerMapRegisterPacket': 'maxRecordPerMapRegisterPacket',
         'PeriodicRefreshInterval': 'periodicRefreshInterval',
-        'PrefixLength': 'prefixLength',
-        'QuickRegistrationPeriod': 'quickRegistrationPeriod',
-        'RefreshIntervalInQuickRegistrationPeriod': 'refreshIntervalInQuickRegistrationPeriod',
-        'StartAddress': 'startAddress',
-        'SupportSmrGeneration': 'supportSmrGeneration',
         'Ttl': 'ttl',
-        'UseAllInterfaceAddressesAsLocator': 'useAllInterfaceAddressesAsLocator',
+        'StartAddress': 'startAddress',
+        'RefreshIntervalInQuickRegistrationPeriod': 'refreshIntervalInQuickRegistrationPeriod',
+        'PrefixLength': 'prefixLength',
+        'MaxRecordPerMapRegisterPacket': 'maxRecordPerMapRegisterPacket',
+        'SupportSmrGeneration': 'supportSmrGeneration',
     }
 
     def __init__(self, parent):

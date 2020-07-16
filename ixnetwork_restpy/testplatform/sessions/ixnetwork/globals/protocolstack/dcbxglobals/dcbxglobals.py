@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -35,8 +35,8 @@ class DcbxGlobals(Base):
     _SDM_ATT_MAP = {
         'AllowMultipleSessions': 'allowMultipleSessions',
         'FailOnMismatch': 'failOnMismatch',
-        'FlapLinkOnStart': 'flapLinkOnStart',
         'ObjectId': 'objectId',
+        'FlapLinkOnStart': 'flapLinkOnStart',
     }
 
     def __init__(self, parent):

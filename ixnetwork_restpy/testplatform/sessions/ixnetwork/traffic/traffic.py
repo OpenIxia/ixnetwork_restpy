@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,54 +31,56 @@ class Traffic(Base):
     __slots__ = ()
     _SDM_NAME = 'traffic'
     _SDM_ATT_MAP = {
-        'AutoCorrectL4HeaderChecksums': 'autoCorrectL4HeaderChecksums',
-        'CycleOffsetForScheduledStart': 'cycleOffsetForScheduledStart',
-        'CycleOffsetUnitForScheduledStart': 'cycleOffsetUnitForScheduledStart',
-        'CycleTimeForScheduledStart': 'cycleTimeForScheduledStart',
-        'CycleTimeUnitForScheduledStart': 'cycleTimeUnitForScheduledStart',
-        'DataPlaneJitterWindow': 'dataPlaneJitterWindow',
-        'DelayTimeForScheduledStart': 'delayTimeForScheduledStart',
-        'DestMacRetryCount': 'destMacRetryCount',
-        'DestMacRetryDelay': 'destMacRetryDelay',
-        'DetectMisdirectedOnAllPorts': 'detectMisdirectedOnAllPorts',
-        'DisablePortLevelMisdirected': 'disablePortLevelMisdirected',
-        'DisplayMplsCurrentLabelValue': 'displayMplsCurrentLabelValue',
-        'ElapsedTransmitTime': 'elapsedTransmitTime',
-        'EnableDataIntegrityCheck': 'enableDataIntegrityCheck',
-        'EnableDestMacRetry': 'enableDestMacRetry',
-        'EnableEgressOnlyTracking': 'enableEgressOnlyTracking',
-        'EnableInstantaneousStatsSupport': 'enableInstantaneousStatsSupport',
-        'EnableLagAutoRate': 'enableLagAutoRate',
-        'EnableLagFlowBalancing': 'enableLagFlowBalancing',
-        'EnableLagFlowFailoverMode': 'enableLagFlowFailoverMode',
-        'EnableLagRebalanceOnPortUp': 'enableLagRebalanceOnPortUp',
         'EnableMinFrameSize': 'enableMinFrameSize',
-        'EnableMulticastScalingFactor': 'enableMulticastScalingFactor',
-        'EnableSequenceChecking': 'enableSequenceChecking',
-        'EnableStaggeredStartDelay': 'enableStaggeredStartDelay',
-        'EnableStaggeredTransmit': 'enableStaggeredTransmit',
-        'EnableStreamOrdering': 'enableStreamOrdering',
-        'FrameOrderingMode': 'frameOrderingMode',
-        'GlobalStreamControl': 'globalStreamControl',
-        'GlobalStreamControlIterations': 'globalStreamControlIterations',
-        'IsApplicationTrafficRunning': 'isApplicationTrafficRunning',
-        'IsApplyOnTheFlyRequired': 'isApplyOnTheFlyRequired',
         'IsTrafficRunning': 'isTrafficRunning',
-        'LargeErrorThreshhold': 'largeErrorThreshhold',
-        'LearningFrameSize': 'learningFrameSize',
-        'LearningFramesCount': 'learningFramesCount',
-        'LearningFramesRate': 'learningFramesRate',
-        'MacChangeOnFly': 'macChangeOnFly',
-        'MaxTrafficGenerationQueries': 'maxTrafficGenerationQueries',
-        'MplsLabelLearningTimeout': 'mplsLabelLearningTimeout',
-        'PeakLoadingReplicationCount': 'peakLoadingReplicationCount',
-        'PreventDataPlaneToCpu': 'preventDataPlaneToCpu',
+        'DisablePortLevelMisdirected': 'disablePortLevelMisdirected',
         'RefreshLearnedInfoBeforeApply': 'refreshLearnedInfoBeforeApply',
-        'State': 'state',
-        'UseRfc5952': 'useRfc5952',
+        'EnableLagFlowFailoverMode': 'enableLagFlowFailoverMode',
         'UseScheduledStartTransmit': 'useScheduledStartTransmit',
         'UseTxRxSync': 'useTxRxSync',
+        'DelayTimeForScheduledStart': 'delayTimeForScheduledStart',
+        'GlobalStreamControlIterations': 'globalStreamControlIterations',
+        'EnableLagFlowBalancing': 'enableLagFlowBalancing',
+        'GlobalStreamControl': 'globalStreamControl',
+        'EnableMulticastScalingFactor': 'enableMulticastScalingFactor',
+        'LearningFramesCount': 'learningFramesCount',
+        'DestMacRetryDelay': 'destMacRetryDelay',
+        'EnableEgressOnlyTracking': 'enableEgressOnlyTracking',
+        'UseRfc5952': 'useRfc5952',
+        'MplsLabelLearningTimeout': 'mplsLabelLearningTimeout',
+        'EnableDestMacRetry': 'enableDestMacRetry',
+        'State': 'state',
+        'DataPlaneJitterWindow': 'dataPlaneJitterWindow',
+        'CycleOffsetForScheduledStart': 'cycleOffsetForScheduledStart',
+        'IsApplicationTrafficRunning': 'isApplicationTrafficRunning',
+        'LearningFrameSize': 'learningFrameSize',
+        'EnableLagRebalanceOnPortUp': 'enableLagRebalanceOnPortUp',
+        'EnableInstantaneousStatsSupport': 'enableInstantaneousStatsSupport',
+        'ElapsedTransmitTime': 'elapsedTransmitTime',
+        'DestMacRetryCount': 'destMacRetryCount',
+        'EnableStaggeredStartDelay': 'enableStaggeredStartDelay',
+        'EnableStreamOrdering': 'enableStreamOrdering',
+        'CycleTimeForScheduledStart': 'cycleTimeForScheduledStart',
+        'MacChangeOnFly': 'macChangeOnFly',
+        'EnableEgressOnlyTxStats': 'enableEgressOnlyTxStats',
+        'EnableDataIntegrityCheck': 'enableDataIntegrityCheck',
+        'IsApplyOnTheFlyRequired': 'isApplyOnTheFlyRequired',
+        'CycleTimeUnitForScheduledStart': 'cycleTimeUnitForScheduledStart',
+        'PreventDataPlaneToCpu': 'preventDataPlaneToCpu',
+        'EgressOnlyTrafficItemName': 'egressOnlyTrafficItemName',
+        'PeakLoadingReplicationCount': 'peakLoadingReplicationCount',
+        'DisplayMplsCurrentLabelValue': 'displayMplsCurrentLabelValue',
+        'EnableLagAutoRate': 'enableLagAutoRate',
+        'EnableStaggeredTransmit': 'enableStaggeredTransmit',
+        'EnableSequenceChecking': 'enableSequenceChecking',
         'WaitTime': 'waitTime',
+        'LargeErrorThreshhold': 'largeErrorThreshhold',
+        'FrameOrderingMode': 'frameOrderingMode',
+        'CycleOffsetUnitForScheduledStart': 'cycleOffsetUnitForScheduledStart',
+        'MaxTrafficGenerationQueries': 'maxTrafficGenerationQueries',
+        'DetectMisdirectedOnAllPorts': 'detectMisdirectedOnAllPorts',
+        'AutoCorrectL4HeaderChecksums': 'autoCorrectL4HeaderChecksums',
+        'LearningFramesRate': 'learningFramesRate',
     }
 
     def __init__(self, parent):
@@ -327,6 +329,18 @@ class Traffic(Base):
         self._set_attribute(self._SDM_ATT_MAP['DisplayMplsCurrentLabelValue'], value)
 
     @property
+    def EgressOnlyTrafficItemName(self):
+        """
+        Returns
+        -------
+        - str: Traffic Item name for egress only flows in statistics.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['EgressOnlyTrafficItemName'])
+    @EgressOnlyTrafficItemName.setter
+    def EgressOnlyTrafficItemName(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['EgressOnlyTrafficItemName'], value)
+
+    @property
     def ElapsedTransmitTime(self):
         """
         Returns
@@ -364,12 +378,24 @@ class Traffic(Base):
         """
         Returns
         -------
-        - bool: This flags enables/disables egress only tracking on the quick flow group. In this mode only quick flow groups are supported, user will have only PGID stats and the packets will not contain any instrumentation block.
+        - bool: This flags enables/disables egress only tracking. In this mode only traffic without ingress tracking is supported on ports with egress only settings, user will have only PGID stats and the packets will not contain any instrumentation block.
         """
         return self._get_attribute(self._SDM_ATT_MAP['EnableEgressOnlyTracking'])
     @EnableEgressOnlyTracking.setter
     def EnableEgressOnlyTracking(self, value):
         self._set_attribute(self._SDM_ATT_MAP['EnableEgressOnlyTracking'], value)
+
+    @property
+    def EnableEgressOnlyTxStats(self):
+        """
+        Returns
+        -------
+        - bool: This flags enables/disables egress only tx stats. In this mode all traffic without ingress tracking is considered for tx stats.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['EnableEgressOnlyTxStats'])
+    @EnableEgressOnlyTxStats.setter
+    def EnableEgressOnlyTxStats(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['EnableEgressOnlyTxStats'], value)
 
     @property
     def EnableInstantaneousStatsSupport(self):
@@ -743,7 +769,7 @@ class Traffic(Base):
     def WaitTime(self, value):
         self._set_attribute(self._SDM_ATT_MAP['WaitTime'], value)
 
-    def update(self, AutoCorrectL4HeaderChecksums=None, CycleOffsetForScheduledStart=None, CycleOffsetUnitForScheduledStart=None, CycleTimeForScheduledStart=None, CycleTimeUnitForScheduledStart=None, DataPlaneJitterWindow=None, DelayTimeForScheduledStart=None, DestMacRetryCount=None, DestMacRetryDelay=None, DetectMisdirectedOnAllPorts=None, DisablePortLevelMisdirected=None, DisplayMplsCurrentLabelValue=None, EnableDataIntegrityCheck=None, EnableDestMacRetry=None, EnableEgressOnlyTracking=None, EnableInstantaneousStatsSupport=None, EnableLagAutoRate=None, EnableLagFlowBalancing=None, EnableLagFlowFailoverMode=None, EnableLagRebalanceOnPortUp=None, EnableMinFrameSize=None, EnableMulticastScalingFactor=None, EnableSequenceChecking=None, EnableStaggeredStartDelay=None, EnableStaggeredTransmit=None, EnableStreamOrdering=None, FrameOrderingMode=None, GlobalStreamControl=None, GlobalStreamControlIterations=None, LargeErrorThreshhold=None, LearningFrameSize=None, LearningFramesCount=None, LearningFramesRate=None, MacChangeOnFly=None, MaxTrafficGenerationQueries=None, MplsLabelLearningTimeout=None, PeakLoadingReplicationCount=None, PreventDataPlaneToCpu=None, RefreshLearnedInfoBeforeApply=None, UseRfc5952=None, UseScheduledStartTransmit=None, UseTxRxSync=None, WaitTime=None):
+    def update(self, AutoCorrectL4HeaderChecksums=None, CycleOffsetForScheduledStart=None, CycleOffsetUnitForScheduledStart=None, CycleTimeForScheduledStart=None, CycleTimeUnitForScheduledStart=None, DataPlaneJitterWindow=None, DelayTimeForScheduledStart=None, DestMacRetryCount=None, DestMacRetryDelay=None, DetectMisdirectedOnAllPorts=None, DisablePortLevelMisdirected=None, DisplayMplsCurrentLabelValue=None, EgressOnlyTrafficItemName=None, EnableDataIntegrityCheck=None, EnableDestMacRetry=None, EnableEgressOnlyTracking=None, EnableEgressOnlyTxStats=None, EnableInstantaneousStatsSupport=None, EnableLagAutoRate=None, EnableLagFlowBalancing=None, EnableLagFlowFailoverMode=None, EnableLagRebalanceOnPortUp=None, EnableMinFrameSize=None, EnableMulticastScalingFactor=None, EnableSequenceChecking=None, EnableStaggeredStartDelay=None, EnableStaggeredTransmit=None, EnableStreamOrdering=None, FrameOrderingMode=None, GlobalStreamControl=None, GlobalStreamControlIterations=None, LargeErrorThreshhold=None, LearningFrameSize=None, LearningFramesCount=None, LearningFramesRate=None, MacChangeOnFly=None, MaxTrafficGenerationQueries=None, MplsLabelLearningTimeout=None, PeakLoadingReplicationCount=None, PreventDataPlaneToCpu=None, RefreshLearnedInfoBeforeApply=None, UseRfc5952=None, UseScheduledStartTransmit=None, UseTxRxSync=None, WaitTime=None):
         """Updates traffic resource on the server.
 
         Args
@@ -760,9 +786,11 @@ class Traffic(Base):
         - DetectMisdirectedOnAllPorts (bool): 
         - DisablePortLevelMisdirected (bool): 
         - DisplayMplsCurrentLabelValue (bool): Displays current label value for LSP Endpoints.
+        - EgressOnlyTrafficItemName (str): Traffic Item name for egress only flows in statistics.
         - EnableDataIntegrityCheck (bool): If true, enable data integrity check.
         - EnableDestMacRetry (bool): If true, enables the destination MAC address retry function.
-        - EnableEgressOnlyTracking (bool): This flags enables/disables egress only tracking on the quick flow group. In this mode only quick flow groups are supported, user will have only PGID stats and the packets will not contain any instrumentation block.
+        - EnableEgressOnlyTracking (bool): This flags enables/disables egress only tracking. In this mode only traffic without ingress tracking is supported on ports with egress only settings, user will have only PGID stats and the packets will not contain any instrumentation block.
+        - EnableEgressOnlyTxStats (bool): This flags enables/disables egress only tx stats. In this mode all traffic without ingress tracking is considered for tx stats.
         - EnableInstantaneousStatsSupport (bool): If true, enables instantaneous stats support
         - EnableLagAutoRate (bool): 
         - EnableLagFlowBalancing (bool): 
@@ -882,6 +910,25 @@ class Traffic(Base):
         """
         payload = { "Arg1": self.href }
         return self._execute('makeStatelessTrafficUnapplied', payload=payload, response_object=None)
+
+    def PauseStatelessTraffic(self, *args, **kwargs):
+        """Executes the pauseStatelessTraffic operation on the server.
+
+        Pause or Resume stateless traffic.
+
+        pauseStatelessTraffic(Arg2=bool)
+        --------------------------------
+        - Arg2 (bool): If true, it will pause running traffic. If false, it will resume previously paused traffic.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('pauseStatelessTraffic', payload=payload, response_object=None)
 
     def SendL2L3Learning(self):
         """Executes the sendL2L3Learning operation on the server.

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,29 +34,29 @@ class FcoeClientGlobals(Base):
     _SDM_NAME = 'fcoeClientGlobals'
     _SDM_ATT_MAP = {
         'AcceptPartialConfig': 'acceptPartialConfig',
-        'B2bRxSize': 'b2bRxSize',
-        'DcbxTimeout': 'dcbxTimeout',
-        'FipAdvertisementPeriod': 'fipAdvertisementPeriod',
-        'FipFcfMacListCollection': 'fipFcfMacListCollection',
+        'FipOverrideVnportKeepAlivePeriod': 'fipOverrideVnportKeepAlivePeriod',
+        'MaxFcoeSize': 'maxFcoeSize',
         'FipFcfMacListCollectionInterval': 'fipFcfMacListCollectionInterval',
         'FipOverrideAdvertisementPeriod': 'fipOverrideAdvertisementPeriod',
-        'FipOverrideVnportKeepAlivePeriod': 'fipOverrideVnportKeepAlivePeriod',
         'FipProposeMacInFpma': 'fipProposeMacInFpma',
-        'FipResetDiscovery': 'fipResetDiscovery',
-        'FipResetNumRetry': 'fipResetNumRetry',
-        'FipRestartOnSessionDown': 'fipRestartOnSessionDown',
-        'FipSendKeepAlives': 'fipSendKeepAlives',
-        'FipVersion': 'fipVersion',
-        'FipVlanDiscWithNameId': 'fipVlanDiscWithNameId',
-        'FipVnportKeepAlivePeriod': 'fipVnportKeepAlivePeriod',
-        'IgnoreDuplicateMacDescriptors': 'ignoreDuplicateMacDescriptors',
-        'MaxFcoeSize': 'maxFcoeSize',
-        'MaxPacketsPerSecond': 'maxPacketsPerSecond',
         'MaxRetries': 'maxRetries',
+        'FipFcfMacListCollection': 'fipFcfMacListCollection',
         'ObjectId': 'objectId',
-        'RetryInterval': 'retryInterval',
+        'FipSendKeepAlives': 'fipSendKeepAlives',
         'SetupRate': 'setupRate',
+        'IgnoreDuplicateMacDescriptors': 'ignoreDuplicateMacDescriptors',
+        'FipResetNumRetry': 'fipResetNumRetry',
+        'DcbxTimeout': 'dcbxTimeout',
+        'RetryInterval': 'retryInterval',
+        'MaxPacketsPerSecond': 'maxPacketsPerSecond',
+        'B2bRxSize': 'b2bRxSize',
+        'FipVersion': 'fipVersion',
         'TeardownRate': 'teardownRate',
+        'FipAdvertisementPeriod': 'fipAdvertisementPeriod',
+        'FipVlanDiscWithNameId': 'fipVlanDiscWithNameId',
+        'FipRestartOnSessionDown': 'fipRestartOnSessionDown',
+        'FipVnportKeepAlivePeriod': 'fipVnportKeepAlivePeriod',
+        'FipResetDiscovery': 'fipResetDiscovery',
     }
 
     def __init__(self, parent):

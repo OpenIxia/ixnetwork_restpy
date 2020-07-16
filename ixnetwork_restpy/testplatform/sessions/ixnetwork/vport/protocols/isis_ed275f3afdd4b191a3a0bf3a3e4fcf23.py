@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,17 +32,17 @@ class Isis(Base):
     _SDM_NAME = 'isis'
     _SDM_ATT_MAP = {
         'AllL1RbridgesMac': 'allL1RbridgesMac',
-        'EmulationType': 'emulationType',
-        'Enabled': 'enabled',
         'HelloMulticastMac': 'helloMulticastMac',
-        'LspMgroupPdusPerInterval': 'lspMgroupPdusPerInterval',
-        'NlpId': 'nlpId',
-        'RateControlInterval': 'rateControlInterval',
-        'RunningState': 'runningState',
-        'SendP2PHellosToUnicastMac': 'sendP2PHellosToUnicastMac',
         'SpbAllL1BridgesMac': 'spbAllL1BridgesMac',
         'SpbHelloMulticastMac': 'spbHelloMulticastMac',
+        'Enabled': 'enabled',
         'SpbNlpId': 'spbNlpId',
+        'NlpId': 'nlpId',
+        'RateControlInterval': 'rateControlInterval',
+        'SendP2PHellosToUnicastMac': 'sendP2PHellosToUnicastMac',
+        'EmulationType': 'emulationType',
+        'LspMgroupPdusPerInterval': 'lspMgroupPdusPerInterval',
+        'RunningState': 'runningState',
     }
 
     def __init__(self, parent):

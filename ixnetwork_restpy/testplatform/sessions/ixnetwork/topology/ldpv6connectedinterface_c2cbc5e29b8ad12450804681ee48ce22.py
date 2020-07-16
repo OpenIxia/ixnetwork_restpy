@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,25 +33,25 @@ class Ldpv6ConnectedInterface(Base):
     __slots__ = ()
     _SDM_NAME = 'ldpv6ConnectedInterface'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Authentication': 'authentication',
-        'BasicHelloInterval': 'basicHelloInterval',
-        'BasicHoldTime': 'basicHoldTime',
-        'ConnectedVia': 'connectedVia',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableBfdRegistration': 'enableBfdRegistration',
+        'Status': 'status',
+        'BasicHelloInterval': 'basicHelloInterval',
         'Errors': 'errors',
+        'StateCounts': 'stateCounts',
+        'Multiplier': 'multiplier',
+        'StackedLayers': 'stackedLayers',
+        'EnableBfdRegistration': 'enableBfdRegistration',
+        'BasicHoldTime': 'basicHoldTime',
+        'Authentication': 'authentication',
+        'ConnectedVia': 'connectedVia',
+        'DescriptiveName': 'descriptiveName',
+        'SessionStatus': 'sessionStatus',
+        'MD5Key': 'mD5Key',
+        'Active': 'active',
+        'OperationMode': 'operationMode',
         'LabelSpaceID': 'labelSpaceID',
         'LocalRouterID': 'localRouterID',
-        'MD5Key': 'mD5Key',
-        'Multiplier': 'multiplier',
         'Name': 'name',
-        'OperationMode': 'operationMode',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
     }
 
     def __init__(self, parent):
@@ -373,6 +373,31 @@ class Ldpv6ConnectedInterface(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def RestartDown(self, *args, **kwargs):
         """Executes the restartDown operation on the server.
 
@@ -382,7 +407,7 @@ class Ldpv6ConnectedInterface(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -407,7 +432,7 @@ class Ldpv6ConnectedInterface(Base):
 
         resumeBasicHello(SessionIndices=list)
         -------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         resumeBasicHello(SessionIndices=string)
         ---------------------------------------
@@ -446,13 +471,13 @@ class Ldpv6ConnectedInterface(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Activate LDP Interface
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -471,13 +496,13 @@ class Ldpv6ConnectedInterface(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop LDP Interface
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------
@@ -502,7 +527,7 @@ class Ldpv6ConnectedInterface(Base):
 
         stopBasicHello(SessionIndices=list)
         -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stopBasicHello(SessionIndices=string)
         -------------------------------------

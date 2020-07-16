@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,9 +34,9 @@ class ActionTemplate(Base):
     _SDM_NAME = 'actionTemplate'
     _SDM_ATT_MAP = {
         'Count': 'count',
+        'SavedInVersion': 'savedInVersion',
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
-        'SavedInVersion': 'savedInVersion',
     }
 
     def __init__(self, parent):

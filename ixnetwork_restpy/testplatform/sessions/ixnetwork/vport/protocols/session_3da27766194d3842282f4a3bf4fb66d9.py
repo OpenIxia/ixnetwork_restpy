@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,15 +33,15 @@ class Session(Base):
     __slots__ = ()
     _SDM_NAME = 'session'
     _SDM_ATT_MAP = {
-        'BfdSessionType': 'bfdSessionType',
+        'RemoteBfdAddress': 'remoteBfdAddress',
+        'LocalBfdAddress': 'localBfdAddress',
+        'IpType': 'ipType',
+        'RemoteDiscLearned': 'remoteDiscLearned',
         'Enabled': 'enabled',
         'EnabledAutoChooseSource': 'enabledAutoChooseSource',
-        'IpType': 'ipType',
-        'LocalBfdAddress': 'localBfdAddress',
-        'MyDisc': 'myDisc',
-        'RemoteBfdAddress': 'remoteBfdAddress',
         'RemoteDisc': 'remoteDisc',
-        'RemoteDiscLearned': 'remoteDiscLearned',
+        'MyDisc': 'myDisc',
+        'BfdSessionType': 'bfdSessionType',
     }
 
     def __init__(self, parent):

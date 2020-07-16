@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,15 +32,15 @@ class IgmpHost(Base):
     _SDM_NAME = 'igmpHost'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Enabled': 'enabled',
-        'IPDSCP': 'iPDSCP',
         'InterStbStartDelay': 'interStbStartDelay',
-        'IntervalInMs': 'intervalInMs',
         'Name': 'name',
-        'RatePerInterval': 'ratePerInterval',
-        'RowNames': 'rowNames',
+        'IntervalInMs': 'intervalInMs',
+        'Enabled': 'enabled',
         'UnicastMode': 'unicastMode',
+        'IPDSCP': 'iPDSCP',
+        'DescriptiveName': 'descriptiveName',
+        'RowNames': 'rowNames',
+        'RatePerInterval': 'ratePerInterval',
     }
 
     def __init__(self, parent):

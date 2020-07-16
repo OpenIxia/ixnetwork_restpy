@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,26 +32,26 @@ class PortFeaturesLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'portFeaturesLearnedInformation'
     _SDM_ATT_MAP = {
-        'AdvertisedFeatures': 'advertisedFeatures',
-        'Config': 'config',
         'CurrentFeatures': 'currentFeatures',
+        'MaxSpeed': 'maxSpeed',
+        'EthernetAddress': 'ethernetAddress',
+        'Name': 'name',
         'CurrentSpeed': 'currentSpeed',
         'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'ErrorCode': 'errorCode',
+        'AdvertisedFeatures': 'advertisedFeatures',
         'ErrorType': 'errorType',
-        'EthernetAddress': 'ethernetAddress',
-        'Latency': 'latency',
-        'LocalIp': 'localIp',
-        'MaxSpeed': 'maxSpeed',
-        'Name': 'name',
         'NegotiatedVersion': 'negotiatedVersion',
-        'PeerAdvertisedFeatures': 'peerAdvertisedFeatures',
+        'Latency': 'latency',
+        'ErrorCode': 'errorCode',
+        'LocalIp': 'localIp',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
+        'State': 'state',
         'PortNumber': 'portNumber',
         'RemoteIp': 'remoteIp',
         'ReplyState': 'replyState',
-        'State': 'state',
         'SupportedFeatures': 'supportedFeatures',
+        'Config': 'config',
+        'PeerAdvertisedFeatures': 'peerAdvertisedFeatures',
     }
 
     def __init__(self, parent):

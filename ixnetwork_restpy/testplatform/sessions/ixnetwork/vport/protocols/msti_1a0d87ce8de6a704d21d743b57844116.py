@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,17 +33,17 @@ class Msti(Base):
     __slots__ = ()
     _SDM_NAME = 'msti'
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'InternalRootPathCost': 'internalRootPathCost',
-        'Mac': 'mac',
-        'MstiHops': 'mstiHops',
-        'MstiId': 'mstiId',
         'MstiName': 'mstiName',
+        'VlanStart': 'vlanStart',
+        'InternalRootPathCost': 'internalRootPathCost',
+        'Enabled': 'enabled',
+        'MstiId': 'mstiId',
         'PortPriority': 'portPriority',
         'Priority': 'priority',
-        'UpdateRequired': 'updateRequired',
-        'VlanStart': 'vlanStart',
+        'Mac': 'mac',
         'VlanStop': 'vlanStop',
+        'UpdateRequired': 'updateRequired',
+        'MstiHops': 'mstiHops',
     }
 
     def __init__(self, parent):

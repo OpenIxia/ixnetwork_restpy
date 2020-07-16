@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,16 +31,16 @@ class PassCriteria(Base):
     __slots__ = ()
     _SDM_NAME = 'passCriteria'
     _SDM_ATT_MAP = {
-        'EnableLatencyPassFail': 'enableLatencyPassFail',
-        'EnablePassFail': 'enablePassFail',
-        'EnableRatePassFail': 'enableRatePassFail',
-        'LatencyThresholdMode': 'latencyThresholdMode',
-        'LatencyThresholdScale': 'latencyThresholdScale',
         'LatencyThresholdValue': 'latencyThresholdValue',
-        'PassCriteriaLoadRateMode': 'passCriteriaLoadRateMode',
-        'PassCriteriaLoadRateScale': 'passCriteriaLoadRateScale',
-        'PassCriteriaLoadRateValue': 'passCriteriaLoadRateValue',
+        'EnableRatePassFail': 'enableRatePassFail',
         'PassFailFrequency': 'passFailFrequency',
+        'PassCriteriaLoadRateMode': 'passCriteriaLoadRateMode',
+        'EnableLatencyPassFail': 'enableLatencyPassFail',
+        'LatencyThresholdScale': 'latencyThresholdScale',
+        'EnablePassFail': 'enablePassFail',
+        'LatencyThresholdMode': 'latencyThresholdMode',
+        'PassCriteriaLoadRateValue': 'passCriteriaLoadRateValue',
+        'PassCriteriaLoadRateScale': 'passCriteriaLoadRateScale',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,19 +31,19 @@ class CsvSnapshot(Base):
     __slots__ = ()
     _SDM_NAME = 'csvSnapshot'
     _SDM_ATT_MAP = {
-        'CsvDecimalPrecision': 'csvDecimalPrecision',
-        'CsvDumpTxPortLabelMap': 'csvDumpTxPortLabelMap',
-        'CsvFormatTimestamp': 'csvFormatTimestamp',
-        'CsvLocation': 'csvLocation',
-        'CsvName': 'csvName',
-        'CsvStringQuotes': 'csvStringQuotes',
         'CsvSupportsCSVSorting': 'csvSupportsCSVSorting',
-        'NextGenRefreshBeforeSnapshot': 'nextGenRefreshBeforeSnapshot',
-        'OpenViewer': 'openViewer',
-        'SnapshotSettingsName': 'snapshotSettingsName',
-        'SnapshotViewContents': 'snapshotViewContents',
-        'SnapshotViewCsvGenerationMode': 'snapshotViewCsvGenerationMode',
+        'CsvStringQuotes': 'csvStringQuotes',
+        'CsvDecimalPrecision': 'csvDecimalPrecision',
         'Views': 'views',
+        'CsvLocation': 'csvLocation',
+        'CsvFormatTimestamp': 'csvFormatTimestamp',
+        'SnapshotSettingsName': 'snapshotSettingsName',
+        'SnapshotViewCsvGenerationMode': 'snapshotViewCsvGenerationMode',
+        'CsvDumpTxPortLabelMap': 'csvDumpTxPortLabelMap',
+        'OpenViewer': 'openViewer',
+        'SnapshotViewContents': 'snapshotViewContents',
+        'CsvName': 'csvName',
+        'NextGenRefreshBeforeSnapshot': 'nextGenRefreshBeforeSnapshot',
     }
 
     def __init__(self, parent):

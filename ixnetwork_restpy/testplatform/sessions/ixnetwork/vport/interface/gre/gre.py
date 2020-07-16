@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,11 +31,11 @@ class Gre(Base):
     __slots__ = ()
     _SDM_NAME = 'gre'
     _SDM_ATT_MAP = {
+        'UseChecksum': 'useChecksum',
         'Dest': 'dest',
         'InKey': 'inKey',
-        'OutKey': 'outKey',
         'Source': 'source',
-        'UseChecksum': 'useChecksum',
+        'OutKey': 'outKey',
         'UseKey': 'useKey',
         'UseSequence': 'useSequence',
     }

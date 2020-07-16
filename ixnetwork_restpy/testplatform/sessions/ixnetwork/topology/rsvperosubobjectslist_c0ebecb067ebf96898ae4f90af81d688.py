@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,18 +32,18 @@ class RsvpEroSubObjectsList(Base):
     __slots__ = ()
     _SDM_NAME = 'rsvpEroSubObjectsList'
     _SDM_ATT_MAP = {
-        'AsNumber': 'asNumber',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Ip': 'ip',
-        'LeafIp': 'leafIp',
-        'LocalIp': 'localIp',
         'LooseFlag': 'looseFlag',
-        'Name': 'name',
+        'Ip': 'ip',
         'P2mpIdAsIp': 'p2mpIdAsIp',
+        'LeafIp': 'leafIp',
         'P2mpIdAsNum': 'p2mpIdAsNum',
-        'PrefixLength': 'prefixLength',
+        'LocalIp': 'localIp',
+        'AsNumber': 'asNumber',
+        'DescriptiveName': 'descriptiveName',
         'Type': 'type',
+        'PrefixLength': 'prefixLength',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

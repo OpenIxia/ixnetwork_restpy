@@ -4,10 +4,24 @@
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://en.wikipedia.org/wiki/MIT_License)
 [![downloads](https://pepy.tech/badge/ixnetwork-restpy)](https://pepy.tech/project/ixnetwork-restpy)
 
-## Install the package
+
+## Install the client
 ```
 pip install --upgrade ixnetwork-restpy
 ```
+
+
+## Import the package
+Import a package based on your product:
+```python
+# The ixnetwork_restpy package is the superset of all IxNetwork products
+from ixnetwork_restpy import SessionAssistant
+```
+```python
+# The uhd_restpy package is a subset of the ixnetwork_restpy package for the UHD appliance
+from uhd_restpy import SessionAssistant
+```
+
 
 ## Start scripting
 ```python
@@ -87,9 +101,9 @@ Documentation is available using the following methods:
 
 * Documentation available in the online doc browser is also inlined in each class, property and method and can be viewed using the python help command
   ```python
-  from ixnetwork_restpy.testplatform.testplatform import TestPlatform
+  from ixnetwork_restpy import SessionAssistant
   
-  help(TestPlatform)
+  help(SessionAssistant)
   ```
 
 ## Additional Samples

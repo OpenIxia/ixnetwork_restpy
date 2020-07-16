@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,36 +33,36 @@ class BgpIpv6AdL2Vpn(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpIpv6AdL2Vpn'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AsNumberVplsId': 'asNumberVplsId',
-        'AsNumberVplsRd': 'asNumberVplsRd',
-        'AsNumberVplsRt': 'asNumberVplsRt',
-        'AssignedNumberVplsId': 'assignedNumberVplsId',
-        'AssignedNumberVplsRd': 'assignedNumberVplsRd',
-        'AssignedNumberVplsRt': 'assignedNumberVplsRt',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DutIpv6': 'dutIpv6',
-        'Errors': 'errors',
-        'ImportRDAsRT': 'importRDAsRT',
         'ImportVplsIdAsRd': 'importVplsIdAsRd',
+        'StackedLayers': 'stackedLayers',
+        'ConnectedVia': 'connectedVia',
         'IpAddressVplsId': 'ipAddressVplsId',
+        'SessionStatus': 'sessionStatus',
+        'Errors': 'errors',
+        'DutIpv6': 'dutIpv6',
+        'AssignedNumberVplsRd': 'assignedNumberVplsRd',
+        'TypeVsiId': 'typeVsiId',
+        'Status': 'status',
         'IpAddressVplsRd': 'ipAddressVplsRd',
+        'TypeVplsId': 'typeVplsId',
+        'TypeVplsRt': 'typeVplsRt',
+        'NumberVsiId': 'numberVsiId',
+        'AssignedNumberVplsRt': 'assignedNumberVplsRt',
+        'AssignedNumberVplsId': 'assignedNumberVplsId',
         'IpAddressVplsRt': 'ipAddressVplsRt',
         'LocalIpv6': 'localIpv6',
-        'LocalRouterID': 'localRouterID',
         'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NumberVsiId': 'numberVsiId',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'TypeVplsId': 'typeVplsId',
+        'Active': 'active',
         'TypeVplsRd': 'typeVplsRd',
-        'TypeVplsRt': 'typeVplsRt',
-        'TypeVsiId': 'typeVsiId',
+        'LocalRouterID': 'localRouterID',
+        'Count': 'count',
+        'Name': 'name',
+        'AsNumberVplsRt': 'asNumberVplsRt',
+        'DescriptiveName': 'descriptiveName',
+        'ImportRDAsRT': 'importRDAsRT',
+        'StateCounts': 'stateCounts',
+        'AsNumberVplsRd': 'asNumberVplsRd',
+        'AsNumberVplsId': 'asNumberVplsId',
     }
 
     def __init__(self, parent):
@@ -503,6 +503,31 @@ class BgpIpv6AdL2Vpn(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def ReadvertiseADVPLSRoute(self, *args, **kwargs):
         """Executes the readvertiseADVPLSRoute operation on the server.
 
@@ -512,7 +537,7 @@ class BgpIpv6AdL2Vpn(Base):
 
         readvertiseADVPLSRoute(SessionIndices=list)
         -------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         readvertiseADVPLSRoute(SessionIndices=string)
         ---------------------------------------------
@@ -557,7 +582,7 @@ class BgpIpv6AdL2Vpn(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -576,13 +601,13 @@ class BgpIpv6AdL2Vpn(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start BGP AD VPLS
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -601,13 +626,13 @@ class BgpIpv6AdL2Vpn(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop BGP AD VPLS
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------
@@ -632,7 +657,7 @@ class BgpIpv6AdL2Vpn(Base):
 
         withdrawADVPLSRoute(SessionIndices=list)
         ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         withdrawADVPLSRoute(SessionIndices=string)
         ------------------------------------------

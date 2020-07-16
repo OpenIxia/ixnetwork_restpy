@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,11 +33,11 @@ class FcFportOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'fcFportOptions'
     _SDM_ATT_MAP = {
-        'B2bCredit': 'b2bCredit',
         'EdTov': 'edTov',
-        'MaxPacketsPerSecond': 'maxPacketsPerSecond',
         'ObjectId': 'objectId',
+        'MaxPacketsPerSecond': 'maxPacketsPerSecond',
         'OverrideGlobalRate': 'overrideGlobalRate',
+        'B2bCredit': 'b2bCredit',
         'RtTov': 'rtTov',
     }
 

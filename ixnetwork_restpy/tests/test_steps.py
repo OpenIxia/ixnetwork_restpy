@@ -14,3 +14,6 @@ class TestSteps(unittest.TestCase):
         session = testplatform.Sessions.find()
         # session.Ixnetwork.Topology.find().DeviceGroup.find().Ethernet.find().Ipv4.find().
         assert(len(session) == 1)
+
+if __name__ == '__main__':
+    unittest.main()

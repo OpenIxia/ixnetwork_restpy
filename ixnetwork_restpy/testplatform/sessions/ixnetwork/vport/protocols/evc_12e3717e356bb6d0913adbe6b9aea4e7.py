@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,13 +34,13 @@ class Evc(Base):
     _SDM_NAME = 'evc'
     _SDM_ATT_MAP = {
         'DefaultEvc': 'defaultEvc',
-        'Enabled': 'enabled',
-        'EvcIdentifier': 'evcIdentifier',
-        'EvcIdentifierLength': 'evcIdentifierLength',
         'EvcStatus': 'evcStatus',
-        'EvcType': 'evcType',
-        'ReferenceId': 'referenceId',
+        'Enabled': 'enabled',
         'UntaggedPriorityTagged': 'untaggedPriorityTagged',
+        'EvcIdentifierLength': 'evcIdentifierLength',
+        'ReferenceId': 'referenceId',
+        'EvcIdentifier': 'evcIdentifier',
+        'EvcType': 'evcType',
     }
 
     def __init__(self, parent):

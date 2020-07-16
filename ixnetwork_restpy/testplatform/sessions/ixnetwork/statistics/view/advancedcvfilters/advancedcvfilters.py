@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,13 +33,13 @@ class AdvancedCVFilters(Base):
     __slots__ = ()
     _SDM_NAME = 'advancedCVFilters'
     _SDM_ATT_MAP = {
+        'Protocol': 'protocol',
+        'Caption': 'caption',
         'AvailableFilterOptions': 'availableFilterOptions',
         'AvailableGroupingOptions': 'availableGroupingOptions',
-        'Caption': 'caption',
         'Expression': 'expression',
-        'Grouping': 'grouping',
-        'Protocol': 'protocol',
         'SortingStats': 'sortingStats',
+        'Grouping': 'grouping',
     }
 
     def __init__(self, parent):

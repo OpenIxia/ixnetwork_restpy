@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,17 +32,17 @@ class Bands(Base):
     __slots__ = ()
     _SDM_NAME = 'bands'
     _SDM_ATT_MAP = {
-        'BandDescription': 'bandDescription',
-        'BandType': 'bandType',
-        'BurstSize': 'burstSize',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Experimenter': 'experimenter',
-        'MeterIndex': 'meterIndex',
+        'BurstSize': 'burstSize',
+        'BandType': 'bandType',
         'Multiplier': 'multiplier',
-        'Name': 'name',
+        'BandDescription': 'bandDescription',
         'PrecedenceLevel': 'precedenceLevel',
         'Rate': 'rate',
+        'DescriptiveName': 'descriptiveName',
+        'MeterIndex': 'meterIndex',
+        'Experimenter': 'experimenter',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

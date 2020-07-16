@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,20 +32,20 @@ class PceUpdateXroSubObjectList(Base):
     __slots__ = ()
     _SDM_NAME = 'pceUpdateXroSubObjectList'
     _SDM_ATT_MAP = {
-        'ActiveXRO': 'activeXRO',
-        'AsNumber': 'asNumber',
-        'Attribute': 'attribute',
-        'InterfaceId': 'interfaceId',
         'Ipv4Address': 'ipv4Address',
-        'Ipv6Address': 'ipv6Address',
+        'InterfaceId': 'interfaceId',
         'PFlagXro': 'pFlagXro',
-        'PceId128': 'pceId128',
+        'Ipv6Address': 'ipv6Address',
+        'Attribute': 'attribute',
         'PceId32': 'pceId32',
-        'PrefixLength': 'prefixLength',
+        'PceId128': 'pceId128',
         'RouterId': 'routerId',
-        'SrlgId': 'srlgId',
-        'SubObjectType': 'subObjectType',
+        'AsNumber': 'asNumber',
         'XBit': 'xBit',
+        'SubObjectType': 'subObjectType',
+        'SrlgId': 'srlgId',
+        'ActiveXRO': 'activeXRO',
+        'PrefixLength': 'prefixLength',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,31 +31,31 @@ class IsisFlexAlgorithmList(Base):
     __slots__ = ()
     _SDM_NAME = 'isisFlexAlgorithmList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdvTwiceExcludeAg': 'advTwiceExcludeAg',
-        'AdvTwiceIncludeAllAg': 'advTwiceIncludeAllAg',
-        'AdvTwiceIncludeAnyAg': 'advTwiceIncludeAnyAg',
-        'CalcType': 'calcType',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DontAdvInSrAlgo': 'dontAdvInSrAlgo',
-        'EnableExcludeAg': 'enableExcludeAg',
-        'EnableFadfTlv': 'enableFadfTlv',
-        'EnableIncludeAllAg': 'enableIncludeAllAg',
-        'EnableIncludeAnyAg': 'enableIncludeAnyAg',
         'ExcludeAgExtAg': 'excludeAgExtAg',
-        'ExcludeAgExtAgLen': 'excludeAgExtAgLen',
-        'FadfLen': 'fadfLen',
-        'FlexAlgo': 'flexAlgo',
         'IncludeAllAgExtAg': 'includeAllAgExtAg',
-        'IncludeAllAgExtAgLen': 'includeAllAgExtAgLen',
         'IncludeAnyAgExtAg': 'includeAnyAgExtAg',
         'IncludeAnyAgExtAgLen': 'includeAnyAgExtAgLen',
+        'AdvTwiceIncludeAllAg': 'advTwiceIncludeAllAg',
+        'EnableExcludeAg': 'enableExcludeAg',
         'MFlag': 'mFlag',
-        'MetricType': 'metricType',
-        'Name': 'name',
+        'ExcludeAgExtAgLen': 'excludeAgExtAgLen',
         'Priority': 'priority',
+        'AdvTwiceExcludeAg': 'advTwiceExcludeAg',
+        'EnableIncludeAllAg': 'enableIncludeAllAg',
+        'DontAdvInSrAlgo': 'dontAdvInSrAlgo',
+        'EnableIncludeAnyAg': 'enableIncludeAnyAg',
+        'MetricType': 'metricType',
+        'CalcType': 'calcType',
         'ReservedBits': 'reservedBits',
+        'IncludeAllAgExtAgLen': 'includeAllAgExtAgLen',
+        'Active': 'active',
+        'Count': 'count',
+        'Name': 'name',
+        'AdvTwiceIncludeAnyAg': 'advTwiceIncludeAnyAg',
+        'FadfLen': 'fadfLen',
+        'EnableFadfTlv': 'enableFadfTlv',
+        'DescriptiveName': 'descriptiveName',
+        'FlexAlgo': 'flexAlgo',
     }
 
     def __init__(self, parent):

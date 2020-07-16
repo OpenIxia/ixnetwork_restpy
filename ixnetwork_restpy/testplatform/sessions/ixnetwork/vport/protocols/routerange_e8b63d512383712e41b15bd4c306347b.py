@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,15 +33,15 @@ class RouteRange(Base):
     __slots__ = ()
     _SDM_NAME = 'routeRange'
     _SDM_ATT_MAP = {
-        'AddressFamily': 'addressFamily',
-        'Enabled': 'enabled',
-        'FirstRoute': 'firstRoute',
         'IpType': 'ipType',
-        'Mask': 'mask',
+        'FirstRoute': 'firstRoute',
+        'Enabled': 'enabled',
         'Metric': 'metric',
-        'NumberOfRoutes': 'numberOfRoutes',
+        'Mask': 'mask',
         'Step': 'step',
+        'NumberOfRoutes': 'numberOfRoutes',
         'Type': 'type',
+        'AddressFamily': 'addressFamily',
     }
 
     def __init__(self, parent):

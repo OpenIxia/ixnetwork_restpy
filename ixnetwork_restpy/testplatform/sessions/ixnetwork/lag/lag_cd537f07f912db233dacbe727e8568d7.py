@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,15 +33,29 @@ class Lag(Base):
     __slots__ = ()
     _SDM_NAME = 'lag'
     _SDM_ATT_MAP = {
-        'AggregationStatus': 'aggregationStatus',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
         'Vports': 'vports',
+        'DescriptiveName': 'descriptiveName',
+        'AggregationStatus': 'aggregationStatus',
+        'Name': 'name',
     }
 
     def __init__(self, parent):
         super(Lag, self).__init__(parent)
+
+    @property
+    def LagMode(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lagmode_d3c47f2148e3a3acd418ebf95f2b7b4e.LagMode): An instance of the LagMode class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lagmode_d3c47f2148e3a3acd418ebf95f2b7b4e import LagMode
+        return LagMode(self)._select()
 
     @property
     def ProtocolStack(self):
@@ -193,6 +207,19 @@ class Lag(Base):
         """
         return self._read(href)
 
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
+
     def AddQuickFlowGroups(self, *args, **kwargs):
         """Executes the addQuickFlowGroups operation on the server.
 
@@ -224,6 +251,25 @@ class Lag(Base):
         """
         payload = { "Arg1": self }
         return self._execute('clearPortTransmitDuration', payload=payload, response_object=None)
+
+    def PauseStatelessTraffic(self, *args, **kwargs):
+        """Executes the pauseStatelessTraffic operation on the server.
+
+        Pause or Resume stateless traffic.
+
+        pauseStatelessTraffic(Arg2=bool)
+        --------------------------------
+        - Arg2 (bool): If true, it will pause running traffic. If false, it will resume previously paused traffic.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('pauseStatelessTraffic', payload=payload, response_object=None)
 
     def Start(self):
         """Executes the start operation on the server.

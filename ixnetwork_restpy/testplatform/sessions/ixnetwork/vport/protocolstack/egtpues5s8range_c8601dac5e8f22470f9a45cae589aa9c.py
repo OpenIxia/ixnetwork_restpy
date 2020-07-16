@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,30 +31,30 @@ class EgtpUeS5S8Range(Base):
     __slots__ = ()
     _SDM_NAME = 'egtpUeS5S8Range'
     _SDM_ATT_MAP = {
-        'APNRestriction': 'aPNRestriction',
-        'Count': 'count',
+        'UpdateAmbrIncrement': 'updateAmbrIncrement',
+        'MEI': 'mEI',
+        'Lifetime': 'lifetime',
+        'MaxIntervalVariation': 'maxIntervalVariation',
+        'UpdateAmbrTimeout': 'updateAmbrTimeout',
+        'ParentRange': 'parentRange',
+        'ObjectId': 'objectId',
+        'IncrementBy': 'incrementBy',
+        'UpdateAmbrEnable': 'updateAmbrEnable',
         'EnableLifetime': 'enableLifetime',
         'EnableMobility': 'enableMobility',
         'EnableSV': 'enableSV',
-        'Enabled': 'enabled',
-        'IMSI': 'iMSI',
-        'IncrementBy': 'incrementBy',
-        'Lifetime': 'lifetime',
-        'MEI': 'mEI',
-        'MSISDN': 'mSISDN',
-        'MaxDelayVariation': 'maxDelayVariation',
-        'MaxIntervalVariation': 'maxIntervalVariation',
-        'MobilityInterval': 'mobilityInterval',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'ParentRange': 'parentRange',
         'SV': 'sV',
-        'SelectionMode': 'selectionMode',
-        'StartDelay': 'startDelay',
-        'UpdateAmbrEnable': 'updateAmbrEnable',
-        'UpdateAmbrIncrement': 'updateAmbrIncrement',
         'UpdateAmbrIterations': 'updateAmbrIterations',
-        'UpdateAmbrTimeout': 'updateAmbrTimeout',
+        'StartDelay': 'startDelay',
+        'MaxDelayVariation': 'maxDelayVariation',
+        'SelectionMode': 'selectionMode',
+        'IMSI': 'iMSI',
+        'Count': 'count',
+        'APNRestriction': 'aPNRestriction',
+        'Name': 'name',
+        'MSISDN': 'mSISDN',
+        'Enabled': 'enabled',
+        'MobilityInterval': 'mobilityInterval',
     }
 
     def __init__(self, parent):

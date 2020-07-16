@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,82 +33,82 @@ class IsisL3(Base):
     __slots__ = ()
     _SDM_NAME = 'isisL3'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdjSID': 'adjSID',
-        'AdjSidCount': 'adjSidCount',
-        'AdvertiseLinkMsd': 'advertiseLinkMsd',
-        'AuthType': 'authType',
-        'AutoAdjustArea': 'autoAdjustArea',
-        'AutoAdjustMTU': 'autoAdjustMTU',
-        'AutoAdjustSupportedProtocols': 'autoAdjustSupportedProtocols',
-        'BFlag': 'bFlag',
-        'CircuitTranmitPasswordOrMD5Key': 'circuitTranmitPasswordOrMD5Key',
-        'ConfiguredHoldTime': 'configuredHoldTime',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DedicatedOnePlusOne': 'dedicatedOnePlusOne',
-        'DedicatedOneToOne': 'dedicatedOneToOne',
-        'DescriptiveName': 'descriptiveName',
-        'Enable3WayHandshake': 'enable3WayHandshake',
-        'EnableAdjSID': 'enableAdjSID',
-        'EnableAppSpecSrlg': 'enableAppSpecSrlg',
-        'EnableBfdRegistration': 'enableBfdRegistration',
-        'EnableConfiguredHoldTime': 'enableConfiguredHoldTime',
-        'EnableIPv6SID': 'enableIPv6SID',
-        'EnableLinkProtection': 'enableLinkProtection',
-        'EnableMT': 'enableMT',
-        'EnableSRLG': 'enableSRLG',
-        'Enhanced': 'enhanced',
-        'Errors': 'errors',
-        'ExtendedLocalCircuitId': 'extendedLocalCircuitId',
-        'ExtraTraffic': 'extraTraffic',
-        'FFlag': 'fFlag',
-        'Funcflags': 'funcflags',
-        'Function': 'function',
-        'IncludeMaxSlMsd': 'includeMaxSlMsd',
-        'IncludeMaximumEndDMsd': 'includeMaximumEndDMsd',
-        'IncludeMaximumEndPopMsd': 'includeMaximumEndPopMsd',
-        'IncludeMaximumTEncapMsd': 'includeMaximumTEncapMsd',
-        'IncludeMaximumTInsertMsd': 'includeMaximumTInsertMsd',
-        'InterfaceMetric': 'interfaceMetric',
-        'Ipv6MTMetric': 'ipv6MTMetric',
-        'Ipv6SidValue': 'ipv6SidValue',
-        'LFlag': 'lFlag',
         'Level1DeadInterval': 'level1DeadInterval',
+        'Status': 'status',
+        'OverrideFFlag': 'overrideFFlag',
+        'IncludeMaximumTEncapMsd': 'includeMaximumTEncapMsd',
+        'Weight': 'weight',
+        'VFlag': 'vFlag',
+        'MaxTEncap': 'maxTEncap',
+        'SrlgCount': 'srlgCount',
+        'EnableAppSpecSrlg': 'enableAppSpecSrlg',
+        'MaxEndDMsd': 'maxEndDMsd',
+        'IncludeMaximumEndDMsd': 'includeMaximumEndDMsd',
+        'AdvertiseLinkMsd': 'advertiseLinkMsd',
+        'EnableAdjSID': 'enableAdjSID',
+        'Funcflags': 'funcflags',
+        'ConnectedVia': 'connectedVia',
         'Level1HelloInterval': 'level1HelloInterval',
-        'Level1Priority': 'level1Priority',
+        'Enhanced': 'enhanced',
+        'EnableSRLG': 'enableSRLG',
+        'EnableMT': 'enableMT',
         'Level2DeadInterval': 'level2DeadInterval',
         'Level2HelloInterval': 'level2HelloInterval',
-        'Level2Priority': 'level2Priority',
-        'LevelType': 'levelType',
+        'ExtraTraffic': 'extraTraffic',
         'LocalSystemID': 'localSystemID',
-        'MaxEndDMsd': 'maxEndDMsd',
-        'MaxEndPopMsd': 'maxEndPopMsd',
-        'MaxSlMsd': 'maxSlMsd',
-        'MaxTEncap': 'maxTEncap',
+        'AuthType': 'authType',
+        'Errors': 'errors',
         'MaxTInsertMsd': 'maxTInsertMsd',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NetworkType': 'networkType',
-        'NoOfAppSpecSrlg': 'noOfAppSpecSrlg',
-        'NoOfTeProfile': 'noOfTeProfile',
-        'OverrideFFlag': 'overrideFFlag',
-        'PFlag': 'pFlag',
-        'Reserved0x40': 'reserved0x40',
-        'Reserved0x80': 'reserved0x80',
-        'SFlag': 'sFlag',
-        'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
-        'Shared': 'shared',
-        'SrlgCount': 'srlgCount',
-        'Srv6SidFlags': 'srv6SidFlags',
+        'FFlag': 'fFlag',
+        'EnableLinkProtection': 'enableLinkProtection',
+        'AutoAdjustSupportedProtocols': 'autoAdjustSupportedProtocols',
+        'DedicatedOneToOne': 'dedicatedOneToOne',
+        'BFlag': 'bFlag',
         'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
+        'ExtendedLocalCircuitId': 'extendedLocalCircuitId',
+        'Level2Priority': 'level2Priority',
+        'MaxEndPopMsd': 'maxEndPopMsd',
+        'EnableIPv6SID': 'enableIPv6SID',
+        'Ipv6MTMetric': 'ipv6MTMetric',
+        'SFlag': 'sFlag',
+        'SessionStatus': 'sessionStatus',
+        'DedicatedOnePlusOne': 'dedicatedOnePlusOne',
+        'LFlag': 'lFlag',
+        'Function': 'function',
+        'Reserved0x80': 'reserved0x80',
+        'AutoAdjustArea': 'autoAdjustArea',
         'SuppressHello': 'suppressHello',
+        'MaxSlMsd': 'maxSlMsd',
         'Unprotected': 'unprotected',
-        'VFlag': 'vFlag',
-        'Weight': 'weight',
+        'AdjSID': 'adjSID',
+        'Srv6SidFlags': 'srv6SidFlags',
+        'IncludeMaxSlMsd': 'includeMaxSlMsd',
+        'Reserved0x40': 'reserved0x40',
+        'NoOfAppSpecSrlg': 'noOfAppSpecSrlg',
+        'Multiplier': 'multiplier',
+        'Active': 'active',
+        'AutoAdjustMTU': 'autoAdjustMTU',
+        'NetworkType': 'networkType',
+        'Count': 'count',
+        'IncludeMaximumEndPopMsd': 'includeMaximumEndPopMsd',
+        'PFlag': 'pFlag',
+        'Name': 'name',
+        'ConfiguredHoldTime': 'configuredHoldTime',
+        'StateCounts': 'stateCounts',
+        'Level1Priority': 'level1Priority',
+        'Ipv6SidValue': 'ipv6SidValue',
+        'EnableBfdRegistration': 'enableBfdRegistration',
+        'Enable3WayHandshake': 'enable3WayHandshake',
+        'AdjSidCount': 'adjSidCount',
+        'CircuitTranmitPasswordOrMD5Key': 'circuitTranmitPasswordOrMD5Key',
+        'DescriptiveName': 'descriptiveName',
+        'IncludeMaximumTInsertMsd': 'includeMaximumTInsertMsd',
+        'NoOfTeProfile': 'noOfTeProfile',
+        'Shared': 'shared',
+        'InterfaceMetric': 'interfaceMetric',
+        'SessionInfo': 'sessionInfo',
+        'LevelType': 'levelType',
+        'EnableConfiguredHoldTime': 'enableConfiguredHoldTime',
     }
 
     def __init__(self, parent):
@@ -158,7 +158,7 @@ class IsisL3(Base):
 
     @property
     def IsisTrafficEngineering(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrafficengineering_6032af9b157866ba1321273f0c47a612.IsisTrafficEngineering): An instance of the IsisTrafficEngineering class
@@ -1170,6 +1170,31 @@ class IsisL3(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def ClearAllLearnedInfo(self, *args, **kwargs):
         """Executes the clearAllLearnedInfo operation on the server.
 
@@ -1179,7 +1204,7 @@ class IsisL3(Base):
 
         clearAllLearnedInfo(SessionIndices=list)
         ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         clearAllLearnedInfo(SessionIndices=string)
         ------------------------------------------
@@ -1224,7 +1249,7 @@ class IsisL3(Base):
 
         getLearnedInfo(SessionIndices=list)
         -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         getLearnedInfo(SessionIndices=string)
         -------------------------------------
@@ -1254,7 +1279,7 @@ class IsisL3(Base):
 
         isisStartInterface(SessionIndices=list)
         ---------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         isisStartInterface(SessionIndices=string)
         -----------------------------------------
@@ -1279,7 +1304,7 @@ class IsisL3(Base):
 
         isisStopInterface(SessionIndices=list)
         --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         isisStopInterface(SessionIndices=string)
         ----------------------------------------
@@ -1304,7 +1329,7 @@ class IsisL3(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -1329,7 +1354,7 @@ class IsisL3(Base):
 
         resumeHello(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         resumeHello(SessionIndices=string)
         ----------------------------------
@@ -1368,13 +1393,13 @@ class IsisL3(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected protocols.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -1393,13 +1418,13 @@ class IsisL3(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected protocols.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------
@@ -1424,7 +1449,7 @@ class IsisL3(Base):
 
         stopHello(SessionIndices=list)
         ------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stopHello(SessionIndices=string)
         --------------------------------

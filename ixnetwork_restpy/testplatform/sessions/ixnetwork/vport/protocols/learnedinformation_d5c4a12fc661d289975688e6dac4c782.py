@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,37 +32,37 @@ class LearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedInformation'
     _SDM_ATT_MAP = {
-        'DestinationAddressIpv4': 'destinationAddressIpv4',
         'DownstreamAddressType': 'downstreamAddressType',
-        'DownstreamInterfaceAddress': 'downstreamInterfaceAddress',
-        'DownstreamIpAddress': 'downstreamIpAddress',
-        'EchoResponseTimeoutMs': 'echoResponseTimeoutMs',
-        'EnableAdvance': 'enableAdvance',
-        'EnableDsiFlag': 'enableDsiFlag',
-        'EnableDsnFlag': 'enableDsnFlag',
-        'EnableFecValidation': 'enableFecValidation',
-        'EnableIncludeDownstreamMappingTlv': 'enableIncludeDownstreamMappingTlv',
-        'EnableIncludePadTlv': 'enableIncludePadTlv',
-        'EnableIncludeVendorEnterpriseNumberTlv': 'enableIncludeVendorEnterpriseNumberTlv',
-        'EnablePauseResumeBfdPduTrigger': 'enablePauseResumeBfdPduTrigger',
-        'EnablePauseResumeReplyTrigger': 'enablePauseResumeReplyTrigger',
-        'EnableSendTriggeredPing': 'enableSendTriggeredPing',
-        'EnableSendTriggeredTraceroute': 'enableSendTriggeredTraceroute',
-        'EnableSetResetEchoReplyCodeTrigger': 'enableSetResetEchoReplyCodeTrigger',
-        'IsGeneralLearnedInformationRefreshed': 'isGeneralLearnedInformationRefreshed',
-        'IsTriggeredPingLearnedInformationRefreshed': 'isTriggeredPingLearnedInformationRefreshed',
-        'IsTriggeredTraceRouteLearnedInformationRefreshed': 'isTriggeredTraceRouteLearnedInformationRefreshed',
-        'PadTlvFirstOctetOptions': 'padTlvFirstOctetOptions',
-        'PadTlvLength': 'padTlvLength',
-        'PauseResumeBfdPduTriggerOption': 'pauseResumeBfdPduTriggerOption',
-        'PauseResumeReplyTriggerOption': 'pauseResumeReplyTriggerOption',
-        'ReplyMode': 'replyMode',
-        'ReturnCodeOption': 'returnCodeOption',
         'ReturnSubCode': 'returnSubCode',
         'TriggerOptions': 'triggerOptions',
-        'TriggerType': 'triggerType',
+        'EnablePauseResumeReplyTrigger': 'enablePauseResumeReplyTrigger',
+        'EnableSendTriggeredTraceroute': 'enableSendTriggeredTraceroute',
+        'EnableIncludeVendorEnterpriseNumberTlv': 'enableIncludeVendorEnterpriseNumberTlv',
+        'EnableIncludeDownstreamMappingTlv': 'enableIncludeDownstreamMappingTlv',
+        'ReplyMode': 'replyMode',
+        'DestinationAddressIpv4': 'destinationAddressIpv4',
+        'EnableDsiFlag': 'enableDsiFlag',
+        'PauseResumeReplyTriggerOption': 'pauseResumeReplyTriggerOption',
+        'ReturnCodeOption': 'returnCodeOption',
+        'EnableDsnFlag': 'enableDsnFlag',
+        'EnableSetResetEchoReplyCodeTrigger': 'enableSetResetEchoReplyCodeTrigger',
+        'EnableSendTriggeredPing': 'enableSendTriggeredPing',
+        'EchoResponseTimeoutMs': 'echoResponseTimeoutMs',
+        'EnableAdvance': 'enableAdvance',
+        'IsGeneralLearnedInformationRefreshed': 'isGeneralLearnedInformationRefreshed',
         'TtlLimit': 'ttlLimit',
+        'TriggerType': 'triggerType',
+        'IsTriggeredTraceRouteLearnedInformationRefreshed': 'isTriggeredTraceRouteLearnedInformationRefreshed',
+        'DownstreamInterfaceAddress': 'downstreamInterfaceAddress',
+        'EnablePauseResumeBfdPduTrigger': 'enablePauseResumeBfdPduTrigger',
+        'DownstreamIpAddress': 'downstreamIpAddress',
+        'EnableFecValidation': 'enableFecValidation',
+        'PauseResumeBfdPduTriggerOption': 'pauseResumeBfdPduTriggerOption',
         'VendorEnterpriseNumber': 'vendorEnterpriseNumber',
+        'EnableIncludePadTlv': 'enableIncludePadTlv',
+        'PadTlvFirstOctetOptions': 'padTlvFirstOctetOptions',
+        'IsTriggeredPingLearnedInformationRefreshed': 'isTriggeredPingLearnedInformationRefreshed',
+        'PadTlvLength': 'padTlvLength',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,22 +31,22 @@ class Page(Base):
     __slots__ = ()
     _SDM_NAME = 'page'
     _SDM_ATT_MAP = {
-        'AllowPaging': 'allowPaging',
-        'ColumnCaptions': 'columnCaptions',
         'ColumnCount': 'columnCount',
-        'CurrentPage': 'currentPage',
         'EgressMode': 'egressMode',
-        'EgressPageSize': 'egressPageSize',
-        'IsBlocked': 'isBlocked',
-        'IsReady': 'isReady',
-        'IsReadyTimeout': 'isReadyTimeout',
+        'AllowPaging': 'allowPaging',
         'PageSize': 'pageSize',
         'PageValues': 'pageValues',
-        'RowCount': 'rowCount',
+        'IsReadyTimeout': 'isReadyTimeout',
+        'ColumnCaptions': 'columnCaptions',
         'RowValues': 'rowValues',
-        'Timestamp': 'timestamp',
-        'TotalPages': 'totalPages',
         'TotalRows': 'totalRows',
+        'IsReady': 'isReady',
+        'EgressPageSize': 'egressPageSize',
+        'RowCount': 'rowCount',
+        'Timestamp': 'timestamp',
+        'IsBlocked': 'isBlocked',
+        'TotalPages': 'totalPages',
+        'CurrentPage': 'currentPage',
     }
 
     def __init__(self, parent):

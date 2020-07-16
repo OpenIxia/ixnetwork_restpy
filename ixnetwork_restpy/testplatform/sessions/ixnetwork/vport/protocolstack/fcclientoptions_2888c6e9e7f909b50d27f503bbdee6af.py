@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,17 +33,17 @@ class FcClientOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'fcClientOptions'
     _SDM_ATT_MAP = {
+        'EdTov': 'edTov',
+        'ObjectId': 'objectId',
+        'SetupRate': 'setupRate',
+        'MaxPacketsPerSecond': 'maxPacketsPerSecond',
+        'OverrideGlobalRate': 'overrideGlobalRate',
+        'B2bRxSize': 'b2bRxSize',
         'Associates': 'associates',
         'B2bCredit': 'b2bCredit',
-        'B2bRxSize': 'b2bRxSize',
-        'EdTov': 'edTov',
-        'EdTovMode': 'edTovMode',
-        'MaxPacketsPerSecond': 'maxPacketsPerSecond',
-        'ObjectId': 'objectId',
-        'OverrideGlobalRate': 'overrideGlobalRate',
         'RtTov': 'rtTov',
         'RtTovMode': 'rtTovMode',
-        'SetupRate': 'setupRate',
+        'EdTovMode': 'edTovMode',
         'TeardownRate': 'teardownRate',
     }
 

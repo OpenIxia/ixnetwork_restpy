@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,26 +32,26 @@ class OfChannelLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'ofChannelLearnedInformation'
     _SDM_ATT_MAP = {
+        'NumberOfPorts': 'numberOfPorts',
+        'NumberOfErrorsReceived': 'numberOfErrorsReceived',
+        'RemotePortNumber': 'remotePortNumber',
+        'GenerationId': 'generationId',
+        'SessionType': 'sessionType',
         'ActionsSupported': 'actionsSupported',
         'Capabilities': 'capabilities',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'FlowRate': 'flowRate',
-        'GenerationId': 'generationId',
-        'LastErrorCode': 'lastErrorCode',
         'LastErrorType': 'lastErrorType',
         'LocalIp': 'localIp',
-        'LocalPortNumber': 'localPortNumber',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
+        'LastErrorCode': 'lastErrorCode',
         'MaxBufferSize': 'maxBufferSize',
+        'FlowRate': 'flowRate',
         'NegotiatedVersion': 'negotiatedVersion',
-        'NumberOfErrorsReceived': 'numberOfErrorsReceived',
-        'NumberOfPorts': 'numberOfPorts',
-        'NumberOfTables': 'numberOfTables',
-        'RemoteIp': 'remoteIp',
-        'RemotePortNumber': 'remotePortNumber',
+        'LocalPortNumber': 'localPortNumber',
         'ReplyState': 'replyState',
+        'RemoteIp': 'remoteIp',
         'Role': 'role',
-        'SessionType': 'sessionType',
+        'DataPathId': 'dataPathId',
+        'NumberOfTables': 'numberOfTables',
     }
 
     def __init__(self, parent):

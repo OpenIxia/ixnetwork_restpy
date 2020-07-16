@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,14 +32,14 @@ class AdVpls(Base):
     __slots__ = ()
     _SDM_NAME = 'adVpls'
     _SDM_ATT_MAP = {
-        'NeighborAddress': 'neighborAddress',
-        'NextHopAddress': 'nextHopAddress',
-        'RemotePeAddress': 'remotePeAddress',
         'RemoteVplsId': 'remoteVplsId',
-        'RemoteVsiId': 'remoteVsiId',
+        'RemotePeAddress': 'remotePeAddress',
         'RouteDistinguisher': 'routeDistinguisher',
-        'RouteTarget': 'routeTarget',
+        'NextHopAddress': 'nextHopAddress',
+        'RemoteVsiId': 'remoteVsiId',
+        'NeighborAddress': 'neighborAddress',
         'SupportedLocally': 'supportedLocally',
+        'RouteTarget': 'routeTarget',
     }
 
     def __init__(self, parent):

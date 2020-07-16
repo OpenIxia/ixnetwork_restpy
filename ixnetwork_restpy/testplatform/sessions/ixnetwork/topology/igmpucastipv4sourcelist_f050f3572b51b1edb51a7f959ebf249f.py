@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,13 +31,13 @@ class IgmpUcastIPv4SourceList(Base):
     __slots__ = ()
     _SDM_NAME = 'igmpUcastIPv4SourceList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
         'Name': 'name',
-        'StartUcastAddr': 'startUcastAddr',
         'State': 'state',
+        'StartUcastAddr': 'startUcastAddr',
+        'DescriptiveName': 'descriptiveName',
         'UcastAddrIncr': 'ucastAddrIncr',
+        'Active': 'active',
         'UcastSrcAddrCnt': 'ucastSrcAddrCnt',
     }
 
@@ -171,7 +171,7 @@ class IgmpUcastIPv4SourceList(Base):
 
         igmpJoinSource(SessionIndices=list)
         -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         igmpJoinSource(SessionIndices=string)
         -------------------------------------
@@ -196,7 +196,7 @@ class IgmpUcastIPv4SourceList(Base):
 
         igmpLeaveSource(SessionIndices=list)
         ------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         igmpLeaveSource(SessionIndices=string)
         --------------------------------------

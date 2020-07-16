@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,16 +32,16 @@ class AssignedLabel(Base):
     __slots__ = ()
     _SDM_NAME = 'assignedLabel'
     _SDM_ATT_MAP = {
-        'CurrentLspOrSubLspUpTime': 'currentLspOrSubLspUpTime',
-        'DestinationIp': 'destinationIp',
-        'Label': 'label',
-        'LeafIp': 'leafIp',
-        'LspId': 'lspId',
         'LspOrSubLspSetupTime': 'lspOrSubLspSetupTime',
+        'CurrentLspOrSubLspUpTime': 'currentLspOrSubLspUpTime',
+        'TunnelId': 'tunnelId',
+        'DestinationIp': 'destinationIp',
+        'Type': 'type',
+        'LeafIp': 'leafIp',
+        'Label': 'label',
+        'LspId': 'lspId',
         'ReservationState': 'reservationState',
         'SourceIp': 'sourceIp',
-        'TunnelId': 'tunnelId',
-        'Type': 'type',
     }
 
     def __init__(self, parent):

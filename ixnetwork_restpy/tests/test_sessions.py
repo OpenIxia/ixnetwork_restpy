@@ -20,3 +20,6 @@ class TestSessions(unittest.TestCase):
         ixnetwork = TestPlatform('127.0.0.1').Sessions.find().Ixnetwork
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.ixnetwork import Ixnetwork
         assert(isinstance(ixnetwork, Ixnetwork) is True)
+
+if __name__ == '__main__':
+    unittest.main()

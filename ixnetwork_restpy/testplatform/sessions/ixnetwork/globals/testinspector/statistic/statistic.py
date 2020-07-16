@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -36,9 +36,9 @@ class Statistic(Base):
         'Enable': 'enable',
         'Name': 'name',
         'Notes': 'notes',
+        'Value': 'value',
         'Operator': 'operator',
         'Unit': 'unit',
-        'Value': 'value',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -25,19 +25,20 @@ from ixnetwork_restpy.files import Files
 
 class Ixnetwork(Base):
     """This is the root node of the hierarchy
-    The Ixnetwork class encapsulates a list of / resources that are managed by the system.
-    A list of resources can be retrieved from the server using the Ixnetwork.find() method.
+    The Ixnetwork class encapsulates a required / resource which will be retrieved from the server every time the property is accessed.
     """
 
     __slots__ = ()
     _SDM_NAME = 'ixnetwork'
+    _SDM_ATT_MAP = {
+    }
 
     def __init__(self, parent):
         super(Ixnetwork, self).__init__(parent)
 
     @property
     def AvailableHardware(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.availablehardware.AvailableHardware): An instance of the AvailableHardware class
@@ -92,6 +93,20 @@ class Ixnetwork(Base):
         return Lag(self)
 
     @property
+    def Locations(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.locations.locations.Locations): An instance of the Locations class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.locations.locations import Locations
+        return Locations(self)
+
+    @property
     def QuickTest(self):
         """
         Returns
@@ -134,31 +149,17 @@ class Ixnetwork(Base):
         return Statistics(self)._select()
 
     @property
-    def Timeline(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.timeline.timeline.Timeline): An instance of the Timeline class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.timeline.timeline import Timeline
-        return Timeline(self)._select()
-
-    @property
     def Topology(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.topology_f5f1d3cc89bb391f61b0e839056168ef.Topology): An instance of the Topology class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.topology_9d0fe0bb2c064aa7010adbdb6cf68958.Topology): An instance of the Topology class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.topology_f5f1d3cc89bb391f61b0e839056168ef import Topology
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.topology_9d0fe0bb2c064aa7010adbdb6cf68958 import Topology
         return Topology(self)
 
     @property
@@ -240,7 +241,22 @@ class Ixnetwork(Base):
     def AssignPorts(self, *args, **kwargs):
         """Executes the assignPorts operation on the server.
 
-        Assign hardware ports to virtual ports.
+        Assign hardware ports to virtual ports using port display names.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        assignPorts(Arg1=list, Arg2=list, Arg3=bool)list
+        ------------------------------------------------
+        - Arg1 (list(str)): A list of port display names, if empty then /vport's location attribute value is used.
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport])): A list of virtual port object references that hardware ports will be attached to.
+        - Arg3 (bool): If true, it will clear ownership on the hardware ports.
+        - Returns list(str[None | /api/v1/sessions/1/ixnetwork/vport]): Returns a list of virtual port object references that were successfully connected.
+
+        assignPorts(Arg1=list, Arg2=bool)list
+        -------------------------------------
+        - Arg1 (list(str)): A list of port display names, if empty then /vport's location attribute value is used.
+        - Arg2 (bool): If true, it will clear ownership on the hardware ports which have location attribute set.
+        - Returns list(str[None | /api/v1/sessions/1/ixnetwork/vport]): Returns a list of virtual port object references that were successfully connected.
 
         assignPorts(Arg1=list, Arg2=list, Arg3=list, Arg4=bool)list
         -----------------------------------------------------------
@@ -248,6 +264,11 @@ class Ixnetwork(Base):
         - Arg2 (list(dict(arg1:str,arg2:str,arg3:str))): A list of chassis, card, port combinations to exclude.
         - Arg3 (list(str[None | /api/v1/sessions/1/ixnetwork/vport])): A list of virtual port object references that hardware ports will be attached to.
         - Arg4 (bool): If true, it will clear ownership on the hardware ports.
+        - Returns list(str[None | /api/v1/sessions/1/ixnetwork/vport]): Returns a list of virtual port object references that were successfully connected.
+
+        assignPorts(Arg1=bool)list
+        --------------------------
+        - Arg1 (bool): If true, it will clear ownership on the hardware ports which have location attribute set.
         - Returns list(str[None | /api/v1/sessions/1/ixnetwork/vport]): Returns a list of virtual port object references that were successfully connected.
 
         Raises
@@ -296,7 +317,7 @@ class Ixnetwork(Base):
     def ClearCPDPStats(self):
         """Executes the clearCPDPStats operation on the server.
 
-        Clear control pland and data plane statistics.
+        Clear control plane and data plane statistics.
 
         Raises
         ------
@@ -828,10 +849,17 @@ class Ixnetwork(Base):
 
         It will get the recommended settings for the given copper type. Available choices are: oneMeter, threeMeters, fiveMeters.
 
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
         getRecommendedSettings(Arg1=string, Arg2=list)
         ----------------------------------------------
         - Arg1 (str): 
         - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port])): 
+
+        getRecommendedSettings(Arg1=string, Arg2=list)
+        ----------------------------------------------
+        - Arg1 (str): 
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport])): 
 
         Raises
         ------
@@ -1368,7 +1396,7 @@ class Ixnetwork(Base):
 
         setLoggingLevel(Arg1=enum)
         --------------------------
-        - Arg1 (str(kDebug | kError | kFatal | kInfo | kNothing | kWarn)): 
+        - Arg1 (str(kDebug | kError | kFatal | kInfo | kNote | kNothing | kWarn)): 
 
         Raises
         ------
@@ -1532,6 +1560,28 @@ class Ixnetwork(Base):
         """
         payload = None
         return self._execute('stopTestConfiguration', payload=payload, response_object=None)
+
+    def SwitchModeLocations(self, *args, **kwargs):
+        """Executes the switchModeLocations operation on the server.
+
+        Switches the port mode. Takes locations as input.
+
+        switchModeLocations(Arg1=list, Arg2=list, Arg3=bool)string
+        ----------------------------------------------------------
+        - Arg1 (list(str)): A list of locations.
+        - Arg2 (list(str)): List of valid Modes.
+        - Arg3 (bool): If true, it will clear ownership on the hardware ports for which mode switch is being done.
+        - Returns str: Warning messages.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('switchModeLocations', payload=payload, response_object=None)
 
     def SyncStatisticsStartTimeWithClientClock(self, *args, **kwargs):
         """Executes the syncStatisticsStartTimeWithClientClock operation on the server.

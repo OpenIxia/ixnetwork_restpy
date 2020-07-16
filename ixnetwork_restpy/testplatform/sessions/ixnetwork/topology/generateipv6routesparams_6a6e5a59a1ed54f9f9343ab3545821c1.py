@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,21 +31,21 @@ class GenerateIpv6RoutesParams(Base):
     __slots__ = ()
     _SDM_NAME = 'generateIpv6RoutesParams'
     _SDM_ATT_MAP = {
-        'AddressRangesToSkip': 'addressRangesToSkip',
-        'CustomDistributionFile': 'customDistributionFile',
         'DuplicateRoutesAsPathSuffix': 'duplicateRoutesAsPathSuffix',
         'DuplicateRoutesPerDevicePercent': 'duplicateRoutesPerDevicePercent',
-        'NetworkAddressStart': 'networkAddressStart',
-        'NetworkAddressStep': 'networkAddressStep',
-        'PrefixLengthDistributionScope': 'prefixLengthDistributionScope',
-        'PrefixLengthDistributionType': 'prefixLengthDistributionType',
-        'PrefixLengthEnd': 'prefixLengthEnd',
-        'PrefixLengthStart': 'prefixLengthStart',
+        'SkipLoopback': 'skipLoopback',
         'PrimaryRoutesAsPathSuffix': 'primaryRoutesAsPathSuffix',
         'PrimaryRoutesPerDevice': 'primaryRoutesPerDevice',
-        'PrimaryRoutesPerRange': 'primaryRoutesPerRange',
-        'SkipLoopback': 'skipLoopback',
+        'NetworkAddressStart': 'networkAddressStart',
+        'PrefixLengthDistributionType': 'prefixLengthDistributionType',
+        'AddressRangesToSkip': 'addressRangesToSkip',
         'SkipMcast': 'skipMcast',
+        'PrefixLengthDistributionScope': 'prefixLengthDistributionScope',
+        'PrefixLengthStart': 'prefixLengthStart',
+        'NetworkAddressStep': 'networkAddressStep',
+        'CustomDistributionFile': 'customDistributionFile',
+        'PrefixLengthEnd': 'prefixLengthEnd',
+        'PrimaryRoutesPerRange': 'primaryRoutesPerRange',
     }
 
     def __init__(self, parent):

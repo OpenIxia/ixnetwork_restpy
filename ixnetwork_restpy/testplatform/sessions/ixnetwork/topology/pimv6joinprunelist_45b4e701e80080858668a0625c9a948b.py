@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,29 +31,29 @@ class PimV6JoinPruneList(Base):
     __slots__ = ()
     _SDM_NAME = 'pimV6JoinPruneList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableFlapInfo': 'enableFlapInfo',
-        'EnablePack': 'enablePack',
-        'FlapInterval': 'flapInterval',
+        'RangeType': 'rangeType',
+        'SwitchOverInterval': 'switchOverInterval',
+        'PruneSourceV6Address': 'pruneSourceV6Address',
+        'SourceV6MaskWidth': 'sourceV6MaskWidth',
+        'SourceV6Address': 'sourceV6Address',
+        'SourceGroupMappingType': 'sourceGroupMappingType',
         'GroupAddressCount': 'groupAddressCount',
         'GroupV6Address': 'groupV6Address',
-        'GroupV6MaskWidth': 'groupV6MaskWidth',
-        'LocalRouterId': 'localRouterId',
-        'Name': 'name',
-        'PruneSourceAddressCount': 'pruneSourceAddressCount',
-        'PruneSourceV6Address': 'pruneSourceV6Address',
         'PruneSourceV6MaskWidth': 'pruneSourceV6MaskWidth',
-        'RangeType': 'rangeType',
-        'RegisterStopTriggerCount': 'registerStopTriggerCount',
+        'EnablePack': 'enablePack',
+        'EnableFlapInfo': 'enableFlapInfo',
         'RpV6Address': 'rpV6Address',
-        'SourceAddressCount': 'sourceAddressCount',
-        'SourceGroupMappingType': 'sourceGroupMappingType',
-        'SourceV6Address': 'sourceV6Address',
-        'SourceV6MaskWidth': 'sourceV6MaskWidth',
+        'RegisterStopTriggerCount': 'registerStopTriggerCount',
         'Status': 'status',
-        'SwitchOverInterval': 'switchOverInterval',
+        'Active': 'active',
+        'GroupV6MaskWidth': 'groupV6MaskWidth',
+        'Count': 'count',
+        'PruneSourceAddressCount': 'pruneSourceAddressCount',
+        'SourceAddressCount': 'sourceAddressCount',
+        'Name': 'name',
+        'FlapInterval': 'flapInterval',
+        'DescriptiveName': 'descriptiveName',
+        'LocalRouterId': 'localRouterId',
     }
 
     def __init__(self, parent):
@@ -363,7 +363,7 @@ class PimV6JoinPruneList(Base):
 
         join(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         join(SessionIndices=string)
         ---------------------------
@@ -393,7 +393,7 @@ class PimV6JoinPruneList(Base):
 
         leave(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         leave(SessionIndices=string)
         ----------------------------
@@ -423,7 +423,7 @@ class PimV6JoinPruneList(Base):
 
         resumePeriodicJoin(SessionIndices=list)
         ---------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         resumePeriodicJoin(SessionIndices=string)
         -----------------------------------------
@@ -453,7 +453,7 @@ class PimV6JoinPruneList(Base):
 
         stopPeriodicJoin(SessionIndices=list)
         -------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stopPeriodicJoin(SessionIndices=string)
         ---------------------------------------

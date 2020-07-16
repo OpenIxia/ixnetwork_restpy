@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,19 +33,19 @@ class TunnelHeadToLeaf(Base):
     __slots__ = ()
     _SDM_NAME = 'tunnelHeadToLeaf'
     _SDM_ATT_MAP = {
-        'DutHopType': 'dutHopType',
-        'DutPrefixLength': 'dutPrefixLength',
-        'Enabled': 'enabled',
         'HeadIpStart': 'headIpStart',
-        'IsAppendTunnelLeaf': 'isAppendTunnelLeaf',
-        'IsPrependDut': 'isPrependDut',
         'IsSendingAsEro': 'isSendingAsEro',
+        'IsPrependDut': 'isPrependDut',
         'IsSendingAsSero': 'isSendingAsSero',
-        'SubObjectList': 'subObjectList',
-        'TunnelLeafCount': 'tunnelLeafCount',
-        'TunnelLeafHopType': 'tunnelLeafHopType',
         'TunnelLeafIpStart': 'tunnelLeafIpStart',
+        'IsAppendTunnelLeaf': 'isAppendTunnelLeaf',
+        'SubObjectList': 'subObjectList',
+        'Enabled': 'enabled',
+        'TunnelLeafCount': 'tunnelLeafCount',
+        'DutHopType': 'dutHopType',
         'TunnelLeafPrefixLength': 'tunnelLeafPrefixLength',
+        'DutPrefixLength': 'dutPrefixLength',
+        'TunnelLeafHopType': 'tunnelLeafHopType',
     }
 
     def __init__(self, parent):

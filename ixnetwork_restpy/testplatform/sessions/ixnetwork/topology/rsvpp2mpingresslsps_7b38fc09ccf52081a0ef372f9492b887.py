@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,64 +31,64 @@ class RsvpP2mpIngressLsps(Base):
     __slots__ = ()
     _SDM_NAME = 'rsvpP2mpIngressLsps'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AutoGenerateSessionName': 'autoGenerateSessionName',
+        'LabelRecordingDesired': 'labelRecordingDesired',
         'BackupLspId': 'backupLspId',
-        'BandwidthProtectionDesired': 'bandwidthProtectionDesired',
-        'Count': 'count',
-        'DelayLspSwitchOver': 'delayLspSwitchOver',
-        'DescriptiveName': 'descriptiveName',
-        'EnableFastReroute': 'enableFastReroute',
+        'SendRro': 'sendRro',
+        'SourceIpv6': 'sourceIpv6',
+        'FastRerouteExcludeAny': 'fastRerouteExcludeAny',
+        'NodeProtectionDesired': 'nodeProtectionDesired',
         'EnablePathReOptimization': 'enablePathReOptimization',
         'EnablePeriodicReEvaluationRequest': 'enablePeriodicReEvaluationRequest',
-        'ExcludeAny': 'excludeAny',
-        'FacilityBackupDesired': 'facilityBackupDesired',
-        'FastRerouteBandwidth': 'fastRerouteBandwidth',
-        'FastRerouteExcludeAny': 'fastRerouteExcludeAny',
-        'FastRerouteHoldingPriority': 'fastRerouteHoldingPriority',
         'FastRerouteIncludeAll': 'fastRerouteIncludeAll',
-        'FastRerouteIncludeAny': 'fastRerouteIncludeAny',
-        'FastRerouteSetupPriority': 'fastRerouteSetupPriority',
-        'HoldingPriority': 'holdingPriority',
-        'HopLimit': 'hopLimit',
-        'IncludeAll': 'includeAll',
-        'IncludeAny': 'includeAny',
-        'IncludeConnectedIpOnTop': 'includeConnectedIpOnTop',
-        'IncludeHeadIpAtBottom': 'includeHeadIpAtBottom',
-        'IngressP2mpSubLspRanges': 'ingressP2mpSubLspRanges',
-        'InsertIPv6ExplicitNull': 'insertIPv6ExplicitNull',
-        'LabelRecordingDesired': 'labelRecordingDesired',
-        'LocalIp': 'localIp',
-        'LocalProtectionDesired': 'localProtectionDesired',
-        'LspId': 'lspId',
-        'LspSwitchOverDelayTime': 'lspSwitchOverDelayTime',
-        'MaximumPacketSize': 'maximumPacketSize',
-        'MinimumPolicedUnit': 'minimumPolicedUnit',
-        'Name': 'name',
-        'NodeProtectionDesired': 'nodeProtectionDesired',
-        'NumberOfDetourSubObjects': 'numberOfDetourSubObjects',
-        'NumberOfRroSubObjects': 'numberOfRroSubObjects',
-        'OneToOneBackupDesired': 'oneToOneBackupDesired',
-        'P2mpIdAsNumber': 'p2mpIdAsNumber',
-        'P2mpIdIp': 'p2mpIdIp',
-        'PeakDataRate': 'peakDataRate',
-        'ReEvaluationRequestInterval': 'reEvaluationRequestInterval',
-        'RefreshInterval': 'refreshInterval',
-        'ResourceAffinities': 'resourceAffinities',
-        'SeStyleDesired': 'seStyleDesired',
-        'SendDetour': 'sendDetour',
-        'SendRro': 'sendRro',
-        'SessionName': 'sessionName',
-        'SetupPriority': 'setupPriority',
-        'SourceIpv4': 'sourceIpv4',
-        'SourceIpv6': 'sourceIpv6',
-        'State': 'state',
-        'TimeoutMultiplier': 'timeoutMultiplier',
-        'TokenBucketRate': 'tokenBucketRate',
-        'TokenBucketSize': 'tokenBucketSize',
+        'FastRerouteHoldingPriority': 'fastRerouteHoldingPriority',
         'TunnelId': 'tunnelId',
+        'PeakDataRate': 'peakDataRate',
         'TypeP2mpId': 'typeP2mpId',
+        'BandwidthProtectionDesired': 'bandwidthProtectionDesired',
+        'State': 'state',
+        'FastRerouteSetupPriority': 'fastRerouteSetupPriority',
+        'LocalProtectionDesired': 'localProtectionDesired',
+        'SendDetour': 'sendDetour',
+        'P2mpIdIp': 'p2mpIdIp',
         'UsingHeadendIp': 'usingHeadendIp',
+        'FastRerouteIncludeAny': 'fastRerouteIncludeAny',
+        'SourceIpv4': 'sourceIpv4',
+        'IncludeAny': 'includeAny',
+        'DelayLspSwitchOver': 'delayLspSwitchOver',
+        'LspId': 'lspId',
+        'NumberOfRroSubObjects': 'numberOfRroSubObjects',
+        'SessionName': 'sessionName',
+        'HopLimit': 'hopLimit',
+        'TimeoutMultiplier': 'timeoutMultiplier',
+        'AutoGenerateSessionName': 'autoGenerateSessionName',
+        'InsertIPv6ExplicitNull': 'insertIPv6ExplicitNull',
+        'ExcludeAny': 'excludeAny',
+        'FastRerouteBandwidth': 'fastRerouteBandwidth',
+        'TokenBucketRate': 'tokenBucketRate',
+        'IncludeConnectedIpOnTop': 'includeConnectedIpOnTop',
+        'P2mpIdAsNumber': 'p2mpIdAsNumber',
+        'FacilityBackupDesired': 'facilityBackupDesired',
+        'TokenBucketSize': 'tokenBucketSize',
+        'ResourceAffinities': 'resourceAffinities',
+        'Active': 'active',
+        'OneToOneBackupDesired': 'oneToOneBackupDesired',
+        'ReEvaluationRequestInterval': 'reEvaluationRequestInterval',
+        'IngressP2mpSubLspRanges': 'ingressP2mpSubLspRanges',
+        'Count': 'count',
+        'Name': 'name',
+        'MinimumPolicedUnit': 'minimumPolicedUnit',
+        'LocalIp': 'localIp',
+        'NumberOfDetourSubObjects': 'numberOfDetourSubObjects',
+        'MaximumPacketSize': 'maximumPacketSize',
+        'SetupPriority': 'setupPriority',
+        'DescriptiveName': 'descriptiveName',
+        'SeStyleDesired': 'seStyleDesired',
+        'HoldingPriority': 'holdingPriority',
+        'RefreshInterval': 'refreshInterval',
+        'EnableFastReroute': 'enableFastReroute',
+        'LspSwitchOverDelayTime': 'lspSwitchOverDelayTime',
+        'IncludeHeadIpAtBottom': 'includeHeadIpAtBottom',
+        'IncludeAll': 'includeAll',
     }
 
     def __init__(self, parent):
@@ -837,7 +837,7 @@ class RsvpP2mpIngressLsps(Base):
 
         initiateP2mpPathReoptimization(SessionIndices=list)
         ---------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         initiateP2mpPathReoptimization(SessionIndices=string)
         -----------------------------------------------------
@@ -902,7 +902,7 @@ class RsvpP2mpIngressLsps(Base):
 
         p2mpMakeBeforeBreak(SessionIndices=list)
         ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         p2mpMakeBeforeBreak(SessionIndices=string)
         ------------------------------------------
@@ -927,7 +927,7 @@ class RsvpP2mpIngressLsps(Base):
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -957,7 +957,7 @@ class RsvpP2mpIngressLsps(Base):
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,22 +32,22 @@ class TableFeaturePropertiesTrigger(Base):
     __slots__ = ()
     _SDM_NAME = 'tableFeaturePropertiesTrigger'
     _SDM_ATT_MAP = {
-        'EnableApplyAction': 'enableApplyAction',
-        'EnableApplyActionMiss': 'enableApplyActionMiss',
-        'EnableApplySetField': 'enableApplySetField',
         'EnableApplySetFieldMiss': 'enableApplySetFieldMiss',
-        'EnableExperimenter': 'enableExperimenter',
-        'EnableExperimenterMiss': 'enableExperimenterMiss',
-        'EnableInstruction': 'enableInstruction',
-        'EnableInstructionMiss': 'enableInstructionMiss',
         'EnableMatch': 'enableMatch',
-        'EnableNextTable': 'enableNextTable',
-        'EnableNextTableMiss': 'enableNextTableMiss',
-        'EnableWildCard': 'enableWildCard',
-        'EnableWriteAction': 'enableWriteAction',
-        'EnableWriteActionMiss': 'enableWriteActionMiss',
-        'EnableWriteSetField': 'enableWriteSetField',
         'EnableWriteSetFieldMiss': 'enableWriteSetFieldMiss',
+        'EnableWriteAction': 'enableWriteAction',
+        'EnableApplyActionMiss': 'enableApplyActionMiss',
+        'EnableInstructionMiss': 'enableInstructionMiss',
+        'EnableApplySetField': 'enableApplySetField',
+        'EnableWriteActionMiss': 'enableWriteActionMiss',
+        'EnableApplyAction': 'enableApplyAction',
+        'EnableWildCard': 'enableWildCard',
+        'EnableExperimenterMiss': 'enableExperimenterMiss',
+        'EnableWriteSetField': 'enableWriteSetField',
+        'EnableInstruction': 'enableInstruction',
+        'EnableNextTable': 'enableNextTable',
+        'EnableExperimenter': 'enableExperimenter',
+        'EnableNextTableMiss': 'enableNextTableMiss',
     }
 
     def __init__(self, parent):

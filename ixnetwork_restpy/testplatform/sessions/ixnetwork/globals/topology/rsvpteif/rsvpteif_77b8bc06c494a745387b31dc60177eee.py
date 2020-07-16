@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,9 +32,9 @@ class RsvpteIf(Base):
     _SDM_NAME = 'rsvpteIf'
     _SDM_ATT_MAP = {
         'Count': 'count',
+        'RowNames': 'rowNames',
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
-        'RowNames': 'rowNames',
     }
 
     def __init__(self, parent):

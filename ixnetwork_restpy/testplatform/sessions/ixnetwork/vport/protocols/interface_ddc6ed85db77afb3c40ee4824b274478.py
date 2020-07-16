@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,37 +33,37 @@ class Interface(Base):
     __slots__ = ()
     _SDM_NAME = 'interface'
     _SDM_ATT_MAP = {
-        'CircuitAuthType': 'circuitAuthType',
-        'CircuitReceivedPasswordList': 'circuitReceivedPasswordList',
-        'CircuitTransmitPassword': 'circuitTransmitPassword',
-        'ConfiguredHoldTime': 'configuredHoldTime',
-        'Enable3WayHandshake': 'enable3WayHandshake',
-        'EnableAutoAdjustArea': 'enableAutoAdjustArea',
-        'EnableAutoAdjustMtu': 'enableAutoAdjustMtu',
-        'EnableAutoAdjustProtocolsSupported': 'enableAutoAdjustProtocolsSupported',
-        'EnableBfdRegistration': 'enableBfdRegistration',
-        'EnableConfiguredHoldTime': 'enableConfiguredHoldTime',
-        'EnableConnectedToDut': 'enableConnectedToDut',
-        'Enabled': 'enabled',
-        'ExtendedCircuitId': 'extendedCircuitId',
         'InterfaceId': 'interfaceId',
+        'CircuitTransmitPassword': 'circuitTransmitPassword',
+        'Metric': 'metric',
+        'Level1DeadTime': 'level1DeadTime',
+        'EnableAutoAdjustArea': 'enableAutoAdjustArea',
+        'Level2DeadTime': 'level2DeadTime',
         'InterfaceIp': 'interfaceIp',
+        'ExtendedCircuitId': 'extendedCircuitId',
+        'TeUnreservedBwPriority': 'teUnreservedBwPriority',
+        'EnableAutoAdjustMtu': 'enableAutoAdjustMtu',
+        'TeResMaxBandwidth': 'teResMaxBandwidth',
+        'TeAdminGroup': 'teAdminGroup',
+        'EnableAutoAdjustProtocolsSupported': 'enableAutoAdjustProtocolsSupported',
+        'Level1HelloTime': 'level1HelloTime',
+        'Level2HelloTime': 'level2HelloTime',
+        'CircuitReceivedPasswordList': 'circuitReceivedPasswordList',
+        'TeMetricLevel': 'teMetricLevel',
+        'EnableConnectedToDut': 'enableConnectedToDut',
+        'TeMaxBandwidth': 'teMaxBandwidth',
         'InterfaceIpMask': 'interfaceIpMask',
         'Ipv6MtMetric': 'ipv6MtMetric',
-        'Level': 'level',
-        'Level1DeadTime': 'level1DeadTime',
-        'Level1HelloTime': 'level1HelloTime',
-        'Level2DeadTime': 'level2DeadTime',
-        'Level2HelloTime': 'level2HelloTime',
-        'Metric': 'metric',
         'NetworkType': 'networkType',
         'PriorityLevel1': 'priorityLevel1',
         'PriorityLevel2': 'priorityLevel2',
-        'TeAdminGroup': 'teAdminGroup',
-        'TeMaxBandwidth': 'teMaxBandwidth',
-        'TeMetricLevel': 'teMetricLevel',
-        'TeResMaxBandwidth': 'teResMaxBandwidth',
-        'TeUnreservedBwPriority': 'teUnreservedBwPriority',
+        'ConfiguredHoldTime': 'configuredHoldTime',
+        'Level': 'level',
+        'CircuitAuthType': 'circuitAuthType',
+        'Enabled': 'enabled',
+        'EnableBfdRegistration': 'enableBfdRegistration',
+        'Enable3WayHandshake': 'enable3WayHandshake',
+        'EnableConfiguredHoldTime': 'enableConfiguredHoldTime',
     }
 
     def __init__(self, parent):

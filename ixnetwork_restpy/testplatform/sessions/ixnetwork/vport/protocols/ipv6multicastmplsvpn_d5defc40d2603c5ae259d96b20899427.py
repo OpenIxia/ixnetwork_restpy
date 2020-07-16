@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,12 +33,12 @@ class IpV6MulticastMplsVpn(Base):
     _SDM_NAME = 'ipV6MulticastMplsVpn'
     _SDM_ATT_MAP = {
         'AsPath': 'asPath',
-        'IpPrefix': 'ipPrefix',
-        'Label': 'label',
-        'Neighbor': 'neighbor',
         'NextHop': 'nextHop',
-        'PrefixLength': 'prefixLength',
+        'Label': 'label',
         'RouteDistinguisher': 'routeDistinguisher',
+        'Neighbor': 'neighbor',
+        'IpPrefix': 'ipPrefix',
+        'PrefixLength': 'prefixLength',
     }
 
     def __init__(self, parent):

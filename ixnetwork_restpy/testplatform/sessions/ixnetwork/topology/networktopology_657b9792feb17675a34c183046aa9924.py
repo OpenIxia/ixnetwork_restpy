@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,14 +34,28 @@ class NetworkTopology(Base):
     _SDM_NAME = 'networkTopology'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'FromNodeIndex': 'fromNodeIndex',
-        'LinksPerNetwork': 'linksPerNetwork',
         'NodesPerNetwork': 'nodesPerNetwork',
+        'FromNodeIndex': 'fromNodeIndex',
         'ToNodeIndex': 'toNodeIndex',
+        'LinksPerNetwork': 'linksPerNetwork',
     }
 
     def __init__(self, parent):
         super(NetworkTopology, self).__init__(parent)
+
+    @property
+    def CfmSimulatedTopology(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmsimulatedtopology_dc7c77f2f0651bc2e9e2b4796e7969b8.CfmSimulatedTopology): An instance of the CfmSimulatedTopology class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmsimulatedtopology_dc7c77f2f0651bc2e9e2b4796e7969b8 import CfmSimulatedTopology
+        return CfmSimulatedTopology(self)
 
     @property
     def ExternalLink(self):
@@ -300,13 +314,13 @@ class NetworkTopology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.simrouterbridge_305bdfb379ce011a15426d96cf348771.SimRouterBridge): An instance of the SimRouterBridge class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.simrouterbridge_7a0805a6e8bddd5a066f100c0b0a7df2.SimRouterBridge): An instance of the SimRouterBridge class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.simrouterbridge_305bdfb379ce011a15426d96cf348771 import SimRouterBridge
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.simrouterbridge_7a0805a6e8bddd5a066f100c0b0a7df2 import SimRouterBridge
         return SimRouterBridge(self)
 
     @property

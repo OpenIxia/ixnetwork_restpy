@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,16 +31,16 @@ class DceTopologyList(Base):
     __slots__ = ()
     _SDM_NAME = 'dceTopologyList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableFTAG': 'enableFTAG',
-        'InterestedVlanRangeCount': 'interestedVlanRangeCount',
         'Name': 'name',
+        'EnableFTAG': 'enableFTAG',
+        'TopologyId': 'topologyId',
+        'StartFTAGValue': 'startFTAGValue',
         'NicknameCount': 'nicknameCount',
         'NoOfTreesToCompute': 'noOfTreesToCompute',
-        'StartFTAGValue': 'startFTAGValue',
-        'TopologyId': 'topologyId',
+        'InterestedVlanRangeCount': 'interestedVlanRangeCount',
+        'DescriptiveName': 'descriptiveName',
+        'Active': 'active',
     }
 
     def __init__(self, parent):

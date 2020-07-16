@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,42 +32,42 @@ class LinkLsaRoutes(Base):
     __slots__ = ()
     _SDM_NAME = 'linkLsaRoutes'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Algorithm': 'algorithm',
-        'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
-        'Count': 'count',
-        'DCBit': 'dCBit',
-        'DescriptiveName': 'descriptiveName',
-        'EBit': 'eBit',
-        'EFlag': 'eFlag',
-        'LABit': 'lABit',
-        'LFlag': 'lFlag',
-        'LinkLocalAddress': 'linkLocalAddress',
-        'LinkStateId': 'linkStateId',
-        'LinkStateIdStep': 'linkStateIdStep',
-        'MCBit': 'mCBit',
-        'MFlag': 'mFlag',
-        'Metric': 'metric',
-        'NBit': 'nBit',
-        'NUBit': 'nUBit',
-        'Name': 'name',
-        'NetworkAddress': 'networkAddress',
-        'NpFlag': 'npFlag',
-        'PBit': 'pBit',
-        'Prefix': 'prefix',
-        'RBit': 'rBit',
-        'RangeSize': 'rangeSize',
-        'ReservedBit6': 'reservedBit6',
-        'ReservedBit7': 'reservedBit7',
-        'RouterPriority': 'routerPriority',
-        'SidIndexLabel': 'sidIndexLabel',
-        'UnusedBit4': 'unusedBit4',
-        'UnusedBit5': 'unusedBit5',
-        'UnusedBit6': 'unusedBit6',
-        'UnusedBit7': 'unusedBit7',
-        'V6Bit': 'v6Bit',
         'VFlag': 'vFlag',
+        'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
+        'Metric': 'metric',
+        'EFlag': 'eFlag',
+        'UnusedBit7': 'unusedBit7',
+        'UnusedBit6': 'unusedBit6',
+        'Prefix': 'prefix',
+        'UnusedBit4': 'unusedBit4',
+        'ReservedBit7': 'reservedBit7',
+        'ReservedBit6': 'reservedBit6',
+        'LABit': 'lABit',
+        'MFlag': 'mFlag',
+        'PBit': 'pBit',
+        'DCBit': 'dCBit',
+        'LFlag': 'lFlag',
+        'V6Bit': 'v6Bit',
+        'RBit': 'rBit',
+        'NBit': 'nBit',
+        'RouterPriority': 'routerPriority',
+        'Active': 'active',
+        'LinkStateId': 'linkStateId',
+        'Count': 'count',
+        'LinkLocalAddress': 'linkLocalAddress',
+        'NetworkAddress': 'networkAddress',
+        'Name': 'name',
+        'Algorithm': 'algorithm',
+        'LinkStateIdStep': 'linkStateIdStep',
+        'NUBit': 'nUBit',
+        'DescriptiveName': 'descriptiveName',
         'XBit': 'xBit',
+        'NpFlag': 'npFlag',
+        'MCBit': 'mCBit',
+        'EBit': 'eBit',
+        'RangeSize': 'rangeSize',
+        'UnusedBit5': 'unusedBit5',
+        'SidIndexLabel': 'sidIndexLabel',
     }
 
     def __init__(self, parent):
@@ -542,6 +542,19 @@ class LinkLsaRoutes(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
+
     def Advertise(self, *args, **kwargs):
         """Executes the advertise operation on the server.
 
@@ -551,7 +564,7 @@ class LinkLsaRoutes(Base):
 
         advertise(SessionIndices=list)
         ------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         advertise(SessionIndices=string)
         --------------------------------
@@ -602,7 +615,7 @@ class LinkLsaRoutes(Base):
 
         withdraw(SessionIndices=list)
         -----------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         withdraw(SessionIndices=string)
         -------------------------------

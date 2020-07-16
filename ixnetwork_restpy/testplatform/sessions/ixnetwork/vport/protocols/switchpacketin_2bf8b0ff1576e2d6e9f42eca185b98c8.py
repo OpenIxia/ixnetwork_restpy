@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,13 +33,13 @@ class SwitchPacketIn(Base):
     __slots__ = ()
     _SDM_NAME = 'switchPacketIn'
     _SDM_ATT_MAP = {
-        'AuxiliaryId': 'auxiliaryId',
         'ConsultFlowTable': 'consultFlowTable',
+        'AuxiliaryId': 'auxiliaryId',
         'Enabled': 'enabled',
-        'InPort': 'inPort',
-        'PacketIn': 'packetIn',
-        'PacketInName': 'packetInName',
         'PhysicalInPort': 'physicalInPort',
+        'InPort': 'inPort',
+        'PacketInName': 'packetInName',
+        'PacketIn': 'packetIn',
         'SendPacketIn': 'sendPacketIn',
     }
 

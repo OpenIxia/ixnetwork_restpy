@@ -44,3 +44,6 @@ class TestTestPlatform(unittest.TestCase):
         print(testplatform)
         from ixnetwork_restpy.testplatform.sessions.sessions import Sessions
         assert(isinstance(testplatform.Sessions, Sessions) is True)
+
+if __name__ == '__main__':
+    unittest.main()

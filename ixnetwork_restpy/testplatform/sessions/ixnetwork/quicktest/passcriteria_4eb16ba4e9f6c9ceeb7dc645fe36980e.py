@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,29 +31,29 @@ class PassCriteria(Base):
     __slots__ = ()
     _SDM_NAME = 'passCriteria'
     _SDM_ATT_MAP = {
-        'DataErrorThresholdMode': 'dataErrorThresholdMode',
-        'DataErrorThresholdValue': 'dataErrorThresholdValue',
-        'EnableDataIntegrityPassFail': 'enableDataIntegrityPassFail',
         'EnableFrameCountPassFail': 'enableFrameCountPassFail',
-        'EnableLatencyPassFail': 'enableLatencyPassFail',
+        'EnableSequenceErrorsPassFail': 'enableSequenceErrorsPassFail',
+        'LatencyVarThresholdMode': 'latencyVarThresholdMode',
+        'PassFailFrequency': 'passFailFrequency',
+        'PassCriteriaLoadRateMode': 'passCriteriaLoadRateMode',
+        'EnableDataIntegrityPassFail': 'enableDataIntegrityPassFail',
+        'DataErrorThresholdValue': 'dataErrorThresholdValue',
+        'SeqErrorsThresholdMode': 'seqErrorsThresholdMode',
+        'PassCriteriaFrameCountValue': 'passCriteriaFrameCountValue',
+        'SeqErrorsThresholdValue': 'seqErrorsThresholdValue',
+        'DataErrorThresholdMode': 'dataErrorThresholdMode',
+        'LatencyThresholdScale': 'latencyThresholdScale',
         'EnablePassFail': 'enablePassFail',
         'EnableRatePassFail': 'enableRatePassFail',
-        'EnableSequenceErrorsPassFail': 'enableSequenceErrorsPassFail',
-        'EnableStandardDeviationPassFail': 'enableStandardDeviationPassFail',
-        'LatencyThresholdMode': 'latencyThresholdMode',
-        'LatencyThresholdScale': 'latencyThresholdScale',
-        'LatencyThresholdValue': 'latencyThresholdValue',
-        'LatencyVarThresholdMode': 'latencyVarThresholdMode',
         'LatencyVariationThresholdScale': 'latencyVariationThresholdScale',
         'LatencyVariationThresholdValue': 'latencyVariationThresholdValue',
-        'PassCriteriaFrameCountMode': 'passCriteriaFrameCountMode',
-        'PassCriteriaFrameCountValue': 'passCriteriaFrameCountValue',
-        'PassCriteriaLoadRateMode': 'passCriteriaLoadRateMode',
-        'PassCriteriaLoadRateScale': 'passCriteriaLoadRateScale',
+        'LatencyThresholdMode': 'latencyThresholdMode',
         'PassCriteriaLoadRateValue': 'passCriteriaLoadRateValue',
-        'PassFailFrequency': 'passFailFrequency',
-        'SeqErrorsThresholdMode': 'seqErrorsThresholdMode',
-        'SeqErrorsThresholdValue': 'seqErrorsThresholdValue',
+        'LatencyThresholdValue': 'latencyThresholdValue',
+        'PassCriteriaFrameCountMode': 'passCriteriaFrameCountMode',
+        'EnableLatencyPassFail': 'enableLatencyPassFail',
+        'EnableStandardDeviationPassFail': 'enableStandardDeviationPassFail',
+        'PassCriteriaLoadRateScale': 'passCriteriaLoadRateScale',
     }
 
     def __init__(self, parent):

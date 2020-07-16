@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,13 +33,13 @@ class SiteEidRange(Base):
     __slots__ = ()
     _SDM_NAME = 'siteEidRange'
     _SDM_ATT_MAP = {
-        'Address': 'address',
         'Count': 'count',
-        'Enabled': 'enabled',
         'Family': 'family',
-        'IncludeOrExclude': 'includeOrExclude',
         'InstanceId': 'instanceId',
+        'Enabled': 'enabled',
+        'Address': 'address',
         'PrefixLength': 'prefixLength',
+        'IncludeOrExclude': 'includeOrExclude',
     }
 
     def __init__(self, parent):

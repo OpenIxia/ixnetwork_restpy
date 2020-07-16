@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,64 +33,64 @@ class Router(Base):
     __slots__ = ()
     _SDM_NAME = 'router'
     _SDM_ATT_MAP = {
-        'AreaAddressList': 'areaAddressList',
-        'AreaAuthType': 'areaAuthType',
-        'AreaReceivedPasswordList': 'areaReceivedPasswordList',
-        'AreaTransmitPassword': 'areaTransmitPassword',
-        'BroadcastRootPriority': 'broadcastRootPriority',
-        'CapabilityRouterId': 'capabilityRouterId',
-        'DeviceId': 'deviceId',
-        'DevicePriority': 'devicePriority',
-        'DomainAuthType': 'domainAuthType',
-        'DomainReceivedPasswordList': 'domainReceivedPasswordList',
-        'DomainTransmitPassword': 'domainTransmitPassword',
-        'EnableAttached': 'enableAttached',
-        'EnableAutoLoopback': 'enableAutoLoopback',
-        'EnableDiscardLearnedLsps': 'enableDiscardLearnedLsps',
-        'EnableHelloPadding': 'enableHelloPadding',
-        'EnableHitlessRestart': 'enableHitlessRestart',
-        'EnableHostName': 'enableHostName',
-        'EnableIgnoreMtPortCapability': 'enableIgnoreMtPortCapability',
-        'EnableIgnoreRecvMd5': 'enableIgnoreRecvMd5',
-        'EnableMtIpv6': 'enableMtIpv6',
         'EnableMtuProbe': 'enableMtuProbe',
+        'DevicePriority': 'devicePriority',
+        'FilterLearnedRbridges': 'filterLearnedRbridges',
+        'PsnpInterval': 'psnpInterval',
+        'EnableAttached': 'enableAttached',
+        'Enabled': 'enabled',
+        'HostName': 'hostName',
+        'EnableWideMetric': 'enableWideMetric',
+        'FilterLearnedTrillMacUnicast': 'filterLearnedTrillMacUnicast',
+        'LspMaxSize': 'lspMaxSize',
+        'FilterMacMulticastTlvs': 'filterMacMulticastTlvs',
+        'SwitchId': 'switchId',
+        'FilterLearnedSpbRbridges': 'filterLearnedSpbRbridges',
+        'AreaAuthType': 'areaAuthType',
+        'LspLifeTime': 'lspLifeTime',
+        'EnableHostName': 'enableHostName',
+        'TeEnable': 'teEnable',
+        'EnableIgnoreRecvMd5': 'enableIgnoreRecvMd5',
         'EnableMultiTopology': 'enableMultiTopology',
-        'EnableOverloaded': 'enableOverloaded',
+        'FilterLearnedIpv4Prefixes': 'filterLearnedIpv4Prefixes',
+        'DomainAuthType': 'domainAuthType',
+        'FilterIpv6MulticastTlvs': 'filterIpv6MulticastTlvs',
+        'EnableHitlessRestart': 'enableHitlessRestart',
+        'EnableAutoLoopback': 'enableAutoLoopback',
         'EnablePartitionRepair': 'enablePartitionRepair',
         'EnableTrillOam': 'enableTrillOam',
-        'EnableWideMetric': 'enableWideMetric',
-        'Enabled': 'enabled',
-        'FTagValue': 'fTagValue',
-        'FilterIpv4MulticastTlvs': 'filterIpv4MulticastTlvs',
-        'FilterIpv6MulticastTlvs': 'filterIpv6MulticastTlvs',
-        'FilterLearnedIpv4Prefixes': 'filterLearnedIpv4Prefixes',
-        'FilterLearnedIpv6Prefixes': 'filterLearnedIpv6Prefixes',
-        'FilterLearnedRbridges': 'filterLearnedRbridges',
-        'FilterLearnedSpbRbridges': 'filterLearnedSpbRbridges',
-        'FilterLearnedTrillMacUnicast': 'filterLearnedTrillMacUnicast',
-        'FilterMacMulticastTlvs': 'filterMacMulticastTlvs',
-        'HostName': 'hostName',
-        'InterLspMgroupPduBurstGap': 'interLspMgroupPduBurstGap',
-        'LspLifeTime': 'lspLifeTime',
-        'LspMaxSize': 'lspMaxSize',
-        'LspMgroupPduMinTransmissionInterval': 'lspMgroupPduMinTransmissionInterval',
-        'LspRefreshRate': 'lspRefreshRate',
-        'MaxAreaAddresses': 'maxAreaAddresses',
-        'MaxLspMgroupPdusPerBurst': 'maxLspMgroupPdusPerBurst',
-        'NumberOfMtuProbes': 'numberOfMtuProbes',
+        'EnableOverloaded': 'enableOverloaded',
+        'CapabilityRouterId': 'capabilityRouterId',
         'NumberOfMultiDestinationTrees': 'numberOfMultiDestinationTrees',
-        'OriginatingLspBufSize': 'originatingLspBufSize',
-        'PsnpInterval': 'psnpInterval',
-        'RestartMode': 'restartMode',
-        'RestartTime': 'restartTime',
         'RestartVersion': 'restartVersion',
+        'RestartTime': 'restartTime',
+        'EnableHelloPadding': 'enableHelloPadding',
+        'AreaReceivedPasswordList': 'areaReceivedPasswordList',
         'StartFtagValue': 'startFtagValue',
-        'SwitchId': 'switchId',
-        'SwitchIdPriority': 'switchIdPriority',
+        'InterLspMgroupPduBurstGap': 'interLspMgroupPduBurstGap',
+        'OriginatingLspBufSize': 'originatingLspBufSize',
+        'NumberOfMtuProbes': 'numberOfMtuProbes',
+        'FilterLearnedIpv6Prefixes': 'filterLearnedIpv6Prefixes',
+        'DeviceId': 'deviceId',
+        'EnableDiscardLearnedLsps': 'enableDiscardLearnedLsps',
+        'RestartMode': 'restartMode',
+        'FilterIpv4MulticastTlvs': 'filterIpv4MulticastTlvs',
         'SystemId': 'systemId',
-        'TeEnable': 'teEnable',
-        'TeRouterId': 'teRouterId',
+        'AreaTransmitPassword': 'areaTransmitPassword',
+        'MaxAreaAddresses': 'maxAreaAddresses',
+        'DomainTransmitPassword': 'domainTransmitPassword',
+        'AreaAddressList': 'areaAddressList',
+        'SwitchIdPriority': 'switchIdPriority',
+        'DomainReceivedPasswordList': 'domainReceivedPasswordList',
+        'EnableIgnoreMtPortCapability': 'enableIgnoreMtPortCapability',
+        'BroadcastRootPriority': 'broadcastRootPriority',
         'TrafficGroupId': 'trafficGroupId',
+        'LspMgroupPduMinTransmissionInterval': 'lspMgroupPduMinTransmissionInterval',
+        'EnableMtIpv6': 'enableMtIpv6',
+        'FTagValue': 'fTagValue',
+        'TeRouterId': 'teRouterId',
+        'MaxLspMgroupPdusPerBurst': 'maxLspMgroupPdusPerBurst',
+        'LspRefreshRate': 'lspRefreshRate',
     }
 
     def __init__(self, parent):
@@ -241,13 +241,13 @@ class Router(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_4606a4b62bcd4276ec16cb83c852a2a7.RouteRange): An instance of the RouteRange class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_e55904caea8ea54d18de0639128c8009.RouteRange): An instance of the RouteRange class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_4606a4b62bcd4276ec16cb83c852a2a7 import RouteRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_e55904caea8ea54d18de0639128c8009 import RouteRange
         return RouteRange(self)
 
     @property

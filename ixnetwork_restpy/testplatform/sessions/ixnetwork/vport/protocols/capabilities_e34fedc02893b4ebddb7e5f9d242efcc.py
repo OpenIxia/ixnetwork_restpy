@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,16 +31,16 @@ class Capabilities(Base):
     __slots__ = ()
     _SDM_NAME = 'capabilities'
     _SDM_ATT_MAP = {
-        'FlowStatistics': 'flowStatistics',
-        'GroupStatistics': 'groupStatistics',
         'MatchIpAddressInArpPackets': 'matchIpAddressInArpPackets',
-        'PortStatistics': 'portStatistics',
-        'QueueStatistics': 'queueStatistics',
-        'ReassambleIpFragments': 'reassambleIpFragments',
-        'Reserved': 'reserved',
         'SpanningTree': 'spanningTree',
+        'Reserved': 'reserved',
+        'ReassambleIpFragments': 'reassambleIpFragments',
+        'QueueStatistics': 'queueStatistics',
         'SwitchWillBlockLoopingPorts': 'switchWillBlockLoopingPorts',
         'TableStatistics': 'tableStatistics',
+        'GroupStatistics': 'groupStatistics',
+        'PortStatistics': 'portStatistics',
+        'FlowStatistics': 'flowStatistics',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,22 +31,22 @@ class LdpLeafRangeV6(Base):
     __slots__ = ()
     _SDM_NAME = 'ldpLeafRangeV6'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ContinuousIncrementOVAcrossRoot': 'continuousIncrementOVAcrossRoot',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'GroupAddressV4': 'groupAddressV4',
-        'GroupAddressV6': 'groupAddressV6',
-        'GroupCountPerLsp': 'groupCountPerLsp',
-        'LSPType': 'lSPType',
-        'LabelValueStart': 'labelValueStart',
-        'LabelValueStep': 'labelValueStep',
-        'LspCountPerRoot': 'lspCountPerRoot',
-        'Name': 'name',
-        'NumberOfTLVs': 'numberOfTLVs',
-        'RootAddress': 'rootAddress',
-        'RootAddressCount': 'rootAddressCount',
         'RootAddressStep': 'rootAddressStep',
+        'Name': 'name',
+        'LspCountPerRoot': 'lspCountPerRoot',
+        'LabelValueStart': 'labelValueStart',
+        'LSPType': 'lSPType',
+        'GroupCountPerLsp': 'groupCountPerLsp',
+        'GroupAddressV6': 'groupAddressV6',
+        'GroupAddressV4': 'groupAddressV4',
+        'LabelValueStep': 'labelValueStep',
+        'RootAddress': 'rootAddress',
+        'DescriptiveName': 'descriptiveName',
+        'Active': 'active',
+        'NumberOfTLVs': 'numberOfTLVs',
+        'ContinuousIncrementOVAcrossRoot': 'continuousIncrementOVAcrossRoot',
+        'RootAddressCount': 'rootAddressCount',
     }
 
     def __init__(self, parent):
@@ -287,7 +287,7 @@ class LdpLeafRangeV6(Base):
 
         activateLeafRange(SessionIndices=list)
         --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         activateLeafRange(SessionIndices=string)
         ----------------------------------------
@@ -317,7 +317,7 @@ class LdpLeafRangeV6(Base):
 
         deactivateLeafRange(SessionIndices=list)
         ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         deactivateLeafRange(SessionIndices=string)
         ------------------------------------------

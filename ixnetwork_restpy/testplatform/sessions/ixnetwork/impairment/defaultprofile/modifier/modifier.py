@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,29 +33,29 @@ class Modifier(Base):
     __slots__ = ()
     _SDM_NAME = 'modifier'
     _SDM_ATT_MAP = {
-        'ClusterSize': 'clusterSize',
-        'Enabled': 'enabled',
-        'L3MatchEtherType': 'l3MatchEtherType',
-        'L3MatchMode': 'l3MatchMode',
-        'L3MatchMplsLabel': 'l3MatchMplsLabel',
-        'L4MatchEncapsulation': 'l4MatchEncapsulation',
-        'L4MatchMode': 'l4MatchMode',
-        'L4MatchProtocolNumber': 'l4MatchProtocolNumber',
-        'L5MatchEncapsulation': 'l5MatchEncapsulation',
-        'L5MatchMode': 'l5MatchMode',
-        'L5MatchPortNumber': 'l5MatchPortNumber',
         'Mask': 'mask',
-        'MatchValue': 'matchValue',
-        'MatchValueEnabled': 'matchValueEnabled',
-        'Name': 'name',
-        'Offset': 'offset',
         'OffsetStart': 'offsetStart',
-        'PercentRate': 'percentRate',
         'ReplaceFixedValue': 'replaceFixedValue',
-        'ReplaceMode': 'replaceMode',
-        'ReplaceRangeCount': 'replaceRangeCount',
+        'PercentRate': 'percentRate',
         'ReplaceRangeDecrement': 'replaceRangeDecrement',
         'ReplaceRangeFirst': 'replaceRangeFirst',
+        'MatchValueEnabled': 'matchValueEnabled',
+        'L4MatchMode': 'l4MatchMode',
+        'L5MatchMode': 'l5MatchMode',
+        'L4MatchProtocolNumber': 'l4MatchProtocolNumber',
+        'ReplaceMode': 'replaceMode',
+        'L5MatchEncapsulation': 'l5MatchEncapsulation',
+        'Offset': 'offset',
+        'L3MatchEtherType': 'l3MatchEtherType',
+        'MatchValue': 'matchValue',
+        'Name': 'name',
+        'L5MatchPortNumber': 'l5MatchPortNumber',
+        'Enabled': 'enabled',
+        'L3MatchMplsLabel': 'l3MatchMplsLabel',
+        'L4MatchEncapsulation': 'l4MatchEncapsulation',
+        'ClusterSize': 'clusterSize',
+        'L3MatchMode': 'l3MatchMode',
+        'ReplaceRangeCount': 'replaceRangeCount',
         'ReplaceRangeStep': 'replaceRangeStep',
     }
 

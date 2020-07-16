@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,15 +33,15 @@ class ReqFecRange(Base):
     __slots__ = ()
     _SDM_NAME = 'reqFecRange'
     _SDM_ATT_MAP = {
-        'EnableHopCount': 'enableHopCount',
-        'EnableStateTimer': 'enableStateTimer',
-        'Enabled': 'enabled',
-        'FirstNetwork': 'firstNetwork',
-        'HopCount': 'hopCount',
         'MaskWidth': 'maskWidth',
+        'FirstNetwork': 'firstNetwork',
+        'StaleReqTime': 'staleReqTime',
+        'Enabled': 'enabled',
         'NextHopPeer': 'nextHopPeer',
         'NumberOfRoutes': 'numberOfRoutes',
-        'StaleReqTime': 'staleReqTime',
+        'EnableHopCount': 'enableHopCount',
+        'HopCount': 'hopCount',
+        'EnableStateTimer': 'enableStateTimer',
     }
 
     def __init__(self, parent):

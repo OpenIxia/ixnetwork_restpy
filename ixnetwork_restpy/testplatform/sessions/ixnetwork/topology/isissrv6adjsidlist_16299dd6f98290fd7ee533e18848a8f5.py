@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,25 +31,25 @@ class IsisSRv6AdjSIDList(Base):
     __slots__ = ()
     _SDM_NAME = 'isisSRv6AdjSIDList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdvertiseCustomSubTLV': 'advertiseCustomSubTLV',
-        'Algorithm': 'algorithm',
-        'ArgumentLength': 'argumentLength',
-        'BFlag': 'bFlag',
         'Count': 'count',
-        'CustomSubTlv': 'customSubTlv',
-        'DescriptiveName': 'descriptiveName',
-        'EndPointFunction': 'endPointFunction',
-        'FunctionLength': 'functionLength',
-        'IncludeSRv6SIDStructureSubSubTlv': 'includeSRv6SIDStructureSubSubTlv',
-        'Ipv6AdjSid': 'ipv6AdjSid',
-        'LocatorBlockLength': 'locatorBlockLength',
         'LocatorNodeLength': 'locatorNodeLength',
-        'Name': 'name',
+        'FunctionLength': 'functionLength',
         'PFlag': 'pFlag',
         'Reserved': 'reserved',
-        'SFlag': 'sFlag',
+        'Name': 'name',
+        'Algorithm': 'algorithm',
+        'Ipv6AdjSid': 'ipv6AdjSid',
+        'IncludeSRv6SIDStructureSubSubTlv': 'includeSRv6SIDStructureSubSubTlv',
+        'BFlag': 'bFlag',
         'Weight': 'weight',
+        'CustomSubTlv': 'customSubTlv',
+        'AdvertiseCustomSubTLV': 'advertiseCustomSubTLV',
+        'DescriptiveName': 'descriptiveName',
+        'EndPointFunction': 'endPointFunction',
+        'Active': 'active',
+        'SFlag': 'sFlag',
+        'ArgumentLength': 'argumentLength',
+        'LocatorBlockLength': 'locatorBlockLength',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,24 +31,24 @@ class BroadcastDomainV6(Base):
     __slots__ = ()
     _SDM_NAME = 'broadcastDomainV6'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdRouteLabel': 'adRouteLabel',
-        'BVlanId': 'bVlanId',
-        'BVlanPriority': 'bVlanPriority',
-        'BVlanTpid': 'bVlanTpid',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableVlanAwareService': 'enableVlanAwareService',
         'EthernetTagId': 'ethernetTagId',
-        'GroupAddress': 'groupAddress',
-        'Name': 'name',
-        'NoOfMacPools': 'noOfMacPools',
-        'RootAddress': 'rootAddress',
         'RsvpP2mpId': 'rsvpP2mpId',
-        'RsvpP2mpIdAsNumber': 'rsvpP2mpIdAsNumber',
-        'RsvpTunnelId': 'rsvpTunnelId',
         'SenderAddressPRootNodeAddress': 'senderAddressPRootNodeAddress',
+        'Name': 'name',
+        'RsvpP2mpIdAsNumber': 'rsvpP2mpIdAsNumber',
+        'GroupAddress': 'groupAddress',
+        'NoOfMacPools': 'noOfMacPools',
+        'BVlanId': 'bVlanId',
         'UsebVlan': 'usebVlan',
+        'AdRouteLabel': 'adRouteLabel',
+        'RootAddress': 'rootAddress',
+        'BVlanPriority': 'bVlanPriority',
+        'RsvpTunnelId': 'rsvpTunnelId',
+        'EnableVlanAwareService': 'enableVlanAwareService',
+        'Active': 'active',
+        'DescriptiveName': 'descriptiveName',
+        'BVlanTpid': 'bVlanTpid',
     }
 
     def __init__(self, parent):
@@ -322,6 +322,31 @@ class BroadcastDomainV6(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('advertiseAliasing', payload=payload, response_object=None)
 
+    def AdvertiseAliasingPerBroadcastDomain(self, *args, **kwargs):
+        """Executes the advertiseAliasingPerBroadcastDomain operation on the server.
+
+        Advertise Aliasing Per Broadcast Domain
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        advertiseAliasingPerBroadcastDomain(SessionIndices=list)
+        --------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        advertiseAliasingPerBroadcastDomain(SessionIndices=string)
+        ----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('advertiseAliasingPerBroadcastDomain', payload=payload, response_object=None)
+
     def WithdrawAliasing(self, *args, **kwargs):
         """Executes the withdrawAliasing operation on the server.
 
@@ -341,3 +366,28 @@ class BroadcastDomainV6(Base):
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('withdrawAliasing', payload=payload, response_object=None)
+
+    def WithdrawAliasingPerBroadcastDomain(self, *args, **kwargs):
+        """Executes the withdrawAliasingPerBroadcastDomain operation on the server.
+
+        Advertise Aliasing Per Broadcast Domain
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        withdrawAliasingPerBroadcastDomain(SessionIndices=list)
+        -------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        withdrawAliasingPerBroadcastDomain(SessionIndices=string)
+        ---------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('withdrawAliasingPerBroadcastDomain', payload=payload, response_object=None)

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,32 +33,32 @@ class MplsTrafficEndPoint(Base):
     __slots__ = ()
     _SDM_NAME = 'mplsTrafficEndPoint'
     _SDM_ATT_MAP = {
-        'ArpViaInterface': 'arpViaInterface',
-        'EnableVlan': 'enableVlan',
+        'MacAddress': 'macAddress',
+        'VlanPriority': 'vlanPriority',
+        'Ipv6Ecn': 'ipv6Ecn',
         'GatewayMac': 'gatewayMac',
-        'IpAddress': 'ipAddress',
+        'EnableVlan': 'enableVlan',
+        'MplsInnerVlanPriority': 'mplsInnerVlanPriority',
+        'MplsInnerMacSource': 'mplsInnerMacSource',
+        'MplsTrafficClass': 'mplsTrafficClass',
+        'MplsLabel': 'mplsLabel',
+        'ArpViaInterface': 'arpViaInterface',
+        'Ipv6FlowLabel': 'ipv6FlowLabel',
         'IpMask': 'ipMask',
         'Ipv4Dscp': 'ipv4Dscp',
+        'ProtocolInterface': 'protocolInterface',
+        'MplsInnerVlanId': 'mplsInnerVlanId',
         'Ipv4Ecn': 'ipv4Ecn',
-        'Ipv6Address': 'ipv6Address',
         'Ipv6AddressMask': 'ipv6AddressMask',
         'Ipv6Dscp': 'ipv6Dscp',
-        'Ipv6Ecn': 'ipv6Ecn',
-        'Ipv6FlowLabel': 'ipv6FlowLabel',
-        'MacAddress': 'macAddress',
-        'MplsInnerMacSource': 'mplsInnerMacSource',
-        'MplsInnerVlanId': 'mplsInnerVlanId',
-        'MplsInnerVlanPriority': 'mplsInnerVlanPriority',
-        'MplsLabel': 'mplsLabel',
-        'MplsLabelStackSize': 'mplsLabelStackSize',
-        'MplsPayloadType': 'mplsPayloadType',
-        'MplsTrafficClass': 'mplsTrafficClass',
-        'Name': 'name',
-        'ProtocolInterface': 'protocolInterface',
-        'RangeSize': 'rangeSize',
         'VlanCount': 'vlanCount',
         'VlanId': 'vlanId',
-        'VlanPriority': 'vlanPriority',
+        'Name': 'name',
+        'Ipv6Address': 'ipv6Address',
+        'RangeSize': 'rangeSize',
+        'IpAddress': 'ipAddress',
+        'MplsPayloadType': 'mplsPayloadType',
+        'MplsLabelStackSize': 'mplsLabelStackSize',
     }
 
     def __init__(self, parent):

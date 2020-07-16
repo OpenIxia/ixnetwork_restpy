@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,16 +34,16 @@ class MacPools(Base):
     _SDM_NAME = 'macPools'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableVlans': 'enableVlans',
         'LastMacAddress': 'lastMacAddress',
-        'Mac': 'mac',
-        'Name': 'name',
-        'NumberOfAddresses': 'numberOfAddresses',
-        'NumberOfAddressesAsy': 'numberOfAddressesAsy',
-        'PrefixLength': 'prefixLength',
         'UseVlans': 'useVlans',
+        'EnableVlans': 'enableVlans',
         'VlanCount': 'vlanCount',
+        'NumberOfAddresses': 'numberOfAddresses',
+        'Mac': 'mac',
+        'DescriptiveName': 'descriptiveName',
+        'PrefixLength': 'prefixLength',
+        'NumberOfAddressesAsy': 'numberOfAddressesAsy',
+        'Name': 'name',
     }
 
     def __init__(self, parent):
@@ -54,13 +54,13 @@ class MacPools(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_f91a37c8058302050a67e05790d01c7a.CMacProperties): An instance of the CMacProperties class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180.CMacProperties): An instance of the CMacProperties class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_f91a37c8058302050a67e05790d01c7a import CMacProperties
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
         return CMacProperties(self)
 
     @property
@@ -420,6 +420,19 @@ class MacPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
+
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
 
     def Start(self):
         """Executes the start operation on the server.

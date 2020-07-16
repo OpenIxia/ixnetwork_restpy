@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,31 +32,31 @@ class LearnedMartiniLabel(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedMartiniLabel'
     _SDM_ATT_MAP = {
+        'Ssrc': 'ssrc',
         'CBit': 'cBit',
-        'Cas': 'cas',
-        'CemOption': 'cemOption',
-        'CemPayloadBytes': 'cemPayloadBytes',
-        'Description': 'description',
-        'DisCeAddress': 'disCeAddress',
+        'PayloadType': 'payloadType',
         'Frequency': 'frequency',
-        'GroupId': 'groupId',
+        'VcType': 'vcType',
+        'TimestampMode': 'timestampMode',
+        'PwState': 'pwState',
         'IncludeRtpHeader': 'includeRtpHeader',
+        'PeerPwSubStatus': 'peerPwSubStatus',
         'Label': 'label',
-        'LabelSpaceId': 'labelSpaceId',
         'LocalPwSubStatus': 'localPwSubStatus',
         'MaxAtmCell': 'maxAtmCell',
-        'Mtu': 'mtu',
-        'PayloadSize': 'payloadSize',
-        'PayloadType': 'payloadType',
-        'Peer': 'peer',
-        'PeerPwSubStatus': 'peerPwSubStatus',
-        'PwState': 'pwState',
-        'Sp': 'sp',
-        'Ssrc': 'ssrc',
+        'Description': 'description',
+        'CemOption': 'cemOption',
         'TdmBitrate': 'tdmBitrate',
-        'TimestampMode': 'timestampMode',
+        'Peer': 'peer',
+        'GroupId': 'groupId',
+        'Cas': 'cas',
+        'DisCeAddress': 'disCeAddress',
+        'Sp': 'sp',
+        'PayloadSize': 'payloadSize',
+        'Mtu': 'mtu',
+        'CemPayloadBytes': 'cemPayloadBytes',
+        'LabelSpaceId': 'labelSpaceId',
         'VcId': 'vcId',
-        'VcType': 'vcType',
     }
 
     def __init__(self, parent):

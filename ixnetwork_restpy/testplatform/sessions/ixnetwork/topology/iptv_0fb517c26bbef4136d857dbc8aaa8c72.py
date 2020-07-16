@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,24 +31,24 @@ class Iptv(Base):
     __slots__ = ()
     _SDM_NAME = 'iptv'
     _SDM_ATT_MAP = {
-        'CombinedLeaveJoin': 'combinedLeaveJoin',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableGeneralQueryResponse': 'enableGeneralQueryResponse',
-        'EnableGroupSpecificQueryResponse': 'enableGroupSpecificQueryResponse',
+        'StbLeaveJoinDelay': 'stbLeaveJoinDelay',
         'JoinLatencyThreshold': 'joinLatencyThreshold',
         'LeaveLatencyThreshold': 'leaveLatencyThreshold',
-        'LogAllTimestamps': 'logAllTimestamps',
         'LogFailureTimestamps': 'logFailureTimestamps',
-        'Name': 'name',
-        'NumChannelChangesBeforeView': 'numChannelChangesBeforeView',
-        'State': 'state',
-        'StbLeaveJoinDelay': 'stbLeaveJoinDelay',
-        'ViewDuration': 'viewDuration',
-        'ZapBehavior': 'zapBehavior',
-        'ZapDirection': 'zapDirection',
-        'ZapInterval': 'zapInterval',
+        'EnableGeneralQueryResponse': 'enableGeneralQueryResponse',
+        'CombinedLeaveJoin': 'combinedLeaveJoin',
         'ZapIntervalType': 'zapIntervalType',
+        'ZapInterval': 'zapInterval',
+        'ZapBehavior': 'zapBehavior',
+        'State': 'state',
+        'DescriptiveName': 'descriptiveName',
+        'NumChannelChangesBeforeView': 'numChannelChangesBeforeView',
+        'EnableGroupSpecificQueryResponse': 'enableGroupSpecificQueryResponse',
+        'LogAllTimestamps': 'logAllTimestamps',
+        'ZapDirection': 'zapDirection',
+        'ViewDuration': 'viewDuration',
+        'Name': 'name',
     }
 
     def __init__(self, parent):
@@ -282,6 +282,26 @@ class Iptv(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def ImportFailureTimestampFile(self, *args, **kwargs):
+        """Executes the importFailureTimestampFile operation on the server.
+
+        Fetch IPTV Failure Timestamp File from PCPU to Client
+
+        importFailureTimestampFile(Arg2=list)list
+        -----------------------------------------
+        - Arg2 (list(number)): List of indices into the IPTV grid An empty list indicates all instances in the plugin.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('importFailureTimestampFile', payload=payload, response_object=None)
+
     def StartIptv(self, *args, **kwargs):
         """Executes the startIptv operation on the server.
 
@@ -291,7 +311,7 @@ class Iptv(Base):
 
         startIptv(SessionIndices=list)
         ------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         startIptv(SessionIndices=string)
         --------------------------------
@@ -321,7 +341,7 @@ class Iptv(Base):
 
         stopIptv(SessionIndices=list)
         -----------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stopIptv(SessionIndices=string)
         -------------------------------

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,20 +31,20 @@ class Options(Base):
     __slots__ = ()
     _SDM_NAME = 'options'
     _SDM_ATT_MAP = {
+        'Mcast_solicit': 'mcast_solicit',
         'ActOnGratArp': 'actOnGratArp',
+        'RouterSolicitationInterval': 'routerSolicitationInterval',
+        'ObjectId': 'objectId',
+        'NsRefreshInterval': 'nsRefreshInterval',
         'ArpRefreshInterval': 'arpRefreshInterval',
         'DadEnabled': 'dadEnabled',
         'DadTransmits': 'dadTransmits',
-        'IgnoreMldQueries': 'ignoreMldQueries',
-        'Ipv4McastSolicit': 'ipv4McastSolicit',
-        'Ipv4RetransTime': 'ipv4RetransTime',
-        'Mcast_solicit': 'mcast_solicit',
-        'NsRefreshInterval': 'nsRefreshInterval',
-        'ObjectId': 'objectId',
         'RetransTime': 'retransTime',
+        'Ipv4RetransTime': 'ipv4RetransTime',
+        'IgnoreMldQueries': 'ignoreMldQueries',
         'RouterSolicitationDelay': 'routerSolicitationDelay',
-        'RouterSolicitationInterval': 'routerSolicitationInterval',
         'RouterSolicitations': 'routerSolicitations',
+        'Ipv4McastSolicit': 'ipv4McastSolicit',
     }
 
     def __init__(self, parent):

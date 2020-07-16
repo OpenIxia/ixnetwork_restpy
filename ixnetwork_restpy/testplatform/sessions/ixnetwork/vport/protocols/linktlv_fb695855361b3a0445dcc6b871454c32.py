@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,25 +32,25 @@ class LinkTlv(Base):
     __slots__ = ()
     _SDM_NAME = 'linkTlv'
     _SDM_ATT_MAP = {
-        'EnableLinkId': 'enableLinkId',
-        'EnableLinkMetric': 'enableLinkMetric',
-        'EnableLinkResourceClass': 'enableLinkResourceClass',
-        'EnableLinkType': 'enableLinkType',
-        'EnableLocalIpAddress': 'enableLocalIpAddress',
-        'EnableMaxBandwidth': 'enableMaxBandwidth',
-        'EnableMaxResBandwidth': 'enableMaxResBandwidth',
-        'EnableRemoteIpAddress': 'enableRemoteIpAddress',
-        'EnableUnreservedBandwidth': 'enableUnreservedBandwidth',
-        'LinkId': 'linkId',
-        'LinkLocalIpAddress': 'linkLocalIpAddress',
-        'LinkMetric': 'linkMetric',
-        'LinkRemoteIpAddress': 'linkRemoteIpAddress',
-        'LinkResourceClass': 'linkResourceClass',
         'LinkType': 'linkType',
+        'MaxResBandwidth': 'maxResBandwidth',
+        'LinkMetric': 'linkMetric',
+        'EnableLinkType': 'enableLinkType',
+        'EnableMaxResBandwidth': 'enableMaxResBandwidth',
+        'EnableUnreservedBandwidth': 'enableUnreservedBandwidth',
         'LinkUnreservedBandwidth': 'linkUnreservedBandwidth',
         'MaxBandwidth': 'maxBandwidth',
-        'MaxResBandwidth': 'maxResBandwidth',
         'SubTlvs': 'subTlvs',
+        'LinkRemoteIpAddress': 'linkRemoteIpAddress',
+        'EnableLinkMetric': 'enableLinkMetric',
+        'EnableLinkId': 'enableLinkId',
+        'LinkId': 'linkId',
+        'EnableRemoteIpAddress': 'enableRemoteIpAddress',
+        'EnableLocalIpAddress': 'enableLocalIpAddress',
+        'EnableLinkResourceClass': 'enableLinkResourceClass',
+        'LinkLocalIpAddress': 'linkLocalIpAddress',
+        'EnableMaxBandwidth': 'enableMaxBandwidth',
+        'LinkResourceClass': 'linkResourceClass',
     }
 
     def __init__(self, parent):

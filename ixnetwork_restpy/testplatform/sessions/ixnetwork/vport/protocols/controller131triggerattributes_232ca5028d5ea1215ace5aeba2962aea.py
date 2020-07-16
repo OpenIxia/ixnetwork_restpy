@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,33 +31,33 @@ class Controller131TriggerAttributes(Base):
     __slots__ = ()
     _SDM_NAME = 'controller131TriggerAttributes'
     _SDM_ATT_MAP = {
-        'EnableSendTriggerMeterConfigStatsLearnedInformation': 'enableSendTriggerMeterConfigStatsLearnedInformation',
-        'EnableSendTriggerMeterFeatureStatsLearnedInformation': 'enableSendTriggerMeterFeatureStatsLearnedInformation',
-        'EnableSendTriggerMeterStatLearnedInformation': 'enableSendTriggerMeterStatLearnedInformation',
-        'FlowStatOutGroup': 'flowStatOutGroup',
-        'FlowStatOutGroupInputMode': 'flowStatOutGroupInputMode',
-        'FlowStatOutPort': 'flowStatOutPort',
-        'FlowStatOutPortInputMode': 'flowStatOutPortInputMode',
-        'FlowStatTableId': 'flowStatTableId',
         'FlowStatTableIdInputMode': 'flowStatTableIdInputMode',
-        'IsMeterConfigStatLearnedInformationRefreshed': 'isMeterConfigStatLearnedInformationRefreshed',
-        'IsMeterFeatureStatLearnedInformationRefreshed': 'isMeterFeatureStatLearnedInformationRefreshed',
-        'IsMeterStatLearnedInformationRefreshed': 'isMeterStatLearnedInformationRefreshed',
-        'MeterConfigStatMeterId': 'meterConfigStatMeterId',
-        'MeterConfigStatMeterNumber': 'meterConfigStatMeterNumber',
-        'MeterConfigStatResponseTimeOut': 'meterConfigStatResponseTimeOut',
-        'MeterFeatureStatResponseTimeOut': 'meterFeatureStatResponseTimeOut',
-        'MeterStatMeterId': 'meterStatMeterId',
-        'MeterStatMeterNumber': 'meterStatMeterNumber',
-        'MeterStatResponseTimeOut': 'meterStatResponseTimeOut',
-        'PortStatPortNumber': 'portStatPortNumber',
-        'PortStatPortNumberInputMode': 'portStatPortNumberInputMode',
-        'QueueConfigPortNumber': 'queueConfigPortNumber',
+        'VendorStatExperimenterType': 'vendorStatExperimenterType',
         'QueueConfigPortNumberInputMode': 'queueConfigPortNumberInputMode',
+        'VendorMessageExperimenterType': 'vendorMessageExperimenterType',
+        'EnableSendTriggerMeterFeatureStatsLearnedInformation': 'enableSendTriggerMeterFeatureStatsLearnedInformation',
+        'IsMeterFeatureStatLearnedInformationRefreshed': 'isMeterFeatureStatLearnedInformationRefreshed',
+        'MeterFeatureStatResponseTimeOut': 'meterFeatureStatResponseTimeOut',
+        'EnableSendTriggerMeterStatLearnedInformation': 'enableSendTriggerMeterStatLearnedInformation',
+        'MeterConfigStatResponseTimeOut': 'meterConfigStatResponseTimeOut',
+        'FlowStatOutGroup': 'flowStatOutGroup',
+        'FlowStatOutPort': 'flowStatOutPort',
+        'MeterConfigStatMeterId': 'meterConfigStatMeterId',
+        'FlowStatOutGroupInputMode': 'flowStatOutGroupInputMode',
+        'QueueConfigPortNumber': 'queueConfigPortNumber',
         'QueueStatPortNumber': 'queueStatPortNumber',
         'QueueStatPortNumberInputMode': 'queueStatPortNumberInputMode',
-        'VendorMessageExperimenterType': 'vendorMessageExperimenterType',
-        'VendorStatExperimenterType': 'vendorStatExperimenterType',
+        'MeterStatMeterId': 'meterStatMeterId',
+        'EnableSendTriggerMeterConfigStatsLearnedInformation': 'enableSendTriggerMeterConfigStatsLearnedInformation',
+        'MeterConfigStatMeterNumber': 'meterConfigStatMeterNumber',
+        'PortStatPortNumber': 'portStatPortNumber',
+        'IsMeterStatLearnedInformationRefreshed': 'isMeterStatLearnedInformationRefreshed',
+        'MeterStatResponseTimeOut': 'meterStatResponseTimeOut',
+        'FlowStatTableId': 'flowStatTableId',
+        'IsMeterConfigStatLearnedInformationRefreshed': 'isMeterConfigStatLearnedInformationRefreshed',
+        'FlowStatOutPortInputMode': 'flowStatOutPortInputMode',
+        'PortStatPortNumberInputMode': 'portStatPortNumberInputMode',
+        'MeterStatMeterNumber': 'meterStatMeterNumber',
     }
 
     def __init__(self, parent):

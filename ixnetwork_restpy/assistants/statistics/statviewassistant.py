@@ -2,7 +2,6 @@
 """
 
 from ixnetwork_restpy.assistants.statistics.row import Row
-from ixnetwork_restpy.testplatform.sessions.ixnetwork.ixnetwork import Ixnetwork
 from ixnetwork_restpy.errors import *
 from ixnetwork_restpy.files import Files
 import re
@@ -22,27 +21,34 @@ class StatViewAssistant(object):
     NOT_EQUAL = '!='
     GREATER_THAN = '>'
     GREATER_THAN_OR_EQUAL = '>='
+    TABLE = 1
+    OBJECT = 2
 
     @staticmethod
     def GetViewNames(IxNetwork):
         """Get a list of all view names.
         """
-        assert(isinstance(IxNetwork, Ixnetwork))
         view_names = []
         for view in IxNetwork.Statistics.View.find():
             view_names.append(view.Caption)
         return view_names
 
-    def __init__(self, IxNetwork, ViewName, Timeout=180, LocalCsvStorage=None):
+    def __init__(self, IxNetwork, ViewName, Timeout=180, LocalCsvStorage=None, 
+        PrintFormat=OBJECT, PrintColumns=[]):
         """
         Args
         ----
         - IxNetwork (obj (ixnetwork_restpy.testplatform.sessions.ixnetwork.Ixnetwork)): An Ixnetwork object
         - ViewName (str): The name of a statistics view, supports regex
         - Timeout (int): The timeout in seconds to wait for the ViewName to be available and/or ready
-        - LocalCsvStorage (str): The local path where downloaded csv statistic files will be stored. The path must exist and will not be created.
+        - LocalCsvStorage (str): The local path where downloaded csv statistic files will be stored. 
+            The path must exist and will not be created.
+        - PrintFormat (str(StatViewAssistant.OBJECT | StatViewAssistant.TABLE)): formatting for __str__
+            If PrintFormat is OBJECT each row will be output as lines of colname: colvalue
+            If PrintFormat is TABLE each row will be output as a single line
+        - PrintColumns (list(str)): A list of statistic column names that will be printed out
+            If the list is None all columns will be printed out
         """
-        assert(isinstance(IxNetwork, Ixnetwork))
         self._IxNetwork = IxNetwork
         self._ViewName = ViewName
         self._root_directory = self._IxNetwork._connection._read('%s/files' % self._IxNetwork.href)['absolute']
@@ -50,19 +56,29 @@ class StatViewAssistant(object):
         self._View = None
         self._Timeout = Timeout
         self._LocalCsvStorage = LocalCsvStorage
+        self._PrintFormat = PrintFormat
+        self._PrintColumns = PrintColumns
         self.ClearRowFilters()
         self._is_view_ready
 
     def _take_csv_snapshot(self):
-        self._Statistics.CsvSnapshot.CsvStringQuotes = False
-        self._Statistics.CsvSnapshot.SnapshotViewContents = 'allPages'
-        self._Statistics.CsvSnapshot.SnapshotViewCsvGenerationMode = 'overwriteCSVFile'
-        self._Statistics.CsvSnapshot.CsvLocation = self._root_directory
         csv_name = re.sub("[^A-Za-z0-9]+", "-", self._View.Caption)
-        self._Statistics.CsvSnapshot.CsvName = 'ixnetwork.restpy.%s' % csv_name
-        self._Statistics.CsvSnapshot.Views = self._View
-        self._Statistics.CsvSnapshot.TakeCsvSnapshot()
-        return self._IxNetwork._connection._get_file(self._IxNetwork.href, '%s.csv' % self._Statistics.CsvSnapshot.CsvName, local_directory=self._LocalCsvStorage)
+        snapshot_name = 'ixnetwork.restpy.%s.%s' % (time.time(), csv_name)
+        csv_snapshot = self._Statistics.CsvSnapshot
+        csv_snapshot.update(CsvStringQuotes = False,
+            SnapshotViewContents = 'allPages',
+            SnapshotViewCsvGenerationMode = 'overwriteCSVFile',
+            CsvLocation = self._root_directory,
+            CsvName = snapshot_name,
+            Views = self._View)
+        csv_snapshot.TakeCsvSnapshot()
+        local_filename = self._IxNetwork._connection._get_file(self._IxNetwork.href, 
+            '%s.csv' % snapshot_name, local_directory=self._LocalCsvStorage)
+        self._IxNetwork._connection._delete_file(self._IxNetwork.href, 
+            '%s.csv' % snapshot_name)
+        self._IxNetwork._connection._delete_file(self._IxNetwork.href, 
+            '%s.csv.columns' % snapshot_name)
+        return local_filename
 
     @property
     def _is_view_ready(self):
@@ -188,7 +204,10 @@ class StatViewAssistant(object):
                     match = re.match(ConditionValue, row[ColumnName])
                 else:
                     expression = '%s %s %s' % (row[ColumnName], Comparator, ConditionValue)
-                    match = eval(expression)
+                    try:
+                        match = eval(expression)
+                    except:
+                        match = False
                 if match is None or match is False:
                     break
             if match is None or match is False:
@@ -248,6 +267,21 @@ class StatViewAssistant(object):
         """Return a string with all the rows in the current view
         """
         statistics = ''
-        for row in self.Rows:
-            statistics += row.__str__()
-        return statistics
+        column_headers = self.ColumnHeaders
+        if self._PrintFormat == StatViewAssistant.TABLE:
+            table_row = '|'
+            for i in range(0, len(column_headers)):
+                if len(self._PrintColumns) == 0 or column_headers[i] in self._PrintColumns:
+                    table_row += column_headers[i].ljust(18) + '|'
+            statistics += table_row + '\n'
+            statistics += '-' * len(table_row) + '\n'
+            for line in self.Rows.RawData:
+                table_row = '|'
+                for i in range(0, len(line)):
+                    if len(self._PrintColumns) == 0 or column_headers[i] in self._PrintColumns:
+                        table_row += line[i].ljust(18) + '|'
+                statistics += table_row + '\n'
+        else:
+            for row in self.Rows:
+                statistics += row.__str__()
+        return statistics.rstrip()

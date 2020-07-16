@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -30,6 +30,8 @@ class ProtocolStack(Base):
 
     __slots__ = ()
     _SDM_NAME = 'protocolStack'
+    _SDM_ATT_MAP = {
+    }
 
     def __init__(self, parent):
         super(ProtocolStack, self).__init__(parent)
@@ -215,20 +217,6 @@ class ProtocolStack(Base):
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtpglobalsbase.egtpglobalsbase import EgtpGlobalsBase
         return EgtpGlobalsBase(self)
-
-    @property
-    def EgtpMmeGlobals(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtpmmeglobals.egtpmmeglobals.EgtpMmeGlobals): An instance of the EgtpMmeGlobals class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtpmmeglobals.egtpmmeglobals import EgtpMmeGlobals
-        return EgtpMmeGlobals(self)
 
     @property
     def EgtpS5S8PgwGlobals(self):

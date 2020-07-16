@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,18 +33,18 @@ class MulticastReceiverSite(Base):
     __slots__ = ()
     _SDM_NAME = 'multicastReceiverSite'
     _SDM_ATT_MAP = {
-        'AddressFamilyType': 'addressFamilyType',
-        'CMcastRouteType': 'cMcastRouteType',
-        'Enabled': 'enabled',
-        'GroupAddressCount': 'groupAddressCount',
-        'GroupMaskWidth': 'groupMaskWidth',
-        'SendTriggeredCmulticastRoute': 'sendTriggeredCmulticastRoute',
         'SourceAddressCount': 'sourceAddressCount',
-        'SourceGroupMapping': 'sourceGroupMapping',
-        'SourceMaskWidth': 'sourceMaskWidth',
-        'StartGroupAddress': 'startGroupAddress',
-        'StartSourceAddress': 'startSourceAddress',
+        'SendTriggeredCmulticastRoute': 'sendTriggeredCmulticastRoute',
+        'CMcastRouteType': 'cMcastRouteType',
         'SupportLeafAdRoutesSending': 'supportLeafAdRoutesSending',
+        'Enabled': 'enabled',
+        'SourceMaskWidth': 'sourceMaskWidth',
+        'StartSourceAddress': 'startSourceAddress',
+        'AddressFamilyType': 'addressFamilyType',
+        'GroupAddressCount': 'groupAddressCount',
+        'SourceGroupMapping': 'sourceGroupMapping',
+        'GroupMaskWidth': 'groupMaskWidth',
+        'StartGroupAddress': 'startGroupAddress',
     }
 
     def __init__(self, parent):

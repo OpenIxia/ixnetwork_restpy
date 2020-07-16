@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,9 +33,9 @@ class IsisSRGBRangeSubObjectsList(Base):
     _SDM_NAME = 'isisSRGBRangeSubObjectsList'
     _SDM_ATT_MAP = {
         'Count': 'count',
+        'SIDCount': 'sIDCount',
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
-        'SIDCount': 'sIDCount',
         'StartSIDLabel': 'startSIDLabel',
     }
 

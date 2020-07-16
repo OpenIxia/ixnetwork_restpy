@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,16 +31,16 @@ class SpbSimEdgeBaseVidList(Base):
     __slots__ = ()
     _SDM_NAME = 'spbSimEdgeBaseVidList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'BaseVid': 'baseVid',
-        'BaseVlanPriority': 'baseVlanPriority',
-        'BvlanTpid': 'bvlanTpid',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
+        'UseFlagBit': 'useFlagBit',
         'EctAlgorithm': 'ectAlgorithm',
         'IsidCount': 'isidCount',
+        'BaseVlanPriority': 'baseVlanPriority',
         'Name': 'name',
-        'UseFlagBit': 'useFlagBit',
+        'BaseVid': 'baseVid',
+        'DescriptiveName': 'descriptiveName',
+        'Active': 'active',
+        'BvlanTpid': 'bvlanTpid',
     }
 
     def __init__(self, parent):

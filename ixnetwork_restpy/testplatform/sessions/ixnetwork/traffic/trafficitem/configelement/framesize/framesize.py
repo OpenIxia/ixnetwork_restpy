@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,17 +31,17 @@ class FrameSize(Base):
     __slots__ = ()
     _SDM_NAME = 'frameSize'
     _SDM_ATT_MAP = {
-        'FixedSize': 'fixedSize',
-        'IncrementFrom': 'incrementFrom',
         'IncrementStep': 'incrementStep',
-        'IncrementTo': 'incrementTo',
-        'PresetDistribution': 'presetDistribution',
-        'QuadGaussian': 'quadGaussian',
-        'RandomMax': 'randomMax',
         'RandomMin': 'randomMin',
+        'FixedSize': 'fixedSize',
         'Type': 'type',
-        'WeightedPairs': 'weightedPairs',
+        'RandomMax': 'randomMax',
         'WeightedRangePairs': 'weightedRangePairs',
+        'PresetDistribution': 'presetDistribution',
+        'IncrementFrom': 'incrementFrom',
+        'WeightedPairs': 'weightedPairs',
+        'QuadGaussian': 'quadGaussian',
+        'IncrementTo': 'incrementTo',
     }
 
     def __init__(self, parent):

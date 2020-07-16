@@ -4,5 +4,6 @@ include RELEASENOTES.md
 include setup.py
 include version.txt
 recursive-include ixnetwork_restpy *.py
-recursive-exclude ixnetwork_restpy/docs *.*
-recursive-exclude ixnetwork_restpy/pytest_tests *.*
+recursive-include uhd_restpy *.py
+global-exclude __pycache__
+global-exclude *.pyc

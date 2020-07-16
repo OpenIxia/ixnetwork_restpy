@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,12 +31,12 @@ class PcepBackupPCEs(Base):
     __slots__ = ()
     _SDM_NAME = 'pcepBackupPCEs'
     _SDM_ATT_MAP = {
-        'Active': 'active',
+        'Count': 'count',
         'BackupPceRole': 'backupPceRole',
         'BackupPceSessionState': 'backupPceSessionState',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
         'Name': 'name',
+        'DescriptiveName': 'descriptiveName',
+        'Active': 'active',
         'PceIpv4Address': 'pceIpv4Address',
     }
 
@@ -157,7 +157,7 @@ class PcepBackupPCEs(Base):
 
         backupPceStart(SessionIndices=list)
         -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         backupPceStart(SessionIndices=string)
         -------------------------------------
@@ -182,7 +182,7 @@ class PcepBackupPCEs(Base):
 
         backupPceStop(SessionIndices=list)
         ----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         backupPceStop(SessionIndices=string)
         ------------------------------------

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,19 +33,19 @@ class UserLsa(Base):
     __slots__ = ()
     _SDM_NAME = 'userLsa'
     _SDM_ATT_MAP = {
-        'AdvertisingRouterId': 'advertisingRouterId',
-        'Enabled': 'enabled',
         'ExpandIntoLinksOrAttachedRouters': 'expandIntoLinksOrAttachedRouters',
-        'LinkStateId': 'linkStateId',
-        'LsaType': 'lsaType',
-        'OptBitDemandCircuit': 'optBitDemandCircuit',
+        'AdvertisingRouterId': 'advertisingRouterId',
         'OptBitExternalAttributes': 'optBitExternalAttributes',
-        'OptBitExternalRouting': 'optBitExternalRouting',
+        'Option': 'option',
         'OptBitLsaNoForward': 'optBitLsaNoForward',
-        'OptBitMulticast': 'optBitMulticast',
+        'OptBitDemandCircuit': 'optBitDemandCircuit',
+        'LsaType': 'lsaType',
+        'Enabled': 'enabled',
         'OptBitNssaCapability': 'optBitNssaCapability',
         'OptBitTypeOfService': 'optBitTypeOfService',
-        'Option': 'option',
+        'OptBitMulticast': 'optBitMulticast',
+        'LinkStateId': 'linkStateId',
+        'OptBitExternalRouting': 'optBitExternalRouting',
     }
 
     def __init__(self, parent):

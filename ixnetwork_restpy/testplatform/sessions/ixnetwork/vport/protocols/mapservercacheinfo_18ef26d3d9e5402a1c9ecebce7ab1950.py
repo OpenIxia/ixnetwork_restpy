@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,25 +32,25 @@ class MapServerCacheInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'mapServerCacheInfo'
     _SDM_ATT_MAP = {
-        'Action': 'action',
-        'EidPrefix': 'eidPrefix',
-        'EidPrefixAfi': 'eidPrefixAfi',
-        'EidPrefixLength': 'eidPrefixLength',
-        'EtrIp': 'etrIp',
+        'Ipv4MapRegisterRx': 'ipv4MapRegisterRx',
         'ExpiresAfter': 'expiresAfter',
         'InstanceId': 'instanceId',
-        'Ipv4ErrorMapRegisterRx': 'ipv4ErrorMapRegisterRx',
-        'Ipv4MapNotifyTx': 'ipv4MapNotifyTx',
-        'Ipv4MapRegisterRx': 'ipv4MapRegisterRx',
-        'Ipv4MapRequestDropped': 'ipv4MapRequestDropped',
+        'EidPrefixLength': 'eidPrefixLength',
+        'EidPrefix': 'eidPrefix',
         'Ipv6ErrorMapRegisterRx': 'ipv6ErrorMapRegisterRx',
-        'Ipv6MapNotifyTx': 'ipv6MapNotifyTx',
-        'Ipv6MapRegisterRx': 'ipv6MapRegisterRx',
-        'Ipv6MapRequestDropped': 'ipv6MapRequestDropped',
-        'Key': 'key',
         'MapVersionNumber': 'mapVersionNumber',
+        'Ipv6MapNotifyTx': 'ipv6MapNotifyTx',
+        'Ipv6MapRequestDropped': 'ipv6MapRequestDropped',
         'ProxyMapReply': 'proxyMapReply',
+        'EtrIp': 'etrIp',
+        'Key': 'key',
+        'Action': 'action',
+        'Ipv4MapNotifyTx': 'ipv4MapNotifyTx',
+        'Ipv4ErrorMapRegisterRx': 'ipv4ErrorMapRegisterRx',
+        'Ipv4MapRequestDropped': 'ipv4MapRequestDropped',
+        'EidPrefixAfi': 'eidPrefixAfi',
         'WantMapNotify': 'wantMapNotify',
+        'Ipv6MapRegisterRx': 'ipv6MapRegisterRx',
     }
 
     def __init__(self, parent):

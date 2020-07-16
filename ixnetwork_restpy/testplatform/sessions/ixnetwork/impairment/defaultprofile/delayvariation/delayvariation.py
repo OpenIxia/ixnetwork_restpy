@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,12 +31,12 @@ class DelayVariation(Base):
     __slots__ = ()
     _SDM_NAME = 'delayVariation'
     _SDM_ATT_MAP = {
-        'Distribution': 'distribution',
-        'Enabled': 'enabled',
         'ExponentialMeanArrival': 'exponentialMeanArrival',
-        'GaussianStandardDeviation': 'gaussianStandardDeviation',
+        'Enabled': 'enabled',
         'UniformSpread': 'uniformSpread',
+        'GaussianStandardDeviation': 'gaussianStandardDeviation',
         'Units': 'units',
+        'Distribution': 'distribution',
     }
 
     def __init__(self, parent):

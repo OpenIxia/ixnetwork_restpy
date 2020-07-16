@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,14 +31,14 @@ class LearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedInfo'
     _SDM_ATT_MAP = {
-        'DesignatedCost': 'designatedCost',
-        'DesignatedMac': 'designatedMac',
-        'DesignatedPortId': 'designatedPortId',
         'DesignatedPriority': 'designatedPriority',
-        'InterfaceDesc': 'interfaceDesc',
-        'InterfaceRole': 'interfaceRole',
         'InterfaceState': 'interfaceState',
         'RootMac': 'rootMac',
+        'DesignatedCost': 'designatedCost',
+        'InterfaceRole': 'interfaceRole',
+        'InterfaceDesc': 'interfaceDesc',
+        'DesignatedPortId': 'designatedPortId',
+        'DesignatedMac': 'designatedMac',
         'RootPriority': 'rootPriority',
     }
 

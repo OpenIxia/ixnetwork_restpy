@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,19 +31,19 @@ class Egress(Base):
     __slots__ = ()
     _SDM_NAME = 'egress'
     _SDM_ATT_MAP = {
-        'Bandwidth': 'bandwidth',
-        'EgressBehavior': 'egressBehavior',
-        'EnableFixedLabelForResv': 'enableFixedLabelForResv',
-        'LabelValue': 'labelValue',
-        'PathErrorTlv': 'pathErrorTlv',
         'ReflectRro': 'reflectRro',
-        'RefreshInterval': 'refreshInterval',
-        'ReservationStyle': 'reservationStyle',
-        'ReservationTearTlv': 'reservationTearTlv',
-        'ReservationTlv': 'reservationTlv',
         'Rro': 'rro',
-        'SendResvConfirmation': 'sendResvConfirmation',
+        'PathErrorTlv': 'pathErrorTlv',
+        'ReservationTlv': 'reservationTlv',
+        'ReservationStyle': 'reservationStyle',
         'TimeoutMultiplier': 'timeoutMultiplier',
+        'EgressBehavior': 'egressBehavior',
+        'LabelValue': 'labelValue',
+        'Bandwidth': 'bandwidth',
+        'ReservationTearTlv': 'reservationTearTlv',
+        'RefreshInterval': 'refreshInterval',
+        'EnableFixedLabelForResv': 'enableFixedLabelForResv',
+        'SendResvConfirmation': 'sendResvConfirmation',
     }
 
     def __init__(self, parent):

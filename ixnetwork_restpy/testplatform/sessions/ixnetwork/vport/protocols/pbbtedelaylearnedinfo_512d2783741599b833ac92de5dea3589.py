@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,12 +32,12 @@ class PbbTeDelayLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'pbbTeDelayLearnedInfo'
     _SDM_ATT_MAP = {
-        'BVlan': 'bVlan',
-        'DstMacAddress': 'dstMacAddress',
-        'MdLevel': 'mdLevel',
-        'SrcMacAddress': 'srcMacAddress',
-        'ValueInNanoSec': 'valueInNanoSec',
         'ValueInSec': 'valueInSec',
+        'ValueInNanoSec': 'valueInNanoSec',
+        'DstMacAddress': 'dstMacAddress',
+        'SrcMacAddress': 'srcMacAddress',
+        'BVlan': 'bVlan',
+        'MdLevel': 'mdLevel',
     }
 
     def __init__(self, parent):

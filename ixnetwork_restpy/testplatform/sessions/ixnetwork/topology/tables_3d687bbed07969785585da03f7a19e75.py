@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,15 +32,15 @@ class Tables(Base):
     __slots__ = ()
     _SDM_NAME = 'tables'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ChannelIndex': 'channelIndex',
-        'ChannelRemoteIp': 'channelRemoteIp',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
         'Name': 'name',
-        'NumberOfFlowSet': 'numberOfFlowSet',
-        'TableId': 'tableId',
+        'ChannelRemoteIp': 'channelRemoteIp',
+        'ChannelIndex': 'channelIndex',
         'TableName': 'tableName',
+        'NumberOfFlowSet': 'numberOfFlowSet',
+        'DescriptiveName': 'descriptiveName',
+        'Active': 'active',
+        'TableId': 'tableId',
     }
 
     def __init__(self, parent):

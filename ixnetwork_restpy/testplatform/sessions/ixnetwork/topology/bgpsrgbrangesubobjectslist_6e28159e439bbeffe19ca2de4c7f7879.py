@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,10 +33,10 @@ class BgpSRGBRangeSubObjectsList(Base):
     _SDM_NAME = 'bgpSRGBRangeSubObjectsList'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
         'SIDCount': 'sIDCount',
         'StartSID': 'startSID',
+        'DescriptiveName': 'descriptiveName',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,20 +31,20 @@ class PortModificationTriggerAttributes(Base):
     __slots__ = ()
     _SDM_NAME = 'portModificationTriggerAttributes'
     _SDM_ATT_MAP = {
-        'AdvertisedFeatures': 'advertisedFeatures',
         'DoNotSendPacketIn': 'doNotSendPacketIn',
-        'DropAllPackets': 'dropAllPackets',
+        'EnablePortModPortFeatures': 'enablePortModPortFeatures',
+        'EthernetAddress': 'ethernetAddress',
+        'PortConfigMask': 'portConfigMask',
+        'AdvertisedFeatures': 'advertisedFeatures',
+        'EnablePortConfig': 'enablePortConfig',
+        'EnablePortNumber': 'enablePortNumber',
+        'PortNumber': 'portNumber',
+        'PortConfig': 'portConfig',
         'DropForwardedPackets': 'dropForwardedPackets',
+        'DropAllPackets': 'dropAllPackets',
+        'PortAdministrativelyDown': 'portAdministrativelyDown',
         'EnableAdvertiseFeature': 'enableAdvertiseFeature',
         'EnableEthernetAddress': 'enableEthernetAddress',
-        'EnablePortConfig': 'enablePortConfig',
-        'EnablePortModPortFeatures': 'enablePortModPortFeatures',
-        'EnablePortNumber': 'enablePortNumber',
-        'EthernetAddress': 'ethernetAddress',
-        'PortAdministrativelyDown': 'portAdministrativelyDown',
-        'PortConfig': 'portConfig',
-        'PortConfigMask': 'portConfigMask',
-        'PortNumber': 'portNumber',
     }
 
     def __init__(self, parent):

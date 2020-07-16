@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,20 +32,20 @@ class RBridges(Base):
     __slots__ = ()
     _SDM_NAME = 'rBridges'
     _SDM_ATT_MAP = {
-        'Age': 'age',
-        'EnableCommonMtId': 'enableCommonMtId',
-        'ExtendedCircuitId': 'extendedCircuitId',
-        'GraphId': 'graphId',
-        'HostName': 'hostName',
-        'LinkMetric': 'linkMetric',
-        'MtId': 'mtId',
-        'PrimaryFtag': 'primaryFtag',
         'Priority': 'priority',
-        'Role': 'role',
+        'GraphId': 'graphId',
+        'ExtendedCircuitId': 'extendedCircuitId',
+        'EnableCommonMtId': 'enableCommonMtId',
+        'Age': 'age',
+        'HostName': 'hostName',
+        'MtId': 'mtId',
         'SecondaryFtag': 'secondaryFtag',
         'SequenceNumber': 'sequenceNumber',
-        'SwitchId': 'switchId',
+        'PrimaryFtag': 'primaryFtag',
+        'Role': 'role',
+        'LinkMetric': 'linkMetric',
         'SystemId': 'systemId',
+        'SwitchId': 'switchId',
     }
 
     def __init__(self, parent):

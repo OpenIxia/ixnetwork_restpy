@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,78 +33,78 @@ class OpenFlowSwitch(Base):
     __slots__ = ()
     _SDM_NAME = 'openFlowSwitch'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AuxConnTimeout': 'auxConnTimeout',
-        'AuxNonHelloStartupOption': 'auxNonHelloStartupOption',
-        'BadVersionErrorAction': 'badVersionErrorAction',
-        'BandTypes': 'bandTypes',
-        'BarrierReplyDelayType': 'barrierReplyDelayType',
-        'BarrierReplyMaxDelay': 'barrierReplyMaxDelay',
-        'Capabilities': 'capabilities',
-        'ConnectedVia': 'connectedVia',
-        'ControllerFlowTxRate': 'controllerFlowTxRate',
-        'Count': 'count',
-        'DatapathDesc': 'datapathDesc',
-        'DatapathId': 'datapathId',
-        'DatapathIdHex': 'datapathIdHex',
-        'DescriptiveName': 'descriptiveName',
-        'DirectoryName': 'directoryName',
-        'EchoInterval': 'echoInterval',
-        'EchoTimeOut': 'echoTimeOut',
-        'EnableHelloElement': 'enableHelloElement',
-        'Errors': 'errors',
-        'FileCaCertificate': 'fileCaCertificate',
-        'FileCertificate': 'fileCertificate',
-        'FilePrivKey': 'filePrivKey',
-        'FlowRemovedMask': 'flowRemovedMask',
-        'FlowRemovedMaskSlave': 'flowRemovedMaskSlave',
-        'GroupCapabilities': 'groupCapabilities',
-        'GroupType': 'groupType',
-        'HardwareDesc': 'hardwareDesc',
-        'InterPacketInBurstGap': 'interPacketInBurstGap',
-        'ManufacturerDesc': 'manufacturerDesc',
-        'MaxBandPerMeter': 'maxBandPerMeter',
-        'MaxColorValue': 'maxColorValue',
-        'MaxNumberOfBucketsPerGroups': 'maxNumberOfBucketsPerGroups',
         'MaxPacketInBytes': 'maxPacketInBytes',
         'MeterCapabilities': 'meterCapabilities',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NumMeter': 'numMeter',
-        'NumberOfBuffers': 'numberOfBuffers',
-        'NumberOfChannels': 'numberOfChannels',
-        'NumberOfHostPorts': 'numberOfHostPorts',
-        'NumberOfPacketIn': 'numberOfPacketIn',
-        'NumberOfPorts': 'numberOfPorts',
-        'NumberOfTableRanges': 'numberOfTableRanges',
-        'NumberOfTopologyPorts': 'numberOfTopologyPorts',
-        'NumberOfUnconnectedPorts': 'numberOfUnconnectedPorts',
-        'PacketInMaskMaster': 'packetInMaskMaster',
-        'PacketInMaskSlave': 'packetInMaskSlave',
-        'PacketInReplyDelay': 'packetInReplyDelay',
-        'PacketInReplyTimeout': 'packetInReplyTimeout',
-        'PacketInTxBurst': 'packetInTxBurst',
         'PacketOutRxRate': 'packetOutRxRate',
-        'PeriodicEcho': 'periodicEcho',
-        'PortStatusMaskMaster': 'portStatusMaskMaster',
-        'PortStatusMaskSlave': 'portStatusMaskSlave',
-        'SerialNumber': 'serialNumber',
-        'SessionStatus': 'sessionStatus',
-        'SoftwareDesc': 'softwareDesc',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'StoreFlows': 'storeFlows',
-        'SwitchDesc': 'switchDesc',
-        'SwitchLocalIp': 'switchLocalIp',
-        'TableMissAction': 'tableMissAction',
-        'TcpPort': 'tcpPort',
-        'TimeoutOption': 'timeoutOption',
+        'DatapathIdHex': 'datapathIdHex',
+        'BarrierReplyDelayType': 'barrierReplyDelayType',
         'TimeoutOptionValue': 'timeoutOptionValue',
-        'TlsVersion': 'tlsVersion',
-        'TransactionID': 'transactionID',
+        'MaxColorValue': 'maxColorValue',
+        'MaxNumberOfBucketsPerGroups': 'maxNumberOfBucketsPerGroups',
+        'PortStatusMaskSlave': 'portStatusMaskSlave',
+        'SoftwareDesc': 'softwareDesc',
+        'TableMissAction': 'tableMissAction',
+        'FlowRemovedMaskSlave': 'flowRemovedMaskSlave',
+        'ConnectedVia': 'connectedVia',
+        'NumberOfChannels': 'numberOfChannels',
+        'PacketInReplyDelay': 'packetInReplyDelay',
+        'EchoInterval': 'echoInterval',
+        'PacketInMaskMaster': 'packetInMaskMaster',
+        'PeriodicEcho': 'periodicEcho',
+        'EnableHelloElement': 'enableHelloElement',
+        'BarrierReplyMaxDelay': 'barrierReplyMaxDelay',
+        'Errors': 'errors',
         'TypeOfConnection': 'typeOfConnection',
+        'TimeoutOption': 'timeoutOption',
+        'NumberOfBuffers': 'numberOfBuffers',
+        'Capabilities': 'capabilities',
+        'EchoTimeOut': 'echoTimeOut',
+        'PacketInReplyTimeout': 'packetInReplyTimeout',
+        'Status': 'status',
+        'DatapathDesc': 'datapathDesc',
+        'AuxNonHelloStartupOption': 'auxNonHelloStartupOption',
+        'SessionStatus': 'sessionStatus',
+        'TcpPort': 'tcpPort',
+        'PacketInMaskSlave': 'packetInMaskSlave',
+        'ManufacturerDesc': 'manufacturerDesc',
+        'BandTypes': 'bandTypes',
+        'ControllerFlowTxRate': 'controllerFlowTxRate',
+        'HardwareDesc': 'hardwareDesc',
+        'GroupType': 'groupType',
+        'MaxBandPerMeter': 'maxBandPerMeter',
+        'PacketInTxBurst': 'packetInTxBurst',
+        'DirectoryName': 'directoryName',
+        'FileCaCertificate': 'fileCaCertificate',
+        'SwitchLocalIp': 'switchLocalIp',
+        'StackedLayers': 'stackedLayers',
+        'NumberOfPorts': 'numberOfPorts',
+        'FlowRemovedMask': 'flowRemovedMask',
+        'NumberOfTopologyPorts': 'numberOfTopologyPorts',
+        'NumberOfPacketIn': 'numberOfPacketIn',
+        'FilePrivKey': 'filePrivKey',
+        'TlsVersion': 'tlsVersion',
+        'FileCertificate': 'fileCertificate',
+        'Multiplier': 'multiplier',
+        'Active': 'active',
+        'PortStatusMaskMaster': 'portStatusMaskMaster',
+        'TransactionID': 'transactionID',
+        'AuxConnTimeout': 'auxConnTimeout',
+        'DatapathId': 'datapathId',
+        'NumberOfUnconnectedPorts': 'numberOfUnconnectedPorts',
+        'Count': 'count',
+        'NumberOfHostPorts': 'numberOfHostPorts',
+        'InterPacketInBurstGap': 'interPacketInBurstGap',
+        'Name': 'name',
         'VersionSupported': 'versionSupported',
+        'StateCounts': 'stateCounts',
+        'SerialNumber': 'serialNumber',
+        'NumberOfTableRanges': 'numberOfTableRanges',
+        'NumMeter': 'numMeter',
+        'DescriptiveName': 'descriptiveName',
+        'SwitchDesc': 'switchDesc',
+        'StoreFlows': 'storeFlows',
+        'GroupCapabilities': 'groupCapabilities',
+        'BadVersionErrorAction': 'badVersionErrorAction',
     }
 
     def __init__(self, parent):
@@ -1120,6 +1120,31 @@ class OpenFlowSwitch(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def ClearAllLearnedInfo(self, *args, **kwargs):
         """Executes the clearAllLearnedInfo operation on the server.
 
@@ -1229,7 +1254,7 @@ class OpenFlowSwitch(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -1248,13 +1273,13 @@ class OpenFlowSwitch(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected protocols.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -1273,13 +1298,13 @@ class OpenFlowSwitch(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected protocols.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

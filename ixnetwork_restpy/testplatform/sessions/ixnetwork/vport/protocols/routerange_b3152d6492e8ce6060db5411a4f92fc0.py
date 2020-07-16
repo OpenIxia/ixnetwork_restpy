@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,27 +33,27 @@ class RouteRange(Base):
     __slots__ = ()
     _SDM_NAME = 'routeRange'
     _SDM_ATT_MAP = {
-        'Bandwidth': 'bandwidth',
-        'Delay': 'delay',
         'DestCount': 'destCount',
-        'EnablePacking': 'enablePacking',
-        'Enabled': 'enabled',
-        'FirstRoute': 'firstRoute',
-        'Flag': 'flag',
-        'HopCount': 'hopCount',
         'Load': 'load',
+        'FirstRoute': 'firstRoute',
         'Mask': 'mask',
         'Metric': 'metric',
-        'Mtu': 'mtu',
         'NextHop': 'nextHop',
-        'NomberOfRoutes': 'nomberOfRoutes',
-        'NumberOfRoutes': 'numberOfRoutes',
-        'OriginatingAs': 'originatingAs',
-        'ProtocolId': 'protocolId',
-        'Reliability': 'reliability',
+        'Enabled': 'enabled',
+        'Flag': 'flag',
+        'Mtu': 'mtu',
+        'Delay': 'delay',
         'RouteTag': 'routeTag',
+        'Bandwidth': 'bandwidth',
+        'Reliability': 'reliability',
+        'NumberOfRoutes': 'numberOfRoutes',
         'Source': 'source',
+        'ProtocolId': 'protocolId',
+        'HopCount': 'hopCount',
         'Type': 'type',
+        'NomberOfRoutes': 'nomberOfRoutes',
+        'OriginatingAs': 'originatingAs',
+        'EnablePacking': 'enablePacking',
     }
 
     def __init__(self, parent):

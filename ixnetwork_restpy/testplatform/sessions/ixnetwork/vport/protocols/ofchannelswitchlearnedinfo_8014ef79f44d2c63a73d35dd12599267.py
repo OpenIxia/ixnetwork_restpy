@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,29 +32,29 @@ class OfChannelSwitchLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'ofChannelSwitchLearnedInfo'
     _SDM_ATT_MAP = {
-        'ActionsSupported': 'actionsSupported',
-        'AveragePacketInReplyDelay': 'averagePacketInReplyDelay',
-        'Capabilities': 'capabilities',
-        'ConfigFlags': 'configFlags',
-        'ConfiguredPacketInReplyCount': 'configuredPacketInReplyCount',
-        'ConfiguredPacketInSentCount': 'configuredPacketInSentCount',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'FlowRate': 'flowRate',
-        'GenerationId': 'generationId',
-        'LastErrorCode': 'lastErrorCode',
-        'LastErrorType': 'lastErrorType',
-        'LocalIp': 'localIp',
-        'MaxBufferSize': 'maxBufferSize',
         'MaxPacketInBytes': 'maxPacketInBytes',
         'NegotiatedVersion': 'negotiatedVersion',
+        'LocalIp': 'localIp',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
+        'LastErrorCode': 'lastErrorCode',
+        'RemotePortNumber': 'remotePortNumber',
         'NumberOfAuxiliaryConnection': 'numberOfAuxiliaryConnection',
         'NumberOfErrorsSent': 'numberOfErrorsSent',
+        'ConfigFlags': 'configFlags',
+        'ActionsSupported': 'actionsSupported',
+        'Capabilities': 'capabilities',
         'NumberOfPorts': 'numberOfPorts',
+        'ConfiguredPacketInReplyCount': 'configuredPacketInReplyCount',
+        'GenerationId': 'generationId',
+        'LastErrorType': 'lastErrorType',
         'NumberofTable': 'numberofTable',
+        'FlowRate': 'flowRate',
+        'ConfiguredPacketInSentCount': 'configuredPacketInSentCount',
+        'AveragePacketInReplyDelay': 'averagePacketInReplyDelay',
+        'MaxBufferSize': 'maxBufferSize',
         'RemoteIp': 'remoteIp',
-        'RemotePortNumber': 'remotePortNumber',
         'SessionType': 'sessionType',
+        'DataPathId': 'dataPathId',
     }
 
     def __init__(self, parent):

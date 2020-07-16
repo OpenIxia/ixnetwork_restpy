@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,18 +31,18 @@ class IsisL3ipv4NodeRouteList(Base):
     __slots__ = ()
     _SDM_NAME = 'isisL3ipv4NodeRouteList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'FirstIpv4Route': 'firstIpv4Route',
-        'MaskWidth': 'maskWidth',
-        'Metric': 'metric',
-        'Name': 'name',
-        'NoOfRoutes': 'noOfRoutes',
         'NodeStep': 'nodeStep',
-        'Redistribution': 'redistribution',
+        'MaskWidth': 'maskWidth',
         'RouteOrigin': 'routeOrigin',
+        'Metric': 'metric',
+        'FirstIpv4Route': 'firstIpv4Route',
+        'DescriptiveName': 'descriptiveName',
+        'Active': 'active',
         'RouteStep': 'routeStep',
+        'Redistribution': 'redistribution',
+        'NoOfRoutes': 'noOfRoutes',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

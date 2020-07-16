@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,18 +32,18 @@ class SwitchGroupLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'switchGroupLearnedInfo'
     _SDM_ATT_MAP = {
-        'ByteCount': 'byteCount',
-        'DatapathId': 'datapathId',
-        'DatapathIdInHex': 'datapathIdInHex',
-        'Duration': 'duration',
-        'DurationInNs': 'durationInNs',
-        'GroupId': 'groupId',
         'GroupType': 'groupType',
-        'LocalIp': 'localIp',
-        'NegotiatedVersion': 'negotiatedVersion',
         'NumOfBuckets': 'numOfBuckets',
+        'DatapathIdInHex': 'datapathIdInHex',
+        'NegotiatedVersion': 'negotiatedVersion',
+        'DurationInNs': 'durationInNs',
+        'LocalIp': 'localIp',
+        'ByteCount': 'byteCount',
         'PacketCount': 'packetCount',
+        'Duration': 'duration',
         'ReferenceCount': 'referenceCount',
+        'DatapathId': 'datapathId',
+        'GroupId': 'groupId',
     }
 
     def __init__(self, parent):

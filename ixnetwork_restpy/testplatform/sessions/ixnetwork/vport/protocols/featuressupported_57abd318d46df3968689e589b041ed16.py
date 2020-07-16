@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,22 +31,22 @@ class FeaturesSupported(Base):
     __slots__ = ()
     _SDM_NAME = 'featuresSupported'
     _SDM_ATT_MAP = {
-        'ApplyActions': 'applyActions',
-        'ApplyActionsMiss': 'applyActionsMiss',
-        'ApplySetField': 'applySetField',
-        'ApplySetFieldMiss': 'applySetFieldMiss',
-        'Experimenter': 'experimenter',
         'ExperimenterMiss': 'experimenterMiss',
+        'NextTable': 'nextTable',
+        'WriteSetField': 'writeSetField',
+        'NextTableMiss': 'nextTableMiss',
+        'ApplyActions': 'applyActions',
         'Instruction': 'instruction',
         'InstructionMiss': 'instructionMiss',
-        'Match': 'match',
-        'NextTable': 'nextTable',
-        'NextTableMiss': 'nextTableMiss',
+        'ApplySetField': 'applySetField',
         'Wildcards': 'wildcards',
-        'WriteActions': 'writeActions',
+        'Experimenter': 'experimenter',
         'WriteActionsMiss': 'writeActionsMiss',
-        'WriteSetField': 'writeSetField',
+        'ApplySetFieldMiss': 'applySetFieldMiss',
+        'ApplyActionsMiss': 'applyActionsMiss',
+        'WriteActions': 'writeActions',
         'WriteSetFieldMiss': 'writeSetFieldMiss',
+        'Match': 'match',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,15 +31,19 @@ class FortyGigLan(Base):
     __slots__ = ()
     _SDM_NAME = 'fortyGigLan'
     _SDM_ATT_MAP = {
-        'AutoInstrumentation': 'autoInstrumentation',
-        'EnableLASIMonitoring': 'enableLASIMonitoring',
         'EnablePPM': 'enablePPM',
-        'EnabledFlowControl': 'enabledFlowControl',
-        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
         'Loopback': 'loopback',
-        'Ppm': 'ppm',
-        'TransmitClocking': 'transmitClocking',
+        'AvailableSpeeds': 'availableSpeeds',
         'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
+        'EnabledFlowControl': 'enabledFlowControl',
+        'Ppm': 'ppm',
+        'CanModifySpeed': 'canModifySpeed',
+        'EnableLASIMonitoring': 'enableLASIMonitoring',
+        'TransmitClocking': 'transmitClocking',
+        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
+        'SelectedSpeeds': 'selectedSpeeds',
+        'AutoInstrumentation': 'autoInstrumentation',
+        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
     }
 
     def __init__(self, parent):
@@ -84,6 +88,33 @@ class FortyGigLan(Base):
     @AutoInstrumentation.setter
     def AutoInstrumentation(self, value):
         self._set_attribute(self._SDM_ATT_MAP['AutoInstrumentation'], value)
+
+    @property
+    def AvailableSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[]): Which speeds are available for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableSpeeds'])
+
+    @property
+    def CanModifySpeed(self):
+        """
+        Returns
+        -------
+        - bool: Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanModifySpeed'])
+
+    @property
+    def CanSetMultipleSpeeds(self):
+        """
+        Returns
+        -------
+        - bool: Can this port selectmultiple speeds for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanSetMultipleSpeeds'])
 
     @property
     def EnableLASIMonitoring(self):
@@ -158,6 +189,18 @@ class FortyGigLan(Base):
         self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
+    def SelectedSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[]): Which speeds are selected for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
+    @SelectedSpeeds.setter
+    def SelectedSpeeds(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
+
+    @property
     def TransmitClocking(self):
         """
         Returns
@@ -181,7 +224,7 @@ class FortyGigLan(Base):
     def TxIgnoreRxLinkFaults(self, value):
         self._set_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'], value)
 
-    def update(self, AutoInstrumentation=None, EnableLASIMonitoring=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, Ppm=None, TransmitClocking=None, TxIgnoreRxLinkFaults=None):
+    def update(self, AutoInstrumentation=None, EnableLASIMonitoring=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, Ppm=None, SelectedSpeeds=None, TransmitClocking=None, TxIgnoreRxLinkFaults=None):
         """Updates fortyGigLan resource on the server.
 
         Args
@@ -193,6 +236,7 @@ class FortyGigLan(Base):
         - FlowControlDirectedAddress (str): This is the 48-bit MAC address that the port will listen on for a directed pause message.
         - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - SelectedSpeeds (list(str[])): Which speeds are selected for the current media and AN settings.
         - TransmitClocking (str(external | internal | recovered)): Allows to select the transmit clocing options.
         - TxIgnoreRxLinkFaults (bool): Tx ignore Rx link fault.
 

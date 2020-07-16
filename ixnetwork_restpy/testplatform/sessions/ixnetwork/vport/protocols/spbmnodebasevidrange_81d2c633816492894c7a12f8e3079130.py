@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,11 +33,11 @@ class SpbmNodeBaseVidRange(Base):
     __slots__ = ()
     _SDM_NAME = 'spbmNodeBaseVidRange'
     _SDM_ATT_MAP = {
-        'BVlanPriority': 'bVlanPriority',
-        'BVlanTpId': 'bVlanTpId',
-        'BaseVid': 'baseVid',
-        'EctAlgorithm': 'ectAlgorithm',
         'UseFlag': 'useFlag',
+        'BaseVid': 'baseVid',
+        'BVlanPriority': 'bVlanPriority',
+        'EctAlgorithm': 'ectAlgorithm',
+        'BVlanTpId': 'bVlanTpId',
     }
 
     def __init__(self, parent):

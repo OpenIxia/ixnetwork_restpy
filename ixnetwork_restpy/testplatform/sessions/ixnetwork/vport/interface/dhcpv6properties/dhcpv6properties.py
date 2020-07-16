@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,12 +31,12 @@ class DhcpV6Properties(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcpV6Properties'
     _SDM_ATT_MAP = {
+        'Tlvs': 'tlvs',
+        'RenewTimer': 'renewTimer',
         'Enabled': 'enabled',
         'IaId': 'iaId',
-        'IaType': 'iaType',
-        'RenewTimer': 'renewTimer',
         'RequestRate': 'requestRate',
-        'Tlvs': 'tlvs',
+        'IaType': 'iaType',
     }
 
     def __init__(self, parent):

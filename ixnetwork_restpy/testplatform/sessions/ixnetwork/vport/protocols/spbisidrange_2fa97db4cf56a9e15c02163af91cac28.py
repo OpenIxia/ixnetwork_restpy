@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -35,16 +35,16 @@ class SpbIsIdRange(Base):
     _SDM_ATT_MAP = {
         'CMacAddressCount': 'cMacAddressCount',
         'CMacAddressStep': 'cMacAddressStep',
-        'CVlan': 'cVlan',
+        'TBit': 'tBit',
         'Enabled': 'enabled',
+        'SVlan': 'sVlan',
+        'RBit': 'rBit',
+        'StartCmacAddress': 'startCmacAddress',
         'ISid': 'iSid',
         'ITagEthernetType': 'iTagEthernetType',
-        'RBit': 'rBit',
-        'SVlan': 'sVlan',
-        'StartCmacAddress': 'startCmacAddress',
-        'TBit': 'tBit',
         'TrafficDestMacAddress': 'trafficDestMacAddress',
         'TransmissionType': 'transmissionType',
+        'CVlan': 'cVlan',
         'VlanType': 'vlanType',
     }
 

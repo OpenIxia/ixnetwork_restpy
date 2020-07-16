@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,19 +33,19 @@ class SpbTopologyRange(Base):
     __slots__ = ()
     _SDM_NAME = 'spbTopologyRange'
     _SDM_ATT_MAP = {
-        'AuxMcidConfigName': 'auxMcidConfigName',
-        'AuxMcidSignature': 'auxMcidSignature',
-        'BridgePriority': 'bridgePriority',
-        'CistExternalRootCost': 'cistExternalRootCost',
-        'CistRootIdentiifer': 'cistRootIdentiifer',
-        'EnableVbit': 'enableVbit',
-        'Enabled': 'enabled',
-        'LinkMetric': 'linkMetric',
         'McidConfigName': 'mcidConfigName',
-        'McidSignature': 'mcidSignature',
-        'NoOfPorts': 'noOfPorts',
-        'PortIdentifier': 'portIdentifier',
+        'EnableVbit': 'enableVbit',
         'SpSourceId': 'spSourceId',
+        'Enabled': 'enabled',
+        'BridgePriority': 'bridgePriority',
+        'McidSignature': 'mcidSignature',
+        'AuxMcidConfigName': 'auxMcidConfigName',
+        'CistRootIdentiifer': 'cistRootIdentiifer',
+        'PortIdentifier': 'portIdentifier',
+        'LinkMetric': 'linkMetric',
+        'NoOfPorts': 'noOfPorts',
+        'AuxMcidSignature': 'auxMcidSignature',
+        'CistExternalRootCost': 'cistExternalRootCost',
     }
 
     def __init__(self, parent):

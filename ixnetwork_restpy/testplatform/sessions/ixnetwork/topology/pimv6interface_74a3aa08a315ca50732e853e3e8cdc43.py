@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,44 +33,44 @@ class PimV6Interface(Base):
     __slots__ = ()
     _SDM_NAME = 'pimV6Interface'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AutoPickNeighbor': 'autoPickNeighbor',
         'BootstrapHashMaskLength': 'bootstrapHashMaskLength',
-        'BootstrapInterval': 'bootstrapInterval',
-        'BootstrapPriority': 'bootstrapPriority',
-        'BootstrapTimeout': 'bootstrapTimeout',
+        'ForceSemantic': 'forceSemantic',
+        'AutoPickNeighbor': 'autoPickNeighbor',
+        'Sources': 'sources',
         'ConnectedVia': 'connectedVia',
+        'SessionStatus': 'sessionStatus',
+        'Errors': 'errors',
+        'HelloInterval': 'helloInterval',
+        'BootstrapTimeout': 'bootstrapTimeout',
+        'SendBidirectional': 'sendBidirectional',
+        'BootstrapPriority': 'bootstrapPriority',
+        'BootstrapInterval': 'bootstrapInterval',
+        'SupportUnicastBsm': 'supportUnicastBsm',
+        'DisableTriggered': 'disableTriggered',
+        'EnablePrune': 'enablePrune',
+        'PruneDelay': 'pruneDelay',
+        'Status': 'status',
+        'SendGenerationIdOption': 'sendGenerationIdOption',
+        'OverrideInterval': 'overrideInterval',
+        'StackedLayers': 'stackedLayers',
+        'SendGenerationMode': 'sendGenerationMode',
+        'TriggeredHelloDelay': 'triggeredHelloDelay',
+        'Multiplier': 'multiplier',
+        'Active': 'active',
+        'JoinPrunes': 'joinPrunes',
         'Count': 'count',
         'CrpRanges': 'crpRanges',
-        'DescriptiveName': 'descriptiveName',
-        'DisableTriggered': 'disableTriggered',
-        'DiscardLearnedRpInfo': 'discardLearnedRpInfo',
-        'EnableBfdRegistration': 'enableBfdRegistration',
-        'EnableBootstrap': 'enableBootstrap',
-        'EnablePrune': 'enablePrune',
-        'Errors': 'errors',
-        'ForceSemantic': 'forceSemantic',
-        'HelloHoldTime': 'helloHoldTime',
-        'HelloInterval': 'helloInterval',
-        'JoinPrunes': 'joinPrunes',
-        'LanPruneTbit': 'lanPruneTbit',
         'LearnSelectedRpSet': 'learnSelectedRpSet',
-        'LocalRouterId': 'localRouterId',
-        'Multiplier': 'multiplier',
         'Name': 'name',
-        'NeighborV6Address': 'neighborV6Address',
-        'OverrideInterval': 'overrideInterval',
-        'PruneDelay': 'pruneDelay',
-        'SendBidirectional': 'sendBidirectional',
-        'SendGenerationIdOption': 'sendGenerationIdOption',
-        'SendGenerationMode': 'sendGenerationMode',
-        'SessionStatus': 'sessionStatus',
-        'Sources': 'sources',
-        'StackedLayers': 'stackedLayers',
         'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'SupportUnicastBsm': 'supportUnicastBsm',
-        'TriggeredHelloDelay': 'triggeredHelloDelay',
+        'LanPruneTbit': 'lanPruneTbit',
+        'NeighborV6Address': 'neighborV6Address',
+        'EnableBfdRegistration': 'enableBfdRegistration',
+        'HelloHoldTime': 'helloHoldTime',
+        'DescriptiveName': 'descriptiveName',
+        'DiscardLearnedRpInfo': 'discardLearnedRpInfo',
+        'LocalRouterId': 'localRouterId',
+        'EnableBootstrap': 'enableBootstrap',
     }
 
     def __init__(self, parent):
@@ -683,6 +683,31 @@ class PimV6Interface(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def ClearLearnedInfo(self, *args, **kwargs):
         """Executes the clearLearnedInfo operation on the server.
 
@@ -692,7 +717,7 @@ class PimV6Interface(Base):
 
         clearLearnedInfo(SessionIndices=list)
         -------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         clearLearnedInfo(SessionIndices=string)
         ---------------------------------------
@@ -722,7 +747,7 @@ class PimV6Interface(Base):
 
         getLearnedInfo(SessionIndices=list)
         -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         getLearnedInfo(SessionIndices=string)
         -------------------------------------
@@ -752,7 +777,7 @@ class PimV6Interface(Base):
 
         incrementGenID(SessionIndices=list)
         -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         incrementGenID(SessionIndices=string)
         -------------------------------------
@@ -797,7 +822,7 @@ class PimV6Interface(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -822,7 +847,7 @@ class PimV6Interface(Base):
 
         resumeBSM(SessionIndices=list)
         ------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         resumeBSM(SessionIndices=string)
         --------------------------------
@@ -852,7 +877,7 @@ class PimV6Interface(Base):
 
         resumeHello(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         resumeHello(SessionIndices=string)
         ----------------------------------
@@ -882,7 +907,7 @@ class PimV6Interface(Base):
 
         sendBSM(SessionIndices=list)
         ----------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendBSM(SessionIndices=string)
         ------------------------------
@@ -906,13 +931,13 @@ class PimV6Interface(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Activate Interface
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -931,13 +956,13 @@ class PimV6Interface(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Deactivate Interface
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------
@@ -962,7 +987,7 @@ class PimV6Interface(Base):
 
         stopBSM(SessionIndices=list)
         ----------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stopBSM(SessionIndices=string)
         ------------------------------
@@ -992,7 +1017,7 @@ class PimV6Interface(Base):
 
         stopHello(SessionIndices=list)
         ------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stopHello(SessionIndices=string)
         --------------------------------

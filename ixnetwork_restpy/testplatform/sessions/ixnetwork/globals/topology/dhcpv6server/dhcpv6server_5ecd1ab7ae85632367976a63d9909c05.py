@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,15 +31,15 @@ class Dhcpv6server(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcpv6server'
     _SDM_ATT_MAP = {
-        'AdvertiseTimeout': 'advertiseTimeout',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
         'Name': 'name',
-        'PingCheck': 'pingCheck',
-        'PingTimeout': 'pingTimeout',
-        'ReconfigureMaxRc': 'reconfigureMaxRc',
         'ReconfigureTimeout': 'reconfigureTimeout',
+        'PingTimeout': 'pingTimeout',
+        'DescriptiveName': 'descriptiveName',
+        'ReconfigureMaxRc': 'reconfigureMaxRc',
+        'PingCheck': 'pingCheck',
         'RowNames': 'rowNames',
+        'AdvertiseTimeout': 'advertiseTimeout',
     }
 
     def __init__(self, parent):

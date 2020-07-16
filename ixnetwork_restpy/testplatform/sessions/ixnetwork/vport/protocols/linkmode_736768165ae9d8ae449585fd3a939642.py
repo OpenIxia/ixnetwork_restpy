@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,17 +31,17 @@ class LinkMode(Base):
     __slots__ = ()
     _SDM_NAME = 'linkMode'
     _SDM_ATT_MAP = {
-        'Ofppf100GbFd': 'ofppf100GbFd',
-        'Ofppf100MbFd': 'ofppf100MbFd',
-        'Ofppf100MbHd': 'ofppf100MbHd',
-        'Ofppf10GbFd': 'ofppf10GbFd',
         'Ofppf10MbFd': 'ofppf10MbFd',
-        'Ofppf10MbHd': 'ofppf10MbHd',
-        'Ofppf1GbFd': 'ofppf1GbFd',
+        'Ofppf10GbFd': 'ofppf10GbFd',
         'Ofppf1GbHd': 'ofppf1GbHd',
+        'Ofppf1GbFd': 'ofppf1GbFd',
+        'Ofppf100GbFd': 'ofppf100GbFd',
+        'Ofppf10MbHd': 'ofppf10MbHd',
+        'Ofppf100MbHd': 'ofppf100MbHd',
+        'OfppfOther': 'ofppfOther',
         'Ofppf1TbFd': 'ofppf1TbFd',
         'Ofppf40GbFd': 'ofppf40GbFd',
-        'OfppfOther': 'ofppfOther',
+        'Ofppf100MbFd': 'ofppf100MbFd',
     }
 
     def __init__(self, parent):

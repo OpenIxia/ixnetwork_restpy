@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,23 +33,23 @@ class FlowRangeAction(Base):
     __slots__ = ()
     _SDM_NAME = 'flowRangeAction'
     _SDM_ATT_MAP = {
-        'EthDestination': 'ethDestination',
-        'EthSource': 'ethSource',
-        'IpDscp': 'ipDscp',
-        'Ipv4Destination': 'ipv4Destination',
-        'Ipv4Source': 'ipv4Source',
-        'MaxByteLength': 'maxByteLength',
         'OutputPort': 'outputPort',
         'QueueId': 'queueId',
-        'TransportDestination': 'transportDestination',
-        'TransportSource': 'transportSource',
-        'TypeOfAction': 'typeOfAction',
-        'TypeOfOutPort': 'typeOfOutPort',
+        'MaxByteLength': 'maxByteLength',
         'VendorData': 'vendorData',
+        'TransportSource': 'transportSource',
+        'Ipv4Source': 'ipv4Source',
+        'VlanPriority': 'vlanPriority',
+        'VlanId': 'vlanId',
+        'TransportDestination': 'transportDestination',
+        'EthSource': 'ethSource',
+        'EthDestination': 'ethDestination',
         'VendorDataLength': 'vendorDataLength',
         'VendorId': 'vendorId',
-        'VlanId': 'vlanId',
-        'VlanPriority': 'vlanPriority',
+        'TypeOfOutPort': 'typeOfOutPort',
+        'Ipv4Destination': 'ipv4Destination',
+        'IpDscp': 'ipDscp',
+        'TypeOfAction': 'typeOfAction',
     }
 
     def __init__(self, parent):

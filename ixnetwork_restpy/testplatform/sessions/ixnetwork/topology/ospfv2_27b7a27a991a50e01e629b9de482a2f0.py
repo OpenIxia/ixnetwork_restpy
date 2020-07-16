@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,68 +33,68 @@ class Ospfv2(Base):
     __slots__ = ()
     _SDM_NAME = 'ospfv2'
     _SDM_ATT_MAP = {
+        'VFlag': 'vFlag',
+        'Md5KeyId': 'md5KeyId',
+        'Weight': 'weight',
+        'Metric': 'metric',
+        'Multiplier': 'multiplier',
+        'OspfNeighborState': 'ospfNeighborState',
+        'ValidateRxMtu': 'validateRxMtu',
+        'ExternalAttribute': 'externalAttribute',
         'Active': 'active',
-        'AdjSID': 'adjSID',
-        'AreaId': 'areaId',
-        'AreaIdIp': 'areaIdIp',
-        'Authentication': 'authentication',
-        'AuthenticationPassword': 'authenticationPassword',
-        'BFlag': 'bFlag',
+        'Unprotected': 'unprotected',
         'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DeadInterval': 'deadInterval',
-        'Dedicated1Plus1': 'dedicated1Plus1',
+        'MaxMtu': 'maxMtu',
+        'Enhanced': 'enhanced',
+        'EnableSRLG': 'enableSRLG',
+        'ExtraTraffic': 'extraTraffic',
+        'TypeOfServiceRouting': 'typeOfServiceRouting',
+        'SessionStatus': 'sessionStatus',
+        'Errors': 'errors',
+        'HelloInterval': 'helloInterval',
+        'SessionInfo': 'sessionInfo',
+        'TypeAreaId': 'typeAreaId',
+        'EnableFast2wayConvergence': 'enableFast2wayConvergence',
+        'BFlag': 'bFlag',
+        'StackedLayers': 'stackedLayers',
+        'Priority': 'priority',
+        'Authentication': 'authentication',
+        'AreaIdIp': 'areaIdIp',
+        'EnableAdjSID': 'enableAdjSID',
+        'SFlag': 'sFlag',
+        'Reserved40': 'reserved40',
         'Dedicated1To1': 'dedicated1To1',
+        'Status': 'status',
+        'AuthenticationPassword': 'authenticationPassword',
+        'AreaId': 'areaId',
+        'SuppressHello': 'suppressHello',
+        'OpaqueLsaForwarded': 'opaqueLsaForwarded',
+        'NssaCapability': 'nssaCapability',
+        'AdjSID': 'adjSID',
+        'Unused': 'unused',
+        'NeighborIp': 'neighborIp',
+        'Md5Key': 'md5Key',
+        'EnLinkProtection': 'enLinkProtection',
+        'NetworkType': 'networkType',
+        'MulticastCapability': 'multicastCapability',
+        'LocalRouterID': 'localRouterID',
+        'Count': 'count',
+        'EnableFastHello': 'enableFastHello',
+        'OspfIfaceState': 'ospfIfaceState',
+        'Name': 'name',
+        'ExternalCapability': 'externalCapability',
+        'SrlgCount': 'srlgCount',
+        'EnableBfdRegistration': 'enableBfdRegistration',
+        'Reserved80': 'reserved80',
+        'PFlag': 'pFlag',
         'DemandCircuit': 'demandCircuit',
         'DescriptiveName': 'descriptiveName',
-        'EnLinkProtection': 'enLinkProtection',
-        'EnableAdjSID': 'enableAdjSID',
-        'EnableBfdRegistration': 'enableBfdRegistration',
-        'EnableFast2wayConvergence': 'enableFast2wayConvergence',
-        'EnableFastHello': 'enableFastHello',
-        'EnableSRLG': 'enableSRLG',
-        'Enhanced': 'enhanced',
-        'Errors': 'errors',
-        'ExternalAttribute': 'externalAttribute',
-        'ExternalCapability': 'externalCapability',
-        'ExtraTraffic': 'extraTraffic',
-        'HelloInterval': 'helloInterval',
-        'HelloMultiplier': 'helloMultiplier',
-        'LFlag': 'lFlag',
-        'LocalRouterID': 'localRouterID',
-        'MaxMtu': 'maxMtu',
-        'Md5Key': 'md5Key',
-        'Md5KeyId': 'md5KeyId',
-        'Metric': 'metric',
-        'MulticastCapability': 'multicastCapability',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NeighborIp': 'neighborIp',
-        'NetworkType': 'networkType',
-        'NssaCapability': 'nssaCapability',
-        'OpaqueLsaForwarded': 'opaqueLsaForwarded',
-        'OspfIfaceState': 'ospfIfaceState',
-        'OspfNeighborState': 'ospfNeighborState',
-        'PFlag': 'pFlag',
-        'Priority': 'priority',
-        'Reserved40': 'reserved40',
-        'Reserved80': 'reserved80',
-        'SFlag': 'sFlag',
-        'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
+        'DeadInterval': 'deadInterval',
         'Shared': 'shared',
-        'SrlgCount': 'srlgCount',
-        'StackedLayers': 'stackedLayers',
+        'LFlag': 'lFlag',
         'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'SuppressHello': 'suppressHello',
-        'TypeAreaId': 'typeAreaId',
-        'TypeOfServiceRouting': 'typeOfServiceRouting',
-        'Unprotected': 'unprotected',
-        'Unused': 'unused',
-        'VFlag': 'vFlag',
-        'ValidateRxMtu': 'validateRxMtu',
-        'Weight': 'weight',
+        'HelloMultiplier': 'helloMultiplier',
+        'Dedicated1Plus1': 'dedicated1Plus1',
     }
 
     def __init__(self, parent):
@@ -465,7 +465,7 @@ class Ospfv2(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Max MTU Value
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum trasmission unit, min=68, max=14000
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxMtu']))
@@ -964,6 +964,31 @@ class Ospfv2(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def ClearAllLearnedInfo(self, *args, **kwargs):
         """Executes the clearAllLearnedInfo operation on the server.
 
@@ -973,7 +998,7 @@ class Ospfv2(Base):
 
         clearAllLearnedInfo(SessionIndices=list)
         ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         clearAllLearnedInfo(SessionIndices=string)
         ------------------------------------------
@@ -1018,7 +1043,7 @@ class Ospfv2(Base):
 
         getBasicLearnedInfo(SessionIndices=list)
         ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         getBasicLearnedInfo(SessionIndices=string)
         ------------------------------------------
@@ -1048,7 +1073,7 @@ class Ospfv2(Base):
 
         getDetailedLearnedInfo(SessionIndices=list)
         -------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         getDetailedLearnedInfo(SessionIndices=string)
         ---------------------------------------------
@@ -1073,7 +1098,7 @@ class Ospfv2(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -1098,7 +1123,7 @@ class Ospfv2(Base):
 
         resumeHello(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         resumeHello(SessionIndices=string)
         ----------------------------------
@@ -1137,13 +1162,13 @@ class Ospfv2(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start OSPF Interface
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -1162,13 +1187,13 @@ class Ospfv2(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop OSPF Interface
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------
@@ -1193,7 +1218,7 @@ class Ospfv2(Base):
 
         stopHello(SessionIndices=list)
         ------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stopHello(SessionIndices=string)
         --------------------------------

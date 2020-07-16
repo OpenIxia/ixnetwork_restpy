@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,40 +33,40 @@ class Lagportlacp(Base):
     __slots__ = ()
     _SDM_NAME = 'lagportlacp'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ActorKey': 'actorKey',
-        'ActorPortNumber': 'actorPortNumber',
-        'ActorPortPriority': 'actorPortPriority',
-        'ActorSystemId': 'actorSystemId',
-        'ActorSystemPriority': 'actorSystemPriority',
-        'AdministrativeKey': 'administrativeKey',
-        'AggregationFlagState': 'aggregationFlagState',
-        'CollectingFlag': 'collectingFlag',
-        'CollectorsMaxdelay': 'collectorsMaxdelay',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DistributingFlag': 'distributingFlag',
-        'Errors': 'errors',
-        'InterMarkerPDUDelay': 'interMarkerPDUDelay',
-        'InterMarkerPDUDelayRandomMax': 'interMarkerPDUDelayRandomMax',
         'InterMarkerPDUDelayRandomMin': 'interMarkerPDUDelayRandomMin',
-        'LacpActivity': 'lacpActivity',
-        'LacpduPeriodicTimeInterval': 'lacpduPeriodicTimeInterval',
-        'LacpduTimeout': 'lacpduTimeout',
         'MarkerRequestMode': 'markerRequestMode',
-        'MarkerResponseWaitTime': 'markerResponseWaitTime',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
+        'ActorPortNumber': 'actorPortNumber',
         'PeriodicSendingOfMarkerRequest': 'periodicSendingOfMarkerRequest',
-        'SendMarkerRequestOnLagChange': 'sendMarkerRequestOnLagChange',
-        'SessionStatus': 'sessionStatus',
-        'SourceMac': 'sourceMac',
         'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
+        'AggregationFlagState': 'aggregationFlagState',
+        'ConnectedVia': 'connectedVia',
         'SupportRespondingToMarker': 'supportRespondingToMarker',
+        'InterMarkerPDUDelay': 'interMarkerPDUDelay',
+        'SessionStatus': 'sessionStatus',
+        'Errors': 'errors',
+        'SendMarkerRequestOnLagChange': 'sendMarkerRequestOnLagChange',
+        'Status': 'status',
+        'LacpduTimeout': 'lacpduTimeout',
         'SynchronizationFlag': 'synchronizationFlag',
+        'ActorKey': 'actorKey',
+        'CollectorsMaxdelay': 'collectorsMaxdelay',
+        'LacpActivity': 'lacpActivity',
+        'CollectingFlag': 'collectingFlag',
+        'ActorSystemId': 'actorSystemId',
+        'Multiplier': 'multiplier',
+        'Active': 'active',
+        'DistributingFlag': 'distributingFlag',
+        'MarkerResponseWaitTime': 'markerResponseWaitTime',
+        'Count': 'count',
+        'SourceMac': 'sourceMac',
+        'ActorPortPriority': 'actorPortPriority',
+        'Name': 'name',
+        'StateCounts': 'stateCounts',
+        'ActorSystemPriority': 'actorSystemPriority',
+        'InterMarkerPDUDelayRandomMax': 'interMarkerPDUDelayRandomMax',
+        'DescriptiveName': 'descriptiveName',
+        'LacpduPeriodicTimeInterval': 'lacpduPeriodicTimeInterval',
+        'AdministrativeKey': 'administrativeKey',
     }
 
     def __init__(self, parent):
@@ -553,6 +553,31 @@ class Lagportlacp(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def LacpStartPDU(self, *args, **kwargs):
         """Executes the lacpStartPDU operation on the server.
 
@@ -562,7 +587,7 @@ class Lagportlacp(Base):
 
         lacpStartPDU(SessionIndices=list)
         ---------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         lacpStartPDU(SessionIndices=string)
         -----------------------------------
@@ -587,7 +612,7 @@ class Lagportlacp(Base):
 
         lacpStopPDU(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         lacpStopPDU(SessionIndices=string)
         ----------------------------------
@@ -612,7 +637,7 @@ class Lagportlacp(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -637,7 +662,7 @@ class Lagportlacp(Base):
 
         sendMarker(SessionIndices=list)
         -------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendMarker(SessionIndices=string)
         ---------------------------------
@@ -676,13 +701,13 @@ class Lagportlacp(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start LACP
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -721,13 +746,13 @@ class Lagportlacp(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop LACP
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

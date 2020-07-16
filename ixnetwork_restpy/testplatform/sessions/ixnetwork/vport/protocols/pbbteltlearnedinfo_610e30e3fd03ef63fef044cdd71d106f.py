@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,13 +32,13 @@ class PbbTeLtLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'pbbTeLtLearnedInfo'
     _SDM_ATT_MAP = {
-        'BVlan': 'bVlan',
-        'DstMacAddress': 'dstMacAddress',
-        'HopCount': 'hopCount',
         'Hops': 'hops',
-        'MdLevel': 'mdLevel',
-        'ReplyStatus': 'replyStatus',
+        'DstMacAddress': 'dstMacAddress',
         'SrcMacAddress': 'srcMacAddress',
+        'ReplyStatus': 'replyStatus',
+        'BVlan': 'bVlan',
+        'HopCount': 'hopCount',
+        'MdLevel': 'mdLevel',
         'TransactionId': 'transactionId',
     }
 

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,23 +31,23 @@ class VlanRange(Base):
     __slots__ = ()
     _SDM_NAME = 'vlanRange'
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'FirstId': 'firstId',
-        'IdIncrMode': 'idIncrMode',
-        'Increment': 'increment',
         'IncrementStep': 'incrementStep',
-        'InnerEnable': 'innerEnable',
-        'InnerFirstId': 'innerFirstId',
         'InnerIncrement': 'innerIncrement',
+        'UniqueCount': 'uniqueCount',
+        'FirstId': 'firstId',
+        'Name': 'name',
+        'Tpid': 'tpid',
+        'IdIncrMode': 'idIncrMode',
+        'ObjectId': 'objectId',
+        'Enabled': 'enabled',
+        'InnerFirstId': 'innerFirstId',
         'InnerIncrementStep': 'innerIncrementStep',
-        'InnerPriority': 'innerPriority',
+        'Priority': 'priority',
+        'Increment': 'increment',
         'InnerTpid': 'innerTpid',
         'InnerUniqueCount': 'innerUniqueCount',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'Priority': 'priority',
-        'Tpid': 'tpid',
-        'UniqueCount': 'uniqueCount',
+        'InnerEnable': 'innerEnable',
+        'InnerPriority': 'innerPriority',
     }
 
     def __init__(self, parent):

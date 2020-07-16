@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,17 +33,17 @@ class CustomTlvs(Base):
     __slots__ = ()
     _SDM_NAME = 'customTlvs'
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'IncludeInCcm': 'includeInCcm',
-        'IncludeInLbm': 'includeInLbm',
-        'IncludeInLbr': 'includeInLbr',
-        'IncludeInLmm': 'includeInLmm',
-        'IncludeInLmr': 'includeInLmr',
         'IncludeInLtm': 'includeInLtm',
-        'IncludeInLtr': 'includeInLtr',
-        'Length': 'length',
-        'Type': 'type',
+        'IncludeInLbm': 'includeInLbm',
+        'IncludeInLmm': 'includeInLmm',
+        'Enabled': 'enabled',
         'Value': 'value',
+        'IncludeInCcm': 'includeInCcm',
+        'Length': 'length',
+        'IncludeInLmr': 'includeInLmr',
+        'IncludeInLbr': 'includeInLbr',
+        'Type': 'type',
+        'IncludeInLtr': 'includeInLtr',
     }
 
     def __init__(self, parent):

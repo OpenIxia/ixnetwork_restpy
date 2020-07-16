@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,23 +33,23 @@ class RsvpteLsps(Base):
     __slots__ = ()
     _SDM_NAME = 'rsvpteLsps'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ConnectedVia': 'connectedVia',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableP2PEgress': 'enableP2PEgress',
-        'Errors': 'errors',
         'ExpectedPceInitiatedLspsCount': 'expectedPceInitiatedLspsCount',
-        'IngressP2PLsps': 'ingressP2PLsps',
-        'LocalIp': 'localIp',
-        'Multiplier': 'multiplier',
+        'Errors': 'errors',
         'Name': 'name',
-        'P2mpEgressTunnelCount': 'p2mpEgressTunnelCount',
         'P2mpIngressLspCount': 'p2mpIngressLspCount',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
         'Status': 'status',
+        'StackedLayers': 'stackedLayers',
+        'LocalIp': 'localIp',
+        'ConnectedVia': 'connectedVia',
+        'DescriptiveName': 'descriptiveName',
+        'SessionStatus': 'sessionStatus',
+        'Multiplier': 'multiplier',
+        'Active': 'active',
+        'P2mpEgressTunnelCount': 'p2mpEgressTunnelCount',
+        'IngressP2PLsps': 'ingressP2PLsps',
+        'StateCounts': 'stateCounts',
+        'EnableP2PEgress': 'enableP2PEgress',
     }
 
     def __init__(self, parent):
@@ -439,6 +439,31 @@ class RsvpteLsps(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def RestartDown(self, *args, **kwargs):
         """Executes the restartDown operation on the server.
 
@@ -448,7 +473,7 @@ class RsvpteLsps(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -467,13 +492,13 @@ class RsvpteLsps(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected protocols.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -492,13 +517,13 @@ class RsvpteLsps(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected protocols.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

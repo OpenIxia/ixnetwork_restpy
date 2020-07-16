@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,20 +31,20 @@ class Statistics(Base):
     __slots__ = ()
     _SDM_NAME = 'statistics'
     _SDM_ATT_MAP = {
-        'AdditionalFcoeStat1': 'additionalFcoeStat1',
-        'AdditionalFcoeStat2': 'additionalFcoeStat2',
-        'CsvFilePath': 'csvFilePath',
         'CsvLogPollIntervalMultiplier': 'csvLogPollIntervalMultiplier',
-        'DataStorePollingIntervalMultiplier': 'dataStorePollingIntervalMultiplier',
         'EnableAutoDataStore': 'enableAutoDataStore',
-        'EnableCsvLogging': 'enableCsvLogging',
-        'EnableDataCenterSharedStats': 'enableDataCenterSharedStats',
-        'GuardrailEnabled': 'guardrailEnabled',
+        'TimestampPrecision': 'timestampPrecision',
         'MaxNumberOfStatsPerCustomGraph': 'maxNumberOfStatsPerCustomGraph',
         'PollInterval': 'pollInterval',
-        'TimeSynchronization': 'timeSynchronization',
-        'TimestampPrecision': 'timestampPrecision',
         'UgsTcpPort': 'ugsTcpPort',
+        'TimeSynchronization': 'timeSynchronization',
+        'DataStorePollingIntervalMultiplier': 'dataStorePollingIntervalMultiplier',
+        'AdditionalFcoeStat2': 'additionalFcoeStat2',
+        'AdditionalFcoeStat1': 'additionalFcoeStat1',
+        'GuardrailEnabled': 'guardrailEnabled',
+        'CsvFilePath': 'csvFilePath',
+        'EnableDataCenterSharedStats': 'enableDataCenterSharedStats',
+        'EnableCsvLogging': 'enableCsvLogging',
     }
 
     def __init__(self, parent):

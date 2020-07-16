@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,34 +33,34 @@ class GlobalEgtpApnS5S8(Base):
     __slots__ = ()
     _SDM_NAME = 'globalEgtpApnS5S8'
     _SDM_ATT_MAP = {
-        'AddressPoolStartIPv4': 'addressPoolStartIPv4',
-        'AddressPoolStartIPv6': 'addressPoolStartIPv6',
-        'AmbrDL': 'ambrDL',
-        'AmbrUL': 'ambrUL',
-        'ArpPreemptionCapability': 'arpPreemptionCapability',
-        'ArpPreemptionVulnerability': 'arpPreemptionVulnerability',
-        'ArpPriorityLevel': 'arpPriorityLevel',
-        'EnableLifetime': 'enableLifetime',
-        'EnablePgwDistribution': 'enablePgwDistribution',
-        'EnableStaticIpAllocation': 'enableStaticIpAllocation',
-        'Enabled': 'enabled',
-        'IpType': 'ipType',
-        'Lifetime': 'lifetime',
-        'Mbrd': 'mbrd',
-        'Mbru': 'mbru',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'PgwCount': 'pgwCount',
-        'PgwIp': 'pgwIp',
-        'PgwIpCount': 'pgwIpCount',
-        'Qci': 'qci',
         'Restriction': 'restriction',
-        'SelectionMode': 'selectionMode',
-        'UpdateAmbrEnable': 'updateAmbrEnable',
-        'UpdateAmbrIncrement': 'updateAmbrIncrement',
-        'UpdateAmbrIterations': 'updateAmbrIterations',
-        'UpdateAmbrTimeout': 'updateAmbrTimeout',
+        'ArpPreemptionCapability': 'arpPreemptionCapability',
+        'AmbrUL': 'ambrUL',
+        'EnableStaticIpAllocation': 'enableStaticIpAllocation',
+        'ArpPriorityLevel': 'arpPriorityLevel',
+        'Lifetime': 'lifetime',
         'UseFullApn': 'useFullApn',
+        'ObjectId': 'objectId',
+        'UpdateAmbrIncrement': 'updateAmbrIncrement',
+        'UpdateAmbrTimeout': 'updateAmbrTimeout',
+        'PgwIpCount': 'pgwIpCount',
+        'EnablePgwDistribution': 'enablePgwDistribution',
+        'Qci': 'qci',
+        'EnableLifetime': 'enableLifetime',
+        'PgwIp': 'pgwIp',
+        'UpdateAmbrIterations': 'updateAmbrIterations',
+        'SelectionMode': 'selectionMode',
+        'Name': 'name',
+        'UpdateAmbrEnable': 'updateAmbrEnable',
+        'ArpPreemptionVulnerability': 'arpPreemptionVulnerability',
+        'AmbrDL': 'ambrDL',
+        'IpType': 'ipType',
+        'Mbru': 'mbru',
+        'AddressPoolStartIPv6': 'addressPoolStartIPv6',
+        'AddressPoolStartIPv4': 'addressPoolStartIPv4',
+        'Enabled': 'enabled',
+        'Mbrd': 'mbrd',
+        'PgwCount': 'pgwCount',
     }
 
     def __init__(self, parent):

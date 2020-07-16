@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,19 +31,19 @@ class TestConfig(Base):
     __slots__ = ()
     _SDM_NAME = 'testConfig'
     _SDM_ATT_MAP = {
-        'AlgorithmType': 'algorithmType',
-        'Duration': 'duration',
-        'InitialStepIntegerValues': 'initialStepIntegerValues',
-        'LeaveSessionsUp': 'leaveSessionsUp',
-        'LoadRateList': 'loadRateList',
         'MaxOutstandingRequests': 'maxOutstandingRequests',
+        'InitialStepIntegerValues': 'initialStepIntegerValues',
+        'Step_failedsession_enableAccLoss': 'step_failedsession_enableAccLoss',
+        'LeaveSessionsUp': 'leaveSessionsUp',
         'MaxStepIntegerValues': 'maxStepIntegerValues',
-        'Numtrials': 'numtrials',
+        'LoadRateList': 'loadRateList',
         'ProtocolItem': 'protocolItem',
+        'Numtrials': 'numtrials',
+        'Duration': 'duration',
+        'AlgorithmType': 'algorithmType',
+        'Step_failedsession_thresholdAccLoss': 'step_failedsession_thresholdAccLoss',
         'RequestRate': 'requestRate',
         'StepStepIntegerValues': 'stepStepIntegerValues',
-        'Step_failedsession_enableAccLoss': 'step_failedsession_enableAccLoss',
-        'Step_failedsession_thresholdAccLoss': 'step_failedsession_thresholdAccLoss',
     }
 
     def __init__(self, parent):

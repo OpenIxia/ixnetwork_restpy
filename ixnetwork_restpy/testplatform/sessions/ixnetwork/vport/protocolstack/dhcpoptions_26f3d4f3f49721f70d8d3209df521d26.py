@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,18 +33,18 @@ class DhcpOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcpOptions'
     _SDM_ATT_MAP = {
-        'Associates': 'associates',
-        'MaxOutstandingReleases': 'maxOutstandingReleases',
+        'SetupRateMax': 'setupRateMax',
         'MaxOutstandingRequests': 'maxOutstandingRequests',
         'ObjectId': 'objectId',
-        'OverrideGlobalSetupRate': 'overrideGlobalSetupRate',
         'OverrideGlobalTeardownRate': 'overrideGlobalTeardownRate',
+        'MaxOutstandingReleases': 'maxOutstandingReleases',
+        'Associates': 'associates',
+        'TeardownRateMax': 'teardownRateMax',
+        'TeardownRateInitial': 'teardownRateInitial',
+        'OverrideGlobalSetupRate': 'overrideGlobalSetupRate',
+        'TeardownRateIncrement': 'teardownRateIncrement',
         'SetupRateIncrement': 'setupRateIncrement',
         'SetupRateInitial': 'setupRateInitial',
-        'SetupRateMax': 'setupRateMax',
-        'TeardownRateIncrement': 'teardownRateIncrement',
-        'TeardownRateInitial': 'teardownRateInitial',
-        'TeardownRateMax': 'teardownRateMax',
     }
 
     def __init__(self, parent):

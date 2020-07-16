@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,21 +33,21 @@ class Host(Base):
     __slots__ = ()
     _SDM_NAME = 'host'
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'GqResponseMode': 'gqResponseMode',
-        'InterfaceId': 'interfaceId',
-        'InterfaceIndex': 'interfaceIndex',
-        'InterfaceType': 'interfaceType',
-        'Interfaces': 'interfaces',
-        'ReportFreq': 'reportFreq',
-        'RespToQueryImmediately': 'respToQueryImmediately',
-        'RobustnessVariable': 'robustnessVariable',
         'RouterAlert': 'routerAlert',
-        'SqResponseMode': 'sqResponseMode',
+        'InterfaceId': 'interfaceId',
         'SuppressReports': 'suppressReports',
-        'TrafficGroupId': 'trafficGroupId',
+        'Interfaces': 'interfaces',
         'UpResponseMode': 'upResponseMode',
+        'Enabled': 'enabled',
+        'InterfaceIndex': 'interfaceIndex',
+        'RobustnessVariable': 'robustnessVariable',
+        'TrafficGroupId': 'trafficGroupId',
+        'GqResponseMode': 'gqResponseMode',
         'Version': 'version',
+        'InterfaceType': 'interfaceType',
+        'SqResponseMode': 'sqResponseMode',
+        'RespToQueryImmediately': 'respToQueryImmediately',
+        'ReportFreq': 'reportFreq',
     }
 
     def __init__(self, parent):

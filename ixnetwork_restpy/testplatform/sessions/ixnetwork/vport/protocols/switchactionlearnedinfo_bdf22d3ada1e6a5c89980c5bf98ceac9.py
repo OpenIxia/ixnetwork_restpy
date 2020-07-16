@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,19 +32,19 @@ class SwitchActionLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'switchActionLearnedInfo'
     _SDM_ATT_MAP = {
-        'ActionType': 'actionType',
         'EthernetDestination': 'ethernetDestination',
-        'EthernetSource': 'ethernetSource',
-        'IpDscp': 'ipDscp',
-        'Ipv4Destination': 'ipv4Destination',
-        'Ipv4Source': 'ipv4Source',
-        'MaxByteLength': 'maxByteLength',
         'OutputPort': 'outputPort',
+        'MaxByteLength': 'maxByteLength',
         'QueueId': 'queueId',
-        'TransportDestination': 'transportDestination',
+        'Ipv4Source': 'ipv4Source',
         'TransportSource': 'transportSource',
+        'EthernetSource': 'ethernetSource',
         'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
+        'TransportDestination': 'transportDestination',
+        'IpDscp': 'ipDscp',
+        'ActionType': 'actionType',
+        'Ipv4Destination': 'ipv4Destination',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,12 +33,12 @@ class SimInterfaceIPv4Config(Base):
     _SDM_NAME = 'simInterfaceIPv4Config'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
+        'ToIP': 'toIP',
+        'Name': 'name',
         'EnableIp': 'enableIp',
         'FromIP': 'fromIP',
-        'Name': 'name',
+        'DescriptiveName': 'descriptiveName',
         'SubnetPrefixLength': 'subnetPrefixLength',
-        'ToIP': 'toIP',
     }
 
     def __init__(self, parent):
@@ -207,6 +207,19 @@ class SimInterfaceIPv4Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
+
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
 
     def Start(self):
         """Executes the start operation on the server.

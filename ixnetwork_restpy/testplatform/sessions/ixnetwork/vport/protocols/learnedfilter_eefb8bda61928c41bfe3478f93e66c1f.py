@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,33 +31,33 @@ class LearnedFilter(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedFilter'
     _SDM_ATT_MAP = {
-        'AdvRouterId': 'advRouterId',
-        'AreaSummaryLsaCount': 'areaSummaryLsaCount',
-        'EnableAdvRouterId': 'enableAdvRouterId',
-        'EnableFilter': 'enableFilter',
-        'EnableLinkStateId': 'enableLinkStateId',
-        'ExcludeAdvRouterId': 'excludeAdvRouterId',
-        'ExcludeLinkStateId': 'excludeLinkStateId',
-        'ExternalLsaCount': 'externalLsaCount',
-        'ExternalSummaryLsaCount': 'externalSummaryLsaCount',
-        'IsComplete': 'isComplete',
-        'LinkStateId': 'linkStateId',
-        'NetworkLsaCount': 'networkLsaCount',
         'NssaLsaCount': 'nssaLsaCount',
-        'OpaqueAreaScopeLsaCount': 'opaqueAreaScopeLsaCount',
-        'OpaqueAsScopeLsaCount': 'opaqueAsScopeLsaCount',
-        'OpaqueLocalScopeLsaCount': 'opaqueLocalScopeLsaCount',
-        'RouterLsaCount': 'routerLsaCount',
-        'ShowExternalAsLsa': 'showExternalAsLsa',
-        'ShowNetworkLsa': 'showNetworkLsa',
         'ShowNssaLsa': 'showNssaLsa',
-        'ShowOpaqueAreaLsa': 'showOpaqueAreaLsa',
-        'ShowOpaqueDomainLsa': 'showOpaqueDomainLsa',
-        'ShowOpaqueLocalLsa': 'showOpaqueLocalLsa',
-        'ShowRouterLsa': 'showRouterLsa',
+        'AreaSummaryLsaCount': 'areaSummaryLsaCount',
         'ShowSummaryAsLsa': 'showSummaryAsLsa',
-        'ShowSummaryIpLsa': 'showSummaryIpLsa',
+        'NetworkLsaCount': 'networkLsaCount',
+        'RouterLsaCount': 'routerLsaCount',
+        'AdvRouterId': 'advRouterId',
+        'ShowOpaqueDomainLsa': 'showOpaqueDomainLsa',
+        'ShowOpaqueAreaLsa': 'showOpaqueAreaLsa',
+        'IsComplete': 'isComplete',
+        'OpaqueAreaScopeLsaCount': 'opaqueAreaScopeLsaCount',
+        'ShowRouterLsa': 'showRouterLsa',
+        'ExcludeAdvRouterId': 'excludeAdvRouterId',
+        'EnableLinkStateId': 'enableLinkStateId',
+        'ShowOpaqueLocalLsa': 'showOpaqueLocalLsa',
+        'ShowNetworkLsa': 'showNetworkLsa',
+        'ExternalLsaCount': 'externalLsaCount',
+        'OpaqueAsScopeLsaCount': 'opaqueAsScopeLsaCount',
         'TotalLsaCount': 'totalLsaCount',
+        'LinkStateId': 'linkStateId',
+        'ExcludeLinkStateId': 'excludeLinkStateId',
+        'ExternalSummaryLsaCount': 'externalSummaryLsaCount',
+        'ShowExternalAsLsa': 'showExternalAsLsa',
+        'EnableAdvRouterId': 'enableAdvRouterId',
+        'OpaqueLocalScopeLsaCount': 'opaqueLocalScopeLsaCount',
+        'ShowSummaryIpLsa': 'showSummaryIpLsa',
+        'EnableFilter': 'enableFilter',
     }
 
     def __init__(self, parent):

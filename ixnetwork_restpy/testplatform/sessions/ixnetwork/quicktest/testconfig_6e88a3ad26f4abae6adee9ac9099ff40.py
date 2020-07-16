@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,25 +31,25 @@ class TestConfig(Base):
     __slots__ = ()
     _SDM_NAME = 'testConfig'
     _SDM_ATT_MAP = {
-        'BinaryResolutionSlaveNumber': 'binaryResolutionSlaveNumber',
-        'Duration': 'duration',
-        'EnableSlavesPassFail': 'enableSlavesPassFail',
-        'IncrementStepSlaveNumber': 'incrementStepSlaveNumber',
-        'InitialBinarySlaveNumber': 'initialBinarySlaveNumber',
-        'InitialStepSlaveNumber': 'initialStepSlaveNumber',
-        'LoadType': 'loadType',
-        'MaxBinarySlaveNumber': 'maxBinarySlaveNumber',
         'MaxOutstanding': 'maxOutstanding',
-        'MaxStepSlaveNumber': 'maxStepSlaveNumber',
-        'MinBinarySlaveNumber': 'minBinarySlaveNumber',
-        'NumberOfSlavesPassFail': 'numberOfSlavesPassFail',
-        'Numtrials': 'numtrials',
-        'ProtocolItem': 'protocolItem',
+        'LoadType': 'loadType',
         'Runmode': 'runmode',
-        'SetupRate': 'setupRate',
+        'InitialBinarySlaveNumber': 'initialBinarySlaveNumber',
+        'BinaryResolutionSlaveNumber': 'binaryResolutionSlaveNumber',
         'StartTraffic': 'startTraffic',
-        'TeardownRate': 'teardownRate',
+        'SetupRate': 'setupRate',
+        'MaxBinarySlaveNumber': 'maxBinarySlaveNumber',
         'UseExistingSetupRate': 'useExistingSetupRate',
+        'IncrementStepSlaveNumber': 'incrementStepSlaveNumber',
+        'EnableSlavesPassFail': 'enableSlavesPassFail',
+        'MaxStepSlaveNumber': 'maxStepSlaveNumber',
+        'ProtocolItem': 'protocolItem',
+        'Numtrials': 'numtrials',
+        'Duration': 'duration',
+        'NumberOfSlavesPassFail': 'numberOfSlavesPassFail',
+        'TeardownRate': 'teardownRate',
+        'MinBinarySlaveNumber': 'minBinarySlaveNumber',
+        'InitialStepSlaveNumber': 'initialStepSlaveNumber',
     }
 
     def __init__(self, parent):

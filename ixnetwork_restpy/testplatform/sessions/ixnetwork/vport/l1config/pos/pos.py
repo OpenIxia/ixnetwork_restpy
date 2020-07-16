@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,17 +31,21 @@ class Pos(Base):
     __slots__ = ()
     _SDM_NAME = 'pos'
     _SDM_ATT_MAP = {
-        'C2Expected': 'c2Expected',
-        'C2Tx': 'c2Tx',
-        'CrcSize': 'crcSize',
-        'DataScrambling': 'dataScrambling',
-        'EnablePPM': 'enablePPM',
-        'InterfaceType': 'interfaceType',
-        'Loopback': 'loopback',
-        'PayloadType': 'payloadType',
         'Ppm': 'ppm',
-        'TrafficMapType': 'trafficMapType',
+        'EnablePPM': 'enablePPM',
         'TransmitClocking': 'transmitClocking',
+        'Loopback': 'loopback',
+        'AvailableSpeeds': 'availableSpeeds',
+        'DataScrambling': 'dataScrambling',
+        'CanModifySpeed': 'canModifySpeed',
+        'PayloadType': 'payloadType',
+        'C2Tx': 'c2Tx',
+        'InterfaceType': 'interfaceType',
+        'C2Expected': 'c2Expected',
+        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
+        'SelectedSpeeds': 'selectedSpeeds',
+        'CrcSize': 'crcSize',
+        'TrafficMapType': 'trafficMapType',
     }
 
     def __init__(self, parent):
@@ -76,6 +80,15 @@ class Pos(Base):
         return Ppp(self)._select()
 
     @property
+    def AvailableSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[]): Which speeds are available for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableSpeeds'])
+
+    @property
     def C2Expected(self):
         """
         Returns
@@ -98,6 +111,24 @@ class Pos(Base):
     @C2Tx.setter
     def C2Tx(self, value):
         self._set_attribute(self._SDM_ATT_MAP['C2Tx'], value)
+
+    @property
+    def CanModifySpeed(self):
+        """
+        Returns
+        -------
+        - bool: Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanModifySpeed'])
+
+    @property
+    def CanSetMultipleSpeeds(self):
+        """
+        Returns
+        -------
+        - bool: Can this port selectmultiple speeds for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanSetMultipleSpeeds'])
 
     @property
     def CrcSize(self):
@@ -184,6 +215,18 @@ class Pos(Base):
         self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
+    def SelectedSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[]): Which speeds are selected for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
+    @SelectedSpeeds.setter
+    def SelectedSpeeds(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
+
+    @property
     def TrafficMapType(self):
         """
         Returns
@@ -207,7 +250,7 @@ class Pos(Base):
     def TransmitClocking(self, value):
         self._set_attribute(self._SDM_ATT_MAP['TransmitClocking'], value)
 
-    def update(self, C2Expected=None, C2Tx=None, CrcSize=None, DataScrambling=None, EnablePPM=None, InterfaceType=None, Loopback=None, PayloadType=None, Ppm=None, TrafficMapType=None, TransmitClocking=None):
+    def update(self, C2Expected=None, C2Tx=None, CrcSize=None, DataScrambling=None, EnablePPM=None, InterfaceType=None, Loopback=None, PayloadType=None, Ppm=None, SelectedSpeeds=None, TrafficMapType=None, TransmitClocking=None):
         """Updates pos resource on the server.
 
         Args
@@ -221,6 +264,7 @@ class Pos(Base):
         - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
         - PayloadType (str(ciscoFrameRelay | ciscoHdlc | frameRelay | ppp)): The POS payload type.
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - SelectedSpeeds (list(str[])): Which speeds are selected for the current media and AN settings.
         - TrafficMapType (str(dcc | spe)): The POS traffic map type.
         - TransmitClocking (str(external | internal | recovered)): The POS transmit clocking type.
 

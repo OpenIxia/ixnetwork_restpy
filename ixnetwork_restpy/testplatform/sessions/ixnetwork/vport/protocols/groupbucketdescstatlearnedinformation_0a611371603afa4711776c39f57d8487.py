@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,15 +32,15 @@ class GroupBucketDescStatLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'groupBucketDescStatLearnedInformation'
     _SDM_ATT_MAP = {
-        'ActionCount': 'actionCount',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'GroupId': 'groupId',
-        'LocalIp': 'localIp',
-        'RemoteIp': 'remoteIp',
-        'WatchGroup': 'watchGroup',
-        'WatchPort': 'watchPort',
         'Weight': 'weight',
+        'WatchGroup': 'watchGroup',
+        'ActionCount': 'actionCount',
+        'LocalIp': 'localIp',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
+        'RemoteIp': 'remoteIp',
+        'DataPathId': 'dataPathId',
+        'GroupId': 'groupId',
+        'WatchPort': 'watchPort',
     }
 
     def __init__(self, parent):

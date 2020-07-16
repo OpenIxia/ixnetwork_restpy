@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,21 +33,21 @@ class IsisSpbSimRouter(Base):
     __slots__ = ()
     _SDM_NAME = 'isisSpbSimRouter'
     _SDM_ATT_MAP = {
-        'Active': 'active',
+        'Count': 'count',
+        'Status': 'status',
+        'Errors': 'errors',
+        'Name': 'name',
+        'SpSourceId': 'spSourceId',
+        'StackedLayers': 'stackedLayers',
         'BridgePriority': 'bridgePriority',
         'ConnectedVia': 'connectedVia',
-        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
-        'Errors': 'errors',
         'Multiplier': 'multiplier',
-        'Name': 'name',
-        'SessionStatus': 'sessionStatus',
-        'SpSourceId': 'spSourceId',
-        'SpbTopologyCount': 'spbTopologyCount',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
+        'Active': 'active',
         'SystemId': 'systemId',
+        'SpbTopologyCount': 'spbTopologyCount',
+        'StateCounts': 'stateCounts',
+        'SessionStatus': 'sessionStatus',
     }
 
     def __init__(self, parent):
@@ -353,6 +353,31 @@ class IsisSpbSimRouter(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def RestartDown(self, *args, **kwargs):
         """Executes the restartDown operation on the server.
 
@@ -362,7 +387,7 @@ class IsisSpbSimRouter(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -381,13 +406,13 @@ class IsisSpbSimRouter(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected protocols.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -406,13 +431,13 @@ class IsisSpbSimRouter(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected protocols.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

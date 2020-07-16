@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,17 +31,17 @@ class LdpTargetedIpv6Peer(Base):
     __slots__ = ()
     _SDM_NAME = 'ldpTargetedIpv6Peer'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Authentication': 'authentication',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'IPAddress': 'iPAddress',
-        'InitiateTargetedHello': 'initiateTargetedHello',
-        'LocalRouterID': 'localRouterID',
-        'MD5Key': 'mD5Key',
-        'Name': 'name',
-        'TargetedHelloInterval': 'targetedHelloInterval',
         'TargetedHoldTime': 'targetedHoldTime',
+        'Name': 'name',
+        'LocalRouterID': 'localRouterID',
+        'InitiateTargetedHello': 'initiateTargetedHello',
+        'Authentication': 'authentication',
+        'DescriptiveName': 'descriptiveName',
+        'MD5Key': 'mD5Key',
+        'Active': 'active',
+        'IPAddress': 'iPAddress',
+        'TargetedHelloInterval': 'targetedHelloInterval',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,13 +32,13 @@ class LearnedRoute(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedRoute'
     _SDM_ATT_MAP = {
-        'Destination': 'destination',
-        'Fd': 'fd',
-        'HopCount': 'hopCount',
-        'Neighbor': 'neighbor',
         'NextHop': 'nextHop',
-        'Prefix': 'prefix',
+        'Destination': 'destination',
         'Rd': 'rd',
+        'Prefix': 'prefix',
+        'Fd': 'fd',
+        'Neighbor': 'neighbor',
+        'HopCount': 'hopCount',
         'Type': 'type',
     }
 

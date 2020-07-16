@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,17 +33,17 @@ class DataMdt(Base):
     __slots__ = ()
     _SDM_NAME = 'dataMdt'
     _SDM_ATT_MAP = {
-        'ActivationInterval': 'activationInterval',
-        'CeGroupAddress': 'ceGroupAddress',
-        'CeGroupCount': 'ceGroupCount',
-        'CeSourceAddress': 'ceSourceAddress',
-        'CeSourceCount': 'ceSourceCount',
-        'DataMdtGroupAddress': 'dataMdtGroupAddress',
-        'DataMdtGroupAddressCount': 'dataMdtGroupAddressCount',
-        'DiscardLearnedState': 'discardLearnedState',
-        'Enabled': 'enabled',
-        'PackTlv': 'packTlv',
         'RangeType': 'rangeType',
+        'CeGroupCount': 'ceGroupCount',
+        'DataMdtGroupAddress': 'dataMdtGroupAddress',
+        'Enabled': 'enabled',
+        'DiscardLearnedState': 'discardLearnedState',
+        'ActivationInterval': 'activationInterval',
+        'CeSourceCount': 'ceSourceCount',
+        'DataMdtGroupAddressCount': 'dataMdtGroupAddressCount',
+        'PackTlv': 'packTlv',
+        'CeGroupAddress': 'ceGroupAddress',
+        'CeSourceAddress': 'ceSourceAddress',
     }
 
     def __init__(self, parent):

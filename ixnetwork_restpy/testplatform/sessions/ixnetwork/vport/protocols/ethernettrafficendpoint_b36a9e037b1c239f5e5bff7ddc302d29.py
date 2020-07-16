@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,26 +33,26 @@ class EthernetTrafficEndPoint(Base):
     __slots__ = ()
     _SDM_NAME = 'ethernetTrafficEndPoint'
     _SDM_ATT_MAP = {
-        'ArpViaInterface': 'arpViaInterface',
-        'CustomEtherHeaderLength': 'customEtherHeaderLength',
-        'CustomEtherHeaderValue': 'customEtherHeaderValue',
-        'CustomEtherType': 'customEtherType',
-        'EnableMacInMac': 'enableMacInMac',
-        'EnableVlan': 'enableVlan',
-        'GatewayMac': 'gatewayMac',
         'MacAddress': 'macAddress',
-        'Name': 'name',
-        'PbbDestinamtionMac': 'pbbDestinamtionMac',
         'PbbEtherType': 'pbbEtherType',
-        'PbbIsId': 'pbbIsId',
-        'PbbSourceMac': 'pbbSourceMac',
-        'PbbVlanId': 'pbbVlanId',
-        'PbbVlanPcp': 'pbbVlanPcp',
-        'ProtocolInterface': 'protocolInterface',
-        'RangeSize': 'rangeSize',
-        'VlanCount': 'vlanCount',
-        'VlanId': 'vlanId',
+        'Name': 'name',
         'VlanPriority': 'vlanPriority',
+        'PbbSourceMac': 'pbbSourceMac',
+        'ProtocolInterface': 'protocolInterface',
+        'PbbVlanPcp': 'pbbVlanPcp',
+        'ArpViaInterface': 'arpViaInterface',
+        'EnableMacInMac': 'enableMacInMac',
+        'CustomEtherHeaderLength': 'customEtherHeaderLength',
+        'VlanCount': 'vlanCount',
+        'GatewayMac': 'gatewayMac',
+        'PbbIsId': 'pbbIsId',
+        'PbbDestinamtionMac': 'pbbDestinamtionMac',
+        'PbbVlanId': 'pbbVlanId',
+        'EnableVlan': 'enableVlan',
+        'CustomEtherHeaderValue': 'customEtherHeaderValue',
+        'VlanId': 'vlanId',
+        'CustomEtherType': 'customEtherType',
+        'RangeSize': 'rangeSize',
     }
 
     def __init__(self, parent):

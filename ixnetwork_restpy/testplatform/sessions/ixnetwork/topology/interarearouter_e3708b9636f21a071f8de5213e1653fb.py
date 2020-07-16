@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,24 +32,24 @@ class InterAreaRouter(Base):
     __slots__ = ()
     _SDM_NAME = 'interAreaRouter'
     _SDM_ATT_MAP = {
-        'Active': 'active',
         'Count': 'count',
-        'DCBit': 'dCBit',
-        'DescriptiveName': 'descriptiveName',
         'DestRouterId': 'destRouterId',
-        'DestRouterIdPrefix': 'destRouterIdPrefix',
-        'EBit': 'eBit',
-        'LinkStateId': 'linkStateId',
-        'LinkStateIdStep': 'linkStateIdStep',
-        'MCBit': 'mCBit',
-        'Metric': 'metric',
         'NBit': 'nBit',
         'Name': 'name',
-        'RBit': 'rBit',
         'RangeSize': 'rangeSize',
-        'ReservedBit6': 'reservedBit6',
-        'ReservedBit7': 'reservedBit7',
         'V6Bit': 'v6Bit',
+        'LinkStateIdStep': 'linkStateIdStep',
+        'Metric': 'metric',
+        'RBit': 'rBit',
+        'MCBit': 'mCBit',
+        'DestRouterIdPrefix': 'destRouterIdPrefix',
+        'DescriptiveName': 'descriptiveName',
+        'ReservedBit6': 'reservedBit6',
+        'Active': 'active',
+        'ReservedBit7': 'reservedBit7',
+        'EBit': 'eBit',
+        'LinkStateId': 'linkStateId',
+        'DCBit': 'dCBit',
     }
 
     def __init__(self, parent):
@@ -326,6 +326,19 @@ class InterAreaRouter(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
+
     def Advertise(self, *args, **kwargs):
         """Executes the advertise operation on the server.
 
@@ -335,7 +348,7 @@ class InterAreaRouter(Base):
 
         advertise(SessionIndices=list)
         ------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         advertise(SessionIndices=string)
         --------------------------------
@@ -386,7 +399,7 @@ class InterAreaRouter(Base):
 
         withdraw(SessionIndices=list)
         -----------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         withdraw(SessionIndices=string)
         -------------------------------

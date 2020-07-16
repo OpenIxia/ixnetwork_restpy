@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,15 +32,15 @@ class Tracking(Base):
     __slots__ = ()
     _SDM_NAME = 'tracking'
     _SDM_ATT_MAP = {
-        'AvailableProtocolOffsets': 'availableProtocolOffsets',
-        'AvailableTrackBy': 'availableTrackBy',
         'AvailableTrackByInfos': 'availableTrackByInfos',
         'FieldWidth': 'fieldWidth',
-        'Offset': 'offset',
-        'OneToOneMesh': 'oneToOneMesh',
-        'ProtocolOffset': 'protocolOffset',
         'TrackBy': 'trackBy',
+        'ProtocolOffset': 'protocolOffset',
+        'OneToOneMesh': 'oneToOneMesh',
+        'AvailableProtocolOffsets': 'availableProtocolOffsets',
+        'AvailableTrackBy': 'availableTrackBy',
         'Values': 'values',
+        'Offset': 'offset',
     }
 
     def __init__(self, parent):

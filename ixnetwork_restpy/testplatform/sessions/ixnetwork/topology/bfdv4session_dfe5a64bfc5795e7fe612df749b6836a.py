@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,25 +31,25 @@ class Bfdv4Session(Base):
     __slots__ = ()
     _SDM_NAME = 'bfdv4Session'
     _SDM_ATT_MAP = {
-        'Active': 'active',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableAutoChooseSourceIp': 'enableAutoChooseSourceIp',
-        'EnableOVSDBCommunication': 'enableOVSDBCommunication',
-        'EnableRemoteDiscriminatorLearned': 'enableRemoteDiscriminatorLearned',
-        'IpTTL': 'ipTTL',
-        'LearnedRemoteIP': 'learnedRemoteIP',
-        'LearnedRemoteMac': 'learnedRemoteMac',
-        'LocalRouterId': 'localRouterId',
-        'MyDiscriminator': 'myDiscriminator',
-        'Name': 'name',
-        'RemoteDiscriminator': 'remoteDiscriminator',
-        'RemoteIp4': 'remoteIp4',
-        'RemoteMac': 'remoteMac',
-        'SessionInfo': 'sessionInfo',
-        'SessionType': 'sessionType',
         'SourceIp4': 'sourceIp4',
+        'EnableAutoChooseSourceIp': 'enableAutoChooseSourceIp',
+        'Name': 'name',
+        'IpTTL': 'ipTTL',
+        'MyDiscriminator': 'myDiscriminator',
+        'EnableRemoteDiscriminatorLearned': 'enableRemoteDiscriminatorLearned',
+        'LearnedRemoteIP': 'learnedRemoteIP',
+        'RemoteMac': 'remoteMac',
         'Vni': 'vni',
+        'LearnedRemoteMac': 'learnedRemoteMac',
+        'SessionType': 'sessionType',
+        'DescriptiveName': 'descriptiveName',
+        'RemoteDiscriminator': 'remoteDiscriminator',
+        'Active': 'active',
+        'EnableOVSDBCommunication': 'enableOVSDBCommunication',
+        'SessionInfo': 'sessionInfo',
+        'LocalRouterId': 'localRouterId',
+        'RemoteIp4': 'remoteIp4',
     }
 
     def __init__(self, parent):
@@ -295,7 +295,7 @@ class Bfdv4Session(Base):
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -325,7 +325,7 @@ class Bfdv4Session(Base):
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

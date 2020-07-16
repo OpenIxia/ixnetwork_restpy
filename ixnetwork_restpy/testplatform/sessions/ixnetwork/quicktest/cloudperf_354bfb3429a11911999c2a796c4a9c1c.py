@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,9 +34,9 @@ class CloudPerf(Base):
     _SDM_NAME = 'cloudPerf'
     _SDM_ATT_MAP = {
         'ForceApplyQTConfig': 'forceApplyQTConfig',
-        'InputParameters': 'inputParameters',
         'Mode': 'mode',
         'Name': 'name',
+        'InputParameters': 'inputParameters',
     }
 
     def __init__(self, parent):
@@ -97,6 +97,20 @@ class CloudPerf(Base):
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_44c264bc2ea7f4205a6cb3d2991ce5ad import TestConfig
         return TestConfig(self)._select()
+
+    @property
+    def TrafficSelection(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.trafficselection_4b9370a6ddada385ed5acebd896710e7.TrafficSelection): An instance of the TrafficSelection class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.trafficselection_4b9370a6ddada385ed5acebd896710e7 import TrafficSelection
+        return TrafficSelection(self)
 
     @property
     def ForceApplyQTConfig(self):

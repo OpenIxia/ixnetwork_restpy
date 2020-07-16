@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,13 +33,13 @@ class Vlan(Base):
     __slots__ = ()
     _SDM_NAME = 'vlan'
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
         'InternalRootPathCost': 'internalRootPathCost',
-        'Mac': 'mac',
+        'Enabled': 'enabled',
         'PortPriority': 'portPriority',
-        'Priority': 'priority',
-        'UpdateRequired': 'updateRequired',
         'VlanId': 'vlanId',
+        'Priority': 'priority',
+        'Mac': 'mac',
+        'UpdateRequired': 'updateRequired',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,20 +34,20 @@ class SpbmNodeIsIdRange(Base):
     _SDM_NAME = 'spbmNodeIsIdRange'
     _SDM_ATT_MAP = {
         'CMacAddressCount': 'cMacAddressCount',
-        'CMacAddressStep': 'cMacAddressStep',
-        'ITagEthernetType': 'iTagEthernetType',
-        'InterNodeCmacAddress': 'interNodeCmacAddress',
-        'InterNodeCvlan': 'interNodeCvlan',
-        'InterNodeIsIdIncrement': 'interNodeIsIdIncrement',
-        'InterNodeSvlan': 'interNodeSvlan',
-        'IsId': 'isId',
-        'RBit': 'rBit',
-        'StartCmacAddress': 'startCmacAddress',
         'StartCvlan': 'startCvlan',
+        'CMacAddressStep': 'cMacAddressStep',
         'StartSvlan': 'startSvlan',
         'TBit': 'tBit',
+        'InterNodeCvlan': 'interNodeCvlan',
+        'RBit': 'rBit',
+        'StartCmacAddress': 'startCmacAddress',
+        'InterNodeIsIdIncrement': 'interNodeIsIdIncrement',
+        'IsId': 'isId',
+        'ITagEthernetType': 'iTagEthernetType',
         'TrafficDestMacAddress': 'trafficDestMacAddress',
+        'InterNodeCmacAddress': 'interNodeCmacAddress',
         'TransmissionType': 'transmissionType',
+        'InterNodeSvlan': 'interNodeSvlan',
         'VlanType': 'vlanType',
     }
 

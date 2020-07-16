@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,31 +33,31 @@ class MldQuerier(Base):
     __slots__ = ()
     _SDM_NAME = 'mldQuerier'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DiscardLearntInfo': 'discardLearntInfo',
-        'Errors': 'errors',
-        'GeneralQueryInterval': 'generalQueryInterval',
-        'GeneralQueryResponseInterval': 'generalQueryResponseInterval',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'ProxyQuerier': 'proxyQuerier',
-        'RobustnessVariable': 'robustnessVariable',
-        'RouterAlert': 'routerAlert',
-        'SessionInfo': 'sessionInfo',
-        'SessionStatus': 'sessionStatus',
-        'SpecificQueryResponseInterval': 'specificQueryResponseInterval',
-        'SpecificQueryTransmissionCount': 'specificQueryTransmissionCount',
+        'VersionType': 'versionType',
         'StackedLayers': 'stackedLayers',
+        'RobustnessVariable': 'robustnessVariable',
+        'ConnectedVia': 'connectedVia',
+        'GeneralQueryInterval': 'generalQueryInterval',
         'StartupQueryCount': 'startupQueryCount',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
+        'DiscardLearntInfo': 'discardLearntInfo',
+        'SessionStatus': 'sessionStatus',
+        'RouterAlert': 'routerAlert',
+        'Errors': 'errors',
         'SupportElection': 'supportElection',
+        'SpecificQueryTransmissionCount': 'specificQueryTransmissionCount',
+        'Status': 'status',
+        'ProxyQuerier': 'proxyQuerier',
         'SupportOlderVersionHost': 'supportOlderVersionHost',
         'SupportOlderVersionQuerier': 'supportOlderVersionQuerier',
-        'VersionType': 'versionType',
+        'Multiplier': 'multiplier',
+        'Active': 'active',
+        'GeneralQueryResponseInterval': 'generalQueryResponseInterval',
+        'Count': 'count',
+        'Name': 'name',
+        'SpecificQueryResponseInterval': 'specificQueryResponseInterval',
+        'DescriptiveName': 'descriptiveName',
+        'SessionInfo': 'sessionInfo',
+        'StateCounts': 'stateCounts',
     }
 
     def __init__(self, parent):
@@ -459,6 +459,31 @@ class MldQuerier(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def ClearAllLearnedInfoInClient(self, *args, **kwargs):
         """Executes the clearAllLearnedInfoInClient operation on the server.
 
@@ -508,7 +533,7 @@ class MldQuerier(Base):
 
         mldGetLearnedInfo(SessionIndices=list)
         --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         mldGetLearnedInfo(SessionIndices=string)
         ----------------------------------------
@@ -533,7 +558,7 @@ class MldQuerier(Base):
 
         mldResumePeriodicGenQuery(SessionIndices=list)
         ----------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         mldResumePeriodicGenQuery(SessionIndices=string)
         ------------------------------------------------
@@ -571,7 +596,7 @@ class MldQuerier(Base):
         - Start_source_address (str): This parameter requires a start_source_address of type kString
         - Source_count (number): This parameter requires a source_count of type kInteger
         - Source_increment_step (number): This parameter requires a source_increment_step of type kInteger
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         mldSendSpecificQuery(SessionIndices=string, Start_group_address=string, Group_count=number, Start_source_address=string, Source_count=number, Source_increment_step=number)
         ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -601,7 +626,7 @@ class MldQuerier(Base):
 
         mldStartQuerier(SessionIndices=list)
         ------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         mldStartQuerier(SessionIndices=string)
         --------------------------------------
@@ -626,7 +651,7 @@ class MldQuerier(Base):
 
         mldStopPeriodicGenQuery(SessionIndices=list)
         --------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         mldStopPeriodicGenQuery(SessionIndices=string)
         ----------------------------------------------
@@ -651,7 +676,7 @@ class MldQuerier(Base):
 
         mldStopQuerier(SessionIndices=list)
         -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         mldStopQuerier(SessionIndices=string)
         -------------------------------------
@@ -676,7 +701,7 @@ class MldQuerier(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -740,13 +765,13 @@ class MldQuerier(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected protocols.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -771,7 +796,7 @@ class MldQuerier(Base):
 
         startMLD(SessionIndices=list)
         -----------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         startMLD(SessionIndices=string)
         -------------------------------
@@ -795,13 +820,13 @@ class MldQuerier(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected protocols.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------
@@ -826,7 +851,7 @@ class MldQuerier(Base):
 
         stopMLD(SessionIndices=list)
         ----------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stopMLD(SessionIndices=string)
         ------------------------------

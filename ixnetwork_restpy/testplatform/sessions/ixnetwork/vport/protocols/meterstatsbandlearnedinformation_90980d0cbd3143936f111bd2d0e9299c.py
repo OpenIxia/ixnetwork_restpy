@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,13 +32,13 @@ class MeterStatsBandLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'meterStatsBandLearnedInformation'
     _SDM_ATT_MAP = {
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'InBandByteCount': 'inBandByteCount',
         'InBandPacketCount': 'inBandPacketCount',
         'LocalIp': 'localIp',
-        'MeterId': 'meterId',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
+        'InBandByteCount': 'inBandByteCount',
         'RemoteIp': 'remoteIp',
+        'MeterId': 'meterId',
+        'DataPathId': 'dataPathId',
     }
 
     def __init__(self, parent):

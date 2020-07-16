@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,26 +32,26 @@ class IPv6PseudoNodeRoutes(Base):
     __slots__ = ()
     _SDM_NAME = 'IPv6PseudoNodeRoutes'
     _SDM_ATT_MAP = {
-        'Active': 'active',
+        'Count': 'count',
+        'Prefix': 'prefix',
+        'Ipv6EFlag': 'ipv6EFlag',
+        'Ipv6NFlag': 'ipv6NFlag',
+        'Ipv6Metric': 'ipv6Metric',
         'Algorithm': 'algorithm',
         'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Ipv6EFlag': 'ipv6EFlag',
-        'Ipv6LFlag': 'ipv6LFlag',
-        'Ipv6Metric': 'ipv6Metric',
-        'Ipv6NFlag': 'ipv6NFlag',
-        'Ipv6PFlag': 'ipv6PFlag',
-        'Ipv6RFlag': 'ipv6RFlag',
-        'Ipv6Redistribution': 'ipv6Redistribution',
         'Ipv6RouteOrigin': 'ipv6RouteOrigin',
         'Ipv6Srh': 'ipv6Srh',
-        'Ipv6VFlag': 'ipv6VFlag',
-        'Name': 'name',
+        'Ipv6RFlag': 'ipv6RFlag',
+        'Ipv6Redistribution': 'ipv6Redistribution',
+        'Ipv6LFlag': 'ipv6LFlag',
+        'DescriptiveName': 'descriptiveName',
+        'Active': 'active',
         'NetworkAddress': 'networkAddress',
-        'Prefix': 'prefix',
-        'RangeSize': 'rangeSize',
         'SIDIndexLabel': 'sIDIndexLabel',
+        'Ipv6VFlag': 'ipv6VFlag',
+        'RangeSize': 'rangeSize',
+        'Ipv6PFlag': 'ipv6PFlag',
+        'Name': 'name',
     }
 
     def __init__(self, parent):
@@ -363,6 +363,19 @@ class IPv6PseudoNodeRoutes(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
+
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
 
     def Start(self):
         """Executes the start operation on the server.

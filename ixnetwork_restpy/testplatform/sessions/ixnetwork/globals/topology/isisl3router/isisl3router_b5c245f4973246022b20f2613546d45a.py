@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,38 +32,38 @@ class IsisL3Router(Base):
     __slots__ = ()
     _SDM_NAME = 'isisL3Router'
     _SDM_ATT_MAP = {
-        'BIERInfoSubTLVType': 'bIERInfoSubTLVType',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'FaAppSpecfLinkAttrSubTlvType': 'faAppSpecfLinkAttrSubTlvType',
-        'FaEagSubTlvType': 'faEagSubTlvType',
         'FadSubTlvType': 'fadSubTlvType',
-        'FadfSubTlvType': 'fadfSubTlvType',
-        'FaiAllAgSubTlvType': 'faiAllAgSubTlvType',
         'FaiAnyAgSubTlvType': 'faiAnyAgSubTlvType',
-        'LinkMsdSubTlvType': 'linkMsdSubTlvType',
-        'MaxEndDMsdType': 'maxEndDMsdType',
-        'MaxEndPopMsdType': 'maxEndPopMsdType',
-        'MaxSegmentsLeftMsdType': 'maxSegmentsLeftMsdType',
         'MaxTEncapMsdType': 'maxTEncapMsdType',
-        'MaxTInsertMsdType': 'maxTInsertMsdType',
-        'Name': 'name',
+        'BIERInfoSubTLVType': 'bIERInfoSubTLVType',
+        'MaxEndDMsdType': 'maxEndDMsdType',
+        'Srv6NodeSIDTlvType': 'srv6NodeSIDTlvType',
+        'SrmsPreferenceSubTlvType': 'srmsPreferenceSubTlvType',
+        'FaEagSubTlvType': 'faEagSubTlvType',
+        'FaAppSpecfLinkAttrSubTlvType': 'faAppSpecfLinkAttrSubTlvType',
+        'LinkMsdSubTlvType': 'linkMsdSubTlvType',
+        'FadfSubTlvType': 'fadfSubTlvType',
+        'Srv6CapabilitiesSubTlvType': 'srv6CapabilitiesSubTlvType',
+        'Srv6EndXSidSubTlvType': 'srv6EndXSidSubTlvType',
+        'MaxSegmentsLeftMsdType': 'maxSegmentsLeftMsdType',
+        'RowNames': 'rowNames',
+        'SrDraftExtension': 'srDraftExtension',
+        'Srv6SidLocatorTlvType': 'srv6SidLocatorTlvType',
+        'SrlbSubTlvType': 'srlbSubTlvType',
         'NoOfLSPsOrMgroupPDUsPerInterval': 'noOfLSPsOrMgroupPDUsPerInterval',
+        'FaiAllAgSubTlvType': 'faiAllAgSubTlvType',
         'NodeMsdSubTlvType': 'nodeMsdSubTlvType',
         'RateControlInterval': 'rateControlInterval',
-        'RowNames': 'rowNames',
-        'SendP2PHellosToUnicastMAC': 'sendP2PHellosToUnicastMAC',
-        'SrDraftExtension': 'srDraftExtension',
-        'SrlbSubTlvType': 'srlbSubTlvType',
-        'SrmsPreferenceSubTlvType': 'srmsPreferenceSubTlvType',
+        'MaxTInsertMsdType': 'maxTInsertMsdType',
         'Srv6AdjSIDSubTlvType': 'srv6AdjSIDSubTlvType',
-        'Srv6CapabilitiesSubTlvType': 'srv6CapabilitiesSubTlvType',
-        'Srv6EndSidSubTlvType': 'srv6EndSidSubTlvType',
-        'Srv6EndXSidSubTlvType': 'srv6EndXSidSubTlvType',
-        'Srv6LANAdjSIDSubTlvType': 'srv6LANAdjSIDSubTlvType',
         'Srv6LanEndXSidSubTlvType': 'srv6LanEndXSidSubTlvType',
-        'Srv6NodeSIDTlvType': 'srv6NodeSIDTlvType',
-        'Srv6SidLocatorTlvType': 'srv6SidLocatorTlvType',
+        'Count': 'count',
+        'Name': 'name',
+        'MaxEndPopMsdType': 'maxEndPopMsdType',
+        'DescriptiveName': 'descriptiveName',
+        'Srv6LANAdjSIDSubTlvType': 'srv6LANAdjSIDSubTlvType',
+        'SendP2PHellosToUnicastMAC': 'sendP2PHellosToUnicastMAC',
+        'Srv6EndSidSubTlvType': 'srv6EndSidSubTlvType',
     }
 
     def __init__(self, parent):
@@ -74,13 +74,13 @@ class IsisL3Router(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0.StartRate): An instance of the StartRate class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0.StartRate): An instance of the StartRate class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import StartRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import StartRate
         return StartRate(self)._select()
 
     @property
@@ -88,13 +88,13 @@ class IsisL3Router(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04.StopRate): An instance of the StopRate class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04.StopRate): An instance of the StopRate class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import StopRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import StopRate
         return StopRate(self)._select()
 
     @property

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,54 +33,54 @@ class EvpnIPv4PrefixRange(Base):
     __slots__ = ()
     _SDM_NAME = 'evpnIPv4PrefixRange'
     _SDM_ATT_MAP = {
-        'Active': 'active',
+        'EnableLocalPreference': 'enableLocalPreference',
+        'Origin': 'origin',
+        'EnableAsPathSegments': 'enableAsPathSegments',
+        'SetNextHop': 'setNextHop',
+        'EnableCommunity': 'enableCommunity',
+        'NoOfClusters': 'noOfClusters',
+        'MultiExitDiscriminator': 'multiExitDiscriminator',
+        'OverridePeerAsSetMode': 'overridePeerAsSetMode',
         'AdvSrv6SidInIgp': 'advSrv6SidInIgp',
+        'EnableOrigin': 'enableOrigin',
+        'SetNextHopIpType': 'setNextHopIpType',
+        'Ipv4Address': 'ipv4Address',
+        'Srv6SidFlags': 'srv6SidFlags',
         'AdvertiseSRv6SID': 'advertiseSRv6SID',
+        'Srv6SidLoc': 'srv6SidLoc',
+        'Ipv6NextHop': 'ipv6NextHop',
+        'EnableAggregatorId': 'enableAggregatorId',
+        'EnableExtendedCommunity': 'enableExtendedCommunity',
+        'EnableAtomicAggregate': 'enableAtomicAggregate',
+        'Srv6SIDOptionalInformation': 'srv6SIDOptionalInformation',
+        'NoOfExtendedCommunity': 'noOfExtendedCommunity',
+        'LabelMode': 'labelMode',
+        'EnableMultiExitDiscriminator': 'enableMultiExitDiscriminator',
+        'Srv6SidReserved1': 'srv6SidReserved1',
         'AggregatorAs': 'aggregatorAs',
         'AggregatorId': 'aggregatorId',
-        'AsSetMode': 'asSetMode',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableAggregatorId': 'enableAggregatorId',
-        'EnableAsPathSegments': 'enableAsPathSegments',
-        'EnableAtomicAggregate': 'enableAtomicAggregate',
-        'EnableCluster': 'enableCluster',
-        'EnableCommunity': 'enableCommunity',
-        'EnableExtendedCommunity': 'enableExtendedCommunity',
-        'EnableLocalPreference': 'enableLocalPreference',
-        'EnableMultiExitDiscriminator': 'enableMultiExitDiscriminator',
-        'EnableNextHop': 'enableNextHop',
-        'EnableOrigin': 'enableOrigin',
-        'EnableOriginatorId': 'enableOriginatorId',
-        'Ipv4Address': 'ipv4Address',
-        'Ipv4NextHop': 'ipv4NextHop',
-        'Ipv6NextHop': 'ipv6NextHop',
-        'LabelMode': 'labelMode',
-        'LabelStart': 'labelStart',
-        'LabelStep': 'labelStep',
-        'LocalPreference': 'localPreference',
-        'MultiExitDiscriminator': 'multiExitDiscriminator',
-        'Name': 'name',
-        'NoOfASPathSegmentsPerRouteRange': 'noOfASPathSegmentsPerRouteRange',
-        'NoOfClusters': 'noOfClusters',
-        'NoOfCommunities': 'noOfCommunities',
-        'NoOfExtendedCommunity': 'noOfExtendedCommunity',
-        'Origin': 'origin',
-        'OriginatorId': 'originatorId',
-        'OverridePeerAsSetMode': 'overridePeerAsSetMode',
-        'SendSRv6SIDOptionalInfo': 'sendSRv6SIDOptionalInfo',
-        'SetNextHop': 'setNextHop',
-        'SetNextHopIpType': 'setNextHopIpType',
-        'Srv6EndpointBehavior': 'srv6EndpointBehavior',
-        'Srv6SIDOptionalInformation': 'srv6SIDOptionalInformation',
-        'Srv6SidFlags': 'srv6SidFlags',
-        'Srv6SidLoc': 'srv6SidLoc',
-        'Srv6SidLocLen': 'srv6SidLocLen',
-        'Srv6SidLocMetric': 'srv6SidLocMetric',
-        'Srv6SidReserved': 'srv6SidReserved',
-        'Srv6SidReserved1': 'srv6SidReserved1',
-        'Srv6SidReserved2': 'srv6SidReserved2',
         'Srv6SidStep': 'srv6SidStep',
+        'NoOfCommunities': 'noOfCommunities',
+        'LabelStep': 'labelStep',
+        'Ipv4NextHop': 'ipv4NextHop',
+        'LocalPreference': 'localPreference',
+        'Srv6SidReserved2': 'srv6SidReserved2',
+        'Active': 'active',
+        'EnableNextHop': 'enableNextHop',
+        'NoOfASPathSegmentsPerRouteRange': 'noOfASPathSegmentsPerRouteRange',
+        'EnableOriginatorId': 'enableOriginatorId',
+        'Count': 'count',
+        'Srv6SidLocMetric': 'srv6SidLocMetric',
+        'Name': 'name',
+        'Srv6SidLocLen': 'srv6SidLocLen',
+        'AsSetMode': 'asSetMode',
+        'SendSRv6SIDOptionalInfo': 'sendSRv6SIDOptionalInfo',
+        'OriginatorId': 'originatorId',
+        'Srv6SidReserved': 'srv6SidReserved',
+        'LabelStart': 'labelStart',
+        'EnableCluster': 'enableCluster',
+        'DescriptiveName': 'descriptiveName',
+        'Srv6EndpointBehavior': 'srv6EndpointBehavior',
     }
 
     def __init__(self, parent):
@@ -147,13 +147,13 @@ class EvpnIPv4PrefixRange(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_f91a37c8058302050a67e05790d01c7a.CMacProperties): An instance of the CMacProperties class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180.CMacProperties): An instance of the CMacProperties class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_f91a37c8058302050a67e05790d01c7a import CMacProperties
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
         return CMacProperties(self)
 
     @property
@@ -827,16 +827,29 @@ class EvpnIPv4PrefixRange(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
+
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected protocols.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -855,13 +868,13 @@ class EvpnIPv4PrefixRange(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected protocols.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,32 +32,32 @@ class DiscoveredLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'discoveredLearnedInfo'
     _SDM_ATT_MAP = {
-        'LocalDiscoveryStatus': 'localDiscoveryStatus',
-        'LocalEvaluating': 'localEvaluating',
-        'LocalMuxAction': 'localMuxAction',
-        'LocalParserAction': 'localParserAction',
-        'LocalRevision': 'localRevision',
-        'LocalStable': 'localStable',
-        'RemoteCriticalEvent': 'remoteCriticalEvent',
-        'RemoteDyingGasp': 'remoteDyingGasp',
-        'RemoteEvaluating': 'remoteEvaluating',
-        'RemoteHeaderRefreshed': 'remoteHeaderRefreshed',
         'RemoteLinkEvent': 'remoteLinkEvent',
-        'RemoteLinkFault': 'remoteLinkFault',
-        'RemoteLoopbackSupport': 'remoteLoopbackSupport',
-        'RemoteMacAddress': 'remoteMacAddress',
-        'RemoteMaxPduSize': 'remoteMaxPduSize',
-        'RemoteMode': 'remoteMode',
+        'RemoteTlvRefreshed': 'remoteTlvRefreshed',
         'RemoteMuxAction': 'remoteMuxAction',
         'RemoteOamVersion': 'remoteOamVersion',
-        'RemoteOui': 'remoteOui',
-        'RemoteParserAction': 'remoteParserAction',
-        'RemoteRevision': 'remoteRevision',
-        'RemoteStable': 'remoteStable',
-        'RemoteTlvRefreshed': 'remoteTlvRefreshed',
+        'RemoteLinkFault': 'remoteLinkFault',
+        'LocalMuxAction': 'localMuxAction',
+        'RemoteDyingGasp': 'remoteDyingGasp',
         'RemoteUnidirectionalSupport': 'remoteUnidirectionalSupport',
-        'RemoteVariableRetrieval': 'remoteVariableRetrieval',
+        'RemoteStable': 'remoteStable',
+        'RemoteEvaluating': 'remoteEvaluating',
+        'LocalParserAction': 'localParserAction',
+        'RemoteMacAddress': 'remoteMacAddress',
+        'RemoteLoopbackSupport': 'remoteLoopbackSupport',
+        'RemoteMaxPduSize': 'remoteMaxPduSize',
         'RemoteVendorSpecificInfo': 'remoteVendorSpecificInfo',
+        'LocalStable': 'localStable',
+        'LocalDiscoveryStatus': 'localDiscoveryStatus',
+        'RemoteOui': 'remoteOui',
+        'RemoteRevision': 'remoteRevision',
+        'LocalRevision': 'localRevision',
+        'LocalEvaluating': 'localEvaluating',
+        'RemoteMode': 'remoteMode',
+        'RemoteCriticalEvent': 'remoteCriticalEvent',
+        'RemoteHeaderRefreshed': 'remoteHeaderRefreshed',
+        'RemoteParserAction': 'remoteParserAction',
+        'RemoteVariableRetrieval': 'remoteVariableRetrieval',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -25,18 +25,19 @@ from ixnetwork_restpy.files import Files
 
 class FramePreemption(Base):
     """
-    The FramePreemption class encapsulates a required framePreemption resource which will be retrieved from the server every time the property is accessed.
+    The FramePreemption class encapsulates a list of framePreemption resources that are managed by the system.
+    A list of resources can be retrieved from the server using the FramePreemption.find() method.
     """
 
     __slots__ = ()
     _SDM_NAME = 'framePreemption'
     _SDM_ATT_MAP = {
-        'AutoFragmentCount': 'autoFragmentCount',
         'Enable': 'enable',
-        'FragmentCount': 'fragmentCount',
-        'FrameType': 'frameType',
-        'LastFragment': 'lastFragment',
         'SmdType': 'smdType',
+        'FragmentCount': 'fragmentCount',
+        'AutoFragmentCount': 'autoFragmentCount',
+        'LastFragment': 'lastFragment',
+        'FrameType': 'frameType',
     }
 
     def __init__(self, parent):
@@ -131,3 +132,47 @@ class FramePreemption(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AutoFragmentCount=None, Enable=None, FragmentCount=None, FrameType=None, LastFragment=None, SmdType=None):
+        """Finds and retrieves framePreemption resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve framePreemption resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all framePreemption resources from the server.
+
+        Args
+        ----
+        - AutoFragmentCount (bool): Let the fragments be auto counted
+        - Enable (bool): Enable frame preemption on the given stream. Disabled indicates an express frame
+        - FragmentCount (number): Set the fragment count (a value between 0 and 3)
+        - FrameType (str(control | fragment | invalid | wholeFrame)): Select the frame type
+        - LastFragment (bool): Indicates if this is the last fragment of the preemptable packet
+        - SmdType (str(autoSMDC | autoSMDS | invalidSMD | smdC0 | smdC1 | smdC2 | smdC3 | smdE | smdR | smdS0 | smdS1 | smdS2 | smdS3 | smdV)): Select the SMD type
+
+        Returns
+        -------
+        - self: This instance with matching framePreemption resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of framePreemption data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the framePreemption resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

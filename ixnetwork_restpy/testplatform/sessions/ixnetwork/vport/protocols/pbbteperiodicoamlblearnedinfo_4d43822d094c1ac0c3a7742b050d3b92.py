@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,15 +32,15 @@ class PbbTePeriodicOamLbLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'pbbTePeriodicOamLbLearnedInfo'
     _SDM_ATT_MAP = {
-        'AverageRtt': 'averageRtt',
-        'BVlan': 'bVlan',
-        'DstMacAddress': 'dstMacAddress',
-        'LbmSentCount': 'lbmSentCount',
-        'MdLevel': 'mdLevel',
-        'NoReplyCount': 'noReplyCount',
-        'RecentReachability': 'recentReachability',
         'RecentRtt': 'recentRtt',
+        'LbmSentCount': 'lbmSentCount',
+        'NoReplyCount': 'noReplyCount',
+        'DstMacAddress': 'dstMacAddress',
         'SrcMacAddress': 'srcMacAddress',
+        'RecentReachability': 'recentReachability',
+        'BVlan': 'bVlan',
+        'MdLevel': 'mdLevel',
+        'AverageRtt': 'averageRtt',
     }
 
     def __init__(self, parent):

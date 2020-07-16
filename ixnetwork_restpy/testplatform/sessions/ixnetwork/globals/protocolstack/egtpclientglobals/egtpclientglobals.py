@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,20 +33,20 @@ class EgtpClientGlobals(Base):
     __slots__ = ()
     _SDM_NAME = 'egtpClientGlobals'
     _SDM_ATT_MAP = {
-        'EnableDynamicQosCtrl': 'enableDynamicQosCtrl',
         'EnableGatewayArp': 'enableGatewayArp',
-        'EnablePartialNegotiation': 'enablePartialNegotiation',
-        'GatewayArpRequestRate': 'gatewayArpRequestRate',
-        'MaxMbrUAndD': 'maxMbrUAndD',
-        'MaxOutstandingGatewayArpRequests': 'maxOutstandingGatewayArpRequests',
-        'MaxOutstandingReleases': 'maxOutstandingReleases',
         'MaxOutstandingRequests': 'maxOutstandingRequests',
         'ObjectId': 'objectId',
         'SendOneArpFromEachInterface': 'sendOneArpFromEachInterface',
-        'SetupRateInitial': 'setupRateInitial',
-        'TeardownRateInitial': 'teardownRateInitial',
-        'TsSpec': 'tsSpec',
         'UseMaxRatesForDcp': 'useMaxRatesForDcp',
+        'MaxMbrUAndD': 'maxMbrUAndD',
+        'EnableDynamicQosCtrl': 'enableDynamicQosCtrl',
+        'MaxOutstandingReleases': 'maxOutstandingReleases',
+        'MaxOutstandingGatewayArpRequests': 'maxOutstandingGatewayArpRequests',
+        'TsSpec': 'tsSpec',
+        'EnablePartialNegotiation': 'enablePartialNegotiation',
+        'TeardownRateInitial': 'teardownRateInitial',
+        'GatewayArpRequestRate': 'gatewayArpRequestRate',
+        'SetupRateInitial': 'setupRateInitial',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,24 +31,37 @@ class Atm(Base):
     __slots__ = ()
     _SDM_NAME = 'atm'
     _SDM_ATT_MAP = {
-        'C2Expected': 'c2Expected',
-        'C2Tx': 'c2Tx',
-        'CellHeader': 'cellHeader',
-        'CosetActive': 'cosetActive',
-        'CrcSize': 'crcSize',
-        'DataScrambling': 'dataScrambling',
+        'Ppm': 'ppm',
         'EnablePPM': 'enablePPM',
         'FillerCell': 'fillerCell',
-        'InterfaceType': 'interfaceType',
-        'Loopback': 'loopback',
-        'PatternMatching': 'patternMatching',
-        'Ppm': 'ppm',
-        'ReassemblyTimeout': 'reassemblyTimeout',
         'TransmitClocking': 'transmitClocking',
+        'CosetActive': 'cosetActive',
+        'AvailableSpeeds': 'availableSpeeds',
+        'Loopback': 'loopback',
+        'DataScrambling': 'dataScrambling',
+        'CanModifySpeed': 'canModifySpeed',
+        'PatternMatching': 'patternMatching',
+        'C2Tx': 'c2Tx',
+        'InterfaceType': 'interfaceType',
+        'C2Expected': 'c2Expected',
+        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
+        'SelectedSpeeds': 'selectedSpeeds',
+        'CellHeader': 'cellHeader',
+        'CrcSize': 'crcSize',
+        'ReassemblyTimeout': 'reassemblyTimeout',
     }
 
     def __init__(self, parent):
         super(Atm, self).__init__(parent)
+
+    @property
+    def AvailableSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[]): Which speeds are available for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableSpeeds'])
 
     @property
     def C2Expected(self):
@@ -73,6 +86,24 @@ class Atm(Base):
     @C2Tx.setter
     def C2Tx(self, value):
         self._set_attribute(self._SDM_ATT_MAP['C2Tx'], value)
+
+    @property
+    def CanModifySpeed(self):
+        """
+        Returns
+        -------
+        - bool: Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanModifySpeed'])
+
+    @property
+    def CanSetMultipleSpeeds(self):
+        """
+        Returns
+        -------
+        - bool: Can this port selectmultiple speeds for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanSetMultipleSpeeds'])
 
     @property
     def CellHeader(self):
@@ -207,6 +238,18 @@ class Atm(Base):
         self._set_attribute(self._SDM_ATT_MAP['ReassemblyTimeout'], value)
 
     @property
+    def SelectedSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[]): Which speeds are selected for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
+    @SelectedSpeeds.setter
+    def SelectedSpeeds(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
+
+    @property
     def TransmitClocking(self):
         """
         Returns
@@ -218,7 +261,7 @@ class Atm(Base):
     def TransmitClocking(self, value):
         self._set_attribute(self._SDM_ATT_MAP['TransmitClocking'], value)
 
-    def update(self, C2Expected=None, C2Tx=None, CellHeader=None, CosetActive=None, CrcSize=None, DataScrambling=None, EnablePPM=None, FillerCell=None, InterfaceType=None, Loopback=None, PatternMatching=None, Ppm=None, ReassemblyTimeout=None, TransmitClocking=None):
+    def update(self, C2Expected=None, C2Tx=None, CellHeader=None, CosetActive=None, CrcSize=None, DataScrambling=None, EnablePPM=None, FillerCell=None, InterfaceType=None, Loopback=None, PatternMatching=None, Ppm=None, ReassemblyTimeout=None, SelectedSpeeds=None, TransmitClocking=None):
         """Updates atm resource on the server.
 
         Args
@@ -236,6 +279,7 @@ class Atm(Base):
         - PatternMatching (bool): Used to enable capture/filter values for use with ATM ports. When enabled, the frame data from one or more VPI/VCIs may be used as capture trigger or capture filter option.
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
         - ReassemblyTimeout (number): Sets the value for the Reassembly Timeout. It is the period of time that the receive side will wait for another cell on that channel - for reassembly of cells into a CPCS PDU (packet). If no cell is received within that period, the timer will expire. (in hex)
+        - SelectedSpeeds (list(str[])): Which speeds are selected for the current media and AN settings.
         - TransmitClocking (str(external | internal | recovered)): The options for the transmit clock.
 
         Raises

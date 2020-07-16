@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,12 +31,16 @@ class Ethernetvm(Base):
     __slots__ = ()
     _SDM_NAME = 'ethernetvm'
     _SDM_ATT_MAP = {
-        'AutoInstrumentation': 'autoInstrumentation',
         'EnablePPM': 'enablePPM',
         'Loopback': 'loopback',
-        'Mtu': 'mtu',
-        'Ppm': 'ppm',
+        'AvailableSpeeds': 'availableSpeeds',
         'PromiscuousMode': 'promiscuousMode',
+        'Ppm': 'ppm',
+        'CanModifySpeed': 'canModifySpeed',
+        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
+        'SelectedSpeeds': 'selectedSpeeds',
+        'AutoInstrumentation': 'autoInstrumentation',
+        'Mtu': 'mtu',
         'Speed': 'speed',
     }
 
@@ -54,6 +58,33 @@ class Ethernetvm(Base):
     @AutoInstrumentation.setter
     def AutoInstrumentation(self, value):
         self._set_attribute(self._SDM_ATT_MAP['AutoInstrumentation'], value)
+
+    @property
+    def AvailableSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[speed100g | speed25g | speed50g | speed200g | speed400g | speed1000 | speed2000 | speed3000 | speed4000 | speed5000 | speed6000 | speed7000 | speed8000 | speed9000 | speed10g | speed20g | speed30g | speed40g | speed100 | speed60g | speed70g | speed80g | speed90g]): Which speeds are available for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableSpeeds'])
+
+    @property
+    def CanModifySpeed(self):
+        """
+        Returns
+        -------
+        - bool: Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanModifySpeed'])
+
+    @property
+    def CanSetMultipleSpeeds(self):
+        """
+        Returns
+        -------
+        - bool: Can this port selectmultiple speeds for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanSetMultipleSpeeds'])
 
     @property
     def EnablePPM(self):
@@ -110,18 +141,30 @@ class Ethernetvm(Base):
         self._set_attribute(self._SDM_ATT_MAP['PromiscuousMode'], value)
 
     @property
+    def SelectedSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[speed100g | speed25g | speed50g | speed200g | speed400g | speed1000 | speed2000 | speed3000 | speed4000 | speed5000 | speed6000 | speed7000 | speed8000 | speed9000 | speed10g | speed20g | speed30g | speed40g | speed100 | speed60g | speed70g | speed80g | speed90g]): Which speeds are selected for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
+    @SelectedSpeeds.setter
+    def SelectedSpeeds(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
+
+    @property
     def Speed(self):
         """
         Returns
         -------
-        - str(speed100 | speed1000 | speed10g | speed2000 | speed20g | speed25g | speed3000 | speed30g | speed4000 | speed40g | speed5000 | speed50g | speed6000 | speed7000 | speed8000 | speed9000): Select one of the enums to set the speed of the ethernet vm
+        - str(speed100 | speed1000 | speed100g | speed10g | speed2000 | speed200g | speed20g | speed25g | speed3000 | speed30g | speed4000 | speed400g | speed40g | speed5000 | speed50g | speed6000 | speed60g | speed7000 | speed70g | speed8000 | speed80g | speed9000 | speed90g): Select one of the enums to set the speed of the ethernet vm
         """
         return self._get_attribute(self._SDM_ATT_MAP['Speed'])
     @Speed.setter
     def Speed(self, value):
         self._set_attribute(self._SDM_ATT_MAP['Speed'], value)
 
-    def update(self, AutoInstrumentation=None, Loopback=None, Mtu=None, PromiscuousMode=None, Speed=None):
+    def update(self, AutoInstrumentation=None, Loopback=None, Mtu=None, PromiscuousMode=None, SelectedSpeeds=None, Speed=None):
         """Updates ethernetvm resource on the server.
 
         Args
@@ -130,7 +173,8 @@ class Ethernetvm(Base):
         - Loopback (bool): If true, enables the ports ppm
         - Mtu (number): 
         - PromiscuousMode (bool): 
-        - Speed (str(speed100 | speed1000 | speed10g | speed2000 | speed20g | speed25g | speed3000 | speed30g | speed4000 | speed40g | speed5000 | speed50g | speed6000 | speed7000 | speed8000 | speed9000)): Select one of the enums to set the speed of the ethernet vm
+        - SelectedSpeeds (list(str[speed100g | speed25g | speed50g | speed200g | speed400g | speed1000 | speed2000 | speed3000 | speed4000 | speed5000 | speed6000 | speed7000 | speed8000 | speed9000 | speed10g | speed20g | speed30g | speed40g | speed100 | speed60g | speed70g | speed80g | speed90g])): Which speeds are selected for the current media and AN settings.
+        - Speed (str(speed100 | speed1000 | speed100g | speed10g | speed2000 | speed200g | speed20g | speed25g | speed3000 | speed30g | speed4000 | speed400g | speed40g | speed5000 | speed50g | speed6000 | speed60g | speed7000 | speed70g | speed8000 | speed80g | speed9000 | speed90g)): Select one of the enums to set the speed of the ethernet vm
 
         Raises
         ------

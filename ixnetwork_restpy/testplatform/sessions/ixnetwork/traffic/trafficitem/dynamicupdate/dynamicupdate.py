@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,11 +32,11 @@ class DynamicUpdate(Base):
     __slots__ = ()
     _SDM_NAME = 'dynamicUpdate'
     _SDM_ATT_MAP = {
-        'AvailableDynamicUpdateFields': 'availableDynamicUpdateFields',
-        'AvailableSessionAwareTrafficFields': 'availableSessionAwareTrafficFields',
         'EnabledDynamicUpdateFields': 'enabledDynamicUpdateFields',
-        'EnabledDynamicUpdateFieldsDisplayNames': 'enabledDynamicUpdateFieldsDisplayNames',
         'EnabledSessionAwareTrafficFields': 'enabledSessionAwareTrafficFields',
+        'AvailableDynamicUpdateFields': 'availableDynamicUpdateFields',
+        'EnabledDynamicUpdateFieldsDisplayNames': 'enabledDynamicUpdateFieldsDisplayNames',
+        'AvailableSessionAwareTrafficFields': 'availableSessionAwareTrafficFields',
     }
 
     def __init__(self, parent):

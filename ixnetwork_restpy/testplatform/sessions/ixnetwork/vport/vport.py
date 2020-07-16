@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,36 +33,43 @@ class Vport(Base):
     __slots__ = ()
     _SDM_NAME = 'vport'
     _SDM_ATT_MAP = {
-        'ActualSpeed': 'actualSpeed',
-        'AssignedTo': 'assignedTo',
-        'ConnectedTo': 'connectedTo',
-        'ConnectionInfo': 'connectionInfo',
-        'ConnectionState': 'connectionState',
-        'ConnectionStatus': 'connectionStatus',
-        'InternalId': 'internalId',
-        'IsAvailable': 'isAvailable',
-        'IsConnected': 'isConnected',
-        'IsFramePreemptionSupported': 'isFramePreemptionSupported',
         'IsMapped': 'isMapped',
-        'IsPullOnly': 'isPullOnly',
-        'IsVMPort': 'isVMPort',
-        'IxnChassisVersion': 'ixnChassisVersion',
-        'IxnClientVersion': 'ixnClientVersion',
-        'IxosChassisVersion': 'ixosChassisVersion',
-        'Licenses': 'licenses',
-        'Name': 'name',
-        'RxMode': 'rxMode',
-        'State': 'state',
-        'StateDetail': 'stateDetail',
-        'TraceEnabled': 'traceEnabled',
-        'TraceLevel': 'traceLevel',
-        'TraceTag': 'traceTag',
-        'TransmitIgnoreLinkStatus': 'transmitIgnoreLinkStatus',
-        'TxGapControlMode': 'txGapControlMode',
-        'TxMode': 'txMode',
-        'Type': 'type',
         'UseGlobalSettings': 'useGlobalSettings',
+        'ResourceMode': 'resourceMode',
+        'AdminMode': 'adminMode',
+        'ConnectionStatus': 'connectionStatus',
+        'ConnectionState': 'connectionState',
+        'TraceLevel': 'traceLevel',
+        'Licenses': 'licenses',
+        'IsFramePreemptionSupported': 'isFramePreemptionSupported',
+        'CaptureSupported': 'captureSupported',
+        'IsVMPort': 'isVMPort',
+        'ConnectedTo': 'connectedTo',
+        'AssignedTo': 'assignedTo',
+        'State': 'state',
+        'Location': 'location',
+        'TxGapControlMode': 'txGapControlMode',
+        'ActualSpeed': 'actualSpeed',
+        'ConnectionStatusDisplayName': 'connectionStatusDisplayName',
+        'Type': 'type',
         'ValidTxModes': 'validTxModes',
+        'DpdkPerformanceAcceleration': 'dpdkPerformanceAcceleration',
+        'InternalId': 'internalId',
+        'TraceEnabled': 'traceEnabled',
+        'TraceTag': 'traceTag',
+        'AssignedToDisplayName': 'assignedToDisplayName',
+        'TransmitIgnoreLinkStatus': 'transmitIgnoreLinkStatus',
+        'IsConnected': 'isConnected',
+        'IxnClientVersion': 'ixnClientVersion',
+        'StateDetail': 'stateDetail',
+        'IsPullOnly': 'isPullOnly',
+        'IxnChassisVersion': 'ixnChassisVersion',
+        'ConnectionInfo': 'connectionInfo',
+        'TxMode': 'txMode',
+        'Name': 'name',
+        'IsAvailable': 'isAvailable',
+        'IxosChassisVersion': 'ixosChassisVersion',
+        'RxMode': 'rxMode',
     }
 
     def __init__(self, parent):
@@ -181,6 +188,20 @@ class Vport(Base):
         return RateControlParameters(self)._select()
 
     @property
+    def TapSettings(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.tapsettings.tapsettings.TapSettings): An instance of the TapSettings class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.tapsettings.tapsettings import TapSettings
+        return TapSettings(self)
+
+    @property
     def ActualSpeed(self):
         """
         Returns
@@ -190,8 +211,17 @@ class Vport(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ActualSpeed'])
 
     @property
-    def AssignedTo(self):
+    def AdminMode(self):
         """
+        Returns
+        -------
+        - str: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['AdminMode'])
+
+    @property
+    def AssignedTo(self):
+        """DEPRECATED 
         Returns
         -------
         - str: (Read Only) A new port is assigned with this option.
@@ -199,8 +229,26 @@ class Vport(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AssignedTo'])
 
     @property
-    def ConnectedTo(self):
+    def AssignedToDisplayName(self):
         """
+        Returns
+        -------
+        - str: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['AssignedToDisplayName'])
+
+    @property
+    def CaptureSupported(self):
+        """
+        Returns
+        -------
+        - str(data | control | dataAndControl | none): 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CaptureSupported'])
+
+    @property
+    def ConnectedTo(self):
+        """DEPRECATED 
         Returns
         -------
         - str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port): The physical port to which the unassigned port is assigned.
@@ -236,6 +284,24 @@ class Vport(Base):
         - str: A string describing the status of the hardware connected to this vport
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectionStatus'])
+
+    @property
+    def ConnectionStatusDisplayName(self):
+        """
+        Returns
+        -------
+        - str: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['ConnectionStatusDisplayName'])
+
+    @property
+    def DpdkPerformanceAcceleration(self):
+        """
+        Returns
+        -------
+        - str: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['DpdkPerformanceAcceleration'])
 
     @property
     def InternalId(self):
@@ -340,6 +406,18 @@ class Vport(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Licenses'])
 
     @property
+    def Location(self):
+        """
+        Returns
+        -------
+        - str: The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['Location'])
+    @Location.setter
+    def Location(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['Location'], value)
+
+    @property
     def Name(self):
         """
         Returns
@@ -352,11 +430,20 @@ class Vport(Base):
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
+    def ResourceMode(self):
+        """
+        Returns
+        -------
+        - str: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['ResourceMode'])
+
+    @property
     def RxMode(self):
         """
         Returns
         -------
-        - str(capture | captureAndMeasure | measure | packetImpairment): The receive mode of the virtual port.
+        - str(capture | measure | captureAndMeasure | packetImpairment): The receive mode of the virtual port.
         """
         return self._get_attribute(self._SDM_ATT_MAP['RxMode'])
     @RxMode.setter
@@ -398,7 +485,7 @@ class Vport(Base):
         """
         Returns
         -------
-        - str(kCritical | kDebug | kError | kInfo | kTrace | kWarning): PCPU Trace level
+        - str(kCritical | kDebug | kError | kInfo | kNote | kTrace | kWarning): PCPU Trace level
         """
         return self._get_attribute(self._SDM_ATT_MAP['TraceLevel'])
     @TraceLevel.setter
@@ -434,7 +521,7 @@ class Vport(Base):
         """
         Returns
         -------
-        - str(averageMode | fixedMode): This object controls the Gap Control mode of the port.
+        - str(fixedMode | averageMode): This object controls the Gap Control mode of the port.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TxGapControlMode'])
     @TxGapControlMode.setter
@@ -446,7 +533,7 @@ class Vport(Base):
         """
         Returns
         -------
-        - str(interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse): The transmit mode.
+        - str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment): The transmit mode.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TxMode'])
     @TxMode.setter
@@ -458,7 +545,7 @@ class Vport(Base):
         """
         Returns
         -------
-        - str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe): The type of port selection.
+        - str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan): The type of port selection.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
@@ -486,22 +573,23 @@ class Vport(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['ValidTxModes'])
 
-    def update(self, ConnectedTo=None, IsPullOnly=None, Name=None, RxMode=None, TraceEnabled=None, TraceLevel=None, TraceTag=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None, UseGlobalSettings=None):
+    def update(self, ConnectedTo=None, IsPullOnly=None, Location=None, Name=None, RxMode=None, TraceEnabled=None, TraceLevel=None, TraceTag=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None, UseGlobalSettings=None):
         """Updates vport resource on the server.
 
         Args
         ----
         - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
         - IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
+        - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
         - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
-        - RxMode (str(capture | captureAndMeasure | measure | packetImpairment)): The receive mode of the virtual port.
+        - RxMode (str(capture | measure | captureAndMeasure | packetImpairment)): The receive mode of the virtual port.
         - TraceEnabled (bool): Enables/Disables rpf port trace for this port
-        - TraceLevel (str(kCritical | kDebug | kError | kInfo | kTrace | kWarning)): PCPU Trace level
+        - TraceLevel (str(kCritical | kDebug | kError | kInfo | kNote | kTrace | kWarning)): PCPU Trace level
         - TraceTag (str): PCPU Trace Tag
         - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
-        - TxGapControlMode (str(averageMode | fixedMode)): This object controls the Gap Control mode of the port.
-        - TxMode (str(interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse)): The transmit mode.
-        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe)): The type of port selection.
+        - TxGapControlMode (str(fixedMode | averageMode)): This object controls the Gap Control mode of the port.
+        - TxMode (str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment)): The transmit mode.
+        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan)): The type of port selection.
         - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
 
         Raises
@@ -510,22 +598,23 @@ class Vport(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, ConnectedTo=None, IsPullOnly=None, Name=None, RxMode=None, TraceEnabled=None, TraceLevel=None, TraceTag=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None, UseGlobalSettings=None):
+    def add(self, ConnectedTo=None, IsPullOnly=None, Location=None, Name=None, RxMode=None, TraceEnabled=None, TraceLevel=None, TraceTag=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None, UseGlobalSettings=None):
         """Adds a new vport resource on the server and adds it to the container.
 
         Args
         ----
         - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
         - IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
+        - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
         - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
-        - RxMode (str(capture | captureAndMeasure | measure | packetImpairment)): The receive mode of the virtual port.
+        - RxMode (str(capture | measure | captureAndMeasure | packetImpairment)): The receive mode of the virtual port.
         - TraceEnabled (bool): Enables/Disables rpf port trace for this port
-        - TraceLevel (str(kCritical | kDebug | kError | kInfo | kTrace | kWarning)): PCPU Trace level
+        - TraceLevel (str(kCritical | kDebug | kError | kInfo | kNote | kTrace | kWarning)): PCPU Trace level
         - TraceTag (str): PCPU Trace Tag
         - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
-        - TxGapControlMode (str(averageMode | fixedMode)): This object controls the Gap Control mode of the port.
-        - TxMode (str(interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse)): The transmit mode.
-        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe)): The type of port selection.
+        - TxGapControlMode (str(fixedMode | averageMode)): This object controls the Gap Control mode of the port.
+        - TxMode (str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment)): The transmit mode.
+        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan)): The type of port selection.
         - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
 
         Returns
@@ -548,7 +637,7 @@ class Vport(Base):
         """
         self._delete()
 
-    def find(self, ActualSpeed=None, AssignedTo=None, ConnectedTo=None, ConnectionInfo=None, ConnectionState=None, ConnectionStatus=None, InternalId=None, IsAvailable=None, IsConnected=None, IsFramePreemptionSupported=None, IsMapped=None, IsPullOnly=None, IsVMPort=None, IxnChassisVersion=None, IxnClientVersion=None, IxosChassisVersion=None, Licenses=None, Name=None, RxMode=None, State=None, StateDetail=None, TraceEnabled=None, TraceLevel=None, TraceTag=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None, UseGlobalSettings=None, ValidTxModes=None):
+    def find(self, ActualSpeed=None, AdminMode=None, AssignedTo=None, AssignedToDisplayName=None, CaptureSupported=None, ConnectedTo=None, ConnectionInfo=None, ConnectionState=None, ConnectionStatus=None, ConnectionStatusDisplayName=None, DpdkPerformanceAcceleration=None, InternalId=None, IsAvailable=None, IsConnected=None, IsFramePreemptionSupported=None, IsMapped=None, IsPullOnly=None, IsVMPort=None, IxnChassisVersion=None, IxnClientVersion=None, IxosChassisVersion=None, Licenses=None, Location=None, Name=None, ResourceMode=None, RxMode=None, State=None, StateDetail=None, TraceEnabled=None, TraceLevel=None, TraceTag=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None, UseGlobalSettings=None, ValidTxModes=None):
         """Finds and retrieves vport resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vport resources from the server.
@@ -558,11 +647,16 @@ class Vport(Base):
         Args
         ----
         - ActualSpeed (number): The actual speed.
+        - AdminMode (str): 
         - AssignedTo (str): (Read Only) A new port is assigned with this option.
+        - AssignedToDisplayName (str): 
+        - CaptureSupported (str(data | control | dataAndControl | none)): 
         - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
         - ConnectionInfo (str): Detailed information about location of the physical port that is assigned to this port configuration.
         - ConnectionState (str(assignedInUseByOther | assignedUnconnected | connectedLinkDown | connectedLinkUp | connecting | unassigned)): Consolidated state of the vport. This combines the connection state with link state.
         - ConnectionStatus (str): A string describing the status of the hardware connected to this vport
+        - ConnectionStatusDisplayName (str): 
+        - DpdkPerformanceAcceleration (str): 
         - InternalId (number): For internal use.
         - IsAvailable (bool): If true, this virtual port is available for assigning to a physical port.
         - IsConnected (bool): If true, indicates that the port is connected.
@@ -574,17 +668,19 @@ class Vport(Base):
         - IxnClientVersion (str): (Read Only) If true, this installs full client side IxNetwork or IxNetwork-FT components.
         - IxosChassisVersion (str): (Read Only) If true, the installer installs the same resources as installed by IxOS on a chassis.
         - Licenses (str): Number of licenses.
+        - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
         - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
-        - RxMode (str(capture | captureAndMeasure | measure | packetImpairment)): The receive mode of the virtual port.
+        - ResourceMode (str): 
+        - RxMode (str(capture | measure | captureAndMeasure | packetImpairment)): The receive mode of the virtual port.
         - State (str(busy | down | unassigned | up | versionMismatch)): The virtual port state.
         - StateDetail (str(busy | cpuNotReady | idle | inActive | l1ConfigFailed | protocolsNotSupported | versionMismatched | waitingForCPUStatus)): This attribute describes the state of the port.
         - TraceEnabled (bool): Enables/Disables rpf port trace for this port
-        - TraceLevel (str(kCritical | kDebug | kError | kInfo | kTrace | kWarning)): PCPU Trace level
+        - TraceLevel (str(kCritical | kDebug | kError | kInfo | kNote | kTrace | kWarning)): PCPU Trace level
         - TraceTag (str): PCPU Trace Tag
         - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
-        - TxGapControlMode (str(averageMode | fixedMode)): This object controls the Gap Control mode of the port.
-        - TxMode (str(interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse)): The transmit mode.
-        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe)): The type of port selection.
+        - TxGapControlMode (str(fixedMode | averageMode)): This object controls the Gap Control mode of the port.
+        - TxMode (str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment)): The transmit mode.
+        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan)): The type of port selection.
         - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
         - ValidTxModes (list(str[interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse])): 
 
@@ -634,6 +730,26 @@ class Vport(Base):
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('addQuickFlowGroups', payload=payload, response_object=None)
+
+    def AssignPorts(self, *args, **kwargs):
+        """Executes the assignPorts operation on the server.
+
+        Assign hardware ports to virtual ports using port display names. It connects all the ports in the list provided using their location attribute. It takes a bool as input which says ClearOwnership is required or not.
+
+        assignPorts(Arg2=bool)list
+        --------------------------
+        - Arg2 (bool): If true, it will clear ownership on the hardware ports which have location attribute set.
+        - Returns list(str[None | /api/v1/sessions/1/ixnetwork/vport]): Returns a list of virtual port object references that were successfully connected.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('assignPorts', payload=payload, response_object=None)
 
     def ClearNeighborSolicitation(self):
         """Executes the clearNeighborSolicitation operation on the server.
@@ -710,6 +826,38 @@ class Vport(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('connectPorts', payload=payload, response_object=None)
 
+    def CopyTapSettings(self, *args, **kwargs):
+        """Executes the copyTapSettings operation on the server.
+
+        It will copy the values from a port to the given ports.
+
+        copyTapSettings(Arg2=list)
+        --------------------------
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport])): 
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('copyTapSettings', payload=payload, response_object=None)
+
+    def DeleteCustomDefaults(self):
+        """Executes the deleteCustomDefaults operation on the server.
+
+        It will delete custom defaults for the given ports.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('deleteCustomDefaults', payload=payload, response_object=None)
+
     def EnableOAM(self, *args, **kwargs):
         """Executes the enableOAM operation on the server.
 
@@ -729,18 +877,18 @@ class Vport(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('enableOAM', payload=payload, response_object=None)
 
-    def GetChassisInConfig(self):
-        """Executes the getChassisInConfig operation on the server.
+    def GetTapSettings(self):
+        """Executes the getTapSettings operation on the server.
 
-        get chassis used in this config
+        Get TAP Settings for the given ports.
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
-        return self._execute('getChassisInConfig', payload=payload, response_object=None)
+        payload = { "Arg1": self }
+        return self._execute('getTapSettings', payload=payload, response_object=None)
 
     def IgmpJoin(self, *args, **kwargs):
         """Executes the igmpJoin operation on the server.
@@ -832,6 +980,25 @@ class Vport(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('linkUpDn', payload=payload, response_object=None)
 
+    def PauseStatelessTraffic(self, *args, **kwargs):
+        """Executes the pauseStatelessTraffic operation on the server.
+
+        Pause or Resume stateless traffic.
+
+        pauseStatelessTraffic(Arg2=bool)
+        --------------------------------
+        - Arg2 (bool): If true, it will pause running traffic. If false, it will resume previously paused traffic.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('pauseStatelessTraffic', payload=payload, response_object=None)
+
     def PullPort(self):
         """Executes the pullPort operation on the server.
 
@@ -922,6 +1089,45 @@ class Vport(Base):
         """
         payload = { "Arg1": self.href }
         return self._execute('restartPppNegotiation', payload=payload, response_object=None)
+
+    def RestoreCustomDefaults(self):
+        """Executes the restoreCustomDefaults operation on the server.
+
+        It will restore custom defaults for the given ports.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('restoreCustomDefaults', payload=payload, response_object=None)
+
+    def RestoreDefaults(self):
+        """Executes the restoreDefaults operation on the server.
+
+        Restore the default values for the given ports.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('restoreDefaults', payload=payload, response_object=None)
+
+    def SaveCustomDefaults(self):
+        """Executes the saveCustomDefaults operation on the server.
+
+        It will save custom defaults for the given ports.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('saveCustomDefaults', payload=payload, response_object=None)
 
     def SendArp(self, *args, **kwargs):
         """Executes the sendArp operation on the server.
@@ -1028,44 +1234,6 @@ class Vport(Base):
         payload = { "Arg1": self }
         return self._execute('sendRsAll', payload=payload, response_object=None)
 
-    def SetCardAggregation(self, *args, **kwargs):
-        """Executes the setCardAggregation operation on the server.
-
-        Sets the aggregation mode into Spyder Config. The selected mode is applied at the time the test is started
-
-        setCardAggregation(Arg2=list)
-        -----------------------------
-        - Arg2 (list(dict(arg1:str,arg2:number,arg3:number,arg4:str,arg5:list[number]))): list of aggregation structs [chassisdns, cardid, aggrgroupid, aggremode]
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('setCardAggregation', payload=payload, response_object=None)
-
-    def SetChassisChain(self, *args, **kwargs):
-        """Executes the setChassisChain operation on the server.
-
-        Ensure the chain exist as defined. Any missing chassis (by dns) will be added. Any existing slaves of the given master will not be removed.
-
-        setChassisChain(Arg2=list)
-        --------------------------
-        - Arg2 (list(dict(arg1:str,arg2:str,arg3:number,arg4:number))): Array of { dns, master dns } pairs. if only dns is given, then any existing masterdns will be removed
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('setChassisChain', payload=payload, response_object=None)
-
     def SetFactoryDefaults(self):
         """Executes the setFactoryDefaults operation on the server.
 
@@ -1078,6 +1246,19 @@ class Vport(Base):
         """
         payload = { "Arg1": self }
         return self._execute('setFactoryDefaults', payload=payload, response_object=None)
+
+    def SetTapSettings(self):
+        """Executes the setTapSettings operation on the server.
+
+        Send TAP Settings to IxServer for the given ports.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('setTapSettings', payload=payload, response_object=None)
 
     def StartStatelessTraffic(self):
         """Executes the startStatelessTraffic operation on the server.
@@ -1130,6 +1311,27 @@ class Vport(Base):
         """
         payload = { "Arg1": self }
         return self._execute('stopStatelessTrafficBlocking', payload=payload, response_object=None)
+
+    def SwitchMode(self, *args, **kwargs):
+        """Executes the switchMode operation on the server.
+
+        Switches the port mode. Takes vports as input.
+
+        switchMode(Arg2=list, Arg3=bool)string
+        --------------------------------------
+        - Arg2 (list(str)): List of valid Modes
+        - Arg3 (bool): If true, it will clear ownership on the hardware ports for which mode switch is being done.
+        - Returns str: Warning Messages
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('switchMode', payload=payload, response_object=None)
 
     def UnassignPorts(self, *args, **kwargs):
         """Executes the unassignPorts operation on the server.

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,10 +32,10 @@ class CpdpConvergence(Base):
     _SDM_NAME = 'cpdpConvergence'
     _SDM_ATT_MAP = {
         'DataPlaneJitterWindow': 'dataPlaneJitterWindow',
-        'DataPlaneThreshold': 'dataPlaneThreshold',
-        'EnableControlPlaneEvents': 'enableControlPlaneEvents',
         'EnableDataPlaneEventsRateMonitor': 'enableDataPlaneEventsRateMonitor',
         'Enabled': 'enabled',
+        'DataPlaneThreshold': 'dataPlaneThreshold',
+        'EnableControlPlaneEvents': 'enableControlPlaneEvents',
     }
 
     def __init__(self, parent):

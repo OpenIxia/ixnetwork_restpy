@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,18 +32,18 @@ class Groups(Base):
     __slots__ = ()
     _SDM_NAME = 'groups'
     _SDM_ATT_MAP = {
+        'Count': 'count',
+        'GroupType': 'groupType',
+        'GroupAdvertise': 'groupAdvertise',
+        'Name': 'name',
+        'OfChannel': 'ofChannel',
+        'GroupId': 'groupId',
+        'DescriptiveName': 'descriptiveName',
+        'NumberOfBuckets': 'numberOfBuckets',
+        'Multiplier': 'multiplier',
         'Active': 'active',
         'ChannelName': 'channelName',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'GroupAdvertise': 'groupAdvertise',
         'GroupDescription': 'groupDescription',
-        'GroupId': 'groupId',
-        'GroupType': 'groupType',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NumberOfBuckets': 'numberOfBuckets',
-        'OfChannel': 'ofChannel',
     }
 
     def __init__(self, parent):

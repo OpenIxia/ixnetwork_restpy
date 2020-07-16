@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,23 +31,23 @@ class OspfSRMappingServerList(Base):
     __slots__ = ()
     _SDM_NAME = 'ospfSRMappingServerList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Algorithm': 'algorithm',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EFlag': 'eFlag',
-        'IaFlag': 'iaFlag',
-        'LFlag': 'lFlag',
-        'LastNetworkAddress': 'lastNetworkAddress',
-        'LocalRouterID': 'localRouterID',
-        'MFlag': 'mFlag',
-        'Name': 'name',
-        'NetworkAddress': 'networkAddress',
-        'NpFlag': 'npFlag',
-        'PrefixLength': 'prefixLength',
-        'Range': 'range',
-        'SidIndexLabel': 'sidIndexLabel',
         'VFlag': 'vFlag',
+        'NetworkAddress': 'networkAddress',
+        'MFlag': 'mFlag',
+        'Algorithm': 'algorithm',
+        'PrefixLength': 'prefixLength',
+        'NpFlag': 'npFlag',
+        'EFlag': 'eFlag',
+        'Name': 'name',
+        'LastNetworkAddress': 'lastNetworkAddress',
+        'Range': 'range',
+        'DescriptiveName': 'descriptiveName',
+        'IaFlag': 'iaFlag',
+        'Active': 'active',
+        'SidIndexLabel': 'sidIndexLabel',
+        'LocalRouterID': 'localRouterID',
+        'LFlag': 'lFlag',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,15 +33,15 @@ class Group(Base):
     __slots__ = ()
     _SDM_NAME = 'group'
     _SDM_ATT_MAP = {
-        'EnablePacking': 'enablePacking',
+        'IncrementStep': 'incrementStep',
+        'SourceMode': 'sourceMode',
         'Enabled': 'enabled',
         'GroupCount': 'groupCount',
-        'GroupFrom': 'groupFrom',
-        'IncrementStep': 'incrementStep',
-        'RecordsPerFrame': 'recordsPerFrame',
-        'SourceMode': 'sourceMode',
         'SourcesPerRecord': 'sourcesPerRecord',
+        'GroupFrom': 'groupFrom',
+        'RecordsPerFrame': 'recordsPerFrame',
         'UpdateRequired': 'updateRequired',
+        'EnablePacking': 'enablePacking',
     }
 
     def __init__(self, parent):

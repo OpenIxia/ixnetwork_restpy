@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,22 +32,22 @@ class LmiStatusLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'lmiStatusLearnedInfo'
     _SDM_ATT_MAP = {
-        'DataInstance': 'dataInstance',
-        'DuplicatedIe': 'duplicatedIe',
-        'InvalidEvcReferenceId': 'invalidEvcReferenceId',
-        'InvalidMandatoryIe': 'invalidMandatoryIe',
-        'InvalidMsgType': 'invalidMsgType',
-        'InvalidNonMandatoryIe': 'invalidNonMandatoryIe',
-        'InvalidProtocolVersion': 'invalidProtocolVersion',
         'LmiStatus': 'lmiStatus',
-        'MandatoryIeMissing': 'mandatoryIeMissing',
-        'OutOfSequenceIe': 'outOfSequenceIe',
-        'ProtocolVersion': 'protocolVersion',
-        'ReceiveSequenceNumber': 'receiveSequenceNumber',
         'SendSequenceNumber': 'sendSequenceNumber',
+        'DuplicatedIe': 'duplicatedIe',
+        'ProtocolVersion': 'protocolVersion',
+        'DataInstance': 'dataInstance',
+        'ReceiveSequenceNumber': 'receiveSequenceNumber',
+        'InvalidProtocolVersion': 'invalidProtocolVersion',
+        'UnrecognizedIe': 'unrecognizedIe',
+        'InvalidNonMandatoryIe': 'invalidNonMandatoryIe',
+        'InvalidMsgType': 'invalidMsgType',
+        'MandatoryIeMissing': 'mandatoryIeMissing',
+        'InvalidEvcReferenceId': 'invalidEvcReferenceId',
+        'OutOfSequenceIe': 'outOfSequenceIe',
+        'InvalidMandatoryIe': 'invalidMandatoryIe',
         'ShortMsgCounter': 'shortMsgCounter',
         'UnexpectedIe': 'unexpectedIe',
-        'UnrecognizedIe': 'unrecognizedIe',
     }
 
     def __init__(self, parent):

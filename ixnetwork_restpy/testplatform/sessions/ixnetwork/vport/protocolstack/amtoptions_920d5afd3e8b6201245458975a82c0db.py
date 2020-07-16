@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,13 +33,13 @@ class AmtOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'amtOptions'
     _SDM_ATT_MAP = {
-        'MaxOutstandingSessions': 'maxOutstandingSessions',
+        'TunnelOriginate': 'tunnelOriginate',
         'ObjectId': 'objectId',
-        'OverrideGlobalSetupRate': 'overrideGlobalSetupRate',
         'OverrideGlobalTeardownRate': 'overrideGlobalTeardownRate',
         'SetupRate': 'setupRate',
+        'OverrideGlobalSetupRate': 'overrideGlobalSetupRate',
         'TeardownRate': 'teardownRate',
-        'TunnelOriginate': 'tunnelOriginate',
+        'MaxOutstandingSessions': 'maxOutstandingSessions',
     }
 
     def __init__(self, parent):

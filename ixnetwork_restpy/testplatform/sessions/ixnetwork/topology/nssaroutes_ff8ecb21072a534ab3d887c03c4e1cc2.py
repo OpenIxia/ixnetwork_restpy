@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,27 +32,27 @@ class NssaRoutes(Base):
     __slots__ = ()
     _SDM_NAME = 'nssaRoutes'
     _SDM_ATT_MAP = {
-        'Active': 'active',
+        'Count': 'count',
+        'VFlag': 'vFlag',
+        'LinkStateId': 'linkStateId',
+        'NetworkAddress': 'networkAddress',
+        'MFlag': 'mFlag',
         'Algorithm': 'algorithm',
         'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EFlag': 'eFlag',
-        'ForwardingAddress': 'forwardingAddress',
-        'IncludeForwardingAddress': 'includeForwardingAddress',
-        'LFlag': 'lFlag',
-        'LinkStateId': 'linkStateId',
         'LinkStateIdStep': 'linkStateIdStep',
-        'MFlag': 'mFlag',
         'Metric': 'metric',
+        'EFlag': 'eFlag',
         'Name': 'name',
-        'NetworkAddress': 'networkAddress',
-        'NpFlag': 'npFlag',
         'Prefix': 'prefix',
-        'Propagate': 'propagate',
-        'RangeSize': 'rangeSize',
+        'DescriptiveName': 'descriptiveName',
+        'NpFlag': 'npFlag',
         'SidIndexLabel': 'sidIndexLabel',
-        'VFlag': 'vFlag',
+        'Active': 'active',
+        'Propagate': 'propagate',
+        'ForwardingAddress': 'forwardingAddress',
+        'LFlag': 'lFlag',
+        'RangeSize': 'rangeSize',
+        'IncludeForwardingAddress': 'includeForwardingAddress',
     }
 
     def __init__(self, parent):
@@ -362,6 +362,19 @@ class NssaRoutes(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
+
     def Advertise(self, *args, **kwargs):
         """Executes the advertise operation on the server.
 
@@ -371,7 +384,7 @@ class NssaRoutes(Base):
 
         advertise(SessionIndices=list)
         ------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         advertise(SessionIndices=string)
         --------------------------------
@@ -422,7 +435,7 @@ class NssaRoutes(Base):
 
         withdraw(SessionIndices=list)
         -----------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         withdraw(SessionIndices=string)
         -------------------------------

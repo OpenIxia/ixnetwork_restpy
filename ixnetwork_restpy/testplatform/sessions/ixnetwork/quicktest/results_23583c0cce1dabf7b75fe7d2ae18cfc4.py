@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,16 +31,16 @@ class Results(Base):
     __slots__ = ()
     _SDM_NAME = 'results'
     _SDM_ATT_MAP = {
-        'CurrentActions': 'currentActions',
-        'CurrentViews': 'currentViews',
-        'Duration': 'duration',
-        'IsRunning': 'isRunning',
-        'Progress': 'progress',
-        'Result': 'result',
-        'ResultPath': 'resultPath',
-        'StartTime': 'startTime',
         'Status': 'status',
+        'CurrentActions': 'currentActions',
+        'IsRunning': 'isRunning',
+        'CurrentViews': 'currentViews',
+        'ResultPath': 'resultPath',
         'TrafficStatus': 'trafficStatus',
+        'Result': 'result',
+        'StartTime': 'startTime',
+        'Duration': 'duration',
+        'Progress': 'progress',
         'WaitingStatus': 'waitingStatus',
     }
 

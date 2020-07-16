@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,12 +34,12 @@ class EgtpSgwOptions(Base):
     _SDM_NAME = 'egtpSgwOptions'
     _SDM_ATT_MAP = {
         'DistributeUserPlaneIps': 'distributeUserPlaneIps',
-        'EnableCreateBearerTFTHack': 'enableCreateBearerTFTHack',
+        'ObjectId': 'objectId',
+        'PublishStatistics': 'publishStatistics',
         'EnableDynamicAllocation': 'enableDynamicAllocation',
         'FakeDualStack': 'fakeDualStack',
-        'ObjectId': 'objectId',
+        'EnableCreateBearerTFTHack': 'enableCreateBearerTFTHack',
         'PcpuLogLevel': 'pcpuLogLevel',
-        'PublishStatistics': 'publishStatistics',
     }
 
     def __init__(self, parent):

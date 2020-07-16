@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,12 +34,12 @@ class VicOptionTlv(Base):
     _SDM_NAME = 'vicOptionTlv'
     _SDM_ATT_MAP = {
         'Code': 'code',
-        'Increment': 'increment',
         'Name': 'name',
         'ObjectId': 'objectId',
-        'Rfc': 'rfc',
-        'Type': 'type',
         'Value': 'value',
+        'Rfc': 'rfc',
+        'Increment': 'increment',
+        'Type': 'type',
     }
 
     def __init__(self, parent):

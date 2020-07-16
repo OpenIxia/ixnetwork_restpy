@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,13 +31,13 @@ class Flapping(Base):
     __slots__ = ()
     _SDM_NAME = 'flapping'
     _SDM_ATT_MAP = {
-        'Delay': 'delay',
-        'DownTime': 'downTime',
-        'EnablePartialFlap': 'enablePartialFlap',
-        'Enabled': 'enabled',
-        'RoutesToFlapFrom': 'routesToFlapFrom',
         'RoutesToFlapTo': 'routesToFlapTo',
         'UpTime': 'upTime',
+        'EnablePartialFlap': 'enablePartialFlap',
+        'Enabled': 'enabled',
+        'Delay': 'delay',
+        'RoutesToFlapFrom': 'routesToFlapFrom',
+        'DownTime': 'downTime',
     }
 
     def __init__(self, parent):

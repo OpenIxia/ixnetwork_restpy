@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,27 +33,27 @@ class GlobalTrafficProfileS5S8(Base):
     __slots__ = ()
     _SDM_NAME = 'globalTrafficProfileS5S8'
     _SDM_ATT_MAP = {
-        'Apn': 'apn',
         'Arp': 'arp',
-        'DefaultBearerFallback': 'defaultBearerFallback',
-        'EnableSessionTimeout': 'enableSessionTimeout',
-        'Enabled': 'enabled',
+        'SPCO_Container': 'sPCO_Container',
         'Gbrd': 'gbrd',
-        'Gbru': 'gbru',
+        'Mbru': 'mbru',
+        'UsePredefinedQCI': 'usePredefinedQCI',
+        'STFTFiltersCustom': 'sTFTFiltersCustom',
+        'RunOnDefaultBearer': 'runOnDefaultBearer',
+        'ObjectId': 'objectId',
+        'Enabled': 'enabled',
+        'DefaultBearerFallback': 'defaultBearerFallback',
+        'SessionTimeoutValue': 'sessionTimeoutValue',
+        'Apn': 'apn',
+        'UsePredefinedTFT': 'usePredefinedTFT',
         'IsMsInitiated': 'isMsInitiated',
         'Mbrd': 'mbrd',
-        'Mbru': 'mbru',
-        'Name': 'name',
-        'ObjectId': 'objectId',
+        'EnableSessionTimeout': 'enableSessionTimeout',
+        'Gbru': 'gbru',
         'Qci': 'qci',
-        'RunOnDefaultBearer': 'runOnDefaultBearer',
-        'SPCO_Container': 'sPCO_Container',
         'SPCO_Protocol': 'sPCO_Protocol',
-        'STFTFiltersCustom': 'sTFTFiltersCustom',
-        'SessionTimeoutValue': 'sessionTimeoutValue',
         'TearDownIndicator': 'tearDownIndicator',
-        'UsePredefinedQCI': 'usePredefinedQCI',
-        'UsePredefinedTFT': 'usePredefinedTFT',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

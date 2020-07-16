@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,18 +31,18 @@ class AccumulateAndBurst(Base):
     __slots__ = ()
     _SDM_NAME = 'accumulateAndBurst'
     _SDM_ATT_MAP = {
-        'BurstSize': 'burstSize',
-        'BurstSizeUnit': 'burstSizeUnit',
-        'BurstTimeout': 'burstTimeout',
-        'BurstTimeoutUnit': 'burstTimeoutUnit',
-        'Enabled': 'enabled',
         'InterBurstGap': 'interBurstGap',
-        'InterBurstGapValue': 'interBurstGapValue',
+        'BurstSize': 'burstSize',
+        'BurstTimeoutUnit': 'burstTimeoutUnit',
+        'QueueAutoSize': 'queueAutoSize',
+        'Enabled': 'enabled',
+        'QueueAutoSizeEnabled': 'queueAutoSizeEnabled',
         'InterBurstGapValueUnit': 'interBurstGapValueUnit',
         'PacketCount': 'packetCount',
-        'QueueAutoSize': 'queueAutoSize',
-        'QueueAutoSizeEnabled': 'queueAutoSizeEnabled',
+        'BurstTimeout': 'burstTimeout',
+        'BurstSizeUnit': 'burstSizeUnit',
         'QueueSize': 'queueSize',
+        'InterBurstGapValue': 'interBurstGapValue',
     }
 
     def __init__(self, parent):

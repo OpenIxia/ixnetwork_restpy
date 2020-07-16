@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,17 +31,21 @@ class TenGigLan(Base):
     __slots__ = ()
     _SDM_NAME = 'tenGigLan'
     _SDM_ATT_MAP = {
-        'AutoInstrumentation': 'autoInstrumentation',
-        'AutoNegotiate': 'autoNegotiate',
-        'EnableLASIMonitoring': 'enableLASIMonitoring',
         'EnablePPM': 'enablePPM',
-        'EnabledFlowControl': 'enabledFlowControl',
-        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
         'Loopback': 'loopback',
+        'AvailableSpeeds': 'availableSpeeds',
+        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
+        'EnabledFlowControl': 'enabledFlowControl',
         'LoopbackMode': 'loopbackMode',
         'Ppm': 'ppm',
+        'CanModifySpeed': 'canModifySpeed',
+        'EnableLASIMonitoring': 'enableLASIMonitoring',
         'TransmitClocking': 'transmitClocking',
-        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
+        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
+        'SelectedSpeeds': 'selectedSpeeds',
+        'AutoInstrumentation': 'autoInstrumentation',
+        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
+        'AutoNegotiate': 'autoNegotiate',
     }
 
     def __init__(self, parent):
@@ -112,6 +116,33 @@ class TenGigLan(Base):
     @AutoNegotiate.setter
     def AutoNegotiate(self, value):
         self._set_attribute(self._SDM_ATT_MAP['AutoNegotiate'], value)
+
+    @property
+    def AvailableSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[]): Which speeds are available for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableSpeeds'])
+
+    @property
+    def CanModifySpeed(self):
+        """
+        Returns
+        -------
+        - bool: Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanModifySpeed'])
+
+    @property
+    def CanSetMultipleSpeeds(self):
+        """
+        Returns
+        -------
+        - bool: Can this port selectmultiple speeds for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanSetMultipleSpeeds'])
 
     @property
     def EnableLASIMonitoring(self):
@@ -198,6 +229,18 @@ class TenGigLan(Base):
         self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
+    def SelectedSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[]): Which speeds are selected for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
+    @SelectedSpeeds.setter
+    def SelectedSpeeds(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
+
+    @property
     def TransmitClocking(self):
         """
         Returns
@@ -221,7 +264,7 @@ class TenGigLan(Base):
     def TxIgnoreRxLinkFaults(self, value):
         self._set_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'], value)
 
-    def update(self, AutoInstrumentation=None, AutoNegotiate=None, EnableLASIMonitoring=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, LoopbackMode=None, Ppm=None, TransmitClocking=None, TxIgnoreRxLinkFaults=None):
+    def update(self, AutoInstrumentation=None, AutoNegotiate=None, EnableLASIMonitoring=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, LoopbackMode=None, Ppm=None, SelectedSpeeds=None, TransmitClocking=None, TxIgnoreRxLinkFaults=None):
         """Updates tenGigLan resource on the server.
 
         Args
@@ -235,6 +278,7 @@ class TenGigLan(Base):
         - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
         - LoopbackMode (str(internalLoopback | lineLoopback | none)): NOT DEFINED
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - SelectedSpeeds (list(str[])): Which speeds are selected for the current media and AN settings.
         - TransmitClocking (str(external | internal | recovered)): The transmit clocking type for the 10G LAN port.
         - TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
 

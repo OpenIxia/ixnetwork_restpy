@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,12 +34,12 @@ class DeviceGroup(Base):
     _SDM_NAME = 'deviceGroup'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Enabled': 'enabled',
-        'Errors': 'errors',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
         'Status': 'status',
+        'Errors': 'errors',
+        'Name': 'name',
+        'Enabled': 'enabled',
+        'DescriptiveName': 'descriptiveName',
+        'Multiplier': 'multiplier',
     }
 
     def __init__(self, parent):
@@ -148,13 +148,13 @@ class DeviceGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3router_f6ffa661a27092f6940da242a1551e37.IsisL3Router): An instance of the IsisL3Router class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3router_502c03d3345feb0ad46b4b9e2d2f2e95.IsisL3Router): An instance of the IsisL3Router class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3router_f6ffa661a27092f6940da242a1551e37 import IsisL3Router
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3router_502c03d3345feb0ad46b4b9e2d2f2e95 import IsisL3Router
         return IsisL3Router(self)
 
     @property
@@ -560,6 +560,31 @@ class DeviceGroup(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def CopyPaste(self, *args, **kwargs):
         """Executes the copyPaste operation on the server.
 
@@ -583,9 +608,11 @@ class DeviceGroup(Base):
     def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
         """Executes the fetchAndUpdateConfigFromCloud operation on the server.
 
+        Learn MAC / IP address for a topology running on VM ports, deployed in AWS.
+
         fetchAndUpdateConfigFromCloud(Mode=string)
         ------------------------------------------
-        - Mode (str): 
+        - Mode (str): Mode. Options are: cmdrefreshall, cmdrefreshmac, cmdrefreshipv4
 
         Raises
         ------
@@ -613,13 +640,13 @@ class DeviceGroup(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected Device Groups.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -638,13 +665,13 @@ class DeviceGroup(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected Device Groups.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

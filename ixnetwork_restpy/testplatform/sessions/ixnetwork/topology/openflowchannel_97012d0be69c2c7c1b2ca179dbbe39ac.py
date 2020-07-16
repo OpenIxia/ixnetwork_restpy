@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,36 +33,36 @@ class OpenFlowChannel(Base):
     __slots__ = ()
     _SDM_NAME = 'openFlowChannel'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'CalcFlowRate': 'calcFlowRate',
-        'CalcFlowRateWithBarrier': 'calcFlowRateWithBarrier',
-        'ConnectedVia': 'connectedVia',
-        'ControllerIndex': 'controllerIndex',
-        'ControllerName': 'controllerName',
-        'Count': 'count',
-        'DatapathId': 'datapathId',
         'DatapathIdHex': 'datapathIdHex',
-        'DescriptiveName': 'descriptiveName',
+        'CalcFlowRateWithBarrier': 'calcFlowRateWithBarrier',
+        'StackedLayers': 'stackedLayers',
+        'LocalIp': 'localIp',
+        'ConnectedVia': 'connectedVia',
+        'FlowTxBurstSize': 'flowTxBurstSize',
         'EnableHelloElement': 'enableHelloElement',
         'Errors': 'errors',
-        'FlowTxBurstSize': 'flowTxBurstSize',
-        'GroupsPerChannel': 'groupsPerChannel',
         'InterFlowBurstGap': 'interFlowBurstGap',
-        'LocalIp': 'localIp',
-        'MaxFlowsAtATime': 'maxFlowsAtATime',
         'MetersPerChannel': 'metersPerChannel',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'RemoteIp': 'remoteIp',
-        'SendRoleRequest': 'sendRoleRequest',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
-        'StartupGenerationId': 'startupGenerationId',
-        'StartupRoleRequest': 'startupRoleRequest',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
         'TablesPerChannel': 'tablesPerChannel',
+        'SessionStatus': 'sessionStatus',
+        'Status': 'status',
         'UseDatapathID': 'useDatapathID',
+        'MaxFlowsAtATime': 'maxFlowsAtATime',
+        'StartupRoleRequest': 'startupRoleRequest',
+        'ControllerIndex': 'controllerIndex',
+        'SendRoleRequest': 'sendRoleRequest',
+        'Multiplier': 'multiplier',
+        'Active': 'active',
+        'CalcFlowRate': 'calcFlowRate',
+        'DatapathId': 'datapathId',
+        'Count': 'count',
+        'GroupsPerChannel': 'groupsPerChannel',
+        'Name': 'name',
+        'StartupGenerationId': 'startupGenerationId',
+        'DescriptiveName': 'descriptiveName',
+        'RemoteIp': 'remoteIp',
+        'ControllerName': 'controllerName',
+        'StateCounts': 'stateCounts',
     }
 
     def __init__(self, parent):
@@ -557,6 +557,31 @@ class OpenFlowChannel(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def GetAsynchronousConfiguration(self, *args, **kwargs):
         """Executes the getAsynchronousConfiguration operation on the server.
 
@@ -566,7 +591,7 @@ class OpenFlowChannel(Base):
 
         getAsynchronousConfiguration(SessionIndices=list)
         -------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         getAsynchronousConfiguration(SessionIndices=string)
         ---------------------------------------------------
@@ -616,7 +641,7 @@ class OpenFlowChannel(Base):
 
         pauseEchoReply(SessionIndices=list)
         -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         pauseEchoReply(SessionIndices=string)
         -------------------------------------
@@ -646,7 +671,7 @@ class OpenFlowChannel(Base):
 
         pauseEchoRequest(SessionIndices=list)
         -------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         pauseEchoRequest(SessionIndices=string)
         ---------------------------------------
@@ -676,7 +701,7 @@ class OpenFlowChannel(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -701,7 +726,7 @@ class OpenFlowChannel(Base):
 
         resumeEchoReply(SessionIndices=list)
         ------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         resumeEchoReply(SessionIndices=string)
         --------------------------------------
@@ -731,7 +756,7 @@ class OpenFlowChannel(Base):
 
         resumeEchoRequest(SessionIndices=list)
         --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         resumeEchoRequest(SessionIndices=string)
         ----------------------------------------
@@ -761,7 +786,7 @@ class OpenFlowChannel(Base):
 
         sendBarrierRequest(SessionIndices=list)
         ---------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendBarrierRequest(SessionIndices=string)
         -----------------------------------------
@@ -791,7 +816,7 @@ class OpenFlowChannel(Base):
 
         sendConfigRequest(SessionIndices=list)
         --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendConfigRequest(SessionIndices=string)
         ----------------------------------------
@@ -821,7 +846,7 @@ class OpenFlowChannel(Base):
 
         sendDescriptionStatRequest(SessionIndices=list)
         -----------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendDescriptionStatRequest(SessionIndices=string)
         -------------------------------------------------
@@ -858,7 +883,7 @@ class OpenFlowChannel(Base):
         -----------------------------------------------------------------------------------
         - EnableEchoTimeout (bool): This parameter requires a enableEchoTimeout of type kBool
         - EchoTimeoutVal (number): This parameter requires a echoTimeoutVal of type kInteger
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendEchoRequest(SessionIndices=string, EnableEchoTimeout=bool, EchoTimeoutVal=number)
         -------------------------------------------------------------------------------------
@@ -903,7 +928,7 @@ class OpenFlowChannel(Base):
         - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
         - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
         - ExperimenterData (str): This parameter requires a experimenterData of type kString
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendExperimenterMessage(SessionIndices=string, ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string)
         ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -952,7 +977,7 @@ class OpenFlowChannel(Base):
         - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
         - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
         - ExperimenterData (str): This parameter requires a experimenterData of type kString
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendExperimenterStatRequest(SessionIndices=string, ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string)
         ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -990,7 +1015,7 @@ class OpenFlowChannel(Base):
 
         sendFeatureRequest(SessionIndices=list)
         ---------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendFeatureRequest(SessionIndices=string)
         -----------------------------------------
@@ -1027,7 +1052,7 @@ class OpenFlowChannel(Base):
         ----------------------------------------------------------------------------------------------------
         - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
         - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendGetQueueConfigRequest(SessionIndices=string, OutputPortType=enum, ErrorUnsupportedTypeFormat=null)
         ------------------------------------------------------------------------------------------------------
@@ -1061,7 +1086,7 @@ class OpenFlowChannel(Base):
 
         sendGroupDescriptionRequest(SessionIndices=list)
         ------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendGroupDescriptionRequest(SessionIndices=string)
         --------------------------------------------------
@@ -1091,7 +1116,7 @@ class OpenFlowChannel(Base):
 
         sendGroupFeaturesRequest(SessionIndices=list)
         ---------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendGroupFeaturesRequest(SessionIndices=string)
         -----------------------------------------------
@@ -1128,7 +1153,7 @@ class OpenFlowChannel(Base):
         ----------------------------------------------------------------------------
         - GroupIDType (str(enumOpt-Manual | enumOpt-OFPG_ALL | enumOpt-OFPG_ANY)): This parameter requires a groupIDType of type kEnumValue=enumOpt-Manual,enumOpt-OFPG_ALL,enumOpt-OFPG_ANY
         - GroupID (number): This parameter requires a groupID of type kInteger
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendGroupStatsRequest(SessionIndices=string, GroupIDType=enum, GroupID=number)
         ------------------------------------------------------------------------------
@@ -1169,7 +1194,7 @@ class OpenFlowChannel(Base):
         ----------------------------------------------------------------------------------------------
         - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
         - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendMeterConfigRequest(SessionIndices=string, MeterIDType=enum, ErrorUnsupportedTypeFormat=null)
         ------------------------------------------------------------------------------------------------
@@ -1203,7 +1228,7 @@ class OpenFlowChannel(Base):
 
         sendMeterFeaturesRequest(SessionIndices=list)
         ---------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendMeterFeaturesRequest(SessionIndices=string)
         -----------------------------------------------
@@ -1262,7 +1287,7 @@ class OpenFlowChannel(Base):
         ---------------------------------------------------------------------------------------------
         - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
         - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendMeterStatsRequest(SessionIndices=string, MeterIDType=enum, ErrorUnsupportedTypeFormat=null)
         -----------------------------------------------------------------------------------------------
@@ -1289,7 +1314,7 @@ class OpenFlowChannel(Base):
 
         sendPortDescription(SessionIndices=list)
         ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendPortDescription(SessionIndices=string)
         ------------------------------------------
@@ -1326,7 +1351,7 @@ class OpenFlowChannel(Base):
         -----------------------------------------------------------------------------------------------
         - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY | enumOpt-OFPP_NONE)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY,enumOpt-OFPP_NONE
         - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendPortStatsRequest(SessionIndices=string, OutputPortType=enum, ErrorUnsupportedTypeFormat=null)
         -------------------------------------------------------------------------------------------------
@@ -1371,7 +1396,7 @@ class OpenFlowChannel(Base):
         - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
         - QueueType (str(enumOpt-MANUAL | enumOpt-OFPQ_ALL)): This parameter requires a queueType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPQ_ALL
         - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendQueueStatsRequest(SessionIndices=string, OutputPortType=enum, ErrorUnsupportedTypeFormat=null, QueueType=enum, ErrorUnsupportedTypeFormat=null)
         ---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1418,7 +1443,7 @@ class OpenFlowChannel(Base):
         - TableIdType (str(enumOpt-ALL_TABLE | enumOpt-MANUAL)): This parameter requires a tableIdType of type kEnumValue=enumOpt-ALL_TABLE,enumOpt-MANUAL
         - TableId (number): This parameter requires a tableId of type kInteger
         - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendTableModRequest(SessionIndices=string, TableIdType=enum, TableId=number, ErrorUnsupportedTypeFormat=null)
         -------------------------------------------------------------------------------------------------------------
@@ -1454,7 +1479,7 @@ class OpenFlowChannel(Base):
 
         sendTableStatsRequest(SessionIndices=list)
         ------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendTableStatsRequest(SessionIndices=string)
         --------------------------------------------
@@ -1478,13 +1503,13 @@ class OpenFlowChannel(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected protocols.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -1509,7 +1534,7 @@ class OpenFlowChannel(Base):
 
         startChannel(SessionIndices=list)
         ---------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         startChannel(SessionIndices=string)
         -----------------------------------
@@ -1528,13 +1553,13 @@ class OpenFlowChannel(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected protocols.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------
@@ -1559,7 +1584,7 @@ class OpenFlowChannel(Base):
 
         stopChannel(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stopChannel(SessionIndices=string)
         ----------------------------------

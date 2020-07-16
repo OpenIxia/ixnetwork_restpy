@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,15 +31,15 @@ class TrillPingOam(Base):
     __slots__ = ()
     _SDM_NAME = 'trillPingOam'
     _SDM_ATT_MAP = {
-        'AlertFlag': 'alertFlag',
+        'SourceNickname': 'sourceNickname',
+        'NoOfPingRequests': 'noOfPingRequests',
         'DestinationNickname': 'destinationNickname',
         'EtherType': 'etherType',
-        'HopCount': 'hopCount',
-        'NativeFlag': 'nativeFlag',
-        'NoOfPingRequests': 'noOfPingRequests',
         'SilentFlag': 'silentFlag',
-        'SourceNickname': 'sourceNickname',
+        'NativeFlag': 'nativeFlag',
         'TimeOut': 'timeOut',
+        'AlertFlag': 'alertFlag',
+        'HopCount': 'hopCount',
     }
 
     def __init__(self, parent):

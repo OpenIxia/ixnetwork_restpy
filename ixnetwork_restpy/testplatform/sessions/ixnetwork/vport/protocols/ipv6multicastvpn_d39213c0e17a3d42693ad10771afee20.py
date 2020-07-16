@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,28 +32,28 @@ class Ipv6MulticastVpn(Base):
     __slots__ = ()
     _SDM_NAME = 'ipv6MulticastVpn'
     _SDM_ATT_MAP = {
-        'CMcastRouteType': 'cMcastRouteType',
-        'GroupAddress': 'groupAddress',
-        'Neighbor': 'neighbor',
-        'OriginatingRouter': 'originatingRouter',
-        'RouteDistinguisher': 'routeDistinguisher',
-        'RouteKeyGroupAddress': 'routeKeyGroupAddress',
-        'RouteKeyOriginatingRouter': 'routeKeyOriginatingRouter',
-        'RouteKeyRouteDistinguisher': 'routeKeyRouteDistinguisher',
-        'RouteKeyRsvpP2mpExtendedTunnelId': 'routeKeyRsvpP2mpExtendedTunnelId',
-        'RouteKeyRsvpP2mpId': 'routeKeyRsvpP2mpId',
-        'RouteKeyRsvpP2mpTunnelId': 'routeKeyRsvpP2mpTunnelId',
-        'RouteKeySourceAddress': 'routeKeySourceAddress',
         'RouteKeyTunnelType': 'routeKeyTunnelType',
-        'RouteKeyUpstreamLabel': 'routeKeyUpstreamLabel',
-        'RouteType': 'routeType',
-        'RsvpP2mpExtendedTunnelId': 'rsvpP2mpExtendedTunnelId',
+        'GroupAddress': 'groupAddress',
         'RsvpP2mpId': 'rsvpP2mpId',
-        'RsvpP2mpTunnelId': 'rsvpP2mpTunnelId',
-        'SourceAddress': 'sourceAddress',
+        'RouteKeyGroupAddress': 'routeKeyGroupAddress',
         'SourceAs': 'sourceAs',
+        'RouteKeyRsvpP2mpExtendedTunnelId': 'routeKeyRsvpP2mpExtendedTunnelId',
         'TunnelType': 'tunnelType',
+        'RouteKeyUpstreamLabel': 'routeKeyUpstreamLabel',
+        'RsvpP2mpExtendedTunnelId': 'rsvpP2mpExtendedTunnelId',
+        'RouteKeyOriginatingRouter': 'routeKeyOriginatingRouter',
+        'RouteKeySourceAddress': 'routeKeySourceAddress',
+        'RouteKeyRouteDistinguisher': 'routeKeyRouteDistinguisher',
+        'OriginatingRouter': 'originatingRouter',
+        'RouteKeyRsvpP2mpTunnelId': 'routeKeyRsvpP2mpTunnelId',
+        'CMcastRouteType': 'cMcastRouteType',
+        'RouteDistinguisher': 'routeDistinguisher',
+        'RouteKeyRsvpP2mpId': 'routeKeyRsvpP2mpId',
+        'RouteType': 'routeType',
+        'RsvpP2mpTunnelId': 'rsvpP2mpTunnelId',
         'UpstreamLabel': 'upstreamLabel',
+        'Neighbor': 'neighbor',
+        'SourceAddress': 'sourceAddress',
     }
 
     def __init__(self, parent):

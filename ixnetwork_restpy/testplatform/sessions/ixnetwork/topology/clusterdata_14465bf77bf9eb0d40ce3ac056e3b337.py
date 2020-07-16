@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,24 +31,24 @@ class ClusterData(Base):
     __slots__ = ()
     _SDM_NAME = 'clusterData'
     _SDM_ATT_MAP = {
-        'ActionTriggered': 'actionTriggered',
-        'AttachAtStart': 'attachAtStart',
-        'AutoSyncAtStart': 'autoSyncAtStart',
-        'BindingStatus': 'bindingStatus',
-        'BindingsCount': 'bindingsCount',
         'Count': 'count',
         'CurrentRetryCount': 'currentRetryCount',
-        'DescriptiveName': 'descriptiveName',
-        'ErrorStatus': 'errorStatus',
-        'LogicalSwitchName': 'logicalSwitchName',
-        'MaxRetryCount': 'maxRetryCount',
         'Name': 'name',
-        'PhysicalPortName': 'physicalPortName',
-        'PhysicalSwitchName': 'physicalSwitchName',
+        'LogicalSwitchName': 'logicalSwitchName',
         'ProgressStatus': 'progressStatus',
-        'RetryStatus': 'retryStatus',
+        'AutoSyncAtStart': 'autoSyncAtStart',
         'Vlan': 'vlan',
+        'PhysicalSwitchName': 'physicalSwitchName',
         'Vni': 'vni',
+        'RetryStatus': 'retryStatus',
+        'AttachAtStart': 'attachAtStart',
+        'ErrorStatus': 'errorStatus',
+        'DescriptiveName': 'descriptiveName',
+        'ActionTriggered': 'actionTriggered',
+        'PhysicalPortName': 'physicalPortName',
+        'MaxRetryCount': 'maxRetryCount',
+        'BindingsCount': 'bindingsCount',
+        'BindingStatus': 'bindingStatus',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,11 +33,11 @@ class MsAllowedEidRange(Base):
     __slots__ = ()
     _SDM_NAME = 'msAllowedEidRange'
     _SDM_ATT_MAP = {
-        'Address': 'address',
         'Count': 'count',
+        'PrefixLength': 'prefixLength',
         'Enabled': 'enabled',
         'Family': 'family',
-        'PrefixLength': 'prefixLength',
+        'Address': 'address',
     }
 
     def __init__(self, parent):

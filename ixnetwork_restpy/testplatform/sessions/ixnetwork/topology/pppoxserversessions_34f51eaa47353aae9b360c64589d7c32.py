@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,24 +31,24 @@ class PppoxServerSessions(Base):
     __slots__ = ()
     _SDM_NAME = 'pppoxServerSessions'
     _SDM_ATT_MAP = {
-        'ChapName': 'chapName',
-        'ChapSecret': 'chapSecret',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DiscoveredClientsMacs': 'discoveredClientsMacs',
-        'DiscoveredRemoteSessionIds': 'discoveredRemoteSessionIds',
         'DiscoveredRemoteTunnelIds': 'discoveredRemoteTunnelIds',
-        'DiscoveredSessionIds': 'discoveredSessionIds',
-        'DiscoveredTunnelIPs': 'discoveredTunnelIPs',
-        'DiscoveredTunnelIds': 'discoveredTunnelIds',
-        'DomainList': 'domainList',
         'EnableDomainGroups': 'enableDomainGroups',
         'Name': 'name',
+        'DomainList': 'domainList',
         'PapPassword': 'papPassword',
-        'PapUser': 'papUser',
+        'ChapName': 'chapName',
+        'DiscoveredRemoteSessionIds': 'discoveredRemoteSessionIds',
         'ServerIpv4Addresses': 'serverIpv4Addresses',
+        'DescriptiveName': 'descriptiveName',
+        'DiscoveredTunnelIds': 'discoveredTunnelIds',
         'ServerIpv6Addresses': 'serverIpv6Addresses',
+        'DiscoveredSessionIds': 'discoveredSessionIds',
+        'DiscoveredTunnelIPs': 'discoveredTunnelIPs',
+        'DiscoveredClientsMacs': 'discoveredClientsMacs',
+        'ChapSecret': 'chapSecret',
         'SessionInfo': 'sessionInfo',
+        'PapUser': 'papUser',
     }
 
     def __init__(self, parent):
@@ -289,7 +289,7 @@ class PppoxServerSessions(Base):
 
         closeIpcp(SessionIndices=list)
         ------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         closeIpcp(SessionIndices=string)
         --------------------------------
@@ -314,7 +314,7 @@ class PppoxServerSessions(Base):
 
         closeIpv6cp(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         closeIpv6cp(SessionIndices=string)
         ----------------------------------

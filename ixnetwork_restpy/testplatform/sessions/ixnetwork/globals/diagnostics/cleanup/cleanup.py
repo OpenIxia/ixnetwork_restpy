@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,20 +31,20 @@ class Cleanup(Base):
     __slots__ = ()
     _SDM_NAME = 'cleanup'
     _SDM_ATT_MAP = {
-        'ChassisDaysOld': 'chassisDaysOld',
-        'CleanupChassis': 'cleanupChassis',
-        'CleanupClient': 'cleanupClient',
-        'ClientDaysOld': 'clientDaysOld',
-        'ProfileAes': 'profileAes',
-        'ProfileAllprofiles': 'profileAllprofiles',
-        'ProfileAnalyzer': 'profileAnalyzer',
-        'ProfileHlapi': 'profileHlapi',
-        'ProfileImpairment': 'profileImpairment',
-        'ProfileIxloadlite': 'profileIxloadlite',
-        'ProfileMiddleware': 'profileMiddleware',
-        'ProfileQuicktests': 'profileQuicktests',
         'ProfileStackmanager': 'profileStackmanager',
+        'ProfileImpairment': 'profileImpairment',
+        'ProfileHlapi': 'profileHlapi',
+        'ProfileMiddleware': 'profileMiddleware',
+        'ProfileAes': 'profileAes',
+        'CleanupChassis': 'cleanupChassis',
+        'ProfileAllprofiles': 'profileAllprofiles',
         'ProfileStatviewerreporter': 'profileStatviewerreporter',
+        'ClientDaysOld': 'clientDaysOld',
+        'CleanupClient': 'cleanupClient',
+        'ProfileAnalyzer': 'profileAnalyzer',
+        'ProfileQuicktests': 'profileQuicktests',
+        'ChassisDaysOld': 'chassisDaysOld',
+        'ProfileIxloadlite': 'profileIxloadlite',
     }
 
     def __init__(self, parent):

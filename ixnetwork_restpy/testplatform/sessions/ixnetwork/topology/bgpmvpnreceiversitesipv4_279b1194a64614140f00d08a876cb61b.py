@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,35 +33,35 @@ class BgpMVpnReceiverSitesIpv4(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpMVpnReceiverSitesIpv4'
     _SDM_ATT_MAP = {
-        'BFRId': 'BFRId',
-        'BFRIpv4Prefix': 'BFRIpv4Prefix',
-        'BFRIpv6Prefix': 'BFRIpv6Prefix',
-        'BFRPrefixType': 'BFRPrefixType',
-        'SubDomainId': 'SubDomainId',
-        'UseAutoSubDomainId': 'UseAutoSubDomainId',
-        'Active': 'active',
         'CMulticastRouteType': 'cMulticastRouteType',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DownstreamLabel': 'downstreamLabel',
-        'EnableNextHop': 'enableNextHop',
-        'GroupAddressCount': 'groupAddressCount',
-        'GroupMaskWidth': 'groupMaskWidth',
-        'IncludeBierPtainLeafAd': 'includeBierPtainLeafAd',
-        'Ipv4NextHop': 'ipv4NextHop',
-        'Ipv6NextHop': 'ipv6NextHop',
-        'Name': 'name',
-        'SendTriggeredMulticastRoute': 'sendTriggeredMulticastRoute',
         'SetNextHop': 'setNextHop',
-        'SetNextHopIpType': 'setNextHopIpType',
-        'SourceAddressCount': 'sourceAddressCount',
-        'SourceGroupMapping': 'sourceGroupMapping',
-        'SourceMaskWidth': 'sourceMaskWidth',
-        'StartGroupAddressIpv4': 'startGroupAddressIpv4',
-        'StartSourceAddressIpv4': 'startSourceAddressIpv4',
-        'StartSourceOrCrpAddressIpv4': 'startSourceOrCrpAddressIpv4',
         'SupportLeafADRoutesSending': 'supportLeafADRoutesSending',
+        'GroupAddressCount': 'groupAddressCount',
+        'StartSourceAddressIpv4': 'startSourceAddressIpv4',
+        'BFRId': 'BFRId',
+        'SetNextHopIpType': 'setNextHopIpType',
+        'BFRPrefixType': 'BFRPrefixType',
+        'SourceGroupMapping': 'sourceGroupMapping',
+        'Ipv6NextHop': 'ipv6NextHop',
+        'BFRIpv6Prefix': 'BFRIpv6Prefix',
+        'SourceMaskWidth': 'sourceMaskWidth',
+        'DownstreamLabel': 'downstreamLabel',
+        'BFRIpv4Prefix': 'BFRIpv4Prefix',
         'WildCardLeafAdForBierPta': 'wildCardLeafAdForBierPta',
+        'Ipv4NextHop': 'ipv4NextHop',
+        'UseAutoSubDomainId': 'UseAutoSubDomainId',
+        'SendTriggeredMulticastRoute': 'sendTriggeredMulticastRoute',
+        'Active': 'active',
+        'EnableNextHop': 'enableNextHop',
+        'Count': 'count',
+        'SourceAddressCount': 'sourceAddressCount',
+        'Name': 'name',
+        'StartGroupAddressIpv4': 'startGroupAddressIpv4',
+        'IncludeBierPtainLeafAd': 'includeBierPtainLeafAd',
+        'SubDomainId': 'SubDomainId',
+        'DescriptiveName': 'descriptiveName',
+        'StartSourceOrCrpAddressIpv4': 'startSourceOrCrpAddressIpv4',
+        'GroupMaskWidth': 'groupMaskWidth',
     }
 
     def __init__(self, parent):
@@ -72,13 +72,13 @@ class BgpMVpnReceiverSitesIpv4(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_f91a37c8058302050a67e05790d01c7a.CMacProperties): An instance of the CMacProperties class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180.CMacProperties): An instance of the CMacProperties class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_f91a37c8058302050a67e05790d01c7a import CMacProperties
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
         return CMacProperties(self)
 
     @property
@@ -550,16 +550,29 @@ class BgpMVpnReceiverSitesIpv4(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
+
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected protocols.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -578,13 +591,13 @@ class BgpMVpnReceiverSitesIpv4(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected protocols.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

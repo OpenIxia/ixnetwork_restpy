@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,23 +31,23 @@ class ApplyActionMissType(Base):
     __slots__ = ()
     _SDM_NAME = 'applyActionMissType'
     _SDM_ATT_MAP = {
-        'CopyTtlIn': 'copyTtlIn',
-        'CopyTtlOut': 'copyTtlOut',
-        'DecrementMplsTtl': 'decrementMplsTtl',
-        'DecrementNetworkTtl': 'decrementNetworkTtl',
-        'Experimenter': 'experimenter',
-        'Group': 'group',
-        'Output': 'output',
-        'PopMpls': 'popMpls',
-        'PopPbb': 'popPbb',
-        'PopVlan': 'popVlan',
-        'PushMpls': 'pushMpls',
-        'PushPbb': 'pushPbb',
         'PushVlan': 'pushVlan',
-        'SetField': 'setField',
+        'Group': 'group',
         'SetMplsTtl': 'setMplsTtl',
+        'PopMpls': 'popMpls',
         'SetNetworkTtl': 'setNetworkTtl',
+        'PushMpls': 'pushMpls',
+        'CopyTtlOut': 'copyTtlOut',
+        'PopVlan': 'popVlan',
+        'PopPbb': 'popPbb',
         'SetQueue': 'setQueue',
+        'Experimenter': 'experimenter',
+        'DecrementNetworkTtl': 'decrementNetworkTtl',
+        'Output': 'output',
+        'CopyTtlIn': 'copyTtlIn',
+        'PushPbb': 'pushPbb',
+        'SetField': 'setField',
+        'DecrementMplsTtl': 'decrementMplsTtl',
     }
 
     def __init__(self, parent):

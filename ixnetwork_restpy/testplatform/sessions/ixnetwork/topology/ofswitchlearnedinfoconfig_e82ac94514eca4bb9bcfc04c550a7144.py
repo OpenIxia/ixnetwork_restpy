@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,14 +32,14 @@ class OFSwitchLearnedInfoConfig(Base):
     _SDM_NAME = 'oFSwitchLearnedInfoConfig'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'FlowStatOutGroupMode': 'flowStatOutGroupMode',
-        'FlowStatOutGroupValue': 'flowStatOutGroupValue',
         'FlowStatOutPortMode': 'flowStatOutPortMode',
-        'FlowStatOutPortValue': 'flowStatOutPortValue',
-        'FlowStatTableIdMode': 'flowStatTableIdMode',
         'FlowStatTableIdValue': 'flowStatTableIdValue',
         'Name': 'name',
+        'FlowStatTableIdMode': 'flowStatTableIdMode',
+        'FlowStatOutGroupValue': 'flowStatOutGroupValue',
+        'DescriptiveName': 'descriptiveName',
+        'FlowStatOutPortValue': 'flowStatOutPortValue',
+        'FlowStatOutGroupMode': 'flowStatOutGroupMode',
     }
 
     def __init__(self, parent):

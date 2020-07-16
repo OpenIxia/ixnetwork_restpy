@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,9 +31,9 @@ class PortStatusMaskMaster(Base):
     __slots__ = ()
     _SDM_NAME = 'portStatusMaskMaster'
     _SDM_ATT_MAP = {
-        'PortAdd': 'portAdd',
-        'PortDelete': 'portDelete',
         'PortModify': 'portModify',
+        'PortDelete': 'portDelete',
+        'PortAdd': 'portAdd',
     }
 
     def __init__(self, parent):

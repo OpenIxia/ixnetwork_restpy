@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,13 +33,13 @@ class Atm(Base):
     __slots__ = ()
     _SDM_NAME = 'atm'
     _SDM_ATT_MAP = {
-        'AtmEncapsulation': 'atmEncapsulation',
         'Count': 'count',
-        'Enabled': 'enabled',
         'IncrementVci': 'incrementVci',
-        'IncrementVpi': 'incrementVpi',
         'Name': 'name',
+        'AtmEncapsulation': 'atmEncapsulation',
+        'Enabled': 'enabled',
         'TrafficGroupId': 'trafficGroupId',
+        'IncrementVpi': 'incrementVpi',
         'Vci': 'vci',
         'Vpi': 'vpi',
     }

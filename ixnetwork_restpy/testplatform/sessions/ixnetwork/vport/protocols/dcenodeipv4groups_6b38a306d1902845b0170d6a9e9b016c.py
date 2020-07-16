@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,18 +33,18 @@ class DceNodeIpv4Groups(Base):
     __slots__ = ()
     _SDM_NAME = 'dceNodeIpv4Groups'
     _SDM_ATT_MAP = {
-        'IncludeIpv4Groups': 'includeIpv4Groups',
-        'InterGroupUnicastIpv4Increment': 'interGroupUnicastIpv4Increment',
-        'IntraGroupUnicastIpv4Increment': 'intraGroupUnicastIpv4Increment',
-        'MulticastAddressNodeStep': 'multicastAddressNodeStep',
-        'MulticastIpv4Count': 'multicastIpv4Count',
-        'MulticastIpv4Step': 'multicastIpv4Step',
-        'NoOfUnicastScrIpv4sPerMulicastIpv4': 'noOfUnicastScrIpv4sPerMulicastIpv4',
-        'SourceGroupMapping': 'sourceGroupMapping',
         'StartMulticastIpv4': 'startMulticastIpv4',
-        'StartUnicastSourceIpv4': 'startUnicastSourceIpv4',
-        'UnicastAddressNodeStep': 'unicastAddressNodeStep',
+        'SourceGroupMapping': 'sourceGroupMapping',
+        'IncludeIpv4Groups': 'includeIpv4Groups',
         'VlanId': 'vlanId',
+        'MulticastAddressNodeStep': 'multicastAddressNodeStep',
+        'StartUnicastSourceIpv4': 'startUnicastSourceIpv4',
+        'MulticastIpv4Count': 'multicastIpv4Count',
+        'NoOfUnicastScrIpv4sPerMulicastIpv4': 'noOfUnicastScrIpv4sPerMulicastIpv4',
+        'InterGroupUnicastIpv4Increment': 'interGroupUnicastIpv4Increment',
+        'MulticastIpv4Step': 'multicastIpv4Step',
+        'UnicastAddressNodeStep': 'unicastAddressNodeStep',
+        'IntraGroupUnicastIpv4Increment': 'intraGroupUnicastIpv4Increment',
     }
 
     def __init__(self, parent):

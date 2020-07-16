@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,15 +33,15 @@ class Instructions(Base):
     __slots__ = ()
     _SDM_NAME = 'instructions'
     _SDM_ATT_MAP = {
-        'Experimenter': 'experimenter',
         'ExperimenterData': 'experimenterData',
-        'ExperimenterDataLength': 'experimenterDataLength',
-        'InstructionType': 'instructionType',
-        'Metadata': 'metadata',
         'MetadataInHex': 'metadataInHex',
         'MetadataMask': 'metadataMask',
-        'MeterId': 'meterId',
+        'ExperimenterDataLength': 'experimenterDataLength',
+        'Experimenter': 'experimenter',
+        'InstructionType': 'instructionType',
         'TableId': 'tableId',
+        'MeterId': 'meterId',
+        'Metadata': 'metadata',
     }
 
     def __init__(self, parent):

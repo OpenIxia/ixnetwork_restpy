@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,21 +31,21 @@ class WriteSetFieldMissMask(Base):
     __slots__ = ()
     _SDM_NAME = 'writeSetFieldMissMask'
     _SDM_ATT_MAP = {
-        'ArpDestinationIpv4AddressMask': 'arpDestinationIpv4AddressMask',
-        'ArpDstHwAddressMask': 'arpDstHwAddressMask',
-        'ArpSourceIpv4AddressMask': 'arpSourceIpv4AddressMask',
-        'ArpSrcHwAddressMask': 'arpSrcHwAddressMask',
-        'EthernetDestinationMask': 'ethernetDestinationMask',
         'EthernetSourceMask': 'ethernetSourceMask',
-        'Ipv4DestinationMask': 'ipv4DestinationMask',
-        'Ipv4SourceMask': 'ipv4SourceMask',
-        'Ipv6DestinationMask': 'ipv6DestinationMask',
         'Ipv6ExtHeaderMask': 'ipv6ExtHeaderMask',
-        'Ipv6FlowLabelMask': 'ipv6FlowLabelMask',
-        'Ipv6SourceMask': 'ipv6SourceMask',
+        'ArpSrcHwAddressMask': 'arpSrcHwAddressMask',
         'PbbIsidMask': 'pbbIsidMask',
+        'Ipv6SourceMask': 'ipv6SourceMask',
+        'ArpDstHwAddressMask': 'arpDstHwAddressMask',
         'TunnelIdMask': 'tunnelIdMask',
+        'EthernetDestinationMask': 'ethernetDestinationMask',
+        'Ipv6DestinationMask': 'ipv6DestinationMask',
         'VlanMask': 'vlanMask',
+        'Ipv4DestinationMask': 'ipv4DestinationMask',
+        'ArpDestinationIpv4AddressMask': 'arpDestinationIpv4AddressMask',
+        'ArpSourceIpv4AddressMask': 'arpSourceIpv4AddressMask',
+        'Ipv4SourceMask': 'ipv4SourceMask',
+        'Ipv6FlowLabelMask': 'ipv6FlowLabelMask',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,57 +31,57 @@ class BgpIpv4Peer(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpIpv4Peer'
     _SDM_ATT_MAP = {
-        'BIERTunnelType': 'BIERTunnelType',
-        'LLGRCapabilityCode': 'LLGRCapabilityCode',
-        'BgpConfMemType': 'bgpConfMemType',
-        'BgpRouterId': 'bgpRouterId',
-        'BindingType': 'bindingType',
-        'ColorType': 'colorType',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DisableReceivedUpdateValidation': 'disableReceivedUpdateValidation',
-        'ENLPType': 'eNLPType',
-        'EVPNSIDType': 'eVPNSIDType',
-        'EnLenthForPolicyNLRI': 'enLenthForPolicyNLRI',
-        'EnableAdVplsPrefixLength': 'enableAdVplsPrefixLength',
-        'IBgpTester4BytesAsNumber': 'iBgpTester4BytesAsNumber',
-        'IBgpTesterAsNumber': 'iBgpTesterAsNumber',
-        'InitiateEbgpActiveConnection': 'initiateEbgpActiveConnection',
-        'InitiateIbgpActiveConnection': 'initiateIbgpActiveConnection',
-        'Ipv4AddrIndexType': 'ipv4AddrIndexType',
-        'Ipv4LocRemoteAddrType': 'ipv4LocRemoteAddrType',
+        'VrfRouteImportExtendedCommunitySubType': 'vrfRouteImportExtendedCommunitySubType',
+        'SRv6VPNSIDTLVType': 'sRv6VPNSIDTLVType',
+        'ProtoclIdType': 'protoclIdType',
+        'RequestVpnLabelExchangeOverLsp': 'requestVpnLabelExchangeOverLsp',
         'Ipv4NodeAddrType': 'ipv4NodeAddrType',
-        'Ipv6AddrIndexType': 'ipv6AddrIndexType',
-        'Ipv6LocRemoteAddrType': 'ipv6LocRemoteAddrType',
-        'Ipv6NodeAddrType': 'ipv6NodeAddrType',
-        'Ipv6SIDType': 'ipv6SIDType',
-        'LenthForPolicyNLRI': 'lenthForPolicyNLRI',
-        'MldpP2mpFecType': 'mldpP2mpFecType',
-        'MplsSIDType': 'mplsSIDType',
-        'Name': 'name',
         'PeerAdjSidType': 'peerAdjSidType',
+        'RemoteEndpointType': 'remoteEndpointType',
+        'WeightType': 'weightType',
+        'SrtePolicyType': 'srtePolicyType',
+        'EnableAdVplsPrefixLength': 'enableAdVplsPrefixLength',
+        'SegmentListType': 'segmentListType',
+        'Ipv6NodeAddrType': 'ipv6NodeAddrType',
+        'UdpDestinationPort': 'udpDestinationPort',
+        'EVPNSIDType': 'eVPNSIDType',
+        'PreferenceType': 'preferenceType',
+        'UseUnicastDestMacForBierTraffic': 'useUnicastDestMacForBierTraffic',
+        'EnLenthForPolicyNLRI': 'enLenthForPolicyNLRI',
+        'MldpP2mpFecType': 'mldpP2mpFecType',
+        'RowNames': 'rowNames',
+        'TriggerVplsPwInitiation': 'triggerVplsPwInitiation',
+        'IBgpTester4BytesAsNumber': 'iBgpTester4BytesAsNumber',
+        'BgpRouterId': 'bgpRouterId',
+        'BIERTunnelType': 'BIERTunnelType',
+        'MplsSIDType': 'mplsSIDType',
+        'DisableReceivedUpdateValidation': 'disableReceivedUpdateValidation',
         'PeerNodeSidType': 'peerNodeSidType',
+        'LLGRCapabilityCode': 'LLGRCapabilityCode',
+        'ENLPType': 'eNLPType',
         'PeerSetSidType': 'peerSetSidType',
         'PolicyNameType': 'policyNameType',
-        'PolicyPriorityType': 'policyPriorityType',
-        'PreferenceType': 'preferenceType',
-        'PrefixSIDAttrType': 'prefixSIDAttrType',
-        'ProtoclIdType': 'protoclIdType',
-        'RemoteEndpointType': 'remoteEndpointType',
-        'RequestVpnLabelExchangeOverLsp': 'requestVpnLabelExchangeOverLsp',
-        'RowNames': 'rowNames',
-        'SRv6VPNSIDTLVType': 'sRv6VPNSIDTLVType',
-        'SegmentListType': 'segmentListType',
-        'SrtePolicyAttrType': 'srtePolicyAttrType',
-        'SrtePolicySAFI': 'srtePolicySAFI',
-        'SrtePolicyType': 'srtePolicyType',
-        'Srv6DraftNum': 'srv6DraftNum',
-        'TriggerVplsPwInitiation': 'triggerVplsPwInitiation',
-        'UdpDestinationPort': 'udpDestinationPort',
-        'UseUnicastDestMacForBierTraffic': 'useUnicastDestMacForBierTraffic',
         'VPNSIDType': 'vPNSIDType',
-        'VrfRouteImportExtendedCommunitySubType': 'vrfRouteImportExtendedCommunitySubType',
-        'WeightType': 'weightType',
+        'BgpConfMemType': 'bgpConfMemType',
+        'PolicyPriorityType': 'policyPriorityType',
+        'InitiateEbgpActiveConnection': 'initiateEbgpActiveConnection',
+        'ColorType': 'colorType',
+        'SrtePolicySAFI': 'srtePolicySAFI',
+        'Name': 'name',
+        'Count': 'count',
+        'Ipv4AddrIndexType': 'ipv4AddrIndexType',
+        'Ipv6SIDType': 'ipv6SIDType',
+        'SrtePolicyAttrType': 'srtePolicyAttrType',
+        'Ipv6LocRemoteAddrType': 'ipv6LocRemoteAddrType',
+        'InitiateIbgpActiveConnection': 'initiateIbgpActiveConnection',
+        'BindingType': 'bindingType',
+        'IBgpTesterAsNumber': 'iBgpTesterAsNumber',
+        'Srv6DraftNum': 'srv6DraftNum',
+        'PrefixSIDAttrType': 'prefixSIDAttrType',
+        'LenthForPolicyNLRI': 'lenthForPolicyNLRI',
+        'DescriptiveName': 'descriptiveName',
+        'Ipv4LocRemoteAddrType': 'ipv4LocRemoteAddrType',
+        'Ipv6AddrIndexType': 'ipv6AddrIndexType',
     }
 
     def __init__(self, parent):
@@ -92,13 +92,13 @@ class BgpIpv4Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0.StartRate): An instance of the StartRate class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0.StartRate): An instance of the StartRate class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import StartRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import StartRate
         return StartRate(self)._select()
 
     @property
@@ -106,13 +106,13 @@ class BgpIpv4Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04.StopRate): An instance of the StopRate class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04.StopRate): An instance of the StopRate class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import StopRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import StopRate
         return StopRate(self)._select()
 
     @property
@@ -573,7 +573,7 @@ class BgpIpv4Peer(Base):
         """
         Returns
         -------
-        - str(version04 | version_ietf_01): L3VPN SRv6 Draft Version Number
+        - str(version04 | version_ietf_01): SRv6 VPN Draft Version Number to be used both for L3VPN and EVPN
         """
         return self._get_attribute(self._SDM_ATT_MAP['Srv6DraftNum'])
     @Srv6DraftNum.setter
@@ -649,7 +649,7 @@ class BgpIpv4Peer(Base):
         Args
         ----
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - Srv6DraftNum (str(version04 | version_ietf_01)): L3VPN SRv6 Draft Version Number
+        - Srv6DraftNum (str(version04 | version_ietf_01)): SRv6 VPN Draft Version Number to be used both for L3VPN and EVPN
 
         Raises
         ------

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,11 +33,11 @@ class CustomTopologySpbNodeTopologyRange(Base):
     __slots__ = ()
     _SDM_NAME = 'customTopologySpbNodeTopologyRange'
     _SDM_ATT_MAP = {
-        'CistExternalRootCost': 'cistExternalRootCost',
-        'CistRootIdentifier': 'cistRootIdentifier',
         'EnableVbit': 'enableVbit',
+        'CistRootIdentifier': 'cistRootIdentifier',
         'NoOfPorts': 'noOfPorts',
         'PortIdentifier': 'portIdentifier',
+        'CistExternalRootCost': 'cistExternalRootCost',
     }
 
     def __init__(self, parent):

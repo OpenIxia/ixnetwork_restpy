@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,17 +33,17 @@ class CustomTopologyMulticastMacRange(Base):
     __slots__ = ()
     _SDM_NAME = 'customTopologyMulticastMacRange'
     _SDM_ATT_MAP = {
+        'StartUnicastSourceMac': 'startUnicastSourceMac',
+        'SourceGroupMapping': 'sourceGroupMapping',
+        'VlanId': 'vlanId',
+        'UnicastAddressNodeStep': 'unicastAddressNodeStep',
         'IncludeMacGroup': 'includeMacGroup',
-        'IntraGroupUnicastMacIncrement': 'intraGroupUnicastMacIncrement',
+        'MulticastMacStep': 'multicastMacStep',
         'MulticastAddressNodeStep': 'multicastAddressNodeStep',
         'MulticastMacCount': 'multicastMacCount',
-        'MulticastMacStep': 'multicastMacStep',
         'NumberOfUnicastSourceMacsPerMulticast': 'numberOfUnicastSourceMacsPerMulticast',
-        'SourceGroupMapping': 'sourceGroupMapping',
+        'IntraGroupUnicastMacIncrement': 'intraGroupUnicastMacIncrement',
         'StartMulticastMac': 'startMulticastMac',
-        'StartUnicastSourceMac': 'startUnicastSourceMac',
-        'UnicastAddressNodeStep': 'unicastAddressNodeStep',
-        'VlanId': 'vlanId',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,10 +33,12 @@ class EgressOnlyTracking(Base):
     __slots__ = ()
     _SDM_NAME = 'egressOnlyTracking'
     _SDM_ATT_MAP = {
-        'Egress': 'egress',
         'Enabled': 'enabled',
-        'Port': 'port',
         'SignatureOffset': 'signatureOffset',
+        'Egress': 'egress',
+        'SignatureLengthType': 'signatureLengthType',
+        'SignatureMask': 'signatureMask',
+        'Port': 'port',
         'SignatureValue': 'signatureValue',
     }
 
@@ -80,6 +82,30 @@ class EgressOnlyTracking(Base):
         self._set_attribute(self._SDM_ATT_MAP['Port'], value)
 
     @property
+    def SignatureLengthType(self):
+        """
+        Returns
+        -------
+        - str(fourByte | twelveByte): 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['SignatureLengthType'])
+    @SignatureLengthType.setter
+    def SignatureLengthType(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['SignatureLengthType'], value)
+
+    @property
+    def SignatureMask(self):
+        """
+        Returns
+        -------
+        - str: Signature maks to be placed inside the packet.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['SignatureMask'])
+    @SignatureMask.setter
+    def SignatureMask(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['SignatureMask'], value)
+
+    @property
     def SignatureOffset(self):
         """
         Returns
@@ -103,7 +129,7 @@ class EgressOnlyTracking(Base):
     def SignatureValue(self, value):
         self._set_attribute(self._SDM_ATT_MAP['SignatureValue'], value)
 
-    def update(self, Egress=None, Enabled=None, Port=None, SignatureOffset=None, SignatureValue=None):
+    def update(self, Egress=None, Enabled=None, Port=None, SignatureLengthType=None, SignatureMask=None, SignatureOffset=None, SignatureValue=None):
         """Updates egressOnlyTracking resource on the server.
 
         Args
@@ -111,6 +137,8 @@ class EgressOnlyTracking(Base):
         - Egress (list(dict(arg1:number,arg2:str))): Struct contains: egress offset and egress mask
         - Enabled (bool): Enables the egress only tracking for the given port.
         - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)): 
+        - SignatureLengthType (str(fourByte | twelveByte)): 
+        - SignatureMask (str): Signature maks to be placed inside the packet.
         - SignatureOffset (number): Offset where the signature value will be placed in the packet.
         - SignatureValue (str): Signature value to be placed inside the packet.
 
@@ -120,7 +148,7 @@ class EgressOnlyTracking(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Egress=None, Enabled=None, Port=None, SignatureOffset=None, SignatureValue=None):
+    def add(self, Egress=None, Enabled=None, Port=None, SignatureLengthType=None, SignatureMask=None, SignatureOffset=None, SignatureValue=None):
         """Adds a new egressOnlyTracking resource on the server and adds it to the container.
 
         Args
@@ -128,6 +156,8 @@ class EgressOnlyTracking(Base):
         - Egress (list(dict(arg1:number,arg2:str))): Struct contains: egress offset and egress mask
         - Enabled (bool): Enables the egress only tracking for the given port.
         - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)): 
+        - SignatureLengthType (str(fourByte | twelveByte)): 
+        - SignatureMask (str): Signature maks to be placed inside the packet.
         - SignatureOffset (number): Offset where the signature value will be placed in the packet.
         - SignatureValue (str): Signature value to be placed inside the packet.
 
@@ -151,7 +181,7 @@ class EgressOnlyTracking(Base):
         """
         self._delete()
 
-    def find(self, Egress=None, Enabled=None, Port=None, SignatureOffset=None, SignatureValue=None):
+    def find(self, Egress=None, Enabled=None, Port=None, SignatureLengthType=None, SignatureMask=None, SignatureOffset=None, SignatureValue=None):
         """Finds and retrieves egressOnlyTracking resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egressOnlyTracking resources from the server.
@@ -163,6 +193,8 @@ class EgressOnlyTracking(Base):
         - Egress (list(dict(arg1:number,arg2:str))): Struct contains: egress offset and egress mask
         - Enabled (bool): Enables the egress only tracking for the given port.
         - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)): 
+        - SignatureLengthType (str(fourByte | twelveByte)): 
+        - SignatureMask (str): Signature maks to be placed inside the packet.
         - SignatureOffset (number): Offset where the signature value will be placed in the packet.
         - SignatureValue (str): Signature value to be placed inside the packet.
 

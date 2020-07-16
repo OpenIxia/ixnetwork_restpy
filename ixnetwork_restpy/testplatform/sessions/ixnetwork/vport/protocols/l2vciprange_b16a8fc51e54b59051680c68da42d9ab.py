@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,12 +31,12 @@ class L2VcIpRange(Base):
     __slots__ = ()
     _SDM_NAME = 'l2VcIpRange'
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'IncrementBy': 'incrementBy',
-        'Mask': 'mask',
-        'NumHosts': 'numHosts',
         'PeerAddress': 'peerAddress',
+        'NumHosts': 'numHosts',
+        'Mask': 'mask',
+        'IncrementBy': 'incrementBy',
         'StartAddress': 'startAddress',
+        'Enabled': 'enabled',
     }
 
     def __init__(self, parent):

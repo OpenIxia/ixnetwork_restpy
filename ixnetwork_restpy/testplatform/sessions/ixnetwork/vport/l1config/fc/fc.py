@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,23 +32,54 @@ class Fc(Base):
     _SDM_NAME = 'fc'
     _SDM_ATT_MAP = {
         'CreditStarvationValue': 'creditStarvationValue',
-        'EnableEmissionLoweringProtocol': 'enableEmissionLoweringProtocol',
         'EnablePPM': 'enablePPM',
-        'FixedDelayValue': 'fixedDelayValue',
-        'ForceErrors': 'forceErrors',
         'Loopback': 'loopback',
-        'MaxDelayForRandomValue': 'maxDelayForRandomValue',
-        'MinDelayForRandomValue': 'minDelayForRandomValue',
-        'NoRRDYAfter': 'noRRDYAfter',
-        'Ppm': 'ppm',
-        'RrdyResponseDelays': 'rrdyResponseDelays',
-        'Speed': 'speed',
-        'TxIgnoreAvailableCredits': 'txIgnoreAvailableCredits',
+        'FixedDelayValue': 'fixedDelayValue',
+        'AvailableSpeeds': 'availableSpeeds',
         'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
+        'Ppm': 'ppm',
+        'CanModifySpeed': 'canModifySpeed',
+        'ForceErrors': 'forceErrors',
+        'MinDelayForRandomValue': 'minDelayForRandomValue',
+        'RrdyResponseDelays': 'rrdyResponseDelays',
+        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
+        'SelectedSpeeds': 'selectedSpeeds',
+        'EnableEmissionLoweringProtocol': 'enableEmissionLoweringProtocol',
+        'Speed': 'speed',
+        'NoRRDYAfter': 'noRRDYAfter',
+        'MaxDelayForRandomValue': 'maxDelayForRandomValue',
+        'TxIgnoreAvailableCredits': 'txIgnoreAvailableCredits',
     }
 
     def __init__(self, parent):
         super(Fc, self).__init__(parent)
+
+    @property
+    def AvailableSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[speed2000 | speed4000 | speed8000]): Which speeds are available for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableSpeeds'])
+
+    @property
+    def CanModifySpeed(self):
+        """
+        Returns
+        -------
+        - bool: Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanModifySpeed'])
+
+    @property
+    def CanSetMultipleSpeeds(self):
+        """
+        Returns
+        -------
+        - bool: Can this port selectmultiple speeds for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanSetMultipleSpeeds'])
 
     @property
     def CreditStarvationValue(self):
@@ -183,6 +214,18 @@ class Fc(Base):
         self._set_attribute(self._SDM_ATT_MAP['RrdyResponseDelays'], value)
 
     @property
+    def SelectedSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[speed2000 | speed4000 | speed8000]): Which speeds are selected for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
+    @SelectedSpeeds.setter
+    def SelectedSpeeds(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
+
+    @property
     def Speed(self):
         """
         Returns
@@ -218,7 +261,7 @@ class Fc(Base):
     def TxIgnoreRxLinkFaults(self, value):
         self._set_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'], value)
 
-    def update(self, CreditStarvationValue=None, EnableEmissionLoweringProtocol=None, EnablePPM=None, FixedDelayValue=None, ForceErrors=None, Loopback=None, MaxDelayForRandomValue=None, MinDelayForRandomValue=None, NoRRDYAfter=None, Ppm=None, RrdyResponseDelays=None, Speed=None, TxIgnoreAvailableCredits=None, TxIgnoreRxLinkFaults=None):
+    def update(self, CreditStarvationValue=None, EnableEmissionLoweringProtocol=None, EnablePPM=None, FixedDelayValue=None, ForceErrors=None, Loopback=None, MaxDelayForRandomValue=None, MinDelayForRandomValue=None, NoRRDYAfter=None, Ppm=None, RrdyResponseDelays=None, SelectedSpeeds=None, Speed=None, TxIgnoreAvailableCredits=None, TxIgnoreRxLinkFaults=None):
         """Updates fc resource on the server.
 
         Args
@@ -234,6 +277,7 @@ class Fc(Base):
         - NoRRDYAfter (number): Sends R_RDY primitive signals without any delay.
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
         - RrdyResponseDelays (str(creditStarvation | fixedDelay | noDelay | randomDelay)): Helps to set internal delays for the transmission of R_RDY Primitive Signals.
+        - SelectedSpeeds (list(str[speed2000 | speed4000 | speed8000])): Which speeds are selected for the current media and AN settings.
         - Speed (str(speed2000 | speed4000 | speed8000)): Indicates the line speed.
         - TxIgnoreAvailableCredits (bool): The transmitting port does not listen to flow control. It keeps transmittingpackets irrespective of available credits. For example, if two Fibre Channel portsare connected back-to-back andTransmitignoreavailablecredits'optionistrueonthetransmittingportand'Don'tsendR_RDY'optionistrueonthereceivingport,andthentransmitisstarted,theporttransmitsatfullrateeventhoughitdoesnothavecredits.
         - TxIgnoreRxLinkFaults (bool): If true, allows transmission of packets even if the receive link is down.

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,80 +33,80 @@ class BgpL3VpnRouteProperty(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpL3VpnRouteProperty'
     _SDM_ATT_MAP = {
-        'OverridePeerAsSetMode': 'OverridePeerAsSetMode',
-        'Active': 'active',
-        'AdvertiseNexthopAsV4': 'advertiseNexthopAsV4',
+        'EnableLocalPreference': 'enableLocalPreference',
+        'Origin': 'origin',
+        'EnableAsPathSegments': 'enableAsPathSegments',
+        'UseAsIpv4UmhRoutes': 'useAsIpv4UmhRoutes',
+        'NextHopIncrementMode': 'nextHopIncrementMode',
+        'EnableCommunity': 'enableCommunity',
+        'PackingFrom': 'packingFrom',
+        'NoOfClusters': 'noOfClusters',
+        'NextHopIPType': 'nextHopIPType',
+        'MaxNoOfASPathSegmentsPerRouteRange': 'maxNoOfASPathSegmentsPerRouteRange',
+        'MultiExitDiscriminator': 'multiExitDiscriminator',
+        'MinASNumPerSegment': 'minASNumPerSegment',
+        'EnableOrigin': 'enableOrigin',
+        'NextHopType': 'nextHopType',
+        'PartialFlap': 'partialFlap',
+        'DistinguisherType': 'distinguisherType',
+        'LabelStart': 'labelStart',
+        'Uptime': 'uptime',
+        'NoOfASPathSegmentsPerRouteRange': 'noOfASPathSegmentsPerRouteRange',
+        'IncludeSourceAsExtComm': 'includeSourceAsExtComm',
+        'NoOfLargeCommunities': 'noOfLargeCommunities',
+        'LabelEnd': 'labelEnd',
+        'Ipv6NextHop': 'ipv6NextHop',
+        'EnableAggregatorId': 'enableAggregatorId',
+        'DistinguisherIpAddress': 'distinguisherIpAddress',
+        'EnableExtendedCommunity': 'enableExtendedCommunity',
+        'Delay': 'delay',
+        'EnableWeight': 'enableWeight',
+        'EnableAtomicAggregate': 'enableAtomicAggregate',
+        'NoOfExternalCommunities': 'noOfExternalCommunities',
+        'DistinguisherAsNumber': 'distinguisherAsNumber',
+        'LabelMode': 'labelMode',
+        'EnableMultiExitDiscriminator': 'enableMultiExitDiscriminator',
+        'AsNumSuffixRange': 'asNumSuffixRange',
+        'EnableLargeCommunities': 'enableLargeCommunities',
+        'DistinguisherAssignedNumber': 'distinguisherAssignedNumber',
         'AggregatorAs': 'aggregatorAs',
         'AggregatorId': 'aggregatorId',
-        'AggregatorIdMode': 'aggregatorIdMode',
-        'AsNumSuffixRange': 'asNumSuffixRange',
-        'AsPathASString': 'asPathASString',
+        'NoOfCommunities': 'noOfCommunities',
         'AsPathPerRoute': 'asPathPerRoute',
-        'AsRandomSeed': 'asRandomSeed',
-        'AsSegDist': 'asSegDist',
-        'AsSetMode': 'asSetMode',
-        'Count': 'count',
-        'Delay': 'delay',
-        'DescriptiveName': 'descriptiveName',
-        'DistinguisherAsNumber': 'distinguisherAsNumber',
-        'DistinguisherAssignedNumber': 'distinguisherAssignedNumber',
-        'DistinguisherIpAddress': 'distinguisherIpAddress',
-        'DistinguisherType': 'distinguisherType',
-        'Downtime': 'downtime',
-        'EnableAggregatorId': 'enableAggregatorId',
-        'EnableAsPathSegments': 'enableAsPathSegments',
-        'EnableAtomicAggregate': 'enableAtomicAggregate',
-        'EnableCluster': 'enableCluster',
-        'EnableCommunity': 'enableCommunity',
-        'EnableExtendedCommunity': 'enableExtendedCommunity',
-        'EnableFlapping': 'enableFlapping',
+        'AsPathASString': 'asPathASString',
+        'LabelStep': 'labelStep',
+        'Weight': 'weight',
+        'FlapToRouteIndex': 'flapToRouteIndex',
+        'Ipv4NextHop': 'ipv4NextHop',
         'EnableIpv4Receiver': 'enableIpv4Receiver',
-        'EnableIpv4Sender': 'enableIpv4Sender',
-        'EnableLargeCommunities': 'enableLargeCommunities',
-        'EnableLocalPreference': 'enableLocalPreference',
-        'EnableMultiExitDiscriminator': 'enableMultiExitDiscriminator',
+        'UseAsUmhRoutes': 'useAsUmhRoutes',
+        'AggregatorIdMode': 'aggregatorIdMode',
+        'MinNoOfASPathSegmentsPerRouteRange': 'minNoOfASPathSegmentsPerRouteRange',
+        'Downtime': 'downtime',
+        'Active': 'active',
         'EnableNextHop': 'enableNextHop',
-        'EnableOrigin': 'enableOrigin',
+        'AdvertiseNexthopAsV4': 'advertiseNexthopAsV4',
         'EnableOriginatorId': 'enableOriginatorId',
         'EnableRandomAsPath': 'enableRandomAsPath',
-        'EnableWeight': 'enableWeight',
+        'Count': 'count',
         'FlapFromRouteIndex': 'flapFromRouteIndex',
-        'FlapToRouteIndex': 'flapToRouteIndex',
-        'IncludeRdInNextHopLength': 'includeRdInNextHopLength',
-        'IncludeSourceAsExtComm': 'includeSourceAsExtComm',
-        'IncludeVrfRouteImportExtComm': 'includeVrfRouteImportExtComm',
-        'Ipv4NextHop': 'ipv4NextHop',
-        'Ipv6NextHop': 'ipv6NextHop',
-        'LabelEnd': 'labelEnd',
-        'LabelMode': 'labelMode',
-        'LabelSpaceId': 'labelSpaceId',
-        'LabelStart': 'labelStart',
-        'LabelStep': 'labelStep',
-        'LocalPreference': 'localPreference',
-        'MaxASNumPerSegment': 'maxASNumPerSegment',
-        'MaxNoOfASPathSegmentsPerRouteRange': 'maxNoOfASPathSegmentsPerRouteRange',
-        'MinASNumPerSegment': 'minASNumPerSegment',
-        'MinNoOfASPathSegmentsPerRouteRange': 'minNoOfASPathSegmentsPerRouteRange',
-        'MultiExitDiscriminator': 'multiExitDiscriminator',
-        'Name': 'name',
-        'NextHopIPType': 'nextHopIPType',
-        'NextHopIncrementMode': 'nextHopIncrementMode',
-        'NextHopType': 'nextHopType',
-        'NoOfASPathSegmentsPerRouteRange': 'noOfASPathSegmentsPerRouteRange',
-        'NoOfClusters': 'noOfClusters',
-        'NoOfCommunities': 'noOfCommunities',
-        'NoOfExternalCommunities': 'noOfExternalCommunities',
-        'NoOfLargeCommunities': 'noOfLargeCommunities',
-        'Origin': 'origin',
-        'OriginatorId': 'originatorId',
-        'PackingFrom': 'packingFrom',
-        'PackingTo': 'packingTo',
-        'PartialFlap': 'partialFlap',
-        'Uptime': 'uptime',
-        'UseAsIpv4UmhRoutes': 'useAsIpv4UmhRoutes',
-        'UseAsUmhRoutes': 'useAsUmhRoutes',
         'UseTraditionalNlri': 'useTraditionalNlri',
-        'Weight': 'weight',
+        'Name': 'name',
+        'PackingTo': 'packingTo',
+        'AsSetMode': 'asSetMode',
+        'MaxASNumPerSegment': 'maxASNumPerSegment',
+        'EnableFlapping': 'enableFlapping',
+        'OriginatorId': 'originatorId',
+        'IncludeVrfRouteImportExtComm': 'includeVrfRouteImportExtComm',
+        'OverridePeerAsSetMode': 'OverridePeerAsSetMode',
+        'EnableCluster': 'enableCluster',
+        'AsRandomSeed': 'asRandomSeed',
+        'DescriptiveName': 'descriptiveName',
+        'AsSegDist': 'asSegDist',
+        'EnableIpv4Sender': 'enableIpv4Sender',
+        'LabelSpaceId': 'labelSpaceId',
+        'IncludeRdInNextHopLength': 'includeRdInNextHopLength',
+        'LocalPreference': 'localPreference',
     }
 
     def __init__(self, parent):
@@ -187,13 +187,13 @@ class BgpL3VpnRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_f91a37c8058302050a67e05790d01c7a.CMacProperties): An instance of the CMacProperties class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180.CMacProperties): An instance of the CMacProperties class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_f91a37c8058302050a67e05790d01c7a import CMacProperties
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
         return CMacProperties(self)
 
     @property
@@ -1169,6 +1169,19 @@ class BgpL3VpnRouteProperty(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
+
     def AgeOutRoutes(self, *args, **kwargs):
         """Executes the ageOutRoutes operation on the server.
 
@@ -1183,7 +1196,7 @@ class BgpL3VpnRouteProperty(Base):
         ageOutRoutes(Percentage=number, SessionIndices=list)
         ----------------------------------------------------
         - Percentage (number): This parameter requires a percentage of type kInteger
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         ageOutRoutes(SessionIndices=string, Percentage=number)
         ------------------------------------------------------
@@ -1230,7 +1243,7 @@ class BgpL3VpnRouteProperty(Base):
 
         enableIpv4Receiver(SessionIndices=list)
         ---------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         enableIpv4Receiver(SessionIndices=string)
         -----------------------------------------
@@ -1255,7 +1268,7 @@ class BgpL3VpnRouteProperty(Base):
 
         enableIpv4Sender(SessionIndices=list)
         -------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         enableIpv4Sender(SessionIndices=string)
         ---------------------------------------
@@ -1280,7 +1293,7 @@ class BgpL3VpnRouteProperty(Base):
 
         readvertiseRoutes(SessionIndices=list)
         --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         readvertiseRoutes(SessionIndices=string)
         ----------------------------------------
@@ -1319,13 +1332,13 @@ class BgpL3VpnRouteProperty(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start BGP Route Range
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -1344,13 +1357,13 @@ class BgpL3VpnRouteProperty(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop BGP Route Range
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------
@@ -1375,7 +1388,7 @@ class BgpL3VpnRouteProperty(Base):
 
         useAsIpv4UmhRoutes(SessionIndices=list)
         ---------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         useAsIpv4UmhRoutes(SessionIndices=string)
         -----------------------------------------

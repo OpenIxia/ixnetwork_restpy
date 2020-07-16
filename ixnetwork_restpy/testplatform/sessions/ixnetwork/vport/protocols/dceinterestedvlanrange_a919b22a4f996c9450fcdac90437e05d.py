@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,17 +33,17 @@ class DceInterestedVlanRange(Base):
     __slots__ = ()
     _SDM_NAME = 'dceInterestedVlanRange'
     _SDM_ATT_MAP = {
-        'EnableIncludeInLsp': 'enableIncludeInLsp',
-        'EnableIncludeInMgroupPdu': 'enableIncludeInMgroupPdu',
         'EnableM4Bit': 'enableM4Bit',
         'EnableM6Bit': 'enableM6Bit',
+        'EnableIncludeInLsp': 'enableIncludeInLsp',
+        'EnableIncludeInMgroupPdu': 'enableIncludeInMgroupPdu',
         'Enabled': 'enabled',
-        'Nickname': 'nickname',
         'NoOfSpanningTreeRoots': 'noOfSpanningTreeRoots',
-        'StartSpanningTreeRootBridgeId': 'startSpanningTreeRootBridgeId',
-        'StartVlanId': 'startVlanId',
-        'VlanCount': 'vlanCount',
         'VlanIdStep': 'vlanIdStep',
+        'StartVlanId': 'startVlanId',
+        'Nickname': 'nickname',
+        'VlanCount': 'vlanCount',
+        'StartSpanningTreeRootBridgeId': 'startSpanningTreeRootBridgeId',
     }
 
     def __init__(self, parent):

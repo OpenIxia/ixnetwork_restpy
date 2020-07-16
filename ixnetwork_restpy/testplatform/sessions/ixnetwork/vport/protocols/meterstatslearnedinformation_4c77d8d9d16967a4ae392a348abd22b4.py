@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,24 +32,24 @@ class MeterStatsLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'meterStatsLearnedInformation'
     _SDM_ATT_MAP = {
-        'ByteInCount': 'byteInCount',
-        'DataPathId': 'dataPathId',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'DurationNSec': 'durationNSec',
-        'DurationSec': 'durationSec',
-        'ErrorCode': 'errorCode',
-        'ErrorType': 'errorType',
-        'FlowCount': 'flowCount',
-        'LastErrorCode': 'lastErrorCode',
-        'LastErrorType': 'lastErrorType',
         'Latency': 'latency',
-        'LocalIp': 'localIp',
-        'MeterId': 'meterId',
-        'NegotiatedVersion': 'negotiatedVersion',
         'NumberOfBandStats': 'numberOfBandStats',
         'PacketInCount': 'packetInCount',
-        'RemoteIp': 'remoteIp',
+        'ByteInCount': 'byteInCount',
+        'ErrorType': 'errorType',
+        'DurationSec': 'durationSec',
+        'NegotiatedVersion': 'negotiatedVersion',
+        'LastErrorType': 'lastErrorType',
+        'ErrorCode': 'errorCode',
+        'LocalIp': 'localIp',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
+        'FlowCount': 'flowCount',
+        'DurationNSec': 'durationNSec',
         'ReplyState': 'replyState',
+        'LastErrorCode': 'lastErrorCode',
+        'MeterId': 'meterId',
+        'DataPathId': 'dataPathId',
+        'RemoteIp': 'remoteIp',
     }
 
     def __init__(self, parent):

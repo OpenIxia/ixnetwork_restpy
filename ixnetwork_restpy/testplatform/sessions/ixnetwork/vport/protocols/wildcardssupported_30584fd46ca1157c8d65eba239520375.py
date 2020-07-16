@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,18 +31,18 @@ class WildcardsSupported(Base):
     __slots__ = ()
     _SDM_NAME = 'wildcardsSupported'
     _SDM_ATT_MAP = {
+        'IpTos': 'ipTos',
+        'VlanPriority': 'vlanPriority',
+        'TcpUdpSourcePort': 'tcpUdpSourcePort',
         'EthernetDestinationAddress': 'ethernetDestinationAddress',
+        'TcpUdpDestinationPort': 'tcpUdpDestinationPort',
         'EthernetFrameType': 'ethernetFrameType',
-        'EthernetSourceAddress': 'ethernetSourceAddress',
+        'VlanId': 'vlanId',
+        'SwitchInputPort': 'switchInputPort',
         'IpDestinationAddress': 'ipDestinationAddress',
         'IpProtocol': 'ipProtocol',
         'IpSourceAddress': 'ipSourceAddress',
-        'IpTos': 'ipTos',
-        'SwitchInputPort': 'switchInputPort',
-        'TcpUdpDestinationPort': 'tcpUdpDestinationPort',
-        'TcpUdpSourcePort': 'tcpUdpSourcePort',
-        'VlanId': 'vlanId',
-        'VlanPriority': 'vlanPriority',
+        'EthernetSourceAddress': 'ethernetSourceAddress',
     }
 
     def __init__(self, parent):

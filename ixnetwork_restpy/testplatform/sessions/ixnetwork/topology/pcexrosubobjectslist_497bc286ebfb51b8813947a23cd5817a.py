@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,22 +32,22 @@ class PceXroSubObjectsList(Base):
     __slots__ = ()
     _SDM_NAME = 'pceXroSubObjectsList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AsNumber': 'asNumber',
-        'Attribute': 'attribute',
         'Count': 'count',
+        'InterfaceId': 'interfaceId',
+        'Name': 'name',
+        'Ipv6Address': 'ipv6Address',
+        'Attribute': 'attribute',
+        'PceId32': 'pceId32',
+        'PceId128': 'pceId128',
+        'Ipv4Address': 'ipv4Address',
+        'RouterId': 'routerId',
+        'AsNumber': 'asNumber',
         'DescriptiveName': 'descriptiveName',
         'Exclude_bit': 'exclude_bit',
-        'InterfaceId': 'interfaceId',
-        'Ipv4Address': 'ipv4Address',
-        'Ipv6Address': 'ipv6Address',
-        'Name': 'name',
-        'PceId128': 'pceId128',
-        'PceId32': 'pceId32',
-        'PrefixLength': 'prefixLength',
-        'RouterId': 'routerId',
-        'SrlgId': 'srlgId',
         'SubObjectType': 'subObjectType',
+        'Active': 'active',
+        'SrlgId': 'srlgId',
+        'PrefixLength': 'prefixLength',
     }
 
     def __init__(self, parent):

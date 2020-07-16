@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,10 +33,10 @@ class Bucket(Base):
     __slots__ = ()
     _SDM_NAME = 'bucket'
     _SDM_ATT_MAP = {
-        'Description': 'description',
         'WatchGroup': 'watchGroup',
-        'WatchPort': 'watchPort',
+        'Description': 'description',
         'Weight': 'weight',
+        'WatchPort': 'watchPort',
     }
 
     def __init__(self, parent):

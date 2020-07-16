@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,14 +31,18 @@ class HundredGigLan(Base):
     __slots__ = ()
     _SDM_NAME = 'hundredGigLan'
     _SDM_ATT_MAP = {
-        'AutoInstrumentation': 'autoInstrumentation',
         'EnablePPM': 'enablePPM',
-        'EnabledFlowControl': 'enabledFlowControl',
-        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
         'Loopback': 'loopback',
-        'Ppm': 'ppm',
-        'Speed': 'speed',
+        'AvailableSpeeds': 'availableSpeeds',
         'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
+        'EnabledFlowControl': 'enabledFlowControl',
+        'Ppm': 'ppm',
+        'CanModifySpeed': 'canModifySpeed',
+        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
+        'SelectedSpeeds': 'selectedSpeeds',
+        'AutoInstrumentation': 'autoInstrumentation',
+        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
+        'Speed': 'speed',
     }
 
     def __init__(self, parent):
@@ -83,6 +87,33 @@ class HundredGigLan(Base):
     @AutoInstrumentation.setter
     def AutoInstrumentation(self, value):
         self._set_attribute(self._SDM_ATT_MAP['AutoInstrumentation'], value)
+
+    @property
+    def AvailableSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[speed100g | speed40g]): Which speeds are available for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['AvailableSpeeds'])
+
+    @property
+    def CanModifySpeed(self):
+        """
+        Returns
+        -------
+        - bool: Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanModifySpeed'])
+
+    @property
+    def CanSetMultipleSpeeds(self):
+        """
+        Returns
+        -------
+        - bool: Can this port selectmultiple speeds for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CanSetMultipleSpeeds'])
 
     @property
     def EnablePPM(self):
@@ -145,6 +176,18 @@ class HundredGigLan(Base):
         self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
+    def SelectedSpeeds(self):
+        """
+        Returns
+        -------
+        - list(str[speed100g | speed40g]): Which speeds are selected for the current media and AN settings.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
+    @SelectedSpeeds.setter
+    def SelectedSpeeds(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
+
+    @property
     def Speed(self):
         """
         Returns
@@ -168,7 +211,7 @@ class HundredGigLan(Base):
     def TxIgnoreRxLinkFaults(self, value):
         self._set_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'], value)
 
-    def update(self, AutoInstrumentation=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, Ppm=None, Speed=None, TxIgnoreRxLinkFaults=None):
+    def update(self, AutoInstrumentation=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, Ppm=None, SelectedSpeeds=None, Speed=None, TxIgnoreRxLinkFaults=None):
         """Updates hundredGigLan resource on the server.
 
         Args
@@ -179,6 +222,7 @@ class HundredGigLan(Base):
         - FlowControlDirectedAddress (str): the 48 bit MAC address that the port listens on for a directed pause
         - Loopback (bool): The loopback address.
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - SelectedSpeeds (list(str[speed100g | speed40g])): Which speeds are selected for the current media and AN settings.
         - Speed (str(speed100g | speed40g)): The speed of the lan
         - TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
 

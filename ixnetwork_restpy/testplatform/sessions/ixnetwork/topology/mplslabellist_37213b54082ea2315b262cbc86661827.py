@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,11 +33,11 @@ class MplsLabelList(Base):
     _SDM_NAME = 'mplsLabelList'
     _SDM_ATT_MAP = {
         'Count': 'count',
+        'Name': 'name',
+        'MplsLabel': 'mplsLabel',
         'DescriptiveName': 'descriptiveName',
         'MplsEXP': 'mplsEXP',
-        'MplsLabel': 'mplsLabel',
         'MplsTTL': 'mplsTTL',
-        'Name': 'name',
     }
 
     def __init__(self, parent):

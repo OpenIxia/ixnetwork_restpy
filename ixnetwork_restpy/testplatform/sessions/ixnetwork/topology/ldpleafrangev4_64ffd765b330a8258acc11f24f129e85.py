@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -24,29 +24,29 @@ from ixnetwork_restpy.files import Files
 
 
 class LdpLeafRangeV4(Base):
-    """Ldp Targeted LeafRange V4 Configuration
+    """LDP Basic LeafRange V4 Configuration
     The LdpLeafRangeV4 class encapsulates a required ldpLeafRangeV4 resource which will be retrieved from the server every time the property is accessed.
     """
 
     __slots__ = ()
     _SDM_NAME = 'ldpLeafRangeV4'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ContinuousIncrementOVAcrossRoot': 'continuousIncrementOVAcrossRoot',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'GroupAddressV4': 'groupAddressV4',
-        'GroupAddressV6': 'groupAddressV6',
-        'GroupCountPerLsp': 'groupCountPerLsp',
-        'LSPType': 'lSPType',
-        'LabelValueStart': 'labelValueStart',
-        'LabelValueStep': 'labelValueStep',
-        'LspCountPerRoot': 'lspCountPerRoot',
-        'Name': 'name',
-        'NumberOfTLVs': 'numberOfTLVs',
-        'RootAddress': 'rootAddress',
-        'RootAddressCount': 'rootAddressCount',
         'RootAddressStep': 'rootAddressStep',
+        'Name': 'name',
+        'LspCountPerRoot': 'lspCountPerRoot',
+        'LabelValueStart': 'labelValueStart',
+        'LSPType': 'lSPType',
+        'GroupCountPerLsp': 'groupCountPerLsp',
+        'GroupAddressV6': 'groupAddressV6',
+        'GroupAddressV4': 'groupAddressV4',
+        'LabelValueStep': 'labelValueStep',
+        'RootAddress': 'rootAddress',
+        'DescriptiveName': 'descriptiveName',
+        'Active': 'active',
+        'NumberOfTLVs': 'numberOfTLVs',
+        'ContinuousIncrementOVAcrossRoot': 'continuousIncrementOVAcrossRoot',
+        'RootAddressCount': 'rootAddressCount',
     }
 
     def __init__(self, parent):
@@ -65,6 +65,20 @@ class LdpLeafRangeV4(Base):
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptlvlist_30bf84fe9b838fe1c5800e633f13cff2 import LdpTLVList
         return LdpTLVList(self)
+
+    @property
+    def Tag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d.Tag): An instance of the Tag class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
+        return Tag(self)
 
     @property
     def Active(self):
@@ -287,7 +301,7 @@ class LdpLeafRangeV4(Base):
 
         activateLeafRange(SessionIndices=list)
         --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         activateLeafRange(SessionIndices=string)
         ----------------------------------------
@@ -317,7 +331,7 @@ class LdpLeafRangeV4(Base):
 
         deactivateLeafRange(SessionIndices=list)
         ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         deactivateLeafRange(SessionIndices=string)
         ------------------------------------------

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,12 +32,12 @@ class ConfigElement(Base):
     __slots__ = ()
     _SDM_NAME = 'configElement'
     _SDM_ATT_MAP = {
-        'Crc': 'crc',
-        'DestinationMacMode': 'destinationMacMode',
-        'EnableDisparityError': 'enableDisparityError',
-        'EncapsulationName': 'encapsulationName',
         'EndpointSetId': 'endpointSetId',
+        'DestinationMacMode': 'destinationMacMode',
         'PreambleCustomSize': 'preambleCustomSize',
+        'EncapsulationName': 'encapsulationName',
+        'EnableDisparityError': 'enableDisparityError',
+        'Crc': 'crc',
         'PreambleFrameSizeMode': 'preambleFrameSizeMode',
     }
 
@@ -295,3 +295,23 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def GetPacketViewInHex(self, *args, **kwargs):
+        """Executes the getPacketViewInHex operation on the server.
+
+        Gets packet in Hex format for selected configElement and for the given packet index
+
+        getPacketViewInHex(Arg2=number)string
+        -------------------------------------
+        - Arg2 (number): Packet Index (0 based)
+        - Returns str: Packet in Hex format
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPacketViewInHex', payload=payload, response_object=None)

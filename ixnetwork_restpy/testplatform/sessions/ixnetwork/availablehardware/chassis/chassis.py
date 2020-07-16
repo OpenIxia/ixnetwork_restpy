@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,23 +33,26 @@ class Chassis(Base):
     __slots__ = ()
     _SDM_NAME = 'chassis'
     _SDM_ATT_MAP = {
-        'CableLength': 'cableLength',
-        'ChainTopology': 'chainTopology',
-        'ChassisOSType': 'chassisOSType',
-        'ChassisType': 'chassisType',
-        'ChassisVersion': 'chassisVersion',
-        'ConnectRetries': 'connectRetries',
-        'Hostname': 'hostname',
-        'Ip': 'ip',
-        'IsLicensesRetrieved': 'isLicensesRetrieved',
         'IsMaster': 'isMaster',
-        'IxnBuildNumber': 'ixnBuildNumber',
-        'IxosBuildNumber': 'ixosBuildNumber',
-        'LicenseErrors': 'licenseErrors',
-        'MasterChassis': 'masterChassis',
+        'ErrorState': 'errorState',
         'ProtocolBuildNumber': 'protocolBuildNumber',
+        'ChassisOSType': 'chassisOSType',
+        'ErrorDescription': 'errorDescription',
+        'Ip': 'ip',
+        'Hostname': 'hostname',
+        'StateV2': 'stateV2',
         'SequenceId': 'sequenceId',
+        'ChassisVersion': 'chassisVersion',
+        'CableLength': 'cableLength',
         'State': 'state',
+        'IxosBuildNumber': 'ixosBuildNumber',
+        'ChainTopology': 'chainTopology',
+        'ConnectRetries': 'connectRetries',
+        'ChassisType': 'chassisType',
+        'IxnBuildNumber': 'ixnBuildNumber',
+        'MasterChassis': 'masterChassis',
+        'IsLicensesRetrieved': 'isLicensesRetrieved',
+        'LicenseErrors': 'licenseErrors',
     }
 
     def __init__(self, parent):
@@ -128,6 +131,24 @@ class Chassis(Base):
         - number: The number of time the client attempted to re-connect with the chassis. (read only)
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectRetries'])
+
+    @property
+    def ErrorDescription(self):
+        """
+        Returns
+        -------
+        - str: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['ErrorDescription'])
+
+    @property
+    def ErrorState(self):
+        """
+        Returns
+        -------
+        - str(ConnectError | DuplicateChassis | IncompatibleIxOS | MultipleNics | NoCardsFound | NoError | NoLicenseFound | NonAppliance | NonLinuxChassis): 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['ErrorState'])
 
     @property
     def Hostname(self):
@@ -230,12 +251,21 @@ class Chassis(Base):
 
     @property
     def State(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - str(down | down | polling | polling | polling | ready): The following states can be read from the port: polling, ready, and down.
         """
         return self._get_attribute(self._SDM_ATT_MAP['State'])
+
+    @property
+    def StateV2(self):
+        """
+        Returns
+        -------
+        - str(connectError | down | notConnected | polling | pollingWait | ready): 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['StateV2'])
 
     def update(self, CableLength=None, ChainTopology=None, Hostname=None, MasterChassis=None, SequenceId=None):
         """Updates chassis resource on the server.
@@ -285,7 +315,7 @@ class Chassis(Base):
         """
         self._delete()
 
-    def find(self, CableLength=None, ChainTopology=None, ChassisOSType=None, ChassisType=None, ChassisVersion=None, ConnectRetries=None, Hostname=None, Ip=None, IsLicensesRetrieved=None, IsMaster=None, IxnBuildNumber=None, IxosBuildNumber=None, LicenseErrors=None, MasterChassis=None, ProtocolBuildNumber=None, SequenceId=None, State=None):
+    def find(self, CableLength=None, ChainTopology=None, ChassisOSType=None, ChassisType=None, ChassisVersion=None, ConnectRetries=None, ErrorDescription=None, ErrorState=None, Hostname=None, Ip=None, IsLicensesRetrieved=None, IsMaster=None, IxnBuildNumber=None, IxosBuildNumber=None, LicenseErrors=None, MasterChassis=None, ProtocolBuildNumber=None, SequenceId=None, State=None, StateV2=None):
         """Finds and retrieves chassis resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve chassis resources from the server.
@@ -300,6 +330,8 @@ class Chassis(Base):
         - ChassisType (str): The type of chassis.
         - ChassisVersion (str): The version of the Chassis in use.
         - ConnectRetries (number): The number of time the client attempted to re-connect with the chassis. (read only)
+        - ErrorDescription (str): 
+        - ErrorState (str(ConnectError | DuplicateChassis | IncompatibleIxOS | MultipleNics | NoCardsFound | NoError | NoLicenseFound | NonAppliance | NonLinuxChassis)): 
         - Hostname (str): The IP address associated with the chassis.
         - Ip (str): The IP address associated with the chassis.
         - IsLicensesRetrieved (bool): Retrieves the licenses in the chassis.
@@ -311,6 +343,7 @@ class Chassis(Base):
         - ProtocolBuildNumber (str): The Protocols version of the Chassis in use.
         - SequenceId (number): Indicates the order at which the chassis in a chassis chain are pulsed by IxOS. Star topology chains are automatically setting this value. Must be set only after the chassis hostname has been set and committed on the current chassis.
         - State (str(down | down | polling | polling | polling | ready)): The following states can be read from the port: polling, ready, and down.
+        - StateV2 (str(connectError | down | notConnected | polling | pollingWait | ready)): 
 
         Returns
         -------

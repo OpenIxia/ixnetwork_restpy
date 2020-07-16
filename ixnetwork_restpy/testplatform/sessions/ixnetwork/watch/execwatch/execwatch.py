@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,15 +33,15 @@ class ExecWatch(Base):
     __slots__ = ()
     _SDM_NAME = 'execWatch'
     _SDM_ATT_MAP = {
-        'AverageExecutionTime': 'averageExecutionTime',
         'ExecToWatch': 'execToWatch',
-        'IsDisabled': 'isDisabled',
+        'AverageExecutionTime': 'averageExecutionTime',
+        'Topic': 'topic',
+        'Token': 'token',
         'LastExecutionTime': 'lastExecutionTime',
         'LastNotification': 'lastNotification',
         'MaxExecutionTime': 'maxExecutionTime',
         'PollInterval': 'pollInterval',
-        'Token': 'token',
-        'Topic': 'topic',
+        'IsDisabled': 'isDisabled',
     }
 
     def __init__(self, parent):
@@ -112,7 +112,7 @@ class ExecWatch(Base):
         """
         Returns
         -------
-        - number: The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
+        - number: The interval in milliseconds the watch will be polled. Minimum value is 100ms.
         """
         return self._get_attribute(self._SDM_ATT_MAP['PollInterval'])
     @PollInterval.setter
@@ -147,7 +147,7 @@ class ExecWatch(Base):
         ----
         - ExecToWatch (str): 
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
-        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
+        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
         - Topic (str): 
 
         Raises
@@ -163,7 +163,7 @@ class ExecWatch(Base):
         ----
         - ExecToWatch (str): 
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
-        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
+        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
         - Topic (str): 
 
         Returns
@@ -201,7 +201,7 @@ class ExecWatch(Base):
         - LastExecutionTime (number): 
         - LastNotification (str): 
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
-        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 2000ms.
+        - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
         - Token (number): 
         - Topic (str): 
 

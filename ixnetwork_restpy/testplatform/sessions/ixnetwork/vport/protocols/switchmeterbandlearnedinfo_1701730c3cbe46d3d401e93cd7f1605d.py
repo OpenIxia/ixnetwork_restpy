@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,16 +32,16 @@ class SwitchMeterBandLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'switchMeterBandLearnedInfo'
     _SDM_ATT_MAP = {
-        'BandRate': 'bandRate',
-        'BandType': 'bandType',
         'BurstSize': 'burstSize',
-        'ByteCount': 'byteCount',
-        'DatapathId': 'datapathId',
-        'DatapathIdAsHex': 'datapathIdAsHex',
+        'BandType': 'bandType',
         'DropPrecedenceLevel': 'dropPrecedenceLevel',
+        'DatapathIdAsHex': 'datapathIdAsHex',
         'LocalIp': 'localIp',
-        'MeterId': 'meterId',
+        'ByteCount': 'byteCount',
         'PacketCount': 'packetCount',
+        'MeterId': 'meterId',
+        'DatapathId': 'datapathId',
+        'BandRate': 'bandRate',
     }
 
     def __init__(self, parent):

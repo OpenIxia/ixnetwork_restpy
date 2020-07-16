@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,16 +31,16 @@ class MldMcastIPv6GroupList(Base):
     __slots__ = ()
     _SDM_NAME = 'mldMcastIPv6GroupList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'McastAddrCnt': 'mcastAddrCnt',
-        'McastAddrIncr': 'mcastAddrIncr',
+        'StartMcastAddr': 'startMcastAddr',
         'Name': 'name',
+        'McastAddrCnt': 'mcastAddrCnt',
         'NoOfSrcRanges': 'noOfSrcRanges',
         'SourceMode': 'sourceMode',
-        'StartMcastAddr': 'startMcastAddr',
         'State': 'state',
+        'DescriptiveName': 'descriptiveName',
+        'Active': 'active',
+        'McastAddrIncr': 'mcastAddrIncr',
     }
 
     def __init__(self, parent):
@@ -265,7 +265,7 @@ class MldMcastIPv6GroupList(Base):
 
         mldJoinGroup(SessionIndices=list)
         ---------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         mldJoinGroup(SessionIndices=string)
         -----------------------------------
@@ -290,7 +290,7 @@ class MldMcastIPv6GroupList(Base):
 
         mldLeaveGroup(SessionIndices=list)
         ----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         mldLeaveGroup(SessionIndices=string)
         ------------------------------------

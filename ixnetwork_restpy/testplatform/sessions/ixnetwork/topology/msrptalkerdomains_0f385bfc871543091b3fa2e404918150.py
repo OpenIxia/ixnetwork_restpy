@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,13 +31,13 @@ class MsrpTalkerDomains(Base):
     __slots__ = ()
     _SDM_NAME = 'msrpTalkerDomains'
     _SDM_ATT_MAP = {
-        'Active': 'active',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
         'Name': 'name',
-        'SrClassIdType': 'srClassIdType',
-        'SrClassPriorityType': 'srClassPriorityType',
+        'DescriptiveName': 'descriptiveName',
+        'Active': 'active',
         'SrClassVid': 'srClassVid',
+        'SrClassPriorityType': 'srClassPriorityType',
+        'SrClassIdType': 'srClassIdType',
     }
 
     def __init__(self, parent):
@@ -161,7 +161,7 @@ class MsrpTalkerDomains(Base):
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -191,7 +191,7 @@ class MsrpTalkerDomains(Base):
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

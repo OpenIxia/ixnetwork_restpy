@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,10 +32,10 @@ class Match(Base):
     _SDM_NAME = 'match'
     _SDM_ATT_MAP = {
         'ExperimenterData': 'experimenterData',
-        'ExperimenterDataLength': 'experimenterDataLength',
-        'ExperimenterField': 'experimenterField',
-        'ExperimenterHasMask': 'experimenterHasMask',
         'ExperimenterId': 'experimenterId',
+        'ExperimenterDataLength': 'experimenterDataLength',
+        'ExperimenterHasMask': 'experimenterHasMask',
+        'ExperimenterField': 'experimenterField',
     }
 
     def __init__(self, parent):

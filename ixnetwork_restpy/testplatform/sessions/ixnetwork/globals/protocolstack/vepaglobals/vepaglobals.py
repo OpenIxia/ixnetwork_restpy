@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,19 +33,19 @@ class VepaGlobals(Base):
     __slots__ = ()
     _SDM_NAME = 'vepaGlobals'
     _SDM_ATT_MAP = {
+        'Oui': 'oui',
+        'TeardownRate': 'teardownRate',
+        'ObjectId': 'objectId',
+        'MaxVdpCommands': 'maxVdpCommands',
         'AllowCvlan0InFilter': 'allowCvlan0InFilter',
-        'CdcpSubtype': 'cdcpSubtype',
+        'SetupRate': 'setupRate',
+        'TagDefaultEr': 'tagDefaultEr',
         'EvbSubtype': 'evbSubtype',
         'GroupVdpTlvs': 'groupVdpTlvs',
-        'MaxVdpCommands': 'maxVdpCommands',
-        'ObjectId': 'objectId',
-        'Oui': 'oui',
+        'CdcpSubtype': 'cdcpSubtype',
+        'SuppressEvbTlv': 'suppressEvbTlv',
         'RetryFailedSessions': 'retryFailedSessions',
         'RetryFailedSessionsInterval': 'retryFailedSessionsInterval',
-        'SetupRate': 'setupRate',
-        'SuppressEvbTlv': 'suppressEvbTlv',
-        'TagDefaultEr': 'tagDefaultEr',
-        'TeardownRate': 'teardownRate',
     }
 
     def __init__(self, parent):

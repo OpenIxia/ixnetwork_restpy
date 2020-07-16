@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,15 +32,15 @@ class NestedCounter(Base):
     __slots__ = ()
     _SDM_NAME = 'nestedCounter'
     _SDM_ATT_MAP = {
+        'OuterLoopLoopCount': 'outerLoopLoopCount',
         'AvailableWidths': 'availableWidths',
         'BitOffset': 'bitOffset',
-        'InnerLoopIncrementBy': 'innerLoopIncrementBy',
         'InnerLoopLoopCount': 'innerLoopLoopCount',
-        'InnerLoopRepeatValue': 'innerLoopRepeatValue',
         'OuterLoopIncrementBy': 'outerLoopIncrementBy',
-        'OuterLoopLoopCount': 'outerLoopLoopCount',
-        'StartValue': 'startValue',
+        'InnerLoopRepeatValue': 'innerLoopRepeatValue',
         'Width': 'width',
+        'InnerLoopIncrementBy': 'innerLoopIncrementBy',
+        'StartValue': 'startValue',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,35 +33,35 @@ class Switch(Base):
     __slots__ = ()
     _SDM_NAME = 'switch'
     _SDM_ATT_MAP = {
-        'BarrierReplyDelay': 'barrierReplyDelay',
-        'BarrierReplyDelayType': 'barrierReplyDelayType',
-        'BarrierReplyMaxDelay': 'barrierReplyMaxDelay',
-        'CalculateControllerFlowTxRate': 'calculateControllerFlowTxRate',
-        'CalculatePacketInReplyDelay': 'calculatePacketInReplyDelay',
-        'DatapathDescription': 'datapathDescription',
-        'DatapathId': 'datapathId',
-        'DatapathIdInHex': 'datapathIdInHex',
-        'Description': 'description',
-        'Enable': 'enable',
-        'EnableCalculatePacketOutRxRate': 'enableCalculatePacketOutRxRate',
-        'EnableHelloElement': 'enableHelloElement',
-        'HardwareDescription': 'hardwareDescription',
-        'InterPacketInBurstGap': 'interPacketInBurstGap',
-        'LocalIp': 'localIp',
-        'ManufacturerDescription': 'manufacturerDescription',
         'MaxPacketInBytes': 'maxPacketInBytes',
-        'MaximumColorValue': 'maximumColorValue',
-        'MaximumNoOfBandsPerMeter': 'maximumNoOfBandsPerMeter',
+        'CalculatePacketInReplyDelay': 'calculatePacketInReplyDelay',
+        'BarrierReplyDelayType': 'barrierReplyDelayType',
         'MaximumNoOfBucketsPerGroup': 'maximumNoOfBucketsPerGroup',
-        'MaximumNoOfMeters': 'maximumNoOfMeters',
-        'NumberOfBuffers': 'numberOfBuffers',
-        'PacketInReplyTimeout': 'packetInReplyTimeout',
-        'PacketInTxBurstSize': 'packetInTxBurstSize',
-        'SerialNumber': 'serialNumber',
-        'SoftwareDescription': 'softwareDescription',
-        'StoreFlows': 'storeFlows',
-        'SupportPacketForwarding': 'supportPacketForwarding',
         'TableMissAction': 'tableMissAction',
+        'LocalIp': 'localIp',
+        'MaximumNoOfMeters': 'maximumNoOfMeters',
+        'MaximumNoOfBandsPerMeter': 'maximumNoOfBandsPerMeter',
+        'BarrierReplyDelay': 'barrierReplyDelay',
+        'HardwareDescription': 'hardwareDescription',
+        'BarrierReplyMaxDelay': 'barrierReplyMaxDelay',
+        'EnableCalculatePacketOutRxRate': 'enableCalculatePacketOutRxRate',
+        'ManufacturerDescription': 'manufacturerDescription',
+        'PacketInReplyTimeout': 'packetInReplyTimeout',
+        'NumberOfBuffers': 'numberOfBuffers',
+        'EnableHelloElement': 'enableHelloElement',
+        'CalculateControllerFlowTxRate': 'calculateControllerFlowTxRate',
+        'SoftwareDescription': 'softwareDescription',
+        'DatapathDescription': 'datapathDescription',
+        'Enable': 'enable',
+        'Description': 'description',
+        'PacketInTxBurstSize': 'packetInTxBurstSize',
+        'DatapathId': 'datapathId',
+        'SupportPacketForwarding': 'supportPacketForwarding',
+        'MaximumColorValue': 'maximumColorValue',
+        'InterPacketInBurstGap': 'interPacketInBurstGap',
+        'DatapathIdInHex': 'datapathIdInHex',
+        'SerialNumber': 'serialNumber',
+        'StoreFlows': 'storeFlows',
     }
 
     def __init__(self, parent):

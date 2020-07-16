@@ -11,7 +11,6 @@
 from ixnetwork_restpy.connection import Connection
 from ixnetwork_restpy.errors import *
 from ixnetwork_restpy.testplatform.testplatform import TestPlatform
-from ixnetwork_restpy.testplatform.sessions.ixnetwork.ixnetwork import Ixnetwork
 from ixnetwork_restpy.assistants.statistics.statviewassistant import StatViewAssistant
 from ixnetwork_restpy.assistants.ports.portmapassistant import PortMapAssistant
 

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,14 +33,14 @@ class MapServerResolver(Base):
     __slots__ = ()
     _SDM_NAME = 'mapServerResolver'
     _SDM_ATT_MAP = {
-        'AuthenticationAlgorithm': 'authenticationAlgorithm',
-        'Enabled': 'enabled',
-        'ExternalMsmrAddress': 'externalMsmrAddress',
+        'MsmrLocation': 'msmrLocation',
         'Family': 'family',
         'InternalIxiaMsmrRouter': 'internalIxiaMsmrRouter',
+        'AuthenticationAlgorithm': 'authenticationAlgorithm',
+        'Enabled': 'enabled',
         'Key': 'key',
-        'MsmrLocation': 'msmrLocation',
         'Type': 'type',
+        'ExternalMsmrAddress': 'externalMsmrAddress',
     }
 
     def __init__(self, parent):

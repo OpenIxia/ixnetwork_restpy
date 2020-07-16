@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,68 +33,68 @@ class BgpIpv4MVrf(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpIpv4MVrf'
     _SDM_ATT_MAP = {
-        'BFRId': 'BFRId',
-        'BFRIpv4Prefix': 'BFRIpv4Prefix',
-        'BFRIpv6Prefix': 'BFRIpv6Prefix',
-        'BFRPrefixType': 'BFRPrefixType',
-        'BIERSubDomainId': 'BIERSubDomainId',
-        'BslMismatchHandlingOption': 'BslMismatchHandlingOption',
-        'LeafInfoRequiredBit': 'LeafInfoRequiredBit',
-        'LeafInfoRequiredPerFlow': 'LeafInfoRequiredPerFlow',
-        'Active': 'active',
-        'AdvertiseIPMSIRoutes': 'advertiseIPMSIRoutes',
-        'AutoConstructBitString': 'autoConstructBitString',
-        'BierBitStringLength': 'bierBitStringLength',
-        'BitString': 'bitString',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Dscp': 'dscp',
-        'DutIpv4': 'dutIpv4',
-        'EnableTRM': 'enableTRM',
-        'Entropy': 'entropy',
-        'Errors': 'errors',
-        'GroupAddress': 'groupAddress',
-        'ImportRtListSameAsExportRtList': 'importRtListSameAsExportRtList',
-        'IncludeBierPTAinLeafAD': 'includeBierPTAinLeafAD',
-        'IncludePmsiTunnelAttribute': 'includePmsiTunnelAttribute',
-        'LocalIpv4': 'localIpv4',
-        'LocalRouterID': 'localRouterID',
-        'MulticastDistinguisherAs4Number': 'multicastDistinguisherAs4Number',
-        'MulticastDistinguisherAsNumber': 'multicastDistinguisherAsNumber',
-        'MulticastDistinguisherAssignedNumber': 'multicastDistinguisherAssignedNumber',
-        'MulticastDistinguisherIpAddress': 'multicastDistinguisherIpAddress',
-        'MulticastDistinguisherType': 'multicastDistinguisherType',
-        'MulticastTunnelType': 'multicastTunnelType',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'NextProtocol': 'nextProtocol',
-        'NumRtInExportRouteTargetList': 'numRtInExportRouteTargetList',
-        'NumRtInImportRouteTargetList': 'numRtInImportRouteTargetList',
-        'NumRtInUmhExportRouteTargetList': 'numRtInUmhExportRouteTargetList',
-        'NumRtInUmhImportRouteTargetList': 'numRtInUmhImportRouteTargetList',
-        'Oam': 'oam',
-        'RootAddress': 'rootAddress',
-        'Rsv': 'rsv',
-        'RsvpP2mpId': 'rsvpP2mpId',
-        'RsvpP2mpIdAsNumber': 'rsvpP2mpIdAsNumber',
-        'RsvpTunnelId': 'rsvpTunnelId',
         'SameAsExportRT': 'sameAsExportRT',
-        'SameAsImportRT': 'sameAsImportRT',
-        'SenderAddressPRootNodeAddress': 'senderAddressPRootNodeAddress',
-        'SessionStatus': 'sessionStatus',
-        'SiCount': 'siCount',
-        'SrLabelStart': 'srLabelStart',
-        'SrLabelStep': 'srLabelStep',
-        'StackedLayers': 'stackedLayers',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
-        'SupportLeafADRoutesSending': 'supportLeafADRoutesSending',
-        'TrafficBfrId': 'trafficBfrId',
-        'UpOrDownStreamAssignedLabel': 'upOrDownStreamAssignedLabel',
-        'UseSameBfrIdInTraffic': 'useSameBfrIdInTraffic',
-        'UseUpOrDownStreamAssigneLabel': 'useUpOrDownStreamAssigneLabel',
         'Version': 'version',
+        'RsvpP2mpIdAsNumber': 'rsvpP2mpIdAsNumber',
+        'BierBitStringLength': 'bierBitStringLength',
+        'StackedLayers': 'stackedLayers',
+        'EnableTRM': 'enableTRM',
+        'SiCount': 'siCount',
+        'LeafInfoRequiredBit': 'LeafInfoRequiredBit',
+        'Entropy': 'entropy',
+        'UseSameBfrIdInTraffic': 'useSameBfrIdInTraffic',
+        'MulticastDistinguisherAs4Number': 'multicastDistinguisherAs4Number',
+        'BFRId': 'BFRId',
+        'LeafInfoRequiredPerFlow': 'LeafInfoRequiredPerFlow',
+        'Multiplier': 'multiplier',
+        'SessionStatus': 'sessionStatus',
+        'LocalIpv4': 'localIpv4',
+        'BFRPrefixType': 'BFRPrefixType',
+        'DutIpv4': 'dutIpv4',
+        'ConnectedVia': 'connectedVia',
+        'Oam': 'oam',
+        'BFRIpv6Prefix': 'BFRIpv6Prefix',
+        'SupportLeafADRoutesSending': 'supportLeafADRoutesSending',
+        'BitString': 'bitString',
+        'SrLabelStep': 'srLabelStep',
+        'IncludePmsiTunnelAttribute': 'includePmsiTunnelAttribute',
+        'BFRIpv4Prefix': 'BFRIpv4Prefix',
+        'NextProtocol': 'nextProtocol',
+        'Status': 'status',
+        'MulticastDistinguisherIpAddress': 'multicastDistinguisherIpAddress',
+        'IncludeBierPTAinLeafAD': 'includeBierPTAinLeafAD',
+        'SenderAddressPRootNodeAddress': 'senderAddressPRootNodeAddress',
+        'ImportRtListSameAsExportRtList': 'importRtListSameAsExportRtList',
+        'RsvpP2mpId': 'rsvpP2mpId',
+        'AutoConstructBitString': 'autoConstructBitString',
+        'Dscp': 'dscp',
+        'MulticastDistinguisherAssignedNumber': 'multicastDistinguisherAssignedNumber',
+        'RootAddress': 'rootAddress',
+        'Errors': 'errors',
+        'SameAsImportRT': 'sameAsImportRT',
+        'GroupAddress': 'groupAddress',
+        'Active': 'active',
+        'UpOrDownStreamAssignedLabel': 'upOrDownStreamAssignedLabel',
+        'Rsv': 'rsv',
+        'LocalRouterID': 'localRouterID',
+        'UseUpOrDownStreamAssigneLabel': 'useUpOrDownStreamAssigneLabel',
+        'Count': 'count',
+        'NumRtInImportRouteTargetList': 'numRtInImportRouteTargetList',
+        'Name': 'name',
+        'NumRtInUmhImportRouteTargetList': 'numRtInUmhImportRouteTargetList',
+        'BIERSubDomainId': 'BIERSubDomainId',
+        'StateCounts': 'stateCounts',
+        'MulticastDistinguisherType': 'multicastDistinguisherType',
+        'TrafficBfrId': 'trafficBfrId',
+        'MulticastTunnelType': 'multicastTunnelType',
+        'AdvertiseIPMSIRoutes': 'advertiseIPMSIRoutes',
+        'DescriptiveName': 'descriptiveName',
+        'SrLabelStart': 'srLabelStart',
+        'RsvpTunnelId': 'rsvpTunnelId',
+        'NumRtInUmhExportRouteTargetList': 'numRtInUmhExportRouteTargetList',
+        'MulticastDistinguisherAsNumber': 'multicastDistinguisherAsNumber',
+        'BslMismatchHandlingOption': 'BslMismatchHandlingOption',
+        'NumRtInExportRouteTargetList': 'numRtInExportRouteTargetList',
     }
 
     def __init__(self, parent):
@@ -1021,6 +1021,31 @@ class BgpIpv4MVrf(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def RestartDown(self, *args, **kwargs):
         """Executes the restartDown operation on the server.
 
@@ -1030,7 +1055,7 @@ class BgpIpv4MVrf(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -1049,13 +1074,13 @@ class BgpIpv4MVrf(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start BGP VRF
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -1074,13 +1099,13 @@ class BgpIpv4MVrf(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop BGP VRF
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

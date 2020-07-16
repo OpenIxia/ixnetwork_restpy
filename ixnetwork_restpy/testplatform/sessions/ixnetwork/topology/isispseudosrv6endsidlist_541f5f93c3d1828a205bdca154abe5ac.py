@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,23 +31,23 @@ class IsisPseudoSRv6EndSIDList(Base):
     __slots__ = ()
     _SDM_NAME = 'isisPseudoSRv6EndSIDList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdvertiseCustomSubTLV': 'advertiseCustomSubTLV',
-        'ArgumentLength': 'argumentLength',
         'Count': 'count',
-        'CustomEndPointFunction': 'customEndPointFunction',
+        'FunctionLength': 'functionLength',
+        'Name': 'name',
+        'LocatorName': 'locatorName',
+        'IncludeSRv6SIDStructureSubSubTlv': 'includeSRv6SIDStructureSubSubTlv',
+        'Sid': 'sid',
         'CustomSubTlv': 'customSubTlv',
+        'LocatorNodeLength': 'locatorNodeLength',
+        'CustomEndPointFunction': 'customEndPointFunction',
+        'AdvertiseCustomSubTLV': 'advertiseCustomSubTLV',
         'DescriptiveName': 'descriptiveName',
         'EndPointFunction': 'endPointFunction',
+        'Active': 'active',
         'Flags': 'flags',
-        'FunctionLength': 'functionLength',
-        'IncludeSRv6SIDStructureSubSubTlv': 'includeSRv6SIDStructureSubSubTlv',
-        'LocatorBlockLength': 'locatorBlockLength',
-        'LocatorName': 'locatorName',
-        'LocatorNodeLength': 'locatorNodeLength',
-        'Name': 'name',
-        'Sid': 'sid',
         'SidName': 'sidName',
+        'ArgumentLength': 'argumentLength',
+        'LocatorBlockLength': 'locatorBlockLength',
     }
 
     def __init__(self, parent):
@@ -269,6 +269,19 @@ class IsisPseudoSRv6EndSIDList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
+
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
 
     def Start(self):
         """Executes the start operation on the server.

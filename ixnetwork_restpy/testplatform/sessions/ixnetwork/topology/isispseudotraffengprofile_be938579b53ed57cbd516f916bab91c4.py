@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,50 +31,50 @@ class IsisPseudoTraffEngProfile(Base):
     __slots__ = ()
     _SDM_NAME = 'isisPseudoTraffEngProfile'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdministratorGroup': 'administratorGroup',
-        'AdvAppSpecificTraffic': 'advAppSpecificTraffic',
-        'AdvMinMaxUniDiLinkDelay': 'advMinMaxUniDiLinkDelay',
-        'AdvUniDirAvailableBw': 'advUniDirAvailableBw',
-        'AdvUniDirDelayVariation': 'advUniDirDelayVariation',
         'AdvUniDirLinkLoss': 'advUniDirLinkLoss',
-        'AdvUniDirResidualBw': 'advUniDirResidualBw',
-        'AdvUniDirUtilizedBw': 'advUniDirUtilizedBw',
-        'AdvertiseExtAdminGroup': 'advertiseExtAdminGroup',
-        'AdvertiseUniDiLinkDelay': 'advertiseUniDiLinkDelay',
-        'BandwidthPriority0_Bps': 'bandwidthPriority0_Bps',
-        'BandwidthPriority1_Bps': 'bandwidthPriority1_Bps',
-        'BandwidthPriority2_Bps': 'bandwidthPriority2_Bps',
-        'BandwidthPriority3_Bps': 'bandwidthPriority3_Bps',
+        'MaxBandwidth_Bps': 'maxBandwidth_Bps',
         'BandwidthPriority4_Bps': 'bandwidthPriority4_Bps',
+        'AdvUniDirResidualBw': 'advUniDirResidualBw',
+        'UniDirAvailableBw': 'uniDirAvailableBw',
+        'MtId': 'mtId',
+        'UniDirLinkMinDelay': 'uniDirLinkMinDelay',
+        'AdvertiseUniDiLinkDelay': 'advertiseUniDiLinkDelay',
+        'AdvMinMaxUniDiLinkDelay': 'advMinMaxUniDiLinkDelay',
+        'UniDirLinkDelayABit': 'uniDirLinkDelayABit',
+        'ExtAdminGroupLength': 'extAdminGroupLength',
+        'UniDirLinkLoss': 'uniDirLinkLoss',
+        'AdvAppSpecificTraffic': 'advAppSpecificTraffic',
+        'BandwidthPriority0_Bps': 'bandwidthPriority0_Bps',
+        'AdvertiseExtAdminGroup': 'advertiseExtAdminGroup',
+        'MinMaxUniDirLinkDelayABit': 'minMaxUniDirLinkDelayABit',
+        'AdvUniDirDelayVariation': 'advUniDirDelayVariation',
+        'UserDefAppBm': 'userDefAppBm',
         'BandwidthPriority5_Bps': 'bandwidthPriority5_Bps',
-        'BandwidthPriority6_Bps': 'bandwidthPriority6_Bps',
+        'MetricLevel': 'metricLevel',
+        'BandwidthPriority1_Bps': 'bandwidthPriority1_Bps',
         'BandwidthPriority7_Bps': 'bandwidthPriority7_Bps',
+        'MtApplicabilityForIPv6': 'mtApplicabilityForIPv6',
+        'UniDirLinkDelayVariation': 'uniDirLinkDelayVariation',
+        'LFlag': 'lFlag',
+        'UniDirUtilizedBw': 'uniDirUtilizedBw',
+        'UniDirResidualBw': 'uniDirResidualBw',
+        'BandwidthPriority6_Bps': 'bandwidthPriority6_Bps',
+        'BandwidthPriority3_Bps': 'bandwidthPriority3_Bps',
+        'UniDirLinkDelay': 'uniDirLinkDelay',
+        'AdvUniDirUtilizedBw': 'advUniDirUtilizedBw',
+        'UserDefAppBmLen': 'userDefAppBmLen',
+        'UniDirLinkMaxDelay': 'uniDirLinkMaxDelay',
+        'UniDirLinkLossABit': 'uniDirLinkLossABit',
+        'Active': 'active',
+        'BandwidthPriority2_Bps': 'bandwidthPriority2_Bps',
+        'MaxReservableBandwidth_Bps': 'maxReservableBandwidth_Bps',
+        'StdAppType': 'stdAppType',
+        'AdministratorGroup': 'administratorGroup',
         'Count': 'count',
+        'Name': 'name',
+        'AdvUniDirAvailableBw': 'advUniDirAvailableBw',
         'DescriptiveName': 'descriptiveName',
         'ExtAdminGroup': 'extAdminGroup',
-        'ExtAdminGroupLength': 'extAdminGroupLength',
-        'LFlag': 'lFlag',
-        'MaxBandwidth_Bps': 'maxBandwidth_Bps',
-        'MaxReservableBandwidth_Bps': 'maxReservableBandwidth_Bps',
-        'MetricLevel': 'metricLevel',
-        'MinMaxUniDirLinkDelayABit': 'minMaxUniDirLinkDelayABit',
-        'MtApplicabilityForIPv6': 'mtApplicabilityForIPv6',
-        'MtId': 'mtId',
-        'Name': 'name',
-        'StdAppType': 'stdAppType',
-        'UniDirAvailableBw': 'uniDirAvailableBw',
-        'UniDirLinkDelay': 'uniDirLinkDelay',
-        'UniDirLinkDelayABit': 'uniDirLinkDelayABit',
-        'UniDirLinkDelayVariation': 'uniDirLinkDelayVariation',
-        'UniDirLinkLoss': 'uniDirLinkLoss',
-        'UniDirLinkLossABit': 'uniDirLinkLossABit',
-        'UniDirLinkMaxDelay': 'uniDirLinkMaxDelay',
-        'UniDirLinkMinDelay': 'uniDirLinkMinDelay',
-        'UniDirResidualBw': 'uniDirResidualBw',
-        'UniDirUtilizedBw': 'uniDirUtilizedBw',
-        'UserDefAppBm': 'userDefAppBm',
-        'UserDefAppBmLen': 'userDefAppBmLen',
     }
 
     def __init__(self, parent):
@@ -595,6 +595,19 @@ class IsisPseudoTraffEngProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
+
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
 
     def Start(self):
         """Executes the start operation on the server.

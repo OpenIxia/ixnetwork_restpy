@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,34 +31,34 @@ class EgtpSgwRange(Base):
     __slots__ = ()
     _SDM_NAME = 'egtpSgwRange'
     _SDM_ATT_MAP = {
-        'Apn': 'apn',
-        'ApnAmbrd': 'apnAmbrd',
-        'ApnAmbru': 'apnAmbru',
-        'DbMbrd': 'dbMbrd',
-        'DbMbru': 'dbMbru',
-        'DbPci': 'dbPci',
-        'DbPl': 'dbPl',
-        'DbPvi': 'dbPvi',
-        'DbQci': 'dbQci',
-        'DefaultBearerLifetimeTimer': 'defaultBearerLifetimeTimer',
+        'PoolStartIpv6': 'poolStartIpv6',
+        'PoolStartIpv4': 'poolStartIpv4',
+        'UserPlaneIpCount': 'userPlaneIpCount',
         'EnableDefaultBearerLifetime': 'enableDefaultBearerLifetime',
-        'EnableNidbCreationDelay': 'enableNidbCreationDelay',
-        'Enabled': 'enabled',
-        'Ims_apn': 'ims_apn',
-        'Imsi': 'imsi',
-        'IpType': 'ipType',
-        'Name': 'name',
-        'NidbCreationDelay': 'nidbCreationDelay',
+        'DbMbrd': 'dbMbrd',
+        'UserPlaneIpv4Address': 'userPlaneIpv4Address',
+        'Apn': 'apn',
+        'DbMbru': 'dbMbru',
+        'DefaultBearerLifetimeTimer': 'defaultBearerLifetimeTimer',
         'ObjectId': 'objectId',
         'PoolSize': 'poolSize',
+        'EnableNidbCreationDelay': 'enableNidbCreationDelay',
         'PoolStartIp': 'poolStartIp',
-        'PoolStartIpv4': 'poolStartIpv4',
-        'PoolStartIpv6': 'poolStartIpv6',
+        'DbPl': 'dbPl',
+        'NidbCreationDelay': 'nidbCreationDelay',
+        'DbPci': 'dbPci',
         'TotalCount': 'totalCount',
-        'UserPlaneIpAddress': 'userPlaneIpAddress',
-        'UserPlaneIpCount': 'userPlaneIpCount',
-        'UserPlaneIpv4Address': 'userPlaneIpv4Address',
+        'Ims_apn': 'ims_apn',
+        'DbQci': 'dbQci',
+        'IpType': 'ipType',
+        'DbPvi': 'dbPvi',
+        'Name': 'name',
         'UserPlaneIpv6Address': 'userPlaneIpv6Address',
+        'Enabled': 'enabled',
+        'ApnAmbru': 'apnAmbru',
+        'Imsi': 'imsi',
+        'UserPlaneIpAddress': 'userPlaneIpAddress',
+        'ApnAmbrd': 'apnAmbrd',
     }
 
     def __init__(self, parent):

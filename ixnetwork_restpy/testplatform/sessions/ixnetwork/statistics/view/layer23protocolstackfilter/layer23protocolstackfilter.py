@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,11 +33,11 @@ class Layer23ProtocolStackFilter(Base):
     __slots__ = ()
     _SDM_NAME = 'layer23ProtocolStackFilter'
     _SDM_ATT_MAP = {
-        'DrilldownType': 'drilldownType',
         'NumberOfResults': 'numberOfResults',
-        'ProtocolStackFilterId': 'protocolStackFilterId',
-        'SortAscending': 'sortAscending',
         'SortingStatistic': 'sortingStatistic',
+        'ProtocolStackFilterId': 'protocolStackFilterId',
+        'DrilldownType': 'drilldownType',
+        'SortAscending': 'sortAscending',
     }
 
     def __init__(self, parent):

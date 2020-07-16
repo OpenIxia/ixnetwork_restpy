@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,12 +34,12 @@ class Pattern(Base):
     _SDM_NAME = 'pattern'
     _SDM_ATT_MAP = {
         'BitOffset': 'bitOffset',
-        'Enabled': 'enabled',
-        'Mask': 'mask',
         'Name': 'name',
-        'Offset': 'offset',
+        'Mask': 'mask',
+        'Enabled': 'enabled',
         'Value': 'value',
         'Width': 'width',
+        'Offset': 'offset',
     }
 
     def __init__(self, parent):

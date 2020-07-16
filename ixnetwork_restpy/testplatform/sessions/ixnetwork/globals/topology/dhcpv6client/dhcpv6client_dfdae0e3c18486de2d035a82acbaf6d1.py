@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,30 +31,30 @@ class Dhcpv6client(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcpv6client'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Dhcp6EchoIAInfo': 'dhcp6EchoIAInfo',
         'Dhcp6InfoReqMaxRc': 'dhcp6InfoReqMaxRc',
-        'Dhcp6InfoReqMaxRt': 'dhcp6InfoReqMaxRt',
-        'Dhcp6InfoReqTimeout': 'dhcp6InfoReqTimeout',
-        'Dhcp6NsGw': 'dhcp6NsGw',
-        'Dhcp6RebMaxRt': 'dhcp6RebMaxRt',
-        'Dhcp6RebTimeout': 'dhcp6RebTimeout',
-        'Dhcp6RelMaxRc': 'dhcp6RelMaxRc',
-        'Dhcp6RelTimeout': 'dhcp6RelTimeout',
         'Dhcp6RenMaxRt': 'dhcp6RenMaxRt',
-        'Dhcp6RenTimeout': 'dhcp6RenTimeout',
-        'Dhcp6ReqMaxRc': 'dhcp6ReqMaxRc',
+        'Dhcp6NsGw': 'dhcp6NsGw',
+        'Dhcp6RelTimeout': 'dhcp6RelTimeout',
+        'Dhcp6RelMaxRc': 'dhcp6RelMaxRc',
+        'Dhcp6EchoIAInfo': 'dhcp6EchoIAInfo',
         'Dhcp6ReqMaxRt': 'dhcp6ReqMaxRt',
-        'Dhcp6ReqTimeout': 'dhcp6ReqTimeout',
-        'Dhcp6SolMaxRc': 'dhcp6SolMaxRc',
-        'Dhcp6SolMaxRt': 'dhcp6SolMaxRt',
-        'Dhcp6SolTimeout': 'dhcp6SolTimeout',
-        'ImmediateResponse': 'immediateResponse',
-        'Name': 'name',
-        'RenewOnLinkUp': 'renewOnLinkUp',
+        'Dhcp6ReqMaxRc': 'dhcp6ReqMaxRc',
         'RowNames': 'rowNames',
+        'Dhcp6SolMaxRc': 'dhcp6SolMaxRc',
+        'RenewOnLinkUp': 'renewOnLinkUp',
+        'Dhcp6InfoReqTimeout': 'dhcp6InfoReqTimeout',
+        'Dhcp6ReqTimeout': 'dhcp6ReqTimeout',
+        'Dhcp6RenTimeout': 'dhcp6RenTimeout',
+        'Dhcp6RebMaxRt': 'dhcp6RebMaxRt',
+        'Count': 'count',
+        'Dhcp6SolMaxRt': 'dhcp6SolMaxRt',
+        'Name': 'name',
+        'ImmediateResponse': 'immediateResponse',
+        'DescriptiveName': 'descriptiveName',
+        'Dhcp6SolTimeout': 'dhcp6SolTimeout',
         'SkipReleaseOnStop': 'skipReleaseOnStop',
+        'Dhcp6InfoReqMaxRt': 'dhcp6InfoReqMaxRt',
+        'Dhcp6RebTimeout': 'dhcp6RebTimeout',
     }
 
     def __init__(self, parent):
@@ -65,13 +65,13 @@ class Dhcpv6client(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv4client.sessionlifetime.sessionlifetime_a2ff4cf9740cdad8ec90e94ccf681c32.SessionLifetime): An instance of the SessionLifetime class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv4client.sessionlifetime.sessionlifetime_c56c3cca82dcd438a26eb5e7980bb00a.SessionLifetime): An instance of the SessionLifetime class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv4client.sessionlifetime.sessionlifetime_a2ff4cf9740cdad8ec90e94ccf681c32 import SessionLifetime
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv4client.sessionlifetime.sessionlifetime_c56c3cca82dcd438a26eb5e7980bb00a import SessionLifetime
         return SessionLifetime(self)._select()
 
     @property

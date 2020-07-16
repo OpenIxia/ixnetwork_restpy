@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,21 +33,21 @@ class Evi(Base):
     __slots__ = ()
     _SDM_NAME = 'evi'
     _SDM_ATT_MAP = {
-        'AdRouteLabel': 'adRouteLabel',
-        'AutoConfigureRdEvi': 'autoConfigureRdEvi',
-        'AutoConfigureRdIpAddress': 'autoConfigureRdIpAddress',
-        'Enabled': 'enabled',
-        'ExportTargetList': 'exportTargetList',
-        'ImportTargetList': 'importTargetList',
-        'IncludePmsiTunnelAttribute': 'includePmsiTunnelAttribute',
-        'MplsAssignedUpstreamOrDownStreamLabel': 'mplsAssignedUpstreamOrDownStreamLabel',
-        'MulticastTunnelType': 'multicastTunnelType',
         'RdEvi': 'rdEvi',
+        'AutoConfigureRdIpAddress': 'autoConfigureRdIpAddress',
+        'ExportTargetList': 'exportTargetList',
+        'MplsAssignedUpstreamOrDownStreamLabel': 'mplsAssignedUpstreamOrDownStreamLabel',
+        'RsvpP2mpIdAsNumber': 'rsvpP2mpIdAsNumber',
         'RdIpAddress': 'rdIpAddress',
         'RsvpP2mpId': 'rsvpP2mpId',
-        'RsvpP2mpIdAsNumber': 'rsvpP2mpIdAsNumber',
-        'RsvpTunnelId': 'rsvpTunnelId',
+        'Enabled': 'enabled',
+        'MulticastTunnelType': 'multicastTunnelType',
+        'AdRouteLabel': 'adRouteLabel',
         'UseUpstreamOrDownStreamAssignedLabel': 'useUpstreamOrDownStreamAssignedLabel',
+        'AutoConfigureRdEvi': 'autoConfigureRdEvi',
+        'RsvpTunnelId': 'rsvpTunnelId',
+        'IncludePmsiTunnelAttribute': 'includePmsiTunnelAttribute',
+        'ImportTargetList': 'importTargetList',
         'UseV4MappedV6Address': 'useV4MappedV6Address',
     }
 

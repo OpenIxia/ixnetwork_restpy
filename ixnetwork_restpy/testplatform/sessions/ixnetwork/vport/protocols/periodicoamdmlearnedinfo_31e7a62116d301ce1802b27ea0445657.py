@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,22 +32,22 @@ class PeriodicOamDmLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'periodicOamDmLearnedInfo'
     _SDM_ATT_MAP = {
-        'AverageDelayNanoSec': 'averageDelayNanoSec',
-        'AverageDelaySec': 'averageDelaySec',
-        'AverageDelayVariationNanoSec': 'averageDelayVariationNanoSec',
-        'AverageDelayVariationSec': 'averageDelayVariationSec',
+        'RecentDelayVariationSec': 'recentDelayVariationSec',
+        'RecentDelaySec': 'recentDelaySec',
+        'RecentDelayNanoSec': 'recentDelayNanoSec',
+        'NoReplyCount': 'noReplyCount',
+        'SVlan': 'sVlan',
         'CVlan': 'cVlan',
-        'DmmCountSent': 'dmmCountSent',
+        'SrcMacAddress': 'srcMacAddress',
+        'AverageDelaySec': 'averageDelaySec',
+        'AverageDelayNanoSec': 'averageDelayNanoSec',
+        'RecentDelayVariationNanoSec': 'recentDelayVariationNanoSec',
+        'AverageDelayVariationSec': 'averageDelayVariationSec',
+        'AverageDelayVariationNanoSec': 'averageDelayVariationNanoSec',
         'DstMacAddress': 'dstMacAddress',
         'MdLevel': 'mdLevel',
-        'NoReplyCount': 'noReplyCount',
+        'DmmCountSent': 'dmmCountSent',
         'OneDmReceivedCount': 'oneDmReceivedCount',
-        'RecentDelayNanoSec': 'recentDelayNanoSec',
-        'RecentDelaySec': 'recentDelaySec',
-        'RecentDelayVariationNanoSec': 'recentDelayVariationNanoSec',
-        'RecentDelayVariationSec': 'recentDelayVariationSec',
-        'SVlan': 'sVlan',
-        'SrcMacAddress': 'srcMacAddress',
     }
 
     def __init__(self, parent):

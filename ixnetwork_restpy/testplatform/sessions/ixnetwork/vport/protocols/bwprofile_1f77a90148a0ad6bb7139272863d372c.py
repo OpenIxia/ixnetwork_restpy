@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,26 +33,26 @@ class BwProfile(Base):
     __slots__ = ()
     _SDM_NAME = 'bwProfile'
     _SDM_ATT_MAP = {
-        'CbsMagnitude': 'cbsMagnitude',
-        'CbsMultiplier': 'cbsMultiplier',
-        'Cf': 'cf',
-        'CirMagnitude': 'cirMagnitude',
-        'CirMultiplier': 'cirMultiplier',
-        'Cm': 'cm',
-        'EbsMagnitude': 'ebsMagnitude',
         'EbsMultiplier': 'ebsMultiplier',
-        'EirMagnitude': 'eirMagnitude',
-        'EirMultiplier': 'eirMultiplier',
-        'Enabled': 'enabled',
-        'PerCos': 'perCos',
-        'UserPriorityBits000': 'userPriorityBits000',
-        'UserPriorityBits001': 'userPriorityBits001',
-        'UserPriorityBits010': 'userPriorityBits010',
+        'EbsMagnitude': 'ebsMagnitude',
         'UserPriorityBits011': 'userPriorityBits011',
+        'Cm': 'cm',
+        'CbsMagnitude': 'cbsMagnitude',
+        'CirMagnitude': 'cirMagnitude',
+        'Cf': 'cf',
+        'CirMultiplier': 'cirMultiplier',
         'UserPriorityBits100': 'userPriorityBits100',
+        'EirMultiplier': 'eirMultiplier',
         'UserPriorityBits101': 'userPriorityBits101',
         'UserPriorityBits110': 'userPriorityBits110',
         'UserPriorityBits111': 'userPriorityBits111',
+        'UserPriorityBits000': 'userPriorityBits000',
+        'CbsMultiplier': 'cbsMultiplier',
+        'EirMagnitude': 'eirMagnitude',
+        'UserPriorityBits010': 'userPriorityBits010',
+        'PerCos': 'perCos',
+        'Enabled': 'enabled',
+        'UserPriorityBits001': 'userPriorityBits001',
     }
 
     def __init__(self, parent):

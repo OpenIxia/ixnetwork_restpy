@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,22 +32,22 @@ class SpbRbridges(Base):
     __slots__ = ()
     _SDM_NAME = 'spbRbridges'
     _SDM_ATT_MAP = {
-        'Age': 'age',
         'AuxillaryMcidConfigName': 'auxillaryMcidConfigName',
-        'BaseVid': 'baseVid',
-        'BridgeMacAddress': 'bridgeMacAddress',
-        'BridgePriority': 'bridgePriority',
-        'EctAlgorithm': 'ectAlgorithm',
-        'HostName': 'hostName',
-        'IsId': 'isId',
-        'LinkMetric': 'linkMetric',
-        'MBit': 'mBit',
-        'McidConfigName': 'mcidConfigName',
-        'RBit': 'rBit',
-        'SequenceNumber': 'sequenceNumber',
-        'SystemId': 'systemId',
-        'TBit': 'tBit',
         'UseFlagBit': 'useFlagBit',
+        'MBit': 'mBit',
+        'EctAlgorithm': 'ectAlgorithm',
+        'LinkMetric': 'linkMetric',
+        'SequenceNumber': 'sequenceNumber',
+        'BridgeMacAddress': 'bridgeMacAddress',
+        'McidConfigName': 'mcidConfigName',
+        'Age': 'age',
+        'HostName': 'hostName',
+        'BridgePriority': 'bridgePriority',
+        'RBit': 'rBit',
+        'BaseVid': 'baseVid',
+        'SystemId': 'systemId',
+        'IsId': 'isId',
+        'TBit': 'tBit',
     }
 
     def __init__(self, parent):

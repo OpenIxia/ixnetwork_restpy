@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -24,27 +24,27 @@ from ixnetwork_restpy.files import Files
 
 
 class IsisTrafficEngineering(Base):
-    """Isis Traffic Engineering Configuration
+    """DEPRECATED Isis Traffic Engineering Configuration
     The IsisTrafficEngineering class encapsulates a required isisTrafficEngineering resource which will be retrieved from the server every time the property is accessed.
     """
 
     __slots__ = ()
     _SDM_NAME = 'isisTrafficEngineering'
     _SDM_ATT_MAP = {
-        'AdministratorGroup': 'administratorGroup',
-        'BandwidthPriority0': 'bandwidthPriority0',
-        'BandwidthPriority1': 'bandwidthPriority1',
-        'BandwidthPriority2': 'bandwidthPriority2',
-        'BandwidthPriority3': 'bandwidthPriority3',
-        'BandwidthPriority4': 'bandwidthPriority4',
-        'BandwidthPriority5': 'bandwidthPriority5',
-        'BandwidthPriority6': 'bandwidthPriority6',
         'BandwidthPriority7': 'bandwidthPriority7',
+        'BandwidthPriority6': 'bandwidthPriority6',
+        'BandwidthPriority5': 'bandwidthPriority5',
+        'BandwidthPriority4': 'bandwidthPriority4',
+        'BandwidthPriority3': 'bandwidthPriority3',
+        'BandwidthPriority2': 'bandwidthPriority2',
+        'BandwidthPriority1': 'bandwidthPriority1',
+        'BandwidthPriority0': 'bandwidthPriority0',
         'Count': 'count',
         'DescriptiveName': 'descriptiveName',
+        'MetricLevel': 'metricLevel',
         'MaxBandwidth': 'maxBandwidth',
         'MaxReservableBandwidth': 'maxReservableBandwidth',
-        'MetricLevel': 'metricLevel',
+        'AdministratorGroup': 'administratorGroup',
         'Name': 'name',
     }
 

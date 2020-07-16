@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,31 +32,31 @@ class PeriodicOamLmLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'periodicOamLmLearnedInfo'
     _SDM_ATT_MAP = {
-        'AvgFarEndLoss': 'avgFarEndLoss',
-        'AvgNearEndLoss': 'avgNearEndLoss',
-        'BVlan': 'bVlan',
-        'CVlan': 'cVlan',
-        'CcmReceivedCount': 'ccmReceivedCount',
+        'MaxFarEndLoss': 'maxFarEndLoss',
+        'SourceMacAddress': 'sourceMacAddress',
         'CcmSentCount': 'ccmSentCount',
         'CurrentFarEndLoss': 'currentFarEndLoss',
-        'CurrentFarEndLossRatio': 'currentFarEndLossRatio',
+        'CcmReceivedCount': 'ccmReceivedCount',
+        'AvgNearEndLoss': 'avgNearEndLoss',
         'CurrentNearEndLoss': 'currentNearEndLoss',
-        'CurrentNearEndLossRatio': 'currentNearEndLossRatio',
-        'DestinationMacAddress': 'destinationMacAddress',
-        'LmmSentCount': 'lmmSentCount',
-        'MaxFarEndLoss': 'maxFarEndLoss',
         'MaxFarEndLossRatio': 'maxFarEndLossRatio',
-        'MaxNearEndLoss': 'maxNearEndLoss',
         'MaxNearEndLossRatio': 'maxNearEndLossRatio',
-        'MdLevel': 'mdLevel',
-        'MinFarEndLoss': 'minFarEndLoss',
-        'MinFarEndLossRatio': 'minFarEndLossRatio',
-        'MinNearEndLoss': 'minNearEndLoss',
-        'MinNearEndLossRatio': 'minNearEndLossRatio',
-        'NoReplyCount': 'noReplyCount',
+        'CurrentFarEndLossRatio': 'currentFarEndLossRatio',
         'SVlan': 'sVlan',
-        'SourceMacAddress': 'sourceMacAddress',
+        'BVlan': 'bVlan',
+        'MaxNearEndLoss': 'maxNearEndLoss',
+        'LmmSentCount': 'lmmSentCount',
         'SourceMepId': 'sourceMepId',
+        'CVlan': 'cVlan',
+        'DestinationMacAddress': 'destinationMacAddress',
+        'MinNearEndLoss': 'minNearEndLoss',
+        'NoReplyCount': 'noReplyCount',
+        'CurrentNearEndLossRatio': 'currentNearEndLossRatio',
+        'MinNearEndLossRatio': 'minNearEndLossRatio',
+        'AvgFarEndLoss': 'avgFarEndLoss',
+        'MinFarEndLoss': 'minFarEndLoss',
+        'MdLevel': 'mdLevel',
+        'MinFarEndLossRatio': 'minFarEndLossRatio',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,20 +33,20 @@ class L3Site(Base):
     __slots__ = ()
     _SDM_NAME = 'l3Site'
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'ExposeEachVrfAsTrafficEndpoint': 'exposeEachVrfAsTrafficEndpoint',
-        'IncludePmsiTunnelAttribute': 'includePmsiTunnelAttribute',
-        'IsLearnedInfoRefreshed': 'isLearnedInfoRefreshed',
-        'MplsAssignedUpstreamLabel': 'mplsAssignedUpstreamLabel',
-        'MulticastGroupAddressStep': 'multicastGroupAddressStep',
-        'RsvpP2mpId': 'rsvpP2mpId',
-        'RsvpTunnelId': 'rsvpTunnelId',
-        'SameRtAsL3SiteRt': 'sameRtAsL3SiteRt',
-        'SameTargetListAsL3SiteTargetList': 'sameTargetListAsL3SiteTargetList',
-        'TrafficGroupId': 'trafficGroupId',
-        'TunnelType': 'tunnelType',
-        'UseUpstreamAssignedLabel': 'useUpstreamAssignedLabel',
         'VrfCount': 'vrfCount',
+        'IsLearnedInfoRefreshed': 'isLearnedInfoRefreshed',
+        'TunnelType': 'tunnelType',
+        'RsvpTunnelId': 'rsvpTunnelId',
+        'RsvpP2mpId': 'rsvpP2mpId',
+        'Enabled': 'enabled',
+        'SameRtAsL3SiteRt': 'sameRtAsL3SiteRt',
+        'TrafficGroupId': 'trafficGroupId',
+        'UseUpstreamAssignedLabel': 'useUpstreamAssignedLabel',
+        'MulticastGroupAddressStep': 'multicastGroupAddressStep',
+        'IncludePmsiTunnelAttribute': 'includePmsiTunnelAttribute',
+        'SameTargetListAsL3SiteTargetList': 'sameTargetListAsL3SiteTargetList',
+        'MplsAssignedUpstreamLabel': 'mplsAssignedUpstreamLabel',
+        'ExposeEachVrfAsTrafficEndpoint': 'exposeEachVrfAsTrafficEndpoint',
     }
 
     def __init__(self, parent):
@@ -211,13 +211,13 @@ class L3Site(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vpnrouterange_f50fcdaab535cfead8bea05389986615.VpnRouteRange): An instance of the VpnRouteRange class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vpnrouterange_6deb488e2675cac9fb82f78c1169db40.VpnRouteRange): An instance of the VpnRouteRange class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vpnrouterange_f50fcdaab535cfead8bea05389986615 import VpnRouteRange
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vpnrouterange_6deb488e2675cac9fb82f78c1169db40 import VpnRouteRange
         return VpnRouteRange(self)
 
     @property

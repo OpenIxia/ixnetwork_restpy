@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,12 +32,12 @@ class Dhcp6LearnedInfo(Base):
     _SDM_NAME = 'dhcp6LearnedInfo'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
-        'TabbedDiscoveredAddresses': 'tabbedDiscoveredAddresses',
-        'TabbedDiscoveredGateways': 'tabbedDiscoveredGateways',
         'TabbedDiscoveredPrefix': 'tabbedDiscoveredPrefix',
+        'TabbedDiscoveredGateways': 'tabbedDiscoveredGateways',
         'TabbedDiscoveredPrefixLength': 'tabbedDiscoveredPrefixLength',
+        'DescriptiveName': 'descriptiveName',
+        'TabbedDiscoveredAddresses': 'tabbedDiscoveredAddresses',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

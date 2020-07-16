@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,16 +32,16 @@ class Ipv4(Base):
     _SDM_NAME = 'ipv4'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'GratarpTransmitCount': 'gratarpTransmitCount',
-        'GratarpTransmitInterval': 'gratarpTransmitInterval',
         'Name': 'name',
-        'PermanentMacForGateway': 'permanentMacForGateway',
-        'RarpTransmitCount': 'rarpTransmitCount',
         'RarpTransmitInterval': 'rarpTransmitInterval',
-        'ReSendArpOnLinkUp': 'reSendArpOnLinkUp',
-        'RowNames': 'rowNames',
+        'GratarpTransmitCount': 'gratarpTransmitCount',
         'SuppressArpForDuplicateGateway': 'suppressArpForDuplicateGateway',
+        'DescriptiveName': 'descriptiveName',
+        'ReSendArpOnLinkUp': 'reSendArpOnLinkUp',
+        'PermanentMacForGateway': 'permanentMacForGateway',
+        'RowNames': 'rowNames',
+        'RarpTransmitCount': 'rarpTransmitCount',
+        'GratarpTransmitInterval': 'gratarpTransmitInterval',
     }
 
     def __init__(self, parent):
@@ -66,13 +66,13 @@ class Ipv4(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0.StartRate): An instance of the StartRate class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0.StartRate): An instance of the StartRate class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import StartRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import StartRate
         return StartRate(self)._select()
 
     @property
@@ -80,13 +80,13 @@ class Ipv4(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04.StopRate): An instance of the StopRate class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04.StopRate): An instance of the StopRate class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import StopRate
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import StopRate
         return StopRate(self)._select()
 
     @property

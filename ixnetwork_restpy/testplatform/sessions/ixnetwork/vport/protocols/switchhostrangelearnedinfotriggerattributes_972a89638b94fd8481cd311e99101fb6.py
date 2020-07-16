@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,20 +31,20 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
     __slots__ = ()
     _SDM_NAME = 'switchHostRangeLearnedInfoTriggerAttributes'
     _SDM_ATT_MAP = {
-        'CustomPacket': 'customPacket',
-        'DestinationCustom': 'destinationCustom',
-        'DestinationCustomIpv4Address': 'destinationCustomIpv4Address',
-        'DestinationCustomIpv4AddressStep': 'destinationCustomIpv4AddressStep',
-        'DestinationCustomMacAddress': 'destinationCustomMacAddress',
         'DestinationCustomMacAddressStep': 'destinationCustomMacAddressStep',
+        'DestinationCustomIpv4Address': 'destinationCustomIpv4Address',
         'DestinationHostList': 'destinationHostList',
-        'MeshingType': 'meshingType',
-        'PacketType': 'packetType',
-        'PeriodIntervalInMs': 'periodIntervalInMs',
+        'DestinationCustomIpv4AddressStep': 'destinationCustomIpv4AddressStep',
+        'CustomPacket': 'customPacket',
+        'SourceHostList': 'sourceHostList',
         'Periodic': 'periodic',
         'PeriodicIterationNumber': 'periodicIterationNumber',
         'ResponseTimeout': 'responseTimeout',
-        'SourceHostList': 'sourceHostList',
+        'DestinationCustom': 'destinationCustom',
+        'DestinationCustomMacAddress': 'destinationCustomMacAddress',
+        'MeshingType': 'meshingType',
+        'PeriodIntervalInMs': 'periodIntervalInMs',
+        'PacketType': 'packetType',
     }
 
     def __init__(self, parent):

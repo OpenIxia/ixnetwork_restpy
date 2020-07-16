@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,27 +33,27 @@ class Dot1xGlobals(Base):
     __slots__ = ()
     _SDM_NAME = 'dot1xGlobals'
     _SDM_ATT_MAP = {
-        'AuthOnNoResponse': 'authOnNoResponse',
-        'AuthPeriod': 'authPeriod',
-        'Authenticator': 'authenticator',
+        'SuccessiveStart': 'successiveStart',
+        'HeldPeriod': 'heldPeriod',
+        'MaxOutstandingRequests': 'maxOutstandingRequests',
         'AuthenticatorMulticast': 'authenticatorMulticast',
         'DisableLogoff': 'disableLogoff',
-        'DutTestMode': 'dutTestMode',
-        'FragmentSize': 'fragmentSize',
-        'HeldPeriod': 'heldPeriod',
-        'LogoffMaxClientsPerSecond': 'logoffMaxClientsPerSecond',
-        'LogoffMaxOutstandingRequests': 'logoffMaxOutstandingRequests',
+        'ObjectId': 'objectId',
         'MacAuthPrefix': 'macAuthPrefix',
         'MaxClientsPerSecond': 'maxClientsPerSecond',
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
-        'MaxStart': 'maxStart',
-        'ObjectId': 'objectId',
-        'OnlyMulticast': 'onlyMulticast',
+        'AuthOnNoResponse': 'authOnNoResponse',
+        'FragmentSize': 'fragmentSize',
         'StartPeriod': 'startPeriod',
-        'StatsPeriod': 'statsPeriod',
-        'SuccessiveStart': 'successiveStart',
+        'LogoffMaxClientsPerSecond': 'logoffMaxClientsPerSecond',
+        'Authenticator': 'authenticator',
+        'MaxStart': 'maxStart',
         'WaitBeforeRun': 'waitBeforeRun',
+        'DutTestMode': 'dutTestMode',
+        'AuthPeriod': 'authPeriod',
         'WaitForCompletion': 'waitForCompletion',
+        'LogoffMaxOutstandingRequests': 'logoffMaxOutstandingRequests',
+        'OnlyMulticast': 'onlyMulticast',
+        'StatsPeriod': 'statsPeriod',
     }
 
     def __init__(self, parent):

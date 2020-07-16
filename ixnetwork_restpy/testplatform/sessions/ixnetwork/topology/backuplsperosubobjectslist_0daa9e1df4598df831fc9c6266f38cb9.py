@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,15 +32,15 @@ class BackupLspEROSubObjectsList(Base):
     __slots__ = ()
     _SDM_NAME = 'backupLspEROSubObjectsList'
     _SDM_ATT_MAP = {
-        'AsNumber': 'asNumber',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
+        'LooseFlag': 'looseFlag',
         'Ip': 'ip',
         'LocalIp': 'localIp',
-        'LooseFlag': 'looseFlag',
-        'Name': 'name',
-        'PrefixLength': 'prefixLength',
+        'AsNumber': 'asNumber',
+        'DescriptiveName': 'descriptiveName',
         'Type': 'type',
+        'PrefixLength': 'prefixLength',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

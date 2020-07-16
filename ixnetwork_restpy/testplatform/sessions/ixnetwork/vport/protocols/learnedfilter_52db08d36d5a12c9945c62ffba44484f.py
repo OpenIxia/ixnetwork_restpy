@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,28 +31,28 @@ class LearnedFilter(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedFilter'
     _SDM_ATT_MAP = {
-        'EnableFilter': 'enableFilter',
-        'EnableIpv4FecAddress': 'enableIpv4FecAddress',
-        'EnableIpv4FecMask': 'enableIpv4FecMask',
-        'EnableIpv4RootAddress': 'enableIpv4RootAddress',
-        'EnableLabel': 'enableLabel',
-        'EnableMartiniDescription': 'enableMartiniDescription',
-        'EnableMartiniGroupId': 'enableMartiniGroupId',
-        'EnableMartiniVcId': 'enableMartiniVcId',
-        'EnableMartiniVcType': 'enableMartiniVcType',
-        'EnablePeerAddress': 'enablePeerAddress',
-        'EnablePeerMask': 'enablePeerMask',
+        'PeerMask': 'peerMask',
+        'PeerAddress': 'peerAddress',
         'Ipv4FecAddress': 'ipv4FecAddress',
         'Ipv4FecMask': 'ipv4FecMask',
-        'Ipv4FecMaskMatch': 'ipv4FecMaskMatch',
+        'EnableMartiniDescription': 'enableMartiniDescription',
+        'EnableIpv4FecAddress': 'enableIpv4FecAddress',
+        'RootAddress': 'rootAddress',
+        'EnablePeerMask': 'enablePeerMask',
+        'MartiniVcType': 'martiniVcType',
         'Label': 'label',
-        'MartiniDescription': 'martiniDescription',
+        'EnableIpv4FecMask': 'enableIpv4FecMask',
+        'EnableIpv4RootAddress': 'enableIpv4RootAddress',
         'MartiniGroupId': 'martiniGroupId',
         'MartiniVcId': 'martiniVcId',
-        'MartiniVcType': 'martiniVcType',
-        'PeerAddress': 'peerAddress',
-        'PeerMask': 'peerMask',
-        'RootAddress': 'rootAddress',
+        'EnableMartiniGroupId': 'enableMartiniGroupId',
+        'MartiniDescription': 'martiniDescription',
+        'EnableLabel': 'enableLabel',
+        'EnableMartiniVcId': 'enableMartiniVcId',
+        'Ipv4FecMaskMatch': 'ipv4FecMaskMatch',
+        'EnablePeerAddress': 'enablePeerAddress',
+        'EnableMartiniVcType': 'enableMartiniVcType',
+        'EnableFilter': 'enableFilter',
     }
 
     def __init__(self, parent):

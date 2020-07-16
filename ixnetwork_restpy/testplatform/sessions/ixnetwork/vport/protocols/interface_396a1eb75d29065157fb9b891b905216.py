@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,30 +33,30 @@ class Interface(Base):
     __slots__ = ()
     _SDM_NAME = 'interface'
     _SDM_ATT_MAP = {
-        'AcceptUnconfiguredChannel': 'acceptUnconfiguredChannel',
-        'AllFlowsDelOnStart': 'allFlowsDelOnStart',
-        'AuxiliaryConnectionTimeout': 'auxiliaryConnectionTimeout',
-        'BadVersionErrorAction': 'badVersionErrorAction',
-        'EchoInterval': 'echoInterval',
-        'EchoMultiplier': 'echoMultiplier',
+        'ModeOfConnection': 'modeOfConnection',
         'EchoTimeout': 'echoTimeout',
+        'EnablePeriodicLldp': 'enablePeriodicLldp',
+        'EchoInterval': 'echoInterval',
+        'ProtocolInterfaces': 'protocolInterfaces',
+        'AcceptUnconfiguredChannel': 'acceptUnconfiguredChannel',
+        'InstallFlowForLldp': 'installFlowForLldp',
+        'AllFlowsDelOnStart': 'allFlowsDelOnStart',
+        'NonHelloMessageStartupAction': 'nonHelloMessageStartupAction',
+        'TcpPort': 'tcpPort',
         'EnableEchoTimeOut': 'enableEchoTimeOut',
         'EnableMultipleLogicalSwitch': 'enableMultipleLogicalSwitch',
-        'EnablePeriodicEcho': 'enablePeriodicEcho',
-        'EnablePeriodicLldp': 'enablePeriodicLldp',
-        'Enabled': 'enabled',
-        'FeatureRequestTimeout': 'featureRequestTimeout',
-        'FeatureRequestTimeoutAction': 'featureRequestTimeoutAction',
-        'InstallFlowForLldp': 'installFlowForLldp',
         'LldpDestinationMacAddress': 'lldpDestinationMacAddress',
-        'ModeOfConnection': 'modeOfConnection',
-        'NonHelloMessageStartupAction': 'nonHelloMessageStartupAction',
+        'EchoMultiplier': 'echoMultiplier',
+        'FeatureRequestTimeout': 'featureRequestTimeout',
+        'EnablePeriodicEcho': 'enablePeriodicEcho',
         'PeriodicLldpInterval': 'periodicLldpInterval',
-        'ProtocolInterfaces': 'protocolInterfaces',
-        'SendPortFeatureAtStartup': 'sendPortFeatureAtStartup',
-        'TcpPort': 'tcpPort',
+        'FeatureRequestTimeoutAction': 'featureRequestTimeoutAction',
+        'AuxiliaryConnectionTimeout': 'auxiliaryConnectionTimeout',
         'TimeOutOption': 'timeOutOption',
         'TypeOfConnection': 'typeOfConnection',
+        'Enabled': 'enabled',
+        'SendPortFeatureAtStartup': 'sendPortFeatureAtStartup',
+        'BadVersionErrorAction': 'badVersionErrorAction',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,15 +34,15 @@ class IgmpGroupRange(Base):
     _SDM_NAME = 'igmpGroupRange'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'FilterMode': 'filterMode',
-        'Increment': 'increment',
-        'IpAddress': 'ipAddress',
         'Name': 'name',
         'ObjectId': 'objectId',
         'SourceCount': 'sourceCount',
+        'FilterMode': 'filterMode',
         'SourceIncrement': 'sourceIncrement',
-        'SourceIpAddress': 'sourceIpAddress',
+        'Increment': 'increment',
         'Type': 'type',
+        'SourceIpAddress': 'sourceIpAddress',
+        'IpAddress': 'ipAddress',
     }
 
     def __init__(self, parent):

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,15 +31,15 @@ class CommandSnippetsData(Base):
     __slots__ = ()
     _SDM_NAME = 'commandSnippetsData'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'CommandSnippetDirectory': 'commandSnippetDirectory',
-        'CommandSnippetFile': 'commandSnippetFile',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
-        'PeriodicTransmissionInterval': 'periodicTransmissionInterval',
         'TransmissionBehaviour': 'transmissionBehaviour',
         'TransmissionCount': 'transmissionCount',
+        'Name': 'name',
+        'CommandSnippetFile': 'commandSnippetFile',
+        'PeriodicTransmissionInterval': 'periodicTransmissionInterval',
+        'DescriptiveName': 'descriptiveName',
+        'Active': 'active',
+        'CommandSnippetDirectory': 'commandSnippetDirectory',
     }
 
     def __init__(self, parent):
@@ -185,7 +185,7 @@ class CommandSnippetsData(Base):
 
         executeCommand(SessionIndices=list)
         -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         executeCommand(SessionIndices=string)
         -------------------------------------

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,18 +32,18 @@ class Dhcp4ServerSessions(Base):
     _SDM_NAME = 'dhcp4ServerSessions'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'DefaultLeaseTime': 'defaultLeaseTime',
-        'DescriptiveName': 'descriptiveName',
-        'EchoRelayInfo': 'echoRelayInfo',
-        'IpAddress': 'ipAddress',
-        'IpAddressIncrement': 'ipAddressIncrement',
-        'IpDns1': 'ipDns1',
-        'IpDns2': 'ipDns2',
-        'IpGateway': 'ipGateway',
-        'IpPrefix': 'ipPrefix',
-        'Name': 'name',
-        'PoolSize': 'poolSize',
         'SessionInfo': 'sessionInfo',
+        'IpDns2': 'ipDns2',
+        'Name': 'name',
+        'IpGateway': 'ipGateway',
+        'IpDns1': 'ipDns1',
+        'DefaultLeaseTime': 'defaultLeaseTime',
+        'PoolSize': 'poolSize',
+        'IpAddressIncrement': 'ipAddressIncrement',
+        'EchoRelayInfo': 'echoRelayInfo',
+        'DescriptiveName': 'descriptiveName',
+        'IpPrefix': 'ipPrefix',
+        'IpAddress': 'ipAddress',
     }
 
     def __init__(self, parent):

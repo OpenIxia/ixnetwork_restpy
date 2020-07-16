@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,18 +33,18 @@ class Interface(Base):
     __slots__ = ()
     _SDM_NAME = 'interface'
     _SDM_ATT_MAP = {
-        'AdvertisingMode': 'advertisingMode',
         'AtmVcDirection': 'atmVcDirection',
-        'Authentication': 'authentication',
+        'AdvertisingMode': 'advertisingMode',
         'BfdOperationMode': 'bfdOperationMode',
-        'DiscoveryMode': 'discoveryMode',
-        'EnableAtmSession': 'enableAtmSession',
-        'EnableBfdRegistration': 'enableBfdRegistration',
-        'Enabled': 'enabled',
-        'IsLdpLearnedInfoRefreshed': 'isLdpLearnedInfoRefreshed',
-        'LabelSpaceId': 'labelSpaceId',
-        'Md5Key': 'md5Key',
         'ProtocolInterface': 'protocolInterface',
+        'Enabled': 'enabled',
+        'EnableAtmSession': 'enableAtmSession',
+        'DiscoveryMode': 'discoveryMode',
+        'EnableBfdRegistration': 'enableBfdRegistration',
+        'Authentication': 'authentication',
+        'Md5Key': 'md5Key',
+        'LabelSpaceId': 'labelSpaceId',
+        'IsLdpLearnedInfoRefreshed': 'isLdpLearnedInfoRefreshed',
     }
 
     def __init__(self, parent):

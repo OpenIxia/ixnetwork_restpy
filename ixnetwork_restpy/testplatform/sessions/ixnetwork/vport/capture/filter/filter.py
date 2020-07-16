@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,15 +31,15 @@ class Filter(Base):
     __slots__ = ()
     _SDM_NAME = 'filter'
     _SDM_ATT_MAP = {
-        'CaptureFilterDA': 'captureFilterDA',
-        'CaptureFilterEnable': 'captureFilterEnable',
-        'CaptureFilterError': 'captureFilterError',
-        'CaptureFilterExpressionString': 'captureFilterExpressionString',
         'CaptureFilterFrameSizeEnable': 'captureFilterFrameSizeEnable',
         'CaptureFilterFrameSizeFrom': 'captureFilterFrameSizeFrom',
         'CaptureFilterFrameSizeTo': 'captureFilterFrameSizeTo',
-        'CaptureFilterPattern': 'captureFilterPattern',
+        'CaptureFilterDA': 'captureFilterDA',
+        'CaptureFilterExpressionString': 'captureFilterExpressionString',
+        'CaptureFilterEnable': 'captureFilterEnable',
+        'CaptureFilterError': 'captureFilterError',
         'CaptureFilterSA': 'captureFilterSA',
+        'CaptureFilterPattern': 'captureFilterPattern',
     }
 
     def __init__(self, parent):

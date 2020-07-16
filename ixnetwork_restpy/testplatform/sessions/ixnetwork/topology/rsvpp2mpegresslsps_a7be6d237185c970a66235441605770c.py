@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,30 +31,30 @@ class RsvpP2mpEgressLsps(Base):
     __slots__ = ()
     _SDM_NAME = 'rsvpP2mpEgressLsps'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
         'DestinationIpv4GroupAddress': 'destinationIpv4GroupAddress',
-        'EnableFixedLabelForReservations': 'enableFixedLabelForReservations',
-        'EndPointIpv6': 'endPointIpv6',
-        'IncludeConnectedIpOnTop': 'includeConnectedIpOnTop',
-        'IncludeLeafIpAtBottom': 'includeLeafIpAtBottom',
-        'LabelValue': 'labelValue',
+        'SendAsSrro': 'sendAsSrro',
         'LocalIp': 'localIp',
-        'Name': 'name',
-        'NumberOfRroSubObjects': 'numberOfRroSubObjects',
+        'EnableFixedLabelForReservations': 'enableFixedLabelForReservations',
         'P2mpIdAsNumber': 'p2mpIdAsNumber',
+        'SendAsRro': 'sendAsRro',
+        'State': 'state',
+        'TimeoutMultiplier': 'timeoutMultiplier',
         'P2mpIdIp': 'p2mpIdIp',
         'ReflectRro': 'reflectRro',
-        'RefreshInterval': 'refreshInterval',
+        'NumberOfRroSubObjects': 'numberOfRroSubObjects',
         'ReservationStyle': 'reservationStyle',
-        'SendAsRro': 'sendAsRro',
-        'SendAsSrro': 'sendAsSrro',
-        'SendReservationConfirmation': 'sendReservationConfirmation',
-        'State': 'state',
         'SubLspsDown': 'subLspsDown',
-        'TimeoutMultiplier': 'timeoutMultiplier',
+        'Active': 'active',
+        'Count': 'count',
+        'IncludeLeafIpAtBottom': 'includeLeafIpAtBottom',
+        'Name': 'name',
+        'IncludeConnectedIpOnTop': 'includeConnectedIpOnTop',
+        'LabelValue': 'labelValue',
+        'EndPointIpv6': 'endPointIpv6',
         'TypeP2mpId': 'typeP2mpId',
+        'DescriptiveName': 'descriptiveName',
+        'RefreshInterval': 'refreshInterval',
+        'SendReservationConfirmation': 'sendReservationConfirmation',
     }
 
     def __init__(self, parent):
@@ -393,7 +393,7 @@ class RsvpP2mpEgressLsps(Base):
 
         graftSubLsp(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         graftSubLsp(SessionIndices=string)
         ----------------------------------
@@ -423,7 +423,7 @@ class RsvpP2mpEgressLsps(Base):
 
         pruneSubLsp(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         pruneSubLsp(SessionIndices=string)
         ----------------------------------
@@ -453,7 +453,7 @@ class RsvpP2mpEgressLsps(Base):
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -483,7 +483,7 @@ class RsvpP2mpEgressLsps(Base):
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,20 +31,20 @@ class Ldp(Base):
     __slots__ = ()
     _SDM_NAME = 'ldp'
     _SDM_ATT_MAP = {
-        'EnableDiscardSelfAdvFecs': 'enableDiscardSelfAdvFecs',
         'EnableHelloJitter': 'enableHelloJitter',
-        'EnableLabelExchangeOverLsp': 'enableLabelExchangeOverLsp',
-        'EnableVpnLabelExchangeOverLsp': 'enableVpnLabelExchangeOverLsp',
-        'Enabled': 'enabled',
-        'HelloHoldTime': 'helloHoldTime',
+        'EnableDiscardSelfAdvFecs': 'enableDiscardSelfAdvFecs',
+        'TargetedHoldTime': 'targetedHoldTime',
         'HelloInterval': 'helloInterval',
         'KeepAliveHoldTime': 'keepAliveHoldTime',
         'KeepAliveInterval': 'keepAliveInterval',
+        'EnableLabelExchangeOverLsp': 'enableLabelExchangeOverLsp',
+        'Enabled': 'enabled',
         'P2mpCapabilityParam': 'p2mpCapabilityParam',
-        'P2mpFecType': 'p2mpFecType',
-        'RunningState': 'runningState',
+        'EnableVpnLabelExchangeOverLsp': 'enableVpnLabelExchangeOverLsp',
+        'HelloHoldTime': 'helloHoldTime',
         'TargetedHelloInterval': 'targetedHelloInterval',
-        'TargetedHoldTime': 'targetedHoldTime',
+        'RunningState': 'runningState',
+        'P2mpFecType': 'p2mpFecType',
         'UseTransportLabelsForMplsOam': 'useTransportLabelsForMplsOam',
     }
 

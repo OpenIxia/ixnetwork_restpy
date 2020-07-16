@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,12 +32,12 @@ class TrillMacUnicast(Base):
     __slots__ = ()
     _SDM_NAME = 'trillMacUnicast'
     _SDM_ATT_MAP = {
-        'Age': 'age',
-        'HostName': 'hostName',
         'LspId': 'lspId',
         'SequenceNumber': 'sequenceNumber',
-        'UnicastMacAddress': 'unicastMacAddress',
+        'Age': 'age',
+        'HostName': 'hostName',
         'VlanId': 'vlanId',
+        'UnicastMacAddress': 'unicastMacAddress',
     }
 
     def __init__(self, parent):

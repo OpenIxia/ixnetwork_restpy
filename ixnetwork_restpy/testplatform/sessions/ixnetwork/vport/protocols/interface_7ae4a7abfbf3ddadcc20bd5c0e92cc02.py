@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,62 +33,62 @@ class Interface(Base):
     __slots__ = ()
     _SDM_NAME = 'interface'
     _SDM_ATT_MAP = {
-        'AdvertiseNetworkRange': 'advertiseNetworkRange',
-        'AreaId': 'areaId',
-        'AuthenticationMethods': 'authenticationMethods',
-        'AuthenticationPassword': 'authenticationPassword',
-        'BBit': 'bBit',
-        'ConnectedToDut': 'connectedToDut',
-        'DeadInterval': 'deadInterval',
-        'EBit': 'eBit',
-        'EnableAdvertiseRouterLsaLoopback': 'enableAdvertiseRouterLsaLoopback',
-        'EnableBfdRegistration': 'enableBfdRegistration',
-        'EnableFastHello': 'enableFastHello',
-        'Enabled': 'enabled',
-        'EntryColumn': 'entryColumn',
-        'EntryRow': 'entryRow',
-        'HelloInterval': 'helloInterval',
-        'HelloMultiplier': 'helloMultiplier',
-        'InterfaceIndex': 'interfaceIndex',
-        'InterfaceIpAddress': 'interfaceIpAddress',
-        'InterfaceIpMaskAddress': 'interfaceIpMaskAddress',
-        'InterfaceType': 'interfaceType',
-        'Interfaces': 'interfaces',
-        'IsLearnedInfoRefreshed': 'isLearnedInfoRefreshed',
-        'LinkTypes': 'linkTypes',
-        'Md5AuthenticationKey': 'md5AuthenticationKey',
-        'Md5AuthenticationKeyId': 'md5AuthenticationKeyId',
-        'Metric': 'metric',
-        'Mtu': 'mtu',
-        'NeighborIpAddress': 'neighborIpAddress',
-        'NeighborRouterId': 'neighborRouterId',
         'NetworkRangeIp': 'networkRangeIp',
-        'NetworkRangeIpByMask': 'networkRangeIpByMask',
+        'NeighborIpAddress': 'neighborIpAddress',
+        'InterfaceIpAddress': 'interfaceIpAddress',
+        'TeResMaxBandwidth': 'teResMaxBandwidth',
+        'Metric': 'metric',
+        'TeMaxBandwidth': 'teMaxBandwidth',
+        'InterfaceIndex': 'interfaceIndex',
+        'ValidateReceivedMtuSize': 'validateReceivedMtuSize',
         'NetworkRangeIpIncrementBy': 'networkRangeIpIncrementBy',
-        'NetworkRangeIpMask': 'networkRangeIpMask',
-        'NetworkRangeLinkType': 'networkRangeLinkType',
-        'NetworkRangeRouterId': 'networkRangeRouterId',
-        'NetworkRangeRouterIdIncrementBy': 'networkRangeRouterIdIncrementBy',
-        'NetworkRangeTeEnable': 'networkRangeTeEnable',
-        'NetworkRangeTeMaxBandwidth': 'networkRangeTeMaxBandwidth',
-        'NetworkRangeTeMetric': 'networkRangeTeMetric',
-        'NetworkRangeTeResMaxBandwidth': 'networkRangeTeResMaxBandwidth',
-        'NetworkRangeTeUnreservedBwPriority': 'networkRangeTeUnreservedBwPriority',
-        'NetworkType': 'networkType',
-        'NoOfCols': 'noOfCols',
+        'InterfaceType': 'interfaceType',
         'NoOfRows': 'noOfRows',
-        'Options': 'options',
-        'Priority': 'priority',
-        'ProtocolInterface': 'protocolInterface',
+        'NetworkType': 'networkType',
+        'TeEnable': 'teEnable',
         'ShowExternal': 'showExternal',
+        'NeighborRouterId': 'neighborRouterId',
+        'HelloInterval': 'helloInterval',
+        'AdvertiseNetworkRange': 'advertiseNetworkRange',
+        'EntryColumn': 'entryColumn',
+        'HelloMultiplier': 'helloMultiplier',
+        'NetworkRangeRouterId': 'networkRangeRouterId',
+        'NetworkRangeTeUnreservedBwPriority': 'networkRangeTeUnreservedBwPriority',
+        'Priority': 'priority',
+        'NetworkRangeRouterIdIncrementBy': 'networkRangeRouterIdIncrementBy',
         'ShowNssa': 'showNssa',
         'TeAdminGroup': 'teAdminGroup',
-        'TeEnable': 'teEnable',
-        'TeMaxBandwidth': 'teMaxBandwidth',
+        'Md5AuthenticationKeyId': 'md5AuthenticationKeyId',
+        'NetworkRangeTeEnable': 'networkRangeTeEnable',
+        'EnableAdvertiseRouterLsaLoopback': 'enableAdvertiseRouterLsaLoopback',
+        'ProtocolInterface': 'protocolInterface',
+        'ConnectedToDut': 'connectedToDut',
+        'AuthenticationPassword': 'authenticationPassword',
+        'AreaId': 'areaId',
+        'InterfaceIpMaskAddress': 'interfaceIpMaskAddress',
+        'NetworkRangeIpByMask': 'networkRangeIpByMask',
+        'Interfaces': 'interfaces',
+        'AuthenticationMethods': 'authenticationMethods',
+        'LinkTypes': 'linkTypes',
         'TeMetricLevel': 'teMetricLevel',
-        'TeResMaxBandwidth': 'teResMaxBandwidth',
+        'NoOfCols': 'noOfCols',
+        'NetworkRangeIpMask': 'networkRangeIpMask',
+        'NetworkRangeTeResMaxBandwidth': 'networkRangeTeResMaxBandwidth',
+        'Md5AuthenticationKey': 'md5AuthenticationKey',
+        'NetworkRangeTeMaxBandwidth': 'networkRangeTeMaxBandwidth',
+        'NetworkRangeLinkType': 'networkRangeLinkType',
+        'EnableFastHello': 'enableFastHello',
+        'IsLearnedInfoRefreshed': 'isLearnedInfoRefreshed',
+        'EntryRow': 'entryRow',
         'TeUnreservedBwPriority': 'teUnreservedBwPriority',
-        'ValidateReceivedMtuSize': 'validateReceivedMtuSize',
+        'Enabled': 'enabled',
+        'EnableBfdRegistration': 'enableBfdRegistration',
+        'Mtu': 'mtu',
+        'DeadInterval': 'deadInterval',
+        'NetworkRangeTeMetric': 'networkRangeTeMetric',
+        'EBit': 'eBit',
+        'Options': 'options',
+        'BBit': 'bBit',
     }
 
     def __init__(self, parent):
@@ -736,7 +736,7 @@ class Interface(Base):
         """
         Returns
         -------
-        - number: The maximum bandwidth that can possibly be used on this link in this direction.
+        - str: The maximum bandwidth that can possibly be used on this link in this direction.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TeMaxBandwidth'])
     @TeMaxBandwidth.setter
@@ -760,7 +760,7 @@ class Interface(Base):
         """
         Returns
         -------
-        - number: If enableTrafficEngineering is 1, then this indicates the maximum bandwidth, in bytes per second, that can be reserved on the link between this interface and its neighbors in the outbound direction. (default = 0.0)
+        - str: If enableTrafficEngineering is 1, then this indicates the maximum bandwidth, in bytes per second, that can be reserved on the link between this interface and its neighbors in the outbound direction. (default = 0.0)
         """
         return self._get_attribute(self._SDM_ATT_MAP['TeResMaxBandwidth'])
     @TeResMaxBandwidth.setter
@@ -772,7 +772,7 @@ class Interface(Base):
         """
         Returns
         -------
-        - dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:number,arg8:number): The amount of bandwidth not yet reserved at each of the eight priority levels.
+        - dict(arg1:str,arg2:str,arg3:str,arg4:str,arg5:str,arg6:str,arg7:str,arg8:str): The amount of bandwidth not yet reserved at each of the eight priority levels.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TeUnreservedBwPriority'])
     @TeUnreservedBwPriority.setter
@@ -846,10 +846,10 @@ class Interface(Base):
         - ShowNssa (bool): Enables the use of Not So Stubby Area routes on this interface.
         - TeAdminGroup (str): Assignment of traffic engineering administrative group numbers to the interface.
         - TeEnable (bool): Enables the generation of the Traffic Engineering opaque LSA with the remainder of the options in this class.
-        - TeMaxBandwidth (number): The maximum bandwidth that can possibly be used on this link in this direction.
+        - TeMaxBandwidth (str): The maximum bandwidth that can possibly be used on this link in this direction.
         - TeMetricLevel (number): The user-assigned link metric for traffic engineering.
-        - TeResMaxBandwidth (number): If enableTrafficEngineering is 1, then this indicates the maximum bandwidth, in bytes per second, that can be reserved on the link between this interface and its neighbors in the outbound direction. (default = 0.0)
-        - TeUnreservedBwPriority (dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:number,arg8:number)): The amount of bandwidth not yet reserved at each of the eight priority levels.
+        - TeResMaxBandwidth (str): If enableTrafficEngineering is 1, then this indicates the maximum bandwidth, in bytes per second, that can be reserved on the link between this interface and its neighbors in the outbound direction. (default = 0.0)
+        - TeUnreservedBwPriority (dict(arg1:str,arg2:str,arg3:str,arg4:str,arg5:str,arg6:str,arg7:str,arg8:str)): The amount of bandwidth not yet reserved at each of the eight priority levels.
         - ValidateReceivedMtuSize (bool): If enabled (the default setting), the MTU will be verified during the Database (DB) exchange. If disabled, the advertised MTU size is set to 0, and the received MTU size is ignored during the DB exchange. NOTE: This option is only available for OSPFv2 interfaces that are directly connected to the DUT.
 
         Raises
@@ -913,10 +913,10 @@ class Interface(Base):
         - ShowNssa (bool): Enables the use of Not So Stubby Area routes on this interface.
         - TeAdminGroup (str): Assignment of traffic engineering administrative group numbers to the interface.
         - TeEnable (bool): Enables the generation of the Traffic Engineering opaque LSA with the remainder of the options in this class.
-        - TeMaxBandwidth (number): The maximum bandwidth that can possibly be used on this link in this direction.
+        - TeMaxBandwidth (str): The maximum bandwidth that can possibly be used on this link in this direction.
         - TeMetricLevel (number): The user-assigned link metric for traffic engineering.
-        - TeResMaxBandwidth (number): If enableTrafficEngineering is 1, then this indicates the maximum bandwidth, in bytes per second, that can be reserved on the link between this interface and its neighbors in the outbound direction. (default = 0.0)
-        - TeUnreservedBwPriority (dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:number,arg8:number)): The amount of bandwidth not yet reserved at each of the eight priority levels.
+        - TeResMaxBandwidth (str): If enableTrafficEngineering is 1, then this indicates the maximum bandwidth, in bytes per second, that can be reserved on the link between this interface and its neighbors in the outbound direction. (default = 0.0)
+        - TeUnreservedBwPriority (dict(arg1:str,arg2:str,arg3:str,arg4:str,arg5:str,arg6:str,arg7:str,arg8:str)): The amount of bandwidth not yet reserved at each of the eight priority levels.
         - ValidateReceivedMtuSize (bool): If enabled (the default setting), the MTU will be verified during the Database (DB) exchange. If disabled, the advertised MTU size is set to 0, and the received MTU size is ignored during the DB exchange. NOTE: This option is only available for OSPFv2 interfaces that are directly connected to the DUT.
 
         Returns
@@ -999,10 +999,10 @@ class Interface(Base):
         - ShowNssa (bool): Enables the use of Not So Stubby Area routes on this interface.
         - TeAdminGroup (str): Assignment of traffic engineering administrative group numbers to the interface.
         - TeEnable (bool): Enables the generation of the Traffic Engineering opaque LSA with the remainder of the options in this class.
-        - TeMaxBandwidth (number): The maximum bandwidth that can possibly be used on this link in this direction.
+        - TeMaxBandwidth (str): The maximum bandwidth that can possibly be used on this link in this direction.
         - TeMetricLevel (number): The user-assigned link metric for traffic engineering.
-        - TeResMaxBandwidth (number): If enableTrafficEngineering is 1, then this indicates the maximum bandwidth, in bytes per second, that can be reserved on the link between this interface and its neighbors in the outbound direction. (default = 0.0)
-        - TeUnreservedBwPriority (dict(arg1:number,arg2:number,arg3:number,arg4:number,arg5:number,arg6:number,arg7:number,arg8:number)): The amount of bandwidth not yet reserved at each of the eight priority levels.
+        - TeResMaxBandwidth (str): If enableTrafficEngineering is 1, then this indicates the maximum bandwidth, in bytes per second, that can be reserved on the link between this interface and its neighbors in the outbound direction. (default = 0.0)
+        - TeUnreservedBwPriority (dict(arg1:str,arg2:str,arg3:str,arg4:str,arg5:str,arg6:str,arg7:str,arg8:str)): The amount of bandwidth not yet reserved at each of the eight priority levels.
         - ValidateReceivedMtuSize (bool): If enabled (the default setting), the MTU will be verified during the Database (DB) exchange. If disabled, the advertised MTU size is set to 0, and the received MTU size is ignored during the DB exchange. NOTE: This option is only available for OSPFv2 interfaces that are directly connected to the DUT.
 
         Returns

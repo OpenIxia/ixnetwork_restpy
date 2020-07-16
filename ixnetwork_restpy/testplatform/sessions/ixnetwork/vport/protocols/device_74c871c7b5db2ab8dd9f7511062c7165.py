@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,15 +33,15 @@ class Device(Base):
     __slots__ = ()
     _SDM_NAME = 'device'
     _SDM_ATT_MAP = {
+        'Description': 'description',
+        'PrivateFile': 'privateFile',
+        'Enabled': 'enabled',
+        'EnableVersion100': 'enableVersion100',
+        'Version': 'version',
+        'DeviceRole': 'deviceRole',
+        'EnableVersion131': 'enableVersion131',
         'CaCertificateFile': 'caCertificateFile',
         'CertificateFile': 'certificateFile',
-        'Description': 'description',
-        'DeviceRole': 'deviceRole',
-        'EnableVersion100': 'enableVersion100',
-        'EnableVersion131': 'enableVersion131',
-        'Enabled': 'enabled',
-        'PrivateFile': 'privateFile',
-        'Version': 'version',
     }
 
     def __init__(self, parent):

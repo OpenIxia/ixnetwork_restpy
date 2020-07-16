@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -32,22 +32,22 @@ class Ospfv3PseudoRouter(Base):
     __slots__ = ()
     _SDM_NAME = 'ospfv3PseudoRouter'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'Algorithm': 'algorithm',
-        'BBit': 'bBit',
-        'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
         'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EBit': 'eBit',
-        'EFlag': 'eFlag',
-        'EnableSrMpls': 'enableSrMpls',
-        'LFlag': 'lFlag',
+        'VFlag': 'vFlag',
         'MFlag': 'mFlag',
+        'Algorithm': 'algorithm',
+        'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
+        'EFlag': 'eFlag',
         'Name': 'name',
+        'SrgbRangeCount': 'srgbRangeCount',
+        'DescriptiveName': 'descriptiveName',
         'NpFlag': 'npFlag',
         'SidIndexLabel': 'sidIndexLabel',
-        'SrgbRangeCount': 'srgbRangeCount',
-        'VFlag': 'vFlag',
+        'Active': 'active',
+        'EBit': 'eBit',
+        'LFlag': 'lFlag',
+        'EnableSrMpls': 'enableSrMpls',
+        'BBit': 'bBit',
     }
 
     def __init__(self, parent):
@@ -406,6 +406,19 @@ class Ospfv3PseudoRouter(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
+
     def Start(self):
         """Executes the start operation on the server.
 
@@ -428,7 +441,7 @@ class Ospfv3PseudoRouter(Base):
 
         startSimulatedRouter(SessionIndices=list)
         -----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         startSimulatedRouter(SessionIndices=string)
         -------------------------------------------
@@ -471,7 +484,7 @@ class Ospfv3PseudoRouter(Base):
 
         stopSimulatedRouter(SessionIndices=list)
         ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stopSimulatedRouter(SessionIndices=string)
         ------------------------------------------

@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -34,17 +34,17 @@ class L2MacVlanRange(Base):
         'Count': 'count',
         'EnableRepeatMac': 'enableRepeatMac',
         'EnableSameVlan': 'enableSameVlan',
-        'EnableVlan': 'enableVlan',
-        'Enabled': 'enabled',
-        'FirstVlanId': 'firstVlanId',
-        'IncrementVlanMode': 'incrementVlanMode',
-        'IncremetVlanMode': 'incremetVlanMode',
-        'SkipVlanIdZero': 'skipVlanIdZero',
-        'StartMac': 'startMac',
         'Tpid': 'tpid',
+        'IncrementVlanMode': 'incrementVlanMode',
+        'VlanPriority': 'vlanPriority',
+        'Enabled': 'enabled',
+        'SkipVlanIdZero': 'skipVlanIdZero',
         'VlanCount': 'vlanCount',
         'VlanId': 'vlanId',
-        'VlanPriority': 'vlanPriority',
+        'IncremetVlanMode': 'incremetVlanMode',
+        'EnableVlan': 'enableVlan',
+        'FirstVlanId': 'firstVlanId',
+        'StartMac': 'startMac',
     }
 
     def __init__(self, parent):

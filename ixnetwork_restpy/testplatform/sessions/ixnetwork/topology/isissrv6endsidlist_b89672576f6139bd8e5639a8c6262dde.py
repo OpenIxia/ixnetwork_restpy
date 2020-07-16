@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,22 +31,22 @@ class IsisSRv6EndSIDList(Base):
     __slots__ = ()
     _SDM_NAME = 'isisSRv6EndSIDList'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'AdvertiseCustomSubTLV': 'advertiseCustomSubTLV',
-        'ArgumentLength': 'argumentLength',
         'Count': 'count',
+        'FunctionLength': 'functionLength',
+        'Name': 'name',
+        'LocatorName': 'locatorName',
+        'IncludeSRv6SIDStructureSubSubTlv': 'includeSRv6SIDStructureSubSubTlv',
+        'Sid': 'sid',
         'CustomSubTlv': 'customSubTlv',
+        'LocatorNodeLength': 'locatorNodeLength',
+        'AdvertiseCustomSubTLV': 'advertiseCustomSubTLV',
         'DescriptiveName': 'descriptiveName',
         'EndPointFunction': 'endPointFunction',
+        'Active': 'active',
         'Flags': 'flags',
-        'FunctionLength': 'functionLength',
-        'IncludeSRv6SIDStructureSubSubTlv': 'includeSRv6SIDStructureSubSubTlv',
-        'LocatorBlockLength': 'locatorBlockLength',
-        'LocatorName': 'locatorName',
-        'LocatorNodeLength': 'locatorNodeLength',
-        'Name': 'name',
-        'Sid': 'sid',
         'SidName': 'sidName',
+        'ArgumentLength': 'argumentLength',
+        'LocatorBlockLength': 'locatorBlockLength',
     }
 
     def __init__(self, parent):

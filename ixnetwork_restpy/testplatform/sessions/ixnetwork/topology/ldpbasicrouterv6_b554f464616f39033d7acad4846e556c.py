@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,37 +33,37 @@ class LdpBasicRouterV6(Base):
     __slots__ = ()
     _SDM_NAME = 'ldpBasicRouterV6'
     _SDM_ATT_MAP = {
-        'Active': 'active',
-        'ConnectedVia': 'connectedVia',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'EnableBfdMplsLearnedLsp': 'enableBfdMplsLearnedLsp',
-        'EnableFec128Advertisement': 'enableFec128Advertisement',
-        'EnableFec129Advertisement': 'enableFec129Advertisement',
-        'EnableGracefulRestart': 'enableGracefulRestart',
-        'EnableIpv4Advertisement': 'enableIpv4Advertisement',
-        'EnableIpv6Advertisement': 'enableIpv6Advertisement',
-        'EnableLspPingLearnedLsp': 'enableLspPingLearnedLsp',
-        'EnableP2MPCapability': 'enableP2MPCapability',
-        'Errors': 'errors',
-        'IgnoreStateAdvertisementControlCapability': 'ignoreStateAdvertisementControlCapability',
-        'IncludeSac': 'includeSac',
         'KeepAliveHoldTime': 'keepAliveHoldTime',
+        'IgnoreStateAdvertisementControlCapability': 'ignoreStateAdvertisementControlCapability',
+        'EnableIpv6Advertisement': 'enableIpv6Advertisement',
+        'EnableGracefulRestart': 'enableGracefulRestart',
+        'RootRangesCountV6': 'rootRangesCountV6',
+        'ConnectedVia': 'connectedVia',
+        'ReconnectTime': 'reconnectTime',
+        'SessionStatus': 'sessionStatus',
+        'Errors': 'errors',
+        'EnableBfdMplsLearnedLsp': 'enableBfdMplsLearnedLsp',
+        'EnableIpv4Advertisement': 'enableIpv4Advertisement',
+        'SessionPreference': 'sessionPreference',
+        'EnableFec128Advertisement': 'enableFec128Advertisement',
+        'RecoveryTime': 'recoveryTime',
+        'EnableLspPingLearnedLsp': 'enableLspPingLearnedLsp',
+        'Status': 'status',
+        'StackedLayers': 'stackedLayers',
+        'EnableFec129Advertisement': 'enableFec129Advertisement',
+        'IncludeSac': 'includeSac',
+        'Multiplier': 'multiplier',
+        'Active': 'active',
+        'LocalRouterID': 'localRouterID',
+        'EnableP2MPCapability': 'enableP2MPCapability',
+        'Count': 'count',
+        'Name': 'name',
         'KeepAliveInterval': 'keepAliveInterval',
         'LdpVersion': 'ldpVersion',
+        'DescriptiveName': 'descriptiveName',
         'LeafRangesCountV6': 'leafRangesCountV6',
-        'LocalRouterID': 'localRouterID',
-        'Multiplier': 'multiplier',
-        'Name': 'name',
-        'ReconnectTime': 'reconnectTime',
-        'RecoveryTime': 'recoveryTime',
-        'RootRangesCountV6': 'rootRangesCountV6',
         'SessionInfo': 'sessionInfo',
-        'SessionPreference': 'sessionPreference',
-        'SessionStatus': 'sessionStatus',
-        'StackedLayers': 'stackedLayers',
         'StateCounts': 'stateCounts',
-        'Status': 'status',
     }
 
     def __init__(self, parent):
@@ -626,6 +626,31 @@ class LdpBasicRouterV6(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self, *args, **kwargs):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(SessionIndices=list)
+        --------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        abort(SessionIndices=string)
+        ----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
     def ClearAllLearnedInfo(self, *args, **kwargs):
         """Executes the clearAllLearnedInfo operation on the server.
 
@@ -635,7 +660,7 @@ class LdpBasicRouterV6(Base):
 
         clearAllLearnedInfo(SessionIndices=list)
         ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         clearAllLearnedInfo(SessionIndices=string)
         ------------------------------------------
@@ -680,7 +705,7 @@ class LdpBasicRouterV6(Base):
 
         getAllLearnedInfo(SessionIndices=list)
         --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         getAllLearnedInfo(SessionIndices=string)
         ----------------------------------------
@@ -710,7 +735,7 @@ class LdpBasicRouterV6(Base):
 
         getFEC128LearnedInfo(SessionIndices=list)
         -----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         getFEC128LearnedInfo(SessionIndices=string)
         -------------------------------------------
@@ -740,7 +765,7 @@ class LdpBasicRouterV6(Base):
 
         getFEC129LearnedInfo(SessionIndices=list)
         -----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         getFEC129LearnedInfo(SessionIndices=string)
         -------------------------------------------
@@ -770,7 +795,7 @@ class LdpBasicRouterV6(Base):
 
         getIPv4FECLearnedInfo(SessionIndices=list)
         ------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         getIPv4FECLearnedInfo(SessionIndices=string)
         --------------------------------------------
@@ -800,7 +825,7 @@ class LdpBasicRouterV6(Base):
 
         getIPv6FECLearnedInfo(SessionIndices=list)
         ------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         getIPv6FECLearnedInfo(SessionIndices=string)
         --------------------------------------------
@@ -830,7 +855,7 @@ class LdpBasicRouterV6(Base):
 
         getP2MPFECLearnedInfo(SessionIndices=list)
         ------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         getP2MPFECLearnedInfo(SessionIndices=string)
         --------------------------------------------
@@ -865,7 +890,7 @@ class LdpBasicRouterV6(Base):
         gracefullyRestart(Delay=number, SessionIndices=list)
         ----------------------------------------------------
         - Delay (number): This parameter requires a delay of type kInteger
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         gracefullyRestart(SessionIndices=string, Delay=number)
         ------------------------------------------------------
@@ -897,7 +922,7 @@ class LdpBasicRouterV6(Base):
 
         restartDown(SessionIndices=list)
         --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         restartDown(SessionIndices=string)
         ----------------------------------
@@ -922,7 +947,7 @@ class LdpBasicRouterV6(Base):
 
         resumeKeepAlive(SessionIndices=list)
         ------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         resumeKeepAlive(SessionIndices=string)
         --------------------------------------
@@ -961,13 +986,13 @@ class LdpBasicRouterV6(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start LDP Router
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         start(SessionIndices=list)
         --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         start(SessionIndices=string)
         ----------------------------
@@ -986,13 +1011,13 @@ class LdpBasicRouterV6(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop LDP Router
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         stop(SessionIndices=list)
         -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stop(SessionIndices=string)
         ---------------------------
@@ -1017,7 +1042,7 @@ class LdpBasicRouterV6(Base):
 
         stopKeepAlive(SessionIndices=list)
         ----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         stopKeepAlive(SessionIndices=string)
         ------------------------------------

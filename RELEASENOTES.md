@@ -1,5 +1,11 @@
 # Release Notes
 
+### Jul 2020
+* 1.0.54
+  * inclusion of uhd_restpy package in distribution
+  * PortMapAssistant supports user defined timeouts on the .Connect method
+  * StatViewAssistant bug fixes
+
 ### May 2020
 * 1.0.53
   * fixed translation of python class property names to rest api property names

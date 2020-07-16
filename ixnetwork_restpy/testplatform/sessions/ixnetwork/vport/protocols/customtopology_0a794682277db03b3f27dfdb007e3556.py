@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,13 +33,13 @@ class CustomTopology(Base):
     __slots__ = ()
     _SDM_NAME = 'customTopology'
     _SDM_ATT_MAP = {
+        'StartSysId': 'startSysId',
         'CapRouterId': 'capRouterId',
-        'EnableHostname': 'enableHostname',
         'Enabled': 'enabled',
         'HostNamePrefix': 'hostNamePrefix',
-        'InterfaceMetric': 'interfaceMetric',
-        'StartSysId': 'startSysId',
         'SysIdInc': 'sysIdInc',
+        'EnableHostname': 'enableHostname',
+        'InterfaceMetric': 'interfaceMetric',
     }
 
     def __init__(self, parent):

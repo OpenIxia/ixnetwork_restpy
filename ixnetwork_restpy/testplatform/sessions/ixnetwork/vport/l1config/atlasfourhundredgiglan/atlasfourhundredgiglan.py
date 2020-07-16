@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,38 +31,38 @@ class AtlasFourHundredGigLan(Base):
     __slots__ = ()
     _SDM_NAME = 'atlasFourHundredGigLan'
     _SDM_ATT_MAP = {
-        'AutoInstrumentation': 'autoInstrumentation',
-        'BadBlocksNumber': 'badBlocksNumber',
+        'RsFecRequest': 'rsFecRequest',
+        'RsFecForceOn': 'rsFecForceOn',
+        'Ppm': 'ppm',
+        'LoopbackMode': 'loopbackMode',
+        'ForceDisableFEC': 'forceDisableFEC',
+        'FirecodeAdvertise': 'firecodeAdvertise',
+        'FirecodeForceOn': 'firecodeForceOn',
+        'UseANResults': 'useANResults',
+        'TypeAOrderedSets': 'typeAOrderedSets',
         'EnableAutoNegotiation': 'enableAutoNegotiation',
         'EnablePPM': 'enablePPM',
-        'EnableRsFec': 'enableRsFec',
-        'EnableRsFecStats': 'enableRsFecStats',
-        'EnabledFlowControl': 'enabledFlowControl',
-        'FirecodeAdvertise': 'firecodeAdvertise',
-        'FirecodeForceOff': 'firecodeForceOff',
-        'FirecodeForceOn': 'firecodeForceOn',
-        'FirecodeRequest': 'firecodeRequest',
-        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
-        'ForceDisableFEC': 'forceDisableFEC',
-        'GoodBlocksNumber': 'goodBlocksNumber',
-        'IeeeL1Defaults': 'ieeeL1Defaults',
-        'LaserOn': 'laserOn',
-        'LinkTraining': 'linkTraining',
-        'LoopContinuously': 'loopContinuously',
-        'LoopCountNumber': 'loopCountNumber',
         'Loopback': 'loopback',
-        'LoopbackMode': 'loopbackMode',
-        'Ppm': 'ppm',
-        'RsFecAdvertise': 'rsFecAdvertise',
-        'RsFecForceOn': 'rsFecForceOn',
-        'RsFecRequest': 'rsFecRequest',
-        'SendSetsMode': 'sendSetsMode',
         'Speed': 'speed',
+        'RsFecAdvertise': 'rsFecAdvertise',
+        'EnableRsFecStats': 'enableRsFecStats',
+        'SendSetsMode': 'sendSetsMode',
+        'IeeeL1Defaults': 'ieeeL1Defaults',
+        'GoodBlocksNumber': 'goodBlocksNumber',
+        'LoopCountNumber': 'loopCountNumber',
+        'EnabledFlowControl': 'enabledFlowControl',
         'StartErrorInsertion': 'startErrorInsertion',
-        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
-        'TypeAOrderedSets': 'typeAOrderedSets',
+        'LinkTraining': 'linkTraining',
+        'AutoInstrumentation': 'autoInstrumentation',
+        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
         'TypeBOrderedSets': 'typeBOrderedSets',
-        'UseANResults': 'useANResults',
+        'BadBlocksNumber': 'badBlocksNumber',
+        'FirecodeForceOff': 'firecodeForceOff',
+        'LaserOn': 'laserOn',
+        'FirecodeRequest': 'firecodeRequest',
+        'LoopContinuously': 'loopContinuously',
+        'EnableRsFec': 'enableRsFec',
+        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
     }
 
     def __init__(self, parent):

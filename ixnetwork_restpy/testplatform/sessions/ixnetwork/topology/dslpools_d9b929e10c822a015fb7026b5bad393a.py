@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -33,34 +33,34 @@ class DslPools(Base):
     __slots__ = ()
     _SDM_NAME = 'dslPools'
     _SDM_ATT_MAP = {
-        'ActualBandwidthDownstream': 'actualBandwidthDownstream',
-        'ActualBandwidthUpstream': 'actualBandwidthUpstream',
-        'ActualNetDataRateDownstream': 'actualNetDataRateDownstream',
-        'ActualNetDataRateDownstreamTolerance': 'actualNetDataRateDownstreamTolerance',
-        'ActualNetDataRateUpstream': 'actualNetDataRateUpstream',
-        'ActualNetDataRateUpstreamTolerance': 'actualNetDataRateUpstreamTolerance',
-        'CircuitId': 'circuitId',
-        'Count': 'count',
-        'DescriptiveName': 'descriptiveName',
-        'DslLineState': 'dslLineState',
-        'DslType': 'dslType',
-        'EnableActualNetDataRateDownstream': 'enableActualNetDataRateDownstream',
-        'EnableActualNetDataRateUpstream': 'enableActualNetDataRateUpstream',
-        'EnableDslType': 'enableDslType',
-        'EnablePonType': 'enablePonType',
-        'EnableRemoteId': 'enableRemoteId',
-        'FlappingMode': 'flappingMode',
-        'InnerVlanId': 'innerVlanId',
         'LineDownInterval': 'lineDownInterval',
+        'DslLineState': 'dslLineState',
+        'ActualNetDataRateUpstream': 'actualNetDataRateUpstream',
+        'EnableDslType': 'enableDslType',
         'LineUpInterval': 'lineUpInterval',
-        'Name': 'name',
-        'OuterVlanId': 'outerVlanId',
-        'PonType': 'ponType',
-        'PortDownSent': 'portDownSent',
+        'ActualBandwidthDownstream': 'actualBandwidthDownstream',
         'PortUpSent': 'portUpSent',
-        'RemoteId': 'remoteId',
+        'PortDownSent': 'portDownSent',
+        'EnablePonType': 'enablePonType',
+        'EnableActualNetDataRateDownstream': 'enableActualNetDataRateDownstream',
+        'ActualBandwidthUpstream': 'actualBandwidthUpstream',
+        'PonType': 'ponType',
+        'OuterVlanId': 'outerVlanId',
         'TechType': 'techType',
+        'ActualNetDataRateDownstreamTolerance': 'actualNetDataRateDownstreamTolerance',
+        'Count': 'count',
+        'RemoteId': 'remoteId',
+        'CircuitId': 'circuitId',
+        'Name': 'name',
+        'EnableRemoteId': 'enableRemoteId',
         'VlanAllocationModel': 'vlanAllocationModel',
+        'InnerVlanId': 'innerVlanId',
+        'DescriptiveName': 'descriptiveName',
+        'DslType': 'dslType',
+        'ActualNetDataRateDownstream': 'actualNetDataRateDownstream',
+        'ActualNetDataRateUpstreamTolerance': 'actualNetDataRateUpstreamTolerance',
+        'EnableActualNetDataRateUpstream': 'enableActualNetDataRateUpstream',
+        'FlappingMode': 'flappingMode',
     }
 
     def __init__(self, parent):
@@ -497,6 +497,19 @@ class DslPools(Base):
         """
         return self._get_ngpf_device_ids(locals())
 
+    def Abort(self):
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        return self._execute('abort', payload=payload, response_object=None)
+
     def SendPortDown(self, *args, **kwargs):
         """Executes the sendPortDown operation on the server.
 
@@ -506,7 +519,7 @@ class DslPools(Base):
 
         sendPortDown(SessionIndices=list)
         ---------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendPortDown(SessionIndices=string)
         -----------------------------------
@@ -531,7 +544,7 @@ class DslPools(Base):
 
         sendPortUp(SessionIndices=list)
         -------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 0 1 2 3
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
 
         sendPortUp(SessionIndices=string)
         ---------------------------------

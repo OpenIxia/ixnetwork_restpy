@@ -1,6 +1,6 @@
 # MIT LICENSE
 #
-# Copyright 1997 - 2019 by IXIA Keysight
+# Copyright 1997 - 2020 by IXIA Keysight
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"),
@@ -31,16 +31,16 @@ class IxNetCodeOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'ixNetCodeOptions'
     _SDM_ATT_MAP = {
-        'IncludeAvailableHardware': 'includeAvailableHardware',
         'IncludeConnect': 'includeConnect',
         'IncludeDefaultValues': 'includeDefaultValues',
         'IncludeQuickTest': 'includeQuickTest',
-        'IncludeStatistic': 'includeStatistic',
-        'IncludeTAPSettings': 'includeTAPSettings',
-        'IncludeTestComposer': 'includeTestComposer',
         'IncludeTraffic': 'includeTraffic',
-        'IncludeTrafficFlowGroup': 'includeTrafficFlowGroup',
+        'IncludeStatistic': 'includeStatistic',
+        'IncludeTestComposer': 'includeTestComposer',
+        'IncludeAvailableHardware': 'includeAvailableHardware',
         'IncludeTrafficStack': 'includeTrafficStack',
+        'IncludeTrafficFlowGroup': 'includeTrafficFlowGroup',
+        'IncludeTAPSettings': 'includeTAPSettings',
     }
 
     def __init__(self, parent):
