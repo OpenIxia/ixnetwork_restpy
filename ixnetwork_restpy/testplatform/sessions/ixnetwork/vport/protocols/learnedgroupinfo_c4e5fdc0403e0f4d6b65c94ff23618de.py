@@ -32,11 +32,11 @@ class LearnedGroupInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedGroupInfo'
     _SDM_ATT_MAP = {
-        'GroupTimer': 'groupTimer',
-        'FilterMode': 'filterMode',
-        'CompatibilityTimer': 'compatibilityTimer',
         'CompatibilityMode': 'compatibilityMode',
+        'CompatibilityTimer': 'compatibilityTimer',
+        'FilterMode': 'filterMode',
         'GroupAddress': 'groupAddress',
+        'GroupTimer': 'groupTimer',
         'SourceAddress': 'sourceAddress',
         'SourceTimer': 'sourceTimer',
     }

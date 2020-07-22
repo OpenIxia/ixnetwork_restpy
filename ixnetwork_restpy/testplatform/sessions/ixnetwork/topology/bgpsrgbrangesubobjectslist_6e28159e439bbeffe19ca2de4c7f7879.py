@@ -33,10 +33,10 @@ class BgpSRGBRangeSubObjectsList(Base):
     _SDM_NAME = 'bgpSRGBRangeSubObjectsList'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'SIDCount': 'sIDCount',
-        'StartSID': 'startSID',
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
+        'SIDCount': 'sIDCount',
+        'StartSID': 'startSID',
     }
 
     def __init__(self, parent):

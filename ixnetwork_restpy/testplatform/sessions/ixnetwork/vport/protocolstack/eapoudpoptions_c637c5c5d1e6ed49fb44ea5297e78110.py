@@ -33,11 +33,11 @@ class EapoUdpOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'eapoUdpOptions'
     _SDM_ATT_MAP = {
+        'DutMac': 'dutMac',
+        'IcmpTriggerTargetAddress': 'icmpTriggerTargetAddress',
+        'MaxClientsPerSecond': 'maxClientsPerSecond',
         'MaxOutstandingRequests': 'maxOutstandingRequests',
         'ObjectId': 'objectId',
-        'MaxClientsPerSecond': 'maxClientsPerSecond',
-        'IcmpTriggerTargetAddress': 'icmpTriggerTargetAddress',
-        'DutMac': 'dutMac',
         'OverrideGlobalSetupRate': 'overrideGlobalSetupRate',
     }
 

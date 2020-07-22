@@ -33,13 +33,13 @@ class EsmcRange(Base):
     __slots__ = ()
     _SDM_NAME = 'esmcRange'
     _SDM_ATT_MAP = {
+        'Enabled': 'enabled',
+        'FlagMode': 'flagMode',
         'Name': 'name',
         'ObjectId': 'objectId',
-        'WaitId': 'waitId',
-        'FlagMode': 'flagMode',
-        'Enabled': 'enabled',
-        'Rate': 'rate',
         'Ql': 'ql',
+        'Rate': 'rate',
+        'WaitId': 'waitId',
     }
 
     def __init__(self, parent):

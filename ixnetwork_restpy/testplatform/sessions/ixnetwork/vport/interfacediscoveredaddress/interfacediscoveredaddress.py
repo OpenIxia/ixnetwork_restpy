@@ -31,8 +31,8 @@ class InterfaceDiscoveredAddress(Base):
     __slots__ = ()
     _SDM_NAME = 'interfaceDiscoveredAddress'
     _SDM_ATT_MAP = {
-        'IpAddress': 'ipAddress',
         'Description': 'description',
+        'IpAddress': 'ipAddress',
     }
 
     def __init__(self, parent):

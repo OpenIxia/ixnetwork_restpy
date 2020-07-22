@@ -32,19 +32,19 @@ class VendorStatLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'vendorStatLearnedInformation'
     _SDM_ATT_MAP = {
+        'DataPathId': 'dataPathId',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
+        'ErrorCode': 'errorCode',
+        'ErrorType': 'errorType',
         'ExperimenterType': 'experimenterType',
         'Latency': 'latency',
-        'ErrorType': 'errorType',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'ErrorCode': 'errorCode',
         'LocalIp': 'localIp',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
         'MessageLength': 'messageLength',
+        'NegotiatedVersion': 'negotiatedVersion',
         'RemoteIp': 'remoteIp',
-        'VendorId': 'vendorId',
         'ReplyState': 'replyState',
+        'VendorId': 'vendorId',
         'VendorMessage': 'vendorMessage',
-        'DataPathId': 'dataPathId',
     }
 
     def __init__(self, parent):

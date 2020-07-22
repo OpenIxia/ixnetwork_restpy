@@ -31,16 +31,16 @@ class Scriptgen(Base):
     __slots__ = ()
     _SDM_NAME = 'scriptgen'
     _SDM_ATT_MAP = {
+        'ConnectHostname': 'connectHostname',
+        'ConnectPort': 'connectPort',
         'ConnectVersion': 'connectVersion',
         'IncludeConnect': 'includeConnect',
-        'ScriptFilename': 'scriptFilename',
+        'IncludeTestComposer': 'includeTestComposer',
         'Language': 'language',
         'LinePerAttribute': 'linePerAttribute',
-        'IncludeTestComposer': 'includeTestComposer',
-        'SerializationType': 'serializationType',
-        'ConnectPort': 'connectPort',
         'OverwriteScriptFilename': 'overwriteScriptFilename',
-        'ConnectHostname': 'connectHostname',
+        'ScriptFilename': 'scriptFilename',
+        'SerializationType': 'serializationType',
     }
 
     def __init__(self, parent):

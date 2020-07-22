@@ -31,12 +31,12 @@ class Config(Base):
     __slots__ = ()
     _SDM_NAME = 'config'
     _SDM_ATT_MAP = {
+        'NoFlood': 'noFlood',
+        'NoForward': 'noForward',
         'NoPacketIn': 'noPacketIn',
         'NoReceive': 'noReceive',
         'NoReceiveStp': 'noReceiveStp',
-        'NoFlood': 'noFlood',
         'NoStp': 'noStp',
-        'NoForward': 'noForward',
         'PortDown': 'portDown',
     }
 

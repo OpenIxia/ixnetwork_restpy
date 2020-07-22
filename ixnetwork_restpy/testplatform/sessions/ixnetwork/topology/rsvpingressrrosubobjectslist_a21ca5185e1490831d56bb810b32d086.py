@@ -32,21 +32,21 @@ class RsvpIngressRroSubObjectsList(Base):
     __slots__ = ()
     _SDM_NAME = 'rsvpIngressRroSubObjectsList'
     _SDM_ATT_MAP = {
+        'BandwidthProtection': 'bandwidthProtection',
+        'CType': 'cType',
         'Count': 'count',
-        'Name': 'name',
-        'LocalIp': 'localIp',
+        'DescriptiveName': 'descriptiveName',
+        'GlobalLabel': 'globalLabel',
         'Ip': 'ip',
+        'Label': 'label',
+        'LocalIp': 'localIp',
+        'Name': 'name',
+        'NodeProtection': 'nodeProtection',
         'P2mpIdAsIp': 'p2mpIdAsIp',
         'P2mpIdAsNum': 'p2mpIdAsNum',
-        'GlobalLabel': 'globalLabel',
-        'Label': 'label',
-        'BandwidthProtection': 'bandwidthProtection',
-        'NodeProtection': 'nodeProtection',
-        'DescriptiveName': 'descriptiveName',
-        'CType': 'cType',
+        'ProtectionAvailable': 'protectionAvailable',
         'ProtectionInUse': 'protectionInUse',
         'Type': 'type',
-        'ProtectionAvailable': 'protectionAvailable',
     }
 
     def __init__(self, parent):

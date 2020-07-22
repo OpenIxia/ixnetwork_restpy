@@ -31,13 +31,13 @@ class InstructionTypeMiss(Base):
     __slots__ = ()
     _SDM_NAME = 'instructionTypeMiss'
     _SDM_ATT_MAP = {
-        'ClearActions': 'clearActions',
         'ApplyActions': 'applyActions',
-        'Meter': 'meter',
+        'ClearActions': 'clearActions',
         'Experimenter': 'experimenter',
+        'GoToTable': 'goToTable',
+        'Meter': 'meter',
         'WriteActions': 'writeActions',
         'WriteMetadata': 'writeMetadata',
-        'GoToTable': 'goToTable',
     }
 
     def __init__(self, parent):

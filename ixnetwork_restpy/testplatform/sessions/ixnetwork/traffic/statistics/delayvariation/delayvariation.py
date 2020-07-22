@@ -31,10 +31,10 @@ class DelayVariation(Base):
     __slots__ = ()
     _SDM_NAME = 'delayVariation'
     _SDM_ATT_MAP = {
+        'Enabled': 'enabled',
+        'LargeSequenceNumberErrorThreshold': 'largeSequenceNumberErrorThreshold',
         'LatencyMode': 'latencyMode',
         'StatisticsMode': 'statisticsMode',
-        'LargeSequenceNumberErrorThreshold': 'largeSequenceNumberErrorThreshold',
-        'Enabled': 'enabled',
     }
 
     def __init__(self, parent):

@@ -33,20 +33,20 @@ class LispInstance(Base):
     __slots__ = ()
     _SDM_NAME = 'lispInstance'
     _SDM_ATT_MAP = {
-        'Reserved': 'reserved',
-        'Ttl': 'ttl',
-        'InstanceId': 'instanceId',
+        'Act': 'act',
+        'AllowAllEids': 'allowAllEids',
         'AuthenticationAlgorithm': 'authenticationAlgorithm',
-        'Rsvd': 'rsvd',
-        'Enabled': 'enabled',
-        'MapVersionNumber': 'mapVersionNumber',
         'AuthoritativeBit': 'authoritativeBit',
         'AutoComposeNegativeMapReply': 'autoComposeNegativeMapReply',
+        'Enabled': 'enabled',
+        'EtrRegistrationTimeout': 'etrRegistrationTimeout',
+        'InstanceId': 'instanceId',
         'InternalMsmrSelectionMode': 'internalMsmrSelectionMode',
         'Key': 'key',
-        'Act': 'act',
-        'EtrRegistrationTimeout': 'etrRegistrationTimeout',
-        'AllowAllEids': 'allowAllEids',
+        'MapVersionNumber': 'mapVersionNumber',
+        'Reserved': 'reserved',
+        'Rsvd': 'rsvd',
+        'Ttl': 'ttl',
     }
 
     def __init__(self, parent):

@@ -34,8 +34,8 @@ class AllFlowsFilter(Base):
     _SDM_NAME = 'allFlowsFilter'
     _SDM_ATT_MAP = {
         'NumberOfResults': 'numberOfResults',
-        'SortingCondition': 'sortingCondition',
         'SortByStatisticId': 'sortByStatisticId',
+        'SortingCondition': 'sortingCondition',
     }
 
     def __init__(self, parent):

@@ -31,21 +31,21 @@ class Pos(Base):
     __slots__ = ()
     _SDM_NAME = 'pos'
     _SDM_ATT_MAP = {
-        'Ppm': 'ppm',
-        'EnablePPM': 'enablePPM',
-        'TransmitClocking': 'transmitClocking',
-        'Loopback': 'loopback',
         'AvailableSpeeds': 'availableSpeeds',
-        'DataScrambling': 'dataScrambling',
-        'CanModifySpeed': 'canModifySpeed',
-        'PayloadType': 'payloadType',
-        'C2Tx': 'c2Tx',
-        'InterfaceType': 'interfaceType',
         'C2Expected': 'c2Expected',
+        'C2Tx': 'c2Tx',
+        'CanModifySpeed': 'canModifySpeed',
         'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
-        'SelectedSpeeds': 'selectedSpeeds',
         'CrcSize': 'crcSize',
+        'DataScrambling': 'dataScrambling',
+        'EnablePPM': 'enablePPM',
+        'InterfaceType': 'interfaceType',
+        'Loopback': 'loopback',
+        'PayloadType': 'payloadType',
+        'Ppm': 'ppm',
+        'SelectedSpeeds': 'selectedSpeeds',
         'TrafficMapType': 'trafficMapType',
+        'TransmitClocking': 'transmitClocking',
     }
 
     def __init__(self, parent):

@@ -31,12 +31,12 @@ class SubscribedStreams(Base):
     __slots__ = ()
     _SDM_NAME = 'subscribedStreams'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'DescriptiveName': 'descriptiveName',
-        'AttributeType': 'attributeType',
-        'StreamId': 'streamId',
         'Active': 'active',
+        'AttributeType': 'attributeType',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Name': 'name',
+        'StreamId': 'streamId',
     }
 
     def __init__(self, parent):

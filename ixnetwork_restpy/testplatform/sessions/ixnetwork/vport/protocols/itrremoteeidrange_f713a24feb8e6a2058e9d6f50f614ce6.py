@@ -34,14 +34,14 @@ class ItrRemoteEidRange(Base):
     _SDM_NAME = 'itrRemoteEidRange'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'QueryIntervalUnlessResolved': 'queryIntervalUnlessResolved',
-        'Family': 'family',
-        'Enabled': 'enabled',
-        'MapResolvingInterval': 'mapResolvingInterval',
         'EnableMapReplyRecordSegmentMbit': 'enableMapReplyRecordSegmentMbit',
+        'Enabled': 'enabled',
+        'Family': 'family',
         'KeepQueryingUnlessResolved': 'keepQueryingUnlessResolved',
-        'StartAddress': 'startAddress',
+        'MapResolvingInterval': 'mapResolvingInterval',
         'PrefixLength': 'prefixLength',
+        'QueryIntervalUnlessResolved': 'queryIntervalUnlessResolved',
+        'StartAddress': 'startAddress',
     }
 
     def __init__(self, parent):

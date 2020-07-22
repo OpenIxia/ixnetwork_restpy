@@ -31,23 +31,23 @@ class FcoeFwdVnPortRange(Base):
     __slots__ = ()
     _SDM_NAME = 'fcoeFwdVnPortRange'
     _SDM_ATT_MAP = {
+        'B2bRxSize': 'b2bRxSize',
         'Count': 'count',
-        'NodeWwnStart': 'nodeWwnStart',
+        'Enabled': 'enabled',
         'Name': 'name',
+        'NodeWwnIncrement': 'nodeWwnIncrement',
+        'NodeWwnStart': 'nodeWwnStart',
         'ObjectId': 'objectId',
+        'PlogiDestId': 'plogiDestId',
+        'PlogiEnabled': 'plogiEnabled',
+        'PlogiMeshMode': 'plogiMeshMode',
+        'PlogiTargetName': 'plogiTargetName',
         'PortIdIncrement': 'portIdIncrement',
         'PortIdStart': 'portIdStart',
-        'PlogiTargetName': 'plogiTargetName',
-        'Simulated': 'simulated',
-        'Enabled': 'enabled',
-        'PlogiEnabled': 'plogiEnabled',
-        'B2bRxSize': 'b2bRxSize',
-        'NodeWwnIncrement': 'nodeWwnIncrement',
-        'PortWwnStart': 'portWwnStart',
-        'VxPortName': 'vxPortName',
-        'PlogiMeshMode': 'plogiMeshMode',
         'PortWwnIncrement': 'portWwnIncrement',
-        'PlogiDestId': 'plogiDestId',
+        'PortWwnStart': 'portWwnStart',
+        'Simulated': 'simulated',
+        'VxPortName': 'vxPortName',
     }
 
     def __init__(self, parent):

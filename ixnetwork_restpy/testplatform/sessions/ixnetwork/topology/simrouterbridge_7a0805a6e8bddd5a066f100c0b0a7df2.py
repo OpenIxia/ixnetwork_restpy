@@ -33,10 +33,10 @@ class SimRouterBridge(Base):
     _SDM_NAME = 'simRouterBridge'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'NodeIndex': 'nodeIndex',
-        'Name': 'name',
-        'SystemId': 'systemId',
         'DescriptiveName': 'descriptiveName',
+        'Name': 'name',
+        'NodeIndex': 'nodeIndex',
+        'SystemId': 'systemId',
         'SystemMAC': 'systemMAC',
     }
 

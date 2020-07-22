@@ -33,9 +33,9 @@ class GroupTrafficRange(Base):
     __slots__ = ()
     _SDM_NAME = 'groupTrafficRange'
     _SDM_ATT_MAP = {
-        'GrpCount': 'grpCount',
-        'GrpAddress': 'grpAddress',
         'AddrFamilyType': 'addrFamilyType',
+        'GrpAddress': 'grpAddress',
+        'GrpCount': 'grpCount',
     }
 
     def __init__(self, parent):

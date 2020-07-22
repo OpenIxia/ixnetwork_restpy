@@ -33,17 +33,17 @@ class Locator(Base):
     __slots__ = ()
     _SDM_NAME = 'locator'
     _SDM_ATT_MAP = {
-        'LispInterfaceId': 'lispInterfaceId',
-        'MWeight': 'mWeight',
-        'Family': 'family',
-        'ProtocolInterfaceIpItemId': 'protocolInterfaceIpItemId',
-        'LocalLocator': 'localLocator',
-        'Enabled': 'enabled',
-        'Weight': 'weight',
-        'Priority': 'priority',
-        'Reachability': 'reachability',
         'Address': 'address',
+        'Enabled': 'enabled',
+        'Family': 'family',
+        'LispInterfaceId': 'lispInterfaceId',
+        'LocalLocator': 'localLocator',
         'MPriority': 'mPriority',
+        'MWeight': 'mWeight',
+        'Priority': 'priority',
+        'ProtocolInterfaceIpItemId': 'protocolInterfaceIpItemId',
+        'Reachability': 'reachability',
+        'Weight': 'weight',
     }
 
     def __init__(self, parent):

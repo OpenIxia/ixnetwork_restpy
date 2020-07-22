@@ -32,8 +32,8 @@ class Stack(Base):
     __slots__ = ()
     _SDM_NAME = 'stack'
     _SDM_ATT_MAP = {
-        'StackTypeId': 'stackTypeId',
         'DisplayName': 'displayName',
+        'StackTypeId': 'stackTypeId',
         'TemplateName': 'templateName',
     }
 

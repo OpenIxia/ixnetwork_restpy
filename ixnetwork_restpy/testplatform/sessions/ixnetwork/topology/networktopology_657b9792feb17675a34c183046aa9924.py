@@ -34,10 +34,10 @@ class NetworkTopology(Base):
     _SDM_NAME = 'networkTopology'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'NodesPerNetwork': 'nodesPerNetwork',
         'FromNodeIndex': 'fromNodeIndex',
-        'ToNodeIndex': 'toNodeIndex',
         'LinksPerNetwork': 'linksPerNetwork',
+        'NodesPerNetwork': 'nodesPerNetwork',
+        'ToNodeIndex': 'toNodeIndex',
     }
 
     def __init__(self, parent):

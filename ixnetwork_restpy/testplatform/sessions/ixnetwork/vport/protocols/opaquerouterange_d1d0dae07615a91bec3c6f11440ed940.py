@@ -33,13 +33,13 @@ class OpaqueRouteRange(Base):
     __slots__ = ()
     _SDM_NAME = 'opaqueRouteRange'
     _SDM_ATT_MAP = {
-        'Status': 'status',
-        'ImportedFile': 'importedFile',
+        'Id__': '__id__',
         'Enabled': 'enabled',
+        'ImportedFile': 'importedFile',
         'NextHopAsIs': 'nextHopAsIs',
         'NumberOfRoutes': 'numberOfRoutes',
-        'Id__': '__id__',
         'SendMultiExitDiscovery': 'sendMultiExitDiscovery',
+        'Status': 'status',
     }
 
     def __init__(self, parent):

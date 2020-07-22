@@ -32,15 +32,15 @@ class Tracking(Base):
     __slots__ = ()
     _SDM_NAME = 'tracking'
     _SDM_ATT_MAP = {
-        'AvailableTrackByInfos': 'availableTrackByInfos',
-        'FieldWidth': 'fieldWidth',
-        'TrackBy': 'trackBy',
-        'ProtocolOffset': 'protocolOffset',
-        'OneToOneMesh': 'oneToOneMesh',
         'AvailableProtocolOffsets': 'availableProtocolOffsets',
         'AvailableTrackBy': 'availableTrackBy',
-        'Values': 'values',
+        'AvailableTrackByInfos': 'availableTrackByInfos',
+        'FieldWidth': 'fieldWidth',
         'Offset': 'offset',
+        'OneToOneMesh': 'oneToOneMesh',
+        'ProtocolOffset': 'protocolOffset',
+        'TrackBy': 'trackBy',
+        'Values': 'values',
     }
 
     def __init__(self, parent):

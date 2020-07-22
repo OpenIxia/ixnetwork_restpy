@@ -32,13 +32,13 @@ class BondedGRE(Base):
     _SDM_NAME = 'bondedGRE'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'Name': 'name',
-        'WaitForLTE': 'waitForLTE',
-        'HaapRouter': 'haapRouter',
         'DescriptiveName': 'descriptiveName',
+        'HaapRouter': 'haapRouter',
         'Key': 'key',
+        'Name': 'name',
         'RouterMac': 'routerMac',
         'RowNames': 'rowNames',
+        'WaitForLTE': 'waitForLTE',
     }
 
     def __init__(self, parent):

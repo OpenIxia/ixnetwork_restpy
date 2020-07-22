@@ -33,8 +33,8 @@ class Router(Base):
     __slots__ = ()
     _SDM_NAME = 'router'
     _SDM_ATT_MAP = {
-        'RouterId': 'routerId',
         'Enabled': 'enabled',
+        'RouterId': 'routerId',
     }
 
     def __init__(self, parent):

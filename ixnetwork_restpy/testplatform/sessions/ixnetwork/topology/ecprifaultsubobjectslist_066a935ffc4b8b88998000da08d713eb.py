@@ -33,11 +33,11 @@ class ECpriFaultSubObjectsList(Base):
     _SDM_NAME = 'eCpriFaultSubObjectsList'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'Name': 'name',
-        'FaultType': 'faultType',
         'DescriptiveName': 'descriptiveName',
-        'FaultNumber': 'faultNumber',
         'ElementId': 'elementId',
+        'FaultNumber': 'faultNumber',
+        'FaultType': 'faultType',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

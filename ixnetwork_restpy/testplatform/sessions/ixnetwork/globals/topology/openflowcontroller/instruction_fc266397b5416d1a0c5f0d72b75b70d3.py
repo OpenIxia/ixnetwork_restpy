@@ -34,11 +34,11 @@ class Instruction(Base):
     _SDM_NAME = 'instruction'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'Name': 'name',
-        'IsEditable': 'isEditable',
-        'IsRequired': 'isRequired',
-        'IsRepeatable': 'isRepeatable',
         'Description': 'description',
+        'IsEditable': 'isEditable',
+        'IsRepeatable': 'isRepeatable',
+        'IsRequired': 'isRequired',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

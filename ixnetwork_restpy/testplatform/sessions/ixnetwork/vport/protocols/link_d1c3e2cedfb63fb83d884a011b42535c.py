@@ -33,11 +33,11 @@ class Link(Base):
     __slots__ = ()
     _SDM_NAME = 'link'
     _SDM_ATT_MAP = {
+        'Enabled': 'enabled',
         'LinkType': 'linkType',
         'MoreMps': 'moreMps',
-        'Enabled': 'enabled',
-        'MpTowardsIxia': 'mpTowardsIxia',
         'MpOutwardsIxia': 'mpOutwardsIxia',
+        'MpTowardsIxia': 'mpTowardsIxia',
     }
 
     def __init__(self, parent):

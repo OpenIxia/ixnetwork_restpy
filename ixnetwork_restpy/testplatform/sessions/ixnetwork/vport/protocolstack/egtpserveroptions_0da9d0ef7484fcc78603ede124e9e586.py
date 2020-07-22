@@ -34,11 +34,11 @@ class EgtpServerOptions(Base):
     _SDM_NAME = 'egtpServerOptions'
     _SDM_ATT_MAP = {
         'DistributeUserPlaneIps': 'distributeUserPlaneIps',
-        'ObjectId': 'objectId',
-        'PublishStatistics': 'publishStatistics',
-        'EnableDynamicAllocation': 'enableDynamicAllocation',
         'EnableCreateBearerTFTHack': 'enableCreateBearerTFTHack',
+        'EnableDynamicAllocation': 'enableDynamicAllocation',
+        'ObjectId': 'objectId',
         'PcpuLogLevel': 'pcpuLogLevel',
+        'PublishStatistics': 'publishStatistics',
     }
 
     def __init__(self, parent):

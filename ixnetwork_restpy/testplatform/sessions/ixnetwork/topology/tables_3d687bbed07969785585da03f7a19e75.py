@@ -32,15 +32,15 @@ class Tables(Base):
     __slots__ = ()
     _SDM_NAME = 'tables'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'ChannelRemoteIp': 'channelRemoteIp',
-        'ChannelIndex': 'channelIndex',
-        'TableName': 'tableName',
-        'NumberOfFlowSet': 'numberOfFlowSet',
-        'DescriptiveName': 'descriptiveName',
         'Active': 'active',
+        'ChannelIndex': 'channelIndex',
+        'ChannelRemoteIp': 'channelRemoteIp',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Name': 'name',
+        'NumberOfFlowSet': 'numberOfFlowSet',
         'TableId': 'tableId',
+        'TableName': 'tableName',
     }
 
     def __init__(self, parent):

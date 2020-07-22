@@ -32,12 +32,12 @@ class EcpriRec(Base):
     _SDM_NAME = 'ecpriRec'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'Name': 'name',
-        'EcpriUdpDestinationPort': 'ecpriUdpDestinationPort',
         'DescriptiveName': 'descriptiveName',
+        'ECpriProtocolRevision': 'eCpriProtocolRevision',
         'ECpriUdpDestinationPort': 'eCpriUdpDestinationPort',
         'EcpriProtocolRevision': 'ecpriProtocolRevision',
-        'ECpriProtocolRevision': 'eCpriProtocolRevision',
+        'EcpriUdpDestinationPort': 'ecpriUdpDestinationPort',
+        'Name': 'name',
         'RowNames': 'rowNames',
     }
 

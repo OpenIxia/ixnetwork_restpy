@@ -33,16 +33,16 @@ class SpbNetworkRange(Base):
     __slots__ = ()
     _SDM_NAME = 'spbNetworkRange'
     _SDM_ATT_MAP = {
-        'EntryRow': 'entryRow',
-        'EntryColumn': 'entryColumn',
-        'SystemIdIncrementBy': 'systemIdIncrementBy',
-        'NoOfColumns': 'noOfColumns',
-        'HostNamePrefix': 'hostNamePrefix',
-        'NoOfRows': 'noOfRows',
-        'EnableHostName': 'enableHostName',
         'EnableAdvertiseNetworkRange': 'enableAdvertiseNetworkRange',
-        'StartSystemId': 'startSystemId',
+        'EnableHostName': 'enableHostName',
+        'EntryColumn': 'entryColumn',
+        'EntryRow': 'entryRow',
+        'HostNamePrefix': 'hostNamePrefix',
         'InterfaceMetric': 'interfaceMetric',
+        'NoOfColumns': 'noOfColumns',
+        'NoOfRows': 'noOfRows',
+        'StartSystemId': 'startSystemId',
+        'SystemIdIncrementBy': 'systemIdIncrementBy',
     }
 
     def __init__(self, parent):

@@ -32,9 +32,9 @@ class Lacp(Base):
     _SDM_NAME = 'lacp'
     _SDM_ATT_MAP = {
         'EnablePreservePartnerInfo': 'enablePreservePartnerInfo',
-        'RunningState': 'runningState',
         'Enabled': 'enabled',
         'IsLacpPortLearnedInfoRefreshed': 'isLacpPortLearnedInfoRefreshed',
+        'RunningState': 'runningState',
     }
 
     def __init__(self, parent):

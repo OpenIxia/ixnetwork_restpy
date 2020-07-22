@@ -31,14 +31,14 @@ class Capabilities(Base):
     __slots__ = ()
     _SDM_NAME = 'capabilities'
     _SDM_ATT_MAP = {
-        'MatchIpAddressInArpPackets': 'matchIpAddressInArpPackets',
-        'SpanningTree': 'spanningTree',
-        'Reserved': 'reserved',
-        'ReassambleIpFragments': 'reassambleIpFragments',
-        'QueueStatistics': 'queueStatistics',
-        'TableStatistics': 'tableStatistics',
-        'PortStatistics': 'portStatistics',
         'FlowStatistics': 'flowStatistics',
+        'MatchIpAddressInArpPackets': 'matchIpAddressInArpPackets',
+        'PortStatistics': 'portStatistics',
+        'QueueStatistics': 'queueStatistics',
+        'ReassambleIpFragments': 'reassambleIpFragments',
+        'Reserved': 'reserved',
+        'SpanningTree': 'spanningTree',
+        'TableStatistics': 'tableStatistics',
     }
 
     def __init__(self, parent):

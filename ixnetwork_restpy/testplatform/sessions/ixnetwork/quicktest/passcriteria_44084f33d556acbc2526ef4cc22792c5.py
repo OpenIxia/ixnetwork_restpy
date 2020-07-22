@@ -31,24 +31,24 @@ class PassCriteria(Base):
     __slots__ = ()
     _SDM_NAME = 'passCriteria'
     _SDM_ATT_MAP = {
-        'LatencyThresholdValue': 'latencyThresholdValue',
+        'DataErrorThresholdMode': 'dataErrorThresholdMode',
         'DataErrorThresholdValue': 'dataErrorThresholdValue',
+        'EnableDataIntegrityPassFail': 'enableDataIntegrityPassFail',
+        'EnablePassFail': 'enablePassFail',
         'EnableRatePassFail': 'enableRatePassFail',
+        'EnableSequenceErrorsPassFail': 'enableSequenceErrorsPassFail',
+        'EnableStandardDeviationPassFail': 'enableStandardDeviationPassFail',
+        'LatencyThresholdMode': 'latencyThresholdMode',
+        'LatencyThresholdScale': 'latencyThresholdScale',
+        'LatencyThresholdValue': 'latencyThresholdValue',
         'LatencyVarThresholdMode': 'latencyVarThresholdMode',
         'LatencyVariationThresholdScale': 'latencyVariationThresholdScale',
         'LatencyVariationThresholdValue': 'latencyVariationThresholdValue',
-        'EnableSequenceErrorsPassFail': 'enableSequenceErrorsPassFail',
         'PassCriteriaLoadRateMode': 'passCriteriaLoadRateMode',
         'PassCriteriaLoadRateScale': 'passCriteriaLoadRateScale',
-        'DataErrorThresholdMode': 'dataErrorThresholdMode',
-        'LatencyThresholdScale': 'latencyThresholdScale',
-        'EnableStandardDeviationPassFail': 'enableStandardDeviationPassFail',
-        'EnablePassFail': 'enablePassFail',
-        'SeqErrorsThresholdValue': 'seqErrorsThresholdValue',
-        'EnableDataIntegrityPassFail': 'enableDataIntegrityPassFail',
-        'SeqErrorsThresholdMode': 'seqErrorsThresholdMode',
         'PassCriteriaLoadRateValue': 'passCriteriaLoadRateValue',
-        'LatencyThresholdMode': 'latencyThresholdMode',
+        'SeqErrorsThresholdMode': 'seqErrorsThresholdMode',
+        'SeqErrorsThresholdValue': 'seqErrorsThresholdValue',
     }
 
     def __init__(self, parent):

@@ -32,11 +32,11 @@ class Manager(Base):
     _SDM_NAME = 'manager'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'Name': 'name',
         'DescriptiveName': 'descriptiveName',
         'ManagerActive': 'managerActive',
-        'TcpPort': 'tcpPort',
         'ManagerIp': 'managerIp',
+        'Name': 'name',
+        'TcpPort': 'tcpPort',
     }
 
     def __init__(self, parent):

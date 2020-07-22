@@ -32,14 +32,14 @@ class Ptp(Base):
     _SDM_NAME = 'ptp'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'Name': 'name',
+        'DescriptiveName': 'descriptiveName',
         'HopLimit': 'hopLimit',
-        'Tos': 'tos',
-        'Ttl': 'ttl',
-        'TrafficClass': 'trafficClass',
+        'Name': 'name',
         'RowNames': 'rowNames',
         'Timestamps': 'timestamps',
-        'DescriptiveName': 'descriptiveName',
+        'Tos': 'tos',
+        'TrafficClass': 'trafficClass',
+        'Ttl': 'ttl',
     }
 
     def __init__(self, parent):

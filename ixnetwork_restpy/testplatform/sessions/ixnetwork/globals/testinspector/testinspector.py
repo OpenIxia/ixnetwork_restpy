@@ -31,8 +31,8 @@ class TestInspector(Base):
     __slots__ = ()
     _SDM_NAME = 'testInspector'
     _SDM_ATT_MAP = {
-        'PollingInterval': 'pollingInterval',
         'EnableTestInspector': 'enableTestInspector',
+        'PollingInterval': 'pollingInterval',
     }
 
     def __init__(self, parent):

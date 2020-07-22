@@ -32,15 +32,15 @@ class BackupLspEROSubObjectsList(Base):
     __slots__ = ()
     _SDM_NAME = 'backupLspEROSubObjectsList'
     _SDM_ATT_MAP = {
+        'AsNumber': 'asNumber',
         'Count': 'count',
-        'LooseFlag': 'looseFlag',
+        'DescriptiveName': 'descriptiveName',
         'Ip': 'ip',
         'LocalIp': 'localIp',
-        'AsNumber': 'asNumber',
-        'DescriptiveName': 'descriptiveName',
-        'Type': 'type',
-        'PrefixLength': 'prefixLength',
+        'LooseFlag': 'looseFlag',
         'Name': 'name',
+        'PrefixLength': 'prefixLength',
+        'Type': 'type',
     }
 
     def __init__(self, parent):

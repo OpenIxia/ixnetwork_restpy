@@ -33,9 +33,9 @@ class Dhcpv6Rate(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcpv6Rate'
     _SDM_ATT_MAP = {
+        'InputParameters': 'inputParameters',
         'Mode': 'mode',
         'Name': 'name',
-        'InputParameters': 'inputParameters',
     }
 
     def __init__(self, parent):

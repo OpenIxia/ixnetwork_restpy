@@ -33,21 +33,21 @@ class Host(Base):
     __slots__ = ()
     _SDM_NAME = 'host'
     _SDM_ATT_MAP = {
+        'EnableImmediateResp': 'enableImmediateResp',
+        'EnableQueryResMode': 'enableQueryResMode',
         'EnableRouterAlert': 'enableRouterAlert',
+        'EnableSpecificResMode': 'enableSpecificResMode',
         'EnableSuppressReport': 'enableSuppressReport',
         'EnableUnsolicitedResMode': 'enableUnsolicitedResMode',
-        'RobustnessVariable': 'robustnessVariable',
-        'TrafficGroupId': 'trafficGroupId',
-        'Interfaces': 'interfaces',
         'Enabled': 'enabled',
         'InterfaceIndex': 'interfaceIndex',
-        'EnableQueryResMode': 'enableQueryResMode',
-        'EnableSpecificResMode': 'enableSpecificResMode',
-        'Version': 'version',
         'InterfaceType': 'interfaceType',
+        'Interfaces': 'interfaces',
         'ProtocolInterface': 'protocolInterface',
         'ReportFreq': 'reportFreq',
-        'EnableImmediateResp': 'enableImmediateResp',
+        'RobustnessVariable': 'robustnessVariable',
+        'TrafficGroupId': 'trafficGroupId',
+        'Version': 'version',
     }
 
     def __init__(self, parent):

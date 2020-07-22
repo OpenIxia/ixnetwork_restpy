@@ -32,8 +32,8 @@ class Network(Base):
     __slots__ = ()
     _SDM_NAME = 'network'
     _SDM_ATT_MAP = {
-        'NetworkMask': 'networkMask',
         'NeighborRouterIds': 'neighborRouterIds',
+        'NetworkMask': 'networkMask',
     }
 
     def __init__(self, parent):

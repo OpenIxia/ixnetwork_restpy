@@ -32,21 +32,21 @@ class OfChannelPortsSwitchLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'ofChannelPortsSwitchLearnedInfo'
     _SDM_ATT_MAP = {
+        'AdvertisedFeatures': 'advertisedFeatures',
+        'Config': 'config',
         'CurrentFeatures': 'currentFeatures',
-        'EthernetAddress': 'ethernetAddress',
-        'Name': 'name',
         'CurrentSpeed': 'currentSpeed',
         'DataPathId': 'dataPathId',
-        'AdvertisedFeatures': 'advertisedFeatures',
-        'MaximumSpeed': 'maximumSpeed',
-        'State': 'state',
-        'LocalIp': 'localIp',
         'DataPathIdAsHex': 'dataPathIdAsHex',
+        'EthernetAddress': 'ethernetAddress',
+        'LocalIp': 'localIp',
+        'MaximumSpeed': 'maximumSpeed',
+        'Name': 'name',
+        'PeerAdvertisedFeatures': 'peerAdvertisedFeatures',
         'PortNumber': 'portNumber',
         'RemoteIp': 'remoteIp',
+        'State': 'state',
         'SupportedFeatures': 'supportedFeatures',
-        'Config': 'config',
-        'PeerAdvertisedFeatures': 'peerAdvertisedFeatures',
     }
 
     def __init__(self, parent):

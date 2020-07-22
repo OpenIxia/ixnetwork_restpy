@@ -32,14 +32,14 @@ class OFSwitchLearnedInfoConfig(Base):
     _SDM_NAME = 'oFSwitchLearnedInfoConfig'
     _SDM_ATT_MAP = {
         'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'FlowStatOutGroupMode': 'flowStatOutGroupMode',
+        'FlowStatOutGroupValue': 'flowStatOutGroupValue',
         'FlowStatOutPortMode': 'flowStatOutPortMode',
+        'FlowStatOutPortValue': 'flowStatOutPortValue',
+        'FlowStatTableIdMode': 'flowStatTableIdMode',
         'FlowStatTableIdValue': 'flowStatTableIdValue',
         'Name': 'name',
-        'FlowStatTableIdMode': 'flowStatTableIdMode',
-        'FlowStatOutGroupValue': 'flowStatOutGroupValue',
-        'DescriptiveName': 'descriptiveName',
-        'FlowStatOutPortValue': 'flowStatOutPortValue',
-        'FlowStatOutGroupMode': 'flowStatOutGroupMode',
     }
 
     def __init__(self, parent):

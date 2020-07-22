@@ -33,20 +33,20 @@ class Geneve(Base):
     __slots__ = ()
     _SDM_NAME = 'geneve'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Status': 'status',
-        'Errors': 'errors',
-        'Name': 'name',
-        'EnableUdpCsum': 'enableUdpCsum',
-        'Ipv4Remote': 'ipv4Remote',
-        'UdpDestPort': 'udpDestPort',
-        'StackedLayers': 'stackedLayers',
-        'Vni': 'vni',
         'ConnectedVia': 'connectedVia',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
+        'EnableUdpCsum': 'enableUdpCsum',
+        'Errors': 'errors',
+        'Ipv4Remote': 'ipv4Remote',
         'Multiplier': 'multiplier',
-        'StateCounts': 'stateCounts',
+        'Name': 'name',
         'SessionStatus': 'sessionStatus',
+        'StackedLayers': 'stackedLayers',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
+        'UdpDestPort': 'udpDestPort',
+        'Vni': 'vni',
     }
 
     def __init__(self, parent):

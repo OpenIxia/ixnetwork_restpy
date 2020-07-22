@@ -31,9 +31,9 @@ class Licensing(Base):
     __slots__ = ()
     _SDM_NAME = 'licensing'
     _SDM_ATT_MAP = {
-        'Tier': 'tier',
         'LicensingServers': 'licensingServers',
         'Mode': 'mode',
+        'Tier': 'tier',
     }
 
     def __init__(self, parent):

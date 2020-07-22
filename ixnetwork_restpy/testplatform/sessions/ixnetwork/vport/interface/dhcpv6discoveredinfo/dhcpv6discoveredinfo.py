@@ -32,11 +32,11 @@ class DhcpV6DiscoveredInfo(Base):
     _SDM_NAME = 'dhcpV6DiscoveredInfo'
     _SDM_ATT_MAP = {
         'IaRebindTime': 'iaRebindTime',
-        'Tlvs': 'tlvs',
+        'IaRenewTime': 'iaRenewTime',
         'Ipv6Address': 'ipv6Address',
         'IsDhcpV6LearnedInfoRefreshed': 'isDhcpV6LearnedInfoRefreshed',
-        'IaRenewTime': 'iaRenewTime',
         'ProtocolInterface': 'protocolInterface',
+        'Tlvs': 'tlvs',
     }
 
     def __init__(self, parent):

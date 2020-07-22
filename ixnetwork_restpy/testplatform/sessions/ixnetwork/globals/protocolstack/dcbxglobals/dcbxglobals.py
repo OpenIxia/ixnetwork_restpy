@@ -35,8 +35,8 @@ class DcbxGlobals(Base):
     _SDM_ATT_MAP = {
         'AllowMultipleSessions': 'allowMultipleSessions',
         'FailOnMismatch': 'failOnMismatch',
-        'ObjectId': 'objectId',
         'FlapLinkOnStart': 'flapLinkOnStart',
+        'ObjectId': 'objectId',
     }
 
     def __init__(self, parent):

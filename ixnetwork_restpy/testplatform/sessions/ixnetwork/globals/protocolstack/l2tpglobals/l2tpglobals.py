@@ -33,12 +33,12 @@ class L2tpGlobals(Base):
     __slots__ = ()
     _SDM_NAME = 'l2tpGlobals'
     _SDM_ATT_MAP = {
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
-        'ObjectId': 'objectId',
         'EnforcePerPortRates': 'enforcePerPortRates',
         'MaxOutstandingReleases': 'maxOutstandingReleases',
-        'TeardownRateInitial': 'teardownRateInitial',
+        'MaxOutstandingRequests': 'maxOutstandingRequests',
+        'ObjectId': 'objectId',
         'SetupRateInitial': 'setupRateInitial',
+        'TeardownRateInitial': 'teardownRateInitial',
     }
 
     def __init__(self, parent):

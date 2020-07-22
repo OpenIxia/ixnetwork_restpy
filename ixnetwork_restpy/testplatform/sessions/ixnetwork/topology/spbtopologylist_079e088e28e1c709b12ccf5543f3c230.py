@@ -31,24 +31,24 @@ class SpbTopologyList(Base):
     __slots__ = ()
     _SDM_NAME = 'spbTopologyList'
     _SDM_ATT_MAP = {
+        'Active': 'active',
+        'AuxMcidConfName': 'auxMcidConfName',
+        'AuxMcidSignature': 'auxMcidSignature',
+        'BaseVidCount': 'baseVidCount',
+        'BridgePriority': 'bridgePriority',
+        'CistExternalRootCost': 'cistExternalRootCost',
+        'CistRootId': 'cistRootId',
         'Count': 'count',
-        'NumberOfPorts': 'numberOfPorts',
-        'Vbit': 'vbit',
+        'DescriptiveName': 'descriptiveName',
+        'LinkMetric': 'linkMetric',
+        'McidConfName': 'mcidConfName',
+        'McidSignature': 'mcidSignature',
         'Name': 'name',
+        'NumberOfPorts': 'numberOfPorts',
         'PortIdentifier': 'portIdentifier',
         'SpSourceId': 'spSourceId',
-        'BaseVidCount': 'baseVidCount',
-        'McidSignature': 'mcidSignature',
-        'BridgePriority': 'bridgePriority',
-        'CistRootId': 'cistRootId',
-        'DescriptiveName': 'descriptiveName',
-        'AuxMcidConfName': 'auxMcidConfName',
-        'LinkMetric': 'linkMetric',
-        'Active': 'active',
         'TopologyId': 'topologyId',
-        'McidConfName': 'mcidConfName',
-        'AuxMcidSignature': 'auxMcidSignature',
-        'CistExternalRootCost': 'cistExternalRootCost',
+        'Vbit': 'vbit',
     }
 
     def __init__(self, parent):

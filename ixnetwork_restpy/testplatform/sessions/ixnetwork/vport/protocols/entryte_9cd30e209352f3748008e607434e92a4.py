@@ -31,14 +31,14 @@ class EntryTe(Base):
     __slots__ = ()
     _SDM_NAME = 'entryTe'
     _SDM_ATT_MAP = {
-        'EteRouterIdIncrement': 'eteRouterIdIncrement',
-        'EteMaxReserveBandWidth': 'eteMaxReserveBandWidth',
+        'EnableEntryTe': 'enableEntryTe',
         'EteAdmGroup': 'eteAdmGroup',
         'EteLinkMetric': 'eteLinkMetric',
         'EteMaxBandWidth': 'eteMaxBandWidth',
-        'EteUnreservedBandWidth': 'eteUnreservedBandWidth',
-        'EnableEntryTe': 'enableEntryTe',
+        'EteMaxReserveBandWidth': 'eteMaxReserveBandWidth',
         'EteRouterId': 'eteRouterId',
+        'EteRouterIdIncrement': 'eteRouterIdIncrement',
+        'EteUnreservedBandWidth': 'eteUnreservedBandWidth',
     }
 
     def __init__(self, parent):

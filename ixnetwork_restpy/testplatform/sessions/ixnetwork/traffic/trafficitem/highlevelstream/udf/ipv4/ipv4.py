@@ -32,14 +32,14 @@ class Ipv4(Base):
     __slots__ = ()
     _SDM_NAME = 'ipv4'
     _SDM_ATT_MAP = {
-        'OuterLoopLoopCount': 'outerLoopLoopCount',
         'AvailableWidths': 'availableWidths',
-        'SkipValues': 'skipValues',
-        'InnerLoopLoopCount': 'innerLoopLoopCount',
-        'Width': 'width',
-        'InnerLoopIncrementBy': 'innerLoopIncrementBy',
-        'StartValue': 'startValue',
         'BitmaskCount': 'bitmaskCount',
+        'InnerLoopIncrementBy': 'innerLoopIncrementBy',
+        'InnerLoopLoopCount': 'innerLoopLoopCount',
+        'OuterLoopLoopCount': 'outerLoopLoopCount',
+        'SkipValues': 'skipValues',
+        'StartValue': 'startValue',
+        'Width': 'width',
     }
 
     def __init__(self, parent):

@@ -33,9 +33,9 @@ class TransmissionDistribution(Base):
     _SDM_NAME = 'transmissionDistribution'
     _SDM_ATT_MAP = {
         'AvailableDistributions': 'availableDistributions',
-        'DistributionsDisplayNames': 'distributionsDisplayNames',
-        'Distributions': 'distributions',
         'AvailableDistributionsSet': 'availableDistributionsSet',
+        'Distributions': 'distributions',
+        'DistributionsDisplayNames': 'distributionsDisplayNames',
     }
 
     def __init__(self, parent):

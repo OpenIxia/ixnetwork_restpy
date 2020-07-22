@@ -33,9 +33,9 @@ class Interface(Base):
     __slots__ = ()
     _SDM_NAME = 'interface'
     _SDM_ATT_MAP = {
+        'Enabled': 'enabled',
         'InterfaceId': 'interfaceId',
         'InterfaceMetric': 'interfaceMetric',
-        'Enabled': 'enabled',
         'ResponseMode': 'responseMode',
     }
 

@@ -31,9 +31,9 @@ class SequenceChecking(Base):
     __slots__ = ()
     _SDM_NAME = 'sequenceChecking'
     _SDM_ATT_MAP = {
-        'SequenceMode': 'sequenceMode',
         'AdvancedSequenceThreshold': 'advancedSequenceThreshold',
         'Enabled': 'enabled',
+        'SequenceMode': 'sequenceMode',
     }
 
     def __init__(self, parent):

@@ -33,12 +33,12 @@ class CustomTopologyNode(Base):
     __slots__ = ()
     _SDM_NAME = 'customTopologyNode'
     _SDM_ATT_MAP = {
+        'BridgePriority': 'bridgePriority',
         'EdgeBridge': 'edgeBridge',
         'Enabled': 'enabled',
-        'BridgePriority': 'bridgePriority',
+        'Nickname': 'nickname',
         'Priority': 'priority',
         'SpSrcId': 'spSrcId',
-        'Nickname': 'nickname',
     }
 
     def __init__(self, parent):

@@ -33,24 +33,24 @@ class CMacRange(Base):
     __slots__ = ()
     _SDM_NAME = 'cMacRange'
     _SDM_ATT_MAP = {
-        'CvlanId': 'cvlanId',
-        'SvlanId': 'svlanId',
-        'CvlanTpId': 'cvlanTpId',
-        'EnableSecondLabel': 'enableSecondLabel',
-        'EnableCvlan': 'enableCvlan',
-        'Enabled': 'enabled',
-        'StartCmacPrefix': 'startCmacPrefix',
         'CmacPrefixLength': 'cmacPrefixLength',
+        'CvlanId': 'cvlanId',
+        'CvlanPriority': 'cvlanPriority',
+        'CvlanTpId': 'cvlanTpId',
+        'EnableCvlan': 'enableCvlan',
+        'EnableSecondLabel': 'enableSecondLabel',
+        'EnableSvlan': 'enableSvlan',
+        'Enabled': 'enabled',
+        'FirstLabelStart': 'firstLabelStart',
+        'LabelMode': 'labelMode',
         'LabelStep': 'labelStep',
-        'SvlanPriority': 'svlanPriority',
         'NoOfCmacs': 'noOfCmacs',
+        'SecondLabelStart': 'secondLabelStart',
+        'StartCmacPrefix': 'startCmacPrefix',
+        'SvlanId': 'svlanId',
+        'SvlanPriority': 'svlanPriority',
         'SvlanTpId': 'svlanTpId',
         'UseSameSequenceNumber': 'useSameSequenceNumber',
-        'SecondLabelStart': 'secondLabelStart',
-        'FirstLabelStart': 'firstLabelStart',
-        'EnableSvlan': 'enableSvlan',
-        'CvlanPriority': 'cvlanPriority',
-        'LabelMode': 'labelMode',
     }
 
     def __init__(self, parent):

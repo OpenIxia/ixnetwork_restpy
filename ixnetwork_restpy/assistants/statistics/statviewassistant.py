@@ -1,12 +1,13 @@
 """ Assistant class to simplify access to statistics views
 """
-
 from ixnetwork_restpy.assistants.statistics.row import Row
 from ixnetwork_restpy.errors import *
 from ixnetwork_restpy.files import Files
 import re
 import os
+import io
 import time
+
 
 try:
     basestring
@@ -49,6 +50,7 @@ class StatViewAssistant(object):
         - PrintColumns (list(str)): A list of statistic column names that will be printed out
             If the list is None all columns will be printed out
         """
+        self._snapshot = None
         self._IxNetwork = IxNetwork
         self._ViewName = ViewName
         self._root_directory = self._IxNetwork._connection._read('%s/files' % self._IxNetwork.href)['absolute']
@@ -72,13 +74,12 @@ class StatViewAssistant(object):
             CsvName = snapshot_name,
             Views = self._View)
         csv_snapshot.TakeCsvSnapshot()
-        local_filename = self._IxNetwork._connection._get_file(self._IxNetwork.href, 
-            '%s.csv' % snapshot_name, local_directory=self._LocalCsvStorage)
+        self._snapshot = io.BytesIO(self._IxNetwork._connection._get_file(self._IxNetwork.href, 
+            '%s.csv' % snapshot_name, return_content=True))
         self._IxNetwork._connection._delete_file(self._IxNetwork.href, 
             '%s.csv' % snapshot_name)
         self._IxNetwork._connection._delete_file(self._IxNetwork.href, 
             '%s.csv.columns' % snapshot_name)
-        return local_filename
 
     @property
     def _is_view_ready(self):
@@ -107,37 +108,39 @@ class StatViewAssistant(object):
             obj (ixnetwork_restpy.assistants.statistics.row.Row): An iterable class encapsulating row data
         """
         self._is_view_ready
-        local_filename = self._take_csv_snapshot()
+        self._take_csv_snapshot()
         rows = []
-        column_headers = []
-        with open(local_filename, 'r') as fid:
-            column_headers = fid.readline()[:-1].split(',')
-            for row in fid:
-                row = row[:-1]
-                row = ''.join(x if i % 2 == 0 else x.replace(',', ' ')
-                    for i, x in enumerate(row.split('"')))
-                row = row.split(',')
-                match = True
-                for column_index in range(len(row)):
-                    if column_index in self._filters.keys():
-                        for column_filter in self._filters[column_index]:
-                            comparator = column_filter['comparator']
-                            filter_value = column_filter['filterValue']
-                            if comparator == StatViewAssistant.REGEX:
-                                if filter_value.search(row[column_index]) is None:
+        column_headers = self._snapshot.readline()
+        if isinstance(column_headers, bytes) is True:
+            column_headers = column_headers.decode('ascii')
+        column_headers = column_headers.rstrip().split(',')
+        for row in self._snapshot:
+            if isinstance(row, bytes) is True:
+                row = row.decode('ascii')
+            row = row.rstrip()
+            row = ''.join(x if i % 2 == 0 else x.replace(',', ' ')
+                for i, x in enumerate(row.split('"')))
+            row = row.split(',')
+            match = True
+            for column_index in range(len(row)):
+                if column_index in self._filters.keys():
+                    for column_filter in self._filters[column_index]:
+                        comparator = column_filter['comparator']
+                        filter_value = column_filter['filterValue']
+                        if comparator == StatViewAssistant.REGEX:
+                            if filter_value.search(row[column_index]) is None:
+                                match = False
+                                break
+                        else:
+                            try:
+                                expression = '"%s" %s "%s"' % (row[column_index], comparator, filter_value)
+                                if eval(expression) is False:
                                     match = False
                                     break
-                            else:
-                                try:
-                                    expression = '"%s" %s "%s"' % (row[column_index], comparator, filter_value)
-                                    if eval(expression) is False:
-                                        match = False
-                                        break
-                                except Exception as e:
-                                    self._IxNetwork.debug('%s Rows eval of %s failed: %s' % (__file__, expression, e))
-                if match is True:
-                    rows.append(row)
-        os.remove(local_filename)
+                            except Exception as e:
+                                self._IxNetwork.debug('%s Rows eval of %s failed: %s' % (__file__, expression, e))
+            if match is True:
+                rows.append(row)
         return Row(self._View.Caption, column_headers, rows)
 
     @property

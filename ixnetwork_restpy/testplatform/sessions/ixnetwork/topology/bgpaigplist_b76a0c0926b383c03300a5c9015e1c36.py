@@ -33,9 +33,9 @@ class BgpAigpList(Base):
     _SDM_NAME = 'bgpAigpList'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'Type': 'type',
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
+        'Type': 'type',
         'Value': 'value',
     }
 

@@ -33,14 +33,14 @@ class NacTlv(Base):
     __slots__ = ()
     _SDM_NAME = 'nacTlv'
     _SDM_ATT_MAP = {
-        'VendorId': 'vendorId',
+        'AppCode': 'appCode',
         'AppType': 'appType',
+        'AvpType': 'avpType',
         'Name': 'name',
         'ObjectId': 'objectId',
         'Selected': 'selected',
         'Value': 'value',
-        'AvpType': 'avpType',
-        'AppCode': 'appCode',
+        'VendorId': 'vendorId',
     }
 
     def __init__(self, parent):

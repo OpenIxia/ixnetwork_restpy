@@ -33,11 +33,11 @@ class Container(Base):
     __slots__ = ()
     _SDM_NAME = 'container'
     _SDM_ATT_MAP = {
-        'IsRequired': 'isRequired',
-        'Name': 'name',
         'Description': 'description',
         'IsEditable': 'isEditable',
         'IsRepeatable': 'isRepeatable',
+        'IsRequired': 'isRequired',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

@@ -31,18 +31,18 @@ class SupportedActions(Base):
     __slots__ = ()
     _SDM_NAME = 'supportedActions'
     _SDM_ATT_MAP = {
+        'Enqueue': 'enqueue',
         'EthernetDestination': 'ethernetDestination',
-        'TransportDestination': 'transportDestination',
-        'Ipv4Source': 'ipv4Source',
-        'TransportSource': 'transportSource',
         'EthernetSource': 'ethernetSource',
+        'IpDscp': 'ipDscp',
+        'Ipv4Destination': 'ipv4Destination',
+        'Ipv4Source': 'ipv4Source',
+        'Output': 'output',
+        'StripVlanHeader': 'stripVlanHeader',
+        'TransportDestination': 'transportDestination',
+        'TransportSource': 'transportSource',
         'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
-        'Enqueue': 'enqueue',
-        'IpDscp': 'ipDscp',
-        'StripVlanHeader': 'stripVlanHeader',
-        'Output': 'output',
-        'Ipv4Destination': 'ipv4Destination',
     }
 
     def __init__(self, parent):

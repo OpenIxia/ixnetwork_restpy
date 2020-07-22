@@ -33,11 +33,11 @@ class Layer23ProtocolStackFilter(Base):
     __slots__ = ()
     _SDM_NAME = 'layer23ProtocolStackFilter'
     _SDM_ATT_MAP = {
-        'NumberOfResults': 'numberOfResults',
-        'SortingStatistic': 'sortingStatistic',
-        'ProtocolStackFilterId': 'protocolStackFilterId',
         'DrilldownType': 'drilldownType',
+        'NumberOfResults': 'numberOfResults',
+        'ProtocolStackFilterId': 'protocolStackFilterId',
         'SortAscending': 'sortAscending',
+        'SortingStatistic': 'sortingStatistic',
     }
 
     def __init__(self, parent):

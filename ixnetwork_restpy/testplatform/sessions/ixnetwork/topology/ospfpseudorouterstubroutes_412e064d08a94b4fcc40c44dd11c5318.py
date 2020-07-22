@@ -32,22 +32,22 @@ class OspfPseudoRouterStubRoutes(Base):
     __slots__ = ()
     _SDM_NAME = 'ospfPseudoRouterStubRoutes'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'VFlag': 'vFlag',
-        'NetworkAddress': 'networkAddress',
-        'MFlag': 'mFlag',
+        'Active': 'active',
         'Algorithm': 'algorithm',
         'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
-        'Metric': 'metric',
-        'EFlag': 'eFlag',
-        'Name': 'name',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
+        'EFlag': 'eFlag',
+        'LFlag': 'lFlag',
+        'MFlag': 'mFlag',
+        'Metric': 'metric',
+        'Name': 'name',
+        'NetworkAddress': 'networkAddress',
         'NpFlag': 'npFlag',
-        'Active': 'active',
-        'SidIndexLabel': 'sidIndexLabel',
         'PrefixLength': 'prefixLength',
         'RangeSize': 'rangeSize',
-        'LFlag': 'lFlag',
+        'SidIndexLabel': 'sidIndexLabel',
+        'VFlag': 'vFlag',
     }
 
     def __init__(self, parent):

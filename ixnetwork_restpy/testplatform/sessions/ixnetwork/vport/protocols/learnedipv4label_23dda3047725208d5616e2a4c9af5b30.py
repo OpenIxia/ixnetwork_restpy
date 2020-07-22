@@ -32,11 +32,11 @@ class LearnedIpv4Label(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedIpv4Label'
     _SDM_ATT_MAP = {
-        'LabelSpaceId': 'labelSpaceId',
-        'FecPrefixLen': 'fecPrefixLen',
-        'PeerIpAddress': 'peerIpAddress',
         'Fec': 'fec',
+        'FecPrefixLen': 'fecPrefixLen',
         'Label': 'label',
+        'LabelSpaceId': 'labelSpaceId',
+        'PeerIpAddress': 'peerIpAddress',
     }
 
     def __init__(self, parent):

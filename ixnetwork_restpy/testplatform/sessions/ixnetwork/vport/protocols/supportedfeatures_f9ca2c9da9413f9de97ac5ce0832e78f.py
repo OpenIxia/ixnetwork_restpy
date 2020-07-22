@@ -32,17 +32,17 @@ class SupportedFeatures(Base):
     _SDM_NAME = 'supportedFeatures'
     _SDM_ATT_MAP = {
         'HundredMbFd': '100MbFd',
-        'AutoNegotiation': 'autoNegotiation',
-        'TenMbHd': '10MbHd',
-        'TenMbFd': '10MbFd',
         'HundredMbHd': '100MbHd',
-        'FiberMedium': 'fiberMedium',
-        'Pause': 'pause',
+        'TenGbFd': '10GbFd',
+        'TenMbFd': '10MbFd',
+        'TenMbHd': '10MbHd',
         'OneGbFd': '1GbFd',
         'OneGbHd': '1GbHd',
-        'TenGbFd': '10GbFd',
-        'CopperMedium': 'copperMedium',
         'AsymmetricPause': 'asymmetricPause',
+        'AutoNegotiation': 'autoNegotiation',
+        'CopperMedium': 'copperMedium',
+        'FiberMedium': 'fiberMedium',
+        'Pause': 'pause',
     }
 
     def __init__(self, parent):

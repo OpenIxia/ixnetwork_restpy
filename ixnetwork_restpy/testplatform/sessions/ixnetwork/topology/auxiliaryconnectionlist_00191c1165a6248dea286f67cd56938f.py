@@ -32,14 +32,14 @@ class AuxiliaryConnectionList(Base):
     __slots__ = ()
     _SDM_NAME = 'auxiliaryConnectionList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'ConnectionType': 'connectionType',
-        'AuxId': 'auxId',
-        'UDPSrcPortNum': 'uDPSrcPortNum',
         'Active': 'active',
-        'DescriptiveName': 'descriptiveName',
+        'AuxId': 'auxId',
         'ChannelName': 'channelName',
+        'ConnectionType': 'connectionType',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Name': 'name',
+        'UDPSrcPortNum': 'uDPSrcPortNum',
     }
 
     def __init__(self, parent):

@@ -33,13 +33,13 @@ class TwampOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'twampOptions'
     _SDM_ATT_MAP = {
+        'ErrorEstimateMultiplier': 'errorEstimateMultiplier',
+        'ErrorEstimateScale': 'errorEstimateScale',
         'MaxOutstanding': 'maxOutstanding',
         'ObjectId': 'objectId',
-        'SetupRate': 'setupRate',
-        'ErrorEstimateScale': 'errorEstimateScale',
-        'ErrorEstimateMultiplier': 'errorEstimateMultiplier',
-        'SessionTimeout': 'sessionTimeout',
         'OverrideGlobalRateOptions': 'overrideGlobalRateOptions',
+        'SessionTimeout': 'sessionTimeout',
+        'SetupRate': 'setupRate',
         'TeardownRate': 'teardownRate',
     }
 

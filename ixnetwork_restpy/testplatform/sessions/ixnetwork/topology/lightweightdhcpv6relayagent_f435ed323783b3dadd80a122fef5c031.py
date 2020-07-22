@@ -33,18 +33,18 @@ class LightweightDhcpv6relayAgent(Base):
     __slots__ = ()
     _SDM_NAME = 'lightweightDhcpv6relayAgent'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Status': 'status',
-        'Errors': 'errors',
-        'Name': 'name',
         'ConnectedVia': 'connectedVia',
-        'StackedLayers': 'stackedLayers',
-        'LightweightDhcp6RelayAgentGlobalAndPortData': 'lightweightDhcp6RelayAgentGlobalAndPortData',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
+        'Errors': 'errors',
+        'LightweightDhcp6RelayAgentGlobalAndPortData': 'lightweightDhcp6RelayAgentGlobalAndPortData',
         'Multiplier': 'multiplier',
+        'Name': 'name',
         'SessionInfo': 'sessionInfo',
-        'StateCounts': 'stateCounts',
         'SessionStatus': 'sessionStatus',
+        'StackedLayers': 'stackedLayers',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
     }
 
     def __init__(self, parent):

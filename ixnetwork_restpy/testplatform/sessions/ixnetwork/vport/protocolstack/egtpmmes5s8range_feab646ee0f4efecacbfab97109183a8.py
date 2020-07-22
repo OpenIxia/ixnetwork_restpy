@@ -31,8 +31,8 @@ class EgtpMmeS5S8Range(Base):
     __slots__ = ()
     _SDM_NAME = 'egtpMmeS5S8Range'
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
         'EnableChangeReporting': 'enableChangeReporting',
+        'Enabled': 'enabled',
         'Name': 'name',
         'ObjectId': 'objectId',
     }

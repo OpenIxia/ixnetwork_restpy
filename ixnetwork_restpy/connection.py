@@ -117,6 +117,8 @@ class Connection(object):
         self._platform = None
         rest_ports = [443, 11009]
         if self._rest_port is not None:
+            if self._rest_port in rest_ports:
+                rest_ports.remove(self._rest_port)
             rest_ports.insert(0, self._rest_port)
         for rest_port in rest_ports:
             for scheme in ['http', 'https']:
@@ -256,7 +258,7 @@ class Connection(object):
         url = '%s%s' % (url[0:path_start], url[path_start:].replace('//', '/'))
         return (connection, url)
 
-    def _get_file(self, url, remote_filename, remote_directory=None, local_filename=None, local_directory=None):
+    def _get_file(self, url, remote_filename, remote_directory=None, local_filename=None, local_directory=None, return_content=False):
         headers = self._headers
         url = '%s/files?filename=%s' % (url, remote_filename)
         connection, url = self._normalize_url(url)
@@ -264,6 +266,8 @@ class Connection(object):
             url = '%s&absolute=%s' % (url, remote_directory)
         response = self._session.request('GET', url, headers=headers, verify=self._verify_cert)
         if response.status_code == 200:
+            if return_content is True:
+                return response.content
             if local_filename is None:
                 local_filename = remote_filename
             if local_directory is not None:

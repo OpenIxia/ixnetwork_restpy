@@ -32,17 +32,17 @@ class SwitchConfigLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'switchConfigLearnedInformation'
     _SDM_ATT_MAP = {
-        'Latency': 'latency',
         'ConfigFlags': 'configFlags',
-        'ErrorType': 'errorType',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'ErrorCode': 'errorCode',
-        'LocalIp': 'localIp',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'RemoteIp': 'remoteIp',
-        'MissSendLength': 'missSendLength',
-        'ReplyState': 'replyState',
         'DataPathId': 'dataPathId',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
+        'ErrorCode': 'errorCode',
+        'ErrorType': 'errorType',
+        'Latency': 'latency',
+        'LocalIp': 'localIp',
+        'MissSendLength': 'missSendLength',
+        'NegotiatedVersion': 'negotiatedVersion',
+        'RemoteIp': 'remoteIp',
+        'ReplyState': 'replyState',
     }
 
     def __init__(self, parent):

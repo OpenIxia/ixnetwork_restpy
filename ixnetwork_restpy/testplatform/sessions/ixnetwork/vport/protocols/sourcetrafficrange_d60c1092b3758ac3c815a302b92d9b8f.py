@@ -33,10 +33,10 @@ class SourceTrafficRange(Base):
     __slots__ = ()
     _SDM_NAME = 'sourceTrafficRange'
     _SDM_ATT_MAP = {
-        'FilterOnGroupAddress': 'filterOnGroupAddress',
-        'GrpCountPerLsp': 'grpCountPerLsp',
-        'GroupAddress': 'groupAddress',
         'AddrFamily': 'addrFamily',
+        'FilterOnGroupAddress': 'filterOnGroupAddress',
+        'GroupAddress': 'groupAddress',
+        'GrpCountPerLsp': 'grpCountPerLsp',
         'SourceAddress': 'sourceAddress',
         'SrcCountPerLsp': 'srcCountPerLsp',
     }

@@ -34,10 +34,10 @@ class WebAuthOptions(Base):
     _SDM_NAME = 'webAuthOptions'
     _SDM_ATT_MAP = {
         'MaxClientsPerSecond': 'maxClientsPerSecond',
-        'OverrideGlobalSetupRate': 'overrideGlobalSetupRate',
         'MaxOutstandingRequests': 'maxOutstandingRequests',
-        'OverrideGlobalArpResponse': 'overrideGlobalArpResponse',
         'ObjectId': 'objectId',
+        'OverrideGlobalArpResponse': 'overrideGlobalArpResponse',
+        'OverrideGlobalSetupRate': 'overrideGlobalSetupRate',
     }
 
     def __init__(self, parent):

@@ -33,9 +33,9 @@ class DhcpRate(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcpRate'
     _SDM_ATT_MAP = {
+        'InputParameters': 'inputParameters',
         'Mode': 'mode',
         'Name': 'name',
-        'InputParameters': 'inputParameters',
     }
 
     def __init__(self, parent):

@@ -32,14 +32,14 @@ class SwitchAuxiliaryConnectionLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'switchAuxiliaryConnectionLearnedInfo'
     _SDM_ATT_MAP = {
-        'RemotePort': 'remotePort',
-        'LocalPort': 'localPort',
         'AuxiliaryId': 'auxiliaryId',
         'ConnectionType': 'connectionType',
-        'LocalIp': 'localIp',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'RemoteIp': 'remoteIp',
         'DataPathId': 'dataPathId',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
+        'LocalIp': 'localIp',
+        'LocalPort': 'localPort',
+        'RemoteIp': 'remoteIp',
+        'RemotePort': 'remotePort',
     }
 
     def __init__(self, parent):

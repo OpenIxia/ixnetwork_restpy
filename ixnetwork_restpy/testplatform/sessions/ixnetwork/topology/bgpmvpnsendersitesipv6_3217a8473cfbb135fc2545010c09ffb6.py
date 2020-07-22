@@ -33,24 +33,24 @@ class BgpMVpnSenderSitesIpv6(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpMVpnSenderSitesIpv6'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'SourceAddressCount': 'sourceAddressCount',
-        'Name': 'name',
-        'IncludeIpv6ExplicitNullLabel': 'includeIpv6ExplicitNullLabel',
-        'SetNextHop': 'setNextHop',
-        'Ipv6NextHop': 'ipv6NextHop',
-        'StartGroupAddressIpv6': 'startGroupAddressIpv6',
-        'SourceMaskWidth': 'sourceMaskWidth',
-        'Ipv4NextHop': 'ipv4NextHop',
-        'StartSourceAddressIpv6': 'startSourceAddressIpv6',
-        'DescriptiveName': 'descriptiveName',
-        'SendTriggeredSourceActiveADRoute': 'sendTriggeredSourceActiveADRoute',
         'Active': 'active',
-        'GroupAddressCount': 'groupAddressCount',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
         'EnableNextHop': 'enableNextHop',
-        'SourceGroupMapping': 'sourceGroupMapping',
+        'GroupAddressCount': 'groupAddressCount',
         'GroupMaskWidth': 'groupMaskWidth',
+        'IncludeIpv6ExplicitNullLabel': 'includeIpv6ExplicitNullLabel',
+        'Ipv4NextHop': 'ipv4NextHop',
+        'Ipv6NextHop': 'ipv6NextHop',
+        'Name': 'name',
+        'SendTriggeredSourceActiveADRoute': 'sendTriggeredSourceActiveADRoute',
+        'SetNextHop': 'setNextHop',
         'SetNextHopIpType': 'setNextHopIpType',
+        'SourceAddressCount': 'sourceAddressCount',
+        'SourceGroupMapping': 'sourceGroupMapping',
+        'SourceMaskWidth': 'sourceMaskWidth',
+        'StartGroupAddressIpv6': 'startGroupAddressIpv6',
+        'StartSourceAddressIpv6': 'startSourceAddressIpv6',
     }
 
     def __init__(self, parent):

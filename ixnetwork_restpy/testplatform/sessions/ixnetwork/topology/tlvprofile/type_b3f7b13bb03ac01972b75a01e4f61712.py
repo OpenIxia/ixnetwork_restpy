@@ -31,9 +31,9 @@ class Type(Base):
     __slots__ = ()
     _SDM_NAME = 'type'
     _SDM_ATT_MAP = {
+        'IsEditable': 'isEditable',
         'IsRequired': 'isRequired',
         'Name': 'name',
-        'IsEditable': 'isEditable',
     }
 
     def __init__(self, parent):

@@ -31,15 +31,15 @@ class TxSakPool(Base):
     __slots__ = ()
     _SDM_NAME = 'txSakPool'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'AnInUse': 'anInUse',
         'ActiveSak': 'activeSak',
-        'TxSak128': 'txSak128',
+        'AnInUse': 'anInUse',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
+        'Name': 'name',
+        'TxSak128': 'txSak128',
         'TxSak256': 'txSak256',
-        'TxSsci': 'txSsci',
         'TxSalt': 'txSalt',
+        'TxSsci': 'txSsci',
     }
 
     def __init__(self, parent):

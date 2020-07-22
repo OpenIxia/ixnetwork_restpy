@@ -31,13 +31,13 @@ class RouteDistinguisher(Base):
     __slots__ = ()
     _SDM_NAME = 'routeDistinguisher'
     _SDM_ATT_MAP = {
-        'IpAddressStep': 'ipAddressStep',
-        'AssignedNumberStep': 'assignedNumberStep',
-        'AsNumberStep': 'asNumberStep',
-        'Type': 'type',
-        'AssignedNumber': 'assignedNumber',
         'AsNumber': 'asNumber',
+        'AsNumberStep': 'asNumberStep',
+        'AssignedNumber': 'assignedNumber',
+        'AssignedNumberStep': 'assignedNumberStep',
         'IpAddress': 'ipAddress',
+        'IpAddressStep': 'ipAddressStep',
+        'Type': 'type',
     }
 
     def __init__(self, parent):

@@ -32,13 +32,13 @@ class MeterStatsBandLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'meterStatsBandLearnedInformation'
     _SDM_ATT_MAP = {
-        'InBandPacketCount': 'inBandPacketCount',
-        'LocalIp': 'localIp',
+        'DataPathId': 'dataPathId',
         'DataPathIdAsHex': 'dataPathIdAsHex',
         'InBandByteCount': 'inBandByteCount',
-        'RemoteIp': 'remoteIp',
+        'InBandPacketCount': 'inBandPacketCount',
+        'LocalIp': 'localIp',
         'MeterId': 'meterId',
-        'DataPathId': 'dataPathId',
+        'RemoteIp': 'remoteIp',
     }
 
     def __init__(self, parent):

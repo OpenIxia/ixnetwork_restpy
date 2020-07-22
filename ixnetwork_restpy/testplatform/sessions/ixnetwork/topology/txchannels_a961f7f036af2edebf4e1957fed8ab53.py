@@ -31,13 +31,13 @@ class TxChannels(Base):
     __slots__ = ()
     _SDM_NAME = 'txChannels'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'SystemId': 'systemId',
-        'PortId': 'portId',
-        'Name': 'name',
-        'DescriptiveName': 'descriptiveName',
         'ActiveTxChannel': 'activeTxChannel',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Name': 'name',
+        'PortId': 'portId',
         'StartingMessageNumber': 'startingMessageNumber',
+        'SystemId': 'systemId',
     }
 
     def __init__(self, parent):

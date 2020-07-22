@@ -31,23 +31,23 @@ class NovusTenGigLan(Base):
     __slots__ = ()
     _SDM_NAME = 'novusTenGigLan'
     _SDM_ATT_MAP = {
-        'EnablePPM': 'enablePPM',
-        'Loopback': 'loopback',
-        'Media': 'media',
-        'AvailableSpeeds': 'availableSpeeds',
-        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
-        'EnabledFlowControl': 'enabledFlowControl',
-        'Ppm': 'ppm',
-        'CanModifySpeed': 'canModifySpeed',
-        'MasterSlaveMode': 'masterSlaveMode',
-        'LoopbackMode': 'loopbackMode',
-        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
-        'SpeedAuto': 'speedAuto',
-        'SelectedSpeeds': 'selectedSpeeds',
         'AutoInstrumentation': 'autoInstrumentation',
-        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
-        'Speed': 'speed',
         'AutoNegotiate': 'autoNegotiate',
+        'AvailableSpeeds': 'availableSpeeds',
+        'CanModifySpeed': 'canModifySpeed',
+        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
+        'EnablePPM': 'enablePPM',
+        'EnabledFlowControl': 'enabledFlowControl',
+        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
+        'Loopback': 'loopback',
+        'LoopbackMode': 'loopbackMode',
+        'MasterSlaveMode': 'masterSlaveMode',
+        'Media': 'media',
+        'Ppm': 'ppm',
+        'SelectedSpeeds': 'selectedSpeeds',
+        'Speed': 'speed',
+        'SpeedAuto': 'speedAuto',
+        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
     }
 
     def __init__(self, parent):

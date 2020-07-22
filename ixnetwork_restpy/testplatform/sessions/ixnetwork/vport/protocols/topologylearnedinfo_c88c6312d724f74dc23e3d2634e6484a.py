@@ -32,18 +32,18 @@ class TopologyLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'topologyLearnedInfo'
     _SDM_ATT_MAP = {
-        'OutIp': 'outIp',
-        'InPortName': 'inPortName',
-        'InIp': 'inIp',
-        'OutPortNumber': 'outPortNumber',
-        'OutDataPathIdAsHex': 'outDataPathIdAsHex',
-        'OutDataPathId': 'outDataPathId',
         'InDataPathId': 'inDataPathId',
-        'InPortEthernetAddress': 'inPortEthernetAddress',
         'InDataPathIdAshex': 'inDataPathIdAshex',
-        'OutPortName': 'outPortName',
-        'OutPortEthernetAddress': 'outPortEthernetAddress',
+        'InIp': 'inIp',
+        'InPortEthernetAddress': 'inPortEthernetAddress',
+        'InPortName': 'inPortName',
         'InPortNumber': 'inPortNumber',
+        'OutDataPathId': 'outDataPathId',
+        'OutDataPathIdAsHex': 'outDataPathIdAsHex',
+        'OutIp': 'outIp',
+        'OutPortEthernetAddress': 'outPortEthernetAddress',
+        'OutPortName': 'outPortName',
+        'OutPortNumber': 'outPortNumber',
     }
 
     def __init__(self, parent):

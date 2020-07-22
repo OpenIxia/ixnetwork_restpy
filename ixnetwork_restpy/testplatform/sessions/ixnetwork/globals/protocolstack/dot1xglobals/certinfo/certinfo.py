@@ -31,23 +31,23 @@ class CertInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'certInfo'
     _SDM_ATT_MAP = {
-        'State': 'state',
-        'CertFormat': 'certFormat',
-        'ObjectId': 'objectId',
-        'City': 'city',
-        'Country': 'country',
-        'Company': 'company',
-        'UseCertServer': 'useCertServer',
-        'SendCACertOnly': 'sendCACertOnly',
-        'ServerUrl': 'serverUrl',
-        'SameKeyFile': 'sameKeyFile',
-        'KeyUsage': 'keyUsage',
-        'CertPath': 'certPath',
-        'KeySize': 'keySize',
         'AltName': 'altName',
+        'CertFormat': 'certFormat',
+        'CertPath': 'certPath',
+        'City': 'city',
+        'Company': 'company',
+        'Country': 'country',
         'Department': 'department',
         'GetCACertOnly': 'getCACertOnly',
         'KeyPath': 'keyPath',
+        'KeySize': 'keySize',
+        'KeyUsage': 'keyUsage',
+        'ObjectId': 'objectId',
+        'SameKeyFile': 'sameKeyFile',
+        'SendCACertOnly': 'sendCACertOnly',
+        'ServerUrl': 'serverUrl',
+        'State': 'state',
+        'UseCertServer': 'useCertServer',
     }
 
     def __init__(self, parent):

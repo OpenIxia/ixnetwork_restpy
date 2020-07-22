@@ -31,13 +31,13 @@ class Flapping(Base):
     __slots__ = ()
     _SDM_NAME = 'flapping'
     _SDM_ATT_MAP = {
-        'RoutesToFlapTo': 'routesToFlapTo',
-        'UpTime': 'upTime',
+        'Delay': 'delay',
+        'DownTime': 'downTime',
         'EnablePartialFlap': 'enablePartialFlap',
         'Enabled': 'enabled',
-        'Delay': 'delay',
         'RoutesToFlapFrom': 'routesToFlapFrom',
-        'DownTime': 'downTime',
+        'RoutesToFlapTo': 'routesToFlapTo',
+        'UpTime': 'upTime',
     }
 
     def __init__(self, parent):

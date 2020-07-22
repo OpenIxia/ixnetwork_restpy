@@ -33,10 +33,10 @@ class AtmLabelRange(Base):
     __slots__ = ()
     _SDM_NAME = 'atmLabelRange'
     _SDM_ATT_MAP = {
-        'MinVci': 'minVci',
-        'MinVpi': 'minVpi',
         'MaxVci': 'maxVci',
         'MaxVpi': 'maxVpi',
+        'MinVci': 'minVci',
+        'MinVpi': 'minVpi',
     }
 
     def __init__(self, parent):

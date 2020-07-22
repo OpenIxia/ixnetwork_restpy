@@ -33,13 +33,13 @@ class AppLibProfile(Base):
     __slots__ = ()
     _SDM_NAME = 'appLibProfile'
     _SDM_ATT_MAP = {
+        'AvailableFlows': 'availableFlows',
         'ConfiguredFlows': 'configuredFlows',
         'EnablePerIPStats': 'enablePerIPStats',
-        'TrafficState': 'trafficState',
-        'ObjectiveType': 'objectiveType',
-        'AvailableFlows': 'availableFlows',
         'ObjectiveDistribution': 'objectiveDistribution',
+        'ObjectiveType': 'objectiveType',
         'ObjectiveValue': 'objectiveValue',
+        'TrafficState': 'trafficState',
     }
 
     def __init__(self, parent):

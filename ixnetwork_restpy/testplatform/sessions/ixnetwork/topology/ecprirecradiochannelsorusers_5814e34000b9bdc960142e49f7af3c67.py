@@ -33,13 +33,13 @@ class ECpriRecRadioChannelsOrUsers(Base):
     __slots__ = ()
     _SDM_NAME = 'eCpriRecRadioChannelsOrUsers'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'SequenceId': 'sequenceId',
-        'Name': 'name',
-        'ChannelId': 'channelId',
-        'MessageType': 'messageType',
-        'DescriptiveName': 'descriptiveName',
         'Active': 'active',
+        'ChannelId': 'channelId',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'MessageType': 'messageType',
+        'Name': 'name',
+        'SequenceId': 'sequenceId',
         'UserDataLength': 'userDataLength',
     }
 

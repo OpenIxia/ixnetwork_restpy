@@ -32,15 +32,15 @@ class Error(Base):
     __slots__ = ()
     _SDM_NAME = 'error'
     _SDM_ATT_MAP = {
-        'InstanceCount': 'instanceCount',
         'Description': 'description',
-        'ErrorLevel': 'errorLevel',
-        'LastModified': 'lastModified',
         'ErrorCode': 'errorCode',
+        'ErrorLevel': 'errorLevel',
+        'InstanceCount': 'instanceCount',
+        'LastModified': 'lastModified',
+        'Name': 'name',
         'Provider': 'provider',
         'SourceColumns': 'sourceColumns',
         'SourceColumnsDisplayName': 'sourceColumnsDisplayName',
-        'Name': 'name',
     }
 
     def __init__(self, parent):

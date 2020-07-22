@@ -32,15 +32,15 @@ class SwitchHostRangeHopsLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'switchHostRangeHopsLearnedInfo'
     _SDM_ATT_MAP = {
+        'Action': 'action',
+        'DestinationHostMac': 'destinationHostMac',
+        'InputPort': 'inputPort',
+        'InputTimeInMs': 'inputTimeInMs',
         'OutputPort': 'outputPort',
         'OutputTimeInMs': 'outputTimeInMs',
-        'SwitchDataPathId': 'switchDataPathId',
         'SourceHostMac': 'sourceHostMac',
-        'InputPort': 'inputPort',
+        'SwitchDataPathId': 'switchDataPathId',
         'SwitchIp': 'switchIp',
-        'DestinationHostMac': 'destinationHostMac',
-        'InputTimeInMs': 'inputTimeInMs',
-        'Action': 'action',
     }
 
     def __init__(self, parent):

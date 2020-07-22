@@ -33,11 +33,11 @@ class Meter(Base):
     __slots__ = ()
     _SDM_NAME = 'meter'
     _SDM_ATT_MAP = {
-        'MeterAdvertise': 'meterAdvertise',
-        'UpdateMeterModStatus': 'updateMeterModStatus',
-        'Enabled': 'enabled',
         'Id__': '__id__',
         'Description': 'description',
+        'Enabled': 'enabled',
+        'MeterAdvertise': 'meterAdvertise',
+        'UpdateMeterModStatus': 'updateMeterModStatus',
     }
 
     def __init__(self, parent):

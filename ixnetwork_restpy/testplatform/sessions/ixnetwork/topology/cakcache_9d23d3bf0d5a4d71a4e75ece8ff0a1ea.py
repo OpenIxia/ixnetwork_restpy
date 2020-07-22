@@ -31,12 +31,12 @@ class CakCache(Base):
     __slots__ = ()
     _SDM_NAME = 'cakCache'
     _SDM_ATT_MAP = {
-        'Count': 'count',
         'CakName': 'cakName',
-        'Name': 'name',
-        'CakValue256': 'cakValue256',
-        'DescriptiveName': 'descriptiveName',
         'CakValue128': 'cakValue128',
+        'CakValue256': 'cakValue256',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

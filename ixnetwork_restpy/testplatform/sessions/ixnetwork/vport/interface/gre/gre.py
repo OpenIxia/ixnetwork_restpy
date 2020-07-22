@@ -31,11 +31,11 @@ class Gre(Base):
     __slots__ = ()
     _SDM_NAME = 'gre'
     _SDM_ATT_MAP = {
-        'UseChecksum': 'useChecksum',
         'Dest': 'dest',
         'InKey': 'inKey',
-        'Source': 'source',
         'OutKey': 'outKey',
+        'Source': 'source',
+        'UseChecksum': 'useChecksum',
         'UseKey': 'useKey',
         'UseSequence': 'useSequence',
     }

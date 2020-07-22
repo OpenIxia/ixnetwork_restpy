@@ -32,14 +32,14 @@ class Uds(Base):
     __slots__ = ()
     _SDM_NAME = 'uds'
     _SDM_ATT_MAP = {
+        'CustomFrameSizeFrom': 'customFrameSizeFrom',
         'CustomFrameSizeTo': 'customFrameSizeTo',
-        'SourceAddressSelector': 'sourceAddressSelector',
+        'DestinationAddressSelector': 'destinationAddressSelector',
+        'Error': 'error',
         'FrameSizeType': 'frameSizeType',
         'IsEnabled': 'isEnabled',
-        'DestinationAddressSelector': 'destinationAddressSelector',
-        'CustomFrameSizeFrom': 'customFrameSizeFrom',
-        'Error': 'error',
         'PatternSelector': 'patternSelector',
+        'SourceAddressSelector': 'sourceAddressSelector',
     }
 
     def __init__(self, parent):

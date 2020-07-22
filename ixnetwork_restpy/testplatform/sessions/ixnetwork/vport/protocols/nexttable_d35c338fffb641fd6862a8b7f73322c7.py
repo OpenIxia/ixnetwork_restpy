@@ -31,8 +31,8 @@ class NextTable(Base):
     __slots__ = ()
     _SDM_NAME = 'nextTable'
     _SDM_ATT_MAP = {
-        'TableIdMiss': 'tableIdMiss',
         'TableId': 'tableId',
+        'TableIdMiss': 'tableIdMiss',
     }
 
     def __init__(self, parent):

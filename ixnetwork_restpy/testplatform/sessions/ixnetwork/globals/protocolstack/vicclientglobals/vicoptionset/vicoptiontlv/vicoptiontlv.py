@@ -34,12 +34,12 @@ class VicOptionTlv(Base):
     _SDM_NAME = 'vicOptionTlv'
     _SDM_ATT_MAP = {
         'Code': 'code',
+        'Increment': 'increment',
         'Name': 'name',
         'ObjectId': 'objectId',
-        'Value': 'value',
         'Rfc': 'rfc',
-        'Increment': 'increment',
         'Type': 'type',
+        'Value': 'value',
     }
 
     def __init__(self, parent):

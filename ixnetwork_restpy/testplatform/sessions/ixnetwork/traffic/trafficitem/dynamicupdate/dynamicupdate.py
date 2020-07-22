@@ -32,11 +32,11 @@ class DynamicUpdate(Base):
     __slots__ = ()
     _SDM_NAME = 'dynamicUpdate'
     _SDM_ATT_MAP = {
-        'EnabledDynamicUpdateFields': 'enabledDynamicUpdateFields',
-        'EnabledSessionAwareTrafficFields': 'enabledSessionAwareTrafficFields',
         'AvailableDynamicUpdateFields': 'availableDynamicUpdateFields',
-        'EnabledDynamicUpdateFieldsDisplayNames': 'enabledDynamicUpdateFieldsDisplayNames',
         'AvailableSessionAwareTrafficFields': 'availableSessionAwareTrafficFields',
+        'EnabledDynamicUpdateFields': 'enabledDynamicUpdateFields',
+        'EnabledDynamicUpdateFieldsDisplayNames': 'enabledDynamicUpdateFieldsDisplayNames',
+        'EnabledSessionAwareTrafficFields': 'enabledSessionAwareTrafficFields',
     }
 
     def __init__(self, parent):

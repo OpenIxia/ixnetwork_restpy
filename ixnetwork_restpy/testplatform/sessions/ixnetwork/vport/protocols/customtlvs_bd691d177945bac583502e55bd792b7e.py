@@ -33,17 +33,17 @@ class CustomTlvs(Base):
     __slots__ = ()
     _SDM_NAME = 'customTlvs'
     _SDM_ATT_MAP = {
-        'IncludeInLtm': 'includeInLtm',
-        'IncludeInLbm': 'includeInLbm',
-        'IncludeInLmm': 'includeInLmm',
         'Enabled': 'enabled',
-        'Value': 'value',
         'IncludeInCcm': 'includeInCcm',
-        'Length': 'length',
-        'IncludeInLmr': 'includeInLmr',
+        'IncludeInLbm': 'includeInLbm',
         'IncludeInLbr': 'includeInLbr',
-        'Type': 'type',
+        'IncludeInLmm': 'includeInLmm',
+        'IncludeInLmr': 'includeInLmr',
+        'IncludeInLtm': 'includeInLtm',
         'IncludeInLtr': 'includeInLtr',
+        'Length': 'length',
+        'Type': 'type',
+        'Value': 'value',
     }
 
     def __init__(self, parent):

@@ -33,15 +33,15 @@ class VepaOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'vepaOptions'
     _SDM_ATT_MAP = {
-        'OverrideGlobalVsiRateControl': 'overrideGlobalVsiRateControl',
-        'ObjectId': 'objectId',
-        'MaxVdpCommands': 'maxVdpCommands',
-        'SetupRate': 'setupRate',
-        'LldpEvbDestinationMac': 'lldpEvbDestinationMac',
         'EcpDestinationMac': 'ecpDestinationMac',
         'EcpEthertype': 'ecpEthertype',
-        'TeardownRate': 'teardownRate',
         'LldpCdcpDestinationMac': 'lldpCdcpDestinationMac',
+        'LldpEvbDestinationMac': 'lldpEvbDestinationMac',
+        'MaxVdpCommands': 'maxVdpCommands',
+        'ObjectId': 'objectId',
+        'OverrideGlobalVsiRateControl': 'overrideGlobalVsiRateControl',
+        'SetupRate': 'setupRate',
+        'TeardownRate': 'teardownRate',
     }
 
     def __init__(self, parent):

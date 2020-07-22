@@ -33,12 +33,12 @@ class BroadcastDomains(Base):
     __slots__ = ()
     _SDM_NAME = 'broadcastDomains'
     _SDM_ATT_MAP = {
-        'EthernetTagId': 'ethernetTagId',
-        'Enabled': 'enabled',
-        'BVlanId': 'bVlanId',
         'AdRouteLabel': 'adRouteLabel',
+        'BVlanId': 'bVlanId',
         'BVlanPriority': 'bVlanPriority',
         'BVlanTpId': 'bVlanTpId',
+        'Enabled': 'enabled',
+        'EthernetTagId': 'ethernetTagId',
     }
 
     def __init__(self, parent):

@@ -32,8 +32,8 @@ class Ethernet(Base):
     _SDM_NAME = 'ethernet'
     _SDM_ATT_MAP = {
         'MacAddress': 'macAddress',
-        'UidFromMac': 'uidFromMac',
         'Mtu': 'mtu',
+        'UidFromMac': 'uidFromMac',
     }
 
     def __init__(self, parent):

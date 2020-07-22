@@ -33,18 +33,18 @@ class MulticastReceiverSite(Base):
     __slots__ = ()
     _SDM_NAME = 'multicastReceiverSite'
     _SDM_ATT_MAP = {
-        'SourceAddressCount': 'sourceAddressCount',
-        'SendTriggeredCmulticastRoute': 'sendTriggeredCmulticastRoute',
-        'CMcastRouteType': 'cMcastRouteType',
-        'SupportLeafAdRoutesSending': 'supportLeafAdRoutesSending',
-        'Enabled': 'enabled',
-        'SourceMaskWidth': 'sourceMaskWidth',
-        'StartSourceAddress': 'startSourceAddress',
         'AddressFamilyType': 'addressFamilyType',
+        'CMcastRouteType': 'cMcastRouteType',
+        'Enabled': 'enabled',
         'GroupAddressCount': 'groupAddressCount',
-        'SourceGroupMapping': 'sourceGroupMapping',
         'GroupMaskWidth': 'groupMaskWidth',
+        'SendTriggeredCmulticastRoute': 'sendTriggeredCmulticastRoute',
+        'SourceAddressCount': 'sourceAddressCount',
+        'SourceGroupMapping': 'sourceGroupMapping',
+        'SourceMaskWidth': 'sourceMaskWidth',
         'StartGroupAddress': 'startGroupAddress',
+        'StartSourceAddress': 'startSourceAddress',
+        'SupportLeafAdRoutesSending': 'supportLeafAdRoutesSending',
     }
 
     def __init__(self, parent):

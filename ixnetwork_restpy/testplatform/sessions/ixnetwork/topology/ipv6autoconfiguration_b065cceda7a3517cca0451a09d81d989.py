@@ -33,21 +33,21 @@ class Ipv6Autoconfiguration(Base):
     __slots__ = ()
     _SDM_NAME = 'ipv6Autoconfiguration'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Status': 'status',
-        'Errors': 'errors',
-        'Name': 'name',
-        'StackedLayers': 'stackedLayers',
-        'Multiplier': 'multiplier',
-        'GatewayIp': 'gatewayIp',
-        'ResolvedGatewayMac': 'resolvedGatewayMac',
-        'Prefix': 'prefix',
-        'ConnectedVia': 'connectedVia',
-        'DescriptiveName': 'descriptiveName',
         'Address': 'address',
+        'ConnectedVia': 'connectedVia',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Errors': 'errors',
+        'GatewayIp': 'gatewayIp',
+        'Multiplier': 'multiplier',
+        'Name': 'name',
+        'Prefix': 'prefix',
+        'ResolvedGatewayMac': 'resolvedGatewayMac',
         'SessionInfo': 'sessionInfo',
-        'StateCounts': 'stateCounts',
         'SessionStatus': 'sessionStatus',
+        'StackedLayers': 'stackedLayers',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
     }
 
     def __init__(self, parent):

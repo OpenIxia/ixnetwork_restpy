@@ -31,24 +31,24 @@ class PppoxServerSessions(Base):
     __slots__ = ()
     _SDM_NAME = 'pppoxServerSessions'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'DiscoveredRemoteTunnelIds': 'discoveredRemoteTunnelIds',
-        'EnableDomainGroups': 'enableDomainGroups',
-        'Name': 'name',
-        'DomainList': 'domainList',
-        'PapPassword': 'papPassword',
         'ChapName': 'chapName',
-        'DiscoveredRemoteSessionIds': 'discoveredRemoteSessionIds',
-        'ServerIpv4Addresses': 'serverIpv4Addresses',
+        'ChapSecret': 'chapSecret',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
-        'DiscoveredTunnelIds': 'discoveredTunnelIds',
-        'ServerIpv6Addresses': 'serverIpv6Addresses',
+        'DiscoveredClientsMacs': 'discoveredClientsMacs',
+        'DiscoveredRemoteSessionIds': 'discoveredRemoteSessionIds',
+        'DiscoveredRemoteTunnelIds': 'discoveredRemoteTunnelIds',
         'DiscoveredSessionIds': 'discoveredSessionIds',
         'DiscoveredTunnelIPs': 'discoveredTunnelIPs',
-        'DiscoveredClientsMacs': 'discoveredClientsMacs',
-        'ChapSecret': 'chapSecret',
-        'SessionInfo': 'sessionInfo',
+        'DiscoveredTunnelIds': 'discoveredTunnelIds',
+        'DomainList': 'domainList',
+        'EnableDomainGroups': 'enableDomainGroups',
+        'Name': 'name',
+        'PapPassword': 'papPassword',
         'PapUser': 'papUser',
+        'ServerIpv4Addresses': 'serverIpv4Addresses',
+        'ServerIpv6Addresses': 'serverIpv6Addresses',
+        'SessionInfo': 'sessionInfo',
     }
 
     def __init__(self, parent):

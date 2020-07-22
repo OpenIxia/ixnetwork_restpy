@@ -32,14 +32,14 @@ class AtoiTLVList(Base):
     _SDM_NAME = 'atoiTLVList'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'TimeOfNextJump': 'timeOfNextJump',
-        'KeyField': 'keyField',
-        'DisplayName': 'displayName',
-        'Name': 'name',
-        'MvActive': 'mvActive',
-        'JumpSeconds': 'jumpSeconds',
         'CurrentOffset': 'currentOffset',
         'DescriptiveName': 'descriptiveName',
+        'DisplayName': 'displayName',
+        'JumpSeconds': 'jumpSeconds',
+        'KeyField': 'keyField',
+        'MvActive': 'mvActive',
+        'Name': 'name',
+        'TimeOfNextJump': 'timeOfNextJump',
     }
 
     def __init__(self, parent):

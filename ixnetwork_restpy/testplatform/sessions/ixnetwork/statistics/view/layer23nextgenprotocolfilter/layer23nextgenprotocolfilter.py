@@ -33,13 +33,13 @@ class Layer23NextGenProtocolFilter(Base):
     __slots__ = ()
     _SDM_NAME = 'layer23NextGenProtocolFilter'
     _SDM_ATT_MAP = {
-        'MatchingAdvancedFilters': 'matchingAdvancedFilters',
-        'ProtocolFilterIds': 'protocolFilterIds',
-        'AllAdvancedFilters': 'allAdvancedFilters',
         'AdvancedCVFilter': 'advancedCVFilter',
-        'AggregationType': 'aggregationType',
-        'PortFilterIds': 'portFilterIds',
         'AdvancedFilterName': 'advancedFilterName',
+        'AggregationType': 'aggregationType',
+        'AllAdvancedFilters': 'allAdvancedFilters',
+        'MatchingAdvancedFilters': 'matchingAdvancedFilters',
+        'PortFilterIds': 'portFilterIds',
+        'ProtocolFilterIds': 'protocolFilterIds',
     }
 
     def __init__(self, parent):

@@ -35,8 +35,8 @@ class IsisL3PseudoIfaceAttPoint2Config(Base):
         'Active': 'active',
         'Count': 'count',
         'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
         'LinkMetric': 'linkMetric',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

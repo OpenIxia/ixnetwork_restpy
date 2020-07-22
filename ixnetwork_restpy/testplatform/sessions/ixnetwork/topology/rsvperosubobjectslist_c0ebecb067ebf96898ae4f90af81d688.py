@@ -32,18 +32,18 @@ class RsvpEroSubObjectsList(Base):
     __slots__ = ()
     _SDM_NAME = 'rsvpEroSubObjectsList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'LooseFlag': 'looseFlag',
-        'Ip': 'ip',
-        'P2mpIdAsIp': 'p2mpIdAsIp',
-        'LeafIp': 'leafIp',
-        'P2mpIdAsNum': 'p2mpIdAsNum',
-        'LocalIp': 'localIp',
         'AsNumber': 'asNumber',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
-        'Type': 'type',
-        'PrefixLength': 'prefixLength',
+        'Ip': 'ip',
+        'LeafIp': 'leafIp',
+        'LocalIp': 'localIp',
+        'LooseFlag': 'looseFlag',
         'Name': 'name',
+        'P2mpIdAsIp': 'p2mpIdAsIp',
+        'P2mpIdAsNum': 'p2mpIdAsNum',
+        'PrefixLength': 'prefixLength',
+        'Type': 'type',
     }
 
     def __init__(self, parent):

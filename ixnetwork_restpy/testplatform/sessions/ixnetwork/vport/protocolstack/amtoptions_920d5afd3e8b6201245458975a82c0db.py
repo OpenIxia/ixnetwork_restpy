@@ -33,13 +33,13 @@ class AmtOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'amtOptions'
     _SDM_ATT_MAP = {
-        'TunnelOriginate': 'tunnelOriginate',
+        'MaxOutstandingSessions': 'maxOutstandingSessions',
         'ObjectId': 'objectId',
+        'OverrideGlobalSetupRate': 'overrideGlobalSetupRate',
         'OverrideGlobalTeardownRate': 'overrideGlobalTeardownRate',
         'SetupRate': 'setupRate',
-        'OverrideGlobalSetupRate': 'overrideGlobalSetupRate',
         'TeardownRate': 'teardownRate',
-        'MaxOutstandingSessions': 'maxOutstandingSessions',
+        'TunnelOriginate': 'tunnelOriginate',
     }
 
     def __init__(self, parent):

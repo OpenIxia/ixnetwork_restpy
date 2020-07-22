@@ -33,8 +33,8 @@ class IsisPseudoInterface(Base):
     _SDM_NAME = 'isisPseudoInterface'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'LinkType': 'linkType',
         'DescriptiveName': 'descriptiveName',
+        'LinkType': 'linkType',
         'Name': 'name',
     }
 

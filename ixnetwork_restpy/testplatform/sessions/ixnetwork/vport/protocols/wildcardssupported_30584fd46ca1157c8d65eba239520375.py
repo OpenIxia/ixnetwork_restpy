@@ -31,18 +31,18 @@ class WildcardsSupported(Base):
     __slots__ = ()
     _SDM_NAME = 'wildcardsSupported'
     _SDM_ATT_MAP = {
-        'IpTos': 'ipTos',
-        'VlanPriority': 'vlanPriority',
-        'TcpUdpSourcePort': 'tcpUdpSourcePort',
         'EthernetDestinationAddress': 'ethernetDestinationAddress',
-        'TcpUdpDestinationPort': 'tcpUdpDestinationPort',
         'EthernetFrameType': 'ethernetFrameType',
-        'VlanId': 'vlanId',
-        'SwitchInputPort': 'switchInputPort',
+        'EthernetSourceAddress': 'ethernetSourceAddress',
         'IpDestinationAddress': 'ipDestinationAddress',
         'IpProtocol': 'ipProtocol',
         'IpSourceAddress': 'ipSourceAddress',
-        'EthernetSourceAddress': 'ethernetSourceAddress',
+        'IpTos': 'ipTos',
+        'SwitchInputPort': 'switchInputPort',
+        'TcpUdpDestinationPort': 'tcpUdpDestinationPort',
+        'TcpUdpSourcePort': 'tcpUdpSourcePort',
+        'VlanId': 'vlanId',
+        'VlanPriority': 'vlanPriority',
     }
 
     def __init__(self, parent):

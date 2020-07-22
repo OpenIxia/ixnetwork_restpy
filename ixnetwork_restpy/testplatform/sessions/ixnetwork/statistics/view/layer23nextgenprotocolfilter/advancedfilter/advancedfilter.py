@@ -33,10 +33,10 @@ class AdvancedFilter(Base):
     __slots__ = ()
     _SDM_NAME = 'advancedFilter'
     _SDM_ATT_MAP = {
-        'SortingStats': 'sortingStats',
-        'TrackingFilterId': 'trackingFilterId',
         'Expression': 'expression',
         'Name': 'name',
+        'SortingStats': 'sortingStats',
+        'TrackingFilterId': 'trackingFilterId',
     }
 
     def __init__(self, parent):

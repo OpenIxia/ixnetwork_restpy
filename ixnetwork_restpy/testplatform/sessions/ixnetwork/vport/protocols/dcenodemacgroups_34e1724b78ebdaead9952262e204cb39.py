@@ -33,18 +33,18 @@ class DceNodeMacGroups(Base):
     __slots__ = ()
     _SDM_NAME = 'dceNodeMacGroups'
     _SDM_ATT_MAP = {
-        'StartUnicastSourceMac': 'startUnicastSourceMac',
-        'InterGroupUnicastMacIncrement': 'interGroupUnicastMacIncrement',
         'IncludeMacGroups': 'includeMacGroups',
-        'VlanId': 'vlanId',
-        'UnicastAddressNodeStep': 'unicastAddressNodeStep',
-        'NoOfUnicastScrMacsPerMulicastMac': 'noOfUnicastScrMacsPerMulicastMac',
-        'MulticastMacStep': 'multicastMacStep',
+        'InterGroupUnicastMacIncrement': 'interGroupUnicastMacIncrement',
+        'IntraGroupUnicastMacIncrement': 'intraGroupUnicastMacIncrement',
         'MulticastAddressNodeStep': 'multicastAddressNodeStep',
         'MulticastMacCount': 'multicastMacCount',
+        'MulticastMacStep': 'multicastMacStep',
+        'NoOfUnicastScrMacsPerMulicastMac': 'noOfUnicastScrMacsPerMulicastMac',
         'SourceGroupMapping': 'sourceGroupMapping',
-        'IntraGroupUnicastMacIncrement': 'intraGroupUnicastMacIncrement',
         'StartMulticastMac': 'startMulticastMac',
+        'StartUnicastSourceMac': 'startUnicastSourceMac',
+        'UnicastAddressNodeStep': 'unicastAddressNodeStep',
+        'VlanId': 'vlanId',
     }
 
     def __init__(self, parent):

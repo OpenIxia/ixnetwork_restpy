@@ -33,20 +33,20 @@ class CrpRange(Base):
     __slots__ = ()
     _SDM_NAME = 'crpRange'
     _SDM_ATT_MAP = {
-        'PriorityType': 'priorityType',
-        'PriorityChangeInterval': 'priorityChangeInterval',
-        'PeriodicAdvertisementInterval': 'periodicAdvertisementInterval',
+        'AdvertisementHoldTime': 'advertisementHoldTime',
+        'BackOffInterval': 'backOffInterval',
+        'CrpAddress': 'crpAddress',
         'Enabled': 'enabled',
-        'TriggeredCrpMessageCount': 'triggeredCrpMessageCount',
+        'GroupAddress': 'groupAddress',
         'GroupCount': 'groupCount',
+        'GroupMaskLen': 'groupMaskLen',
+        'MeshingType': 'meshingType',
+        'PeriodicAdvertisementInterval': 'periodicAdvertisementInterval',
+        'PriorityChangeInterval': 'priorityChangeInterval',
+        'PriorityType': 'priorityType',
         'PriorityValue': 'priorityValue',
         'RouterCount': 'routerCount',
-        'CrpAddress': 'crpAddress',
-        'BackOffInterval': 'backOffInterval',
-        'GroupAddress': 'groupAddress',
-        'AdvertisementHoldTime': 'advertisementHoldTime',
-        'MeshingType': 'meshingType',
-        'GroupMaskLen': 'groupMaskLen',
+        'TriggeredCrpMessageCount': 'triggeredCrpMessageCount',
     }
 
     def __init__(self, parent):

@@ -32,15 +32,15 @@ class Meters(Base):
     __slots__ = ()
     _SDM_NAME = 'meters'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'MeterDesc': 'meterDesc',
-        'DescriptiveName': 'descriptiveName',
-        'Multiplier': 'multiplier',
         'Active': 'active',
-        'Flags': 'flags',
         'Advertise': 'advertise',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Flags': 'flags',
+        'MeterDesc': 'meterDesc',
         'MeterId': 'meterId',
+        'Multiplier': 'multiplier',
+        'Name': 'name',
         'NumberOfBands': 'numberOfBands',
     }
 

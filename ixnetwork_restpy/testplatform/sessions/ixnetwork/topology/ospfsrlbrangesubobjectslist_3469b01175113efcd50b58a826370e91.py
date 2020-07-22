@@ -33,10 +33,10 @@ class OspfSRLBRangeSubObjectsList(Base):
     _SDM_NAME = 'ospfSRLBRangeSubObjectsList'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'SrlbSidCount': 'srlbSidCount',
-        'SrlbStartSIDLabel': 'srlbStartSIDLabel',
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
+        'SrlbSidCount': 'srlbSidCount',
+        'SrlbStartSIDLabel': 'srlbStartSIDLabel',
     }
 
     def __init__(self, parent):

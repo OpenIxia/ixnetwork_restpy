@@ -33,12 +33,12 @@ class Group(Base):
     __slots__ = ()
     _SDM_NAME = 'group'
     _SDM_ATT_MAP = {
-        'GroupAdvertise': 'groupAdvertise',
+        'Id__': '__id__',
         'Description': 'description',
         'Enabled': 'enabled',
-        'Id__': '__id__',
-        'UpdateGroupModStatus': 'updateGroupModStatus',
+        'GroupAdvertise': 'groupAdvertise',
         'Type': 'type',
+        'UpdateGroupModStatus': 'updateGroupModStatus',
     }
 
     def __init__(self, parent):

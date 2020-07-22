@@ -33,15 +33,15 @@ class MeterConfigStatsBandLearnedInformation(Base):
     _SDM_NAME = 'meterConfigStatsBandLearnedInformation'
     _SDM_ATT_MAP = {
         'BurstSize': 'burstSize',
-        'PrecedenceLevel': 'precedenceLevel',
-        'Type': 'type',
-        'Rate': 'rate',
-        'LocalIp': 'localIp',
+        'DataPathId': 'dataPathId',
         'DataPathIdAsHex': 'dataPathIdAsHex',
         'Experimenter': 'experimenter',
-        'RemoteIp': 'remoteIp',
+        'LocalIp': 'localIp',
         'MeterId': 'meterId',
-        'DataPathId': 'dataPathId',
+        'PrecedenceLevel': 'precedenceLevel',
+        'Rate': 'rate',
+        'RemoteIp': 'remoteIp',
+        'Type': 'type',
     }
 
     def __init__(self, parent):

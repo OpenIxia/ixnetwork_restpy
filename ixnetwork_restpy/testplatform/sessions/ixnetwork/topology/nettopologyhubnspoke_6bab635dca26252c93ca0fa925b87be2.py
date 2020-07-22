@@ -34,10 +34,10 @@ class NetTopologyHubNSpoke(Base):
     _SDM_NAME = 'netTopologyHubNSpoke'
     _SDM_ATT_MAP = {
         'EnableLevel2Spokes': 'enableLevel2Spokes',
-        'NumberOfFirstLevelSpokes': 'numberOfFirstLevelSpokes',
         'IncludeEntryPoint': 'includeEntryPoint',
-        'NumberOfSecondLevelSpokes': 'numberOfSecondLevelSpokes',
         'LinkMultiplier': 'linkMultiplier',
+        'NumberOfFirstLevelSpokes': 'numberOfFirstLevelSpokes',
+        'NumberOfSecondLevelSpokes': 'numberOfSecondLevelSpokes',
     }
 
     def __init__(self, parent):

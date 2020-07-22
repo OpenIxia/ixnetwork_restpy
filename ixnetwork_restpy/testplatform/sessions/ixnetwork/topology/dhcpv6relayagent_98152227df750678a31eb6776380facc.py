@@ -33,22 +33,22 @@ class Dhcpv6relayAgent(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcpv6relayAgent'
     _SDM_ATT_MAP = {
+        'ConnectedVia': 'connectedVia',
         'Count': 'count',
-        'Status': 'status',
-        'Errors': 'errors',
-        'ReconfviaRelay': 'reconfviaRelay',
-        'Name': 'name',
+        'DescriptiveName': 'descriptiveName',
         'Dhcp6RelayAddress': 'dhcp6RelayAddress',
         'Dhcp6RelayAgentGlobalAndPortData': 'dhcp6RelayAgentGlobalAndPortData',
-        'StackedLayers': 'stackedLayers',
         'Dhcp6ServerAddress': 'dhcp6ServerAddress',
-        'ConnectedVia': 'connectedVia',
-        'DescriptiveName': 'descriptiveName',
-        'Multiplier': 'multiplier',
+        'Errors': 'errors',
         'LightweightDhcp6RelayAgentGlobalAndPortData': 'lightweightDhcp6RelayAgentGlobalAndPortData',
+        'Multiplier': 'multiplier',
+        'Name': 'name',
+        'ReconfviaRelay': 'reconfviaRelay',
         'SessionInfo': 'sessionInfo',
-        'StateCounts': 'stateCounts',
         'SessionStatus': 'sessionStatus',
+        'StackedLayers': 'stackedLayers',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
     }
 
     def __init__(self, parent):

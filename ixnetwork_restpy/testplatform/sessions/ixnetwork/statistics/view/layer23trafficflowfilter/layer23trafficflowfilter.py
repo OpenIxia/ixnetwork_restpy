@@ -33,11 +33,11 @@ class Layer23TrafficFlowFilter(Base):
     __slots__ = ()
     _SDM_NAME = 'layer23TrafficFlowFilter'
     _SDM_ATT_MAP = {
-        'EgressLatencyBinDisplayOption': 'egressLatencyBinDisplayOption',
         'AggregatedAcrossPorts': 'aggregatedAcrossPorts',
+        'EgressLatencyBinDisplayOption': 'egressLatencyBinDisplayOption',
+        'PortFilterIds': 'portFilterIds',
         'TrafficItemFilterId': 'trafficItemFilterId',
         'TrafficItemFilterIds': 'trafficItemFilterIds',
-        'PortFilterIds': 'portFilterIds',
     }
 
     def __init__(self, parent):

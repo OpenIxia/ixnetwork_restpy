@@ -32,11 +32,11 @@ class RsvpDetourSubObjectsList(Base):
     __slots__ = ()
     _SDM_NAME = 'rsvpDetourSubObjectsList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'PlrId': 'plrId',
         'AvoidNodeId': 'avoidNodeId',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
+        'PlrId': 'plrId',
     }
 
     def __init__(self, parent):

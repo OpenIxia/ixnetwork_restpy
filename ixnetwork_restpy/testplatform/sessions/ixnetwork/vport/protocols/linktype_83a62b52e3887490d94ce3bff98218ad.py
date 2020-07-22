@@ -31,8 +31,8 @@ class LinkType(Base):
     __slots__ = ()
     _SDM_NAME = 'linkType'
     _SDM_ATT_MAP = {
-        'OfppfFiber': 'ofppfFiber',
         'OfppfCopper': 'ofppfCopper',
+        'OfppfFiber': 'ofppfFiber',
     }
 
     def __init__(self, parent):

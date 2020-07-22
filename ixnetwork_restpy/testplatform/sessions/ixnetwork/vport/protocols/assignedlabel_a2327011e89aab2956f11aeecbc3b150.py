@@ -32,16 +32,16 @@ class AssignedLabel(Base):
     __slots__ = ()
     _SDM_NAME = 'assignedLabel'
     _SDM_ATT_MAP = {
-        'LspOrSubLspSetupTime': 'lspOrSubLspSetupTime',
         'CurrentLspOrSubLspUpTime': 'currentLspOrSubLspUpTime',
-        'TunnelId': 'tunnelId',
         'DestinationIp': 'destinationIp',
-        'Type': 'type',
-        'LeafIp': 'leafIp',
         'Label': 'label',
+        'LeafIp': 'leafIp',
         'LspId': 'lspId',
+        'LspOrSubLspSetupTime': 'lspOrSubLspSetupTime',
         'ReservationState': 'reservationState',
         'SourceIp': 'sourceIp',
+        'TunnelId': 'tunnelId',
+        'Type': 'type',
     }
 
     def __init__(self, parent):

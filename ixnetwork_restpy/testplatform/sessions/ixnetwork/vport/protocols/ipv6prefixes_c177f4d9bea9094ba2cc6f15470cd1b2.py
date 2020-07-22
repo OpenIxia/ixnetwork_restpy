@@ -32,13 +32,13 @@ class Ipv6Prefixes(Base):
     __slots__ = ()
     _SDM_NAME = 'ipv6Prefixes'
     _SDM_ATT_MAP = {
-        'LspId': 'lspId',
-        'Ipv6Prefix': 'ipv6Prefix',
-        'SequenceNumber': 'sequenceNumber',
         'Age': 'age',
         'HostName': 'hostName',
+        'Ipv6Prefix': 'ipv6Prefix',
         'LearnedVia': 'learnedVia',
+        'LspId': 'lspId',
         'Metric': 'metric',
+        'SequenceNumber': 'sequenceNumber',
     }
 
     def __init__(self, parent):

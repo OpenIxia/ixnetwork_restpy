@@ -34,12 +34,12 @@ class SwitchHostRanges(Base):
     _SDM_NAME = 'switchHostRanges'
     _SDM_ATT_MAP = {
         'EnableStaticIp': 'enableStaticIp',
+        'EnableVlan': 'enableVlan',
         'Enabled': 'enabled',
-        'HostStaticIpv4Address': 'hostStaticIpv4Address',
         'HostMacAddress': 'hostMacAddress',
+        'HostStaticIpv4Address': 'hostStaticIpv4Address',
         'HostVlanid': 'hostVlanid',
         'NumberOfHostsPerPort': 'numberOfHostsPerPort',
-        'EnableVlan': 'enableVlan',
     }
 
     def __init__(self, parent):

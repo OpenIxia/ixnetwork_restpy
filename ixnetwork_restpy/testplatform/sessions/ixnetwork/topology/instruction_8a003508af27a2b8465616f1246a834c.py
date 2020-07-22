@@ -34,8 +34,8 @@ class Instruction(Base):
     _SDM_NAME = 'instruction'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'DisplayName': 'displayName',
         'Description': 'description',
+        'DisplayName': 'displayName',
         'IsEditable': 'isEditable',
         'IsEnabled': 'isEnabled',
         'IsRequired': 'isRequired',

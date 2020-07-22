@@ -31,16 +31,16 @@ class BgpSRTEPoliciesSegmentListV6(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpSRTEPoliciesSegmentListV6'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'NumberOfSegmentsV6': 'numberOfSegmentsV6',
-        'Name': 'name',
-        'Weight': 'weight',
-        'SrtepolicyName': 'srtepolicyName',
-        'DescriptiveName': 'descriptiveName',
         'Active': 'active',
-        'SegmentListNumber': 'segmentListNumber',
-        'NumberOfActiveSegments': 'numberOfActiveSegments',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
         'EnWeight': 'enWeight',
+        'Name': 'name',
+        'NumberOfActiveSegments': 'numberOfActiveSegments',
+        'NumberOfSegmentsV6': 'numberOfSegmentsV6',
+        'SegmentListNumber': 'segmentListNumber',
+        'SrtepolicyName': 'srtepolicyName',
+        'Weight': 'weight',
     }
 
     def __init__(self, parent):

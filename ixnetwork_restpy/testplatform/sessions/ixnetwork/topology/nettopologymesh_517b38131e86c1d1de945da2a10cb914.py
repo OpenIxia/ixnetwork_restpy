@@ -33,9 +33,9 @@ class NetTopologyMesh(Base):
     __slots__ = ()
     _SDM_NAME = 'netTopologyMesh'
     _SDM_ATT_MAP = {
-        'Nodes': 'nodes',
         'IncludeEntryPoint': 'includeEntryPoint',
         'LinkMultiplier': 'linkMultiplier',
+        'Nodes': 'nodes',
     }
 
     def __init__(self, parent):

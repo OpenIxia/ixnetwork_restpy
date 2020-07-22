@@ -33,11 +33,11 @@ class SimInterface(Base):
     _SDM_NAME = 'simInterface'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'FromNodeIndex': 'fromNodeIndex',
-        'ToNetworkTopology': 'toNetworkTopology',
         'DescriptiveName': 'descriptiveName',
-        'ToNodeIndex': 'toNodeIndex',
+        'FromNodeIndex': 'fromNodeIndex',
         'Name': 'name',
+        'ToNetworkTopology': 'toNetworkTopology',
+        'ToNodeIndex': 'toNodeIndex',
     }
 
     def __init__(self, parent):

@@ -34,18 +34,18 @@ class Field(Base):
     _SDM_NAME = 'field'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'SizeType': 'sizeType',
-        'DisplayName': 'displayName',
         'Description': 'description',
-        'IsEditable': 'isEditable',
+        'DisplayName': 'displayName',
         'Encoding': 'encoding',
-        'IsEnabled': 'isEnabled',
         'Enum': 'enum',
-        'Value': 'value',
+        'IsEditable': 'isEditable',
+        'IsEnabled': 'isEnabled',
         'IsRequired': 'isRequired',
-        'Size': 'size',
-        'SingleValue': 'singleValue',
         'Name': 'name',
+        'SingleValue': 'singleValue',
+        'Size': 'size',
+        'SizeType': 'sizeType',
+        'Value': 'value',
     }
 
     def __init__(self, parent):

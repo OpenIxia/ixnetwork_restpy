@@ -32,9 +32,9 @@ class SubTlv(Base):
     __slots__ = ()
     _SDM_NAME = 'subTlv'
     _SDM_ATT_MAP = {
-        'IsEnabled': 'isEnabled',
         'Description': 'description',
         'EnablePerSession': 'enablePerSession',
+        'IsEnabled': 'isEnabled',
         'Name': 'name',
     }
 

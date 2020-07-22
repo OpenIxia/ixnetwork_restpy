@@ -33,13 +33,13 @@ class Dhcpv6ClientOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcpv6ClientOptions'
     _SDM_ATT_MAP = {
-        'SetupRateMax': 'setupRateMax',
+        'Associates': 'associates',
         'MaxOutstandingRequests': 'maxOutstandingRequests',
         'ObjectId': 'objectId',
-        'Associates': 'associates',
         'OverrideGlobalSetupRate': 'overrideGlobalSetupRate',
         'SetupRateIncrement': 'setupRateIncrement',
         'SetupRateInitial': 'setupRateInitial',
+        'SetupRateMax': 'setupRateMax',
     }
 
     def __init__(self, parent):

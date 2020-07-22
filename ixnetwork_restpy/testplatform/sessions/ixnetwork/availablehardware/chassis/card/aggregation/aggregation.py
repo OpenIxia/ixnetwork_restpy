@@ -32,11 +32,11 @@ class Aggregation(Base):
     __slots__ = ()
     _SDM_NAME = 'aggregation'
     _SDM_ATT_MAP = {
+        'ActivePort': 'activePort',
+        'ActivePorts': 'activePorts',
         'AvailableModes': 'availableModes',
         'Mode': 'mode',
-        'ActivePort': 'activePort',
         'ResourcePorts': 'resourcePorts',
-        'ActivePorts': 'activePorts',
     }
 
     def __init__(self, parent):

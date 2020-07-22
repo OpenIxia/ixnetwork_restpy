@@ -31,21 +31,21 @@ class OspfTrafficEngineering(Base):
     __slots__ = ()
     _SDM_NAME = 'ospfTrafficEngineering'
     _SDM_ATT_MAP = {
-        'BandwidthPriority7': 'bandwidthPriority7',
-        'BandwidthPriority6': 'bandwidthPriority6',
-        'BandwidthPriority5': 'bandwidthPriority5',
-        'BandwidthPriority4': 'bandwidthPriority4',
-        'BandwidthPriority3': 'bandwidthPriority3',
-        'BandwidthPriority2': 'bandwidthPriority2',
-        'BandwidthPriority1': 'bandwidthPriority1',
+        'AdministratorGroup': 'administratorGroup',
         'BandwidthPriority0': 'bandwidthPriority0',
+        'BandwidthPriority1': 'bandwidthPriority1',
+        'BandwidthPriority2': 'bandwidthPriority2',
+        'BandwidthPriority3': 'bandwidthPriority3',
+        'BandwidthPriority4': 'bandwidthPriority4',
+        'BandwidthPriority5': 'bandwidthPriority5',
+        'BandwidthPriority6': 'bandwidthPriority6',
+        'BandwidthPriority7': 'bandwidthPriority7',
         'Count': 'count',
-        'Enable': 'enable',
         'DescriptiveName': 'descriptiveName',
-        'MetricLevel': 'metricLevel',
+        'Enable': 'enable',
         'MaxBandwidth': 'maxBandwidth',
         'MaxReservableBandwidth': 'maxReservableBandwidth',
-        'AdministratorGroup': 'administratorGroup',
+        'MetricLevel': 'metricLevel',
         'Name': 'name',
     }
 

@@ -32,17 +32,17 @@ class PcepIroSubObjectsList(Base):
     __slots__ = ()
     _SDM_NAME = 'pcepIroSubObjectsList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Ipv4Address': 'ipv4Address',
-        'Name': 'name',
-        'Ipv6Address': 'ipv6Address',
-        'InterfaceId': 'interfaceId',
-        'RouterId': 'routerId',
-        'AsNumber': 'asNumber',
-        'DescriptiveName': 'descriptiveName',
-        'SubObjectType': 'subObjectType',
         'Active': 'active',
+        'AsNumber': 'asNumber',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'InterfaceId': 'interfaceId',
+        'Ipv4Address': 'ipv4Address',
+        'Ipv6Address': 'ipv6Address',
+        'Name': 'name',
         'PrefixLength': 'prefixLength',
+        'RouterId': 'routerId',
+        'SubObjectType': 'subObjectType',
     }
 
     def __init__(self, parent):

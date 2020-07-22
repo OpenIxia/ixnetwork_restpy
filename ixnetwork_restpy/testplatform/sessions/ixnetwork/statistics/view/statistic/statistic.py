@@ -32,12 +32,12 @@ class Statistic(Base):
     __slots__ = ()
     _SDM_NAME = 'statistic'
     _SDM_ATT_MAP = {
-        'Caption': 'caption',
-        'Enabled': 'enabled',
-        'DefaultCaption': 'defaultCaption',
-        'SourceTypes': 'sourceTypes',
         'AggregationType': 'aggregationType',
+        'Caption': 'caption',
+        'DefaultCaption': 'defaultCaption',
+        'Enabled': 'enabled',
         'ScaleFactor': 'scaleFactor',
+        'SourceTypes': 'sourceTypes',
     }
 
     def __init__(self, parent):

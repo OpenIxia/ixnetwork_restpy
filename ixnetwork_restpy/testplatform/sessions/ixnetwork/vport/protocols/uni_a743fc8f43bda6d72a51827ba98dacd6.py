@@ -33,24 +33,24 @@ class Uni(Base):
     __slots__ = ()
     _SDM_NAME = 'uni'
     _SDM_ATT_MAP = {
-        'EnablePollingVerificationTimer': 'enablePollingVerificationTimer',
-        'OverrideDataInstance': 'overrideDataInstance',
-        'PollingVerificationTimer': 'pollingVerificationTimer',
-        'SendSequenceNumber': 'sendSequenceNumber',
-        'PollingCounter': 'pollingCounter',
-        'StatusCounter': 'statusCounter',
-        'Enabled': 'enabled',
         'DataInstance': 'dataInstance',
-        'ReceiveSequenceNumber': 'receiveSequenceNumber',
-        'OverrideSendSequenceNumber': 'overrideSendSequenceNumber',
-        'IsLmiStatusLearnedInfoRefreshed': 'isLmiStatusLearnedInfoRefreshed',
-        'PollingTimer': 'pollingTimer',
-        'Mode': 'mode',
-        'OverrideReceiveSequenceNumber': 'overrideReceiveSequenceNumber',
-        'ProtocolVersion': 'protocolVersion',
+        'EnablePollingVerificationTimer': 'enablePollingVerificationTimer',
+        'Enabled': 'enabled',
         'IsEvcStatusLearnedInfoRefreshed': 'isEvcStatusLearnedInfoRefreshed',
+        'IsLmiStatusLearnedInfoRefreshed': 'isLmiStatusLearnedInfoRefreshed',
         'IsUniStatusLearnedInfoRefreshed': 'isUniStatusLearnedInfoRefreshed',
+        'Mode': 'mode',
+        'OverrideDataInstance': 'overrideDataInstance',
+        'OverrideReceiveSequenceNumber': 'overrideReceiveSequenceNumber',
+        'OverrideSendSequenceNumber': 'overrideSendSequenceNumber',
+        'PollingCounter': 'pollingCounter',
+        'PollingTimer': 'pollingTimer',
+        'PollingVerificationTimer': 'pollingVerificationTimer',
         'ProtocolInterface': 'protocolInterface',
+        'ProtocolVersion': 'protocolVersion',
+        'ReceiveSequenceNumber': 'receiveSequenceNumber',
+        'SendSequenceNumber': 'sendSequenceNumber',
+        'StatusCounter': 'statusCounter',
     }
 
     def __init__(self, parent):

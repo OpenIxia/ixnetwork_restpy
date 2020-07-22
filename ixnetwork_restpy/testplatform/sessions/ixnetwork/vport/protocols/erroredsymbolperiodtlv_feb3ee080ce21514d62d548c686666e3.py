@@ -31,10 +31,10 @@ class ErroredSymbolPeriodTlv(Base):
     __slots__ = ()
     _SDM_NAME = 'erroredSymbolPeriodTlv'
     _SDM_ATT_MAP = {
+        'Enabled': 'enabled',
         'Symbols': 'symbols',
         'Threshold': 'threshold',
         'Window': 'window',
-        'Enabled': 'enabled',
     }
 
     def __init__(self, parent):

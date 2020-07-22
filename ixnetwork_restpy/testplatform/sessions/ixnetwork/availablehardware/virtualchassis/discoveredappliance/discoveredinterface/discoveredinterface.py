@@ -32,8 +32,8 @@ class DiscoveredInterface(Base):
     __slots__ = ()
     _SDM_NAME = 'discoveredInterface'
     _SDM_ATT_MAP = {
-        'State': 'state',
         'InterfaceName': 'interfaceName',
+        'State': 'state',
     }
 
     def __init__(self, parent):

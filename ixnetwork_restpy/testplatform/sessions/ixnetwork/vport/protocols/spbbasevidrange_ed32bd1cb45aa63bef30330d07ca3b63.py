@@ -33,13 +33,13 @@ class SpbBaseVidRange(Base):
     __slots__ = ()
     _SDM_NAME = 'spbBaseVidRange'
     _SDM_ATT_MAP = {
-        'EnableUseFlagBit': 'enableUseFlagBit',
-        'EnableAutoBmacEnabled': 'enableAutoBmacEnabled',
-        'BaseVid': 'baseVid',
-        'BVlanPriority': 'bVlanPriority',
         'BMacAddress': 'bMacAddress',
-        'EctAlgorithmType': 'ectAlgorithmType',
+        'BVlanPriority': 'bVlanPriority',
         'BVlanTpId': 'bVlanTpId',
+        'BaseVid': 'baseVid',
+        'EctAlgorithmType': 'ectAlgorithmType',
+        'EnableAutoBmacEnabled': 'enableAutoBmacEnabled',
+        'EnableUseFlagBit': 'enableUseFlagBit',
     }
 
     def __init__(self, parent):

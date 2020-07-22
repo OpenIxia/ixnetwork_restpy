@@ -33,9 +33,9 @@ class MdLevel(Base):
     __slots__ = ()
     _SDM_NAME = 'mdLevel'
     _SDM_ATT_MAP = {
-        'MdName': 'mdName',
         'Enabled': 'enabled',
         'MdLevelId': 'mdLevelId',
+        'MdName': 'mdName',
         'MdNameFormat': 'mdNameFormat',
     }
 

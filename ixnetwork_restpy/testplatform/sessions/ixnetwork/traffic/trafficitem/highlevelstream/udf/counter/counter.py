@@ -32,13 +32,13 @@ class Counter(Base):
     __slots__ = ()
     _SDM_NAME = 'counter'
     _SDM_ATT_MAP = {
-        'Count': 'count',
         'AvailableWidths': 'availableWidths',
-        'Direction': 'direction',
-        'StepValue': 'stepValue',
         'BitOffset': 'bitOffset',
-        'Width': 'width',
+        'Count': 'count',
+        'Direction': 'direction',
         'StartValue': 'startValue',
+        'StepValue': 'stepValue',
+        'Width': 'width',
     }
 
     def __init__(self, parent):

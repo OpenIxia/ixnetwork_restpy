@@ -32,18 +32,18 @@ class Ospfv3PseudoInterface(Base):
     __slots__ = ()
     _SDM_NAME = 'ospfv3PseudoInterface'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'VFlag': 'vFlag',
-        'PFlag': 'pFlag',
-        'Name': 'name',
-        'Weight': 'weight',
-        'Metric': 'metric',
         'AdjSID': 'adjSID',
         'BFlag': 'bFlag',
-        'GFlag': 'gFlag',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
         'EnableAdjSID': 'enableAdjSID',
+        'GFlag': 'gFlag',
         'LFlag': 'lFlag',
+        'Metric': 'metric',
+        'Name': 'name',
+        'PFlag': 'pFlag',
+        'VFlag': 'vFlag',
+        'Weight': 'weight',
     }
 
     def __init__(self, parent):

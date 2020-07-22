@@ -33,13 +33,13 @@ class Layer23TrafficFlowDetectiveFilter(Base):
     __slots__ = ()
     _SDM_NAME = 'layer23TrafficFlowDetectiveFilter'
     _SDM_ATT_MAP = {
-        'DeadFlowsThreshold': 'deadFlowsThreshold',
-        'TrafficItemFilterIds': 'trafficItemFilterIds',
-        'FlowFilterType': 'flowFilterType',
         'DeadFlowsCount': 'deadFlowsCount',
-        'TrafficItemFilterId': 'trafficItemFilterId',
-        'ShowEgressFlows': 'showEgressFlows',
+        'DeadFlowsThreshold': 'deadFlowsThreshold',
+        'FlowFilterType': 'flowFilterType',
         'PortFilterIds': 'portFilterIds',
+        'ShowEgressFlows': 'showEgressFlows',
+        'TrafficItemFilterId': 'trafficItemFilterId',
+        'TrafficItemFilterIds': 'trafficItemFilterIds',
     }
 
     def __init__(self, parent):

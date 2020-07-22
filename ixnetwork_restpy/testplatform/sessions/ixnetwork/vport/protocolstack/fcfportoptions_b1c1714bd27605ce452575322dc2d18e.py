@@ -33,11 +33,11 @@ class FcFportOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'fcFportOptions'
     _SDM_ATT_MAP = {
-        'EdTov': 'edTov',
-        'ObjectId': 'objectId',
-        'MaxPacketsPerSecond': 'maxPacketsPerSecond',
-        'OverrideGlobalRate': 'overrideGlobalRate',
         'B2bCredit': 'b2bCredit',
+        'EdTov': 'edTov',
+        'MaxPacketsPerSecond': 'maxPacketsPerSecond',
+        'ObjectId': 'objectId',
+        'OverrideGlobalRate': 'overrideGlobalRate',
         'RtTov': 'rtTov',
     }
 

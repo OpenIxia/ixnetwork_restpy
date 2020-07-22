@@ -31,18 +31,18 @@ class IsisL3ipv6NodeRouteList(Base):
     __slots__ = ()
     _SDM_NAME = 'isisL3ipv6NodeRouteList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'NodeStep': 'nodeStep',
-        'MaskWidth': 'maskWidth',
-        'RouteOrigin': 'routeOrigin',
-        'FirstIpv6Route': 'firstIpv6Route',
-        'DescriptiveName': 'descriptiveName',
-        'NoOfRoutes': 'noOfRoutes',
         'Active': 'active',
-        'RouteStep': 'routeStep',
-        'Redistribution': 'redistribution',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'FirstIpv6Route': 'firstIpv6Route',
+        'MaskWidth': 'maskWidth',
         'Metric': 'metric',
         'Name': 'name',
+        'NoOfRoutes': 'noOfRoutes',
+        'NodeStep': 'nodeStep',
+        'Redistribution': 'redistribution',
+        'RouteOrigin': 'routeOrigin',
+        'RouteStep': 'routeStep',
     }
 
     def __init__(self, parent):

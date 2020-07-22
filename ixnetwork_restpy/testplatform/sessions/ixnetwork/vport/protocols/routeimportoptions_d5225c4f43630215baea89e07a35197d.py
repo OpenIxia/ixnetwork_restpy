@@ -34,10 +34,10 @@ class RouteImportOptions(Base):
     _SDM_NAME = 'routeImportOptions'
     _SDM_ATT_MAP = {
         'AdverstiseBestRoutes': 'adverstiseBestRoutes',
-        'NumberOfRoutesPerBlock': 'numberOfRoutesPerBlock',
-        'SendMultiExitDiscValue': 'sendMultiExitDiscValue',
-        'RouteFileType': 'routeFileType',
         'NextHopAsIs': 'nextHopAsIs',
+        'NumberOfRoutesPerBlock': 'numberOfRoutesPerBlock',
+        'RouteFileType': 'routeFileType',
+        'SendMultiExitDiscValue': 'sendMultiExitDiscValue',
     }
 
     def __init__(self, parent):

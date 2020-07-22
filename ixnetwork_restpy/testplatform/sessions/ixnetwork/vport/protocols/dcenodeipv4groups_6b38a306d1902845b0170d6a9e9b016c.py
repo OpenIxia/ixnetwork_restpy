@@ -33,18 +33,18 @@ class DceNodeIpv4Groups(Base):
     __slots__ = ()
     _SDM_NAME = 'dceNodeIpv4Groups'
     _SDM_ATT_MAP = {
-        'StartMulticastIpv4': 'startMulticastIpv4',
-        'SourceGroupMapping': 'sourceGroupMapping',
         'IncludeIpv4Groups': 'includeIpv4Groups',
-        'VlanId': 'vlanId',
-        'MulticastAddressNodeStep': 'multicastAddressNodeStep',
-        'StartUnicastSourceIpv4': 'startUnicastSourceIpv4',
-        'MulticastIpv4Count': 'multicastIpv4Count',
-        'NoOfUnicastScrIpv4sPerMulicastIpv4': 'noOfUnicastScrIpv4sPerMulicastIpv4',
         'InterGroupUnicastIpv4Increment': 'interGroupUnicastIpv4Increment',
-        'MulticastIpv4Step': 'multicastIpv4Step',
-        'UnicastAddressNodeStep': 'unicastAddressNodeStep',
         'IntraGroupUnicastIpv4Increment': 'intraGroupUnicastIpv4Increment',
+        'MulticastAddressNodeStep': 'multicastAddressNodeStep',
+        'MulticastIpv4Count': 'multicastIpv4Count',
+        'MulticastIpv4Step': 'multicastIpv4Step',
+        'NoOfUnicastScrIpv4sPerMulicastIpv4': 'noOfUnicastScrIpv4sPerMulicastIpv4',
+        'SourceGroupMapping': 'sourceGroupMapping',
+        'StartMulticastIpv4': 'startMulticastIpv4',
+        'StartUnicastSourceIpv4': 'startUnicastSourceIpv4',
+        'UnicastAddressNodeStep': 'unicastAddressNodeStep',
+        'VlanId': 'vlanId',
     }
 
     def __init__(self, parent):

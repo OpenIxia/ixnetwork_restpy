@@ -32,11 +32,11 @@ class DynamicFrameSize(Base):
     __slots__ = ()
     _SDM_NAME = 'dynamicFrameSize'
     _SDM_ATT_MAP = {
-        'RandomMin': 'randomMin',
         'FixedSize': 'fixedSize',
-        'TrafficItemName': 'trafficItemName',
-        'RandomMax': 'randomMax',
         'HighLevelStreamName': 'highLevelStreamName',
+        'RandomMax': 'randomMax',
+        'RandomMin': 'randomMin',
+        'TrafficItemName': 'trafficItemName',
         'Type': 'type',
     }
 

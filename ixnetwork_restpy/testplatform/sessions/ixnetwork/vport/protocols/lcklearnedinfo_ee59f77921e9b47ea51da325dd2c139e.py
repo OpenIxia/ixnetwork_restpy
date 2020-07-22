@@ -32,16 +32,16 @@ class LckLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'lckLearnedInfo'
     _SDM_ATT_MAP = {
-        'RxState': 'rxState',
-        'RemoteMepMacAddress': 'remoteMepMacAddress',
-        'TxState': 'txState',
-        'MepMacAddress': 'mepMacAddress',
-        'RxCount': 'rxCount',
-        'SVlan': 'sVlan',
-        'RxInterval': 'rxInterval',
         'BVlan': 'bVlan',
-        'TxCount': 'txCount',
         'CVlan': 'cVlan',
+        'MepMacAddress': 'mepMacAddress',
+        'RemoteMepMacAddress': 'remoteMepMacAddress',
+        'RxCount': 'rxCount',
+        'RxInterval': 'rxInterval',
+        'RxState': 'rxState',
+        'SVlan': 'sVlan',
+        'TxCount': 'txCount',
+        'TxState': 'txState',
     }
 
     def __init__(self, parent):

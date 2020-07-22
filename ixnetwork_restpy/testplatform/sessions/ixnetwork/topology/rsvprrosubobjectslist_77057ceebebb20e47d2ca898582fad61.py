@@ -32,19 +32,19 @@ class RsvpRROSubObjectsList(Base):
     __slots__ = ()
     _SDM_NAME = 'rsvpRROSubObjectsList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'LocalIp': 'localIp',
-        'Ip': 'ip',
-        'GlobalLabel': 'globalLabel',
-        'Label': 'label',
         'BandwidthProtection': 'bandwidthProtection',
-        'NodeProtection': 'nodeProtection',
-        'DescriptiveName': 'descriptiveName',
         'CType': 'cType',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'GlobalLabel': 'globalLabel',
+        'Ip': 'ip',
+        'Label': 'label',
+        'LocalIp': 'localIp',
+        'Name': 'name',
+        'NodeProtection': 'nodeProtection',
+        'ProtectionAvailable': 'protectionAvailable',
         'ProtectionInUse': 'protectionInUse',
         'Type': 'type',
-        'ProtectionAvailable': 'protectionAvailable',
     }
 
     def __init__(self, parent):

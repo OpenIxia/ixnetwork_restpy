@@ -32,16 +32,16 @@ class TrillOamPing(Base):
     __slots__ = ()
     _SDM_NAME = 'trillOamPing'
     _SDM_ATT_MAP = {
-        'Status': 'status',
-        'SourceNickname': 'sourceNickname',
-        'PreviousHop': 'previousHop',
-        'SequenceNumber': 'sequenceNumber',
         'DestinationNickname': 'destinationNickname',
+        'IncomingPort': 'incomingPort',
         'NextHop': 'nextHop',
         'OutgoingPort': 'outgoingPort',
         'OutgoingPortMtu': 'outgoingPortMtu',
+        'PreviousHop': 'previousHop',
         'ResponseTime': 'responseTime',
-        'IncomingPort': 'incomingPort',
+        'SequenceNumber': 'sequenceNumber',
+        'SourceNickname': 'sourceNickname',
+        'Status': 'status',
     }
 
     def __init__(self, parent):

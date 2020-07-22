@@ -33,20 +33,20 @@ class Dhcpv4server(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcpv4server'
     _SDM_ATT_MAP = {
+        'ConnectedVia': 'connectedVia',
         'Count': 'count',
-        'Status': 'status',
+        'DescriptiveName': 'descriptiveName',
         'Errors': 'errors',
+        'Multiplier': 'multiplier',
         'Name': 'name',
         'PoolCount': 'poolCount',
+        'SessionStatus': 'sessionStatus',
+        'StackedLayers': 'stackedLayers',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
         'Subnet': 'subnet',
         'SubnetAddrAssign': 'subnetAddrAssign',
-        'StackedLayers': 'stackedLayers',
         'UseRapidCommit': 'useRapidCommit',
-        'ConnectedVia': 'connectedVia',
-        'DescriptiveName': 'descriptiveName',
-        'Multiplier': 'multiplier',
-        'StateCounts': 'stateCounts',
-        'SessionStatus': 'sessionStatus',
     }
 
     def __init__(self, parent):

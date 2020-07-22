@@ -33,9 +33,9 @@ class IsisPseudoMultiTopologyValuesList(Base):
     _SDM_NAME = 'IsisPseudoMultiTopologyValuesList'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'MtId': 'mtId',
-        'EnableMtId': 'enableMtId',
         'DescriptiveName': 'descriptiveName',
+        'EnableMtId': 'enableMtId',
+        'MtId': 'mtId',
         'Name': 'name',
     }
 

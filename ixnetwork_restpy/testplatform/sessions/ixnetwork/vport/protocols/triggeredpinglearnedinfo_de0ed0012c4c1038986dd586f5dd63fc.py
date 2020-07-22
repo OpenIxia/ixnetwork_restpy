@@ -32,14 +32,14 @@ class TriggeredPingLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'triggeredPingLearnedInfo'
     _SDM_ATT_MAP = {
-        'ReturnCode': 'returnCode',
-        'IncomingLabelStack': 'incomingLabelStack',
         'Fec': 'fec',
-        'ReturnSubCode': 'returnSubCode',
-        'Rtt': 'rtt',
+        'IncomingLabelStack': 'incomingLabelStack',
+        'OutgoingLabelStack': 'outgoingLabelStack',
         'PeerIpAddress': 'peerIpAddress',
         'Reachability': 'reachability',
-        'OutgoingLabelStack': 'outgoingLabelStack',
+        'ReturnCode': 'returnCode',
+        'ReturnSubCode': 'returnSubCode',
+        'Rtt': 'rtt',
     }
 
     def __init__(self, parent):

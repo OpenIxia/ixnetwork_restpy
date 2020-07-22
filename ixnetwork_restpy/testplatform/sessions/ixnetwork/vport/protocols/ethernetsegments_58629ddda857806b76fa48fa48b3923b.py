@@ -33,25 +33,25 @@ class EthernetSegments(Base):
     __slots__ = ()
     _SDM_NAME = 'ethernetSegments'
     _SDM_ATT_MAP = {
-        'SupportFastConvergence': 'supportFastConvergence',
+        'AutoConfigureEsImport': 'autoConfigureEsImport',
+        'BMacPrefix': 'bMacPrefix',
+        'BMacPrefixLength': 'bMacPrefixLength',
+        'DfElectionMethod': 'dfElectionMethod',
+        'DfElectionTimer': 'dfElectionTimer',
+        'EnableActiveStandby': 'enableActiveStandby',
         'EnableRootLeaf': 'enableRootLeaf',
         'EnableSecondLabel': 'enableSecondLabel',
-        'DfElectionTimer': 'dfElectionTimer',
+        'Enabled': 'enabled',
+        'EsImport': 'esImport',
+        'Esi': 'esi',
+        'EsiLabel': 'esiLabel',
         'FirstLabel': 'firstLabel',
         'IncludeMacMobilityExtendedCommunity': 'includeMacMobilityExtendedCommunity',
-        'AutoConfigureEsImport': 'autoConfigureEsImport',
         'SecondLabel': 'secondLabel',
-        'TypeOfEthernetVpn': 'typeOfEthernetVpn',
-        'DfElectionMethod': 'dfElectionMethod',
-        'BMacPrefixLength': 'bMacPrefixLength',
+        'SupportFastConvergence': 'supportFastConvergence',
         'SupportMultiHomedEsAutoDiscovery': 'supportMultiHomedEsAutoDiscovery',
+        'TypeOfEthernetVpn': 'typeOfEthernetVpn',
         'UseSameSequenceNumber': 'useSameSequenceNumber',
-        'BMacPrefix': 'bMacPrefix',
-        'EsiLabel': 'esiLabel',
-        'EsImport': 'esImport',
-        'EnableActiveStandby': 'enableActiveStandby',
-        'Enabled': 'enabled',
-        'Esi': 'esi',
     }
 
     def __init__(self, parent):

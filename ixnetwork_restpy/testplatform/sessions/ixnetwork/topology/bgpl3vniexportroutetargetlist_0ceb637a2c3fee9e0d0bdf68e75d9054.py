@@ -33,13 +33,13 @@ class BgpL3VNIExportRouteTargetList(Base):
     _SDM_NAME = 'bgpL3VNIExportRouteTargetList'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'TargetAssignedNumber': 'targetAssignedNumber',
-        'Name': 'name',
-        'TargetType': 'targetType',
-        'TargetIpAddress': 'targetIpAddress',
         'DescriptiveName': 'descriptiveName',
+        'Name': 'name',
         'TargetAs4Number': 'targetAs4Number',
         'TargetAsNumber': 'targetAsNumber',
+        'TargetAssignedNumber': 'targetAssignedNumber',
+        'TargetIpAddress': 'targetIpAddress',
+        'TargetType': 'targetType',
     }
 
     def __init__(self, parent):

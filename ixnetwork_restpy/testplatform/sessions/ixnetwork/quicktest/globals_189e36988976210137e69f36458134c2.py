@@ -31,24 +31,24 @@ class Globals(Base):
     __slots__ = ()
     _SDM_NAME = 'globals'
     _SDM_ATT_MAP = {
+        'Comments': 'comments',
+        'EnableAbortIfLinkDown': 'enableAbortIfLinkDown',
         'EnableCapture': 'enableCapture',
+        'EnableCheckLinkState': 'enableCheckLinkState',
+        'EnableGenerateReportAfterRun': 'enableGenerateReportAfterRun',
+        'EnableRebootCpu': 'enableRebootCpu',
+        'EnableSwitchToResult': 'enableSwitchToResult',
         'EnableSwitchToStats': 'enableSwitchToStats',
         'LinkDownTimeout': 'linkDownTimeout',
-        'EnableGenerateReportAfterRun': 'enableGenerateReportAfterRun',
-        'OutputRootPath': 'outputRootPath',
-        'EnableSwitchToResult': 'enableSwitchToResult',
-        'ProductLabel': 'productLabel',
-        'UseDefaultRootPath': 'useDefaultRootPath',
-        'SerialNumber': 'serialNumber',
-        'TitlePageComments': 'titlePageComments',
-        'Comments': 'comments',
-        'EnableRebootCpu': 'enableRebootCpu',
-        'SaveCaptureBeforeRun': 'saveCaptureBeforeRun',
-        'EnableCheckLinkState': 'enableCheckLinkState',
-        'EnableAbortIfLinkDown': 'enableAbortIfLinkDown',
-        'SleepTimeAfterReboot': 'sleepTimeAfterReboot',
-        'Version': 'version',
         'MaxLinesToDisplay': 'maxLinesToDisplay',
+        'OutputRootPath': 'outputRootPath',
+        'ProductLabel': 'productLabel',
+        'SaveCaptureBeforeRun': 'saveCaptureBeforeRun',
+        'SerialNumber': 'serialNumber',
+        'SleepTimeAfterReboot': 'sleepTimeAfterReboot',
+        'TitlePageComments': 'titlePageComments',
+        'UseDefaultRootPath': 'useDefaultRootPath',
+        'Version': 'version',
     }
 
     def __init__(self, parent):

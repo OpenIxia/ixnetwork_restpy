@@ -32,12 +32,12 @@ class IsisSpbPseudoNode(Base):
     __slots__ = ()
     _SDM_NAME = 'isisSpbPseudoNode'
     _SDM_ATT_MAP = {
+        'Active': 'active',
+        'BridgePriority': 'bridgePriority',
         'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
         'Name': 'name',
         'SpSourceId': 'spSourceId',
-        'BridgePriority': 'bridgePriority',
-        'DescriptiveName': 'descriptiveName',
-        'Active': 'active',
     }
 
     def __init__(self, parent):

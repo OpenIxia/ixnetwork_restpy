@@ -33,15 +33,15 @@ class CustomTopologyInterestedVlanRange(Base):
     __slots__ = ()
     _SDM_NAME = 'customTopologyInterestedVlanRange'
     _SDM_ATT_MAP = {
-        'NumberOfSpanningTreeRoots': 'numberOfSpanningTreeRoots',
-        'M4BitEnabled': 'm4BitEnabled',
         'IncludeInterestedVlan': 'includeInterestedVlan',
-        'VlanIdStep': 'vlanIdStep',
-        'M6BitEnabled': 'm6BitEnabled',
-        'StartVlanId': 'startVlanId',
         'InterNodeVlanStep': 'interNodeVlanStep',
-        'VlanCount': 'vlanCount',
+        'M4BitEnabled': 'm4BitEnabled',
+        'M6BitEnabled': 'm6BitEnabled',
+        'NumberOfSpanningTreeRoots': 'numberOfSpanningTreeRoots',
         'StartSpanningTreeRootBridgeId': 'startSpanningTreeRootBridgeId',
+        'StartVlanId': 'startVlanId',
+        'VlanCount': 'vlanCount',
+        'VlanIdStep': 'vlanIdStep',
     }
 
     def __init__(self, parent):

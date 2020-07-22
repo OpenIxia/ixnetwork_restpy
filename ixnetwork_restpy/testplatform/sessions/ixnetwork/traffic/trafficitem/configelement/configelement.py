@@ -32,12 +32,12 @@ class ConfigElement(Base):
     __slots__ = ()
     _SDM_NAME = 'configElement'
     _SDM_ATT_MAP = {
-        'EndpointSetId': 'endpointSetId',
-        'DestinationMacMode': 'destinationMacMode',
-        'PreambleCustomSize': 'preambleCustomSize',
-        'EncapsulationName': 'encapsulationName',
-        'EnableDisparityError': 'enableDisparityError',
         'Crc': 'crc',
+        'DestinationMacMode': 'destinationMacMode',
+        'EnableDisparityError': 'enableDisparityError',
+        'EncapsulationName': 'encapsulationName',
+        'EndpointSetId': 'endpointSetId',
+        'PreambleCustomSize': 'preambleCustomSize',
         'PreambleFrameSizeMode': 'preambleFrameSizeMode',
     }
 

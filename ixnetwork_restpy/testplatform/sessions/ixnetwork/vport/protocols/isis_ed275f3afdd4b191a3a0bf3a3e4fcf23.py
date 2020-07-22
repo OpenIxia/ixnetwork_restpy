@@ -32,17 +32,17 @@ class Isis(Base):
     _SDM_NAME = 'isis'
     _SDM_ATT_MAP = {
         'AllL1RbridgesMac': 'allL1RbridgesMac',
-        'HelloMulticastMac': 'helloMulticastMac',
-        'SpbAllL1BridgesMac': 'spbAllL1BridgesMac',
-        'SpbHelloMulticastMac': 'spbHelloMulticastMac',
+        'EmulationType': 'emulationType',
         'Enabled': 'enabled',
-        'SpbNlpId': 'spbNlpId',
+        'HelloMulticastMac': 'helloMulticastMac',
+        'LspMgroupPdusPerInterval': 'lspMgroupPdusPerInterval',
         'NlpId': 'nlpId',
         'RateControlInterval': 'rateControlInterval',
-        'SendP2PHellosToUnicastMac': 'sendP2PHellosToUnicastMac',
-        'EmulationType': 'emulationType',
-        'LspMgroupPdusPerInterval': 'lspMgroupPdusPerInterval',
         'RunningState': 'runningState',
+        'SendP2PHellosToUnicastMac': 'sendP2PHellosToUnicastMac',
+        'SpbAllL1BridgesMac': 'spbAllL1BridgesMac',
+        'SpbHelloMulticastMac': 'spbHelloMulticastMac',
+        'SpbNlpId': 'spbNlpId',
     }
 
     def __init__(self, parent):

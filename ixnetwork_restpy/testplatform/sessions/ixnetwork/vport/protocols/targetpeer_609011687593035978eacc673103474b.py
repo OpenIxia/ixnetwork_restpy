@@ -33,10 +33,10 @@ class TargetPeer(Base):
     __slots__ = ()
     _SDM_NAME = 'targetPeer'
     _SDM_ATT_MAP = {
-        'IpAddress': 'ipAddress',
         'Authentication': 'authentication',
         'Enabled': 'enabled',
         'InitiateTargetedHello': 'initiateTargetedHello',
+        'IpAddress': 'ipAddress',
         'Md5Key': 'md5Key',
     }
 

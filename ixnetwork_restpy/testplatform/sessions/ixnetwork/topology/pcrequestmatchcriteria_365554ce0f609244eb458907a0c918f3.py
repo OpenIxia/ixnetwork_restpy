@@ -31,17 +31,17 @@ class PcRequestMatchCriteria(Base):
     __slots__ = ()
     _SDM_NAME = 'pcRequestMatchCriteria'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'MatchEndPoints': 'matchEndPoints',
-        'DestIpv4Address': 'destIpv4Address',
-        'IpVersion': 'ipVersion',
-        'SrcIpv6Address': 'srcIpv6Address',
-        'DescriptiveName': 'descriptiveName',
-        'DestIpv6Address': 'destIpv6Address',
-        'SrcIpv4Address': 'srcIpv4Address',
         'Active': 'active',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'DestIpv4Address': 'destIpv4Address',
+        'DestIpv6Address': 'destIpv6Address',
+        'IpVersion': 'ipVersion',
         'IroType': 'iroType',
+        'MatchEndPoints': 'matchEndPoints',
         'Name': 'name',
+        'SrcIpv4Address': 'srcIpv4Address',
+        'SrcIpv6Address': 'srcIpv6Address',
     }
 
     def __init__(self, parent):

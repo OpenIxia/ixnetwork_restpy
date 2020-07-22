@@ -33,12 +33,12 @@ class TrillUnicastMacRange(Base):
     __slots__ = ()
     _SDM_NAME = 'trillUnicastMacRange'
     _SDM_ATT_MAP = {
-        'StartUnicastMac': 'startUnicastMac',
         'Enabled': 'enabled',
-        'VlanId': 'vlanId',
-        'UnicastMacStep': 'unicastMacStep',
-        'UnicastMacCount': 'unicastMacCount',
+        'StartUnicastMac': 'startUnicastMac',
         'Topology': 'topology',
+        'UnicastMacCount': 'unicastMacCount',
+        'UnicastMacStep': 'unicastMacStep',
+        'VlanId': 'vlanId',
     }
 
     def __init__(self, parent):

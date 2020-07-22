@@ -31,9 +31,9 @@ class VendorRef(Base):
     __slots__ = ()
     _SDM_NAME = 'vendorRef'
     _SDM_ATT_MAP = {
-        'Value': 'value',
         'Name': 'name',
         'ObjectId': 'objectId',
+        'Value': 'value',
     }
 
     def __init__(self, parent):

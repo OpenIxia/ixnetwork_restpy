@@ -31,23 +31,23 @@ class VlanRange(Base):
     __slots__ = ()
     _SDM_NAME = 'vlanRange'
     _SDM_ATT_MAP = {
-        'IncrementStep': 'incrementStep',
-        'InnerIncrement': 'innerIncrement',
-        'UniqueCount': 'uniqueCount',
-        'FirstId': 'firstId',
-        'Name': 'name',
-        'Tpid': 'tpid',
-        'IdIncrMode': 'idIncrMode',
-        'ObjectId': 'objectId',
         'Enabled': 'enabled',
-        'InnerFirstId': 'innerFirstId',
-        'InnerIncrementStep': 'innerIncrementStep',
-        'Priority': 'priority',
+        'FirstId': 'firstId',
+        'IdIncrMode': 'idIncrMode',
         'Increment': 'increment',
+        'IncrementStep': 'incrementStep',
+        'InnerEnable': 'innerEnable',
+        'InnerFirstId': 'innerFirstId',
+        'InnerIncrement': 'innerIncrement',
+        'InnerIncrementStep': 'innerIncrementStep',
+        'InnerPriority': 'innerPriority',
         'InnerTpid': 'innerTpid',
         'InnerUniqueCount': 'innerUniqueCount',
-        'InnerEnable': 'innerEnable',
-        'InnerPriority': 'innerPriority',
+        'Name': 'name',
+        'ObjectId': 'objectId',
+        'Priority': 'priority',
+        'Tpid': 'tpid',
+        'UniqueCount': 'uniqueCount',
     }
 
     def __init__(self, parent):

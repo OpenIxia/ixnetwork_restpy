@@ -33,9 +33,9 @@ class NacVendors(Base):
     __slots__ = ()
     _SDM_NAME = 'nacVendors'
     _SDM_ATT_MAP = {
-        'Value': 'value',
         'Name': 'name',
         'ObjectId': 'objectId',
+        'Value': 'value',
     }
 
     def __init__(self, parent):

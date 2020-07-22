@@ -33,10 +33,10 @@ class Dhcpv6PdOptionSet(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcpv6PdOptionSet'
     _SDM_ATT_MAP = {
-        'ObjectId': 'objectId',
         'Defaultp': 'defaultp',
-        'Name': 'name',
         'IpType': 'ipType',
+        'Name': 'name',
+        'ObjectId': 'objectId',
     }
 
     def __init__(self, parent):

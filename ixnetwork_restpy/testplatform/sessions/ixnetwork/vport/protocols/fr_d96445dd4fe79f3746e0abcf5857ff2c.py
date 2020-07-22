@@ -34,9 +34,9 @@ class Fr(Base):
     _SDM_NAME = 'fr'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'Enabled': 'enabled',
-        'EnableIncrement': 'enableIncrement',
         'Dlci': 'dlci',
+        'EnableIncrement': 'enableIncrement',
+        'Enabled': 'enabled',
         'TrafficGroupId': 'trafficGroupId',
     }
 

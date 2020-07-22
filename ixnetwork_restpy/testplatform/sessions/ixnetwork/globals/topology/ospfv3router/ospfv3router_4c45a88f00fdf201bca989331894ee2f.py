@@ -32,10 +32,10 @@ class Ospfv3Router(Base):
     _SDM_NAME = 'ospfv3Router'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'RowNames': 'rowNames',
         'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
         'EnableDrBdr': 'enableDrBdr',
+        'Name': 'name',
+        'RowNames': 'rowNames',
     }
 
     def __init__(self, parent):

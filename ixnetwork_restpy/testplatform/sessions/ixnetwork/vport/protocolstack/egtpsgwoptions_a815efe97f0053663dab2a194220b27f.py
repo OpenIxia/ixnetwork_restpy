@@ -34,12 +34,12 @@ class EgtpSgwOptions(Base):
     _SDM_NAME = 'egtpSgwOptions'
     _SDM_ATT_MAP = {
         'DistributeUserPlaneIps': 'distributeUserPlaneIps',
-        'ObjectId': 'objectId',
-        'PublishStatistics': 'publishStatistics',
+        'EnableCreateBearerTFTHack': 'enableCreateBearerTFTHack',
         'EnableDynamicAllocation': 'enableDynamicAllocation',
         'FakeDualStack': 'fakeDualStack',
-        'EnableCreateBearerTFTHack': 'enableCreateBearerTFTHack',
+        'ObjectId': 'objectId',
         'PcpuLogLevel': 'pcpuLogLevel',
+        'PublishStatistics': 'publishStatistics',
     }
 
     def __init__(self, parent):

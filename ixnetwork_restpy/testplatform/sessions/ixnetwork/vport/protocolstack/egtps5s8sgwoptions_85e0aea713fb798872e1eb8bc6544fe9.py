@@ -33,16 +33,16 @@ class EgtpS5S8SgwOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'egtpS5S8SgwOptions'
     _SDM_ATT_MAP = {
+        'AlwaysIncludeRecoveryIE': 'alwaysIncludeRecoveryIE',
+        'Associates': 'associates',
+        'DeleteIdleBearers': 'deleteIdleBearers',
+        'MaxOutstandingReleases': 'maxOutstandingReleases',
         'MaxOutstandingRequests': 'maxOutstandingRequests',
         'ObjectId': 'objectId',
-        'MaxOutstandingReleases': 'maxOutstandingReleases',
         'OverrideGlobalRateControls': 'overrideGlobalRateControls',
-        'Associates': 'associates',
-        'AlwaysIncludeRecoveryIE': 'alwaysIncludeRecoveryIE',
-        'TeardownRateInitial': 'teardownRateInitial',
-        'SetupRateInitial': 'setupRateInitial',
-        'DeleteIdleBearers': 'deleteIdleBearers',
         'PcpuLogLevel': 'pcpuLogLevel',
+        'SetupRateInitial': 'setupRateInitial',
+        'TeardownRateInitial': 'teardownRateInitial',
     }
 
     def __init__(self, parent):

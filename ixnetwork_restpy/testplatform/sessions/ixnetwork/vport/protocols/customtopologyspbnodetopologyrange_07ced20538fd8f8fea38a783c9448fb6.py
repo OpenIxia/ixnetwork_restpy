@@ -33,11 +33,11 @@ class CustomTopologySpbNodeTopologyRange(Base):
     __slots__ = ()
     _SDM_NAME = 'customTopologySpbNodeTopologyRange'
     _SDM_ATT_MAP = {
-        'EnableVbit': 'enableVbit',
+        'CistExternalRootCost': 'cistExternalRootCost',
         'CistRootIdentifier': 'cistRootIdentifier',
+        'EnableVbit': 'enableVbit',
         'NoOfPorts': 'noOfPorts',
         'PortIdentifier': 'portIdentifier',
-        'CistExternalRootCost': 'cistExternalRootCost',
     }
 
     def __init__(self, parent):

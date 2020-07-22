@@ -31,22 +31,22 @@ class IsisSRv6EndSIDList(Base):
     __slots__ = ()
     _SDM_NAME = 'isisSRv6EndSIDList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'FunctionLength': 'functionLength',
-        'Name': 'name',
-        'LocatorName': 'locatorName',
-        'IncludeSRv6SIDStructureSubSubTlv': 'includeSRv6SIDStructureSubSubTlv',
-        'Sid': 'sid',
-        'CustomSubTlv': 'customSubTlv',
-        'LocatorNodeLength': 'locatorNodeLength',
+        'Active': 'active',
         'AdvertiseCustomSubTLV': 'advertiseCustomSubTLV',
+        'ArgumentLength': 'argumentLength',
+        'Count': 'count',
+        'CustomSubTlv': 'customSubTlv',
         'DescriptiveName': 'descriptiveName',
         'EndPointFunction': 'endPointFunction',
-        'Active': 'active',
         'Flags': 'flags',
-        'SidName': 'sidName',
-        'ArgumentLength': 'argumentLength',
+        'FunctionLength': 'functionLength',
+        'IncludeSRv6SIDStructureSubSubTlv': 'includeSRv6SIDStructureSubSubTlv',
         'LocatorBlockLength': 'locatorBlockLength',
+        'LocatorName': 'locatorName',
+        'LocatorNodeLength': 'locatorNodeLength',
+        'Name': 'name',
+        'Sid': 'sid',
+        'SidName': 'sidName',
     }
 
     def __init__(self, parent):

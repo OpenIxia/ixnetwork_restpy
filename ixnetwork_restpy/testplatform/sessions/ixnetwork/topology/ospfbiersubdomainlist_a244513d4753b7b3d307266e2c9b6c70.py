@@ -31,16 +31,16 @@ class OspfBierSubDomainList(Base):
     __slots__ = ()
     _SDM_NAME = 'ospfBierSubDomainList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Ipa': 'ipa',
-        'Bar': 'Bar',
-        'Name': 'name',
-        'MtId': 'mtId',
-        'SubDomainId': 'subDomainId',
-        'DescriptiveName': 'descriptiveName',
-        'Active': 'active',
-        'NumberOfBSLen': 'numberOfBSLen',
         'BFRId': 'BFRId',
+        'Bar': 'Bar',
+        'Active': 'active',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Ipa': 'ipa',
+        'MtId': 'mtId',
+        'Name': 'name',
+        'NumberOfBSLen': 'numberOfBSLen',
+        'SubDomainId': 'subDomainId',
     }
 
     def __init__(self, parent):

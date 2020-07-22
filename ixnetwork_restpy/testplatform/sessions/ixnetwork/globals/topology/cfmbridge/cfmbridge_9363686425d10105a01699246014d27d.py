@@ -32,13 +32,13 @@ class CfmBridge(Base):
     _SDM_NAME = 'cfmBridge'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'Name': 'name',
-        'SendCcm': 'sendCcm',
         'DescriptiveName': 'descriptiveName',
         'DmVersion': 'dmVersion',
-        'RowNames': 'rowNames',
-        'ReceiveCcm': 'receiveCcm',
         'EnableOptionalTlvValidation': 'enableOptionalTlvValidation',
+        'Name': 'name',
+        'ReceiveCcm': 'receiveCcm',
+        'RowNames': 'rowNames',
+        'SendCcm': 'sendCcm',
     }
 
     def __init__(self, parent):

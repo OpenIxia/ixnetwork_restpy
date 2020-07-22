@@ -32,26 +32,26 @@ class PortFeaturesLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'portFeaturesLearnedInformation'
     _SDM_ATT_MAP = {
+        'AdvertisedFeatures': 'advertisedFeatures',
+        'Config': 'config',
         'CurrentFeatures': 'currentFeatures',
-        'MaxSpeed': 'maxSpeed',
-        'EthernetAddress': 'ethernetAddress',
-        'Name': 'name',
         'CurrentSpeed': 'currentSpeed',
         'DataPathId': 'dataPathId',
-        'AdvertisedFeatures': 'advertisedFeatures',
-        'ErrorType': 'errorType',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'Latency': 'latency',
-        'ErrorCode': 'errorCode',
-        'LocalIp': 'localIp',
         'DataPathIdAsHex': 'dataPathIdAsHex',
-        'State': 'state',
+        'ErrorCode': 'errorCode',
+        'ErrorType': 'errorType',
+        'EthernetAddress': 'ethernetAddress',
+        'Latency': 'latency',
+        'LocalIp': 'localIp',
+        'MaxSpeed': 'maxSpeed',
+        'Name': 'name',
+        'NegotiatedVersion': 'negotiatedVersion',
+        'PeerAdvertisedFeatures': 'peerAdvertisedFeatures',
         'PortNumber': 'portNumber',
         'RemoteIp': 'remoteIp',
         'ReplyState': 'replyState',
+        'State': 'state',
         'SupportedFeatures': 'supportedFeatures',
-        'Config': 'config',
-        'PeerAdvertisedFeatures': 'peerAdvertisedFeatures',
     }
 
     def __init__(self, parent):

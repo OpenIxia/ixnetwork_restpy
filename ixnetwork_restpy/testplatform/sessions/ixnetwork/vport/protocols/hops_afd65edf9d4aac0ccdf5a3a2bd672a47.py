@@ -32,9 +32,9 @@ class Hops(Base):
     __slots__ = ()
     _SDM_NAME = 'hops'
     _SDM_ATT_MAP = {
-        'SrcIp': 'srcIp',
         'ReturnCode': 'returnCode',
         'ReturnSubCode': 'returnSubCode',
+        'SrcIp': 'srcIp',
         'Ttl': 'ttl',
     }
 

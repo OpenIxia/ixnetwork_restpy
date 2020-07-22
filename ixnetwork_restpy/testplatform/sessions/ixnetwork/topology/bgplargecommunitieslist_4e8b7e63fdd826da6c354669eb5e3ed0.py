@@ -34,8 +34,8 @@ class BgpLargeCommunitiesList(Base):
     _SDM_ATT_MAP = {
         'Count': 'count',
         'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
         'LargeCommunity': 'largeCommunity',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

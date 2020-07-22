@@ -31,21 +31,21 @@ class ApplySetFieldMissMask(Base):
     __slots__ = ()
     _SDM_NAME = 'applySetFieldMissMask'
     _SDM_ATT_MAP = {
-        'EthernetSourceMask': 'ethernetSourceMask',
-        'Ipv6ExtHeaderMask': 'ipv6ExtHeaderMask',
-        'ArpSrcHwAddressMask': 'arpSrcHwAddressMask',
-        'PbbIsidMask': 'pbbIsidMask',
-        'Ipv6SourceMask': 'ipv6SourceMask',
-        'ArpDstHwAddressMask': 'arpDstHwAddressMask',
-        'TunnelIdMask': 'tunnelIdMask',
-        'EthernetDestinationMask': 'ethernetDestinationMask',
-        'Ipv6DestinationMask': 'ipv6DestinationMask',
-        'VlanMask': 'vlanMask',
-        'Ipv4DestinationMask': 'ipv4DestinationMask',
         'ArpDestinationIpv4AddressMask': 'arpDestinationIpv4AddressMask',
+        'ArpDstHwAddressMask': 'arpDstHwAddressMask',
         'ArpSourceIpv4AddressMask': 'arpSourceIpv4AddressMask',
+        'ArpSrcHwAddressMask': 'arpSrcHwAddressMask',
+        'EthernetDestinationMask': 'ethernetDestinationMask',
+        'EthernetSourceMask': 'ethernetSourceMask',
+        'Ipv4DestinationMask': 'ipv4DestinationMask',
         'Ipv4SourceMask': 'ipv4SourceMask',
+        'Ipv6DestinationMask': 'ipv6DestinationMask',
+        'Ipv6ExtHeaderMask': 'ipv6ExtHeaderMask',
         'Ipv6FlowLabelMask': 'ipv6FlowLabelMask',
+        'Ipv6SourceMask': 'ipv6SourceMask',
+        'PbbIsidMask': 'pbbIsidMask',
+        'TunnelIdMask': 'tunnelIdMask',
+        'VlanMask': 'vlanMask',
     }
 
     def __init__(self, parent):

@@ -33,10 +33,10 @@ class Bucket(Base):
     __slots__ = ()
     _SDM_NAME = 'bucket'
     _SDM_ATT_MAP = {
-        'WatchGroup': 'watchGroup',
         'Description': 'description',
-        'Weight': 'weight',
+        'WatchGroup': 'watchGroup',
         'WatchPort': 'watchPort',
+        'Weight': 'weight',
     }
 
     def __init__(self, parent):

@@ -33,13 +33,13 @@ class Router(Base):
     __slots__ = ()
     _SDM_NAME = 'router'
     _SDM_ATT_MAP = {
-        'UpdateIntervalOffset': 'updateIntervalOffset',
+        'EnableInterfaceMetric': 'enableInterfaceMetric',
         'Enabled': 'enabled',
+        'ReceiveType': 'receiveType',
         'RouterId': 'routerId',
         'TrafficGroupId': 'trafficGroupId',
         'UpdateInterval': 'updateInterval',
-        'EnableInterfaceMetric': 'enableInterfaceMetric',
-        'ReceiveType': 'receiveType',
+        'UpdateIntervalOffset': 'updateIntervalOffset',
     }
 
     def __init__(self, parent):

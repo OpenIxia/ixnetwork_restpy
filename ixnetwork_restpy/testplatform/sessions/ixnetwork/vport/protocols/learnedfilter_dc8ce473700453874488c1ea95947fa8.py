@@ -31,10 +31,10 @@ class LearnedFilter(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedFilter'
     _SDM_ATT_MAP = {
-        'EnablePrefix': 'enablePrefix',
-        'Safi': 'safi',
         'Afi': 'afi',
         'EnableAfiSafi': 'enableAfiSafi',
+        'EnablePrefix': 'enablePrefix',
+        'Safi': 'safi',
     }
 
     def __init__(self, parent):

@@ -34,8 +34,8 @@ class CeVlanIdRange(Base):
     _SDM_NAME = 'ceVlanIdRange'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'IncrementStep': 'incrementStep',
         'Enabled': 'enabled',
+        'IncrementStep': 'incrementStep',
         'StartVlanId': 'startVlanId',
     }
 

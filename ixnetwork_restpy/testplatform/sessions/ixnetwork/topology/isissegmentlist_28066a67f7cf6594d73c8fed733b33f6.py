@@ -33,11 +33,11 @@ class IsisSegmentList(Base):
     _SDM_NAME = 'isisSegmentList'
     _SDM_ATT_MAP = {
         'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
         'Enable': 'enable',
         'Name': 'name',
-        'NodeSystemID': 'nodeSystemID',
         'NeighbournodeSystemID': 'neighbournodeSystemID',
-        'DescriptiveName': 'descriptiveName',
+        'NodeSystemID': 'nodeSystemID',
         'SegmentType': 'segmentType',
     }
 

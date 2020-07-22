@@ -32,8 +32,8 @@ class StartRate(Base):
     _SDM_NAME = 'startRate'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'Interval': 'interval',
         'Enabled': 'enabled',
+        'Interval': 'interval',
         'Rate': 'rate',
         'RowNames': 'rowNames',
         'ScaleMode': 'scaleMode',

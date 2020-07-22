@@ -33,9 +33,9 @@ class CustomTopologyNodeTopologyRange(Base):
     __slots__ = ()
     _SDM_NAME = 'customTopologyNodeTopologyRange'
     _SDM_ATT_MAP = {
-        'NumberOftreesToCompute': 'numberOftreesToCompute',
-        'NodeNicknameIncrement': 'nodeNicknameIncrement',
         'NicknameCount': 'nicknameCount',
+        'NodeNicknameIncrement': 'nodeNicknameIncrement',
+        'NumberOftreesToCompute': 'numberOftreesToCompute',
         'StartNickname': 'startNickname',
     }
 

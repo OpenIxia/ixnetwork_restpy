@@ -34,9 +34,9 @@ class Rfc3918groupCapacity(Base):
     _SDM_NAME = 'rfc3918groupCapacity'
     _SDM_ATT_MAP = {
         'ForceApplyQTConfig': 'forceApplyQTConfig',
+        'InputParameters': 'inputParameters',
         'Mode': 'mode',
         'Name': 'name',
-        'InputParameters': 'inputParameters',
     }
 
     def __init__(self, parent):

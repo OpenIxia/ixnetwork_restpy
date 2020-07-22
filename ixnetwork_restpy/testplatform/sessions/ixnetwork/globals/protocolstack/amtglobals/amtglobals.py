@@ -33,15 +33,15 @@ class AmtGlobals(Base):
     __slots__ = ()
     _SDM_NAME = 'amtGlobals'
     _SDM_ATT_MAP = {
+        'DiscoveryTimeout': 'discoveryTimeout',
+        'MaxOutstandingSessions': 'maxOutstandingSessions',
+        'MaxRelayDiscoveryRetransmissionCount': 'maxRelayDiscoveryRetransmissionCount',
+        'MaxRequestRetransmissionCount': 'maxRequestRetransmissionCount',
         'ObjectId': 'objectId',
         'RequestTimeout': 'requestTimeout',
-        'MaxRelayDiscoveryRetransmissionCount': 'maxRelayDiscoveryRetransmissionCount',
-        'SetupRate': 'setupRate',
-        'MaxRequestRetransmissionCount': 'maxRequestRetransmissionCount',
-        'DiscoveryTimeout': 'discoveryTimeout',
-        'TeardownRate': 'teardownRate',
-        'MaxOutstandingSessions': 'maxOutstandingSessions',
         'RetransmissionHolddown': 'retransmissionHolddown',
+        'SetupRate': 'setupRate',
+        'TeardownRate': 'teardownRate',
     }
 
     def __init__(self, parent):

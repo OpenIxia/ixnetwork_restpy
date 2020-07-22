@@ -31,12 +31,12 @@ class RxRateLimit(Base):
     __slots__ = ()
     _SDM_NAME = 'rxRateLimit'
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'Value': 'value',
-        'BufferSizeUnits': 'bufferSizeUnits',
-        'Units': 'units',
         'BufferSizeEnabled': 'bufferSizeEnabled',
+        'BufferSizeUnits': 'bufferSizeUnits',
         'BufferSizeValue': 'bufferSizeValue',
+        'Enabled': 'enabled',
+        'Units': 'units',
+        'Value': 'value',
     }
 
     def __init__(self, parent):

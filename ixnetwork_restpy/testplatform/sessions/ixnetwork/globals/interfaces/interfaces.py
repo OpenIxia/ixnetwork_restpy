@@ -33,8 +33,8 @@ class Interfaces(Base):
     _SDM_ATT_MAP = {
         'ArpOnLinkup': 'arpOnLinkup',
         'NsOnLinkup': 'nsOnLinkup',
-        'SendSingleNsPerGateway': 'sendSingleNsPerGateway',
         'SendSingleArpPerGateway': 'sendSingleArpPerGateway',
+        'SendSingleNsPerGateway': 'sendSingleNsPerGateway',
     }
 
     def __init__(self, parent):

@@ -32,13 +32,13 @@ class LearnedRoute(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedRoute'
     _SDM_ATT_MAP = {
-        'NextHop': 'nextHop',
         'Destination': 'destination',
-        'Rd': 'rd',
-        'Prefix': 'prefix',
         'Fd': 'fd',
-        'Neighbor': 'neighbor',
         'HopCount': 'hopCount',
+        'Neighbor': 'neighbor',
+        'NextHop': 'nextHop',
+        'Prefix': 'prefix',
+        'Rd': 'rd',
         'Type': 'type',
     }
 

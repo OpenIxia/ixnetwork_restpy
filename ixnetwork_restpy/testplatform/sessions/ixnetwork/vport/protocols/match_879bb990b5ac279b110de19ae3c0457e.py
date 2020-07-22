@@ -32,10 +32,10 @@ class Match(Base):
     _SDM_NAME = 'match'
     _SDM_ATT_MAP = {
         'ExperimenterData': 'experimenterData',
-        'ExperimenterId': 'experimenterId',
         'ExperimenterDataLength': 'experimenterDataLength',
-        'ExperimenterHasMask': 'experimenterHasMask',
         'ExperimenterField': 'experimenterField',
+        'ExperimenterHasMask': 'experimenterHasMask',
+        'ExperimenterId': 'experimenterId',
     }
 
     def __init__(self, parent):

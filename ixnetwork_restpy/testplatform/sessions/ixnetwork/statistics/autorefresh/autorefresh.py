@@ -31,8 +31,8 @@ class AutoRefresh(Base):
     __slots__ = ()
     _SDM_NAME = 'autoRefresh'
     _SDM_ATT_MAP = {
-        'MinRefreshInterval': 'minRefreshInterval',
         'Enabled': 'enabled',
+        'MinRefreshInterval': 'minRefreshInterval',
     }
 
     def __init__(self, parent):

@@ -33,8 +33,8 @@ class SummaryIp(Base):
     _SDM_NAME = 'summaryIp'
     _SDM_ATT_MAP = {
         'IncrementLinkStateIdBy': 'incrementLinkStateIdBy',
-        'NetworkMask': 'networkMask',
         'Metric': 'metric',
+        'NetworkMask': 'networkMask',
         'NumberOfLsa': 'numberOfLsa',
     }
 

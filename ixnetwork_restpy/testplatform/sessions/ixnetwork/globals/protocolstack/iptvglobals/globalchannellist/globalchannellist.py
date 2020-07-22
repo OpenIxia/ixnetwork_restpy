@@ -33,14 +33,14 @@ class GlobalChannelList(Base):
     __slots__ = ()
     _SDM_NAME = 'globalChannelList'
     _SDM_ATT_MAP = {
-        'InitialIncrement': 'initialIncrement',
-        'MulticastGroup': 'multicastGroup',
-        'ObjectId': 'objectId',
-        'Name': 'name',
-        'LastChannel': 'lastChannel',
-        'InitialChannel': 'initialChannel',
-        'Increment': 'increment',
         'FirstChannel': 'firstChannel',
+        'Increment': 'increment',
+        'InitialChannel': 'initialChannel',
+        'InitialIncrement': 'initialIncrement',
+        'LastChannel': 'lastChannel',
+        'MulticastGroup': 'multicastGroup',
+        'Name': 'name',
+        'ObjectId': 'objectId',
     }
 
     def __init__(self, parent):

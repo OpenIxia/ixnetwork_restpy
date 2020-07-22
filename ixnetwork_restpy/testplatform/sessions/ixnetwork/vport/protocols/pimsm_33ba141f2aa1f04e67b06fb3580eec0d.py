@@ -31,21 +31,21 @@ class Pimsm(Base):
     __slots__ = ()
     _SDM_NAME = 'pimsm'
     _SDM_ATT_MAP = {
-        'DataMdtFramePerInterval': 'dataMdtFramePerInterval',
         'BsmFramePerInterval': 'bsmFramePerInterval',
-        'Interval': 'interval',
-        'HelloMsgsPerInterval': 'helloMsgsPerInterval',
-        'RegisterStopMessagesPerInterval': 'registerStopMessagesPerInterval',
-        'RunningState': 'runningState',
+        'CrpFramePerInterval': 'crpFramePerInterval',
+        'DataMdtFramePerInterval': 'dataMdtFramePerInterval',
+        'DenyGrePimIpPrefix': 'denyGrePimIpPrefix',
+        'EnableDiscardJoinPruneProcessing': 'enableDiscardJoinPruneProcessing',
         'EnableRateControl': 'enableRateControl',
         'Enabled': 'enabled',
-        'JoinPruneMessagesPerInterval': 'joinPruneMessagesPerInterval',
-        'EnableDiscardJoinPruneProcessing': 'enableDiscardJoinPruneProcessing',
-        'RegisterMessagesPerInterval': 'registerMessagesPerInterval',
-        'DenyGrePimIpPrefix': 'denyGrePimIpPrefix',
-        'CrpFramePerInterval': 'crpFramePerInterval',
         'GreFilterType': 'greFilterType',
+        'HelloMsgsPerInterval': 'helloMsgsPerInterval',
+        'Interval': 'interval',
+        'JoinPruneMessagesPerInterval': 'joinPruneMessagesPerInterval',
         'OverrideSourceIpForSmInterface': 'overrideSourceIpForSmInterface',
+        'RegisterMessagesPerInterval': 'registerMessagesPerInterval',
+        'RegisterStopMessagesPerInterval': 'registerStopMessagesPerInterval',
+        'RunningState': 'runningState',
     }
 
     def __init__(self, parent):

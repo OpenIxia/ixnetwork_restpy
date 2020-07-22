@@ -32,9 +32,9 @@ class Reorder(Base):
     _SDM_NAME = 'reorder'
     _SDM_ATT_MAP = {
         'ClusterSize': 'clusterSize',
-        'SkipCount': 'skipCount',
         'Enabled': 'enabled',
         'PercentRate': 'percentRate',
+        'SkipCount': 'skipCount',
     }
 
     def __init__(self, parent):

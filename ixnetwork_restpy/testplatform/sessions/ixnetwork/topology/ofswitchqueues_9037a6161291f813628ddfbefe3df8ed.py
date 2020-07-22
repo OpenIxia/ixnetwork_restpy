@@ -31,16 +31,16 @@ class OfSwitchQueues(Base):
     __slots__ = ()
     _SDM_NAME = 'ofSwitchQueues'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'QueueId': 'queueId',
-        'Name': 'name',
-        'QueueProperty': 'queueProperty',
-        'MinRate': 'minRate',
-        'MaxRate': 'maxRate',
-        'DescriptiveName': 'descriptiveName',
-        'SwitchIndex': 'switchIndex',
         'Active': 'active',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'MaxRate': 'maxRate',
+        'MinRate': 'minRate',
+        'Name': 'name',
         'ParentPort': 'parentPort',
+        'QueueId': 'queueId',
+        'QueueProperty': 'queueProperty',
+        'SwitchIndex': 'switchIndex',
     }
 
     def __init__(self, parent):

@@ -33,11 +33,11 @@ class SpbmNodeBaseVidRange(Base):
     __slots__ = ()
     _SDM_NAME = 'spbmNodeBaseVidRange'
     _SDM_ATT_MAP = {
-        'UseFlag': 'useFlag',
-        'BaseVid': 'baseVid',
         'BVlanPriority': 'bVlanPriority',
-        'EctAlgorithm': 'ectAlgorithm',
         'BVlanTpId': 'bVlanTpId',
+        'BaseVid': 'baseVid',
+        'EctAlgorithm': 'ectAlgorithm',
+        'UseFlag': 'useFlag',
     }
 
     def __init__(self, parent):

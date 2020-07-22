@@ -33,14 +33,14 @@ class MapServerResolver(Base):
     __slots__ = ()
     _SDM_NAME = 'mapServerResolver'
     _SDM_ATT_MAP = {
-        'MsmrLocation': 'msmrLocation',
-        'Family': 'family',
-        'InternalIxiaMsmrRouter': 'internalIxiaMsmrRouter',
         'AuthenticationAlgorithm': 'authenticationAlgorithm',
         'Enabled': 'enabled',
-        'Key': 'key',
-        'Type': 'type',
         'ExternalMsmrAddress': 'externalMsmrAddress',
+        'Family': 'family',
+        'InternalIxiaMsmrRouter': 'internalIxiaMsmrRouter',
+        'Key': 'key',
+        'MsmrLocation': 'msmrLocation',
+        'Type': 'type',
     }
 
     def __init__(self, parent):

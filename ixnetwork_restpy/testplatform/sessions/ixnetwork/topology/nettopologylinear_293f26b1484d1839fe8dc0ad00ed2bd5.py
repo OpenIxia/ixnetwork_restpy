@@ -33,9 +33,9 @@ class NetTopologyLinear(Base):
     __slots__ = ()
     _SDM_NAME = 'netTopologyLinear'
     _SDM_ATT_MAP = {
-        'Nodes': 'nodes',
         'IncludeEntryPoint': 'includeEntryPoint',
         'LinkMultiplier': 'linkMultiplier',
+        'Nodes': 'nodes',
     }
 
     def __init__(self, parent):

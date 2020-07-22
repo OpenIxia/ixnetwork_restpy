@@ -33,9 +33,9 @@ class UserDefinedAfiSafiRoutes(Base):
     __slots__ = ()
     _SDM_NAME = 'userDefinedAfiSafiRoutes'
     _SDM_ATT_MAP = {
+        'Data': 'data',
         'Enabled': 'enabled',
         'Length': 'length',
-        'Data': 'data',
     }
 
     def __init__(self, parent):

@@ -31,15 +31,15 @@ class IsisBierSubDomainList(Base):
     __slots__ = ()
     _SDM_NAME = 'isisBierSubDomainList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'IPA': 'IPA',
         'BAR': 'BAR',
-        'Name': 'name',
-        'SubDomainId': 'subDomainId',
-        'DescriptiveName': 'descriptiveName',
-        'Active': 'active',
-        'NumberOfBSLen': 'numberOfBSLen',
         'BFRId': 'BFRId',
+        'IPA': 'IPA',
+        'Active': 'active',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Name': 'name',
+        'NumberOfBSLen': 'numberOfBSLen',
+        'SubDomainId': 'subDomainId',
     }
 
     def __init__(self, parent):

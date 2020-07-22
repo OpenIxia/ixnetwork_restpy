@@ -32,10 +32,10 @@ class BgpAsNumberList(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpAsNumberList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'EnableASNumber': 'enableASNumber',
         'AsNumber': 'asNumber',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
+        'EnableASNumber': 'enableASNumber',
         'Name': 'name',
     }
 

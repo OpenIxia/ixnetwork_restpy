@@ -33,20 +33,20 @@ class Dhcpv4relayAgent(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcpv4relayAgent'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Status': 'status',
-        'Errors': 'errors',
-        'Name': 'name',
         'ConnectedVia': 'connectedVia',
-        'StackedLayers': 'stackedLayers',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Dhcp4RelayAddress': 'dhcp4RelayAddress',
         'Dhcp4RelayAgentGlobalAndPortData': 'dhcp4RelayAgentGlobalAndPortData',
         'Dhcp4ServerAddress': 'dhcp4ServerAddress',
-        'Dhcp4RelayAddress': 'dhcp4RelayAddress',
-        'DescriptiveName': 'descriptiveName',
+        'Errors': 'errors',
         'Multiplier': 'multiplier',
+        'Name': 'name',
         'SessionInfo': 'sessionInfo',
-        'StateCounts': 'stateCounts',
         'SessionStatus': 'sessionStatus',
+        'StackedLayers': 'stackedLayers',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
     }
 
     def __init__(self, parent):

@@ -32,13 +32,13 @@ class IsisDceSimulatedTopologyConfig(Base):
     __slots__ = ()
     _SDM_NAME = 'isisDceSimulatedTopologyConfig'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'HostName': 'hostName',
-        'EnableHostName': 'enableHostName',
-        'DceNodeTopologyCount': 'dceNodeTopologyCount',
         'Active': 'active',
+        'Count': 'count',
+        'DceNodeTopologyCount': 'dceNodeTopologyCount',
         'DescriptiveName': 'descriptiveName',
+        'EnableHostName': 'enableHostName',
+        'HostName': 'hostName',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

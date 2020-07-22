@@ -31,17 +31,17 @@ class FrameSize(Base):
     __slots__ = ()
     _SDM_NAME = 'frameSize'
     _SDM_ATT_MAP = {
-        'IncrementStep': 'incrementStep',
-        'RandomMin': 'randomMin',
         'FixedSize': 'fixedSize',
-        'Type': 'type',
-        'RandomMax': 'randomMax',
-        'WeightedRangePairs': 'weightedRangePairs',
-        'PresetDistribution': 'presetDistribution',
         'IncrementFrom': 'incrementFrom',
-        'WeightedPairs': 'weightedPairs',
-        'QuadGaussian': 'quadGaussian',
+        'IncrementStep': 'incrementStep',
         'IncrementTo': 'incrementTo',
+        'PresetDistribution': 'presetDistribution',
+        'QuadGaussian': 'quadGaussian',
+        'RandomMax': 'randomMax',
+        'RandomMin': 'randomMin',
+        'Type': 'type',
+        'WeightedPairs': 'weightedPairs',
+        'WeightedRangePairs': 'weightedRangePairs',
     }
 
     def __init__(self, parent):

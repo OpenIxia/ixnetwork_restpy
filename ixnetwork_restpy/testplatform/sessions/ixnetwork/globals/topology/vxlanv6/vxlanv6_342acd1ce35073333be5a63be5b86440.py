@@ -34,10 +34,10 @@ class Vxlanv6(Base):
         'Count': 'count',
         'DescriptiveName': 'descriptiveName',
         'InnerFrameMinimumSize': 'innerFrameMinimumSize',
-        'OuterIpDestMode': 'outerIpDestMode',
-        'Udp_dest': 'udp_dest',
-        'RowNames': 'rowNames',
         'Name': 'name',
+        'OuterIpDestMode': 'outerIpDestMode',
+        'RowNames': 'rowNames',
+        'Udp_dest': 'udp_dest',
     }
 
     def __init__(self, parent):

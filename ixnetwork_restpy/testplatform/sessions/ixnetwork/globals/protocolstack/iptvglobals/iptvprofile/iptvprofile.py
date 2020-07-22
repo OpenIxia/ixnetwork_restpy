@@ -33,14 +33,14 @@ class IptvProfile(Base):
     __slots__ = ()
     _SDM_NAME = 'iptvProfile'
     _SDM_ATT_MAP = {
-        'ZapBehavior': 'zapBehavior',
+        'ChangesBeforeView': 'changesBeforeView',
         'Name': 'name',
         'ObjectId': 'objectId',
-        'ZapIntervalType': 'zapIntervalType',
-        'ChangesBeforeView': 'changesBeforeView',
         'ViewDuration': 'viewDuration',
-        'ZapInterval': 'zapInterval',
+        'ZapBehavior': 'zapBehavior',
         'ZapDirection': 'zapDirection',
+        'ZapInterval': 'zapInterval',
+        'ZapIntervalType': 'zapIntervalType',
     }
 
     def __init__(self, parent):

@@ -32,10 +32,10 @@ class LtLearnedHop(Base):
     __slots__ = ()
     _SDM_NAME = 'ltLearnedHop'
     _SDM_ATT_MAP = {
+        'EgressMac': 'egressMac',
+        'IngressMac': 'ingressMac',
         'ReplyTtl': 'replyTtl',
         'Self': 'self',
-        'IngressMac': 'ingressMac',
-        'EgressMac': 'egressMac',
     }
 
     def __init__(self, parent):

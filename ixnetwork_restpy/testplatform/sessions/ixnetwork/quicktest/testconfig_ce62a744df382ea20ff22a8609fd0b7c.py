@@ -31,19 +31,19 @@ class TestConfig(Base):
     __slots__ = ()
     _SDM_NAME = 'testConfig'
     _SDM_ATT_MAP = {
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
-        'InitialStepIntegerValues': 'initialStepIntegerValues',
-        'Step_failedsession_enableAccLoss': 'step_failedsession_enableAccLoss',
-        'LeaveSessionsUp': 'leaveSessionsUp',
-        'MaxStepIntegerValues': 'maxStepIntegerValues',
-        'LoadRateList': 'loadRateList',
-        'ProtocolItem': 'protocolItem',
-        'Numtrials': 'numtrials',
-        'Duration': 'duration',
         'AlgorithmType': 'algorithmType',
-        'Step_failedsession_thresholdAccLoss': 'step_failedsession_thresholdAccLoss',
+        'Duration': 'duration',
+        'InitialStepIntegerValues': 'initialStepIntegerValues',
+        'LeaveSessionsUp': 'leaveSessionsUp',
+        'LoadRateList': 'loadRateList',
+        'MaxOutstandingRequests': 'maxOutstandingRequests',
+        'MaxStepIntegerValues': 'maxStepIntegerValues',
+        'Numtrials': 'numtrials',
+        'ProtocolItem': 'protocolItem',
         'RequestRate': 'requestRate',
         'StepStepIntegerValues': 'stepStepIntegerValues',
+        'Step_failedsession_enableAccLoss': 'step_failedsession_enableAccLoss',
+        'Step_failedsession_thresholdAccLoss': 'step_failedsession_thresholdAccLoss',
     }
 
     def __init__(self, parent):

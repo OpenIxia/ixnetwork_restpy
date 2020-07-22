@@ -33,23 +33,23 @@ class PppoxOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'pppoxOptions'
     _SDM_ATT_MAP = {
-        'RaTimeout': 'raTimeout',
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
-        'PerSessionStatFilePrefix': 'perSessionStatFilePrefix',
-        'EnablePerSessionStatGeneration': 'enablePerSessionStatGeneration',
-        'ReConnectOnLinkUp': 'reConnectOnLinkUp',
-        'ObjectId': 'objectId',
-        'UseWaitForCompletionTimeout': 'useWaitForCompletionTimeout',
-        'WaitingTimeUntilReconnect': 'waitingTimeUntilReconnect',
-        'WaitForCompletionTimeout': 'waitForCompletionTimeout',
-        'MaxOutstandingReleases': 'maxOutstandingReleases',
-        'OverrideGlobalRateControls': 'overrideGlobalRateControls',
         'Associates': 'associates',
-        'Role': 'role',
-        'Ipv6GlobalAddressMode': 'ipv6GlobalAddressMode',
-        'TeardownRateInitial': 'teardownRateInitial',
+        'EnablePerSessionStatGeneration': 'enablePerSessionStatGeneration',
         'FilterDataPlaneBeforeL7': 'filterDataPlaneBeforeL7',
+        'Ipv6GlobalAddressMode': 'ipv6GlobalAddressMode',
+        'MaxOutstandingReleases': 'maxOutstandingReleases',
+        'MaxOutstandingRequests': 'maxOutstandingRequests',
+        'ObjectId': 'objectId',
+        'OverrideGlobalRateControls': 'overrideGlobalRateControls',
+        'PerSessionStatFilePrefix': 'perSessionStatFilePrefix',
+        'RaTimeout': 'raTimeout',
+        'ReConnectOnLinkUp': 'reConnectOnLinkUp',
+        'Role': 'role',
         'SetupRateInitial': 'setupRateInitial',
+        'TeardownRateInitial': 'teardownRateInitial',
+        'UseWaitForCompletionTimeout': 'useWaitForCompletionTimeout',
+        'WaitForCompletionTimeout': 'waitForCompletionTimeout',
+        'WaitingTimeUntilReconnect': 'waitingTimeUntilReconnect',
     }
 
     def __init__(self, parent):

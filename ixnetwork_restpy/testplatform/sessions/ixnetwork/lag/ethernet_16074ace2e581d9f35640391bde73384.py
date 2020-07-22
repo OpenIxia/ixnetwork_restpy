@@ -33,22 +33,22 @@ class Ethernet(Base):
     __slots__ = ()
     _SDM_NAME = 'ethernet'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Status': 'status',
-        'Errors': 'errors',
-        'Name': 'name',
-        'UseVlans': 'useVlans',
-        'StackedLayers': 'stackedLayers',
-        'EnableVlans': 'enableVlans',
-        'Mtu': 'mtu',
-        'Mac': 'mac',
         'ConnectedVia': 'connectedVia',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
-        'NotifyMACMove': 'notifyMACMove',
+        'EnableVlans': 'enableVlans',
+        'Errors': 'errors',
+        'Mac': 'mac',
+        'Mtu': 'mtu',
         'Multiplier': 'multiplier',
-        'StateCounts': 'stateCounts',
-        'VlanCount': 'vlanCount',
+        'Name': 'name',
+        'NotifyMACMove': 'notifyMACMove',
         'SessionStatus': 'sessionStatus',
+        'StackedLayers': 'stackedLayers',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
+        'UseVlans': 'useVlans',
+        'VlanCount': 'vlanCount',
     }
 
     def __init__(self, parent):

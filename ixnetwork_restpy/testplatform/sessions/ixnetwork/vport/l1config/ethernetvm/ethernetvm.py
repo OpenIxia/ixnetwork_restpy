@@ -31,16 +31,16 @@ class Ethernetvm(Base):
     __slots__ = ()
     _SDM_NAME = 'ethernetvm'
     _SDM_ATT_MAP = {
-        'EnablePPM': 'enablePPM',
-        'Loopback': 'loopback',
+        'AutoInstrumentation': 'autoInstrumentation',
         'AvailableSpeeds': 'availableSpeeds',
-        'PromiscuousMode': 'promiscuousMode',
-        'Ppm': 'ppm',
         'CanModifySpeed': 'canModifySpeed',
         'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
-        'SelectedSpeeds': 'selectedSpeeds',
-        'AutoInstrumentation': 'autoInstrumentation',
+        'EnablePPM': 'enablePPM',
+        'Loopback': 'loopback',
         'Mtu': 'mtu',
+        'Ppm': 'ppm',
+        'PromiscuousMode': 'promiscuousMode',
+        'SelectedSpeeds': 'selectedSpeeds',
         'Speed': 'speed',
     }
 

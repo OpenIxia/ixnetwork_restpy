@@ -31,16 +31,16 @@ class TestConfig(Base):
     __slots__ = ()
     _SDM_NAME = 'testConfig'
     _SDM_ATT_MAP = {
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
-        'MaximumRequestsRate': 'maximumRequestsRate',
+        'AlgorithmType': 'algorithmType',
+        'Duration': 'duration',
+        'IncrementRequestsRate': 'incrementRequestsRate',
+        'InitialRequestsRate': 'initialRequestsRate',
         'LeaveSessionsUp': 'leaveSessionsUp',
         'LoadRateList': 'loadRateList',
-        'IncrementRequestsRate': 'incrementRequestsRate',
-        'Numtrials': 'numtrials',
-        'Duration': 'duration',
+        'MaxOutstandingRequests': 'maxOutstandingRequests',
+        'MaximumRequestsRate': 'maximumRequestsRate',
         'NoOfSessions': 'noOfSessions',
-        'AlgorithmType': 'algorithmType',
-        'InitialRequestsRate': 'initialRequestsRate',
+        'Numtrials': 'numtrials',
         'ProtocolItem': 'protocolItem',
     }
 

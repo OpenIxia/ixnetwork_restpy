@@ -32,22 +32,22 @@ class TableFeaturePropertiesTrigger(Base):
     __slots__ = ()
     _SDM_NAME = 'tableFeaturePropertiesTrigger'
     _SDM_ATT_MAP = {
-        'EnableApplySetFieldMiss': 'enableApplySetFieldMiss',
-        'EnableMatch': 'enableMatch',
-        'EnableWriteSetFieldMiss': 'enableWriteSetFieldMiss',
-        'EnableWriteAction': 'enableWriteAction',
-        'EnableApplyActionMiss': 'enableApplyActionMiss',
-        'EnableInstructionMiss': 'enableInstructionMiss',
-        'EnableApplySetField': 'enableApplySetField',
-        'EnableWriteActionMiss': 'enableWriteActionMiss',
         'EnableApplyAction': 'enableApplyAction',
-        'EnableWildCard': 'enableWildCard',
-        'EnableExperimenterMiss': 'enableExperimenterMiss',
-        'EnableWriteSetField': 'enableWriteSetField',
-        'EnableInstruction': 'enableInstruction',
-        'EnableNextTable': 'enableNextTable',
+        'EnableApplyActionMiss': 'enableApplyActionMiss',
+        'EnableApplySetField': 'enableApplySetField',
+        'EnableApplySetFieldMiss': 'enableApplySetFieldMiss',
         'EnableExperimenter': 'enableExperimenter',
+        'EnableExperimenterMiss': 'enableExperimenterMiss',
+        'EnableInstruction': 'enableInstruction',
+        'EnableInstructionMiss': 'enableInstructionMiss',
+        'EnableMatch': 'enableMatch',
+        'EnableNextTable': 'enableNextTable',
         'EnableNextTableMiss': 'enableNextTableMiss',
+        'EnableWildCard': 'enableWildCard',
+        'EnableWriteAction': 'enableWriteAction',
+        'EnableWriteActionMiss': 'enableWriteActionMiss',
+        'EnableWriteSetField': 'enableWriteSetField',
+        'EnableWriteSetFieldMiss': 'enableWriteSetFieldMiss',
     }
 
     def __init__(self, parent):

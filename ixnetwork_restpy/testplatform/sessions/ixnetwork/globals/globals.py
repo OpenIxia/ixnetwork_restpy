@@ -32,17 +32,17 @@ class Globals(Base):
     _SDM_NAME = 'globals'
     _SDM_ATT_MAP = {
         'ApplicationName': 'applicationName',
-        'IsConfigDifferent': 'isConfigDifferent',
-        'CommandArgs': 'commandArgs',
-        'ProtocolbuildNumber': 'protocolbuildNumber',
-        'Username': 'username',
-        'RpfPort': 'rpfPort',
-        'PersistencePath': 'persistencePath',
         'BuildNumber': 'buildNumber',
-        'ConfigSummary': 'configSummary',
-        'ProductVersion': 'productVersion',
+        'CommandArgs': 'commandArgs',
         'ConfigFileName': 'configFileName',
+        'ConfigSummary': 'configSummary',
+        'IsConfigDifferent': 'isConfigDifferent',
         'IxosBuildNumber': 'ixosBuildNumber',
+        'PersistencePath': 'persistencePath',
+        'ProductVersion': 'productVersion',
+        'ProtocolbuildNumber': 'protocolbuildNumber',
+        'RpfPort': 'rpfPort',
+        'Username': 'username',
     }
 
     def __init__(self, parent):

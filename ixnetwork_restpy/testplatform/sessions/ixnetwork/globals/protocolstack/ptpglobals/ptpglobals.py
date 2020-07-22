@@ -34,9 +34,9 @@ class PtpGlobals(Base):
     _SDM_NAME = 'ptpGlobals'
     _SDM_ATT_MAP = {
         'MaxOutstanding': 'maxOutstanding',
-        'TeardownRate': 'teardownRate',
-        'SetupRate': 'setupRate',
         'ObjectId': 'objectId',
+        'SetupRate': 'setupRate',
+        'TeardownRate': 'teardownRate',
     }
 
     def __init__(self, parent):

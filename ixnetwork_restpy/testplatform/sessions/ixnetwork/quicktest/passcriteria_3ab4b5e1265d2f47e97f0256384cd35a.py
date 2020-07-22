@@ -31,16 +31,16 @@ class PassCriteria(Base):
     __slots__ = ()
     _SDM_NAME = 'passCriteria'
     _SDM_ATT_MAP = {
-        'LatencyThresholdValue': 'latencyThresholdValue',
-        'EnableRatePassFail': 'enableRatePassFail',
-        'PassFailFrequency': 'passFailFrequency',
-        'PassCriteriaLoadRateMode': 'passCriteriaLoadRateMode',
         'EnableLatencyPassFail': 'enableLatencyPassFail',
-        'LatencyThresholdScale': 'latencyThresholdScale',
         'EnablePassFail': 'enablePassFail',
+        'EnableRatePassFail': 'enableRatePassFail',
         'LatencyThresholdMode': 'latencyThresholdMode',
-        'PassCriteriaLoadRateValue': 'passCriteriaLoadRateValue',
+        'LatencyThresholdScale': 'latencyThresholdScale',
+        'LatencyThresholdValue': 'latencyThresholdValue',
+        'PassCriteriaLoadRateMode': 'passCriteriaLoadRateMode',
         'PassCriteriaLoadRateScale': 'passCriteriaLoadRateScale',
+        'PassCriteriaLoadRateValue': 'passCriteriaLoadRateValue',
+        'PassFailFrequency': 'passFailFrequency',
     }
 
     def __init__(self, parent):

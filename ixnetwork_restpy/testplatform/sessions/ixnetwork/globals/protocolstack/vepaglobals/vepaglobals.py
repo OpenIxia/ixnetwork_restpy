@@ -33,19 +33,19 @@ class VepaGlobals(Base):
     __slots__ = ()
     _SDM_NAME = 'vepaGlobals'
     _SDM_ATT_MAP = {
-        'Oui': 'oui',
-        'TeardownRate': 'teardownRate',
-        'ObjectId': 'objectId',
-        'MaxVdpCommands': 'maxVdpCommands',
         'AllowCvlan0InFilter': 'allowCvlan0InFilter',
-        'SetupRate': 'setupRate',
-        'TagDefaultEr': 'tagDefaultEr',
+        'CdcpSubtype': 'cdcpSubtype',
         'EvbSubtype': 'evbSubtype',
         'GroupVdpTlvs': 'groupVdpTlvs',
-        'CdcpSubtype': 'cdcpSubtype',
-        'SuppressEvbTlv': 'suppressEvbTlv',
+        'MaxVdpCommands': 'maxVdpCommands',
+        'ObjectId': 'objectId',
+        'Oui': 'oui',
         'RetryFailedSessions': 'retryFailedSessions',
         'RetryFailedSessionsInterval': 'retryFailedSessionsInterval',
+        'SetupRate': 'setupRate',
+        'SuppressEvbTlv': 'suppressEvbTlv',
+        'TagDefaultEr': 'tagDefaultEr',
+        'TeardownRate': 'teardownRate',
     }
 
     def __init__(self, parent):

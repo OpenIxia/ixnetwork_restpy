@@ -33,8 +33,8 @@ class BMacMappedIp(Base):
     __slots__ = ()
     _SDM_NAME = 'bMacMappedIp'
     _SDM_ATT_MAP = {
-        'IpAddress': 'ipAddress',
         'Enabled': 'enabled',
+        'IpAddress': 'ipAddress',
         'IpType': 'ipType',
     }
 

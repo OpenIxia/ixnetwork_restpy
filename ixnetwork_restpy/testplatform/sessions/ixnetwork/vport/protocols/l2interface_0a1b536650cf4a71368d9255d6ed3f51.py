@@ -34,9 +34,9 @@ class L2Interface(Base):
     _SDM_NAME = 'l2Interface'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'TrafficGroupId': 'trafficGroupId',
         'Enabled': 'enabled',
         'GroupId': 'groupId',
+        'TrafficGroupId': 'trafficGroupId',
         'Type': 'type',
     }
 

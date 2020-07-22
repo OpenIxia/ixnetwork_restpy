@@ -31,10 +31,10 @@ class MeterCapabilities(Base):
     __slots__ = ()
     _SDM_NAME = 'meterCapabilities'
     _SDM_ATT_MAP = {
-        'KiloBitPerSecond': 'kiloBitPerSecond',
-        'PacketPerSecond': 'packetPerSecond',
         'CollectStatistics': 'collectStatistics',
         'DoBurstSize': 'doBurstSize',
+        'KiloBitPerSecond': 'kiloBitPerSecond',
+        'PacketPerSecond': 'packetPerSecond',
     }
 
     def __init__(self, parent):

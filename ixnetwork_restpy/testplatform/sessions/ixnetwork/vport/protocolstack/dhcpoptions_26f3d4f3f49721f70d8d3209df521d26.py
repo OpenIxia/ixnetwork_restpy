@@ -33,18 +33,18 @@ class DhcpOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcpOptions'
     _SDM_ATT_MAP = {
-        'SetupRateMax': 'setupRateMax',
+        'Associates': 'associates',
+        'MaxOutstandingReleases': 'maxOutstandingReleases',
         'MaxOutstandingRequests': 'maxOutstandingRequests',
         'ObjectId': 'objectId',
-        'OverrideGlobalTeardownRate': 'overrideGlobalTeardownRate',
-        'MaxOutstandingReleases': 'maxOutstandingReleases',
-        'Associates': 'associates',
-        'TeardownRateMax': 'teardownRateMax',
-        'TeardownRateInitial': 'teardownRateInitial',
         'OverrideGlobalSetupRate': 'overrideGlobalSetupRate',
-        'TeardownRateIncrement': 'teardownRateIncrement',
+        'OverrideGlobalTeardownRate': 'overrideGlobalTeardownRate',
         'SetupRateIncrement': 'setupRateIncrement',
         'SetupRateInitial': 'setupRateInitial',
+        'SetupRateMax': 'setupRateMax',
+        'TeardownRateIncrement': 'teardownRateIncrement',
+        'TeardownRateInitial': 'teardownRateInitial',
+        'TeardownRateMax': 'teardownRateMax',
     }
 
     def __init__(self, parent):

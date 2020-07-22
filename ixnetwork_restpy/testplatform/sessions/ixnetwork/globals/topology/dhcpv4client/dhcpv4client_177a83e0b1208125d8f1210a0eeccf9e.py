@@ -32,18 +32,18 @@ class Dhcpv4client(Base):
     _SDM_NAME = 'dhcpv4client'
     _SDM_ATT_MAP = {
         'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Dhcp4ArpGw': 'dhcp4ArpGw',
         'Dhcp4ClientPort': 'dhcp4ClientPort',
-        'RenewOnLinkUp': 'renewOnLinkUp',
-        'Dhcp4ResponseTimeout': 'dhcp4ResponseTimeout',
-        'Name': 'name',
-        'Dhcp4ResponseTimeoutFactor': 'dhcp4ResponseTimeoutFactor',
-        'Dhcp4ServerPort': 'dhcp4ServerPort',
         'Dhcp4MaxDiscoverTimeout': 'dhcp4MaxDiscoverTimeout',
         'Dhcp4NumRetry': 'dhcp4NumRetry',
-        'DescriptiveName': 'descriptiveName',
-        'SkipReleaseOnStop': 'skipReleaseOnStop',
+        'Dhcp4ResponseTimeout': 'dhcp4ResponseTimeout',
+        'Dhcp4ResponseTimeoutFactor': 'dhcp4ResponseTimeoutFactor',
+        'Dhcp4ServerPort': 'dhcp4ServerPort',
+        'Name': 'name',
+        'RenewOnLinkUp': 'renewOnLinkUp',
         'RowNames': 'rowNames',
-        'Dhcp4ArpGw': 'dhcp4ArpGw',
+        'SkipReleaseOnStop': 'skipReleaseOnStop',
     }
 
     def __init__(self, parent):

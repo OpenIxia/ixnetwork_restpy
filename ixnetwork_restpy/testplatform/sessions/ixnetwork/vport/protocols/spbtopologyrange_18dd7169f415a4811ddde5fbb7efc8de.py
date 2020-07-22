@@ -33,19 +33,19 @@ class SpbTopologyRange(Base):
     __slots__ = ()
     _SDM_NAME = 'spbTopologyRange'
     _SDM_ATT_MAP = {
-        'McidConfigName': 'mcidConfigName',
-        'EnableVbit': 'enableVbit',
-        'SpSourceId': 'spSourceId',
-        'Enabled': 'enabled',
-        'BridgePriority': 'bridgePriority',
-        'McidSignature': 'mcidSignature',
         'AuxMcidConfigName': 'auxMcidConfigName',
-        'CistRootIdentiifer': 'cistRootIdentiifer',
-        'PortIdentifier': 'portIdentifier',
-        'LinkMetric': 'linkMetric',
-        'NoOfPorts': 'noOfPorts',
         'AuxMcidSignature': 'auxMcidSignature',
+        'BridgePriority': 'bridgePriority',
         'CistExternalRootCost': 'cistExternalRootCost',
+        'CistRootIdentiifer': 'cistRootIdentiifer',
+        'EnableVbit': 'enableVbit',
+        'Enabled': 'enabled',
+        'LinkMetric': 'linkMetric',
+        'McidConfigName': 'mcidConfigName',
+        'McidSignature': 'mcidSignature',
+        'NoOfPorts': 'noOfPorts',
+        'PortIdentifier': 'portIdentifier',
+        'SpSourceId': 'spSourceId',
     }
 
     def __init__(self, parent):

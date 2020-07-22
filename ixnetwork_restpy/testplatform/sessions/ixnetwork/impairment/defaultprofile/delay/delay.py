@@ -31,8 +31,8 @@ class Delay(Base):
     __slots__ = ()
     _SDM_NAME = 'delay'
     _SDM_ATT_MAP = {
-        'Units': 'units',
         'Enabled': 'enabled',
+        'Units': 'units',
         'Value': 'value',
     }
 

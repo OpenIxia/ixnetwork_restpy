@@ -31,17 +31,17 @@ class OAM(Base):
     __slots__ = ()
     _SDM_NAME = 'OAM'
     _SDM_ATT_MAP = {
-        'LinkEvents': 'linkEvents',
-        'MacAddress': 'macAddress',
-        'VendorSpecificInformation': 'vendorSpecificInformation',
-        'Loopback': 'loopback',
+        'EnableTlvOption': 'enableTlvOption',
         'Enabled': 'enabled',
+        'IdleTimer': 'idleTimer',
+        'LinkEvents': 'linkEvents',
+        'Loopback': 'loopback',
+        'MacAddress': 'macAddress',
+        'MaxOAMPDUSize': 'maxOAMPDUSize',
+        'OrganizationUniqueIdentifier': 'organizationUniqueIdentifier',
         'TlvType': 'tlvType',
         'TlvValue': 'tlvValue',
-        'EnableTlvOption': 'enableTlvOption',
-        'MaxOAMPDUSize': 'maxOAMPDUSize',
-        'IdleTimer': 'idleTimer',
-        'OrganizationUniqueIdentifier': 'organizationUniqueIdentifier',
+        'VendorSpecificInformation': 'vendorSpecificInformation',
     }
 
     def __init__(self, parent):

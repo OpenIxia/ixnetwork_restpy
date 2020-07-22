@@ -32,9 +32,9 @@ class StopRateAndFlowControl(Base):
     _SDM_NAME = 'stopRateAndFlowControl'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'MaxOutstanding': 'maxOutstanding',
-        'Interval': 'interval',
         'Enabled': 'enabled',
+        'Interval': 'interval',
+        'MaxOutstanding': 'maxOutstanding',
         'Rate': 'rate',
         'RowNames': 'rowNames',
         'ScaleMode': 'scaleMode',

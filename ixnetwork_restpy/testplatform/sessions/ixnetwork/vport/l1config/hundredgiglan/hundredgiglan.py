@@ -31,18 +31,18 @@ class HundredGigLan(Base):
     __slots__ = ()
     _SDM_NAME = 'hundredGigLan'
     _SDM_ATT_MAP = {
-        'EnablePPM': 'enablePPM',
-        'Loopback': 'loopback',
+        'AutoInstrumentation': 'autoInstrumentation',
         'AvailableSpeeds': 'availableSpeeds',
-        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
-        'EnabledFlowControl': 'enabledFlowControl',
-        'Ppm': 'ppm',
         'CanModifySpeed': 'canModifySpeed',
         'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
-        'SelectedSpeeds': 'selectedSpeeds',
-        'AutoInstrumentation': 'autoInstrumentation',
+        'EnablePPM': 'enablePPM',
+        'EnabledFlowControl': 'enabledFlowControl',
         'FlowControlDirectedAddress': 'flowControlDirectedAddress',
+        'Loopback': 'loopback',
+        'Ppm': 'ppm',
+        'SelectedSpeeds': 'selectedSpeeds',
         'Speed': 'speed',
+        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
     }
 
     def __init__(self, parent):

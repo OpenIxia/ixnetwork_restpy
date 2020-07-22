@@ -31,15 +31,15 @@ class ExpectedInitiatedLspList(Base):
     __slots__ = ()
     _SDM_NAME = 'expectedInitiatedLspList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'MaxExpectedSegmentCount': 'maxExpectedSegmentCount',
-        'InsertIpv6ExplicitNull': 'insertIpv6ExplicitNull',
-        'SymbolicPathName': 'symbolicPathName',
-        'SourceIpv4Address': 'sourceIpv4Address',
-        'DescriptiveName': 'descriptiveName',
         'Active': 'active',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'InsertIpv6ExplicitNull': 'insertIpv6ExplicitNull',
+        'MaxExpectedSegmentCount': 'maxExpectedSegmentCount',
+        'Name': 'name',
+        'SourceIpv4Address': 'sourceIpv4Address',
         'SourceIpv6Address': 'sourceIpv6Address',
+        'SymbolicPathName': 'symbolicPathName',
     }
 
     def __init__(self, parent):

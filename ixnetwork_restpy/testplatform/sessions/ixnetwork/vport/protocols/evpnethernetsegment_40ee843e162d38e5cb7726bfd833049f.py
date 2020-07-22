@@ -32,8 +32,8 @@ class EvpnEthernetSegment(Base):
     __slots__ = ()
     _SDM_NAME = 'evpnEthernetSegment'
     _SDM_ATT_MAP = {
-        'Neighbor': 'neighbor',
         'Esi': 'esi',
+        'Neighbor': 'neighbor',
     }
 
     def __init__(self, parent):

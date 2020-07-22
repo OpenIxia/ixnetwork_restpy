@@ -32,11 +32,11 @@ class LdpBasicRouter(Base):
     _SDM_NAME = 'ldpBasicRouter'
     _SDM_ATT_MAP = {
         'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
         'DiscardSelfOriginatedFECs': 'discardSelfOriginatedFECs',
         'Name': 'name',
-        'TransportLabels': 'transportLabels',
         'RowNames': 'rowNames',
-        'DescriptiveName': 'descriptiveName',
+        'TransportLabels': 'transportLabels',
         'VpnLabel': 'vpnLabel',
     }
 

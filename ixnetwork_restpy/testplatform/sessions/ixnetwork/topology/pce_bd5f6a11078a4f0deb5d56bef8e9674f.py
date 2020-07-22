@@ -33,22 +33,22 @@ class Pce(Base):
     __slots__ = ()
     _SDM_NAME = 'pce'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'MaxUnknownMessage': 'maxUnknownMessage',
-        'Errors': 'errors',
-        'Name': 'name',
-        'TcpPort': 'tcpPort',
-        'StackedLayers': 'stackedLayers',
-        'Status': 'status',
-        'PceActionMode': 'pceActionMode',
-        'ConnectedVia': 'connectedVia',
-        'DescriptiveName': 'descriptiveName',
-        'Multiplier': 'multiplier',
         'Active': 'active',
+        'ConnectedVia': 'connectedVia',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Errors': 'errors',
         'MaxPendingConnection': 'maxPendingConnection',
-        'StateCounts': 'stateCounts',
+        'MaxUnknownMessage': 'maxUnknownMessage',
         'MaxUnknownRequest': 'maxUnknownRequest',
+        'Multiplier': 'multiplier',
+        'Name': 'name',
+        'PceActionMode': 'pceActionMode',
         'SessionStatus': 'sessionStatus',
+        'StackedLayers': 'stackedLayers',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
+        'TcpPort': 'tcpPort',
     }
 
     def __init__(self, parent):

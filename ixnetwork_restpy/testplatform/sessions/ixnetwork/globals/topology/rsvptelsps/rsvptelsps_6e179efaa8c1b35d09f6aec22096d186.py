@@ -32,10 +32,10 @@ class RsvpteLsps(Base):
     _SDM_NAME = 'rsvpteLsps'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'RowNames': 'rowNames',
-        'DisableRSVPSignal': 'disableRSVPSignal',
         'DescriptiveName': 'descriptiveName',
+        'DisableRSVPSignal': 'disableRSVPSignal',
         'Name': 'name',
+        'RowNames': 'rowNames',
     }
 
     def __init__(self, parent):

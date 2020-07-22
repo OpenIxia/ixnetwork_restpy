@@ -33,9 +33,9 @@ class PbbEVpnParameter(Base):
     __slots__ = ()
     _SDM_NAME = 'pbbEVpnParameter'
     _SDM_ATT_MAP = {
+        'BMac': 'bMac',
         'Count': 'count',
         'UsePbbEVpnParameters': 'usePbbEVpnParameters',
-        'BMac': 'bMac',
     }
 
     def __init__(self, parent):

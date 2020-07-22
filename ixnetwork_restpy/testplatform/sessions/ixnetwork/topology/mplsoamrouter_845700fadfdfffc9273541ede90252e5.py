@@ -33,15 +33,15 @@ class MplsoamRouter(Base):
     __slots__ = ()
     _SDM_NAME = 'mplsoamRouter'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Status': 'status',
-        'Errors': 'errors',
-        'Name': 'name',
-        'StateCounts': 'stateCounts',
-        'DescriptiveName': 'descriptiveName',
         'Active': 'active',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Errors': 'errors',
         'LocalRouterId': 'localRouterId',
+        'Name': 'name',
         'SessionStatus': 'sessionStatus',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
     }
 
     def __init__(self, parent):

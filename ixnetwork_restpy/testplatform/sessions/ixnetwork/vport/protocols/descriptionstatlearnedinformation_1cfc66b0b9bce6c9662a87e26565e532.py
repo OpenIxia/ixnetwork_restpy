@@ -32,20 +32,20 @@ class DescriptionStatLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'descriptionStatLearnedInformation'
     _SDM_ATT_MAP = {
-        'SoftwareDescription': 'softwareDescription',
-        'Latency': 'latency',
         'DataPathDescription': 'dataPathDescription',
-        'SerialNumber': 'serialNumber',
-        'HardwareDescription': 'hardwareDescription',
-        'ManufacturerDescription': 'manufacturerDescription',
-        'ErrorType': 'errorType',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'ErrorCode': 'errorCode',
-        'LocalIp': 'localIp',
+        'DataPathId': 'dataPathId',
         'DataPathIdAsHex': 'dataPathIdAsHex',
+        'ErrorCode': 'errorCode',
+        'ErrorType': 'errorType',
+        'HardwareDescription': 'hardwareDescription',
+        'Latency': 'latency',
+        'LocalIp': 'localIp',
+        'ManufacturerDescription': 'manufacturerDescription',
+        'NegotiatedVersion': 'negotiatedVersion',
         'RemoteIp': 'remoteIp',
         'ReplyState': 'replyState',
-        'DataPathId': 'dataPathId',
+        'SerialNumber': 'serialNumber',
+        'SoftwareDescription': 'softwareDescription',
     }
 
     def __init__(self, parent):

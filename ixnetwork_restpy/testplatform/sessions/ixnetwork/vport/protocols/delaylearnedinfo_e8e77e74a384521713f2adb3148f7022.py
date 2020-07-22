@@ -32,13 +32,13 @@ class DelayLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'delayLearnedInfo'
     _SDM_ATT_MAP = {
-        'ValueInSec': 'valueInSec',
-        'SVlan': 'sVlan',
-        'ValueInNanoSec': 'valueInNanoSec',
-        'SrcMacAddress': 'srcMacAddress',
+        'CVlan': 'cVlan',
         'DstMacAddress': 'dstMacAddress',
         'MdLevel': 'mdLevel',
-        'CVlan': 'cVlan',
+        'SVlan': 'sVlan',
+        'SrcMacAddress': 'srcMacAddress',
+        'ValueInNanoSec': 'valueInNanoSec',
+        'ValueInSec': 'valueInSec',
     }
 
     def __init__(self, parent):

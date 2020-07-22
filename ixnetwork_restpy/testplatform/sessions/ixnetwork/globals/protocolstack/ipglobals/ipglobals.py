@@ -34,10 +34,10 @@ class IpGlobals(Base):
     _SDM_NAME = 'ipGlobals'
     _SDM_ATT_MAP = {
         'EnableGatewayArp': 'enableGatewayArp',
-        'MaxOutstandingGatewayArpRequests': 'maxOutstandingGatewayArpRequests',
-        'SendOneArpFromEachInterface': 'sendOneArpFromEachInterface',
         'GatewayArpRequestRate': 'gatewayArpRequestRate',
+        'MaxOutstandingGatewayArpRequests': 'maxOutstandingGatewayArpRequests',
         'ObjectId': 'objectId',
+        'SendOneArpFromEachInterface': 'sendOneArpFromEachInterface',
     }
 
     def __init__(self, parent):

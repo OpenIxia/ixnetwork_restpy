@@ -31,8 +31,8 @@ class TestConfig(Base):
     __slots__ = ()
     _SDM_NAME = 'testConfig'
     _SDM_ATT_MAP = {
-        'ProtocolItem': 'protocolItem',
         'NumTrials': 'numTrials',
+        'ProtocolItem': 'protocolItem',
     }
 
     def __init__(self, parent):

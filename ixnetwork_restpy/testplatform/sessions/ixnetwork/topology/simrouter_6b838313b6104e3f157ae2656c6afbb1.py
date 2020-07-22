@@ -33,10 +33,10 @@ class SimRouter(Base):
     _SDM_NAME = 'simRouter'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'NodeIndex': 'nodeIndex',
-        'Name': 'name',
-        'RouterId': 'routerId',
         'DescriptiveName': 'descriptiveName',
+        'Name': 'name',
+        'NodeIndex': 'nodeIndex',
+        'RouterId': 'routerId',
         'SystemId': 'systemId',
     }
 

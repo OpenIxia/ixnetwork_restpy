@@ -31,24 +31,24 @@ class IsisL3PrefixesSrSid(Base):
     __slots__ = ()
     _SDM_NAME = 'isisL3PrefixesSrSid'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'VFlag': 'vFlag',
-        'PFlag': 'pFlag',
-        'NetworkAddress': 'networkAddress',
-        'Name': 'name',
+        'Active': 'active',
         'Algorithm': 'algorithm',
         'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
-        'NFlag': 'nFlag',
-        'LocalSystemID': 'localSystemID',
-        'EFlag': 'eFlag',
-        'RFlag': 'rFlag',
-        'FapmMetric': 'fapmMetric',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
-        'SidIndexLabel': 'sidIndexLabel',
-        'Active': 'active',
-        'NetworkAddressIpv6': 'networkAddressIpv6',
+        'EFlag': 'eFlag',
         'EnableFapm': 'enableFapm',
+        'FapmMetric': 'fapmMetric',
         'LFlag': 'lFlag',
+        'LocalSystemID': 'localSystemID',
+        'NFlag': 'nFlag',
+        'Name': 'name',
+        'NetworkAddress': 'networkAddress',
+        'NetworkAddressIpv6': 'networkAddressIpv6',
+        'PFlag': 'pFlag',
+        'RFlag': 'rFlag',
+        'SidIndexLabel': 'sidIndexLabel',
+        'VFlag': 'vFlag',
     }
 
     def __init__(self, parent):

@@ -33,15 +33,15 @@ class Router(Base):
     __slots__ = ()
     _SDM_NAME = 'router'
     _SDM_ATT_MAP = {
-        'DrPriority': 'drPriority',
-        'JoinPruneHoldTime': 'joinPruneHoldTime',
-        'Enabled': 'enabled',
-        'RpDiscoveryMode': 'rpDiscoveryMode',
-        'RouterId': 'routerId',
-        'TrafficGroupId': 'trafficGroupId',
-        'JoinPruneInterval': 'joinPruneInterval',
         'DataMdtInterval': 'dataMdtInterval',
         'DataMdtTimeOut': 'dataMdtTimeOut',
+        'DrPriority': 'drPriority',
+        'Enabled': 'enabled',
+        'JoinPruneHoldTime': 'joinPruneHoldTime',
+        'JoinPruneInterval': 'joinPruneInterval',
+        'RouterId': 'routerId',
+        'RpDiscoveryMode': 'rpDiscoveryMode',
+        'TrafficGroupId': 'trafficGroupId',
     }
 
     def __init__(self, parent):

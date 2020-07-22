@@ -32,10 +32,10 @@ class Ospf(Base):
     _SDM_NAME = 'ospf'
     _SDM_ATT_MAP = {
         'EnableDrOrBdr': 'enableDrOrBdr',
-        'FloodLinkStateUpdatesPerInterval': 'floodLinkStateUpdatesPerInterval',
         'Enabled': 'enabled',
-        'RunningState': 'runningState',
+        'FloodLinkStateUpdatesPerInterval': 'floodLinkStateUpdatesPerInterval',
         'RateControlInterval': 'rateControlInterval',
+        'RunningState': 'runningState',
     }
 
     def __init__(self, parent):

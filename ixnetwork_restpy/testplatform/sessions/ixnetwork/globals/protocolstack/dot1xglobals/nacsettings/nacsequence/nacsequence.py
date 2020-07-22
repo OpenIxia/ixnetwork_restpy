@@ -33,9 +33,9 @@ class NacSequence(Base):
     __slots__ = ()
     _SDM_NAME = 'nacSequence'
     _SDM_ATT_MAP = {
-        'ObjectId': 'objectId',
-        'Name': 'name',
         'NacPostures': 'nacPostures',
+        'Name': 'name',
+        'ObjectId': 'objectId',
     }
 
     def __init__(self, parent):

@@ -31,16 +31,16 @@ class MldMcastIPv6GroupList(Base):
     __slots__ = ()
     _SDM_NAME = 'mldMcastIPv6GroupList'
     _SDM_ATT_MAP = {
+        'Active': 'active',
         'Count': 'count',
-        'StartMcastAddr': 'startMcastAddr',
-        'Name': 'name',
+        'DescriptiveName': 'descriptiveName',
         'McastAddrCnt': 'mcastAddrCnt',
+        'McastAddrIncr': 'mcastAddrIncr',
+        'Name': 'name',
         'NoOfSrcRanges': 'noOfSrcRanges',
         'SourceMode': 'sourceMode',
+        'StartMcastAddr': 'startMcastAddr',
         'State': 'state',
-        'DescriptiveName': 'descriptiveName',
-        'Active': 'active',
-        'McastAddrIncr': 'mcastAddrIncr',
     }
 
     def __init__(self, parent):

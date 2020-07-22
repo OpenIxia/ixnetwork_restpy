@@ -31,11 +31,11 @@ class Checksums(Base):
     __slots__ = ()
     _SDM_NAME = 'checksums'
     _SDM_ATT_MAP = {
-        'DropRxL2FcsErrors': 'dropRxL2FcsErrors',
-        'CorrectTxL2FcsErrors': 'correctTxL2FcsErrors',
-        'CorrectTxIpv4Checksum': 'correctTxIpv4Checksum',
         'AlwaysCorrectWhenModifying': 'alwaysCorrectWhenModifying',
         'CorrectTxChecksumOverIp': 'correctTxChecksumOverIp',
+        'CorrectTxIpv4Checksum': 'correctTxIpv4Checksum',
+        'CorrectTxL2FcsErrors': 'correctTxL2FcsErrors',
+        'DropRxL2FcsErrors': 'dropRxL2FcsErrors',
     }
 
     def __init__(self, parent):

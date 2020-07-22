@@ -31,9 +31,9 @@ class PortStatusMaskMaster(Base):
     __slots__ = ()
     _SDM_NAME = 'portStatusMaskMaster'
     _SDM_ATT_MAP = {
-        'PortModify': 'portModify',
-        'PortDelete': 'portDelete',
         'PortAdd': 'portAdd',
+        'PortDelete': 'portDelete',
+        'PortModify': 'portModify',
     }
 
     def __init__(self, parent):

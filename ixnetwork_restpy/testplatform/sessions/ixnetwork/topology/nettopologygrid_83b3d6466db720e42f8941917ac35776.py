@@ -33,10 +33,10 @@ class NetTopologyGrid(Base):
     __slots__ = ()
     _SDM_NAME = 'netTopologyGrid'
     _SDM_ATT_MAP = {
-        'LinkMultiplier': 'linkMultiplier',
-        'IncludeEntryPoint': 'includeEntryPoint',
-        'Rows': 'rows',
         'Columns': 'columns',
+        'IncludeEntryPoint': 'includeEntryPoint',
+        'LinkMultiplier': 'linkMultiplier',
+        'Rows': 'rows',
     }
 
     def __init__(self, parent):

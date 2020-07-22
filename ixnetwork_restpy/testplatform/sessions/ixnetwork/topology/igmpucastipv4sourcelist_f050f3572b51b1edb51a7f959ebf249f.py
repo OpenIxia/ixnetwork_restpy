@@ -31,13 +31,13 @@ class IgmpUcastIPv4SourceList(Base):
     __slots__ = ()
     _SDM_NAME = 'igmpUcastIPv4SourceList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'State': 'state',
-        'StartUcastAddr': 'startUcastAddr',
-        'DescriptiveName': 'descriptiveName',
-        'UcastAddrIncr': 'ucastAddrIncr',
         'Active': 'active',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Name': 'name',
+        'StartUcastAddr': 'startUcastAddr',
+        'State': 'state',
+        'UcastAddrIncr': 'ucastAddrIncr',
         'UcastSrcAddrCnt': 'ucastSrcAddrCnt',
     }
 

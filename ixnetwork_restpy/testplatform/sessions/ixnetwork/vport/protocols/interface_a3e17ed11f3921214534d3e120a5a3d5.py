@@ -33,18 +33,18 @@ class Interface(Base):
     __slots__ = ()
     _SDM_NAME = 'interface'
     _SDM_ATT_MAP = {
-        'AtmVcDirection': 'atmVcDirection',
         'AdvertisingMode': 'advertisingMode',
-        'BfdOperationMode': 'bfdOperationMode',
-        'ProtocolInterface': 'protocolInterface',
-        'Enabled': 'enabled',
-        'EnableAtmSession': 'enableAtmSession',
-        'DiscoveryMode': 'discoveryMode',
-        'EnableBfdRegistration': 'enableBfdRegistration',
+        'AtmVcDirection': 'atmVcDirection',
         'Authentication': 'authentication',
-        'Md5Key': 'md5Key',
-        'LabelSpaceId': 'labelSpaceId',
+        'BfdOperationMode': 'bfdOperationMode',
+        'DiscoveryMode': 'discoveryMode',
+        'EnableAtmSession': 'enableAtmSession',
+        'EnableBfdRegistration': 'enableBfdRegistration',
+        'Enabled': 'enabled',
         'IsLdpLearnedInfoRefreshed': 'isLdpLearnedInfoRefreshed',
+        'LabelSpaceId': 'labelSpaceId',
+        'Md5Key': 'md5Key',
+        'ProtocolInterface': 'protocolInterface',
     }
 
     def __init__(self, parent):

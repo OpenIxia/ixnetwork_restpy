@@ -31,19 +31,19 @@ class BaseVidList(Base):
     __slots__ = ()
     _SDM_NAME = 'baseVidList'
     _SDM_ATT_MAP = {
+        'Active': 'active',
+        'BaseVid': 'baseVid',
+        'BaseVlanPriority': 'baseVlanPriority',
+        'Bmac': 'bmac',
+        'BmacSameAsSystemId': 'bmacSameAsSystemId',
+        'BvlanTpid': 'bvlanTpid',
         'Count': 'count',
-        'UseFlagBit': 'useFlagBit',
+        'DescriptiveName': 'descriptiveName',
         'EctAlgorithm': 'ectAlgorithm',
         'IsidCount': 'isidCount',
-        'BmacSameAsSystemId': 'bmacSameAsSystemId',
-        'TopologyId': 'topologyId',
-        'Bmac': 'bmac',
-        'BaseVlanPriority': 'baseVlanPriority',
         'Name': 'name',
-        'BaseVid': 'baseVid',
-        'DescriptiveName': 'descriptiveName',
-        'Active': 'active',
-        'BvlanTpid': 'bvlanTpid',
+        'TopologyId': 'topologyId',
+        'UseFlagBit': 'useFlagBit',
     }
 
     def __init__(self, parent):

@@ -33,19 +33,19 @@ class EapoUdpGlobals(Base):
     __slots__ = ()
     _SDM_NAME = 'eapoUdpGlobals'
     _SDM_ATT_MAP = {
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
         'ChangeStatusQuery': 'changeStatusQuery',
-        'ObjectId': 'objectId',
-        'MaxClientsPerSecond': 'maxClientsPerSecond',
         'CookieSize': 'cookieSize',
+        'FragmentSize': 'fragmentSize',
+        'MaxClientsPerSecond': 'maxClientsPerSecond',
+        'MaxOutstandingRequests': 'maxOutstandingRequests',
+        'ObjectId': 'objectId',
+        'Port': 'port',
+        'Timeout': 'timeout',
         'TriggerCount': 'triggerCount',
+        'TriggerOrigin': 'triggerOrigin',
         'TriggerType': 'triggerType',
         'WaitBeforeRun': 'waitBeforeRun',
-        'Timeout': 'timeout',
-        'FragmentSize': 'fragmentSize',
         'WaitForCompletion': 'waitForCompletion',
-        'Port': 'port',
-        'TriggerOrigin': 'triggerOrigin',
     }
 
     def __init__(self, parent):

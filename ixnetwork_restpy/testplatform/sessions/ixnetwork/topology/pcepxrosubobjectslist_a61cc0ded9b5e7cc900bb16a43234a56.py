@@ -32,23 +32,23 @@ class PcepXroSubObjectsList(Base):
     __slots__ = ()
     _SDM_NAME = 'pcepXroSubObjectsList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'InterfaceId': 'interfaceId',
-        'PFlagXro': 'pFlagXro',
-        'Name': 'name',
-        'Ipv6Address': 'ipv6Address',
-        'Attribute': 'attribute',
-        'PceId32': 'pceId32',
-        'PceId128': 'pceId128',
-        'Ipv4Address': 'ipv4Address',
-        'RouterId': 'routerId',
+        'Active': 'active',
         'AsNumber': 'asNumber',
+        'Attribute': 'attribute',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
         'Exclude_bit': 'exclude_bit',
-        'SubObjectType': 'subObjectType',
-        'Active': 'active',
-        'SrlgId': 'srlgId',
+        'InterfaceId': 'interfaceId',
+        'Ipv4Address': 'ipv4Address',
+        'Ipv6Address': 'ipv6Address',
+        'Name': 'name',
+        'PFlagXro': 'pFlagXro',
+        'PceId128': 'pceId128',
+        'PceId32': 'pceId32',
         'PrefixLength': 'prefixLength',
+        'RouterId': 'routerId',
+        'SrlgId': 'srlgId',
+        'SubObjectType': 'subObjectType',
     }
 
     def __init__(self, parent):

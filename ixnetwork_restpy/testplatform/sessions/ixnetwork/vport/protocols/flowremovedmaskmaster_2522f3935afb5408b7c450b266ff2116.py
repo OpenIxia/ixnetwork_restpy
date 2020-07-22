@@ -31,10 +31,10 @@ class FlowRemovedMaskMaster(Base):
     __slots__ = ()
     _SDM_NAME = 'flowRemovedMaskMaster'
     _SDM_ATT_MAP = {
-        'IdleTimeout': 'idleTimeout',
+        'Delete': 'delete',
         'GroupDelete': 'groupDelete',
         'HardTimeout': 'hardTimeout',
-        'Delete': 'delete',
+        'IdleTimeout': 'idleTimeout',
     }
 
     def __init__(self, parent):

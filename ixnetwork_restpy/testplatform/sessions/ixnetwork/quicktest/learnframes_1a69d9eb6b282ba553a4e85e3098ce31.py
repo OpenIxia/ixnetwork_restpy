@@ -31,21 +31,21 @@ class LearnFrames(Base):
     __slots__ = ()
     _SDM_NAME = 'learnFrames'
     _SDM_ATT_MAP = {
-        'LearnWaitTimeBeforeTransmit': 'learnWaitTimeBeforeTransmit',
-        'LearnNumFrames': 'learnNumFrames',
-        'LearningStepIncrementFrameSize': 'learningStepIncrementFrameSize',
         'LearnFrameSize': 'learnFrameSize',
-        'LearningFramesizeList': 'learningFramesizeList',
-        'LearningMaxRandomFrameSize': 'learningMaxRandomFrameSize',
-        'LearningMinRandomFrameSize': 'learningMinRandomFrameSize',
+        'LearnFrequency': 'learnFrequency',
+        'LearnNumFrames': 'learnNumFrames',
+        'LearnRate': 'learnRate',
+        'LearnWaitTime': 'learnWaitTime',
+        'LearnWaitTimeBeforeTransmit': 'learnWaitTimeBeforeTransmit',
         'LearningCountRandomFrameSize': 'learningCountRandomFrameSize',
         'LearningFrameSizeMode': 'learningFrameSizeMode',
-        'LearningMinIncrementFrameSize': 'learningMinIncrementFrameSize',
         'LearningFramesizeFixedValue': 'learningFramesizeFixedValue',
-        'LearnRate': 'learnRate',
-        'LearnFrequency': 'learnFrequency',
+        'LearningFramesizeList': 'learningFramesizeList',
         'LearningMaxIncrementFrameSize': 'learningMaxIncrementFrameSize',
-        'LearnWaitTime': 'learnWaitTime',
+        'LearningMaxRandomFrameSize': 'learningMaxRandomFrameSize',
+        'LearningMinIncrementFrameSize': 'learningMinIncrementFrameSize',
+        'LearningMinRandomFrameSize': 'learningMinRandomFrameSize',
+        'LearningStepIncrementFrameSize': 'learningStepIncrementFrameSize',
     }
 
     def __init__(self, parent):

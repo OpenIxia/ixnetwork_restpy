@@ -31,11 +31,11 @@ class LabelSpace(Base):
     __slots__ = ()
     _SDM_NAME = 'labelSpace'
     _SDM_ATT_MAP = {
+        'End': 'end',
+        'LabelId': 'labelId',
+        'Mode': 'mode',
         'Start': 'start',
         'Step': 'step',
-        'End': 'end',
-        'Mode': 'mode',
-        'LabelId': 'labelId',
     }
 
     def __init__(self, parent):

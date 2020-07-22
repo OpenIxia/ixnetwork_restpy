@@ -31,16 +31,16 @@ class Igmp(Base):
     __slots__ = ()
     _SDM_NAME = 'igmp'
     _SDM_ATT_MAP = {
-        'RunningState': 'runningState',
-        'NumberOfGroups': 'numberOfGroups',
+        'EnableUnicastMode': 'enableUnicastMode',
         'Enabled': 'enabled',
-        'SendLeaveOnHostDisable': 'sendLeaveOnHostDisable',
+        'NumberOfGroups': 'numberOfGroups',
         'NumberOfQueries': 'numberOfQueries',
+        'QueryTimePeriod': 'queryTimePeriod',
+        'RunningState': 'runningState',
+        'SendLeaveOnHostDisable': 'sendLeaveOnHostDisable',
+        'SendLeaveOnStop': 'sendLeaveOnStop',
         'StatsEnabled': 'statsEnabled',
         'TimePeriod': 'timePeriod',
-        'EnableUnicastMode': 'enableUnicastMode',
-        'QueryTimePeriod': 'queryTimePeriod',
-        'SendLeaveOnStop': 'sendLeaveOnStop',
     }
 
     def __init__(self, parent):

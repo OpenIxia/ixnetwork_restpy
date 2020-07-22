@@ -34,8 +34,8 @@ class UserLsaGroup(Base):
     _SDM_NAME = 'userLsaGroup'
     _SDM_ATT_MAP = {
         'AreaId': 'areaId',
-        'Enabled': 'enabled',
         'Description': 'description',
+        'Enabled': 'enabled',
     }
 
     def __init__(self, parent):

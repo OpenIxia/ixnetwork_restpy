@@ -32,25 +32,25 @@ class IPv4PseudoNodeRoutes(Base):
     __slots__ = ()
     _SDM_NAME = 'IPv4PseudoNodeRoutes'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Ipv4VFlag': 'ipv4VFlag',
-        'NetworkAddress': 'networkAddress',
-        'Name': 'name',
+        'Active': 'active',
         'Algorithm': 'algorithm',
         'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
-        'Ipv4Redistribution': 'ipv4Redistribution',
-        'Ipv4LFlag': 'ipv4LFlag',
-        'Ipv4EFlag': 'ipv4EFlag',
-        'Ipv4PFlag': 'ipv4PFlag',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
-        'Ipv4RFlag': 'ipv4RFlag',
-        'Active': 'active',
-        'Ipv4RouteOrigin': 'ipv4RouteOrigin',
+        'Ipv4EFlag': 'ipv4EFlag',
+        'Ipv4LFlag': 'ipv4LFlag',
+        'Ipv4Metric': 'ipv4Metric',
         'Ipv4NFlag': 'ipv4NFlag',
-        'SIDIndexLabel': 'sIDIndexLabel',
+        'Ipv4PFlag': 'ipv4PFlag',
+        'Ipv4RFlag': 'ipv4RFlag',
+        'Ipv4Redistribution': 'ipv4Redistribution',
+        'Ipv4RouteOrigin': 'ipv4RouteOrigin',
+        'Ipv4VFlag': 'ipv4VFlag',
+        'Name': 'name',
+        'NetworkAddress': 'networkAddress',
         'PrefixLength': 'prefixLength',
         'RangeSize': 'rangeSize',
-        'Ipv4Metric': 'ipv4Metric',
+        'SIDIndexLabel': 'sIDIndexLabel',
     }
 
     def __init__(self, parent):

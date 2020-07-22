@@ -33,12 +33,12 @@ class EgressOnlyTracking(Base):
     __slots__ = ()
     _SDM_NAME = 'egressOnlyTracking'
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'SignatureOffset': 'signatureOffset',
         'Egress': 'egress',
+        'Enabled': 'enabled',
+        'Port': 'port',
         'SignatureLengthType': 'signatureLengthType',
         'SignatureMask': 'signatureMask',
-        'Port': 'port',
+        'SignatureOffset': 'signatureOffset',
         'SignatureValue': 'signatureValue',
     }
 

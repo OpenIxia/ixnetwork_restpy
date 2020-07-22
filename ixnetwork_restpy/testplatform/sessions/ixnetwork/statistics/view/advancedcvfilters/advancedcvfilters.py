@@ -33,13 +33,13 @@ class AdvancedCVFilters(Base):
     __slots__ = ()
     _SDM_NAME = 'advancedCVFilters'
     _SDM_ATT_MAP = {
-        'Protocol': 'protocol',
-        'Caption': 'caption',
         'AvailableFilterOptions': 'availableFilterOptions',
         'AvailableGroupingOptions': 'availableGroupingOptions',
+        'Caption': 'caption',
         'Expression': 'expression',
-        'SortingStats': 'sortingStats',
         'Grouping': 'grouping',
+        'Protocol': 'protocol',
+        'SortingStats': 'sortingStats',
     }
 
     def __init__(self, parent):

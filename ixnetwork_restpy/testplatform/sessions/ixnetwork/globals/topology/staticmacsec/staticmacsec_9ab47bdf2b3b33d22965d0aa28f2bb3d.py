@@ -32,10 +32,10 @@ class StaticMacsec(Base):
     _SDM_NAME = 'staticMacsec'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'RowNames': 'rowNames',
         'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
         'KeyGenerationMode': 'keyGenerationMode',
+        'Name': 'name',
+        'RowNames': 'rowNames',
     }
 
     def __init__(self, parent):

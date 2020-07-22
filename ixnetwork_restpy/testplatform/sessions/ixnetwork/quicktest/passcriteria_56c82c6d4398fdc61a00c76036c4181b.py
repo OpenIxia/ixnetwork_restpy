@@ -31,14 +31,14 @@ class PassCriteria(Base):
     __slots__ = ()
     _SDM_NAME = 'passCriteria'
     _SDM_ATT_MAP = {
-        'EnableCpDpPassFail': 'enableCpDpPassFail',
-        'CpDpConvergenceTime': 'cpDpConvergenceTime',
-        'PacketLossDurationConvergenceTime': 'packetLossDurationConvergenceTime',
-        'PassFailFrequency': 'passFailFrequency',
         'CpDpConvergenceFactorScale': 'cpDpConvergenceFactorScale',
+        'CpDpConvergenceTime': 'cpDpConvergenceTime',
+        'EnableCpDpPassFail': 'enableCpDpPassFail',
         'EnablePacketLossDurationPassFail': 'enablePacketLossDurationPassFail',
         'EnablePassFail': 'enablePassFail',
+        'PacketLossDurationConvergenceTime': 'packetLossDurationConvergenceTime',
         'PacketLossDurationFactorScale': 'packetLossDurationFactorScale',
+        'PassFailFrequency': 'passFailFrequency',
     }
 
     def __init__(self, parent):

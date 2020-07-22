@@ -31,22 +31,22 @@ class Ethernet(Base):
     __slots__ = ()
     _SDM_NAME = 'ethernet'
     _SDM_ATT_MAP = {
-        'EnablePPM': 'enablePPM',
-        'Loopback': 'loopback',
-        'Media': 'media',
-        'AvailableSpeeds': 'availableSpeeds',
-        'EnabledFlowControl': 'enabledFlowControl',
-        'Ppm': 'ppm',
-        'CanModifySpeed': 'canModifySpeed',
-        'MasterSlaveMode': 'masterSlaveMode',
-        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
-        'SpeedAuto': 'speedAuto',
-        'SelectedSpeeds': 'selectedSpeeds',
         'AutoInstrumentation': 'autoInstrumentation',
-        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
-        'Speed': 'speed',
         'AutoNegotiate': 'autoNegotiate',
+        'AvailableSpeeds': 'availableSpeeds',
+        'CanModifySpeed': 'canModifySpeed',
+        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
+        'EnablePPM': 'enablePPM',
+        'EnabledFlowControl': 'enabledFlowControl',
+        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
+        'Loopback': 'loopback',
+        'MasterSlaveMode': 'masterSlaveMode',
+        'Media': 'media',
         'NegotiateMasterSlave': 'negotiateMasterSlave',
+        'Ppm': 'ppm',
+        'SelectedSpeeds': 'selectedSpeeds',
+        'Speed': 'speed',
+        'SpeedAuto': 'speedAuto',
     }
 
     def __init__(self, parent):

@@ -33,10 +33,10 @@ class TunnelLeafRange(Base):
     __slots__ = ()
     _SDM_NAME = 'tunnelLeafRange'
     _SDM_ATT_MAP = {
-        'SubLspDown': 'subLspDown',
         'Enabled': 'enabled',
-        'IpStart': 'ipStart',
         'IpCount': 'ipCount',
+        'IpStart': 'ipStart',
+        'SubLspDown': 'subLspDown',
     }
 
     def __init__(self, parent):

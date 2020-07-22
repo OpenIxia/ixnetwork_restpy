@@ -31,12 +31,12 @@ class PassCriteria(Base):
     __slots__ = ()
     _SDM_NAME = 'passCriteria'
     _SDM_ATT_MAP = {
-        'EnableLeaveFailuresPassFail': 'enableLeaveFailuresPassFail',
-        'PassFailLeaveLatencyAgg': 'passFailLeaveLatencyAgg',
-        'EnableJoinLatencyPassFail': 'enableJoinLatencyPassFail',
         'EnableJoinFailuresPassFail': 'enableJoinFailuresPassFail',
+        'EnableJoinLatencyPassFail': 'enableJoinLatencyPassFail',
+        'EnableLeaveFailuresPassFail': 'enableLeaveFailuresPassFail',
         'EnableLeaveLatencyPassFail': 'enableLeaveLatencyPassFail',
         'PassFailJoinLatencyAgg': 'passFailJoinLatencyAgg',
+        'PassFailLeaveLatencyAgg': 'passFailLeaveLatencyAgg',
     }
 
     def __init__(self, parent):

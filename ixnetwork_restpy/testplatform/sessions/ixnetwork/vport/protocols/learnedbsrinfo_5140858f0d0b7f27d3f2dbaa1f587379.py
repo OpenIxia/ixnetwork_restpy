@@ -32,10 +32,10 @@ class LearnedBsrInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedBsrInfo'
     _SDM_ATT_MAP = {
-        'Priority': 'priority',
-        'OurBsrState': 'ourBsrState',
-        'LastBsmSendRecv': 'lastBsmSendRecv',
         'BsrAddress': 'bsrAddress',
+        'LastBsmSendRecv': 'lastBsmSendRecv',
+        'OurBsrState': 'ourBsrState',
+        'Priority': 'priority',
     }
 
     def __init__(self, parent):

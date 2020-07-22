@@ -33,10 +33,10 @@ class IPv6SegmentsList(Base):
     _SDM_NAME = 'IPv6SegmentsList'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'SIDEnable': 'sIDEnable',
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
         'SID': 'sID',
+        'SIDEnable': 'sIDEnable',
     }
 
     def __init__(self, parent):

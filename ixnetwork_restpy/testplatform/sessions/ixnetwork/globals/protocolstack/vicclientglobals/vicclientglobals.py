@@ -33,15 +33,15 @@ class VicClientGlobals(Base):
     __slots__ = ()
     _SDM_NAME = 'vicClientGlobals'
     _SDM_ATT_MAP = {
+        'DcbxTimeout': 'dcbxTimeout',
+        'LongMsgTimeout': 'longMsgTimeout',
         'MaxErrorRetry': 'maxErrorRetry',
         'MaxMsgSize': 'maxMsgSize',
-        'ObjectId': 'objectId',
         'MaxPduCredit': 'maxPduCredit',
-        'RegularMsgTimeout': 'regularMsgTimeout',
-        'LongMsgTimeout': 'longMsgTimeout',
         'MaxTimeoutRetry': 'maxTimeoutRetry',
+        'ObjectId': 'objectId',
+        'RegularMsgTimeout': 'regularMsgTimeout',
         'VifSetTimeout': 'vifSetTimeout',
-        'DcbxTimeout': 'dcbxTimeout',
     }
 
     def __init__(self, parent):

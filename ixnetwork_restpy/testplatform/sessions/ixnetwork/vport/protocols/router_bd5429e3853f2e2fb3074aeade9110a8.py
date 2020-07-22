@@ -33,24 +33,24 @@ class Router(Base):
     __slots__ = ()
     _SDM_NAME = 'router'
     _SDM_ATT_MAP = {
-        'TransportAddress': 'transportAddress',
-        'IsBgpAdVplsLearnedInfoRefreshed': 'isBgpAdVplsLearnedInfoRefreshed',
-        'EnableFilterFec': 'enableFilterFec',
-        'EnableVcFecs': 'enableVcFecs',
         'EnableBfdMplsLearnedLsp': 'enableBfdMplsLearnedLsp',
-        'Enabled': 'enabled',
-        'UseTransportAddress': 'useTransportAddress',
+        'EnableFilterFec': 'enableFilterFec',
         'EnableGracefulRestart': 'enableGracefulRestart',
+        'EnableLspPingLearnedLsp': 'enableLspPingLearnedLsp',
+        'EnableOverrideRbit': 'enableOverrideRbit',
+        'EnableP2mpCapabilty': 'enableP2mpCapabilty',
+        'EnablePduRateControl': 'enablePduRateControl',
+        'EnableVcFecs': 'enableVcFecs',
         'EnableVcGroupMatch': 'enableVcGroupMatch',
+        'Enabled': 'enabled',
+        'InterPduGap': 'interPduGap',
+        'IsBgpAdVplsLearnedInfoRefreshed': 'isBgpAdVplsLearnedInfoRefreshed',
+        'ReconnectTime': 'reconnectTime',
+        'RecoveryTime': 'recoveryTime',
         'RouterId': 'routerId',
         'TrafficGroupId': 'trafficGroupId',
-        'InterPduGap': 'interPduGap',
-        'EnableP2mpCapabilty': 'enableP2mpCapabilty',
-        'ReconnectTime': 'reconnectTime',
-        'EnableOverrideRbit': 'enableOverrideRbit',
-        'EnablePduRateControl': 'enablePduRateControl',
-        'RecoveryTime': 'recoveryTime',
-        'EnableLspPingLearnedLsp': 'enableLspPingLearnedLsp',
+        'TransportAddress': 'transportAddress',
+        'UseTransportAddress': 'useTransportAddress',
     }
 
     def __init__(self, parent):

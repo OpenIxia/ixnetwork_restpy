@@ -32,14 +32,14 @@ class SwitchFlowInstructionLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'switchFlowInstructionLearnedInfo'
     _SDM_ATT_MAP = {
-        'ExperimenterData': 'experimenterData',
-        'MetadataMask': 'metadataMask',
-        'ExperimenterDataLength': 'experimenterDataLength',
         'Experimenter': 'experimenter',
+        'ExperimenterData': 'experimenterData',
+        'ExperimenterDataLength': 'experimenterDataLength',
         'InstructionType': 'instructionType',
-        'TableId': 'tableId',
-        'MeterId': 'meterId',
         'Metadata': 'metadata',
+        'MetadataMask': 'metadataMask',
+        'MeterId': 'meterId',
+        'TableId': 'tableId',
     }
 
     def __init__(self, parent):

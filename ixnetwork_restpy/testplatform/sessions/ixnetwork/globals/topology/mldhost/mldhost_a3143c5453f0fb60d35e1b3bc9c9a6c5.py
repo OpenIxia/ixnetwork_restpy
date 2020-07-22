@@ -32,15 +32,15 @@ class MldHost(Base):
     _SDM_NAME = 'mldHost'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'InterStbStartDelay': 'interStbStartDelay',
-        'Name': 'name',
-        'IntervalInMs': 'intervalInMs',
+        'DescriptiveName': 'descriptiveName',
         'Enabled': 'enabled',
+        'InterStbStartDelay': 'interStbStartDelay',
+        'IntervalInMs': 'intervalInMs',
+        'Name': 'name',
+        'RatePerInterval': 'ratePerInterval',
+        'RowNames': 'rowNames',
         'TrafficClass': 'trafficClass',
         'UnicastMode': 'unicastMode',
-        'DescriptiveName': 'descriptiveName',
-        'RowNames': 'rowNames',
-        'RatePerInterval': 'ratePerInterval',
     }
 
     def __init__(self, parent):

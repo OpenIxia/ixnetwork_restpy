@@ -31,16 +31,16 @@ class VxlanStaticInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'vxlanStaticInfo'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'RemoteVmStaticIpv4': 'remoteVmStaticIpv4',
-        'Name': 'name',
-        'MacStaticConfig': 'macStaticConfig',
-        'SuppressArp': 'suppressArp',
-        'LocalVNI': 'localVNI',
-        'RemoteVtepIpv4': 'remoteVtepIpv4',
-        'RemoteVmStaticMac': 'remoteVmStaticMac',
-        'DescriptiveName': 'descriptiveName',
         'Active': 'active',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'LocalVNI': 'localVNI',
+        'MacStaticConfig': 'macStaticConfig',
+        'Name': 'name',
+        'RemoteVmStaticIpv4': 'remoteVmStaticIpv4',
+        'RemoteVmStaticMac': 'remoteVmStaticMac',
+        'RemoteVtepIpv4': 'remoteVtepIpv4',
+        'SuppressArp': 'suppressArp',
     }
 
     def __init__(self, parent):

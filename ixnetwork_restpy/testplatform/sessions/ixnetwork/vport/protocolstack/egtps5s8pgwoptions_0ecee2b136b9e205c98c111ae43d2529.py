@@ -34,11 +34,11 @@ class EgtpS5S8PgwOptions(Base):
     _SDM_NAME = 'egtpS5S8PgwOptions'
     _SDM_ATT_MAP = {
         'DistributeUserPlaneIps': 'distributeUserPlaneIps',
-        'ObjectId': 'objectId',
-        'PublishStatistics': 'publishStatistics',
-        'EnableDynamicAllocation': 'enableDynamicAllocation',
         'EnableCreateBearerTFTHack': 'enableCreateBearerTFTHack',
+        'EnableDynamicAllocation': 'enableDynamicAllocation',
+        'ObjectId': 'objectId',
         'PcpuLogLevel': 'pcpuLogLevel',
+        'PublishStatistics': 'publishStatistics',
     }
 
     def __init__(self, parent):

@@ -33,15 +33,15 @@ class ReqFecRange(Base):
     __slots__ = ()
     _SDM_NAME = 'reqFecRange'
     _SDM_ATT_MAP = {
-        'MaskWidth': 'maskWidth',
-        'FirstNetwork': 'firstNetwork',
-        'StaleReqTime': 'staleReqTime',
+        'EnableHopCount': 'enableHopCount',
+        'EnableStateTimer': 'enableStateTimer',
         'Enabled': 'enabled',
+        'FirstNetwork': 'firstNetwork',
+        'HopCount': 'hopCount',
+        'MaskWidth': 'maskWidth',
         'NextHopPeer': 'nextHopPeer',
         'NumberOfRoutes': 'numberOfRoutes',
-        'EnableHopCount': 'enableHopCount',
-        'HopCount': 'hopCount',
-        'EnableStateTimer': 'enableStateTimer',
+        'StaleReqTime': 'staleReqTime',
     }
 
     def __init__(self, parent):

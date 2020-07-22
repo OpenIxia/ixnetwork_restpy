@@ -33,11 +33,11 @@ class MplsLabelList(Base):
     _SDM_NAME = 'mplsLabelList'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'Name': 'name',
-        'MplsLabel': 'mplsLabel',
         'DescriptiveName': 'descriptiveName',
         'MplsEXP': 'mplsEXP',
+        'MplsLabel': 'mplsLabel',
         'MplsTTL': 'mplsTTL',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

@@ -31,14 +31,14 @@ class SpbSimEdgeIsidList(Base):
     __slots__ = ()
     _SDM_NAME = 'spbSimEdgeIsidList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'Tbit': 'tbit',
-        'Rbit': 'rbit',
-        'Isid': 'isid',
-        'DescriptiveName': 'descriptiveName',
-        'ItagEthernetType': 'itagEthernetType',
         'Active': 'active',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Isid': 'isid',
+        'ItagEthernetType': 'itagEthernetType',
+        'Name': 'name',
+        'Rbit': 'rbit',
+        'Tbit': 'tbit',
         'TransmissionType': 'transmissionType',
     }
 

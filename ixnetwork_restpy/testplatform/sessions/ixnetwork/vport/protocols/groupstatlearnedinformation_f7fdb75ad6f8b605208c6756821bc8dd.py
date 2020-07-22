@@ -32,22 +32,22 @@ class GroupStatLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'groupStatLearnedInformation'
     _SDM_ATT_MAP = {
-        'NumberOfBucketStats': 'numberOfBucketStats',
-        'Latency': 'latency',
-        'ErrorType': 'errorType',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'GroupId': 'groupId',
-        'ErrorCode': 'errorCode',
-        'LocalIp': 'localIp',
         'ByteCount': 'byteCount',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'RemoteIp': 'remoteIp',
-        'PacketCount': 'packetCount',
-        'ReplyState': 'replyState',
-        'ReferenceCount': 'referenceCount',
         'DataPathId': 'dataPathId',
-        'DurationInSec': 'durationInSec',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
         'DurationInNSec': 'durationInNSec',
+        'DurationInSec': 'durationInSec',
+        'ErrorCode': 'errorCode',
+        'ErrorType': 'errorType',
+        'GroupId': 'groupId',
+        'Latency': 'latency',
+        'LocalIp': 'localIp',
+        'NegotiatedVersion': 'negotiatedVersion',
+        'NumberOfBucketStats': 'numberOfBucketStats',
+        'PacketCount': 'packetCount',
+        'ReferenceCount': 'referenceCount',
+        'RemoteIp': 'remoteIp',
+        'ReplyState': 'replyState',
     }
 
     def __init__(self, parent):

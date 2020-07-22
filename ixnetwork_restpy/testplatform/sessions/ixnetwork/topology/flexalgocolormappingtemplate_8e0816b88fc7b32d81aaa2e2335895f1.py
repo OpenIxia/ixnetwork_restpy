@@ -31,12 +31,12 @@ class FlexAlgoColorMappingTemplate(Base):
     __slots__ = ()
     _SDM_NAME = 'flexAlgoColorMappingTemplate'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'Color': 'color',
-        'FlexAlgo': 'flexAlgo',
-        'DescriptiveName': 'descriptiveName',
         'Active': 'active',
+        'Color': 'color',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'FlexAlgo': 'flexAlgo',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

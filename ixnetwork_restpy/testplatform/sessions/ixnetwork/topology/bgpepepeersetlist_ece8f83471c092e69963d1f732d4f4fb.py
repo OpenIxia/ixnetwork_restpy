@@ -32,18 +32,18 @@ class BgpEpePeerSetList(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpEpePeerSetList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'LBit': 'lBit',
-        'Reserved': 'reserved',
-        'Name': 'name',
-        'Weight': 'weight',
-        'VBit': 'vBit',
-        'PBit': 'pBit',
-        'SidIndexValue': 'sidIndexValue',
-        'SidIndex': 'sidIndex',
-        'RsvdBits': 'rsvdBits',
-        'DescriptiveName': 'descriptiveName',
         'BBit': 'bBit',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'LBit': 'lBit',
+        'Name': 'name',
+        'PBit': 'pBit',
+        'Reserved': 'reserved',
+        'RsvdBits': 'rsvdBits',
+        'SidIndex': 'sidIndex',
+        'SidIndexValue': 'sidIndexValue',
+        'VBit': 'vBit',
+        'Weight': 'weight',
     }
 
     def __init__(self, parent):

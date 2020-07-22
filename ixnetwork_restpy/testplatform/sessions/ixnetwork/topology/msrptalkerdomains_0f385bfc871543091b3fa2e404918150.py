@@ -31,13 +31,13 @@ class MsrpTalkerDomains(Base):
     __slots__ = ()
     _SDM_NAME = 'msrpTalkerDomains'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'DescriptiveName': 'descriptiveName',
         'Active': 'active',
-        'SrClassVid': 'srClassVid',
-        'SrClassPriorityType': 'srClassPriorityType',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Name': 'name',
         'SrClassIdType': 'srClassIdType',
+        'SrClassPriorityType': 'srClassPriorityType',
+        'SrClassVid': 'srClassVid',
     }
 
     def __init__(self, parent):

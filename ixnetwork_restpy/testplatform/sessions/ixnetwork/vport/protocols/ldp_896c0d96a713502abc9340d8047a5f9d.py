@@ -31,20 +31,20 @@ class Ldp(Base):
     __slots__ = ()
     _SDM_NAME = 'ldp'
     _SDM_ATT_MAP = {
-        'EnableHelloJitter': 'enableHelloJitter',
         'EnableDiscardSelfAdvFecs': 'enableDiscardSelfAdvFecs',
-        'TargetedHoldTime': 'targetedHoldTime',
+        'EnableHelloJitter': 'enableHelloJitter',
+        'EnableLabelExchangeOverLsp': 'enableLabelExchangeOverLsp',
+        'EnableVpnLabelExchangeOverLsp': 'enableVpnLabelExchangeOverLsp',
+        'Enabled': 'enabled',
+        'HelloHoldTime': 'helloHoldTime',
         'HelloInterval': 'helloInterval',
         'KeepAliveHoldTime': 'keepAliveHoldTime',
         'KeepAliveInterval': 'keepAliveInterval',
-        'EnableLabelExchangeOverLsp': 'enableLabelExchangeOverLsp',
-        'Enabled': 'enabled',
         'P2mpCapabilityParam': 'p2mpCapabilityParam',
-        'EnableVpnLabelExchangeOverLsp': 'enableVpnLabelExchangeOverLsp',
-        'HelloHoldTime': 'helloHoldTime',
-        'TargetedHelloInterval': 'targetedHelloInterval',
-        'RunningState': 'runningState',
         'P2mpFecType': 'p2mpFecType',
+        'RunningState': 'runningState',
+        'TargetedHelloInterval': 'targetedHelloInterval',
+        'TargetedHoldTime': 'targetedHoldTime',
         'UseTransportLabelsForMplsOam': 'useTransportLabelsForMplsOam',
     }
 

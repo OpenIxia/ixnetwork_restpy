@@ -33,17 +33,17 @@ class DataMdt(Base):
     __slots__ = ()
     _SDM_NAME = 'dataMdt'
     _SDM_ATT_MAP = {
-        'RangeType': 'rangeType',
-        'CeGroupCount': 'ceGroupCount',
-        'DataMdtGroupAddress': 'dataMdtGroupAddress',
-        'Enabled': 'enabled',
-        'DiscardLearnedState': 'discardLearnedState',
         'ActivationInterval': 'activationInterval',
-        'CeSourceCount': 'ceSourceCount',
-        'DataMdtGroupAddressCount': 'dataMdtGroupAddressCount',
-        'PackTlv': 'packTlv',
         'CeGroupAddress': 'ceGroupAddress',
+        'CeGroupCount': 'ceGroupCount',
         'CeSourceAddress': 'ceSourceAddress',
+        'CeSourceCount': 'ceSourceCount',
+        'DataMdtGroupAddress': 'dataMdtGroupAddress',
+        'DataMdtGroupAddressCount': 'dataMdtGroupAddressCount',
+        'DiscardLearnedState': 'discardLearnedState',
+        'Enabled': 'enabled',
+        'PackTlv': 'packTlv',
+        'RangeType': 'rangeType',
     }
 
     def __init__(self, parent):

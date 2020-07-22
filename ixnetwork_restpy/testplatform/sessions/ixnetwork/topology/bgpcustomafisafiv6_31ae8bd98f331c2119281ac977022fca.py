@@ -31,13 +31,13 @@ class BgpCustomAfiSafiv6(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpCustomAfiSafiv6'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'DataValue': 'dataValue',
-        'AfiValue': 'afiValue',
-        'LengthOfData': 'lengthOfData',
-        'DescriptiveName': 'descriptiveName',
         'Active': 'active',
+        'AfiValue': 'afiValue',
+        'Count': 'count',
+        'DataValue': 'dataValue',
+        'DescriptiveName': 'descriptiveName',
+        'LengthOfData': 'lengthOfData',
+        'Name': 'name',
         'SafiValue': 'safiValue',
     }
 

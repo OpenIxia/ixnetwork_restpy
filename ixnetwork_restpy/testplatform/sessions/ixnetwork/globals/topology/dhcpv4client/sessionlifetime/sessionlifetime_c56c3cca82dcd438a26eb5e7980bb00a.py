@@ -33,13 +33,13 @@ class SessionLifetime(Base):
     _SDM_ATT_MAP = {
         'Count': 'count',
         'EnableLifetime': 'enableLifetime',
-        'UnlimitedRestarts': 'unlimitedRestarts',
-        'MinLifetime': 'minLifetime',
+        'EnableRestart': 'enableRestart',
         'MaxLifetime': 'maxLifetime',
         'MaxRestarts': 'maxRestarts',
-        'ScaleMode': 'scaleMode',
+        'MinLifetime': 'minLifetime',
         'RowNames': 'rowNames',
-        'EnableRestart': 'enableRestart',
+        'ScaleMode': 'scaleMode',
+        'UnlimitedRestarts': 'unlimitedRestarts',
     }
 
     def __init__(self, parent):

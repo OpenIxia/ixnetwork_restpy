@@ -31,14 +31,14 @@ class Pcc(Base):
     __slots__ = ()
     _SDM_NAME = 'pcc'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'BindingSIDDraftVersion': 'bindingSIDDraftVersion',
-        'LspDelegationDelay': 'lspDelegationDelay',
-        'DescriptiveName': 'descriptiveName',
-        'RowNames': 'rowNames',
-        'PcePathComputationMode': 'pcePathComputationMode',
         'BackupPCEOperationMode': 'backupPCEOperationMode',
+        'BindingSIDDraftVersion': 'bindingSIDDraftVersion',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'LspDelegationDelay': 'lspDelegationDelay',
+        'Name': 'name',
+        'PcePathComputationMode': 'pcePathComputationMode',
+        'RowNames': 'rowNames',
     }
 
     def __init__(self, parent):

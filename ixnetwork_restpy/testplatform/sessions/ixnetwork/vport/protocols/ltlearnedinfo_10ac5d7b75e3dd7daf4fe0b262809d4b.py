@@ -32,15 +32,15 @@ class LtLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'ltLearnedInfo'
     _SDM_ATT_MAP = {
-        'TransactionId': 'transactionId',
-        'Hops': 'hops',
-        'SVlan': 'sVlan',
-        'DstMacAddress': 'dstMacAddress',
-        'SrcMacAddress': 'srcMacAddress',
-        'ReplyStatus': 'replyStatus',
-        'HopCount': 'hopCount',
-        'MdLevel': 'mdLevel',
         'CVlan': 'cVlan',
+        'DstMacAddress': 'dstMacAddress',
+        'HopCount': 'hopCount',
+        'Hops': 'hops',
+        'MdLevel': 'mdLevel',
+        'ReplyStatus': 'replyStatus',
+        'SVlan': 'sVlan',
+        'SrcMacAddress': 'srcMacAddress',
+        'TransactionId': 'transactionId',
     }
 
     def __init__(self, parent):

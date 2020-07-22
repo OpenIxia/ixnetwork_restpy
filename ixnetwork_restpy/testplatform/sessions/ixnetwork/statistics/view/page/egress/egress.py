@@ -32,10 +32,10 @@ class Egress(Base):
     __slots__ = ()
     _SDM_NAME = 'egress'
     _SDM_ATT_MAP = {
-        'TotalPages': 'totalPages',
+        'CommitEgressPage': 'commitEgressPage',
         'CurrentPage': 'currentPage',
         'RowCount': 'rowCount',
-        'CommitEgressPage': 'commitEgressPage',
+        'TotalPages': 'totalPages',
     }
 
     def __init__(self, parent):

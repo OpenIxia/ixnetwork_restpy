@@ -32,20 +32,20 @@ class FlowSet(Base):
     __slots__ = ()
     _SDM_NAME = 'flowSet'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Priority': 'priority',
-        'FlowMatchType': 'flowMatchType',
+        'Active': 'active',
+        'Cookie': 'cookie',
         'CookieMask': 'cookieMask',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'FlowAdvertise': 'flowAdvertise',
+        'FlowFlags': 'flowFlags',
+        'FlowMatchType': 'flowMatchType',
+        'FlowSetId': 'flowSetId',
         'HardTimeout': 'hardTimeout',
         'IdleTimeout': 'idleTimeout',
-        'FlowSetId': 'flowSetId',
-        'FlowFlags': 'flowFlags',
-        'NumberOfFlows': 'numberOfFlows',
-        'Cookie': 'cookie',
-        'FlowAdvertise': 'flowAdvertise',
-        'Active': 'active',
-        'DescriptiveName': 'descriptiveName',
         'Name': 'name',
+        'NumberOfFlows': 'numberOfFlows',
+        'Priority': 'priority',
     }
 
     def __init__(self, parent):

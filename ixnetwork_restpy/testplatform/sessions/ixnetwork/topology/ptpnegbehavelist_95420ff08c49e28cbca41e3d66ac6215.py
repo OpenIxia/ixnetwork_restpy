@@ -32,18 +32,18 @@ class PtpNegBehaveList(Base):
     _SDM_NAME = 'ptpNegBehaveList'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'Name': 'name',
-        'MvActive': 'mvActive',
-        'MvPtpMsgField1': 'mvPtpMsgField1',
-        'MvFieldValue': 'mvFieldValue',
-        'PtpValueDisPattern': 'ptpValueDisPattern',
-        'MvFieldValue1': 'mvFieldValue1',
-        'PtpValueDisPattern1': 'ptpValueDisPattern1',
-        'MvDelay': 'mvDelay',
         'DescriptiveName': 'descriptiveName',
+        'MvActive': 'mvActive',
+        'MvDelay': 'mvDelay',
+        'MvFieldValue': 'mvFieldValue',
+        'MvFieldValue1': 'mvFieldValue1',
         'MvMsgAction': 'mvMsgAction',
-        'PtpMsgType': 'ptpMsgType',
         'MvPtpMsgField': 'mvPtpMsgField',
+        'MvPtpMsgField1': 'mvPtpMsgField1',
+        'Name': 'name',
+        'PtpMsgType': 'ptpMsgType',
+        'PtpValueDisPattern': 'ptpValueDisPattern',
+        'PtpValueDisPattern1': 'ptpValueDisPattern1',
     }
 
     def __init__(self, parent):

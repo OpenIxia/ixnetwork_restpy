@@ -32,10 +32,10 @@ class CellTable(Base):
     __slots__ = ()
     _SDM_NAME = 'cellTable'
     _SDM_ATT_MAP = {
-        'Values': 'values',
-        'Type': 'type',
-        'Columns': 'columns',
         'Actions': 'actions',
+        'Columns': 'columns',
+        'Type': 'type',
+        'Values': 'values',
     }
 
     def __init__(self, parent):

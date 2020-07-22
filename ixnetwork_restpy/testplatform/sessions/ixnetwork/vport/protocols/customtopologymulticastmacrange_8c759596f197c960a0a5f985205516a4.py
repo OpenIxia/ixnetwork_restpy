@@ -33,17 +33,17 @@ class CustomTopologyMulticastMacRange(Base):
     __slots__ = ()
     _SDM_NAME = 'customTopologyMulticastMacRange'
     _SDM_ATT_MAP = {
-        'StartUnicastSourceMac': 'startUnicastSourceMac',
-        'SourceGroupMapping': 'sourceGroupMapping',
-        'VlanId': 'vlanId',
-        'UnicastAddressNodeStep': 'unicastAddressNodeStep',
         'IncludeMacGroup': 'includeMacGroup',
-        'MulticastMacStep': 'multicastMacStep',
+        'IntraGroupUnicastMacIncrement': 'intraGroupUnicastMacIncrement',
         'MulticastAddressNodeStep': 'multicastAddressNodeStep',
         'MulticastMacCount': 'multicastMacCount',
+        'MulticastMacStep': 'multicastMacStep',
         'NumberOfUnicastSourceMacsPerMulticast': 'numberOfUnicastSourceMacsPerMulticast',
-        'IntraGroupUnicastMacIncrement': 'intraGroupUnicastMacIncrement',
+        'SourceGroupMapping': 'sourceGroupMapping',
         'StartMulticastMac': 'startMulticastMac',
+        'StartUnicastSourceMac': 'startUnicastSourceMac',
+        'UnicastAddressNodeStep': 'unicastAddressNodeStep',
+        'VlanId': 'vlanId',
     }
 
     def __init__(self, parent):

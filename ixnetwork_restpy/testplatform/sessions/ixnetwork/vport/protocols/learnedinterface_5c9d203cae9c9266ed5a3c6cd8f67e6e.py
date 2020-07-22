@@ -32,12 +32,12 @@ class LearnedInterface(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedInterface'
     _SDM_ATT_MAP = {
-        'DesignatedPriority': 'designatedPriority',
-        'InterfaceState': 'interfaceState',
-        'InterfaceRole': 'interfaceRole',
-        'InterfaceDesc': 'interfaceDesc',
-        'DesignatedPortId': 'designatedPortId',
         'DesignatedMac': 'designatedMac',
+        'DesignatedPortId': 'designatedPortId',
+        'DesignatedPriority': 'designatedPriority',
+        'InterfaceDesc': 'interfaceDesc',
+        'InterfaceRole': 'interfaceRole',
+        'InterfaceState': 'interfaceState',
     }
 
     def __init__(self, parent):

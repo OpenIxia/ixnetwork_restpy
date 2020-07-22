@@ -33,12 +33,12 @@ class Profile(Base):
     __slots__ = ()
     _SDM_NAME = 'profile'
     _SDM_ATT_MAP = {
-        'Name': 'name',
+        'Links__': '__links__',
+        'AllLinks': 'allLinks',
         'Enabled': 'enabled',
+        'Name': 'name',
         'Priority': 'priority',
         'ProfileId': 'profileId',
-        'AllLinks': 'allLinks',
-        'Links__': '__links__',
     }
 
     def __init__(self, parent):

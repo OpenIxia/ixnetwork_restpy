@@ -32,14 +32,14 @@ class Parameter(Base):
     __slots__ = ()
     _SDM_NAME = 'parameter'
     _SDM_ATT_MAP = {
+        'AvailableChoices': 'availableChoices',
         'CurrentValue': 'currentValue',
-        'Name': 'name',
-        'IsReadOnly': 'isReadOnly',
+        'CustomDefaultValue': 'customDefaultValue',
         'DefaultValue': 'defaultValue',
+        'IsReadOnly': 'isReadOnly',
         'MaxValue': 'maxValue',
         'MinValue': 'minValue',
-        'CustomDefaultValue': 'customDefaultValue',
-        'AvailableChoices': 'availableChoices',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

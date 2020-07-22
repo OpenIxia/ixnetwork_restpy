@@ -33,20 +33,20 @@ class L2tpOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'l2tpOptions'
     _SDM_ATT_MAP = {
-        'RaTimeout': 'raTimeout',
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
-        'PerSessionStatFilePrefix': 'perSessionStatFilePrefix',
+        'Associates': 'associates',
         'EnablePerSessionStatGeneration': 'enablePerSessionStatGeneration',
+        'Ipv6GlobalAddressMode': 'ipv6GlobalAddressMode',
+        'MaxOutstandingReleases': 'maxOutstandingReleases',
+        'MaxOutstandingRequests': 'maxOutstandingRequests',
         'ObjectId': 'objectId',
+        'OverrideGlobalRateControls': 'overrideGlobalRateControls',
+        'PerSessionStatFilePrefix': 'perSessionStatFilePrefix',
+        'RaTimeout': 'raTimeout',
+        'Role': 'role',
+        'SetupRateInitial': 'setupRateInitial',
+        'TeardownRateInitial': 'teardownRateInitial',
         'UseWaitForCompletionTimeout': 'useWaitForCompletionTimeout',
         'WaitForCompletionTimeout': 'waitForCompletionTimeout',
-        'MaxOutstandingReleases': 'maxOutstandingReleases',
-        'OverrideGlobalRateControls': 'overrideGlobalRateControls',
-        'Associates': 'associates',
-        'Role': 'role',
-        'Ipv6GlobalAddressMode': 'ipv6GlobalAddressMode',
-        'TeardownRateInitial': 'teardownRateInitial',
-        'SetupRateInitial': 'setupRateInitial',
     }
 
     def __init__(self, parent):

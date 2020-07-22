@@ -33,12 +33,12 @@ class EgressTracking(Base):
     __slots__ = ()
     _SDM_NAME = 'egressTracking'
     _SDM_ATT_MAP = {
-        'CustomWidthBits': 'customWidthBits',
-        'AvailableOffsets': 'availableOffsets',
         'AvailableEncapsulations': 'availableEncapsulations',
+        'AvailableOffsets': 'availableOffsets',
         'CustomOffsetBits': 'customOffsetBits',
-        'Offset': 'offset',
+        'CustomWidthBits': 'customWidthBits',
         'Encapsulation': 'encapsulation',
+        'Offset': 'offset',
     }
 
     def __init__(self, parent):

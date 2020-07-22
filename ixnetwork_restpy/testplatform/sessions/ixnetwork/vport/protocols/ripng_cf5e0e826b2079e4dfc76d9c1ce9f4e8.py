@@ -31,10 +31,10 @@ class Ripng(Base):
     __slots__ = ()
     _SDM_NAME = 'ripng'
     _SDM_ATT_MAP = {
-        'RunningState': 'runningState',
-        'TimePeriod': 'timePeriod',
         'Enabled': 'enabled',
         'NumRoutes': 'numRoutes',
+        'RunningState': 'runningState',
+        'TimePeriod': 'timePeriod',
     }
 
     def __init__(self, parent):

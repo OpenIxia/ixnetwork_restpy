@@ -33,23 +33,23 @@ class IsisDceSimRouter(Base):
     __slots__ = ()
     _SDM_NAME = 'isisDceSimRouter'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Status': 'status',
-        'DceMCastIpv6GroupCount': 'dceMCastIpv6GroupCount',
-        'Errors': 'errors',
-        'StateCounts': 'stateCounts',
-        'StackedLayers': 'stackedLayers',
+        'Active': 'active',
         'BroadcastRootPriority': 'broadcastRootPriority',
         'ConnectedVia': 'connectedVia',
-        'DescriptiveName': 'descriptiveName',
-        'Multiplier': 'multiplier',
-        'Active': 'active',
-        'SystemId': 'systemId',
-        'SessionStatus': 'sessionStatus',
-        'Nickname': 'nickname',
+        'Count': 'count',
         'DceMCastIpv4GroupCount': 'dceMCastIpv4GroupCount',
+        'DceMCastIpv6GroupCount': 'dceMCastIpv6GroupCount',
         'DceMCastMacGroupCount': 'dceMCastMacGroupCount',
+        'DescriptiveName': 'descriptiveName',
+        'Errors': 'errors',
+        'Multiplier': 'multiplier',
         'Name': 'name',
+        'Nickname': 'nickname',
+        'SessionStatus': 'sessionStatus',
+        'StackedLayers': 'stackedLayers',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
+        'SystemId': 'systemId',
     }
 
     def __init__(self, parent):

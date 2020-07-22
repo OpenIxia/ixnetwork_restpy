@@ -33,15 +33,15 @@ class SwitchTables(Base):
     __slots__ = ()
     _SDM_NAME = 'switchTables'
     _SDM_ATT_MAP = {
+        'AutoConfigureNextTable': 'autoConfigureNextTable',
         'MaxEntries': 'maxEntries',
+        'MetadataMatch': 'metadataMatch',
+        'MetadataWrite': 'metadataWrite',
         'NextTable': 'nextTable',
         'NextTableMiss': 'nextTableMiss',
-        'TableName': 'tableName',
-        'AutoConfigureNextTable': 'autoConfigureNextTable',
-        'TableId': 'tableId',
         'NumberOfTables': 'numberOfTables',
-        'MetadataWrite': 'metadataWrite',
-        'MetadataMatch': 'metadataMatch',
+        'TableId': 'tableId',
+        'TableName': 'tableName',
     }
 
     def __init__(self, parent):

@@ -31,9 +31,9 @@ class AppTypeRef(Base):
     __slots__ = ()
     _SDM_NAME = 'appTypeRef'
     _SDM_ATT_MAP = {
-        'Value': 'value',
         'Name': 'name',
         'ObjectId': 'objectId',
+        'Value': 'value',
     }
 
     def __init__(self, parent):

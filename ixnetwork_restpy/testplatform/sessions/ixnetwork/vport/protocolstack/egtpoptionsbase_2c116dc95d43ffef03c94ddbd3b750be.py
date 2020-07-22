@@ -33,8 +33,8 @@ class EgtpOptionsBase(Base):
     __slots__ = ()
     _SDM_NAME = 'egtpOptionsBase'
     _SDM_ATT_MAP = {
-        'PcpuLogLevel': 'pcpuLogLevel',
         'ObjectId': 'objectId',
+        'PcpuLogLevel': 'pcpuLogLevel',
     }
 
     def __init__(self, parent):

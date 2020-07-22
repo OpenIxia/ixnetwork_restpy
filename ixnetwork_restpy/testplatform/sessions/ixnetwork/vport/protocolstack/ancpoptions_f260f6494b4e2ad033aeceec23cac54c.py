@@ -33,11 +33,11 @@ class AncpOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'ancpOptions'
     _SDM_ATT_MAP = {
-        'ResyncRate': 'resyncRate',
+        'ObjectId': 'objectId',
+        'OverrideGlobalRate': 'overrideGlobalRate',
         'PortDownRate': 'portDownRate',
         'PortUpRate': 'portUpRate',
-        'OverrideGlobalRate': 'overrideGlobalRate',
-        'ObjectId': 'objectId',
+        'ResyncRate': 'resyncRate',
     }
 
     def __init__(self, parent):

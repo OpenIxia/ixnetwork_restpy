@@ -31,9 +31,9 @@ class QueueProperty(Base):
     __slots__ = ()
     _SDM_NAME = 'queueProperty'
     _SDM_ATT_MAP = {
-        'IsNone': 'none',
         'MaximumDataRate': 'maximumDataRate',
         'MinimumDataRateGuaranteed': 'minimumDataRateGuaranteed',
+        'IsNone': 'none',
     }
 
     def __init__(self, parent):

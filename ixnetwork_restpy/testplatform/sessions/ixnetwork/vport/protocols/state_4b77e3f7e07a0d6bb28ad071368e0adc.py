@@ -31,13 +31,13 @@ class State(Base):
     __slots__ = ()
     _SDM_NAME = 'state'
     _SDM_ATT_MAP = {
-        'LiveForFastFailoverGroup': 'liveForFastFailoverGroup',
-        'LinkDown': 'linkDown',
-        'StpBlock': 'stpBlock',
-        'StpLearn': 'stpLearn',
-        'StpForward': 'stpForward',
-        'StpListen': 'stpListen',
         'Blocked': 'blocked',
+        'LinkDown': 'linkDown',
+        'LiveForFastFailoverGroup': 'liveForFastFailoverGroup',
+        'StpBlock': 'stpBlock',
+        'StpForward': 'stpForward',
+        'StpLearn': 'stpLearn',
+        'StpListen': 'stpListen',
     }
 
     def __init__(self, parent):

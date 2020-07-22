@@ -32,8 +32,8 @@ class Atm(Base):
     _SDM_NAME = 'atm'
     _SDM_ATT_MAP = {
         'Encapsulation': 'encapsulation',
-        'Vpi': 'vpi',
         'Vci': 'vci',
+        'Vpi': 'vpi',
     }
 
     def __init__(self, parent):

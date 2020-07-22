@@ -31,24 +31,24 @@ class TestConfig(Base):
     __slots__ = ()
     _SDM_NAME = 'testConfig'
     _SDM_ATT_MAP = {
-        'MaxOutstanding': 'maxOutstanding',
-        'EnableNonExpectedMasterStatus': 'enableNonExpectedMasterStatus',
-        'MasterPorts': 'masterPorts',
-        'StartTraffic': 'startTraffic',
-        'SetupRate': 'setupRate',
-        'EnableExpectedGrandMasterStatus': 'enableExpectedGrandMasterStatus',
-        'EnableAllSlavesStatus': 'enableAllSlavesStatus',
-        'Runmode': 'runmode',
-        'ExpectedMasterClockId': 'expectedMasterClockId',
-        'GrandMasterStatus': 'grandMasterStatus',
-        'ProtocolItem': 'protocolItem',
-        'Numtrials': 'numtrials',
         'Duration': 'duration',
+        'EnableAllSlavesStatus': 'enableAllSlavesStatus',
+        'EnableExpectedGrandMasterStatus': 'enableExpectedGrandMasterStatus',
+        'EnableNonExpectedMasterStatus': 'enableNonExpectedMasterStatus',
+        'ExpectedMasterClockId': 'expectedMasterClockId',
         'ExpectedMasterPort': 'expectedMasterPort',
+        'GrandMasterStatus': 'grandMasterStatus',
+        'MasterPorts': 'masterPorts',
+        'MaxOutstanding': 'maxOutstanding',
+        'NonExpectedMasterStatus': 'nonExpectedMasterStatus',
+        'Numtrials': 'numtrials',
+        'ProtocolItem': 'protocolItem',
+        'Runmode': 'runmode',
+        'SetupRate': 'setupRate',
+        'SlavePorts': 'slavePorts',
+        'StartTraffic': 'startTraffic',
         'TeardownRate': 'teardownRate',
         'UseExistingSetupRate': 'useExistingSetupRate',
-        'NonExpectedMasterStatus': 'nonExpectedMasterStatus',
-        'SlavePorts': 'slavePorts',
     }
 
     def __init__(self, parent):

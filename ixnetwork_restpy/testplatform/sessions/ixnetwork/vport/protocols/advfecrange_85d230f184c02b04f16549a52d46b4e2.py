@@ -33,14 +33,14 @@ class AdvFecRange(Base):
     __slots__ = ()
     _SDM_NAME = 'advFecRange'
     _SDM_ATT_MAP = {
-        'MaskWidth': 'maskWidth',
-        'FirstNetwork': 'firstNetwork',
-        'Enabled': 'enabled',
-        'LabelValueStart': 'labelValueStart',
-        'NumberOfNetworks': 'numberOfNetworks',
-        'EnableReplyingLspPing': 'enableReplyingLspPing',
-        'LabelMode': 'labelMode',
         'EnablePacking': 'enablePacking',
+        'EnableReplyingLspPing': 'enableReplyingLspPing',
+        'Enabled': 'enabled',
+        'FirstNetwork': 'firstNetwork',
+        'LabelMode': 'labelMode',
+        'LabelValueStart': 'labelValueStart',
+        'MaskWidth': 'maskWidth',
+        'NumberOfNetworks': 'numberOfNetworks',
     }
 
     def __init__(self, parent):

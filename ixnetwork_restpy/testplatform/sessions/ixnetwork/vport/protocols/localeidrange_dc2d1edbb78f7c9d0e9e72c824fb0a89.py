@@ -34,19 +34,19 @@ class LocalEidRange(Base):
     _SDM_NAME = 'localEidRange'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'UseAllInterfaceAddressesAsLocator': 'useAllInterfaceAddressesAsLocator',
-        'QuickRegistrationPeriod': 'quickRegistrationPeriod',
-        'Family': 'family',
-        'Enabled': 'enabled',
         'EnableProxyMapReplyBit': 'enableProxyMapReplyBit',
         'EnableWantMapNotifyBit': 'enableWantMapNotifyBit',
-        'PeriodicRefreshInterval': 'periodicRefreshInterval',
-        'Ttl': 'ttl',
-        'StartAddress': 'startAddress',
-        'RefreshIntervalInQuickRegistrationPeriod': 'refreshIntervalInQuickRegistrationPeriod',
-        'PrefixLength': 'prefixLength',
+        'Enabled': 'enabled',
+        'Family': 'family',
         'MaxRecordPerMapRegisterPacket': 'maxRecordPerMapRegisterPacket',
+        'PeriodicRefreshInterval': 'periodicRefreshInterval',
+        'PrefixLength': 'prefixLength',
+        'QuickRegistrationPeriod': 'quickRegistrationPeriod',
+        'RefreshIntervalInQuickRegistrationPeriod': 'refreshIntervalInQuickRegistrationPeriod',
+        'StartAddress': 'startAddress',
         'SupportSmrGeneration': 'supportSmrGeneration',
+        'Ttl': 'ttl',
+        'UseAllInterfaceAddressesAsLocator': 'useAllInterfaceAddressesAsLocator',
     }
 
     def __init__(self, parent):

@@ -33,12 +33,12 @@ class FcClientGlobals(Base):
     __slots__ = ()
     _SDM_NAME = 'fcClientGlobals'
     _SDM_ATT_MAP = {
-        'RetryInterval': 'retryInterval',
         'AcceptPartialConfig': 'acceptPartialConfig',
-        'ObjectId': 'objectId',
-        'SetupRate': 'setupRate',
         'MaxPacketsPerSecond': 'maxPacketsPerSecond',
         'MaxRetries': 'maxRetries',
+        'ObjectId': 'objectId',
+        'RetryInterval': 'retryInterval',
+        'SetupRate': 'setupRate',
         'TeardownRate': 'teardownRate',
     }
 

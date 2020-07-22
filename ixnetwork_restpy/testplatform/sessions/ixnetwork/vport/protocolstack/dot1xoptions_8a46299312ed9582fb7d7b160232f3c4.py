@@ -33,11 +33,11 @@ class Dot1xOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'dot1xOptions'
     _SDM_ATT_MAP = {
-        'MaxClientsPerSecond': 'maxClientsPerSecond',
-        'OverrideGlobalSetupRate': 'overrideGlobalSetupRate',
-        'MaxOutstandingRequests': 'maxOutstandingRequests',
         'LogoffMaxClientsPerSecond': 'logoffMaxClientsPerSecond',
+        'MaxClientsPerSecond': 'maxClientsPerSecond',
+        'MaxOutstandingRequests': 'maxOutstandingRequests',
         'ObjectId': 'objectId',
+        'OverrideGlobalSetupRate': 'overrideGlobalSetupRate',
     }
 
     def __init__(self, parent):

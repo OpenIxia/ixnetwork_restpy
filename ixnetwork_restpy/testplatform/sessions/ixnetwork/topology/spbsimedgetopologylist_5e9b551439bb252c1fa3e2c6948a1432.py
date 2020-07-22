@@ -31,17 +31,17 @@ class SpbSimEdgeTopologyList(Base):
     __slots__ = ()
     _SDM_NAME = 'spbSimEdgeTopologyList'
     _SDM_ATT_MAP = {
+        'Active': 'active',
+        'BaseVIDCount': 'baseVIDCount',
+        'CistExternalRootCost': 'cistExternalRootCost',
+        'CistRootId': 'cistRootId',
         'Count': 'count',
-        'NumberOfPorts': 'numberOfPorts',
+        'DescriptiveName': 'descriptiveName',
         'Name': 'name',
+        'NumberOfPorts': 'numberOfPorts',
+        'PortIdentifier': 'portIdentifier',
         'TopologyId': 'topologyId',
         'Vbit': 'vbit',
-        'BaseVIDCount': 'baseVIDCount',
-        'PortIdentifier': 'portIdentifier',
-        'CistRootId': 'cistRootId',
-        'DescriptiveName': 'descriptiveName',
-        'Active': 'active',
-        'CistExternalRootCost': 'cistExternalRootCost',
     }
 
     def __init__(self, parent):

@@ -32,15 +32,15 @@ class Ipv6Unicast(Base):
     __slots__ = ()
     _SDM_NAME = 'ipv6Unicast'
     _SDM_ATT_MAP = {
-        'NextHop': 'nextHop',
-        'PrefixLength': 'prefixLength',
         'AsPath': 'asPath',
         'Community': 'community',
-        'MultiExitDiscriminator': 'multiExitDiscriminator',
-        'LocalPreference': 'localPreference',
-        'Neighbor': 'neighbor',
         'IpPrefix': 'ipPrefix',
+        'LocalPreference': 'localPreference',
+        'MultiExitDiscriminator': 'multiExitDiscriminator',
+        'Neighbor': 'neighbor',
+        'NextHop': 'nextHop',
         'OriginType': 'originType',
+        'PrefixLength': 'prefixLength',
     }
 
     def __init__(self, parent):

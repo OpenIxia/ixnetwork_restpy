@@ -32,10 +32,10 @@ class LosLof(Base):
     _SDM_NAME = 'losLof'
     _SDM_ATT_MAP = {
         'Duration': 'duration',
-        'Units': 'units',
+        'IsBurst': 'isBurst',
         'State': 'state',
         'Type': 'type',
-        'IsBurst': 'isBurst',
+        'Units': 'units',
     }
 
     def __init__(self, parent):

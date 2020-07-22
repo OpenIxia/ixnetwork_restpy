@@ -33,11 +33,11 @@ class Rfc8277LabelStack(Base):
     _SDM_NAME = 'Rfc8277LabelStack'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'Name': 'name',
-        'MplsLabelStart': 'mplsLabelStart',
-        'MplsLabelStep': 'mplsLabelStep',
         'DescriptiveName': 'descriptiveName',
         'MplsLabelEnd': 'mplsLabelEnd',
+        'MplsLabelStart': 'mplsLabelStart',
+        'MplsLabelStep': 'mplsLabelStep',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

@@ -32,13 +32,13 @@ class LabelBlockList(Base):
     __slots__ = ()
     _SDM_NAME = 'labelBlockList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'StartLabel': 'startLabel',
-        'Name': 'name',
         'AdvLblBlock': 'advLblBlock',
-        'OffsetLabelBlock': 'offsetLabelBlock',
-        'NumLabels': 'numLabels',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
+        'Name': 'name',
+        'NumLabels': 'numLabels',
+        'OffsetLabelBlock': 'offsetLabelBlock',
+        'StartLabel': 'startLabel',
     }
 
     def __init__(self, parent):

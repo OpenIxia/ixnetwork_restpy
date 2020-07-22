@@ -32,11 +32,11 @@ class Pppoxclient(Base):
     _SDM_NAME = 'pppoxclient'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'RaTimeout': 'raTimeout',
         'CreateInterfaces': 'createInterfaces',
-        'Name': 'name',
-        'Ipv6GlobalAddressMode': 'ipv6GlobalAddressMode',
         'DescriptiveName': 'descriptiveName',
+        'Ipv6GlobalAddressMode': 'ipv6GlobalAddressMode',
+        'Name': 'name',
+        'RaTimeout': 'raTimeout',
         'RowNames': 'rowNames',
     }
 

@@ -33,18 +33,18 @@ class DestinationRange(Base):
     __slots__ = ()
     _SDM_NAME = 'destinationRange'
     _SDM_ATT_MAP = {
-        'IsSendingAsRro': 'isSendingAsRro',
-        'IsConnectedIpAppended': 'isConnectedIpAppended',
-        'IpAddressFrom': 'ipAddressFrom',
-        'P2mpId': 'p2mpId',
-        'IsLeafIpPrepended': 'isLeafIpPrepended',
-        'Enabled': 'enabled',
-        'IsSendingAsSrro': 'isSendingAsSrro',
         'Behavior': 'behavior',
-        'IsHeadIpPrepended': 'isHeadIpPrepended',
         'EmulationType': 'emulationType',
         'EnableReplyingLspPing': 'enableReplyingLspPing',
+        'Enabled': 'enabled',
+        'IpAddressFrom': 'ipAddressFrom',
         'IpCount': 'ipCount',
+        'IsConnectedIpAppended': 'isConnectedIpAppended',
+        'IsHeadIpPrepended': 'isHeadIpPrepended',
+        'IsLeafIpPrepended': 'isLeafIpPrepended',
+        'IsSendingAsRro': 'isSendingAsRro',
+        'IsSendingAsSrro': 'isSendingAsSrro',
+        'P2mpId': 'p2mpId',
     }
 
     def __init__(self, parent):

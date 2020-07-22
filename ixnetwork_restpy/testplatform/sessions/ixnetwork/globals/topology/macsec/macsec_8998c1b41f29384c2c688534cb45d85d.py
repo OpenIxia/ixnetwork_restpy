@@ -32,14 +32,14 @@ class Macsec(Base):
     _SDM_NAME = 'macsec'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'ReplayProtection': 'replayProtection',
-        'Name': 'name',
-        'RxSecTagOffset': 'rxSecTagOffset',
-        'SecTagOffsetUnknown': 'secTagOffsetUnknown',
         'DescriptiveName': 'descriptiveName',
         'KeyGenerationMode': 'keyGenerationMode',
-        'RowNames': 'rowNames',
         'MacsecValidation': 'macsecValidation',
+        'Name': 'name',
+        'ReplayProtection': 'replayProtection',
+        'RowNames': 'rowNames',
+        'RxSecTagOffset': 'rxSecTagOffset',
+        'SecTagOffsetUnknown': 'secTagOffsetUnknown',
     }
 
     def __init__(self, parent):

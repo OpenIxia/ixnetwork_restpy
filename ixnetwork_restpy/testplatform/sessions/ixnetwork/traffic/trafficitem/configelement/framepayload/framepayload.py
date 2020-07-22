@@ -31,9 +31,9 @@ class FramePayload(Base):
     __slots__ = ()
     _SDM_NAME = 'framePayload'
     _SDM_ATT_MAP = {
+        'CustomPattern': 'customPattern',
         'CustomRepeat': 'customRepeat',
         'Type': 'type',
-        'CustomPattern': 'customPattern',
     }
 
     def __init__(self, parent):

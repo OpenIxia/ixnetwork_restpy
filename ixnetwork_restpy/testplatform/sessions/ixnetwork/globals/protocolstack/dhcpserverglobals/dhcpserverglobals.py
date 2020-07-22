@@ -33,12 +33,12 @@ class DhcpServerGlobals(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcpServerGlobals'
     _SDM_ATT_MAP = {
-        'SharedNetwork': 'sharedNetwork',
-        'ObjectId': 'objectId',
         'DefaultLeaseTime': 'defaultLeaseTime',
-        'PingTimeout': 'pingTimeout',
         'MaxLeaseTime': 'maxLeaseTime',
+        'ObjectId': 'objectId',
         'PingCheck': 'pingCheck',
+        'PingTimeout': 'pingTimeout',
+        'SharedNetwork': 'sharedNetwork',
     }
 
     def __init__(self, parent):

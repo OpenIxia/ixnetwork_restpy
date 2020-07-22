@@ -32,23 +32,23 @@ class QueueConfigLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'queueConfigLearnedInformation'
     _SDM_ATT_MAP = {
-        'ExperimenterData': 'experimenterData',
-        'Latency': 'latency',
-        'QueueProperty': 'queueProperty',
-        'QueueId': 'queueId',
-        'ExperimenterId': 'experimenterId',
-        'ErrorType': 'errorType',
-        'ExperimenterDataLength': 'experimenterDataLength',
-        'QueuePortNumber': 'queuePortNumber',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'ErrorCode': 'errorCode',
-        'LocalIp': 'localIp',
+        'DataPathId': 'dataPathId',
         'DataPathIdAsHex': 'dataPathIdAsHex',
+        'ErrorCode': 'errorCode',
+        'ErrorType': 'errorType',
+        'ExperimenterData': 'experimenterData',
+        'ExperimenterDataLength': 'experimenterDataLength',
+        'ExperimenterId': 'experimenterId',
+        'Latency': 'latency',
+        'LocalIp': 'localIp',
+        'NegotiatedVersion': 'negotiatedVersion',
         'PortNumber': 'portNumber',
         'PropertyRate': 'propertyRate',
-        'ReplyState': 'replyState',
-        'DataPathId': 'dataPathId',
+        'QueueId': 'queueId',
+        'QueuePortNumber': 'queuePortNumber',
+        'QueueProperty': 'queueProperty',
         'RemoteIp': 'remoteIp',
+        'ReplyState': 'replyState',
     }
 
     def __init__(self, parent):

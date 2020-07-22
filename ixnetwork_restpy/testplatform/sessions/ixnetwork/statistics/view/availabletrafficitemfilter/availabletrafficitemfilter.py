@@ -32,8 +32,8 @@ class AvailableTrafficItemFilter(Base):
     __slots__ = ()
     _SDM_NAME = 'availableTrafficItemFilter'
     _SDM_ATT_MAP = {
-        'Name': 'name',
         'Constraints': 'constraints',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

@@ -33,10 +33,10 @@ class DrillDown(Base):
     __slots__ = ()
     _SDM_NAME = 'drillDown'
     _SDM_ATT_MAP = {
-        'TargetDrillDownOption': 'targetDrillDownOption',
-        'TargetRowFilter': 'targetRowFilter',
         'AvailableDrillDownOptions': 'availableDrillDownOptions',
+        'TargetDrillDownOption': 'targetDrillDownOption',
         'TargetRow': 'targetRow',
+        'TargetRowFilter': 'targetRowFilter',
         'TargetRowIndex': 'targetRowIndex',
     }
 

@@ -33,10 +33,10 @@ class SwitchPortQueues(Base):
     __slots__ = ()
     _SDM_NAME = 'switchPortQueues'
     _SDM_ATT_MAP = {
-        'QueueId': 'queueId',
         'MaxRate': 'maxRate',
         'MinRate': 'minRate',
         'NumberOfQueues': 'numberOfQueues',
+        'QueueId': 'queueId',
     }
 
     def __init__(self, parent):

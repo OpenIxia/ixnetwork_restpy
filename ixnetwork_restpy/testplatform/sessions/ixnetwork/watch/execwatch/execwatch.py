@@ -33,15 +33,15 @@ class ExecWatch(Base):
     __slots__ = ()
     _SDM_NAME = 'execWatch'
     _SDM_ATT_MAP = {
-        'ExecToWatch': 'execToWatch',
         'AverageExecutionTime': 'averageExecutionTime',
-        'Topic': 'topic',
-        'Token': 'token',
+        'ExecToWatch': 'execToWatch',
+        'IsDisabled': 'isDisabled',
         'LastExecutionTime': 'lastExecutionTime',
         'LastNotification': 'lastNotification',
         'MaxExecutionTime': 'maxExecutionTime',
         'PollInterval': 'pollInterval',
-        'IsDisabled': 'isDisabled',
+        'Token': 'token',
+        'Topic': 'topic',
     }
 
     def __init__(self, parent):

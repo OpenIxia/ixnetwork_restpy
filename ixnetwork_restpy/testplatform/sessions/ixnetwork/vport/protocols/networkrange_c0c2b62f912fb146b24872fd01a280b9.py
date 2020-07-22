@@ -33,21 +33,21 @@ class NetworkRange(Base):
     __slots__ = ()
     _SDM_NAME = 'networkRange'
     _SDM_ATT_MAP = {
-        'EntryAddress': 'entryAddress',
-        'LinkType': 'linkType',
-        'EntryRow': 'entryRow',
-        'EntryColumn': 'entryColumn',
-        'PrefixMask': 'prefixMask',
-        'NumRows': 'numRows',
-        'IncrementByRid': 'incrementByRid',
-        'Rid': 'rid',
-        'LinkMetric': 'linkMetric',
-        'EntryMaskLength': 'entryMaskLength',
-        'PrefixAddress': 'prefixAddress',
+        'BBit': 'bBit',
         'EBit': 'eBit',
         'EnableAdvertiseNetworkRange': 'enableAdvertiseNetworkRange',
+        'EntryAddress': 'entryAddress',
+        'EntryColumn': 'entryColumn',
+        'EntryMaskLength': 'entryMaskLength',
+        'EntryRow': 'entryRow',
+        'IncrementByRid': 'incrementByRid',
+        'LinkMetric': 'linkMetric',
+        'LinkType': 'linkType',
         'NumCols': 'numCols',
-        'BBit': 'bBit',
+        'NumRows': 'numRows',
+        'PrefixAddress': 'prefixAddress',
+        'PrefixMask': 'prefixMask',
+        'Rid': 'rid',
     }
 
     def __init__(self, parent):

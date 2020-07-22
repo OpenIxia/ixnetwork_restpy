@@ -32,19 +32,19 @@ class SwitchActionLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'switchActionLearnedInfo'
     _SDM_ATT_MAP = {
+        'ActionType': 'actionType',
         'EthernetDestination': 'ethernetDestination',
-        'OutputPort': 'outputPort',
-        'MaxByteLength': 'maxByteLength',
-        'QueueId': 'queueId',
-        'Ipv4Source': 'ipv4Source',
-        'TransportSource': 'transportSource',
         'EthernetSource': 'ethernetSource',
+        'IpDscp': 'ipDscp',
+        'Ipv4Destination': 'ipv4Destination',
+        'Ipv4Source': 'ipv4Source',
+        'MaxByteLength': 'maxByteLength',
+        'OutputPort': 'outputPort',
+        'QueueId': 'queueId',
+        'TransportDestination': 'transportDestination',
+        'TransportSource': 'transportSource',
         'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
-        'TransportDestination': 'transportDestination',
-        'IpDscp': 'ipDscp',
-        'ActionType': 'actionType',
-        'Ipv4Destination': 'ipv4Destination',
     }
 
     def __init__(self, parent):

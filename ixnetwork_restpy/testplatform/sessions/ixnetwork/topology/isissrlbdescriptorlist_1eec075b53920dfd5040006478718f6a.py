@@ -33,9 +33,9 @@ class IsisSRLBDescriptorList(Base):
     _SDM_NAME = 'isisSRLBDescriptorList'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'SIDCount': 'sIDCount',
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
+        'SIDCount': 'sIDCount',
         'StartSIDLabel': 'startSIDLabel',
     }
 

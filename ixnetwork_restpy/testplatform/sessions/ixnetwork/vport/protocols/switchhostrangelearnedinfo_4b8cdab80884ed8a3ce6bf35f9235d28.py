@@ -32,13 +32,13 @@ class SwitchHostRangeLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'switchHostRangeLearnedInfo'
     _SDM_ATT_MAP = {
-        'Status': 'status',
+        'DestinationHostIpv4Address': 'destinationHostIpv4Address',
+        'DestinationHostMac': 'destinationHostMac',
+        'PacketType': 'packetType',
+        'Path': 'path',
         'SourceHostIpv4Address': 'sourceHostIpv4Address',
         'SourceHostMac': 'sourceHostMac',
-        'DestinationHostMac': 'destinationHostMac',
-        'Path': 'path',
-        'PacketType': 'packetType',
-        'DestinationHostIpv4Address': 'destinationHostIpv4Address',
+        'Status': 'status',
     }
 
     def __init__(self, parent):

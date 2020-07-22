@@ -36,9 +36,9 @@ class Statistic(Base):
         'Enable': 'enable',
         'Name': 'name',
         'Notes': 'notes',
-        'Value': 'value',
         'Operator': 'operator',
         'Unit': 'unit',
+        'Value': 'value',
     }
 
     def __init__(self, parent):

@@ -31,18 +31,18 @@ class AccumulateAndBurst(Base):
     __slots__ = ()
     _SDM_NAME = 'accumulateAndBurst'
     _SDM_ATT_MAP = {
-        'InterBurstGap': 'interBurstGap',
         'BurstSize': 'burstSize',
+        'BurstSizeUnit': 'burstSizeUnit',
+        'BurstTimeout': 'burstTimeout',
         'BurstTimeoutUnit': 'burstTimeoutUnit',
-        'QueueAutoSize': 'queueAutoSize',
         'Enabled': 'enabled',
-        'QueueAutoSizeEnabled': 'queueAutoSizeEnabled',
+        'InterBurstGap': 'interBurstGap',
+        'InterBurstGapValue': 'interBurstGapValue',
         'InterBurstGapValueUnit': 'interBurstGapValueUnit',
         'PacketCount': 'packetCount',
-        'BurstTimeout': 'burstTimeout',
-        'BurstSizeUnit': 'burstSizeUnit',
+        'QueueAutoSize': 'queueAutoSize',
+        'QueueAutoSizeEnabled': 'queueAutoSizeEnabled',
         'QueueSize': 'queueSize',
-        'InterBurstGapValue': 'interBurstGapValue',
     }
 
     def __init__(self, parent):

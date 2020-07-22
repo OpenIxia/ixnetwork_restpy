@@ -31,18 +31,18 @@ class LearnFrames(Base):
     __slots__ = ()
     _SDM_NAME = 'learnFrames'
     _SDM_ATT_MAP = {
-        'LearnWaitTimeBeforeTransmit': 'learnWaitTimeBeforeTransmit',
-        'FastPathRate': 'fastPathRate',
-        'LearnNumFrames': 'learnNumFrames',
-        'LearnWaitTime': 'learnWaitTime',
         'FastPathEnable': 'fastPathEnable',
+        'FastPathLearnFrameSize': 'fastPathLearnFrameSize',
         'FastPathNumFrames': 'fastPathNumFrames',
+        'FastPathRate': 'fastPathRate',
+        'LearnFrameSize': 'learnFrameSize',
+        'LearnFrequency': 'learnFrequency',
+        'LearnNumFrames': 'learnNumFrames',
+        'LearnRate': 'learnRate',
         'LearnSendMacOnly': 'learnSendMacOnly',
         'LearnSendRouterSolicitation': 'learnSendRouterSolicitation',
-        'LearnRate': 'learnRate',
-        'LearnFrequency': 'learnFrequency',
-        'LearnFrameSize': 'learnFrameSize',
-        'FastPathLearnFrameSize': 'fastPathLearnFrameSize',
+        'LearnWaitTime': 'learnWaitTime',
+        'LearnWaitTimeBeforeTransmit': 'learnWaitTimeBeforeTransmit',
     }
 
     def __init__(self, parent):

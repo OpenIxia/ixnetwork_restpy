@@ -32,16 +32,16 @@ class SwitchMeterBandLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'switchMeterBandLearnedInfo'
     _SDM_ATT_MAP = {
-        'BurstSize': 'burstSize',
-        'BandType': 'bandType',
-        'DropPrecedenceLevel': 'dropPrecedenceLevel',
-        'DatapathIdAsHex': 'datapathIdAsHex',
-        'LocalIp': 'localIp',
-        'ByteCount': 'byteCount',
-        'PacketCount': 'packetCount',
-        'MeterId': 'meterId',
-        'DatapathId': 'datapathId',
         'BandRate': 'bandRate',
+        'BandType': 'bandType',
+        'BurstSize': 'burstSize',
+        'ByteCount': 'byteCount',
+        'DatapathId': 'datapathId',
+        'DatapathIdAsHex': 'datapathIdAsHex',
+        'DropPrecedenceLevel': 'dropPrecedenceLevel',
+        'LocalIp': 'localIp',
+        'MeterId': 'meterId',
+        'PacketCount': 'packetCount',
     }
 
     def __init__(self, parent):

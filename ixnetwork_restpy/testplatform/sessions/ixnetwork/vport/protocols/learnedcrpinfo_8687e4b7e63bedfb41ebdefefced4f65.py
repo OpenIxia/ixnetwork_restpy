@@ -32,11 +32,11 @@ class LearnedCrpInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedCrpInfo'
     _SDM_ATT_MAP = {
-        'Priority': 'priority',
         'CrpAddress': 'crpAddress',
         'ExpiryTimer': 'expiryTimer',
-        'GroupMaskWidth': 'groupMaskWidth',
         'GroupAddress': 'groupAddress',
+        'GroupMaskWidth': 'groupMaskWidth',
+        'Priority': 'priority',
     }
 
     def __init__(self, parent):

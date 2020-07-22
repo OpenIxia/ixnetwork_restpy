@@ -32,15 +32,15 @@ class PceUpdateSrv6EroSubObjectList(Base):
     __slots__ = ()
     _SDM_NAME = 'pceUpdateSrv6EroSubObjectList'
     _SDM_ATT_MAP = {
-        'LooseHop': 'looseHop',
-        'Srv6NaiType': 'srv6NaiType',
-        'RemoteIpv6Address': 'remoteIpv6Address',
         'ActiveThisEro': 'activeThisEro',
-        'LocalIpv6Address': 'localIpv6Address',
-        'Srv6FunctionCode': 'srv6FunctionCode',
-        'Ipv6NodeId': 'ipv6NodeId',
-        'Srv6Identifier': 'srv6Identifier',
         'FBit': 'fBit',
+        'Ipv6NodeId': 'ipv6NodeId',
+        'LocalIpv6Address': 'localIpv6Address',
+        'LooseHop': 'looseHop',
+        'RemoteIpv6Address': 'remoteIpv6Address',
+        'Srv6FunctionCode': 'srv6FunctionCode',
+        'Srv6Identifier': 'srv6Identifier',
+        'Srv6NaiType': 'srv6NaiType',
     }
 
     def __init__(self, parent):

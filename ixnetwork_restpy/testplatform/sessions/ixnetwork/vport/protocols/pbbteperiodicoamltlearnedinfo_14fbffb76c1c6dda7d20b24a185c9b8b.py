@@ -32,18 +32,18 @@ class PbbTePeriodicOamLtLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'pbbTePeriodicOamLtLearnedInfo'
     _SDM_ATT_MAP = {
-        'NoReplyCount': 'noReplyCount',
         'AverageHopCount': 'averageHopCount',
-        'DstMacAddress': 'dstMacAddress',
-        'SrcMacAddress': 'srcMacAddress',
-        'RecentReplyStatus': 'recentReplyStatus',
         'BVlan': 'bVlan',
-        'RecentHopCount': 'recentHopCount',
-        'PartialReplyCount': 'partialReplyCount',
-        'LtmSentCount': 'ltmSentCount',
         'CompleteReplyCount': 'completeReplyCount',
+        'DstMacAddress': 'dstMacAddress',
+        'LtmSentCount': 'ltmSentCount',
         'MdLevel': 'mdLevel',
+        'NoReplyCount': 'noReplyCount',
+        'PartialReplyCount': 'partialReplyCount',
+        'RecentHopCount': 'recentHopCount',
         'RecentHops': 'recentHops',
+        'RecentReplyStatus': 'recentReplyStatus',
+        'SrcMacAddress': 'srcMacAddress',
     }
 
     def __init__(self, parent):

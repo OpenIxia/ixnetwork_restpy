@@ -33,9 +33,9 @@ class L2tpRate(Base):
     __slots__ = ()
     _SDM_NAME = 'l2tpRate'
     _SDM_ATT_MAP = {
+        'InputParameters': 'inputParameters',
         'Mode': 'mode',
         'Name': 'name',
-        'InputParameters': 'inputParameters',
     }
 
     def __init__(self, parent):

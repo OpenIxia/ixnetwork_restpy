@@ -31,18 +31,18 @@ class IsisPseudoAppSpecSrlgList(Base):
     __slots__ = ()
     _SDM_NAME = 'isisPseudoAppSpecSrlgList'
     _SDM_ATT_MAP = {
+        'Active': 'active',
         'Count': 'count',
-        'Name': 'name',
-        'UserDefAppBm': 'userDefAppBm',
+        'DescriptiveName': 'descriptiveName',
         'IpV4InterfaceAddr': 'ipV4InterfaceAddr',
         'IpV4NeighborAddr': 'ipV4NeighborAddr',
-        'IpV6NeighborAddr': 'ipV6NeighborAddr',
-        'DescriptiveName': 'descriptiveName',
-        'UserDefAppBmLen': 'userDefAppBmLen',
-        'Active': 'active',
-        'StdAppType': 'stdAppType',
         'IpV6InterfaceAddr': 'ipV6InterfaceAddr',
+        'IpV6NeighborAddr': 'ipV6NeighborAddr',
         'LFlag': 'lFlag',
+        'Name': 'name',
+        'StdAppType': 'stdAppType',
+        'UserDefAppBm': 'userDefAppBm',
+        'UserDefAppBmLen': 'userDefAppBmLen',
     }
 
     def __init__(self, parent):

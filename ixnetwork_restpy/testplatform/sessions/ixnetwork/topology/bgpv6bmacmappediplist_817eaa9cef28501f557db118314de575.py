@@ -31,12 +31,12 @@ class Bgpv6BMacMappedIpList(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpv6BMacMappedIpList'
     _SDM_ATT_MAP = {
+        'Active': 'active',
         'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'IpAddress': 'ipAddress',
         'IpType': 'ipType',
         'Ipv6Address': 'ipv6Address',
-        'DescriptiveName': 'descriptiveName',
-        'Active': 'active',
-        'IpAddress': 'ipAddress',
         'Name': 'name',
     }
 

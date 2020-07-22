@@ -31,22 +31,22 @@ class NtpServers(Base):
     __slots__ = ()
     _SDM_NAME = 'ntpServers'
     _SDM_ATT_MAP = {
-        'AuthenticationKey': 'authenticationKey',
-        'Count': 'count',
+        'Active': 'active',
         'AuthDelay': 'authDelay',
+        'Authentication': 'authentication',
+        'AuthenticationKey': 'authenticationKey',
+        'BurstMode': 'burstMode',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
         'InitialBurstMode': 'initialBurstMode',
         'IsParentV6': 'isParentV6',
-        'BurstMode': 'burstMode',
-        'ServerIPAddress': 'serverIPAddress',
-        'MinPollInterval': 'minPollInterval',
-        'ParticipateInClockSelect': 'participateInClockSelect',
-        'Name': 'name',
-        'Authentication': 'authentication',
         'KeyId': 'keyId',
-        'DescriptiveName': 'descriptiveName',
-        'Active': 'active',
-        'ServerIPv6Address': 'serverIPv6Address',
         'MaxPollInterval': 'maxPollInterval',
+        'MinPollInterval': 'minPollInterval',
+        'Name': 'name',
+        'ParticipateInClockSelect': 'participateInClockSelect',
+        'ServerIPAddress': 'serverIPAddress',
+        'ServerIPv6Address': 'serverIPv6Address',
     }
 
     def __init__(self, parent):

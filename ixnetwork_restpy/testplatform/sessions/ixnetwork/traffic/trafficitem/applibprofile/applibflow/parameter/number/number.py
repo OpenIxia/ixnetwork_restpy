@@ -34,8 +34,8 @@ class Number(Base):
     _SDM_ATT_MAP = {
         'Default': 'default',
         'MaxValue': 'maxValue',
-        'Value': 'value',
         'MinValue': 'minValue',
+        'Value': 'value',
     }
 
     def __init__(self, parent):

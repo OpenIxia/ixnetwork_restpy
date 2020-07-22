@@ -32,13 +32,13 @@ class PbbTeLbLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'pbbTeLbLearnedInfo'
     _SDM_ATT_MAP = {
-        'Reachability': 'reachability',
-        'DstMacAddress': 'dstMacAddress',
-        'SrcMacAddress': 'srcMacAddress',
-        'Rtt': 'rtt',
         'BVlan': 'bVlan',
-        'TransactionId': 'transactionId',
+        'DstMacAddress': 'dstMacAddress',
         'MdLevel': 'mdLevel',
+        'Reachability': 'reachability',
+        'Rtt': 'rtt',
+        'SrcMacAddress': 'srcMacAddress',
+        'TransactionId': 'transactionId',
     }
 
     def __init__(self, parent):

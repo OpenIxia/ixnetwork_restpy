@@ -34,9 +34,9 @@ class OfHostData(Base):
     _SDM_NAME = 'ofHostData'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'NumberOfHostPorts': 'numberOfHostPorts',
-        'Name': 'name',
         'DescriptiveName': 'descriptiveName',
+        'Name': 'name',
+        'NumberOfHostPorts': 'numberOfHostPorts',
         'NumberOfHostsPerPort': 'numberOfHostsPerPort',
         'ParentSwitchPortName': 'parentSwitchPortName',
     }

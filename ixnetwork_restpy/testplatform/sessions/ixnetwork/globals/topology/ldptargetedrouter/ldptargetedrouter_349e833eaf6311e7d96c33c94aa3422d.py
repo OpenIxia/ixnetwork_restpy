@@ -32,11 +32,11 @@ class LdpTargetedRouter(Base):
     _SDM_NAME = 'ldpTargetedRouter'
     _SDM_ATT_MAP = {
         'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
         'DiscardSelfOriginatedFECs': 'discardSelfOriginatedFECs',
         'Name': 'name',
-        'TransportLabels': 'transportLabels',
         'RowNames': 'rowNames',
-        'DescriptiveName': 'descriptiveName',
+        'TransportLabels': 'transportLabels',
         'VpnLabel': 'vpnLabel',
     }
 

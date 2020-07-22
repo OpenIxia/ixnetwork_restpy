@@ -33,18 +33,18 @@ class Lagportstaticlag(Base):
     __slots__ = ()
     _SDM_NAME = 'lagportstaticlag'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Status': 'status',
-        'Errors': 'errors',
-        'Name': 'name',
-        'StackedLayers': 'stackedLayers',
-        'LagId': 'lagId',
-        'ConnectedVia': 'connectedVia',
-        'DescriptiveName': 'descriptiveName',
-        'Multiplier': 'multiplier',
         'Active': 'active',
-        'StateCounts': 'stateCounts',
+        'ConnectedVia': 'connectedVia',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Errors': 'errors',
+        'LagId': 'lagId',
+        'Multiplier': 'multiplier',
+        'Name': 'name',
         'SessionStatus': 'sessionStatus',
+        'StackedLayers': 'stackedLayers',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
     }
 
     def __init__(self, parent):

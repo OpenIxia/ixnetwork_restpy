@@ -33,13 +33,13 @@ class CustomTopology(Base):
     __slots__ = ()
     _SDM_NAME = 'customTopology'
     _SDM_ATT_MAP = {
-        'StartSysId': 'startSysId',
         'CapRouterId': 'capRouterId',
+        'EnableHostname': 'enableHostname',
         'Enabled': 'enabled',
         'HostNamePrefix': 'hostNamePrefix',
-        'SysIdInc': 'sysIdInc',
-        'EnableHostname': 'enableHostname',
         'InterfaceMetric': 'interfaceMetric',
+        'StartSysId': 'startSysId',
+        'SysIdInc': 'sysIdInc',
     }
 
     def __init__(self, parent):

@@ -33,23 +33,23 @@ class Router(Base):
     __slots__ = ()
     _SDM_NAME = 'router'
     _SDM_ATT_MAP = {
-        'RouterId': 'routerId',
-        'MaxNumLsaPerSecond': 'maxNumLsaPerSecond',
-        'EnableSupportReasonSwRestart': 'enableSupportReasonSwRestart',
-        'EnableGracefulRestartHelperMode': 'enableGracefulRestartHelperMode',
-        'TrafficGroupId': 'trafficGroupId',
-        'EnableStrictLsaChecking': 'enableStrictLsaChecking',
         'DisableAutoGenerateLinkLsa': 'disableAutoGenerateLinkLsa',
-        'Enabled': 'enabled',
-        'LsaRefreshTime': 'lsaRefreshTime',
-        'DiscardLearnedLsa': 'discardLearnedLsa',
         'DisableAutoGenerateRouterLsa': 'disableAutoGenerateRouterLsa',
-        'EnableSupportRfc5838': 'enableSupportRfc5838',
-        'EnableSupportReasonUnknown': 'enableSupportReasonUnknown',
-        'LsaRetransmitTime': 'lsaRetransmitTime',
-        'EnableSupportReasonSwitchToRedundantControlProcessor': 'enableSupportReasonSwitchToRedundantControlProcessor',
+        'DiscardLearnedLsa': 'discardLearnedLsa',
+        'EnableGracefulRestartHelperMode': 'enableGracefulRestartHelperMode',
+        'EnableStrictLsaChecking': 'enableStrictLsaChecking',
         'EnableSupportReasonSwReloadOrUpgrade': 'enableSupportReasonSwReloadOrUpgrade',
+        'EnableSupportReasonSwRestart': 'enableSupportReasonSwRestart',
+        'EnableSupportReasonSwitchToRedundantControlProcessor': 'enableSupportReasonSwitchToRedundantControlProcessor',
+        'EnableSupportReasonUnknown': 'enableSupportReasonUnknown',
+        'EnableSupportRfc5838': 'enableSupportRfc5838',
+        'Enabled': 'enabled',
         'IsLearnedLsaRefreshed': 'isLearnedLsaRefreshed',
+        'LsaRefreshTime': 'lsaRefreshTime',
+        'LsaRetransmitTime': 'lsaRetransmitTime',
+        'MaxNumLsaPerSecond': 'maxNumLsaPerSecond',
+        'RouterId': 'routerId',
+        'TrafficGroupId': 'trafficGroupId',
     }
 
     def __init__(self, parent):

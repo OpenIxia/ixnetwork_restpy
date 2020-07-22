@@ -33,19 +33,19 @@ class EgtpGlobalsBase(Base):
     __slots__ = ()
     _SDM_NAME = 'egtpGlobalsBase'
     _SDM_ATT_MAP = {
+        'EnableDynamicQosCtrl': 'enableDynamicQosCtrl',
         'EnableGatewayArp': 'enableGatewayArp',
+        'GatewayArpRequestRate': 'gatewayArpRequestRate',
+        'MaxMbrUAndD': 'maxMbrUAndD',
+        'MaxOutstandingGatewayArpRequests': 'maxOutstandingGatewayArpRequests',
+        'MaxOutstandingReleases': 'maxOutstandingReleases',
         'MaxOutstandingRequests': 'maxOutstandingRequests',
         'ObjectId': 'objectId',
         'SendOneArpFromEachInterface': 'sendOneArpFromEachInterface',
-        'MaxMbrUAndD': 'maxMbrUAndD',
-        'EnableDynamicQosCtrl': 'enableDynamicQosCtrl',
-        'MaxOutstandingReleases': 'maxOutstandingReleases',
-        'MaxOutstandingGatewayArpRequests': 'maxOutstandingGatewayArpRequests',
+        'SetupRateInitial': 'setupRateInitial',
+        'TeardownRateInitial': 'teardownRateInitial',
         'TsSpec': 'tsSpec',
         'UseMaxRatesForDcp': 'useMaxRatesForDcp',
-        'TeardownRateInitial': 'teardownRateInitial',
-        'GatewayArpRequestRate': 'gatewayArpRequestRate',
-        'SetupRateInitial': 'setupRateInitial',
     }
 
     def __init__(self, parent):

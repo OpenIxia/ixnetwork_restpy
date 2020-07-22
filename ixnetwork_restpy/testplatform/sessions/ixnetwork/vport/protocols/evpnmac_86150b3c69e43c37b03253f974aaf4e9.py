@@ -32,10 +32,10 @@ class EvpnMac(Base):
     __slots__ = ()
     _SDM_NAME = 'evpnMac'
     _SDM_ATT_MAP = {
-        'MacAddress': 'macAddress',
-        'Neighbor': 'neighbor',
-        'MacPrefixLen': 'macPrefixLen',
         'Esi': 'esi',
+        'MacAddress': 'macAddress',
+        'MacPrefixLen': 'macPrefixLen',
+        'Neighbor': 'neighbor',
     }
 
     def __init__(self, parent):

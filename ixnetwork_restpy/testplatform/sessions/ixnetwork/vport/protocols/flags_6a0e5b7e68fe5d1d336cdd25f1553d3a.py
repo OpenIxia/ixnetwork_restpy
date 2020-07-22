@@ -31,10 +31,10 @@ class Flags(Base):
     __slots__ = ()
     _SDM_NAME = 'flags'
     _SDM_ATT_MAP = {
-        'RatePacket': 'ratePacket',
         'BurstSize': 'burstSize',
         'CollectStatistics': 'collectStatistics',
         'RateKb': 'rateKb',
+        'RatePacket': 'ratePacket',
     }
 
     def __init__(self, parent):

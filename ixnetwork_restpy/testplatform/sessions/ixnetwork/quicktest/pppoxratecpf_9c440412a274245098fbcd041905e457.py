@@ -34,9 +34,9 @@ class PppoxRateCpf(Base):
     _SDM_NAME = 'pppoxRateCpf'
     _SDM_ATT_MAP = {
         'ForceApplyQTConfig': 'forceApplyQTConfig',
+        'InputParameters': 'inputParameters',
         'Mode': 'mode',
         'Name': 'name',
-        'InputParameters': 'inputParameters',
     }
 
     def __init__(self, parent):

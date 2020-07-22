@@ -32,14 +32,14 @@ class AppLibFlow(Base):
     __slots__ = ()
     _SDM_NAME = 'appLibFlow'
     _SDM_ATT_MAP = {
+        'ConfigId': 'configId',
         'ConnectionCount': 'connectionCount',
         'Description': 'description',
-        'Parameters': 'parameters',
-        'FlowSize': 'flowSize',
         'FlowId': 'flowId',
-        'ConfigId': 'configId',
-        'Percentage': 'percentage',
+        'FlowSize': 'flowSize',
         'Name': 'name',
+        'Parameters': 'parameters',
+        'Percentage': 'percentage',
     }
 
     def __init__(self, parent):

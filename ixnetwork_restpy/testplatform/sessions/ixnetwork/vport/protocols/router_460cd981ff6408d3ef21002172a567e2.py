@@ -33,16 +33,16 @@ class Router(Base):
     __slots__ = ()
     _SDM_NAME = 'router'
     _SDM_ATT_MAP = {
-        'IsEidToRlocMapCacheRefreshAllInstances': 'isEidToRlocMapCacheRefreshAllInstances',
-        'InstanceIdForEidToRlocMapCacheRefresh': 'instanceIdForEidToRlocMapCacheRefresh',
-        'IsEidToRlocMapCacheInfoRefreshed': 'isEidToRlocMapCacheInfoRefreshed',
-        'IsMapServerCacheRefreshAllInstances': 'isMapServerCacheRefreshAllInstances',
-        'TunnelRouterMode': 'tunnelRouterMode',
         'Enabled': 'enabled',
+        'InstanceIdForEidToRlocMapCacheRefresh': 'instanceIdForEidToRlocMapCacheRefresh',
         'InstanceIdForMapServerCacheRefresh': 'instanceIdForMapServerCacheRefresh',
-        'RouterId': 'routerId',
-        'MappingServiceMode': 'mappingServiceMode',
+        'IsEidToRlocMapCacheInfoRefreshed': 'isEidToRlocMapCacheInfoRefreshed',
+        'IsEidToRlocMapCacheRefreshAllInstances': 'isEidToRlocMapCacheRefreshAllInstances',
         'IsMapServerCacheInfoRefreshed': 'isMapServerCacheInfoRefreshed',
+        'IsMapServerCacheRefreshAllInstances': 'isMapServerCacheRefreshAllInstances',
+        'MappingServiceMode': 'mappingServiceMode',
+        'RouterId': 'routerId',
+        'TunnelRouterMode': 'tunnelRouterMode',
     }
 
     def __init__(self, parent):

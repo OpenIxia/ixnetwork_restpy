@@ -33,8 +33,8 @@ class Ipv4(Base):
     __slots__ = ()
     _SDM_NAME = 'ipv4'
     _SDM_ATT_MAP = {
-        'Ip': 'ip',
         'Gateway': 'gateway',
+        'Ip': 'ip',
         'MaskWidth': 'maskWidth',
     }
 

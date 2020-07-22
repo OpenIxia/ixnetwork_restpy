@@ -32,15 +32,15 @@ class Dhcpv4server(Base):
     _SDM_NAME = 'dhcpv4server'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'ForceRenewMaxRc': 'forceRenewMaxRc',
-        'Name': 'name',
-        'PingTimeout': 'pingTimeout',
         'DescriptiveName': 'descriptiveName',
+        'ForceRenewFactor': 'forceRenewFactor',
+        'ForceRenewMaxRc': 'forceRenewMaxRc',
+        'InitForceRenewTimeout': 'initForceRenewTimeout',
+        'Name': 'name',
         'OfferTimeout': 'offerTimeout',
         'PingCheck': 'pingCheck',
-        'InitForceRenewTimeout': 'initForceRenewTimeout',
+        'PingTimeout': 'pingTimeout',
         'RowNames': 'rowNames',
-        'ForceRenewFactor': 'forceRenewFactor',
     }
 
     def __init__(self, parent):

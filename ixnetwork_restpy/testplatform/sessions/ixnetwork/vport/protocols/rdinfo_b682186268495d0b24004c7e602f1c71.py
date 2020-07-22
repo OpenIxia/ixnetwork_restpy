@@ -32,8 +32,8 @@ class RdInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'rdInfo'
     _SDM_ATT_MAP = {
-        'Rd': 'rd',
         'DfElection': 'dfElection',
+        'Rd': 'rd',
     }
 
     def __init__(self, parent):

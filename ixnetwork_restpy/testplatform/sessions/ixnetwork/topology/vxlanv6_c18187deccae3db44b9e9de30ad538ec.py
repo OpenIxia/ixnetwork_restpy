@@ -33,20 +33,20 @@ class Vxlanv6(Base):
     __slots__ = ()
     _SDM_NAME = 'vxlanv6'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Status': 'status',
-        'Errors': 'errors',
-        'Name': 'name',
-        'EnableStaticInfo': 'enableStaticInfo',
-        'StackedLayers': 'stackedLayers',
-        'Vni': 'vni',
         'ConnectedVia': 'connectedVia',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
-        'Multiplier': 'multiplier',
-        'StaticInfoCount': 'staticInfoCount',
+        'EnableStaticInfo': 'enableStaticInfo',
+        'Errors': 'errors',
         'Ipv6_multicast': 'ipv6_multicast',
-        'StateCounts': 'stateCounts',
+        'Multiplier': 'multiplier',
+        'Name': 'name',
         'SessionStatus': 'sessionStatus',
+        'StackedLayers': 'stackedLayers',
+        'StateCounts': 'stateCounts',
+        'StaticInfoCount': 'staticInfoCount',
+        'Status': 'status',
+        'Vni': 'vni',
     }
 
     def __init__(self, parent):

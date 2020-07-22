@@ -32,18 +32,18 @@ class Dhcp4ServerSessions(Base):
     _SDM_NAME = 'dhcp4ServerSessions'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'SessionInfo': 'sessionInfo',
-        'IpDns2': 'ipDns2',
-        'Name': 'name',
-        'IpGateway': 'ipGateway',
-        'IpDns1': 'ipDns1',
         'DefaultLeaseTime': 'defaultLeaseTime',
-        'PoolSize': 'poolSize',
-        'IpAddressIncrement': 'ipAddressIncrement',
-        'EchoRelayInfo': 'echoRelayInfo',
         'DescriptiveName': 'descriptiveName',
-        'IpPrefix': 'ipPrefix',
+        'EchoRelayInfo': 'echoRelayInfo',
         'IpAddress': 'ipAddress',
+        'IpAddressIncrement': 'ipAddressIncrement',
+        'IpDns1': 'ipDns1',
+        'IpDns2': 'ipDns2',
+        'IpGateway': 'ipGateway',
+        'IpPrefix': 'ipPrefix',
+        'Name': 'name',
+        'PoolSize': 'poolSize',
+        'SessionInfo': 'sessionInfo',
     }
 
     def __init__(self, parent):

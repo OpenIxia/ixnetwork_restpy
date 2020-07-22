@@ -32,14 +32,14 @@ class IsisSpbSimulatedTopologyConfig(Base):
     __slots__ = ()
     _SDM_NAME = 'isisSpbSimulatedTopologyConfig'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'HostName': 'hostName',
-        'SpbNodeTopologyCount': 'spbNodeTopologyCount',
-        'EnableHostName': 'enableHostName',
-        'DescriptiveName': 'descriptiveName',
         'Active': 'active',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'EnableHostName': 'enableHostName',
+        'HostName': 'hostName',
         'InterfaceMetric': 'interfaceMetric',
+        'Name': 'name',
+        'SpbNodeTopologyCount': 'spbNodeTopologyCount',
     }
 
     def __init__(self, parent):

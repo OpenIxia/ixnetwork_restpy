@@ -31,10 +31,10 @@ class LearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedInformation'
     _SDM_ATT_MAP = {
-        'EvpnMulticastRouteCount': 'evpnMulticastRouteCount',
-        'EvpnEthernetSegmentRouteCount': 'evpnEthernetSegmentRouteCount',
         'EvpnEthernetAdRouteCount': 'evpnEthernetAdRouteCount',
+        'EvpnEthernetSegmentRouteCount': 'evpnEthernetSegmentRouteCount',
         'EvpnMacRouteCount': 'evpnMacRouteCount',
+        'EvpnMulticastRouteCount': 'evpnMulticastRouteCount',
     }
 
     def __init__(self, parent):

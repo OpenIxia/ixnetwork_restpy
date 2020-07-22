@@ -31,23 +31,23 @@ class TestConfig(Base):
     __slots__ = ()
     _SDM_NAME = 'testConfig'
     _SDM_ATT_MAP = {
-        'StartIptvEndpointsBeforeTraffic': 'startIptvEndpointsBeforeTraffic',
-        'EnableJoinFailuresMode': 'enableJoinFailuresMode',
-        'LoadType': 'loadType',
-        'PassCriteriaJoinLatencyValue': 'passCriteriaJoinLatencyValue',
-        'TrackByIpDestination': 'trackByIpDestination',
-        'PassCriteriaLeaveFailuresValue': 'passCriteriaLeaveFailuresValue',
-        'TestTrafficType': 'testTrafficType',
-        'EnableLeaveFailuresMode': 'enableLeaveFailuresMode',
-        'PassCriteriaJoinFailuresValue': 'passCriteriaJoinFailuresValue',
-        'PassCriteriaLeaveLatencyValue': 'passCriteriaLeaveLatencyValue',
         'AutomaticEnableIptvStats': 'automaticEnableIptvStats',
-        'ProtocolItem': 'protocolItem',
-        'Numtrials': 'numtrials',
-        'Duration': 'duration',
         'BackgroundTrafficEnabled': 'backgroundTrafficEnabled',
-        'TrackByFlowGroup': 'trackByFlowGroup',
+        'Duration': 'duration',
+        'EnableJoinFailuresMode': 'enableJoinFailuresMode',
+        'EnableLeaveFailuresMode': 'enableLeaveFailuresMode',
+        'LoadType': 'loadType',
+        'Numtrials': 'numtrials',
+        'PassCriteriaJoinFailuresValue': 'passCriteriaJoinFailuresValue',
+        'PassCriteriaJoinLatencyValue': 'passCriteriaJoinLatencyValue',
+        'PassCriteriaLeaveFailuresValue': 'passCriteriaLeaveFailuresValue',
+        'PassCriteriaLeaveLatencyValue': 'passCriteriaLeaveLatencyValue',
+        'ProtocolItem': 'protocolItem',
+        'StartIptvEndpointsBeforeTraffic': 'startIptvEndpointsBeforeTraffic',
+        'TestTrafficType': 'testTrafficType',
         'TrackByEgressVlanId': 'trackByEgressVlanId',
+        'TrackByFlowGroup': 'trackByFlowGroup',
+        'TrackByIpDestination': 'trackByIpDestination',
     }
 
     def __init__(self, parent):

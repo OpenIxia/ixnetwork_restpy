@@ -35,10 +35,10 @@ class CustomTopologyUnicastMacRange(Base):
     _SDM_ATT_MAP = {
         'Count': 'count',
         'Enabled': 'enabled',
-        'StartVlanId': 'startVlanId',
         'InterNodeMacIncrement': 'interNodeMacIncrement',
         'MacIncrement': 'macIncrement',
         'StartMac': 'startMac',
+        'StartVlanId': 'startVlanId',
     }
 
     def __init__(self, parent):

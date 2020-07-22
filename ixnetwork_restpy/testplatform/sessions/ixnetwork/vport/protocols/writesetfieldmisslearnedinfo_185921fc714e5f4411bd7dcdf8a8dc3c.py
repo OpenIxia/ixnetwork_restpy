@@ -32,9 +32,9 @@ class WriteSetFieldMissLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'writeSetFieldMissLearnedInfo'
     _SDM_ATT_MAP = {
-        'SupportedField': 'supportedField',
         'NextTableIds': 'nextTableIds',
         'Property': 'property',
+        'SupportedField': 'supportedField',
     }
 
     def __init__(self, parent):

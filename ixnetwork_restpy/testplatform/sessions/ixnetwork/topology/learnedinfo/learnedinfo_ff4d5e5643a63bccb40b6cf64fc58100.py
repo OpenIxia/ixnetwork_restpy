@@ -32,11 +32,11 @@ class LearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedInfo'
     _SDM_ATT_MAP = {
-        'Values': 'values',
-        'State': 'state',
-        'Type': 'type',
         'Id__': '__id__',
         'Columns': 'columns',
+        'State': 'state',
+        'Type': 'type',
+        'Values': 'values',
     }
 
     def __init__(self, parent):

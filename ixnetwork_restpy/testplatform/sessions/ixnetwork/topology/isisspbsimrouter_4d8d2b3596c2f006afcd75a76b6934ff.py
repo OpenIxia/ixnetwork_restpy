@@ -33,21 +33,21 @@ class IsisSpbSimRouter(Base):
     __slots__ = ()
     _SDM_NAME = 'isisSpbSimRouter'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Status': 'status',
-        'Errors': 'errors',
-        'Name': 'name',
-        'SpSourceId': 'spSourceId',
-        'StackedLayers': 'stackedLayers',
+        'Active': 'active',
         'BridgePriority': 'bridgePriority',
         'ConnectedVia': 'connectedVia',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
+        'Errors': 'errors',
         'Multiplier': 'multiplier',
-        'Active': 'active',
-        'SystemId': 'systemId',
-        'SpbTopologyCount': 'spbTopologyCount',
-        'StateCounts': 'stateCounts',
+        'Name': 'name',
         'SessionStatus': 'sessionStatus',
+        'SpSourceId': 'spSourceId',
+        'SpbTopologyCount': 'spbTopologyCount',
+        'StackedLayers': 'stackedLayers',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
+        'SystemId': 'systemId',
     }
 
     def __init__(self, parent):

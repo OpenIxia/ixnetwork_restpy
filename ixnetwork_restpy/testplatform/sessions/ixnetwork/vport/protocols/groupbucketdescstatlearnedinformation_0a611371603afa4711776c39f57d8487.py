@@ -32,15 +32,15 @@ class GroupBucketDescStatLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'groupBucketDescStatLearnedInformation'
     _SDM_ATT_MAP = {
-        'Weight': 'weight',
-        'WatchGroup': 'watchGroup',
         'ActionCount': 'actionCount',
-        'LocalIp': 'localIp',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'RemoteIp': 'remoteIp',
         'DataPathId': 'dataPathId',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
         'GroupId': 'groupId',
+        'LocalIp': 'localIp',
+        'RemoteIp': 'remoteIp',
+        'WatchGroup': 'watchGroup',
         'WatchPort': 'watchPort',
+        'Weight': 'weight',
     }
 
     def __init__(self, parent):

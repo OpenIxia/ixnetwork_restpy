@@ -33,10 +33,10 @@ class UniStatus(Base):
     __slots__ = ()
     _SDM_NAME = 'uniStatus'
     _SDM_ATT_MAP = {
+        'CeVlanIdEvcMapType': 'ceVlanIdEvcMapType',
         'Enabled': 'enabled',
         'UniIdentifier': 'uniIdentifier',
         'UniIdentifierLength': 'uniIdentifierLength',
-        'CeVlanIdEvcMapType': 'ceVlanIdEvcMapType',
     }
 
     def __init__(self, parent):

@@ -32,14 +32,14 @@ class AdVpls(Base):
     __slots__ = ()
     _SDM_NAME = 'adVpls'
     _SDM_ATT_MAP = {
-        'RemoteVplsId': 'remoteVplsId',
-        'RemotePeAddress': 'remotePeAddress',
-        'RouteDistinguisher': 'routeDistinguisher',
-        'NextHopAddress': 'nextHopAddress',
-        'RemoteVsiId': 'remoteVsiId',
         'NeighborAddress': 'neighborAddress',
-        'SupportedLocally': 'supportedLocally',
+        'NextHopAddress': 'nextHopAddress',
+        'RemotePeAddress': 'remotePeAddress',
+        'RemoteVplsId': 'remoteVplsId',
+        'RemoteVsiId': 'remoteVsiId',
+        'RouteDistinguisher': 'routeDistinguisher',
         'RouteTarget': 'routeTarget',
+        'SupportedLocally': 'supportedLocally',
     }
 
     def __init__(self, parent):

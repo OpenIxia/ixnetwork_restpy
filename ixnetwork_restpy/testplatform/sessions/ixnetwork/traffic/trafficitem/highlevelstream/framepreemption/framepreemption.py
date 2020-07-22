@@ -32,12 +32,12 @@ class FramePreemption(Base):
     __slots__ = ()
     _SDM_NAME = 'framePreemption'
     _SDM_ATT_MAP = {
-        'Enable': 'enable',
-        'SmdType': 'smdType',
-        'FragmentCount': 'fragmentCount',
         'AutoFragmentCount': 'autoFragmentCount',
-        'LastFragment': 'lastFragment',
+        'Enable': 'enable',
+        'FragmentCount': 'fragmentCount',
         'FrameType': 'frameType',
+        'LastFragment': 'lastFragment',
+        'SmdType': 'smdType',
     }
 
     def __init__(self, parent):

@@ -33,10 +33,10 @@ class CMacMappedIp(Base):
     __slots__ = ()
     _SDM_NAME = 'cMacMappedIp'
     _SDM_ATT_MAP = {
-        'IpAddress': 'ipAddress',
         'Enabled': 'enabled',
-        'IpType': 'ipType',
+        'IpAddress': 'ipAddress',
         'IpStep': 'ipStep',
+        'IpType': 'ipType',
     }
 
     def __init__(self, parent):

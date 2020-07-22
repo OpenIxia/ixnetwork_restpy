@@ -33,18 +33,18 @@ class DceNodeIpv6Groups(Base):
     __slots__ = ()
     _SDM_NAME = 'dceNodeIpv6Groups'
     _SDM_ATT_MAP = {
-        'IntraGroupUnicastIpv6Increment': 'intraGroupUnicastIpv6Increment',
-        'StartMulticastIpv6': 'startMulticastIpv6',
         'IncludeIpv6Groups': 'includeIpv6Groups',
-        'MulticastIpv6Step': 'multicastIpv6Step',
-        'StartUnicastSourceIpv6': 'startUnicastSourceIpv6',
-        'VlanId': 'vlanId',
-        'MulticastIpv6Count': 'multicastIpv6Count',
         'InterGroupUnicastIpv6Increment': 'interGroupUnicastIpv6Increment',
-        'NoOfUnicastScrIpv6sPerMulicastIpv6': 'noOfUnicastScrIpv6sPerMulicastIpv6',
+        'IntraGroupUnicastIpv6Increment': 'intraGroupUnicastIpv6Increment',
         'MulticastAddressNodeStep': 'multicastAddressNodeStep',
+        'MulticastIpv6Count': 'multicastIpv6Count',
+        'MulticastIpv6Step': 'multicastIpv6Step',
+        'NoOfUnicastScrIpv6sPerMulicastIpv6': 'noOfUnicastScrIpv6sPerMulicastIpv6',
         'SourceGroupMapping': 'sourceGroupMapping',
+        'StartMulticastIpv6': 'startMulticastIpv6',
+        'StartUnicastSourceIpv6': 'startUnicastSourceIpv6',
         'UnicastAddressNodeStep': 'unicastAddressNodeStep',
+        'VlanId': 'vlanId',
     }
 
     def __init__(self, parent):

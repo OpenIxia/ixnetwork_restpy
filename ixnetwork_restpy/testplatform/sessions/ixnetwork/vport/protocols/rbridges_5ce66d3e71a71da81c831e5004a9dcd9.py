@@ -32,20 +32,20 @@ class RBridges(Base):
     __slots__ = ()
     _SDM_NAME = 'rBridges'
     _SDM_ATT_MAP = {
-        'Priority': 'priority',
-        'GraphId': 'graphId',
-        'ExtendedCircuitId': 'extendedCircuitId',
-        'EnableCommonMtId': 'enableCommonMtId',
         'Age': 'age',
+        'EnableCommonMtId': 'enableCommonMtId',
+        'ExtendedCircuitId': 'extendedCircuitId',
+        'GraphId': 'graphId',
         'HostName': 'hostName',
+        'LinkMetric': 'linkMetric',
         'MtId': 'mtId',
+        'PrimaryFtag': 'primaryFtag',
+        'Priority': 'priority',
+        'Role': 'role',
         'SecondaryFtag': 'secondaryFtag',
         'SequenceNumber': 'sequenceNumber',
-        'PrimaryFtag': 'primaryFtag',
-        'Role': 'role',
-        'LinkMetric': 'linkMetric',
-        'SystemId': 'systemId',
         'SwitchId': 'switchId',
+        'SystemId': 'systemId',
     }
 
     def __init__(self, parent):

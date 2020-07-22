@@ -33,12 +33,12 @@ class PnTLVList(Base):
     _SDM_NAME = 'pnTLVList'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'Name': 'name',
-        'TlvLength': 'tlvLength',
-        'Value': 'value',
         'DescriptiveName': 'descriptiveName',
         'Increment': 'increment',
+        'Name': 'name',
+        'TlvLength': 'tlvLength',
         'Type': 'type',
+        'Value': 'value',
     }
 
     def __init__(self, parent):

@@ -33,9 +33,9 @@ class CustomTopologyRbLinks(Base):
     __slots__ = ()
     _SDM_NAME = 'customTopologyRbLinks'
     _SDM_ATT_MAP = {
-        'LinkNodeSystemId': 'linkNodeSystemId',
         'Enabled': 'enabled',
         'LinkMetric': 'linkMetric',
+        'LinkNodeSystemId': 'linkNodeSystemId',
     }
 
     def __init__(self, parent):

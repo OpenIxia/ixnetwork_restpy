@@ -33,10 +33,10 @@ class SimInterfaceEthernetConfig(Base):
     _SDM_NAME = 'simInterfaceEthernetConfig'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'Name': 'name',
-        'ToMac': 'toMac',
         'DescriptiveName': 'descriptiveName',
         'FromMac': 'fromMac',
+        'Name': 'name',
+        'ToMac': 'toMac',
         'VlanCount': 'vlanCount',
     }
 

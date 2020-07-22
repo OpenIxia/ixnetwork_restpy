@@ -34,15 +34,15 @@ class AttributeWatch(Base):
     _SDM_NAME = 'attributeWatch'
     _SDM_ATT_MAP = {
         'AttributesToWatch': 'attributesToWatch',
-        'IsDisabled': 'isDisabled',
         'AverageExecutionTime': 'averageExecutionTime',
-        'Topic': 'topic',
-        'Token': 'token',
+        'IsDisabled': 'isDisabled',
         'LastExecutionTime': 'lastExecutionTime',
         'LastNotification': 'lastNotification',
         'MaxExecutionTime': 'maxExecutionTime',
-        'PollInterval': 'pollInterval',
         'ObjectIdToWatch': 'objectIdToWatch',
+        'PollInterval': 'pollInterval',
+        'Token': 'token',
+        'Topic': 'topic',
     }
 
     def __init__(self, parent):

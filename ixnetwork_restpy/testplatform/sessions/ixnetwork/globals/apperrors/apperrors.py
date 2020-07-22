@@ -32,8 +32,8 @@ class AppErrors(Base):
     __slots__ = ()
     _SDM_NAME = 'appErrors'
     _SDM_ATT_MAP = {
-        'LastModified': 'lastModified',
         'ErrorCount': 'errorCount',
+        'LastModified': 'lastModified',
         'WarningCount': 'warningCount',
     }
 

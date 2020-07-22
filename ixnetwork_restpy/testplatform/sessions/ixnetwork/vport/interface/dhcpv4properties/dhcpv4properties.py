@@ -31,13 +31,13 @@ class DhcpV4Properties(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcpV4Properties'
     _SDM_ATT_MAP = {
-        'VendorId': 'vendorId',
-        'Tlvs': 'tlvs',
-        'Enabled': 'enabled',
         'ClientId': 'clientId',
-        'RequestRate': 'requestRate',
+        'Enabled': 'enabled',
         'RenewTimer': 'renewTimer',
+        'RequestRate': 'requestRate',
         'ServerId': 'serverId',
+        'Tlvs': 'tlvs',
+        'VendorId': 'vendorId',
     }
 
     def __init__(self, parent):

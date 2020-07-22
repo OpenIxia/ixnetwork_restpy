@@ -32,9 +32,9 @@ class Parameter(Base):
     __slots__ = ()
     _SDM_NAME = 'parameter'
     _SDM_ATT_MAP = {
-        'SupportedOptions': 'supportedOptions',
         'DisplayValue': 'displayValue',
         'Option': 'option',
+        'SupportedOptions': 'supportedOptions',
     }
 
     def __init__(self, parent):

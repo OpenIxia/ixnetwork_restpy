@@ -35,8 +35,8 @@ class FlowCondition(Base):
     _SDM_ATT_MAP = {
         'Operator': 'operator',
         'ShowFirstMatchingSet': 'showFirstMatchingSet',
-        'Values': 'values',
         'TrackingFilterId': 'trackingFilterId',
+        'Values': 'values',
     }
 
     def __init__(self, parent):

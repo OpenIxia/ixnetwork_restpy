@@ -34,9 +34,9 @@ class TwampGlobals(Base):
     _SDM_NAME = 'twampGlobals'
     _SDM_ATT_MAP = {
         'MaxOutstanding': 'maxOutstanding',
-        'TeardownRate': 'teardownRate',
-        'SetupRate': 'setupRate',
         'ObjectId': 'objectId',
+        'SetupRate': 'setupRate',
+        'TeardownRate': 'teardownRate',
     }
 
     def __init__(self, parent):

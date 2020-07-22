@@ -32,9 +32,9 @@ class WriteActionsLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'writeActionsLearnedInfo'
     _SDM_ATT_MAP = {
-        'SupportedField': 'supportedField',
         'NextTableIds': 'nextTableIds',
         'Property': 'property',
+        'SupportedField': 'supportedField',
     }
 
     def __init__(self, parent):

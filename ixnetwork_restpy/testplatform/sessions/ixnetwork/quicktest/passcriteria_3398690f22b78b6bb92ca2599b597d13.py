@@ -31,14 +31,14 @@ class PassCriteria(Base):
     __slots__ = ()
     _SDM_NAME = 'passCriteria'
     _SDM_ATT_MAP = {
-        'LossThresholdValue': 'lossThresholdValue',
-        'PassFailFrequency': 'passFailFrequency',
-        'PassCriteriaLoadRateMode': 'passCriteriaLoadRateMode',
-        'PassFailMeasureUnit': 'passFailMeasureUnit',
         'EnableFrameLossPassFail': 'enableFrameLossPassFail',
         'LossThresholdMode': 'lossThresholdMode',
-        'PassCriteriaLoadRateValue': 'passCriteriaLoadRateValue',
+        'LossThresholdValue': 'lossThresholdValue',
+        'PassCriteriaLoadRateMode': 'passCriteriaLoadRateMode',
         'PassCriteriaLoadRateScale': 'passCriteriaLoadRateScale',
+        'PassCriteriaLoadRateValue': 'passCriteriaLoadRateValue',
+        'PassFailFrequency': 'passFailFrequency',
+        'PassFailMeasureUnit': 'passFailMeasureUnit',
     }
 
     def __init__(self, parent):

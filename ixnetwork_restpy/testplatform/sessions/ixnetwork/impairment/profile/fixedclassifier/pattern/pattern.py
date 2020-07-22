@@ -34,12 +34,12 @@ class Pattern(Base):
     _SDM_NAME = 'pattern'
     _SDM_ATT_MAP = {
         'BitOffset': 'bitOffset',
-        'Name': 'name',
-        'Mask': 'mask',
         'Enabled': 'enabled',
+        'Mask': 'mask',
+        'Name': 'name',
+        'Offset': 'offset',
         'Value': 'value',
         'Width': 'width',
-        'Offset': 'offset',
     }
 
     def __init__(self, parent):

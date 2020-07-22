@@ -31,20 +31,20 @@ class TransmissionControl(Base):
     __slots__ = ()
     _SDM_NAME = 'transmissionControl'
     _SDM_ATT_MAP = {
-        'InterBurstGap': 'interBurstGap',
-        'RepeatBurst': 'repeatBurst',
+        'BurstPacketCount': 'burstPacketCount',
+        'Duration': 'duration',
+        'EnableInterBurstGap': 'enableInterBurstGap',
         'EnableInterStreamGap': 'enableInterStreamGap',
+        'FrameCount': 'frameCount',
+        'InterBurstGap': 'interBurstGap',
         'InterBurstGapUnits': 'interBurstGapUnits',
+        'InterStreamGap': 'interStreamGap',
         'IterationCount': 'iterationCount',
         'MinGapBytes': 'minGapBytes',
+        'RepeatBurst': 'repeatBurst',
         'StartDelay': 'startDelay',
-        'EnableInterBurstGap': 'enableInterBurstGap',
-        'Duration': 'duration',
-        'InterStreamGap': 'interStreamGap',
-        'Type': 'type',
         'StartDelayUnits': 'startDelayUnits',
-        'FrameCount': 'frameCount',
-        'BurstPacketCount': 'burstPacketCount',
+        'Type': 'type',
     }
 
     def __init__(self, parent):

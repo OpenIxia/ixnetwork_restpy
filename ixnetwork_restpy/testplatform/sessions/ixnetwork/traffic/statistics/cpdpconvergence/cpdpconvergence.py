@@ -32,10 +32,10 @@ class CpdpConvergence(Base):
     _SDM_NAME = 'cpdpConvergence'
     _SDM_ATT_MAP = {
         'DataPlaneJitterWindow': 'dataPlaneJitterWindow',
-        'EnableDataPlaneEventsRateMonitor': 'enableDataPlaneEventsRateMonitor',
-        'Enabled': 'enabled',
         'DataPlaneThreshold': 'dataPlaneThreshold',
         'EnableControlPlaneEvents': 'enableControlPlaneEvents',
+        'EnableDataPlaneEventsRateMonitor': 'enableDataPlaneEventsRateMonitor',
+        'Enabled': 'enabled',
     }
 
     def __init__(self, parent):

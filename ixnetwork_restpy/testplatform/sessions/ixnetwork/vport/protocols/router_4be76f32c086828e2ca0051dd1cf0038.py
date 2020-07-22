@@ -33,23 +33,23 @@ class Router(Base):
     __slots__ = ()
     _SDM_NAME = 'router'
     _SDM_ATT_MAP = {
-        'StrictLsaChecking': 'strictLsaChecking',
-        'GracefulRestart': 'gracefulRestart',
-        'SupportForRfc3623': 'supportForRfc3623',
-        'RebuildAdjForLsdbChange': 'rebuildAdjForLsdbChange',
-        'SupportReasonUnknown': 'supportReasonUnknown',
-        'MaxFloodLsUpdatesPerBurst': 'maxFloodLsUpdatesPerBurst',
-        'GenerateRouterLsa': 'generateRouterLsa',
-        'Enabled': 'enabled',
         'DiscardLearnedLsa': 'discardLearnedLsa',
-        'TrafficGroupId': 'trafficGroupId',
-        'RouterId': 'routerId',
-        'SupportReasonSoftReloadUpgrade': 'supportReasonSoftReloadUpgrade',
-        'SupportReasonSwotchRedundantCntrlProcessor': 'supportReasonSwotchRedundantCntrlProcessor',
-        'LsaRetransmitTime': 'lsaRetransmitTime',
+        'Enabled': 'enabled',
+        'GenerateRouterLsa': 'generateRouterLsa',
+        'GracefulRestart': 'gracefulRestart',
         'InterFloodLsUpdateBurstGap': 'interFloodLsUpdateBurstGap',
         'LsaRefreshTime': 'lsaRefreshTime',
+        'LsaRetransmitTime': 'lsaRetransmitTime',
+        'MaxFloodLsUpdatesPerBurst': 'maxFloodLsUpdatesPerBurst',
+        'RebuildAdjForLsdbChange': 'rebuildAdjForLsdbChange',
+        'RouterId': 'routerId',
+        'StrictLsaChecking': 'strictLsaChecking',
+        'SupportForRfc3623': 'supportForRfc3623',
+        'SupportReasonSoftReloadUpgrade': 'supportReasonSoftReloadUpgrade',
         'SupportReasonSoftRestart': 'supportReasonSoftRestart',
+        'SupportReasonSwotchRedundantCntrlProcessor': 'supportReasonSwotchRedundantCntrlProcessor',
+        'SupportReasonUnknown': 'supportReasonUnknown',
+        'TrafficGroupId': 'trafficGroupId',
     }
 
     def __init__(self, parent):

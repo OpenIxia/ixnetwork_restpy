@@ -33,9 +33,9 @@ class RangeList(Base):
     _SDM_NAME = 'rangeList'
     _SDM_ATT_MAP = {
         'AvailableWidths': 'availableWidths',
+        'BitOffset': 'bitOffset',
         'StartValueCountStepList': 'startValueCountStepList',
         'Width': 'width',
-        'BitOffset': 'bitOffset',
     }
 
     def __init__(self, parent):

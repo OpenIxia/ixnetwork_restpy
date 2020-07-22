@@ -32,21 +32,21 @@ class AsyncConfStatLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'asyncConfStatLearnedInformation'
     _SDM_ATT_MAP = {
-        'Latency': 'latency',
-        'FlowRemovedMaskMaster': 'flowRemovedMaskMaster',
-        'LocalIp': 'localIp',
-        'ReplyState': 'replyState',
-        'ErrorType': 'errorType',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'PortStatusMaskSlave': 'portStatusMaskSlave',
-        'ErrorCode': 'errorCode',
-        'FlowRemovedMaskSlave': 'flowRemovedMaskSlave',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'RemoteIp': 'remoteIp',
-        'PortStatusMaskMaster': 'portStatusMaskMaster',
-        'PacketInMaskMaster': 'packetInMaskMaster',
         'DataPathId': 'dataPathId',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
+        'ErrorCode': 'errorCode',
+        'ErrorType': 'errorType',
+        'FlowRemovedMaskMaster': 'flowRemovedMaskMaster',
+        'FlowRemovedMaskSlave': 'flowRemovedMaskSlave',
+        'Latency': 'latency',
+        'LocalIp': 'localIp',
+        'NegotiatedVersion': 'negotiatedVersion',
+        'PacketInMaskMaster': 'packetInMaskMaster',
         'PacketInMaskSlave': 'packetInMaskSlave',
+        'PortStatusMaskMaster': 'portStatusMaskMaster',
+        'PortStatusMaskSlave': 'portStatusMaskSlave',
+        'RemoteIp': 'remoteIp',
+        'ReplyState': 'replyState',
     }
 
     def __init__(self, parent):

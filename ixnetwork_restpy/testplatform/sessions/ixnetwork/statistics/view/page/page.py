@@ -31,22 +31,22 @@ class Page(Base):
     __slots__ = ()
     _SDM_NAME = 'page'
     _SDM_ATT_MAP = {
-        'ColumnCount': 'columnCount',
-        'EgressMode': 'egressMode',
         'AllowPaging': 'allowPaging',
+        'ColumnCaptions': 'columnCaptions',
+        'ColumnCount': 'columnCount',
+        'CurrentPage': 'currentPage',
+        'EgressMode': 'egressMode',
+        'EgressPageSize': 'egressPageSize',
+        'IsBlocked': 'isBlocked',
+        'IsReady': 'isReady',
+        'IsReadyTimeout': 'isReadyTimeout',
         'PageSize': 'pageSize',
         'PageValues': 'pageValues',
-        'IsReadyTimeout': 'isReadyTimeout',
-        'ColumnCaptions': 'columnCaptions',
-        'RowValues': 'rowValues',
-        'TotalRows': 'totalRows',
-        'IsReady': 'isReady',
-        'EgressPageSize': 'egressPageSize',
         'RowCount': 'rowCount',
+        'RowValues': 'rowValues',
         'Timestamp': 'timestamp',
-        'IsBlocked': 'isBlocked',
         'TotalPages': 'totalPages',
-        'CurrentPage': 'currentPage',
+        'TotalRows': 'totalRows',
     }
 
     def __init__(self, parent):

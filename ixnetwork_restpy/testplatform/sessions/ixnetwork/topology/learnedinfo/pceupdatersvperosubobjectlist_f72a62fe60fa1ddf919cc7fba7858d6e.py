@@ -32,13 +32,13 @@ class PceUpdateRsvpEroSubObjectList(Base):
     __slots__ = ()
     _SDM_NAME = 'pceUpdateRsvpEroSubObjectList'
     _SDM_ATT_MAP = {
-        'LooseHop': 'looseHop',
-        'Ipv6Prefix': 'ipv6Prefix',
-        'Ipv4Prefix': 'ipv4Prefix',
         'ActiveThisEro': 'activeThisEro',
         'AsNumber': 'asNumber',
-        'SubObjectType': 'subObjectType',
+        'Ipv4Prefix': 'ipv4Prefix',
+        'Ipv6Prefix': 'ipv6Prefix',
+        'LooseHop': 'looseHop',
         'PrefixLength': 'prefixLength',
+        'SubObjectType': 'subObjectType',
     }
 
     def __init__(self, parent):

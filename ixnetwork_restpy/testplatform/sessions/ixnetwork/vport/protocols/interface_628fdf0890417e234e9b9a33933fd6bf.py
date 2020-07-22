@@ -33,8 +33,8 @@ class Interface(Base):
     __slots__ = ()
     _SDM_NAME = 'interface'
     _SDM_ATT_MAP = {
-        'InterfaceId': 'interfaceId',
         'Enabled': 'enabled',
+        'InterfaceId': 'interfaceId',
     }
 
     def __init__(self, parent):

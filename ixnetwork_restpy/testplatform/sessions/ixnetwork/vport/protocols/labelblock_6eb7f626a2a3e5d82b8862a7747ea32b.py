@@ -33,13 +33,13 @@ class LabelBlock(Base):
     __slots__ = ()
     _SDM_NAME = 'labelBlock'
     _SDM_ATT_MAP = {
-        'LabelStartIncrementAcrossL2Site': 'labelStartIncrementAcrossL2Site',
-        'TotalLabelCount': 'totalLabelCount',
         'Enabled': 'enabled',
-        'Start': 'start',
-        'Offset': 'offset',
         'LabelBlockOffsetIncrementAcrossL2Site': 'labelBlockOffsetIncrementAcrossL2Site',
+        'LabelStartIncrementAcrossL2Site': 'labelStartIncrementAcrossL2Site',
         'NumberOfLabels': 'numberOfLabels',
+        'Offset': 'offset',
+        'Start': 'start',
+        'TotalLabelCount': 'totalLabelCount',
     }
 
     def __init__(self, parent):

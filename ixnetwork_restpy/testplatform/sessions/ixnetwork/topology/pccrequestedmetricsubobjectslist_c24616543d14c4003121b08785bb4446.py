@@ -32,14 +32,14 @@ class PccRequestedMetricSubObjectsList(Base):
     __slots__ = ()
     _SDM_NAME = 'pccRequestedMetricSubObjectsList'
     _SDM_ATT_MAP = {
+        'Active': 'active',
         'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'EnableBflag': 'enableBflag',
+        'EnableCflag': 'enableCflag',
+        'MetricType': 'metricType',
         'MetricValue': 'metricValue',
         'Name': 'name',
-        'EnableBflag': 'enableBflag',
-        'MetricType': 'metricType',
-        'EnableCflag': 'enableCflag',
-        'DescriptiveName': 'descriptiveName',
-        'Active': 'active',
         'PFlagMetric': 'pFlagMetric',
     }
 

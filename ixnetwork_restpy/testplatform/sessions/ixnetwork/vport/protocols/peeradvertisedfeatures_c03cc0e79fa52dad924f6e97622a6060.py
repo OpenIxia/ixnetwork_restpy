@@ -31,22 +31,22 @@ class PeerAdvertisedFeatures(Base):
     __slots__ = ()
     _SDM_NAME = 'peerAdvertisedFeatures'
     _SDM_ATT_MAP = {
+        'HundredGbFd': '100GbFd',
         'HundredMbFd': '100MbFd',
-        'AutoNegotiation': 'autoNegotiation',
-        'TenMbHd': '10MbHd',
-        'TenMbFd': '10MbFd',
-        'OneTbFd': '1TbFd',
         'HundredMbHd': '100MbHd',
-        'FiberMedium': 'fiberMedium',
-        'AsymmetricPause': 'asymmetricPause',
-        'Pause': 'pause',
+        'TenGbFd': '10GbFd',
+        'TenMbFd': '10MbFd',
+        'TenMbHd': '10MbHd',
         'OneGbFd': '1GbFd',
         'OneGbHd': '1GbHd',
-        'TenGbFd': '10GbFd',
-        'OtherRate': 'otherRate',
+        'OneTbFd': '1TbFd',
         'FortyGbFd': '40GbFd',
+        'AsymmetricPause': 'asymmetricPause',
+        'AutoNegotiation': 'autoNegotiation',
         'CopperMedium': 'copperMedium',
-        'HundredGbFd': '100GbFd',
+        'FiberMedium': 'fiberMedium',
+        'OtherRate': 'otherRate',
+        'Pause': 'pause',
     }
 
     def __init__(self, parent):

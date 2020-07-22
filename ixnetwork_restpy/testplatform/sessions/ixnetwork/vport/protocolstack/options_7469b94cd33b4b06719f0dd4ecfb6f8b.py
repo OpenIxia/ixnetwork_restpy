@@ -31,20 +31,20 @@ class Options(Base):
     __slots__ = ()
     _SDM_NAME = 'options'
     _SDM_ATT_MAP = {
-        'Mcast_solicit': 'mcast_solicit',
         'ActOnGratArp': 'actOnGratArp',
-        'RouterSolicitationInterval': 'routerSolicitationInterval',
-        'ObjectId': 'objectId',
-        'NsRefreshInterval': 'nsRefreshInterval',
         'ArpRefreshInterval': 'arpRefreshInterval',
         'DadEnabled': 'dadEnabled',
         'DadTransmits': 'dadTransmits',
-        'RetransTime': 'retransTime',
-        'Ipv4RetransTime': 'ipv4RetransTime',
         'IgnoreMldQueries': 'ignoreMldQueries',
-        'RouterSolicitationDelay': 'routerSolicitationDelay',
-        'RouterSolicitations': 'routerSolicitations',
         'Ipv4McastSolicit': 'ipv4McastSolicit',
+        'Ipv4RetransTime': 'ipv4RetransTime',
+        'Mcast_solicit': 'mcast_solicit',
+        'NsRefreshInterval': 'nsRefreshInterval',
+        'ObjectId': 'objectId',
+        'RetransTime': 'retransTime',
+        'RouterSolicitationDelay': 'routerSolicitationDelay',
+        'RouterSolicitationInterval': 'routerSolicitationInterval',
+        'RouterSolicitations': 'routerSolicitations',
     }
 
     def __init__(self, parent):

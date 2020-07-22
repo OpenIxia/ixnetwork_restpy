@@ -33,10 +33,10 @@ class FcoeFwdOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'fcoeFwdOptions'
     _SDM_ATT_MAP = {
-        'UnsolDiscoveryTpid': 'unsolDiscoveryTpid',
         'MaxPacketsPerSecond': 'maxPacketsPerSecond',
         'ObjectId': 'objectId',
         'OverrideGlobalRate': 'overrideGlobalRate',
+        'UnsolDiscoveryTpid': 'unsolDiscoveryTpid',
     }
 
     def __init__(self, parent):

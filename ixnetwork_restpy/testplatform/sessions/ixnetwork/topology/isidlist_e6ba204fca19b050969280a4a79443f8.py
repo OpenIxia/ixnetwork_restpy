@@ -31,16 +31,16 @@ class IsidList(Base):
     __slots__ = ()
     _SDM_NAME = 'isidList'
     _SDM_ATT_MAP = {
+        'Active': 'active',
+        'BaseVid': 'baseVid',
         'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Isid': 'isid',
+        'ItagEthernetType': 'itagEthernetType',
         'Name': 'name',
+        'Rbit': 'rbit',
         'Tbit': 'tbit',
         'TopologyId': 'topologyId',
-        'Rbit': 'rbit',
-        'BaseVid': 'baseVid',
-        'DescriptiveName': 'descriptiveName',
-        'ItagEthernetType': 'itagEthernetType',
-        'Active': 'active',
-        'Isid': 'isid',
         'TransmissionType': 'transmissionType',
     }
 

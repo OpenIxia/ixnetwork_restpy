@@ -32,12 +32,12 @@ class BgpCommunitiesList(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpCommunitiesList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
         'AsNumber': 'asNumber',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
-        'Type': 'type',
         'LastTwoOctets': 'lastTwoOctets',
+        'Name': 'name',
+        'Type': 'type',
     }
 
     def __init__(self, parent):

@@ -33,23 +33,23 @@ class FlowRangeAction(Base):
     __slots__ = ()
     _SDM_NAME = 'flowRangeAction'
     _SDM_ATT_MAP = {
+        'EthDestination': 'ethDestination',
+        'EthSource': 'ethSource',
+        'IpDscp': 'ipDscp',
+        'Ipv4Destination': 'ipv4Destination',
+        'Ipv4Source': 'ipv4Source',
+        'MaxByteLength': 'maxByteLength',
         'OutputPort': 'outputPort',
         'QueueId': 'queueId',
-        'MaxByteLength': 'maxByteLength',
-        'VendorData': 'vendorData',
-        'TransportSource': 'transportSource',
-        'Ipv4Source': 'ipv4Source',
-        'VlanPriority': 'vlanPriority',
-        'VlanId': 'vlanId',
         'TransportDestination': 'transportDestination',
-        'EthSource': 'ethSource',
-        'EthDestination': 'ethDestination',
+        'TransportSource': 'transportSource',
+        'TypeOfAction': 'typeOfAction',
+        'TypeOfOutPort': 'typeOfOutPort',
+        'VendorData': 'vendorData',
         'VendorDataLength': 'vendorDataLength',
         'VendorId': 'vendorId',
-        'TypeOfOutPort': 'typeOfOutPort',
-        'Ipv4Destination': 'ipv4Destination',
-        'IpDscp': 'ipDscp',
-        'TypeOfAction': 'typeOfAction',
+        'VlanId': 'vlanId',
+        'VlanPriority': 'vlanPriority',
     }
 
     def __init__(self, parent):

@@ -31,20 +31,20 @@ class Statistics(Base):
     __slots__ = ()
     _SDM_NAME = 'statistics'
     _SDM_ATT_MAP = {
+        'AdditionalFcoeStat1': 'additionalFcoeStat1',
+        'AdditionalFcoeStat2': 'additionalFcoeStat2',
+        'CsvFilePath': 'csvFilePath',
         'CsvLogPollIntervalMultiplier': 'csvLogPollIntervalMultiplier',
+        'DataStorePollingIntervalMultiplier': 'dataStorePollingIntervalMultiplier',
         'EnableAutoDataStore': 'enableAutoDataStore',
-        'TimestampPrecision': 'timestampPrecision',
+        'EnableCsvLogging': 'enableCsvLogging',
+        'EnableDataCenterSharedStats': 'enableDataCenterSharedStats',
+        'GuardrailEnabled': 'guardrailEnabled',
         'MaxNumberOfStatsPerCustomGraph': 'maxNumberOfStatsPerCustomGraph',
         'PollInterval': 'pollInterval',
-        'UgsTcpPort': 'ugsTcpPort',
         'TimeSynchronization': 'timeSynchronization',
-        'DataStorePollingIntervalMultiplier': 'dataStorePollingIntervalMultiplier',
-        'AdditionalFcoeStat2': 'additionalFcoeStat2',
-        'AdditionalFcoeStat1': 'additionalFcoeStat1',
-        'GuardrailEnabled': 'guardrailEnabled',
-        'CsvFilePath': 'csvFilePath',
-        'EnableDataCenterSharedStats': 'enableDataCenterSharedStats',
-        'EnableCsvLogging': 'enableCsvLogging',
+        'TimestampPrecision': 'timestampPrecision',
+        'UgsTcpPort': 'ugsTcpPort',
     }
 
     def __init__(self, parent):

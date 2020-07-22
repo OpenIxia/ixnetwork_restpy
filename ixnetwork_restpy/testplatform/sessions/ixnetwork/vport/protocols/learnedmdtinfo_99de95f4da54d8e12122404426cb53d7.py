@@ -32,11 +32,11 @@ class LearnedMdtInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedMdtInfo'
     _SDM_ATT_MAP = {
-        'CeGroupAddress': 'ceGroupAddress',
         'Age': 'age',
+        'CeGroupAddress': 'ceGroupAddress',
         'CeSourceAddress': 'ceSourceAddress',
-        'MdtSourceAddress': 'mdtSourceAddress',
         'MdtGroupAddress': 'mdtGroupAddress',
+        'MdtSourceAddress': 'mdtSourceAddress',
     }
 
     def __init__(self, parent):

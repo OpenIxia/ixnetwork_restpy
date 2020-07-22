@@ -32,14 +32,14 @@ class LearnedLsa(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedLsa'
     _SDM_ATT_MAP = {
-        'PrefixV6Address': 'prefixV6Address',
-        'SequenceNo': 'sequenceNo',
-        'Age': 'age',
         'AdvRouterId': 'advRouterId',
-        'PrefixV4Address': 'prefixV4Address',
-        'Type': 'type',
+        'Age': 'age',
         'LinkStateId': 'linkStateId',
         'PrefixLength': 'prefixLength',
+        'PrefixV4Address': 'prefixV4Address',
+        'PrefixV6Address': 'prefixV6Address',
+        'SequenceNo': 'sequenceNo',
+        'Type': 'type',
     }
 
     def __init__(self, parent):

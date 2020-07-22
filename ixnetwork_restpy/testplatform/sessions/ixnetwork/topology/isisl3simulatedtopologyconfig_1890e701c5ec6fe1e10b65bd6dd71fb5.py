@@ -32,14 +32,14 @@ class IsisL3SimulatedTopologyConfig(Base):
     __slots__ = ()
     _SDM_NAME = 'isisL3SimulatedTopologyConfig'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'HostName': 'hostName',
-        'EnableHostName': 'enableHostName',
-        'DescriptiveName': 'descriptiveName',
-        'IsisL3Ipv4NodeRouteCount': 'isisL3Ipv4NodeRouteCount',
         'Active': 'active',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'EnableHostName': 'enableHostName',
+        'HostName': 'hostName',
+        'IsisL3Ipv4NodeRouteCount': 'isisL3Ipv4NodeRouteCount',
         'IsisL3Ipv6NodeRouteCount': 'isisL3Ipv6NodeRouteCount',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

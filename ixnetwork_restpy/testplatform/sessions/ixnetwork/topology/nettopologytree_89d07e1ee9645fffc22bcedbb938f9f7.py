@@ -33,12 +33,12 @@ class NetTopologyTree(Base):
     __slots__ = ()
     _SDM_NAME = 'netTopologyTree'
     _SDM_ATT_MAP = {
-        'LinkMultiplier': 'linkMultiplier',
-        'UseTreeDepth': 'useTreeDepth',
-        'MaxChildPerNode': 'maxChildPerNode',
-        'TreeDepth': 'treeDepth',
-        'Nodes': 'nodes',
         'IncludeEntryPoint': 'includeEntryPoint',
+        'LinkMultiplier': 'linkMultiplier',
+        'MaxChildPerNode': 'maxChildPerNode',
+        'Nodes': 'nodes',
+        'TreeDepth': 'treeDepth',
+        'UseTreeDepth': 'useTreeDepth',
     }
 
     def __init__(self, parent):

@@ -32,11 +32,11 @@ class Table(Base):
     __slots__ = ()
     _SDM_NAME = 'table'
     _SDM_ATT_MAP = {
-        'Values': 'values',
+        'Actions': 'actions',
+        'Columns': 'columns',
         'RowCount': 'rowCount',
         'Type': 'type',
-        'Columns': 'columns',
-        'Actions': 'actions',
+        'Values': 'values',
     }
 
     def __init__(self, parent):

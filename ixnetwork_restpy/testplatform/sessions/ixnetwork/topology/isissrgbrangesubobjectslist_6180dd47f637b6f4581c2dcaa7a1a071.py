@@ -33,9 +33,9 @@ class IsisSRGBRangeSubObjectsList(Base):
     _SDM_NAME = 'isisSRGBRangeSubObjectsList'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'SIDCount': 'sIDCount',
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
+        'SIDCount': 'sIDCount',
         'StartSIDLabel': 'startSIDLabel',
     }
 

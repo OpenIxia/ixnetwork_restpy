@@ -33,11 +33,11 @@ class IxVmCard(Base):
     __slots__ = ()
     _SDM_NAME = 'ixVmCard'
     _SDM_ATT_MAP = {
+        'CardId': 'cardId',
+        'CardName': 'cardName',
         'CardState': 'cardState',
         'KeepAliveTimeout': 'keepAliveTimeout',
-        'CardName': 'cardName',
         'ManagementIp': 'managementIp',
-        'CardId': 'cardId',
     }
 
     def __init__(self, parent):

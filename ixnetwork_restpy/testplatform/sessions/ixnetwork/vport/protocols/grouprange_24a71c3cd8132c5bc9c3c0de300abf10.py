@@ -33,15 +33,15 @@ class GroupRange(Base):
     __slots__ = ()
     _SDM_NAME = 'groupRange'
     _SDM_ATT_MAP = {
-        'IncrementStep': 'incrementStep',
-        'GroupIpFrom': 'groupIpFrom',
-        'SourceMode': 'sourceMode',
-        'EnableUpdateRequired': 'enableUpdateRequired',
-        'GroupCount': 'groupCount',
-        'SourcesPerRecord': 'sourcesPerRecord',
-        'RecordsPerFrame': 'recordsPerFrame',
-        'Enabled': 'enabled',
         'EnablePacking': 'enablePacking',
+        'EnableUpdateRequired': 'enableUpdateRequired',
+        'Enabled': 'enabled',
+        'GroupCount': 'groupCount',
+        'GroupIpFrom': 'groupIpFrom',
+        'IncrementStep': 'incrementStep',
+        'RecordsPerFrame': 'recordsPerFrame',
+        'SourceMode': 'sourceMode',
+        'SourcesPerRecord': 'sourcesPerRecord',
     }
 
     def __init__(self, parent):

@@ -33,12 +33,12 @@ class InterfaceGroup(Base):
     __slots__ = ()
     _SDM_NAME = 'interfaceGroup'
     _SDM_ATT_MAP = {
-        'Description': 'description',
         'AtmEncapsulation': 'atmEncapsulation',
-        'Enabled': 'enabled',
-        'TrafficGroupId': 'trafficGroupId',
-        'Ip': 'ip',
+        'Description': 'description',
         'EnableVlan': 'enableVlan',
+        'Enabled': 'enabled',
+        'Ip': 'ip',
+        'TrafficGroupId': 'trafficGroupId',
     }
 
     def __init__(self, parent):

@@ -34,13 +34,13 @@ class Evc(Base):
     _SDM_NAME = 'evc'
     _SDM_ATT_MAP = {
         'DefaultEvc': 'defaultEvc',
-        'EvcStatus': 'evcStatus',
         'Enabled': 'enabled',
-        'UntaggedPriorityTagged': 'untaggedPriorityTagged',
-        'EvcIdentifierLength': 'evcIdentifierLength',
-        'ReferenceId': 'referenceId',
         'EvcIdentifier': 'evcIdentifier',
+        'EvcIdentifierLength': 'evcIdentifierLength',
+        'EvcStatus': 'evcStatus',
         'EvcType': 'evcType',
+        'ReferenceId': 'referenceId',
+        'UntaggedPriorityTagged': 'untaggedPriorityTagged',
     }
 
     def __init__(self, parent):

@@ -31,8 +31,8 @@ class TableModificationTriggerAttributes(Base):
     __slots__ = ()
     _SDM_NAME = 'tableModificationTriggerAttributes'
     _SDM_ATT_MAP = {
-        'Config': 'config',
         'AllTables': 'allTables',
+        'Config': 'config',
     }
 
     def __init__(self, parent):

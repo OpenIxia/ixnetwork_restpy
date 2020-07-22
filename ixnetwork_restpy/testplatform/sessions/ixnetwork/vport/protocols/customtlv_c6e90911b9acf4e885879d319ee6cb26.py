@@ -34,12 +34,12 @@ class CustomTlv(Base):
     _SDM_NAME = 'customTlv'
     _SDM_ATT_MAP = {
         'Enabled': 'enabled',
+        'IncludeInHello': 'includeInHello',
         'IncludeInLsp': 'includeInLsp',
         'IncludeInNetworkRange': 'includeInNetworkRange',
         'Length': 'length',
-        'Value': 'value',
         'Type': 'type',
-        'IncludeInHello': 'includeInHello',
+        'Value': 'value',
     }
 
     def __init__(self, parent):

@@ -32,16 +32,16 @@ class Buckets(Base):
     __slots__ = ()
     _SDM_NAME = 'buckets'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'Weight': 'weight',
-        'GroupName': 'groupName',
         'BucketDescription': 'bucketDescription',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
-        'WatchPort': 'watchPort',
-        'Multiplier': 'multiplier',
         'GroupIndex': 'groupIndex',
+        'GroupName': 'groupName',
+        'Multiplier': 'multiplier',
+        'Name': 'name',
         'WatchGroup': 'watchGroup',
+        'WatchPort': 'watchPort',
+        'Weight': 'weight',
     }
 
     def __init__(self, parent):

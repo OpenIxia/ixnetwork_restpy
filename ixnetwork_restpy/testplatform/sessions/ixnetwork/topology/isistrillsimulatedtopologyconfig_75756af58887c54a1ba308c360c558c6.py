@@ -32,13 +32,13 @@ class IsisTrillSimulatedTopologyConfig(Base):
     __slots__ = ()
     _SDM_NAME = 'isisTrillSimulatedTopologyConfig'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'HostName': 'hostName',
-        'EnableHostName': 'enableHostName',
-        'TrillNodeTopologyCount': 'trillNodeTopologyCount',
-        'DescriptiveName': 'descriptiveName',
         'Active': 'active',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'EnableHostName': 'enableHostName',
+        'HostName': 'hostName',
+        'Name': 'name',
+        'TrillNodeTopologyCount': 'trillNodeTopologyCount',
     }
 
     def __init__(self, parent):

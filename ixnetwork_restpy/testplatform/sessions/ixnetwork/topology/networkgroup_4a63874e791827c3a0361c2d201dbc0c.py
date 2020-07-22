@@ -35,10 +35,10 @@ class NetworkGroup(Base):
     _SDM_NAME = 'networkGroup'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'Enabled': 'enabled',
         'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
+        'Enabled': 'enabled',
         'Multiplier': 'multiplier',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

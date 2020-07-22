@@ -34,9 +34,9 @@ class MatchTemplate(Base):
     _SDM_NAME = 'matchTemplate'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'SavedInVersion': 'savedInVersion',
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
+        'SavedInVersion': 'savedInVersion',
     }
 
     def __init__(self, parent):

@@ -31,21 +31,21 @@ class TenGigLan(Base):
     __slots__ = ()
     _SDM_NAME = 'tenGigLan'
     _SDM_ATT_MAP = {
-        'EnablePPM': 'enablePPM',
-        'Loopback': 'loopback',
+        'AutoInstrumentation': 'autoInstrumentation',
+        'AutoNegotiate': 'autoNegotiate',
         'AvailableSpeeds': 'availableSpeeds',
-        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
+        'CanModifySpeed': 'canModifySpeed',
+        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
+        'EnableLASIMonitoring': 'enableLASIMonitoring',
+        'EnablePPM': 'enablePPM',
         'EnabledFlowControl': 'enabledFlowControl',
+        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
+        'Loopback': 'loopback',
         'LoopbackMode': 'loopbackMode',
         'Ppm': 'ppm',
-        'CanModifySpeed': 'canModifySpeed',
-        'EnableLASIMonitoring': 'enableLASIMonitoring',
-        'TransmitClocking': 'transmitClocking',
-        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
         'SelectedSpeeds': 'selectedSpeeds',
-        'AutoInstrumentation': 'autoInstrumentation',
-        'FlowControlDirectedAddress': 'flowControlDirectedAddress',
-        'AutoNegotiate': 'autoNegotiate',
+        'TransmitClocking': 'transmitClocking',
+        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
     }
 
     def __init__(self, parent):

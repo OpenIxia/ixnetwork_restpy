@@ -32,10 +32,10 @@ class VirtualChassis(Base):
     _SDM_NAME = 'virtualChassis'
     _SDM_ATT_MAP = {
         'EnableLicenseCheck': 'enableLicenseCheck',
-        'StartTxDelay': 'startTxDelay',
-        'NtpServer': 'ntpServer',
         'Hostname': 'hostname',
         'LicenseServer': 'licenseServer',
+        'NtpServer': 'ntpServer',
+        'StartTxDelay': 'startTxDelay',
     }
 
     def __init__(self, parent):

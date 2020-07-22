@@ -32,8 +32,8 @@ class QuickTest(Base):
     _SDM_NAME = 'quickTest'
     _SDM_ATT_MAP = {
         'RunningTest': 'runningTest',
-        'TestIds': 'testIds',
         'RunningTestObj': 'runningTestObj',
+        'TestIds': 'testIds',
     }
 
     def __init__(self, parent):

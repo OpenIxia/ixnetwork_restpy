@@ -31,14 +31,14 @@ class NicknameRecordList(Base):
     __slots__ = ()
     _SDM_NAME = 'nicknameRecordList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Priority': 'priority',
-        'Name': 'name',
-        'BroadcastRootPriority': 'broadcastRootPriority',
-        'LocalSystemID': 'localSystemID',
-        'DescriptiveName': 'descriptiveName',
         'Active': 'active',
+        'BroadcastRootPriority': 'broadcastRootPriority',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'LocalSystemID': 'localSystemID',
+        'Name': 'name',
         'Nickname': 'nickname',
+        'Priority': 'priority',
     }
 
     def __init__(self, parent):

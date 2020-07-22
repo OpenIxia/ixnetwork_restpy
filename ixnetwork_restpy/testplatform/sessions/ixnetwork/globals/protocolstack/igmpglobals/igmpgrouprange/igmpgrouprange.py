@@ -34,15 +34,15 @@ class IgmpGroupRange(Base):
     _SDM_NAME = 'igmpGroupRange'
     _SDM_ATT_MAP = {
         'Count': 'count',
+        'FilterMode': 'filterMode',
+        'Increment': 'increment',
+        'IpAddress': 'ipAddress',
         'Name': 'name',
         'ObjectId': 'objectId',
         'SourceCount': 'sourceCount',
-        'FilterMode': 'filterMode',
         'SourceIncrement': 'sourceIncrement',
-        'Increment': 'increment',
-        'Type': 'type',
         'SourceIpAddress': 'sourceIpAddress',
-        'IpAddress': 'ipAddress',
+        'Type': 'type',
     }
 
     def __init__(self, parent):

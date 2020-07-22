@@ -33,18 +33,18 @@ class Ipv6Loopback(Base):
     __slots__ = ()
     _SDM_NAME = 'ipv6Loopback'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Status': 'status',
-        'Errors': 'errors',
-        'Name': 'name',
         'Address': 'address',
-        'StackedLayers': 'stackedLayers',
-        'Prefix': 'prefix',
         'ConnectedVia': 'connectedVia',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
+        'Errors': 'errors',
         'Multiplier': 'multiplier',
-        'StateCounts': 'stateCounts',
+        'Name': 'name',
+        'Prefix': 'prefix',
         'SessionStatus': 'sessionStatus',
+        'StackedLayers': 'stackedLayers',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
     }
 
     def __init__(self, parent):

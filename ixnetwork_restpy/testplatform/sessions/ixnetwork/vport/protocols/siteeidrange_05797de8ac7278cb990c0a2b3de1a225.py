@@ -33,13 +33,13 @@ class SiteEidRange(Base):
     __slots__ = ()
     _SDM_NAME = 'siteEidRange'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Family': 'family',
-        'InstanceId': 'instanceId',
-        'Enabled': 'enabled',
         'Address': 'address',
-        'PrefixLength': 'prefixLength',
+        'Count': 'count',
+        'Enabled': 'enabled',
+        'Family': 'family',
         'IncludeOrExclude': 'includeOrExclude',
+        'InstanceId': 'instanceId',
+        'PrefixLength': 'prefixLength',
     }
 
     def __init__(self, parent):

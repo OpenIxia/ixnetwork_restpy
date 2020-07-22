@@ -33,18 +33,18 @@ class CustomTopologyMulticastIpv6GroupRange(Base):
     __slots__ = ()
     _SDM_NAME = 'customTopologyMulticastIpv6GroupRange'
     _SDM_ATT_MAP = {
-        'IntraGroupUnicastIpv6Increment': 'intraGroupUnicastIpv6Increment',
-        'StartMulticastIpv6': 'startMulticastIpv6',
         'IncludeIpv6Groups': 'includeIpv6Groups',
-        'MulticastIpv6Step': 'multicastIpv6Step',
-        'StartUnicastSourceIpv6': 'startUnicastSourceIpv6',
-        'VlanId': 'vlanId',
-        'MulticastIpv6Count': 'multicastIpv6Count',
-        'NumberOfUnicastSourceIpv6MacsPerMulticastIpv6': 'numberOfUnicastSourceIpv6MacsPerMulticastIpv6',
         'IntergroupUnicastIpv6Increment': 'intergroupUnicastIpv6Increment',
+        'IntraGroupUnicastIpv6Increment': 'intraGroupUnicastIpv6Increment',
         'MulticastAddressNodeStep': 'multicastAddressNodeStep',
+        'MulticastIpv6Count': 'multicastIpv6Count',
+        'MulticastIpv6Step': 'multicastIpv6Step',
+        'NumberOfUnicastSourceIpv6MacsPerMulticastIpv6': 'numberOfUnicastSourceIpv6MacsPerMulticastIpv6',
         'SourceGroupMapping': 'sourceGroupMapping',
+        'StartMulticastIpv6': 'startMulticastIpv6',
+        'StartUnicastSourceIpv6': 'startUnicastSourceIpv6',
         'UnicastAddressNodeStep': 'unicastAddressNodeStep',
+        'VlanId': 'vlanId',
     }
 
     def __init__(self, parent):

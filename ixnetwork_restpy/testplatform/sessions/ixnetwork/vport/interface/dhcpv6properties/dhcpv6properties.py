@@ -31,12 +31,12 @@ class DhcpV6Properties(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcpV6Properties'
     _SDM_ATT_MAP = {
-        'Tlvs': 'tlvs',
-        'RenewTimer': 'renewTimer',
         'Enabled': 'enabled',
         'IaId': 'iaId',
-        'RequestRate': 'requestRate',
         'IaType': 'iaType',
+        'RenewTimer': 'renewTimer',
+        'RequestRate': 'requestRate',
+        'Tlvs': 'tlvs',
     }
 
     def __init__(self, parent):

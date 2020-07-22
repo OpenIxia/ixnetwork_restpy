@@ -32,22 +32,22 @@ class PeriodicOamDmLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'periodicOamDmLearnedInfo'
     _SDM_ATT_MAP = {
-        'RecentDelayVariationSec': 'recentDelayVariationSec',
-        'RecentDelaySec': 'recentDelaySec',
-        'RecentDelayNanoSec': 'recentDelayNanoSec',
-        'NoReplyCount': 'noReplyCount',
-        'SVlan': 'sVlan',
-        'CVlan': 'cVlan',
-        'SrcMacAddress': 'srcMacAddress',
-        'AverageDelaySec': 'averageDelaySec',
         'AverageDelayNanoSec': 'averageDelayNanoSec',
-        'RecentDelayVariationNanoSec': 'recentDelayVariationNanoSec',
-        'AverageDelayVariationSec': 'averageDelayVariationSec',
+        'AverageDelaySec': 'averageDelaySec',
         'AverageDelayVariationNanoSec': 'averageDelayVariationNanoSec',
+        'AverageDelayVariationSec': 'averageDelayVariationSec',
+        'CVlan': 'cVlan',
+        'DmmCountSent': 'dmmCountSent',
         'DstMacAddress': 'dstMacAddress',
         'MdLevel': 'mdLevel',
-        'DmmCountSent': 'dmmCountSent',
+        'NoReplyCount': 'noReplyCount',
         'OneDmReceivedCount': 'oneDmReceivedCount',
+        'RecentDelayNanoSec': 'recentDelayNanoSec',
+        'RecentDelaySec': 'recentDelaySec',
+        'RecentDelayVariationNanoSec': 'recentDelayVariationNanoSec',
+        'RecentDelayVariationSec': 'recentDelayVariationSec',
+        'SVlan': 'sVlan',
+        'SrcMacAddress': 'srcMacAddress',
     }
 
     def __init__(self, parent):

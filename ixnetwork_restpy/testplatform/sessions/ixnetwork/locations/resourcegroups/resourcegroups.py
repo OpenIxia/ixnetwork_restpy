@@ -32,9 +32,9 @@ class ResourceGroups(Base):
     __slots__ = ()
     _SDM_NAME = 'resourceGroups'
     _SDM_ATT_MAP = {
-        'FrontPanelPorts': 'frontPanelPorts',
         'AvailableResourceModes': 'availableResourceModes',
         'Card': 'card',
+        'FrontPanelPorts': 'frontPanelPorts',
     }
 
     def __init__(self, parent):

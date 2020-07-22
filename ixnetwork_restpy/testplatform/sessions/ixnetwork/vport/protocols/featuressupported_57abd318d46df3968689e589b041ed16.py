@@ -31,22 +31,22 @@ class FeaturesSupported(Base):
     __slots__ = ()
     _SDM_NAME = 'featuresSupported'
     _SDM_ATT_MAP = {
-        'ExperimenterMiss': 'experimenterMiss',
-        'NextTable': 'nextTable',
-        'WriteSetField': 'writeSetField',
-        'NextTableMiss': 'nextTableMiss',
         'ApplyActions': 'applyActions',
+        'ApplyActionsMiss': 'applyActionsMiss',
+        'ApplySetField': 'applySetField',
+        'ApplySetFieldMiss': 'applySetFieldMiss',
+        'Experimenter': 'experimenter',
+        'ExperimenterMiss': 'experimenterMiss',
         'Instruction': 'instruction',
         'InstructionMiss': 'instructionMiss',
-        'ApplySetField': 'applySetField',
-        'Wildcards': 'wildcards',
-        'Experimenter': 'experimenter',
-        'WriteActionsMiss': 'writeActionsMiss',
-        'ApplySetFieldMiss': 'applySetFieldMiss',
-        'ApplyActionsMiss': 'applyActionsMiss',
-        'WriteActions': 'writeActions',
-        'WriteSetFieldMiss': 'writeSetFieldMiss',
         'Match': 'match',
+        'NextTable': 'nextTable',
+        'NextTableMiss': 'nextTableMiss',
+        'Wildcards': 'wildcards',
+        'WriteActions': 'writeActions',
+        'WriteActionsMiss': 'writeActionsMiss',
+        'WriteSetField': 'writeSetField',
+        'WriteSetFieldMiss': 'writeSetFieldMiss',
     }
 
     def __init__(self, parent):

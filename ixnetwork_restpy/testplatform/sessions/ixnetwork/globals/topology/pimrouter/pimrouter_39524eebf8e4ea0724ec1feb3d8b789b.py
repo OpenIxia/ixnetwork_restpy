@@ -31,19 +31,19 @@ class PimRouter(Base):
     __slots__ = ()
     _SDM_NAME = 'pimRouter'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Interval': 'interval',
-        'Name': 'name',
-        'RegisterMessagePerInterval': 'registerMessagePerInterval',
-        'EnableRateControl': 'enableRateControl',
         'BootstrapMessagePerInterval': 'bootstrapMessagePerInterval',
-        'HelloMessagePerInterval': 'helloMessagePerInterval',
         'CRpAdvertiseMessagePerInterval': 'cRpAdvertiseMessagePerInterval',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
         'DiscardJoinPruneProcessing': 'discardJoinPruneProcessing',
+        'EnableRateControl': 'enableRateControl',
+        'HelloMessagePerInterval': 'helloMessagePerInterval',
+        'Interval': 'interval',
         'JoinPruneMessagePerInterval': 'joinPruneMessagePerInterval',
-        'RowNames': 'rowNames',
+        'Name': 'name',
+        'RegisterMessagePerInterval': 'registerMessagePerInterval',
         'RegisterStopMessagePerInterval': 'registerStopMessagePerInterval',
+        'RowNames': 'rowNames',
     }
 
     def __init__(self, parent):

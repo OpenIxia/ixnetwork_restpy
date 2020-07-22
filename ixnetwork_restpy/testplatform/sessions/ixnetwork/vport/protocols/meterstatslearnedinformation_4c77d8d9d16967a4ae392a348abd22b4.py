@@ -32,24 +32,24 @@ class MeterStatsLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'meterStatsLearnedInformation'
     _SDM_ATT_MAP = {
+        'ByteInCount': 'byteInCount',
+        'DataPathId': 'dataPathId',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
+        'DurationNSec': 'durationNSec',
+        'DurationSec': 'durationSec',
+        'ErrorCode': 'errorCode',
+        'ErrorType': 'errorType',
+        'FlowCount': 'flowCount',
+        'LastErrorCode': 'lastErrorCode',
+        'LastErrorType': 'lastErrorType',
         'Latency': 'latency',
+        'LocalIp': 'localIp',
+        'MeterId': 'meterId',
+        'NegotiatedVersion': 'negotiatedVersion',
         'NumberOfBandStats': 'numberOfBandStats',
         'PacketInCount': 'packetInCount',
-        'ByteInCount': 'byteInCount',
-        'ErrorType': 'errorType',
-        'DurationSec': 'durationSec',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'LastErrorType': 'lastErrorType',
-        'ErrorCode': 'errorCode',
-        'LocalIp': 'localIp',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'FlowCount': 'flowCount',
-        'DurationNSec': 'durationNSec',
-        'ReplyState': 'replyState',
-        'LastErrorCode': 'lastErrorCode',
-        'MeterId': 'meterId',
-        'DataPathId': 'dataPathId',
         'RemoteIp': 'remoteIp',
+        'ReplyState': 'replyState',
     }
 
     def __init__(self, parent):

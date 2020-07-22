@@ -33,16 +33,16 @@ class Topology(Base):
     __slots__ = ()
     _SDM_NAME = 'topology'
     _SDM_ATT_MAP = {
-        'Status': 'status',
-        'Errors': 'errors',
-        'Name': 'name',
-        'PortCount': 'portCount',
-        'Vports': 'vports',
-        'PortsStateCount': 'portsStateCount',
-        'Note': 'note',
         'DescriptiveName': 'descriptiveName',
+        'Errors': 'errors',
         'LagCount': 'lagCount',
+        'Name': 'name',
+        'Note': 'note',
+        'PortCount': 'portCount',
         'Ports': 'ports',
+        'PortsStateCount': 'portsStateCount',
+        'Status': 'status',
+        'Vports': 'vports',
     }
 
     def __init__(self, parent):

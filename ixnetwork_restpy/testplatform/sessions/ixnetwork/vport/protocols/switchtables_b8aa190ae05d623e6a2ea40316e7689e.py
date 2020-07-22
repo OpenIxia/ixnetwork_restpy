@@ -34,9 +34,9 @@ class SwitchTables(Base):
     _SDM_NAME = 'switchTables'
     _SDM_ATT_MAP = {
         'MaxEntries': 'maxEntries',
-        'TableName': 'tableName',
-        'TableId': 'tableId',
         'NumberOfTables': 'numberOfTables',
+        'TableId': 'tableId',
+        'TableName': 'tableName',
     }
 
     def __init__(self, parent):

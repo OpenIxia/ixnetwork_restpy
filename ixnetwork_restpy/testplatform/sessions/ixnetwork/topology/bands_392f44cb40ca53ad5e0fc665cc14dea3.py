@@ -32,17 +32,17 @@ class Bands(Base):
     __slots__ = ()
     _SDM_NAME = 'bands'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'BurstSize': 'burstSize',
-        'BandType': 'bandType',
-        'Multiplier': 'multiplier',
         'BandDescription': 'bandDescription',
+        'BandType': 'bandType',
+        'BurstSize': 'burstSize',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Experimenter': 'experimenter',
+        'MeterIndex': 'meterIndex',
+        'Multiplier': 'multiplier',
+        'Name': 'name',
         'PrecedenceLevel': 'precedenceLevel',
         'Rate': 'rate',
-        'DescriptiveName': 'descriptiveName',
-        'MeterIndex': 'meterIndex',
-        'Experimenter': 'experimenter',
-        'Name': 'name',
     }
 
     def __init__(self, parent):

@@ -33,11 +33,11 @@ class Hypervisor(Base):
     __slots__ = ()
     _SDM_NAME = 'hypervisor'
     _SDM_ATT_MAP = {
-        'Type': 'type',
-        'Password': 'password',
         'Enabled': 'enabled',
-        'User': 'user',
+        'Password': 'password',
         'ServerIp': 'serverIp',
+        'Type': 'type',
+        'User': 'user',
     }
 
     def __init__(self, parent):

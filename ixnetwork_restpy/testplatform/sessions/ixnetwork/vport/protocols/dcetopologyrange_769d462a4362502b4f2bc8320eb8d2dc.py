@@ -33,13 +33,13 @@ class DceTopologyRange(Base):
     __slots__ = ()
     _SDM_NAME = 'dceTopologyRange'
     _SDM_ATT_MAP = {
-        'TopologyCount': 'topologyCount',
         'EnableFtag': 'enableFtag',
-        'TopologyId': 'topologyId',
-        'StartFtagValue': 'startFtagValue',
         'Enabled': 'enabled',
-        'NoOfTreesToCompute': 'noOfTreesToCompute',
         'NicknameList': 'nicknameList',
+        'NoOfTreesToCompute': 'noOfTreesToCompute',
+        'StartFtagValue': 'startFtagValue',
+        'TopologyCount': 'topologyCount',
+        'TopologyId': 'topologyId',
         'TopologyIdStep': 'topologyIdStep',
     }
 

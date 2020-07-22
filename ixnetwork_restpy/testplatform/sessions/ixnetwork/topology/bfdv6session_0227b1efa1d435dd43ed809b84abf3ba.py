@@ -31,23 +31,23 @@ class Bfdv6Session(Base):
     __slots__ = ()
     _SDM_NAME = 'bfdv6Session'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'EnableAutoChooseSourceIp': 'enableAutoChooseSourceIp',
-        'Name': 'name',
-        'LearnedRemoteMac': 'learnedRemoteMac',
-        'MyDiscriminator': 'myDiscriminator',
-        'EnableRemoteDiscriminatorLearned': 'enableRemoteDiscriminatorLearned',
-        'SessionType': 'sessionType',
-        'Vni': 'vni',
-        'RemoteIp6': 'remoteIp6',
-        'SourceIp6': 'sourceIp6',
-        'DescriptiveName': 'descriptiveName',
-        'RemoteDiscriminator': 'remoteDiscriminator',
         'Active': 'active',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'EnableAutoChooseSourceIp': 'enableAutoChooseSourceIp',
         'EnableOVSDBCommunication': 'enableOVSDBCommunication',
-        'SessionInfo': 'sessionInfo',
+        'EnableRemoteDiscriminatorLearned': 'enableRemoteDiscriminatorLearned',
+        'LearnedRemoteMac': 'learnedRemoteMac',
         'LocalRouterId': 'localRouterId',
+        'MyDiscriminator': 'myDiscriminator',
+        'Name': 'name',
+        'RemoteDiscriminator': 'remoteDiscriminator',
+        'RemoteIp6': 'remoteIp6',
         'RemoteMac': 'remoteMac',
+        'SessionInfo': 'sessionInfo',
+        'SessionType': 'sessionType',
+        'SourceIp6': 'sourceIp6',
+        'Vni': 'vni',
     }
 
     def __init__(self, parent):

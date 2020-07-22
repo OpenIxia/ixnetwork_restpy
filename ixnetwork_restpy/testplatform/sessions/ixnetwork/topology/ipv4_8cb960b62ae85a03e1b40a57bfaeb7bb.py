@@ -33,25 +33,25 @@ class Ipv4(Base):
     __slots__ = ()
     _SDM_NAME = 'ipv4'
     _SDM_ATT_MAP = {
+        'Address': 'address',
+        'ConnectedVia': 'connectedVia',
         'Count': 'count',
-        'ManualGatewayMac': 'manualGatewayMac',
-        'Status': 'status',
-        'Errors': 'errors',
-        'Name': 'name',
-        'ResolvedGatewayMac': 'resolvedGatewayMac',
+        'DescriptiveName': 'descriptiveName',
         'EnableGratarpRarp': 'enableGratarpRarp',
-        'StackedLayers': 'stackedLayers',
-        'Multiplier': 'multiplier',
+        'Errors': 'errors',
         'GatewayIp': 'gatewayIp',
+        'Ipv4GratarpRarp': 'ipv4GratarpRarp',
+        'ManualGatewayMac': 'manualGatewayMac',
+        'Multiplier': 'multiplier',
+        'Name': 'name',
         'Prefix': 'prefix',
         'ResolveGateway': 'resolveGateway',
-        'Ipv4GratarpRarp': 'ipv4GratarpRarp',
-        'ConnectedVia': 'connectedVia',
-        'DescriptiveName': 'descriptiveName',
-        'Address': 'address',
+        'ResolvedGatewayMac': 'resolvedGatewayMac',
         'SessionInfo': 'sessionInfo',
-        'StateCounts': 'stateCounts',
         'SessionStatus': 'sessionStatus',
+        'StackedLayers': 'stackedLayers',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
     }
 
     def __init__(self, parent):

@@ -33,8 +33,8 @@ class VarDescriptor(Base):
     __slots__ = ()
     _SDM_NAME = 'varDescriptor'
     _SDM_ATT_MAP = {
-        'VariableLeaf': 'variableLeaf',
         'VariableBranch': 'variableBranch',
+        'VariableLeaf': 'variableLeaf',
     }
 
     def __init__(self, parent):

@@ -31,14 +31,14 @@ class RangeTe(Base):
     __slots__ = ()
     _SDM_NAME = 'rangeTe'
     _SDM_ATT_MAP = {
-        'TeRouterIdIncrement': 'teRouterIdIncrement',
-        'TeUnreservedBandWidth': 'teUnreservedBandWidth',
-        'TeMaxBandWidth': 'teMaxBandWidth',
-        'TeMaxReserveBandWidth': 'teMaxReserveBandWidth',
         'EnableRangeTe': 'enableRangeTe',
         'TeAdmGroup': 'teAdmGroup',
-        'TeRouterId': 'teRouterId',
         'TeLinkMetric': 'teLinkMetric',
+        'TeMaxBandWidth': 'teMaxBandWidth',
+        'TeMaxReserveBandWidth': 'teMaxReserveBandWidth',
+        'TeRouterId': 'teRouterId',
+        'TeRouterIdIncrement': 'teRouterIdIncrement',
+        'TeUnreservedBandWidth': 'teUnreservedBandWidth',
     }
 
     def __init__(self, parent):

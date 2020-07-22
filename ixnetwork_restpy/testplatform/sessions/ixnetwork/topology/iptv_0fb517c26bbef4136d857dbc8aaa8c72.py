@@ -31,24 +31,24 @@ class Iptv(Base):
     __slots__ = ()
     _SDM_NAME = 'iptv'
     _SDM_ATT_MAP = {
+        'CombinedLeaveJoin': 'combinedLeaveJoin',
         'Count': 'count',
-        'StbLeaveJoinDelay': 'stbLeaveJoinDelay',
+        'DescriptiveName': 'descriptiveName',
+        'EnableGeneralQueryResponse': 'enableGeneralQueryResponse',
+        'EnableGroupSpecificQueryResponse': 'enableGroupSpecificQueryResponse',
         'JoinLatencyThreshold': 'joinLatencyThreshold',
         'LeaveLatencyThreshold': 'leaveLatencyThreshold',
-        'LogFailureTimestamps': 'logFailureTimestamps',
-        'EnableGeneralQueryResponse': 'enableGeneralQueryResponse',
-        'CombinedLeaveJoin': 'combinedLeaveJoin',
-        'ZapIntervalType': 'zapIntervalType',
-        'ZapInterval': 'zapInterval',
-        'ZapBehavior': 'zapBehavior',
-        'State': 'state',
-        'DescriptiveName': 'descriptiveName',
-        'NumChannelChangesBeforeView': 'numChannelChangesBeforeView',
-        'EnableGroupSpecificQueryResponse': 'enableGroupSpecificQueryResponse',
         'LogAllTimestamps': 'logAllTimestamps',
-        'ZapDirection': 'zapDirection',
-        'ViewDuration': 'viewDuration',
+        'LogFailureTimestamps': 'logFailureTimestamps',
         'Name': 'name',
+        'NumChannelChangesBeforeView': 'numChannelChangesBeforeView',
+        'State': 'state',
+        'StbLeaveJoinDelay': 'stbLeaveJoinDelay',
+        'ViewDuration': 'viewDuration',
+        'ZapBehavior': 'zapBehavior',
+        'ZapDirection': 'zapDirection',
+        'ZapInterval': 'zapInterval',
+        'ZapIntervalType': 'zapIntervalType',
     }
 
     def __init__(self, parent):

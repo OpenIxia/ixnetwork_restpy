@@ -32,12 +32,12 @@ class RateControlParameters(Base):
     _SDM_NAME = 'rateControlParameters'
     _SDM_ATT_MAP = {
         'ArpRefreshInterval': 'arpRefreshInterval',
-        'SendRequestsAsFastAsPossible': 'sendRequestsAsFastAsPossible',
-        'MinRetryInterval': 'minRetryInterval',
         'MaxRequestsPerBurst': 'maxRequestsPerBurst',
         'MaxRequestsPerSec': 'maxRequestsPerSec',
+        'MinRetryInterval': 'minRetryInterval',
         'RetryCount': 'retryCount',
         'SendInBursts': 'sendInBursts',
+        'SendRequestsAsFastAsPossible': 'sendRequestsAsFastAsPossible',
     }
 
     def __init__(self, parent):

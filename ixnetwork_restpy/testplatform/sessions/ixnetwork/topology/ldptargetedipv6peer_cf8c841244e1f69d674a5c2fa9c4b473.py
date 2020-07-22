@@ -31,17 +31,17 @@ class LdpTargetedIpv6Peer(Base):
     __slots__ = ()
     _SDM_NAME = 'ldpTargetedIpv6Peer'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'TargetedHoldTime': 'targetedHoldTime',
-        'Name': 'name',
-        'LocalRouterID': 'localRouterID',
-        'InitiateTargetedHello': 'initiateTargetedHello',
-        'Authentication': 'authentication',
-        'DescriptiveName': 'descriptiveName',
-        'MD5Key': 'mD5Key',
         'Active': 'active',
+        'Authentication': 'authentication',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
         'IPAddress': 'iPAddress',
+        'InitiateTargetedHello': 'initiateTargetedHello',
+        'LocalRouterID': 'localRouterID',
+        'MD5Key': 'mD5Key',
+        'Name': 'name',
         'TargetedHelloInterval': 'targetedHelloInterval',
+        'TargetedHoldTime': 'targetedHoldTime',
     }
 
     def __init__(self, parent):

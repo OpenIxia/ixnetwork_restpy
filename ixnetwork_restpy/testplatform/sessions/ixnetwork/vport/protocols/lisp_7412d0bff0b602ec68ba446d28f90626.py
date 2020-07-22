@@ -31,15 +31,15 @@ class Lisp(Base):
     __slots__ = ()
     _SDM_NAME = 'lisp'
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
-        'Ipv6MapRequestPacketsPerBurst': 'ipv6MapRequestPacketsPerBurst',
-        'ProtocolState': 'protocolState',
-        'Ipv4MapRegisterPacketsPerBurst': 'ipv4MapRegisterPacketsPerBurst',
         'BurstIntervalInMs': 'burstIntervalInMs',
-        'Ipv6SmrPacketsPerBurst': 'ipv6SmrPacketsPerBurst',
+        'Enabled': 'enabled',
+        'Ipv4MapRegisterPacketsPerBurst': 'ipv4MapRegisterPacketsPerBurst',
         'Ipv4MapRequestPacketsPerBurst': 'ipv4MapRequestPacketsPerBurst',
-        'Ipv6MapRegisterPacketsPerBurst': 'ipv6MapRegisterPacketsPerBurst',
         'Ipv4SmrPacketsPerBurst': 'ipv4SmrPacketsPerBurst',
+        'Ipv6MapRegisterPacketsPerBurst': 'ipv6MapRegisterPacketsPerBurst',
+        'Ipv6MapRequestPacketsPerBurst': 'ipv6MapRequestPacketsPerBurst',
+        'Ipv6SmrPacketsPerBurst': 'ipv6SmrPacketsPerBurst',
+        'ProtocolState': 'protocolState',
     }
 
     def __init__(self, parent):

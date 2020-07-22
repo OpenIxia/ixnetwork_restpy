@@ -31,16 +31,16 @@ class IsisSpbRouter(Base):
     __slots__ = ()
     _SDM_NAME = 'isisSpbRouter'
     _SDM_ATT_MAP = {
+        'AllL1BridgesMAC': 'allL1BridgesMAC',
         'Count': 'count',
-        'NoOfLSPsOrMgroupPDUsPerInterval': 'noOfLSPsOrMgroupPDUsPerInterval',
+        'DescriptiveName': 'descriptiveName',
         'HelloMulticastMAC': 'helloMulticastMAC',
         'Name': 'name',
         'NlpId': 'nlpId',
-        'AllL1BridgesMAC': 'allL1BridgesMAC',
+        'NoOfLSPsOrMgroupPDUsPerInterval': 'noOfLSPsOrMgroupPDUsPerInterval',
         'RateControlInterval': 'rateControlInterval',
-        'DescriptiveName': 'descriptiveName',
-        'SendP2PHellosToUnicastMAC': 'sendP2PHellosToUnicastMAC',
         'RowNames': 'rowNames',
+        'SendP2PHellosToUnicastMAC': 'sendP2PHellosToUnicastMAC',
     }
 
     def __init__(self, parent):

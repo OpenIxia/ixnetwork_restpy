@@ -33,11 +33,11 @@ class SwitchPorts(Base):
     __slots__ = ()
     _SDM_NAME = 'switchPorts'
     _SDM_ATT_MAP = {
-        'PortName': 'portName',
-        'EthernetAddress': 'ethernetAddress',
         'Enabled': 'enabled',
-        'PortNumber': 'portNumber',
+        'EthernetAddress': 'ethernetAddress',
         'NumberOfPorts': 'numberOfPorts',
+        'PortName': 'portName',
+        'PortNumber': 'portNumber',
     }
 
     def __init__(self, parent):

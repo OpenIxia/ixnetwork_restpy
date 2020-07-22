@@ -33,16 +33,16 @@ class Router(Base):
     __slots__ = ()
     _SDM_NAME = 'router'
     _SDM_ATT_MAP = {
-        'InterfaceId': 'interfaceId',
-        'SendType': 'sendType',
-        'ResponseMode': 'responseMode',
         'AuthorizationPassword': 'authorizationPassword',
-        'Enabled': 'enabled',
-        'TrafficGroupId': 'trafficGroupId',
-        'UpdateIntervalOffset': 'updateIntervalOffset',
-        'UpdateInterval': 'updateInterval',
         'EnableAuthorization': 'enableAuthorization',
+        'Enabled': 'enabled',
+        'InterfaceId': 'interfaceId',
         'ReceiveType': 'receiveType',
+        'ResponseMode': 'responseMode',
+        'SendType': 'sendType',
+        'TrafficGroupId': 'trafficGroupId',
+        'UpdateInterval': 'updateInterval',
+        'UpdateIntervalOffset': 'updateIntervalOffset',
     }
 
     def __init__(self, parent):

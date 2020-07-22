@@ -32,21 +32,21 @@ class TableStatLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'tableStatLearnedInformation'
     _SDM_ATT_MAP = {
-        'MaxEntries': 'maxEntries',
-        'ErrorCode': 'errorCode',
-        'MatchedCount': 'matchedCount',
-        'Latency': 'latency',
-        'LookupCount': 'lookupCount',
-        'ErrorType': 'errorType',
-        'TableName': 'tableName',
-        'NegotiatedVersion': 'negotiatedVersion',
         'ActiveCount': 'activeCount',
-        'LocalIp': 'localIp',
+        'DataPathId': 'dataPathId',
         'DataPathIdAsHex': 'dataPathIdAsHex',
-        'TableId': 'tableId',
+        'ErrorCode': 'errorCode',
+        'ErrorType': 'errorType',
+        'Latency': 'latency',
+        'LocalIp': 'localIp',
+        'LookupCount': 'lookupCount',
+        'MatchedCount': 'matchedCount',
+        'MaxEntries': 'maxEntries',
+        'NegotiatedVersion': 'negotiatedVersion',
         'RemoteIp': 'remoteIp',
         'ReplyState': 'replyState',
-        'DataPathId': 'dataPathId',
+        'TableId': 'tableId',
+        'TableName': 'tableName',
         'Wildcards': 'wildcards',
     }
 

@@ -32,16 +32,16 @@ class IsisTrillRouter(Base):
     __slots__ = ()
     _SDM_NAME = 'isisTrillRouter'
     _SDM_ATT_MAP = {
-        'Count': 'count',
         'AllL1RBridgesMAC': 'allL1RBridgesMAC',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
         'HelloMulticastMAC': 'helloMulticastMAC',
         'Name': 'name',
         'NlpId': 'nlpId',
-        'RateControlInterval': 'rateControlInterval',
-        'DescriptiveName': 'descriptiveName',
-        'SendP2PHellosToUnicastMAC': 'sendP2PHellosToUnicastMAC',
         'NoOfLSPsOrMgroupPDUsPerInterval': 'noOfLSPsOrMgroupPDUsPerInterval',
+        'RateControlInterval': 'rateControlInterval',
         'RowNames': 'rowNames',
+        'SendP2PHellosToUnicastMAC': 'sendP2PHellosToUnicastMAC',
     }
 
     def __init__(self, parent):

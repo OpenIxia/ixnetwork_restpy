@@ -34,8 +34,8 @@ class MatchAction(Base):
     _SDM_NAME = 'matchAction'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'DisplayName': 'displayName',
         'Description': 'description',
+        'DisplayName': 'displayName',
         'IsEditable': 'isEditable',
         'IsEnabled': 'isEnabled',
         'IsRequired': 'isRequired',

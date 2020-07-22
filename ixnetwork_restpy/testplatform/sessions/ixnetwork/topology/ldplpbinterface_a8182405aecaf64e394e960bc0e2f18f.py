@@ -32,14 +32,14 @@ class LdpLpbInterface(Base):
     __slots__ = ()
     _SDM_NAME = 'ldpLpbInterface'
     _SDM_ATT_MAP = {
+        'Active': 'active',
         'Count': 'count',
-        'Status': 'status',
+        'DescriptiveName': 'descriptiveName',
         'Errors': 'errors',
         'Name': 'name',
-        'DescriptiveName': 'descriptiveName',
-        'Active': 'active',
-        'StateCounts': 'stateCounts',
         'SessionStatus': 'sessionStatus',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
     }
 
     def __init__(self, parent):

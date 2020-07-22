@@ -36,9 +36,9 @@ class DhcpOptionTlv(Base):
         'Code': 'code',
         'Name': 'name',
         'ObjectId': 'objectId',
-        'Value': 'value',
         'Rfc': 'rfc',
         'Type': 'type',
+        'Value': 'value',
     }
 
     def __init__(self, parent):

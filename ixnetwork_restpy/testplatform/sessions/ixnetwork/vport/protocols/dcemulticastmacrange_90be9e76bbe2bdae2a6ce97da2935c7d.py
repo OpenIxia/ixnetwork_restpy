@@ -33,17 +33,17 @@ class DceMulticastMacRange(Base):
     __slots__ = ()
     _SDM_NAME = 'dceMulticastMacRange'
     _SDM_ATT_MAP = {
-        'StartUnicastSourceMac': 'startUnicastSourceMac',
-        'InterGroupUnicastMacIncrement': 'interGroupUnicastMacIncrement',
         'Enabled': 'enabled',
-        'VlanId': 'vlanId',
-        'UnicastSourcesPerMulticastMac': 'unicastSourcesPerMulticastMac',
-        'MulticastMacStep': 'multicastMacStep',
-        'MulticastMacCount': 'multicastMacCount',
-        'SourceGroupMapping': 'sourceGroupMapping',
+        'InterGroupUnicastMacIncrement': 'interGroupUnicastMacIncrement',
         'IntraGroupUnicastMacIncrement': 'intraGroupUnicastMacIncrement',
+        'MulticastMacCount': 'multicastMacCount',
+        'MulticastMacStep': 'multicastMacStep',
+        'SourceGroupMapping': 'sourceGroupMapping',
         'StartMulticastMac': 'startMulticastMac',
+        'StartUnicastSourceMac': 'startUnicastSourceMac',
         'Topology': 'topology',
+        'UnicastSourcesPerMulticastMac': 'unicastSourcesPerMulticastMac',
+        'VlanId': 'vlanId',
     }
 
     def __init__(self, parent):

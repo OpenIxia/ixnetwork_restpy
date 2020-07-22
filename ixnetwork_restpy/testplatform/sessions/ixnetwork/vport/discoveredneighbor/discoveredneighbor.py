@@ -33,10 +33,10 @@ class DiscoveredNeighbor(Base):
     __slots__ = ()
     _SDM_NAME = 'discoveredNeighbor'
     _SDM_ATT_MAP = {
+        'IsRouter': 'isRouter',
         'LastUpdate': 'lastUpdate',
         'NeighborIp': 'neighborIp',
         'NeighborMac': 'neighborMac',
-        'IsRouter': 'isRouter',
     }
 
     def __init__(self, parent):

@@ -31,21 +31,21 @@ class FilterPalette(Base):
     __slots__ = ()
     _SDM_NAME = 'filterPalette'
     _SDM_ATT_MAP = {
-        'SourceAddress1Mask': 'sourceAddress1Mask',
+        'DestinationAddress1': 'destinationAddress1',
+        'DestinationAddress1Mask': 'destinationAddress1Mask',
+        'DestinationAddress2': 'destinationAddress2',
+        'DestinationAddress2Mask': 'destinationAddress2Mask',
+        'Pattern1': 'pattern1',
         'Pattern1Mask': 'pattern1Mask',
         'Pattern1Offset': 'pattern1Offset',
-        'DestinationAddress2Mask': 'destinationAddress2Mask',
+        'Pattern1OffsetType': 'pattern1OffsetType',
+        'Pattern2': 'pattern2',
+        'Pattern2Mask': 'pattern2Mask',
+        'Pattern2Offset': 'pattern2Offset',
         'Pattern2OffsetType': 'pattern2OffsetType',
         'SourceAddress1': 'sourceAddress1',
-        'DestinationAddress1Mask': 'destinationAddress1Mask',
-        'Pattern2Mask': 'pattern2Mask',
+        'SourceAddress1Mask': 'sourceAddress1Mask',
         'SourceAddress2': 'sourceAddress2',
-        'Pattern2': 'pattern2',
-        'DestinationAddress2': 'destinationAddress2',
-        'DestinationAddress1': 'destinationAddress1',
-        'Pattern1': 'pattern1',
-        'Pattern2Offset': 'pattern2Offset',
-        'Pattern1OffsetType': 'pattern1OffsetType',
         'SourceAddress2Mask': 'sourceAddress2Mask',
     }
 

@@ -33,19 +33,19 @@ class Dot1xRange(Base):
     __slots__ = ()
     _SDM_NAME = 'dot1xRange'
     _SDM_ATT_MAP = {
-        'UserName': 'userName',
-        'FastProvisionMode': 'fastProvisionMode',
-        'Protocol': 'protocol',
-        'Name': 'name',
-        'ObjectId': 'objectId',
-        'UserPassword': 'userPassword',
-        'HostName': 'hostName',
         'Enabled': 'enabled',
         'FastInnerMethod': 'fastInnerMethod',
-        'HostAuthMode': 'hostAuthMode',
-        'NacSequence': 'nacSequence',
+        'FastProvisionMode': 'fastProvisionMode',
         'FastStatelessResume': 'fastStatelessResume',
+        'HostAuthMode': 'hostAuthMode',
+        'HostName': 'hostName',
         'HostPassword': 'hostPassword',
+        'NacSequence': 'nacSequence',
+        'Name': 'name',
+        'ObjectId': 'objectId',
+        'Protocol': 'protocol',
+        'UserName': 'userName',
+        'UserPassword': 'userPassword',
         'WaitId': 'waitId',
     }
 

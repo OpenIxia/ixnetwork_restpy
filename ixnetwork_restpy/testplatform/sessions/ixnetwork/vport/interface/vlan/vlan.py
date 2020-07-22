@@ -31,11 +31,11 @@ class Vlan(Base):
     __slots__ = ()
     _SDM_NAME = 'vlan'
     _SDM_ATT_MAP = {
-        'VlanEnable': 'vlanEnable',
-        'VlanPriority': 'vlanPriority',
-        'VlanCount': 'vlanCount',
-        'VlanId': 'vlanId',
         'Tpid': 'tpid',
+        'VlanCount': 'vlanCount',
+        'VlanEnable': 'vlanEnable',
+        'VlanId': 'vlanId',
+        'VlanPriority': 'vlanPriority',
     }
 
     def __init__(self, parent):

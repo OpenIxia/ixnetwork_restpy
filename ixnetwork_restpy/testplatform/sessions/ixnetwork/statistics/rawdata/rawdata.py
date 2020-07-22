@@ -31,9 +31,9 @@ class RawData(Base):
     __slots__ = ()
     _SDM_NAME = 'rawData'
     _SDM_ATT_MAP = {
-        'Path': 'path',
-        'LastRawDataFolder': 'lastRawDataFolder',
         'Enabled': 'enabled',
+        'LastRawDataFolder': 'lastRawDataFolder',
+        'Path': 'path',
     }
 
     def __init__(self, parent):

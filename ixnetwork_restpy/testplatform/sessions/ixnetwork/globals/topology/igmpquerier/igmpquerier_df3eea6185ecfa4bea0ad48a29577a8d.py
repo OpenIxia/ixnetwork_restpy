@@ -32,13 +32,13 @@ class IgmpQuerier(Base):
     _SDM_NAME = 'igmpQuerier'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'Name': 'name',
+        'DescriptiveName': 'descriptiveName',
         'Enabled': 'enabled',
-        'UnicastMode': 'unicastMode',
+        'Name': 'name',
         'NoOfQueriesPerUnitTime': 'noOfQueriesPerUnitTime',
         'RowNames': 'rowNames',
-        'DescriptiveName': 'descriptiveName',
         'TimePeriod': 'timePeriod',
+        'UnicastMode': 'unicastMode',
     }
 
     def __init__(self, parent):

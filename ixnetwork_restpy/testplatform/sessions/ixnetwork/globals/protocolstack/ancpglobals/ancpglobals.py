@@ -33,10 +33,10 @@ class AncpGlobals(Base):
     __slots__ = ()
     _SDM_NAME = 'ancpGlobals'
     _SDM_ATT_MAP = {
-        'ResyncRate': 'resyncRate',
+        'ObjectId': 'objectId',
         'PortDownRate': 'portDownRate',
         'PortUpRate': 'portUpRate',
-        'ObjectId': 'objectId',
+        'ResyncRate': 'resyncRate',
     }
 
     def __init__(self, parent):

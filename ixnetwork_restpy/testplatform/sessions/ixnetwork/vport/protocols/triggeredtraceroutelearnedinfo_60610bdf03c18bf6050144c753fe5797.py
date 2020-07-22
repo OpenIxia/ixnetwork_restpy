@@ -32,13 +32,13 @@ class TriggeredTracerouteLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'triggeredTracerouteLearnedInfo'
     _SDM_ATT_MAP = {
-        'NumberOfReplyingHops': 'numberOfReplyingHops',
-        'SenderHandle': 'senderHandle',
-        'IncomingLabelStack': 'incomingLabelStack',
         'Fec': 'fec',
         'Hops': 'hops',
-        'Reachability': 'reachability',
+        'IncomingLabelStack': 'incomingLabelStack',
+        'NumberOfReplyingHops': 'numberOfReplyingHops',
         'OutgoingLabelStack': 'outgoingLabelStack',
+        'Reachability': 'reachability',
+        'SenderHandle': 'senderHandle',
     }
 
     def __init__(self, parent):

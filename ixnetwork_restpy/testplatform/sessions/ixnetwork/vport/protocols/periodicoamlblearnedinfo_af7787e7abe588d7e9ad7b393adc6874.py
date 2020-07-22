@@ -32,16 +32,16 @@ class PeriodicOamLbLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'periodicOamLbLearnedInfo'
     _SDM_ATT_MAP = {
-        'RecentRtt': 'recentRtt',
-        'LbmSentCount': 'lbmSentCount',
-        'NoReplyCount': 'noReplyCount',
-        'SVlan': 'sVlan',
-        'DstMacAddress': 'dstMacAddress',
-        'SrcMacAddress': 'srcMacAddress',
-        'RecentReachability': 'recentReachability',
-        'MdLevel': 'mdLevel',
-        'CVlan': 'cVlan',
         'AverageRtt': 'averageRtt',
+        'CVlan': 'cVlan',
+        'DstMacAddress': 'dstMacAddress',
+        'LbmSentCount': 'lbmSentCount',
+        'MdLevel': 'mdLevel',
+        'NoReplyCount': 'noReplyCount',
+        'RecentReachability': 'recentReachability',
+        'RecentRtt': 'recentRtt',
+        'SVlan': 'sVlan',
+        'SrcMacAddress': 'srcMacAddress',
     }
 
     def __init__(self, parent):

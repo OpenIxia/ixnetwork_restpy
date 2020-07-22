@@ -32,10 +32,10 @@ class Link(Base):
     __slots__ = ()
     _SDM_NAME = 'link'
     _SDM_ATT_MAP = {
+        'ForwardingInterruption': 'forwardingInterruption',
+        'Name': 'name',
         'RxPortName': 'rxPortName',
         'TxPortName': 'txPortName',
-        'Name': 'name',
-        'ForwardingInterruption': 'forwardingInterruption',
     }
 
     def __init__(self, parent):

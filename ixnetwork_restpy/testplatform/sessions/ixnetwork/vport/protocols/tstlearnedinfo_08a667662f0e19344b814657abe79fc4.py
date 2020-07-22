@@ -32,16 +32,16 @@ class TstLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'tstLearnedInfo'
     _SDM_ATT_MAP = {
-        'OutOfSequenceTstCount': 'outOfSequenceTstCount',
-        'RemoteMepMacAddress': 'remoteMepMacAddress',
-        'TxState': 'txState',
-        'RxCount': 'rxCount',
-        'MepMacAddress': 'mepMacAddress',
-        'SVlan': 'sVlan',
         'BVlan': 'bVlan',
-        'TxCount': 'txCount',
         'CVlan': 'cVlan',
+        'MepMacAddress': 'mepMacAddress',
+        'OutOfSequenceTstCount': 'outOfSequenceTstCount',
         'PrbsBitErrorCount': 'prbsBitErrorCount',
+        'RemoteMepMacAddress': 'remoteMepMacAddress',
+        'RxCount': 'rxCount',
+        'SVlan': 'sVlan',
+        'TxCount': 'txCount',
+        'TxState': 'txState',
     }
 
     def __init__(self, parent):

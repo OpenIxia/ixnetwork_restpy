@@ -33,9 +33,9 @@ class SrlgValueList(Base):
     _SDM_NAME = 'srlgValueList'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'SrlgValue': 'srlgValue',
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
+        'SrlgValue': 'srlgValue',
     }
 
     def __init__(self, parent):

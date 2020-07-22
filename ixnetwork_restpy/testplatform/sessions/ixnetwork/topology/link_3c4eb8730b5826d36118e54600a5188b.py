@@ -31,14 +31,14 @@ class Link(Base):
     __slots__ = ()
     _SDM_NAME = 'link'
     _SDM_ATT_MAP = {
+        'Active': 'active',
         'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'FromMp': 'fromMp',
+        'FromMpIndex': 'fromMpIndex',
         'LinkType': 'linkType',
         'Name': 'name',
         'ToMp': 'toMp',
-        'FromMp': 'fromMp',
-        'FromMpIndex': 'fromMpIndex',
-        'DescriptiveName': 'descriptiveName',
-        'Active': 'active',
         'ToMpIndex': 'toMpIndex',
     }
 

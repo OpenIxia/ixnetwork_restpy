@@ -33,9 +33,9 @@ class BridgeData(Base):
     _SDM_NAME = 'bridgeData'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'SystemId': 'systemId',
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
+        'SystemId': 'systemId',
     }
 
     def __init__(self, parent):

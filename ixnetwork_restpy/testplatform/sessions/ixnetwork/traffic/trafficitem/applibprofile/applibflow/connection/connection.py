@@ -32,9 +32,9 @@ class Connection(Base):
     __slots__ = ()
     _SDM_NAME = 'connection'
     _SDM_ATT_MAP = {
-        'IsTCP': 'isTCP',
-        'ConnectionParams': 'connectionParams',
         'ConnectionId': 'connectionId',
+        'ConnectionParams': 'connectionParams',
+        'IsTCP': 'isTCP',
     }
 
     def __init__(self, parent):

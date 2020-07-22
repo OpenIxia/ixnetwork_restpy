@@ -32,11 +32,11 @@ class MacMulticast(Base):
     __slots__ = ()
     _SDM_NAME = 'macMulticast'
     _SDM_ATT_MAP = {
+        'Age': 'age',
+        'HostName': 'hostName',
         'LspId': 'lspId',
         'MulticastGroupMacAddress': 'multicastGroupMacAddress',
         'SequenceNumber': 'sequenceNumber',
-        'Age': 'age',
-        'HostName': 'hostName',
         'VlanId': 'vlanId',
     }
 

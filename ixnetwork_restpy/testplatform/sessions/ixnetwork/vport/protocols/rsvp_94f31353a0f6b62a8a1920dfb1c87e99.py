@@ -31,14 +31,14 @@ class Rsvp(Base):
     __slots__ = ()
     _SDM_NAME = 'rsvp'
     _SDM_ATT_MAP = {
-        'EnableShowTimeValue': 'enableShowTimeValue',
-        'UseTransportLabelsForMplsOam': 'useTransportLabelsForMplsOam',
-        'EnableControlLspInitiationRate': 'enableControlLspInitiationRate',
-        'Enabled': 'enabled',
-        'EnableVpnLabelExchangeOverLsp': 'enableVpnLabelExchangeOverLsp',
         'EnableBgpOverLsp': 'enableBgpOverLsp',
+        'EnableControlLspInitiationRate': 'enableControlLspInitiationRate',
+        'EnableShowTimeValue': 'enableShowTimeValue',
+        'EnableVpnLabelExchangeOverLsp': 'enableVpnLabelExchangeOverLsp',
+        'Enabled': 'enabled',
         'MaxLspInitiationsPerSec': 'maxLspInitiationsPerSec',
         'RunningState': 'runningState',
+        'UseTransportLabelsForMplsOam': 'useTransportLabelsForMplsOam',
     }
 
     def __init__(self, parent):

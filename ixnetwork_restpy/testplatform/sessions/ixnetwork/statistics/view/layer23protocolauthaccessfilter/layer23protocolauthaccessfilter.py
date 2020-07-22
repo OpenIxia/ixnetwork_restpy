@@ -33,8 +33,8 @@ class Layer23ProtocolAuthAccessFilter(Base):
     __slots__ = ()
     _SDM_NAME = 'layer23ProtocolAuthAccessFilter'
     _SDM_ATT_MAP = {
-        'ProtocolFilterIds': 'protocolFilterIds',
         'PortFilterIds': 'portFilterIds',
+        'ProtocolFilterIds': 'protocolFilterIds',
     }
 
     def __init__(self, parent):

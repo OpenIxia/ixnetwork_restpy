@@ -31,8 +31,8 @@ class DataCollection(Base):
     __slots__ = ()
     _SDM_NAME = 'dataCollection'
     _SDM_ATT_MAP = {
-        'LastRunId': 'LastRunId',
         'Enable': 'Enable',
+        'LastRunId': 'LastRunId',
     }
 
     def __init__(self, parent):

@@ -32,12 +32,12 @@ class MacRange(Base):
     _SDM_NAME = 'macRange'
     _SDM_ATT_MAP = {
         'Count': 'count',
+        'Enabled': 'enabled',
+        'IncrementBy': 'incrementBy',
+        'Mac': 'mac',
+        'Mtu': 'mtu',
         'Name': 'name',
         'ObjectId': 'objectId',
-        'Enabled': 'enabled',
-        'Mtu': 'mtu',
-        'Mac': 'mac',
-        'IncrementBy': 'incrementBy',
     }
 
     def __init__(self, parent):

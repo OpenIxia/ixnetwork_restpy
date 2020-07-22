@@ -32,22 +32,22 @@ class Ipv6Multicast(Base):
     __slots__ = ()
     _SDM_NAME = 'ipv6Multicast'
     _SDM_ATT_MAP = {
-        'ControlWordEnabled': 'controlWordEnabled',
-        'BlockOffset': 'blockOffset',
-        'NextHop': 'nextHop',
-        'RouteDistinguisher': 'routeDistinguisher',
-        'LabelBase': 'labelBase',
-        'BlockSize': 'blockSize',
         'AsPath': 'asPath',
+        'BlockOffset': 'blockOffset',
+        'BlockSize': 'blockSize',
+        'ControlWordEnabled': 'controlWordEnabled',
         'IpPrefix': 'ipPrefix',
-        'PrefixLength': 'prefixLength',
-        'MaxLabel': 'maxLabel',
+        'LabelBase': 'labelBase',
         'LocalPreference': 'localPreference',
-        'Neighbor': 'neighbor',
-        'SiteId': 'siteId',
+        'MaxLabel': 'maxLabel',
         'MultiExitDiscriminator': 'multiExitDiscriminator',
+        'Neighbor': 'neighbor',
+        'NextHop': 'nextHop',
         'OriginType': 'originType',
+        'PrefixLength': 'prefixLength',
+        'RouteDistinguisher': 'routeDistinguisher',
         'SeqDeliveryEnabled': 'seqDeliveryEnabled',
+        'SiteId': 'siteId',
     }
 
     def __init__(self, parent):

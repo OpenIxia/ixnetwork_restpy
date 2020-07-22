@@ -32,13 +32,13 @@ class Vxlan(Base):
     _SDM_NAME = 'vxlan'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'Name': 'name',
-        'InnerFrameMinimumSize': 'innerFrameMinimumSize',
-        'IgmpMode': 'igmpMode',
-        'OuterIpDestMode': 'outerIpDestMode',
-        'Udp_dest': 'udp_dest',
         'DescriptiveName': 'descriptiveName',
+        'IgmpMode': 'igmpMode',
+        'InnerFrameMinimumSize': 'innerFrameMinimumSize',
+        'Name': 'name',
+        'OuterIpDestMode': 'outerIpDestMode',
         'RowNames': 'rowNames',
+        'Udp_dest': 'udp_dest',
     }
 
     def __init__(self, parent):

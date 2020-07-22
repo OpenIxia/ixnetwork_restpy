@@ -32,9 +32,9 @@ class EthernetTagInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'ethernetTagInfo'
     _SDM_ATT_MAP = {
+        'EsiLabel': 'esiLabel',
         'EthernetTag': 'ethernetTag',
         'Labels': 'labels',
-        'EsiLabel': 'esiLabel',
     }
 
     def __init__(self, parent):

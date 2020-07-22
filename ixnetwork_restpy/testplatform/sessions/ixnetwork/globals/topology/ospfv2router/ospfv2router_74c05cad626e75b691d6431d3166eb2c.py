@@ -32,15 +32,15 @@ class Ospfv2Router(Base):
     __slots__ = ()
     _SDM_NAME = 'ospfv2Router'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'BierSubTlvType': 'bierSubTlvType',
-        'Name': 'name',
-        'EnableDrBdr': 'enableDrBdr',
-        'RateControlInterval': 'rateControlInterval',
         'BierMplsEncapSubTlvType': 'bierMplsEncapSubTlvType',
+        'BierSubTlvType': 'bierSubTlvType',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
-        'RowNames': 'rowNames',
+        'EnableDrBdr': 'enableDrBdr',
         'FloodLsUpdatesPerInterval': 'floodLsUpdatesPerInterval',
+        'Name': 'name',
+        'RateControlInterval': 'rateControlInterval',
+        'RowNames': 'rowNames',
     }
 
     def __init__(self, parent):

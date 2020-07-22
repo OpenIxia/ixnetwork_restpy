@@ -33,17 +33,17 @@ class Interface(Base):
     __slots__ = ()
     _SDM_NAME = 'interface'
     _SDM_ATT_MAP = {
-        'LinkType': 'linkType',
-        'InterfaceId': 'interfaceId',
-        'BdpuGap': 'bdpuGap',
-        'PortNo': 'portNo',
-        'Enabled': 'enabled',
-        'MstiOrVlanId': 'mstiOrVlanId',
-        'Pvid': 'pvid',
-        'JitterPercentage': 'jitterPercentage',
-        'Cost': 'cost',
         'AutoPick': 'autoPick',
+        'BdpuGap': 'bdpuGap',
+        'Cost': 'cost',
+        'Enabled': 'enabled',
+        'InterfaceId': 'interfaceId',
         'JitterEnabled': 'jitterEnabled',
+        'JitterPercentage': 'jitterPercentage',
+        'LinkType': 'linkType',
+        'MstiOrVlanId': 'mstiOrVlanId',
+        'PortNo': 'portNo',
+        'Pvid': 'pvid',
     }
 
     def __init__(self, parent):

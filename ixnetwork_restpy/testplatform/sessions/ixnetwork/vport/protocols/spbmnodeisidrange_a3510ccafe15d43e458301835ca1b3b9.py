@@ -34,20 +34,20 @@ class SpbmNodeIsIdRange(Base):
     _SDM_NAME = 'spbmNodeIsIdRange'
     _SDM_ATT_MAP = {
         'CMacAddressCount': 'cMacAddressCount',
-        'StartCvlan': 'startCvlan',
         'CMacAddressStep': 'cMacAddressStep',
-        'StartSvlan': 'startSvlan',
-        'TBit': 'tBit',
+        'ITagEthernetType': 'iTagEthernetType',
+        'InterNodeCmacAddress': 'interNodeCmacAddress',
         'InterNodeCvlan': 'interNodeCvlan',
+        'InterNodeIsIdIncrement': 'interNodeIsIdIncrement',
+        'InterNodeSvlan': 'interNodeSvlan',
+        'IsId': 'isId',
         'RBit': 'rBit',
         'StartCmacAddress': 'startCmacAddress',
-        'InterNodeIsIdIncrement': 'interNodeIsIdIncrement',
-        'IsId': 'isId',
-        'ITagEthernetType': 'iTagEthernetType',
+        'StartCvlan': 'startCvlan',
+        'StartSvlan': 'startSvlan',
+        'TBit': 'tBit',
         'TrafficDestMacAddress': 'trafficDestMacAddress',
-        'InterNodeCmacAddress': 'interNodeCmacAddress',
         'TransmissionType': 'transmissionType',
-        'InterNodeSvlan': 'interNodeSvlan',
         'VlanType': 'vlanType',
     }
 

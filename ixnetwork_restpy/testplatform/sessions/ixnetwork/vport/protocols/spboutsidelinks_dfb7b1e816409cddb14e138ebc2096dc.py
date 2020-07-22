@@ -33,8 +33,8 @@ class SpbOutsideLinks(Base):
     __slots__ = ()
     _SDM_NAME = 'spbOutsideLinks'
     _SDM_ATT_MAP = {
-        'ConnectionRow': 'connectionRow',
         'ConnectionCol': 'connectionCol',
+        'ConnectionRow': 'connectionRow',
         'LinkedRid': 'linkedRid',
     }
 

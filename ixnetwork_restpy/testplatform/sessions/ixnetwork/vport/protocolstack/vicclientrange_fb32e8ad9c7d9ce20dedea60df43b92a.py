@@ -33,17 +33,17 @@ class VicClientRange(Base):
     __slots__ = ()
     _SDM_NAME = 'vicClientRange'
     _SDM_ATT_MAP = {
-        'ProvInfoOui': 'provInfoOui',
+        'ChannelIdIncrement': 'channelIdIncrement',
+        'ChannelIdStart': 'channelIdStart',
+        'Enabled': 'enabled',
         'MacsPerVif': 'macsPerVif',
         'Name': 'name',
         'ObjectId': 'objectId',
+        'ProvInfoOui': 'provInfoOui',
         'ProvInfoTlvs': 'provInfoTlvs',
-        'ChannelIdStart': 'channelIdStart',
-        'Enabled': 'enabled',
-        'VifActive': 'vifActive',
-        'ChannelIdIncrement': 'channelIdIncrement',
         'ProvInfoType': 'provInfoType',
         'TlvOffset': 'tlvOffset',
+        'VifActive': 'vifActive',
     }
 
     def __init__(self, parent):

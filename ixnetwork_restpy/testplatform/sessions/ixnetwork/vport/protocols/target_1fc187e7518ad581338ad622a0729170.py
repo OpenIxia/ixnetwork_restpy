@@ -31,8 +31,8 @@ class Target(Base):
     __slots__ = ()
     _SDM_NAME = 'target'
     _SDM_ATT_MAP = {
-        'TargetListEx': 'targetListEx',
         'TargetList': 'targetList',
+        'TargetListEx': 'targetListEx',
     }
 
     def __init__(self, parent):

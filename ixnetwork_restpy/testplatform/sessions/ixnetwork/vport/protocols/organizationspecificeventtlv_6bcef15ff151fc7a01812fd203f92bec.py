@@ -31,8 +31,8 @@ class OrganizationSpecificEventTlv(Base):
     __slots__ = ()
     _SDM_NAME = 'organizationSpecificEventTlv'
     _SDM_ATT_MAP = {
-        'Oui': 'oui',
         'Enabled': 'enabled',
+        'Oui': 'oui',
         'Value': 'value',
     }
 

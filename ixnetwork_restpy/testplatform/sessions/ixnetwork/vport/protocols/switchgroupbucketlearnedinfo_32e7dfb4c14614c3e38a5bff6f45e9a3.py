@@ -33,10 +33,10 @@ class SwitchGroupBucketLearnedInfo(Base):
     _SDM_NAME = 'switchGroupBucketLearnedInfo'
     _SDM_ATT_MAP = {
         'ByteCount': 'byteCount',
-        'Weight': 'weight',
+        'PacketCount': 'packetCount',
         'WatchGroup': 'watchGroup',
         'WatchPort': 'watchPort',
-        'PacketCount': 'packetCount',
+        'Weight': 'weight',
     }
 
     def __init__(self, parent):

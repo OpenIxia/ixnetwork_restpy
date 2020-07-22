@@ -31,12 +31,12 @@ class Fcoe(Base):
     __slots__ = ()
     _SDM_NAME = 'fcoe'
     _SDM_ATT_MAP = {
-        'PfcPriorityGroups': 'pfcPriorityGroups',
         'EnablePFCPauseDelay': 'enablePFCPauseDelay',
-        'SupportDataCenterMode': 'supportDataCenterMode',
         'FlowControlType': 'flowControlType',
         'PfcPauseDelay': 'pfcPauseDelay',
+        'PfcPriorityGroups': 'pfcPriorityGroups',
         'PriorityGroupSize': 'priorityGroupSize',
+        'SupportDataCenterMode': 'supportDataCenterMode',
     }
 
     def __init__(self, parent):

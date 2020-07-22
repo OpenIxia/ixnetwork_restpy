@@ -34,10 +34,10 @@ class NacPosture(Base):
     _SDM_NAME = 'nacPosture'
     _SDM_ATT_MAP = {
         'ExpectedSystemToken': 'expectedSystemToken',
-        'Selected': 'selected',
         'NacTlvs': 'nacTlvs',
         'Name': 'name',
         'ObjectId': 'objectId',
+        'Selected': 'selected',
     }
 
     def __init__(self, parent):

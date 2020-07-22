@@ -31,8 +31,8 @@ class FrameRateDistribution(Base):
     __slots__ = ()
     _SDM_NAME = 'frameRateDistribution'
     _SDM_ATT_MAP = {
-        'StreamDistribution': 'streamDistribution',
         'PortDistribution': 'portDistribution',
+        'StreamDistribution': 'streamDistribution',
     }
 
     def __init__(self, parent):

@@ -32,10 +32,10 @@ class Lac(Base):
     _SDM_NAME = 'lac'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'EnableAggregatedCSUN': 'enableAggregatedCSUN',
-        'RowNames': 'rowNames',
         'DescriptiveName': 'descriptiveName',
+        'EnableAggregatedCSUN': 'enableAggregatedCSUN',
         'Name': 'name',
+        'RowNames': 'rowNames',
     }
 
     def __init__(self, parent):

@@ -32,9 +32,9 @@ class LearnedInfo(Base):
     _SDM_NAME = 'learnedInfo'
     _SDM_ATT_MAP = {
         'BridgeMac': 'bridgeMac',
-        'RootPriority': 'rootPriority',
-        'RootMac': 'rootMac',
         'RootCost': 'rootCost',
+        'RootMac': 'rootMac',
+        'RootPriority': 'rootPriority',
     }
 
     def __init__(self, parent):

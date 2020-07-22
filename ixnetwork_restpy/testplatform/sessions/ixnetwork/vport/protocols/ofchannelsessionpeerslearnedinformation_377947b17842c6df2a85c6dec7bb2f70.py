@@ -32,22 +32,22 @@ class OfChannelSessionPeersLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'ofChannelSessionPeersLearnedInformation'
     _SDM_ATT_MAP = {
-        'SlavePortStatusMask': 'slavePortStatusMask',
-        'ConfiguredPacketInSentCount': 'configuredPacketInSentCount',
-        'ConfiguredPacketInReplyCount': 'configuredPacketInReplyCount',
-        'MasterFlowRemovedMask': 'masterFlowRemovedMask',
         'AveragePacketInReplyDelay': 'averagePacketInReplyDelay',
-        'MasterPortStatusMask': 'masterPortStatusMask',
-        'SlaveFlowRemovedMask': 'slaveFlowRemovedMask',
-        'MasterPacketInMask': 'masterPacketInMask',
-        'SlavePacketInMask': 'slavePacketInMask',
-        'PacketOutRxRate': 'packetOutRxRate',
-        'Role': 'role',
-        'RemoteIp': 'remoteIp',
-        'ReplyState': 'replyState',
+        'ConfiguredPacketInReplyCount': 'configuredPacketInReplyCount',
+        'ConfiguredPacketInSentCount': 'configuredPacketInSentCount',
         'LocalPortNumber': 'localPortNumber',
-        'RemotePortNumber': 'remotePortNumber',
+        'MasterFlowRemovedMask': 'masterFlowRemovedMask',
+        'MasterPacketInMask': 'masterPacketInMask',
+        'MasterPortStatusMask': 'masterPortStatusMask',
         'PacketInTxRate': 'packetInTxRate',
+        'PacketOutRxRate': 'packetOutRxRate',
+        'RemoteIp': 'remoteIp',
+        'RemotePortNumber': 'remotePortNumber',
+        'ReplyState': 'replyState',
+        'Role': 'role',
+        'SlaveFlowRemovedMask': 'slaveFlowRemovedMask',
+        'SlavePacketInMask': 'slavePacketInMask',
+        'SlavePortStatusMask': 'slavePortStatusMask',
     }
 
     def __init__(self, parent):

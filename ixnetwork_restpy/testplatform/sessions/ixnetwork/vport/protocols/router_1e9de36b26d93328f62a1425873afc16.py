@@ -33,23 +33,23 @@ class Router(Base):
     __slots__ = ()
     _SDM_NAME = 'router'
     _SDM_ATT_MAP = {
-        'RouterId': 'routerId',
-        'DiscardLearnedRoutes': 'discardLearnedRoutes',
         'ActiveTime': 'activeTime',
-        'EnablePiggyBack': 'enablePiggyBack',
+        'AsNumber': 'asNumber',
+        'DiscardLearnedRoutes': 'discardLearnedRoutes',
+        'EigrpAddressFamily': 'eigrpAddressFamily',
+        'EigrpMajorVersion': 'eigrpMajorVersion',
         'EigrpMinorVersion': 'eigrpMinorVersion',
-        'K4': 'k4',
+        'EnablePiggyBack': 'enablePiggyBack',
         'Enabled': 'enabled',
         'IosMajorVersion': 'iosMajorVersion',
-        'K3': 'k3',
         'IosMinorVersion': 'iosMinorVersion',
-        'K1': 'k1',
-        'EigrpAddressFamily': 'eigrpAddressFamily',
         'IsRefreshComplete': 'isRefreshComplete',
-        'K5': 'k5',
-        'AsNumber': 'asNumber',
+        'K1': 'k1',
         'K2': 'k2',
-        'EigrpMajorVersion': 'eigrpMajorVersion',
+        'K3': 'k3',
+        'K4': 'k4',
+        'K5': 'k5',
+        'RouterId': 'routerId',
         'TrafficGroupId': 'trafficGroupId',
     }
 

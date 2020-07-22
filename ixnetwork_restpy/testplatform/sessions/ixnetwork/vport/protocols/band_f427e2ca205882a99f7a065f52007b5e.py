@@ -35,9 +35,9 @@ class Band(Base):
     _SDM_ATT_MAP = {
         'BurstSize': 'burstSize',
         'Description': 'description',
+        'Experimenter': 'experimenter',
         'PrecedenceLevel': 'precedenceLevel',
         'Rate': 'rate',
-        'Experimenter': 'experimenter',
         'Type': 'type',
     }
 

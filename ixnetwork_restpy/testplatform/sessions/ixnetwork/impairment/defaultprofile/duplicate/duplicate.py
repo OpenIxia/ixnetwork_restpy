@@ -32,9 +32,9 @@ class Duplicate(Base):
     _SDM_NAME = 'duplicate'
     _SDM_ATT_MAP = {
         'ClusterSize': 'clusterSize',
+        'DuplicateCount': 'duplicateCount',
         'Enabled': 'enabled',
         'PercentRate': 'percentRate',
-        'DuplicateCount': 'duplicateCount',
     }
 
     def __init__(self, parent):

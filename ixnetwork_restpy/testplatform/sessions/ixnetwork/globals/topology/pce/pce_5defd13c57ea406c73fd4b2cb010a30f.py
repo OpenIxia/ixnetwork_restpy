@@ -33,9 +33,9 @@ class Pce(Base):
     _SDM_ATT_MAP = {
         'BindingSIDDraftVersion': 'bindingSIDDraftVersion',
         'Count': 'count',
-        'RowNames': 'rowNames',
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
+        'RowNames': 'rowNames',
     }
 
     def __init__(self, parent):

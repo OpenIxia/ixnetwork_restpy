@@ -34,13 +34,13 @@ class Ip(Base):
     _SDM_NAME = 'ip'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'IpType': 'ipType',
-        'IpStart': 'ipStart',
         'Enabled': 'enabled',
+        'IpStart': 'ipStart',
+        'IpType': 'ipType',
         'Mask': 'mask',
-        'TrafficGroupId': 'trafficGroupId',
-        'Step': 'step',
         'ProtocolInterface': 'protocolInterface',
+        'Step': 'step',
+        'TrafficGroupId': 'trafficGroupId',
     }
 
     def __init__(self, parent):

@@ -33,12 +33,12 @@ class IpV4MulticastMplsVpn(Base):
     _SDM_NAME = 'ipV4MulticastMplsVpn'
     _SDM_ATT_MAP = {
         'AsPath': 'asPath',
-        'NextHop': 'nextHop',
-        'Label': 'label',
-        'RouteDistinguisher': 'routeDistinguisher',
-        'Neighbor': 'neighbor',
         'IpPrefix': 'ipPrefix',
+        'Label': 'label',
+        'Neighbor': 'neighbor',
+        'NextHop': 'nextHop',
         'PrefixLength': 'prefixLength',
+        'RouteDistinguisher': 'routeDistinguisher',
     }
 
     def __init__(self, parent):

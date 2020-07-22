@@ -33,23 +33,23 @@ class OFSwitchChannel(Base):
     __slots__ = ()
     _SDM_NAME = 'OFSwitchChannel'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Status': 'status',
-        'Errors': 'errors',
-        'DatapathIdHex': 'datapathIdHex',
-        'Name': 'name',
-        'StateCounts': 'stateCounts',
-        'SwitchName': 'switchName',
-        'Multiplier': 'multiplier',
-        'StackedLayers': 'stackedLayers',
-        'LocalIp': 'localIp',
-        'ConnectedVia': 'connectedVia',
-        'DescriptiveName': 'descriptiveName',
-        'RemoteIp': 'remoteIp',
-        'AuxConnectionsPerChannel': 'auxConnectionsPerChannel',
         'Active': 'active',
+        'AuxConnectionsPerChannel': 'auxConnectionsPerChannel',
+        'ConnectedVia': 'connectedVia',
+        'Count': 'count',
         'DatapathId': 'datapathId',
+        'DatapathIdHex': 'datapathIdHex',
+        'DescriptiveName': 'descriptiveName',
+        'Errors': 'errors',
+        'LocalIp': 'localIp',
+        'Multiplier': 'multiplier',
+        'Name': 'name',
+        'RemoteIp': 'remoteIp',
         'SessionStatus': 'sessionStatus',
+        'StackedLayers': 'stackedLayers',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
+        'SwitchName': 'switchName',
     }
 
     def __init__(self, parent):

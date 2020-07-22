@@ -31,8 +31,8 @@ class BandTypes(Base):
     __slots__ = ()
     _SDM_NAME = 'bandTypes'
     _SDM_ATT_MAP = {
-        'DscpRemark': 'dscpRemark',
         'Drop': 'drop',
+        'DscpRemark': 'dscpRemark',
     }
 
     def __init__(self, parent):

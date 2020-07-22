@@ -33,15 +33,15 @@ class Instructions(Base):
     __slots__ = ()
     _SDM_NAME = 'instructions'
     _SDM_ATT_MAP = {
+        'Experimenter': 'experimenter',
         'ExperimenterData': 'experimenterData',
+        'ExperimenterDataLength': 'experimenterDataLength',
+        'InstructionType': 'instructionType',
+        'Metadata': 'metadata',
         'MetadataInHex': 'metadataInHex',
         'MetadataMask': 'metadataMask',
-        'ExperimenterDataLength': 'experimenterDataLength',
-        'Experimenter': 'experimenter',
-        'InstructionType': 'instructionType',
-        'TableId': 'tableId',
         'MeterId': 'meterId',
-        'Metadata': 'metadata',
+        'TableId': 'tableId',
     }
 
     def __init__(self, parent):

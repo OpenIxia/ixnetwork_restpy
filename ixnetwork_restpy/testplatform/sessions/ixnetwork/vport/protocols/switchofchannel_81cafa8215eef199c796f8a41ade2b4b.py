@@ -33,8 +33,8 @@ class SwitchOfChannel(Base):
     __slots__ = ()
     _SDM_NAME = 'switchOfChannel'
     _SDM_ATT_MAP = {
-        'Enabled': 'enabled',
         'Description': 'description',
+        'Enabled': 'enabled',
         'RemoteIp': 'remoteIp',
     }
 

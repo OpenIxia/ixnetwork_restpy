@@ -31,12 +31,12 @@ class DhcpV4DiscoveredInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcpV4DiscoveredInfo'
     _SDM_ATT_MAP = {
+        'Gateway': 'gateway',
         'Ipv4Address': 'ipv4Address',
         'Ipv4Mask': 'ipv4Mask',
-        'LeaseDuration': 'leaseDuration',
         'IsDhcpV4LearnedInfoRefreshed': 'isDhcpV4LearnedInfoRefreshed',
+        'LeaseDuration': 'leaseDuration',
         'ProtocolInterface': 'protocolInterface',
-        'Gateway': 'gateway',
         'Tlv': 'tlv',
     }
 

@@ -32,16 +32,16 @@ class MplsTp(Base):
     _SDM_NAME = 'mplsTp'
     _SDM_ATT_MAP = {
         'ApsChannelType': 'apsChannelType',
-        'Y1731ChannelType': 'y1731ChannelType',
-        'OnDemandCvChannelType': 'onDemandCvChannelType',
-        'Enabled': 'enabled',
-        'LossMeasurementChannelType': 'lossMeasurementChannelType',
-        'DelayManagementChannelType': 'delayManagementChannelType',
-        'FaultManagementChannelType': 'faultManagementChannelType',
-        'EnableHighPerformanceMode': 'enableHighPerformanceMode',
         'BfdCcChannelType': 'bfdCcChannelType',
+        'DelayManagementChannelType': 'delayManagementChannelType',
+        'EnableHighPerformanceMode': 'enableHighPerformanceMode',
+        'Enabled': 'enabled',
+        'FaultManagementChannelType': 'faultManagementChannelType',
+        'LossMeasurementChannelType': 'lossMeasurementChannelType',
+        'OnDemandCvChannelType': 'onDemandCvChannelType',
         'PwStatusChannelType': 'pwStatusChannelType',
         'RunningState': 'runningState',
+        'Y1731ChannelType': 'y1731ChannelType',
     }
 
     def __init__(self, parent):

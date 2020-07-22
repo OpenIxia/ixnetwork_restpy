@@ -33,11 +33,11 @@ class FcoeClientOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'fcoeClientOptions'
     _SDM_ATT_MAP = {
-        'ObjectId': 'objectId',
-        'SetupRate': 'setupRate',
-        'MaxPacketsPerSecond': 'maxPacketsPerSecond',
-        'OverrideGlobalRate': 'overrideGlobalRate',
         'Associates': 'associates',
+        'MaxPacketsPerSecond': 'maxPacketsPerSecond',
+        'ObjectId': 'objectId',
+        'OverrideGlobalRate': 'overrideGlobalRate',
+        'SetupRate': 'setupRate',
         'TeardownRate': 'teardownRate',
     }
 

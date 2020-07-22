@@ -34,9 +34,9 @@ class Rfc2889oneToMany(Base):
     _SDM_NAME = 'rfc2889oneToMany'
     _SDM_ATT_MAP = {
         'ForceApplyQTConfig': 'forceApplyQTConfig',
+        'InputParameters': 'inputParameters',
         'Mode': 'mode',
         'Name': 'name',
-        'InputParameters': 'inputParameters',
     }
 
     def __init__(self, parent):

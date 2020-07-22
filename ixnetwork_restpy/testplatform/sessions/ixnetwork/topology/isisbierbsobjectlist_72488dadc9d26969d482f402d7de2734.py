@@ -32,12 +32,12 @@ class IsisBierBSObjectList(Base):
     __slots__ = ()
     _SDM_NAME = 'isisBierBSObjectList'
     _SDM_ATT_MAP = {
+        'BIERBitStringLength': 'BIERBitStringLength',
         'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'LabelRangeSize': 'labelRangeSize',
         'LabelStart': 'labelStart',
         'Name': 'name',
-        'BIERBitStringLength': 'BIERBitStringLength',
-        'LabelRangeSize': 'labelRangeSize',
-        'DescriptiveName': 'descriptiveName',
     }
 
     def __init__(self, parent):

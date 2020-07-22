@@ -33,10 +33,10 @@ class Topology(Base):
     _SDM_ATT_MAP = {
         'ApplyOnTheFlyState': 'applyOnTheFlyState',
         'NgpfProtocolRateMode': 'ngpfProtocolRateMode',
-        'ProtocolStackingMode': 'protocolStackingMode',
-        'Vports': 'vports',
         'ProtocolActionsInProgress': 'protocolActionsInProgress',
+        'ProtocolStackingMode': 'protocolStackingMode',
         'Status': 'status',
+        'Vports': 'vports',
     }
 
     def __init__(self, parent):

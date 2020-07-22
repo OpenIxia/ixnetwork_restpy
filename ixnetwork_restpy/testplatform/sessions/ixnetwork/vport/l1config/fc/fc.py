@@ -31,24 +31,24 @@ class Fc(Base):
     __slots__ = ()
     _SDM_NAME = 'fc'
     _SDM_ATT_MAP = {
-        'CreditStarvationValue': 'creditStarvationValue',
-        'EnablePPM': 'enablePPM',
-        'Loopback': 'loopback',
-        'FixedDelayValue': 'fixedDelayValue',
         'AvailableSpeeds': 'availableSpeeds',
-        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
-        'Ppm': 'ppm',
         'CanModifySpeed': 'canModifySpeed',
-        'ForceErrors': 'forceErrors',
-        'MinDelayForRandomValue': 'minDelayForRandomValue',
-        'RrdyResponseDelays': 'rrdyResponseDelays',
         'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
-        'SelectedSpeeds': 'selectedSpeeds',
+        'CreditStarvationValue': 'creditStarvationValue',
         'EnableEmissionLoweringProtocol': 'enableEmissionLoweringProtocol',
-        'Speed': 'speed',
-        'NoRRDYAfter': 'noRRDYAfter',
+        'EnablePPM': 'enablePPM',
+        'FixedDelayValue': 'fixedDelayValue',
+        'ForceErrors': 'forceErrors',
+        'Loopback': 'loopback',
         'MaxDelayForRandomValue': 'maxDelayForRandomValue',
+        'MinDelayForRandomValue': 'minDelayForRandomValue',
+        'NoRRDYAfter': 'noRRDYAfter',
+        'Ppm': 'ppm',
+        'RrdyResponseDelays': 'rrdyResponseDelays',
+        'SelectedSpeeds': 'selectedSpeeds',
+        'Speed': 'speed',
         'TxIgnoreAvailableCredits': 'txIgnoreAvailableCredits',
+        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
     }
 
     def __init__(self, parent):

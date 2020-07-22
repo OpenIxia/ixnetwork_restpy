@@ -33,16 +33,16 @@ class DceNodeInterestedVlanRange(Base):
     __slots__ = ()
     _SDM_NAME = 'dceNodeInterestedVlanRange'
     _SDM_ATT_MAP = {
-        'VlanIdCount': 'vlanIdCount',
-        'M4BitEnabled': 'm4BitEnabled',
         'IncludeInLsp': 'includeInLsp',
-        'IncludeInterestedVlan': 'includeInterestedVlan',
-        'M6BitEnabled': 'm6BitEnabled',
         'IncludeInMgroupPdu': 'includeInMgroupPdu',
-        'StartVlanId': 'startVlanId',
-        'NoOfSpanningTreeRoot': 'noOfSpanningTreeRoot',
+        'IncludeInterestedVlan': 'includeInterestedVlan',
         'InternodeVlanStep': 'internodeVlanStep',
+        'M4BitEnabled': 'm4BitEnabled',
+        'M6BitEnabled': 'm6BitEnabled',
+        'NoOfSpanningTreeRoot': 'noOfSpanningTreeRoot',
         'StartSpanningTreeRootBridgeId': 'startSpanningTreeRootBridgeId',
+        'StartVlanId': 'startVlanId',
+        'VlanIdCount': 'vlanIdCount',
     }
 
     def __init__(self, parent):

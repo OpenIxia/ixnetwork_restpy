@@ -31,9 +31,9 @@ class ConfigMANamesParams(Base):
     __slots__ = ()
     _SDM_NAME = 'configMANamesParams'
     _SDM_ATT_MAP = {
-        'SmaFormat': 'smaFormat',
-        'MaName': 'maName',
         'IncrementMaName': 'incrementMaName',
+        'MaName': 'maName',
+        'SmaFormat': 'smaFormat',
     }
 
     def __init__(self, parent):

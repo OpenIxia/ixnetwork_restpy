@@ -33,14 +33,14 @@ class Lan(Base):
     __slots__ = ()
     _SDM_NAME = 'lan'
     _SDM_ATT_MAP = {
-        'MacAddress': 'macAddress',
-        'VlanEnabled': 'vlanEnabled',
         'Enabled': 'enabled',
+        'MacAddress': 'macAddress',
+        'MacCount': 'macCount',
+        'MacIncrement': 'macIncrement',
+        'TrafficGroupId': 'trafficGroupId',
+        'VlanEnabled': 'vlanEnabled',
         'VlanId': 'vlanId',
         'VlanIncrement': 'vlanIncrement',
-        'TrafficGroupId': 'trafficGroupId',
-        'MacIncrement': 'macIncrement',
-        'MacCount': 'macCount',
     }
 
     def __init__(self, parent):

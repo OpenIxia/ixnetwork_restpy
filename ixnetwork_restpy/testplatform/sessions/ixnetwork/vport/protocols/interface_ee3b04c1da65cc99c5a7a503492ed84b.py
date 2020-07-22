@@ -33,23 +33,23 @@ class Interface(Base):
     __slots__ = ()
     _SDM_NAME = 'interface'
     _SDM_ATT_MAP = {
-        'EnableFastHello': 'enableFastHello',
-        'LinkMetric': 'linkMetric',
-        'HelloInterval': 'helloInterval',
-        'EnableIgnoreDbDescMtu': 'enableIgnoreDbDescMtu',
-        'InstanceId': 'instanceId',
-        'HelloMultiplier': 'helloMultiplier',
         'Area': 'area',
-        'Enabled': 'enabled',
-        'EnableBfdRegistration': 'enableBfdRegistration',
-        'InterfaceIndex': 'interfaceIndex',
-        'Priority': 'priority',
-        'InterfaceType': 'interfaceType',
         'DeadInterval': 'deadInterval',
+        'EnableBfdRegistration': 'enableBfdRegistration',
+        'EnableFastHello': 'enableFastHello',
+        'EnableIgnoreDbDescMtu': 'enableIgnoreDbDescMtu',
+        'Enabled': 'enabled',
+        'HelloInterval': 'helloInterval',
+        'HelloMultiplier': 'helloMultiplier',
+        'InstanceId': 'instanceId',
+        'InterfaceIndex': 'interfaceIndex',
+        'InterfaceType': 'interfaceType',
         'InterfaceTypes': 'interfaceTypes',
-        'RouterOptions': 'routerOptions',
-        'ProtocolInterface': 'protocolInterface',
         'Interfaces': 'interfaces',
+        'LinkMetric': 'linkMetric',
+        'Priority': 'priority',
+        'ProtocolInterface': 'protocolInterface',
+        'RouterOptions': 'routerOptions',
     }
 
     def __init__(self, parent):

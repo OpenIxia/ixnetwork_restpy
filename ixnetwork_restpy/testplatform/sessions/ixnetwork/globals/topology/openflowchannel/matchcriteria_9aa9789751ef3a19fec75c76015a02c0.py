@@ -34,11 +34,11 @@ class MatchCriteria(Base):
     _SDM_NAME = 'matchCriteria'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'Name': 'name',
-        'IsEditable': 'isEditable',
-        'IsRequired': 'isRequired',
-        'IsRepeatable': 'isRepeatable',
         'Description': 'description',
+        'IsEditable': 'isEditable',
+        'IsRepeatable': 'isRepeatable',
+        'IsRequired': 'isRequired',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

@@ -31,12 +31,12 @@ class ImportBgpRoutesParams(Base):
     __slots__ = ()
     _SDM_NAME = 'importBgpRoutesParams'
     _SDM_ATT_MAP = {
+        'BestRoutes': 'bestRoutes',
         'DataFile': 'dataFile',
         'FileType': 'fileType',
         'NextHop': 'nextHop',
-        'RouteLimit': 'routeLimit',
         'RouteDistributionType': 'routeDistributionType',
-        'BestRoutes': 'bestRoutes',
+        'RouteLimit': 'routeLimit',
     }
 
     def __init__(self, parent):

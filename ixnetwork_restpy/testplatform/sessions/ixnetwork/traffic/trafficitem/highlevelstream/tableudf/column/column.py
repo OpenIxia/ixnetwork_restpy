@@ -33,10 +33,10 @@ class Column(Base):
     __slots__ = ()
     _SDM_NAME = 'column'
     _SDM_ATT_MAP = {
-        'Size': 'size',
-        'Offset': 'offset',
-        'Values': 'values',
         'Format': 'format',
+        'Offset': 'offset',
+        'Size': 'size',
+        'Values': 'values',
     }
 
     def __init__(self, parent):

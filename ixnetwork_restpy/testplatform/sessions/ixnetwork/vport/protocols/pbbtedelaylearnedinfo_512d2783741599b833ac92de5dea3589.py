@@ -32,12 +32,12 @@ class PbbTeDelayLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'pbbTeDelayLearnedInfo'
     _SDM_ATT_MAP = {
-        'ValueInSec': 'valueInSec',
-        'ValueInNanoSec': 'valueInNanoSec',
-        'DstMacAddress': 'dstMacAddress',
-        'SrcMacAddress': 'srcMacAddress',
         'BVlan': 'bVlan',
+        'DstMacAddress': 'dstMacAddress',
         'MdLevel': 'mdLevel',
+        'SrcMacAddress': 'srcMacAddress',
+        'ValueInNanoSec': 'valueInNanoSec',
+        'ValueInSec': 'valueInSec',
     }
 
     def __init__(self, parent):

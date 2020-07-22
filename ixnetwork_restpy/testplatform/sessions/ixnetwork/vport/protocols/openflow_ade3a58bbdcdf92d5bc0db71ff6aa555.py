@@ -31,9 +31,9 @@ class OpenFlow(Base):
     __slots__ = ()
     _SDM_NAME = 'openFlow'
     _SDM_ATT_MAP = {
-        'RunningState': 'runningState',
         'Enabled': 'enabled',
         'PortRole': 'portRole',
+        'RunningState': 'runningState',
     }
 
     def __init__(self, parent):

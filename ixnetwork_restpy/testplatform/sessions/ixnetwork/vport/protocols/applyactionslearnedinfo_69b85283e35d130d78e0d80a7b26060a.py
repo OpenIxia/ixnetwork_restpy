@@ -32,9 +32,9 @@ class ApplyActionsLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'applyActionsLearnedInfo'
     _SDM_ATT_MAP = {
-        'SupportedField': 'supportedField',
         'NextTableIds': 'nextTableIds',
         'Property': 'property',
+        'SupportedField': 'supportedField',
     }
 
     def __init__(self, parent):

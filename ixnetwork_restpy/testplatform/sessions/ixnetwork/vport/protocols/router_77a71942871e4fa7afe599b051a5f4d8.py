@@ -32,10 +32,10 @@ class Router(Base):
     __slots__ = ()
     _SDM_NAME = 'router'
     _SDM_ATT_MAP = {
-        'EBit': 'eBit',
-        'VBit': 'vBit',
-        'Interfaces': 'interfaces',
         'BBit': 'bBit',
+        'EBit': 'eBit',
+        'Interfaces': 'interfaces',
+        'VBit': 'vBit',
     }
 
     def __init__(self, parent):

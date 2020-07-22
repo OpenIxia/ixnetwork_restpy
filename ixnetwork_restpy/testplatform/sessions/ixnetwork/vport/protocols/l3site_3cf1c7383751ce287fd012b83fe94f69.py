@@ -33,20 +33,20 @@ class L3Site(Base):
     __slots__ = ()
     _SDM_NAME = 'l3Site'
     _SDM_ATT_MAP = {
-        'VrfCount': 'vrfCount',
-        'IsLearnedInfoRefreshed': 'isLearnedInfoRefreshed',
-        'TunnelType': 'tunnelType',
-        'RsvpTunnelId': 'rsvpTunnelId',
-        'RsvpP2mpId': 'rsvpP2mpId',
         'Enabled': 'enabled',
-        'SameRtAsL3SiteRt': 'sameRtAsL3SiteRt',
-        'TrafficGroupId': 'trafficGroupId',
-        'UseUpstreamAssignedLabel': 'useUpstreamAssignedLabel',
-        'MulticastGroupAddressStep': 'multicastGroupAddressStep',
-        'IncludePmsiTunnelAttribute': 'includePmsiTunnelAttribute',
-        'SameTargetListAsL3SiteTargetList': 'sameTargetListAsL3SiteTargetList',
-        'MplsAssignedUpstreamLabel': 'mplsAssignedUpstreamLabel',
         'ExposeEachVrfAsTrafficEndpoint': 'exposeEachVrfAsTrafficEndpoint',
+        'IncludePmsiTunnelAttribute': 'includePmsiTunnelAttribute',
+        'IsLearnedInfoRefreshed': 'isLearnedInfoRefreshed',
+        'MplsAssignedUpstreamLabel': 'mplsAssignedUpstreamLabel',
+        'MulticastGroupAddressStep': 'multicastGroupAddressStep',
+        'RsvpP2mpId': 'rsvpP2mpId',
+        'RsvpTunnelId': 'rsvpTunnelId',
+        'SameRtAsL3SiteRt': 'sameRtAsL3SiteRt',
+        'SameTargetListAsL3SiteTargetList': 'sameTargetListAsL3SiteTargetList',
+        'TrafficGroupId': 'trafficGroupId',
+        'TunnelType': 'tunnelType',
+        'UseUpstreamAssignedLabel': 'useUpstreamAssignedLabel',
+        'VrfCount': 'vrfCount',
     }
 
     def __init__(self, parent):

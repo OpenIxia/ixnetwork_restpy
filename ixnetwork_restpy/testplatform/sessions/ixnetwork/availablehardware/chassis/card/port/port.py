@@ -32,13 +32,13 @@ class Port(Base):
     __slots__ = ()
     _SDM_NAME = 'port'
     _SDM_ATT_MAP = {
-        'PortId': 'portId',
         'Description': 'description',
+        'IsAvailable': 'isAvailable',
+        'IsBusy': 'isBusy',
         'IsLinkUp': 'isLinkUp',
         'IsUsable': 'isUsable',
         'Owner': 'owner',
-        'IsBusy': 'isBusy',
-        'IsAvailable': 'isAvailable',
+        'PortId': 'portId',
     }
 
     def __init__(self, parent):

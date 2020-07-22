@@ -33,11 +33,11 @@ class BgpAsPathSegmentList(Base):
     _SDM_NAME = 'bgpAsPathSegmentList'
     _SDM_ATT_MAP = {
         'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
         'EnableASPathSegment': 'enableASPathSegment',
         'Name': 'name',
         'NumberOfAsNumberInSegment': 'numberOfAsNumberInSegment',
         'SegmentType': 'segmentType',
-        'DescriptiveName': 'descriptiveName',
     }
 
     def __init__(self, parent):

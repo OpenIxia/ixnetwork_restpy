@@ -32,8 +32,8 @@ class LearnedMgrState(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedMgrState'
     _SDM_ATT_MAP = {
-        'Source': 'source',
         'Group': 'group',
+        'Source': 'source',
     }
 
     def __init__(self, parent):

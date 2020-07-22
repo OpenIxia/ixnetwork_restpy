@@ -33,15 +33,15 @@ class IxVmPort(Base):
     __slots__ = ()
     _SDM_NAME = 'ixVmPort'
     _SDM_ATT_MAP = {
-        'MacAddress': 'macAddress',
-        'PromiscMode': 'promiscMode',
-        'PortId': 'portId',
-        'PortState': 'portState',
-        'Mtu': 'mtu',
-        'Owner': 'owner',
-        'PortName': 'portName',
         'Interface': 'interface',
         'IpAddress': 'ipAddress',
+        'MacAddress': 'macAddress',
+        'Mtu': 'mtu',
+        'Owner': 'owner',
+        'PortId': 'portId',
+        'PortName': 'portName',
+        'PortState': 'portState',
+        'PromiscMode': 'promiscMode',
     }
 
     def __init__(self, parent):

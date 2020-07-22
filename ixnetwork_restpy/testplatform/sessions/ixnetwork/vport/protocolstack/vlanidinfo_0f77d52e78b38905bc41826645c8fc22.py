@@ -33,15 +33,15 @@ class VlanIdInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'vlanIdInfo'
     _SDM_ATT_MAP = {
-        'IncrementStep': 'incrementStep',
-        'UniqueCount': 'uniqueCount',
-        'FirstId': 'firstId',
-        'ObjectId': 'objectId',
-        'Tpid': 'tpid',
         'Enabled': 'enabled',
-        'Priority': 'priority',
+        'FirstId': 'firstId',
         'Increment': 'increment',
+        'IncrementStep': 'incrementStep',
         'Name': 'name',
+        'ObjectId': 'objectId',
+        'Priority': 'priority',
+        'Tpid': 'tpid',
+        'UniqueCount': 'uniqueCount',
     }
 
     def __init__(self, parent):

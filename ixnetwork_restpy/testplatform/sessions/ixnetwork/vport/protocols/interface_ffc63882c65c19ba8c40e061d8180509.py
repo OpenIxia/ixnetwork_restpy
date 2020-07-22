@@ -33,21 +33,21 @@ class Interface(Base):
     __slots__ = ()
     _SDM_NAME = 'interface'
     _SDM_ATT_MAP = {
-        'Load': 'load',
-        'InterfaceId': 'interfaceId',
-        'HelloInterval': 'helloInterval',
-        'SplitHorizon': 'splitHorizon',
-        'Interfaces': 'interfaces',
-        'Enabled': 'enabled',
-        'EnableBfdRegistration': 'enableBfdRegistration',
-        'InterfaceIndex': 'interfaceIndex',
-        'Delay': 'delay',
         'Bandwidth': 'bandwidth',
-        'Reliability': 'reliability',
-        'InterfaceType': 'interfaceType',
-        'Mtu': 'mtu',
+        'Delay': 'delay',
+        'EnableBfdRegistration': 'enableBfdRegistration',
+        'Enabled': 'enabled',
+        'HelloInterval': 'helloInterval',
         'HoldTime': 'holdTime',
+        'InterfaceId': 'interfaceId',
+        'InterfaceIndex': 'interfaceIndex',
+        'InterfaceType': 'interfaceType',
+        'Interfaces': 'interfaces',
+        'Load': 'load',
         'MaxTlvPerPacket': 'maxTlvPerPacket',
+        'Mtu': 'mtu',
+        'Reliability': 'reliability',
+        'SplitHorizon': 'splitHorizon',
     }
 
     def __init__(self, parent):

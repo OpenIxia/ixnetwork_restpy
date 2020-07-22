@@ -33,11 +33,11 @@ class Tlv(Base):
     __slots__ = ()
     _SDM_NAME = 'tlv'
     _SDM_ATT_MAP = {
-        'IncludeInMessages': 'includeInMessages',
-        'Description': 'description',
         'AvailableIncludeInMessages': 'availableIncludeInMessages',
-        'IsEnabled': 'isEnabled',
+        'Description': 'description',
         'EnablePerSession': 'enablePerSession',
+        'IncludeInMessages': 'includeInMessages',
+        'IsEnabled': 'isEnabled',
         'Name': 'name',
     }
 

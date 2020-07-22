@@ -33,11 +33,11 @@ class Ipv6(Base):
     __slots__ = ()
     _SDM_NAME = 'ipv6'
     _SDM_ATT_MAP = {
-        'Ip': 'ip',
-        'TrafficClass': 'trafficClass',
-        'PrefixLength': 'prefixLength',
         'Gateway': 'gateway',
+        'Ip': 'ip',
+        'PrefixLength': 'prefixLength',
         'TargetLinkLayerAddressOption': 'targetLinkLayerAddressOption',
+        'TrafficClass': 'trafficClass',
     }
 
     def __init__(self, parent):

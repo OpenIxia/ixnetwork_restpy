@@ -32,18 +32,18 @@ class GroupDescriptionStatLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'groupDescriptionStatLearnedInformation'
     _SDM_ATT_MAP = {
+        'DataPathId': 'dataPathId',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
+        'ErrorCode': 'errorCode',
+        'ErrorType': 'errorType',
+        'GroupId': 'groupId',
         'GroupType': 'groupType',
         'Latency': 'latency',
-        'ErrorType': 'errorType',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'ErrorCode': 'errorCode',
         'LocalIp': 'localIp',
-        'DataPathIdAsHex': 'dataPathIdAsHex',
+        'NegotiatedVersion': 'negotiatedVersion',
         'NumberOfBucketStats': 'numberOfBucketStats',
-        'ReplyState': 'replyState',
-        'DataPathId': 'dataPathId',
-        'GroupId': 'groupId',
         'RemoteIp': 'remoteIp',
+        'ReplyState': 'replyState',
     }
 
     def __init__(self, parent):

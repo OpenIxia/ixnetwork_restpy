@@ -32,19 +32,19 @@ class MeterFeatureStatsLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'meterFeatureStatsLearnedInformation'
     _SDM_ATT_MAP = {
-        'Latency': 'latency',
-        'ErrorType': 'errorType',
-        'MaxMeters': 'maxMeters',
+        'BandTypes': 'bandTypes',
         'Capabilities': 'capabilities',
-        'ErrorCode': 'errorCode',
-        'LocalIp': 'localIp',
+        'DataPathId': 'dataPathId',
         'DataPathIdAsHex': 'dataPathIdAsHex',
+        'ErrorCode': 'errorCode',
+        'ErrorType': 'errorType',
+        'Latency': 'latency',
+        'LocalIp': 'localIp',
+        'MaxBands': 'maxBands',
         'MaxColor': 'maxColor',
+        'MaxMeters': 'maxMeters',
         'RemoteIp': 'remoteIp',
         'ReplyState': 'replyState',
-        'DataPathId': 'dataPathId',
-        'BandTypes': 'bandTypes',
-        'MaxBands': 'maxBands',
     }
 
     def __init__(self, parent):

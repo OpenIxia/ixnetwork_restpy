@@ -33,11 +33,11 @@ class MulticastRootRange(Base):
     __slots__ = ()
     _SDM_NAME = 'multicastRootRange'
     _SDM_ATT_MAP = {
+        'ContinuousIncrOpaqueValuesAcrossRoot': 'continuousIncrOpaqueValuesAcrossRoot',
+        'LspCount': 'lspCount',
         'LspType': 'lspType',
         'RootAddrStep': 'rootAddrStep',
         'RootAddress': 'rootAddress',
-        'LspCount': 'lspCount',
-        'ContinuousIncrOpaqueValuesAcrossRoot': 'continuousIncrOpaqueValuesAcrossRoot',
         'RootAddressCount': 'rootAddressCount',
     }
 

@@ -34,12 +34,12 @@ class DeviceGroup(Base):
     _SDM_NAME = 'deviceGroup'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'Status': 'status',
-        'Errors': 'errors',
-        'Name': 'name',
-        'Enabled': 'enabled',
         'DescriptiveName': 'descriptiveName',
+        'Enabled': 'enabled',
+        'Errors': 'errors',
         'Multiplier': 'multiplier',
+        'Name': 'name',
+        'Status': 'status',
     }
 
     def __init__(self, parent):

@@ -31,22 +31,22 @@ class TenGigWan(Base):
     __slots__ = ()
     _SDM_NAME = 'tenGigWan'
     _SDM_ATT_MAP = {
-        'EnablePPM': 'enablePPM',
-        'TransmitClocking': 'transmitClocking',
-        'Loopback': 'loopback',
-        'AvailableSpeeds': 'availableSpeeds',
-        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
-        'EnabledFlowControl': 'enabledFlowControl',
-        'Ppm': 'ppm',
-        'CanModifySpeed': 'canModifySpeed',
-        'C2Tx': 'c2Tx',
-        'InterfaceType': 'interfaceType',
-        'C2Expected': 'c2Expected',
-        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
-        'SelectedSpeeds': 'selectedSpeeds',
-        'IfsStretch': 'ifsStretch',
         'AutoInstrumentation': 'autoInstrumentation',
+        'AvailableSpeeds': 'availableSpeeds',
+        'C2Expected': 'c2Expected',
+        'C2Tx': 'c2Tx',
+        'CanModifySpeed': 'canModifySpeed',
+        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
+        'EnablePPM': 'enablePPM',
+        'EnabledFlowControl': 'enabledFlowControl',
         'FlowControlDirectedAddress': 'flowControlDirectedAddress',
+        'IfsStretch': 'ifsStretch',
+        'InterfaceType': 'interfaceType',
+        'Loopback': 'loopback',
+        'Ppm': 'ppm',
+        'SelectedSpeeds': 'selectedSpeeds',
+        'TransmitClocking': 'transmitClocking',
+        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
     }
 
     def __init__(self, parent):

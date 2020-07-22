@@ -33,9 +33,9 @@ class RouterData(Base):
     _SDM_NAME = 'routerData'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'RouterId': 'routerId',
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
+        'RouterId': 'routerId',
     }
 
     def __init__(self, parent):

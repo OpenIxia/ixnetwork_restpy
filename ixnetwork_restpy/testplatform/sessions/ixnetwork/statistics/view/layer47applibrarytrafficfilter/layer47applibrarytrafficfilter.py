@@ -33,11 +33,11 @@ class Layer47AppLibraryTrafficFilter(Base):
     __slots__ = ()
     _SDM_NAME = 'layer47AppLibraryTrafficFilter'
     _SDM_ATT_MAP = {
-        'TopxValue': 'topxValue',
+        'AdvancedFilterName': 'advancedFilterName',
+        'AllAdvancedFilters': 'allAdvancedFilters',
         'MatchingAdvancedFilters': 'matchingAdvancedFilters',
         'TopxEnabled': 'topxEnabled',
-        'AllAdvancedFilters': 'allAdvancedFilters',
-        'AdvancedFilterName': 'advancedFilterName',
+        'TopxValue': 'topxValue',
     }
 
     def __init__(self, parent):

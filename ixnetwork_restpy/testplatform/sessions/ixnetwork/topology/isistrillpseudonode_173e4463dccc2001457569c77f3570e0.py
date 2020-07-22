@@ -32,11 +32,11 @@ class IsisTrillPseudoNode(Base):
     __slots__ = ()
     _SDM_NAME = 'isisTrillPseudoNode'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'BroadcastRootPriority': 'broadcastRootPriority',
-        'DescriptiveName': 'descriptiveName',
         'Active': 'active',
+        'BroadcastRootPriority': 'broadcastRootPriority',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Name': 'name',
         'Nickname': 'nickname',
     }
 

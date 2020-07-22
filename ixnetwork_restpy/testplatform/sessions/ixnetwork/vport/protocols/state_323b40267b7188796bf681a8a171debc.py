@@ -31,11 +31,11 @@ class State(Base):
     __slots__ = ()
     _SDM_NAME = 'state'
     _SDM_ATT_MAP = {
-        'StpForward': 'stpForward',
-        'StpListen': 'stpListen',
         'LinkDown': 'linkDown',
         'StpBlock': 'stpBlock',
+        'StpForward': 'stpForward',
         'StpLearn': 'stpLearn',
+        'StpListen': 'stpListen',
     }
 
     def __init__(self, parent):

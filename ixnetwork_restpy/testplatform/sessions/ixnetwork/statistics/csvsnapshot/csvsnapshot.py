@@ -31,19 +31,19 @@ class CsvSnapshot(Base):
     __slots__ = ()
     _SDM_NAME = 'csvSnapshot'
     _SDM_ATT_MAP = {
-        'CsvSupportsCSVSorting': 'csvSupportsCSVSorting',
-        'CsvStringQuotes': 'csvStringQuotes',
         'CsvDecimalPrecision': 'csvDecimalPrecision',
-        'Views': 'views',
-        'CsvLocation': 'csvLocation',
-        'CsvFormatTimestamp': 'csvFormatTimestamp',
-        'SnapshotSettingsName': 'snapshotSettingsName',
-        'SnapshotViewCsvGenerationMode': 'snapshotViewCsvGenerationMode',
         'CsvDumpTxPortLabelMap': 'csvDumpTxPortLabelMap',
-        'OpenViewer': 'openViewer',
-        'SnapshotViewContents': 'snapshotViewContents',
+        'CsvFormatTimestamp': 'csvFormatTimestamp',
+        'CsvLocation': 'csvLocation',
         'CsvName': 'csvName',
+        'CsvStringQuotes': 'csvStringQuotes',
+        'CsvSupportsCSVSorting': 'csvSupportsCSVSorting',
         'NextGenRefreshBeforeSnapshot': 'nextGenRefreshBeforeSnapshot',
+        'OpenViewer': 'openViewer',
+        'SnapshotSettingsName': 'snapshotSettingsName',
+        'SnapshotViewContents': 'snapshotViewContents',
+        'SnapshotViewCsvGenerationMode': 'snapshotViewCsvGenerationMode',
+        'Views': 'views',
     }
 
     def __init__(self, parent):

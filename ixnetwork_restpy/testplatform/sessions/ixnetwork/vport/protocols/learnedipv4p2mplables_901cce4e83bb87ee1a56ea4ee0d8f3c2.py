@@ -32,10 +32,10 @@ class LearnedIpv4P2mpLables(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedIpv4P2mpLables'
     _SDM_ATT_MAP = {
-        'RootAddress': 'rootAddress',
+        'Label': 'label',
         'LabelSpaceId': 'labelSpaceId',
         'PeerIpAddress': 'peerIpAddress',
-        'Label': 'label',
+        'RootAddress': 'rootAddress',
     }
 
     def __init__(self, parent):

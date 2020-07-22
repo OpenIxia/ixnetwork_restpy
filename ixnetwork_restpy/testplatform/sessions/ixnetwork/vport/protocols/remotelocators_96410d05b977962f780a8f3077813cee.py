@@ -32,15 +32,15 @@ class RemoteLocators(Base):
     __slots__ = ()
     _SDM_NAME = 'remoteLocators'
     _SDM_ATT_MAP = {
-        'Weight': 'weight',
+        'MPriority': 'mPriority',
         'MWeight': 'mWeight',
-        'RlocFlagL': 'rlocFlagL',
         'Priority': 'priority',
         'RemoteLocator': 'remoteLocator',
         'RemoteLocatorAfi': 'remoteLocatorAfi',
-        'RlocFlagR': 'rlocFlagR',
+        'RlocFlagL': 'rlocFlagL',
         'RlocFlagP': 'rlocFlagP',
-        'MPriority': 'mPriority',
+        'RlocFlagR': 'rlocFlagR',
+        'Weight': 'weight',
     }
 
     def __init__(self, parent):

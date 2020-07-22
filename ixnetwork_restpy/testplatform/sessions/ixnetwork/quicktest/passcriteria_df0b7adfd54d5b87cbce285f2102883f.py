@@ -32,10 +32,10 @@ class PassCriteria(Base):
     _SDM_NAME = 'passCriteria'
     _SDM_ATT_MAP = {
         'EnablePassFail': 'enablePassFail',
-        'RibInConvergenceFactorScale': 'ribInConvergenceFactorScale',
-        'RibInConvergenceTime': 'ribInConvergenceTime',
         'EnableRibInPassFail': 'enableRibInPassFail',
         'PassFailFrequency': 'passFailFrequency',
+        'RibInConvergenceFactorScale': 'ribInConvergenceFactorScale',
+        'RibInConvergenceTime': 'ribInConvergenceTime',
     }
 
     def __init__(self, parent):

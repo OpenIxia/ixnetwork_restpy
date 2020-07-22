@@ -34,20 +34,20 @@ class MacRanges(Base):
     _SDM_NAME = 'macRanges'
     _SDM_ATT_MAP = {
         'CVlanId': 'cVlanId',
-        'Count': 'count',
+        'CVlanPriority': 'cVlanPriority',
         'CVlanTpId': 'cVlanTpId',
-        'Step': 'step',
-        'Type': 'type',
+        'Count': 'count',
+        'EnableVlan': 'enableVlan',
         'Enabled': 'enabled',
-        'SVlanPriority': 'sVlanPriority',
+        'ITagethernetType': 'iTagethernetType',
+        'ITagiSid': 'iTagiSid',
         'SVlanId': 'sVlanId',
-        'TrafficGroupId': 'trafficGroupId',
+        'SVlanPriority': 'sVlanPriority',
         'SVlanTpId': 'sVlanTpId',
         'StartMacAddress': 'startMacAddress',
-        'ITagethernetType': 'iTagethernetType',
-        'EnableVlan': 'enableVlan',
-        'ITagiSid': 'iTagiSid',
-        'CVlanPriority': 'cVlanPriority',
+        'Step': 'step',
+        'TrafficGroupId': 'trafficGroupId',
+        'Type': 'type',
     }
 
     def __init__(self, parent):

@@ -31,12 +31,12 @@ class SwitchFlow131TriggerAttributes(Base):
     __slots__ = ()
     _SDM_NAME = 'switchFlow131TriggerAttributes'
     _SDM_ATT_MAP = {
-        'OutPort': 'outPort',
         'OutGroup': 'outGroup',
-        'TableId': 'tableId',
         'OutGroupInputMode': 'outGroupInputMode',
-        'TableIdInputMode': 'tableIdInputMode',
+        'OutPort': 'outPort',
         'OutPortInputMode': 'outPortInputMode',
+        'TableId': 'tableId',
+        'TableIdInputMode': 'tableIdInputMode',
     }
 
     def __init__(self, parent):

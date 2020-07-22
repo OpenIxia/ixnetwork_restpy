@@ -36,8 +36,8 @@ class SwitchPacketIn(Base):
         'ConsultFlowTable': 'consultFlowTable',
         'Enabled': 'enabled',
         'InPort': 'inPort',
-        'PacketInName': 'packetInName',
         'PacketIn': 'packetIn',
+        'PacketInName': 'packetInName',
         'SendPacketIn': 'sendPacketIn',
     }
 

@@ -33,16 +33,16 @@ class Ipv6PrefixPools(Base):
     __slots__ = ()
     _SDM_NAME = 'ipv6PrefixPools'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'NetworkAddress': 'networkAddress',
-        'Name': 'name',
-        'PrefixAddrStep': 'prefixAddrStep',
-        'NumberOfAddresses': 'numberOfAddresses',
-        'DescriptiveName': 'descriptiveName',
         'AddrStepSupported': 'addrStepSupported',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
         'LastNetworkAddress': 'lastNetworkAddress',
-        'PrefixLength': 'prefixLength',
+        'Name': 'name',
+        'NetworkAddress': 'networkAddress',
+        'NumberOfAddresses': 'numberOfAddresses',
         'NumberOfAddressesAsy': 'numberOfAddressesAsy',
+        'PrefixAddrStep': 'prefixAddrStep',
+        'PrefixLength': 'prefixLength',
     }
 
     def __init__(self, parent):

@@ -33,15 +33,15 @@ class MulticastLeafRange(Base):
     __slots__ = ()
     _SDM_NAME = 'multicastLeafRange'
     _SDM_ATT_MAP = {
-        'RootAddrCount': 'rootAddrCount',
-        'LabelValueStart': 'labelValueStart',
-        'LspType': 'lspType',
-        'Enabled': 'enabled',
         'ContinuousIncrOpaqueValuesAcrossRoot': 'continuousIncrOpaqueValuesAcrossRoot',
+        'Enabled': 'enabled',
+        'LabelValueStart': 'labelValueStart',
         'LabelValueStep': 'labelValueStep',
-        'RootAddress': 'rootAddress',
         'LspCountPerRoot': 'lspCountPerRoot',
+        'LspType': 'lspType',
+        'RootAddrCount': 'rootAddrCount',
         'RootAddrStep': 'rootAddrStep',
+        'RootAddress': 'rootAddress',
     }
 
     def __init__(self, parent):

@@ -31,16 +31,16 @@ class IxNetCodeOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'ixNetCodeOptions'
     _SDM_ATT_MAP = {
+        'IncludeAvailableHardware': 'includeAvailableHardware',
         'IncludeConnect': 'includeConnect',
         'IncludeDefaultValues': 'includeDefaultValues',
         'IncludeQuickTest': 'includeQuickTest',
-        'IncludeTraffic': 'includeTraffic',
         'IncludeStatistic': 'includeStatistic',
-        'IncludeTestComposer': 'includeTestComposer',
-        'IncludeAvailableHardware': 'includeAvailableHardware',
-        'IncludeTrafficStack': 'includeTrafficStack',
-        'IncludeTrafficFlowGroup': 'includeTrafficFlowGroup',
         'IncludeTAPSettings': 'includeTAPSettings',
+        'IncludeTestComposer': 'includeTestComposer',
+        'IncludeTraffic': 'includeTraffic',
+        'IncludeTrafficFlowGroup': 'includeTrafficFlowGroup',
+        'IncludeTrafficStack': 'includeTrafficStack',
     }
 
     def __init__(self, parent):

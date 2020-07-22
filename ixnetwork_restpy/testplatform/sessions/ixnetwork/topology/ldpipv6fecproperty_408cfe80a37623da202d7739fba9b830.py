@@ -32,15 +32,15 @@ class LdpIpv6FECProperty(Base):
     __slots__ = ()
     _SDM_NAME = 'ldpIpv6FECProperty'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'LabelValue': 'labelValue',
-        'DescriptiveName': 'descriptiveName',
         'Active': 'active',
-        'LabelIncrementMode': 'labelIncrementMode',
-        'EnableReplyingLspPing': 'enableReplyingLspPing',
-        'LocalRouterID': 'localRouterID',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
         'EnablePacking': 'enablePacking',
+        'EnableReplyingLspPing': 'enableReplyingLspPing',
+        'LabelIncrementMode': 'labelIncrementMode',
+        'LabelValue': 'labelValue',
+        'LocalRouterID': 'localRouterID',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

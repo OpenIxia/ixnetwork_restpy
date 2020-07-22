@@ -32,12 +32,12 @@ class RxSakPool(Base):
     _SDM_NAME = 'rxSakPool'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'RxSalt': 'rxSalt',
-        'Name': 'name',
-        'RxSak256': 'rxSak256',
-        'RxSsci': 'rxSsci',
         'DescriptiveName': 'descriptiveName',
+        'Name': 'name',
         'RxSak128': 'rxSak128',
+        'RxSak256': 'rxSak256',
+        'RxSalt': 'rxSalt',
+        'RxSsci': 'rxSsci',
     }
 
     def __init__(self, parent):

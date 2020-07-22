@@ -34,8 +34,8 @@ class Actions(Base):
     _SDM_NAME = 'actions'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'DisplayName': 'displayName',
         'Description': 'description',
+        'DisplayName': 'displayName',
         'IsEditable': 'isEditable',
         'IsEnabled': 'isEnabled',
         'IsRequired': 'isRequired',

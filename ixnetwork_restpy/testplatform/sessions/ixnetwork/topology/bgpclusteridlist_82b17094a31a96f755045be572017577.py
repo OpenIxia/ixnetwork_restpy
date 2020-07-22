@@ -32,9 +32,9 @@ class BgpClusterIdList(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpClusterIdList'
     _SDM_ATT_MAP = {
+        'ClusterId': 'clusterId',
         'Count': 'count',
         'DescriptiveName': 'descriptiveName',
-        'ClusterId': 'clusterId',
         'Name': 'name',
     }
 

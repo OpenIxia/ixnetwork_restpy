@@ -33,17 +33,17 @@ class SpbmNodeTopologyRange(Base):
     __slots__ = ()
     _SDM_NAME = 'spbmNodeTopologyRange'
     _SDM_ATT_MAP = {
+        'BridgePriority': 'bridgePriority',
+        'CistExternalRootCost': 'cistExternalRootCost',
         'CistRootIdentifier': 'cistRootIdentifier',
         'EnableVbit': 'enableVbit',
-        'SpSourceId': 'spSourceId',
         'Enabled': 'enabled',
         'InterNodeLinkMetricIncrement': 'interNodeLinkMetricIncrement',
         'InterNodeSpSourceIdIncrement': 'interNodeSpSourceIdIncrement',
-        'BridgePriority': 'bridgePriority',
-        'PortIdentifier': 'portIdentifier',
         'LinkMetric': 'linkMetric',
         'NoOfPorts': 'noOfPorts',
-        'CistExternalRootCost': 'cistExternalRootCost',
+        'PortIdentifier': 'portIdentifier',
+        'SpSourceId': 'spSourceId',
     }
 
     def __init__(self, parent):

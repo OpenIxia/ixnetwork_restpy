@@ -33,23 +33,23 @@ class Source(Base):
     __slots__ = ()
     _SDM_NAME = 'source'
     _SDM_ATT_MAP = {
-        'TxIterationGap': 'txIterationGap',
-        'SwitchOverInterval': 'switchOverInterval',
-        'UdpDstPort': 'udpDstPort',
-        'RpAddress': 'rpAddress',
         'DiscardSgJoinStates': 'discardSgJoinStates',
-        'SendNullRegAtBegin': 'sendNullRegAtBegin',
-        'GroupCount': 'groupCount',
-        'SuppressionTime': 'suppressionTime',
-        'MulticastDataLength': 'multicastDataLength',
-        'GroupMappingMode': 'groupMappingMode',
-        'SourceCount': 'sourceCount',
-        'UdpSrcPort': 'udpSrcPort',
-        'RegisterProbeTime': 'registerProbeTime',
-        'GroupAddress': 'groupAddress',
-        'SourceAddress': 'sourceAddress',
-        'GroupMaskWidth': 'groupMaskWidth',
         'Enabled': 'enabled',
+        'GroupAddress': 'groupAddress',
+        'GroupCount': 'groupCount',
+        'GroupMappingMode': 'groupMappingMode',
+        'GroupMaskWidth': 'groupMaskWidth',
+        'MulticastDataLength': 'multicastDataLength',
+        'RegisterProbeTime': 'registerProbeTime',
+        'RpAddress': 'rpAddress',
+        'SendNullRegAtBegin': 'sendNullRegAtBegin',
+        'SourceAddress': 'sourceAddress',
+        'SourceCount': 'sourceCount',
+        'SuppressionTime': 'suppressionTime',
+        'SwitchOverInterval': 'switchOverInterval',
+        'TxIterationGap': 'txIterationGap',
+        'UdpDstPort': 'udpDstPort',
+        'UdpSrcPort': 'udpSrcPort',
     }
 
     def __init__(self, parent):

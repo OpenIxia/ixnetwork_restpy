@@ -33,10 +33,10 @@ class VicOptionSet(Base):
     __slots__ = ()
     _SDM_NAME = 'vicOptionSet'
     _SDM_ATT_MAP = {
-        'FeatureType': 'featureType',
         'Defaultp': 'defaultp',
-        'ObjectId': 'objectId',
+        'FeatureType': 'featureType',
         'Name': 'name',
+        'ObjectId': 'objectId',
     }
 
     def __init__(self, parent):

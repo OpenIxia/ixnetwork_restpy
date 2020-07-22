@@ -34,9 +34,9 @@ class OpenFlowLayer2LearningRate(Base):
     _SDM_NAME = 'openFlowLayer2LearningRate'
     _SDM_ATT_MAP = {
         'ForceApplyQTConfig': 'forceApplyQTConfig',
+        'InputParameters': 'inputParameters',
         'Mode': 'mode',
         'Name': 'name',
-        'InputParameters': 'inputParameters',
     }
 
     def __init__(self, parent):

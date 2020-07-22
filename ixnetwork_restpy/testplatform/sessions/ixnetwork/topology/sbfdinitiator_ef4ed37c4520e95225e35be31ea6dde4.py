@@ -31,16 +31,16 @@ class SbfdInitiator(Base):
     __slots__ = ()
     _SDM_NAME = 'sbfdInitiator'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'MyDiscriminator': 'myDiscriminator',
-        'DestIPAddr': 'destIPAddr',
-        'PeerDiscriminator': 'peerDiscriminator',
-        'TimeoutMultiplier': 'timeoutMultiplier',
-        'DescriptiveName': 'descriptiveName',
-        'MplsLabelCount': 'mplsLabelCount',
         'Active': 'active',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'DestIPAddr': 'destIPAddr',
+        'MplsLabelCount': 'mplsLabelCount',
+        'MyDiscriminator': 'myDiscriminator',
+        'Name': 'name',
+        'PeerDiscriminator': 'peerDiscriminator',
         'SessionInfo': 'sessionInfo',
+        'TimeoutMultiplier': 'timeoutMultiplier',
         'TxInterval': 'txInterval',
     }
 

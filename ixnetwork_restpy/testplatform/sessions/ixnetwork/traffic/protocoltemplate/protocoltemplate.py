@@ -32,8 +32,8 @@ class ProtocolTemplate(Base):
     __slots__ = ()
     _SDM_NAME = 'protocolTemplate'
     _SDM_ATT_MAP = {
-        'StackTypeId': 'stackTypeId',
         'DisplayName': 'displayName',
+        'StackTypeId': 'stackTypeId',
         'TemplateName': 'templateName',
     }
 

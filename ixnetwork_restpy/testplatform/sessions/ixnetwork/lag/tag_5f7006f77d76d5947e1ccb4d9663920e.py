@@ -33,9 +33,9 @@ class Tag(Base):
     __slots__ = ()
     _SDM_NAME = 'tag'
     _SDM_ATT_MAP = {
+        'Id__': '__id__',
         'Count': 'count',
         'Enabled': 'enabled',
-        'Id__': '__id__',
         'Name': 'name',
     }
 

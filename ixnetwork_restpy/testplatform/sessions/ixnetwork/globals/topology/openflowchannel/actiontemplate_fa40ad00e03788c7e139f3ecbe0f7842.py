@@ -34,9 +34,9 @@ class ActionTemplate(Base):
     _SDM_NAME = 'actionTemplate'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'SavedInVersion': 'savedInVersion',
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
+        'SavedInVersion': 'savedInVersion',
     }
 
     def __init__(self, parent):

@@ -33,11 +33,11 @@ class MsAllowedEidRange(Base):
     __slots__ = ()
     _SDM_NAME = 'msAllowedEidRange'
     _SDM_ATT_MAP = {
+        'Address': 'address',
         'Count': 'count',
-        'PrefixLength': 'prefixLength',
         'Enabled': 'enabled',
         'Family': 'family',
-        'Address': 'address',
+        'PrefixLength': 'prefixLength',
     }
 
     def __init__(self, parent):

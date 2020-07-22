@@ -31,20 +31,20 @@ class PortModificationTriggerAttributes(Base):
     __slots__ = ()
     _SDM_NAME = 'portModificationTriggerAttributes'
     _SDM_ATT_MAP = {
-        'DoNotSendPacketIn': 'doNotSendPacketIn',
-        'EnablePortModPortFeatures': 'enablePortModPortFeatures',
-        'EthernetAddress': 'ethernetAddress',
-        'PortConfigMask': 'portConfigMask',
         'AdvertisedFeatures': 'advertisedFeatures',
-        'EnablePortConfig': 'enablePortConfig',
-        'EnablePortNumber': 'enablePortNumber',
-        'PortNumber': 'portNumber',
-        'PortConfig': 'portConfig',
-        'DropForwardedPackets': 'dropForwardedPackets',
+        'DoNotSendPacketIn': 'doNotSendPacketIn',
         'DropAllPackets': 'dropAllPackets',
-        'PortAdministrativelyDown': 'portAdministrativelyDown',
+        'DropForwardedPackets': 'dropForwardedPackets',
         'EnableAdvertiseFeature': 'enableAdvertiseFeature',
         'EnableEthernetAddress': 'enableEthernetAddress',
+        'EnablePortConfig': 'enablePortConfig',
+        'EnablePortModPortFeatures': 'enablePortModPortFeatures',
+        'EnablePortNumber': 'enablePortNumber',
+        'EthernetAddress': 'ethernetAddress',
+        'PortAdministrativelyDown': 'portAdministrativelyDown',
+        'PortConfig': 'portConfig',
+        'PortConfigMask': 'portConfigMask',
+        'PortNumber': 'portNumber',
     }
 
     def __init__(self, parent):

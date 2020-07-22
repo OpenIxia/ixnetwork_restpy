@@ -32,10 +32,10 @@ class AvailableTrackingFilter(Base):
     __slots__ = ()
     _SDM_NAME = 'availableTrackingFilter'
     _SDM_ATT_MAP = {
-        'ValueType': 'valueType',
-        'TrackingType': 'trackingType',
-        'Name': 'name',
         'Constraints': 'constraints',
+        'Name': 'name',
+        'TrackingType': 'trackingType',
+        'ValueType': 'valueType',
     }
 
     def __init__(self, parent):

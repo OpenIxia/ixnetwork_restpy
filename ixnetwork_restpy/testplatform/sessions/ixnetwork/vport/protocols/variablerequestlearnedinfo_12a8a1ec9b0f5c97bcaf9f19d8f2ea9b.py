@@ -32,10 +32,10 @@ class VariableRequestLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'variableRequestLearnedInfo'
     _SDM_ATT_MAP = {
-        'VariableLeaf': 'variableLeaf',
-        'VariableIndication': 'variableIndication',
-        'VariableValue': 'variableValue',
         'VariableBranch': 'variableBranch',
+        'VariableIndication': 'variableIndication',
+        'VariableLeaf': 'variableLeaf',
+        'VariableValue': 'variableValue',
         'VariableWidth': 'variableWidth',
     }
 

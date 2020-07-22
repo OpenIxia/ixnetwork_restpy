@@ -32,13 +32,13 @@ class PbbTeLtLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'pbbTeLtLearnedInfo'
     _SDM_ATT_MAP = {
-        'Hops': 'hops',
-        'DstMacAddress': 'dstMacAddress',
-        'SrcMacAddress': 'srcMacAddress',
-        'ReplyStatus': 'replyStatus',
         'BVlan': 'bVlan',
+        'DstMacAddress': 'dstMacAddress',
         'HopCount': 'hopCount',
+        'Hops': 'hops',
         'MdLevel': 'mdLevel',
+        'ReplyStatus': 'replyStatus',
+        'SrcMacAddress': 'srcMacAddress',
         'TransactionId': 'transactionId',
     }
 

@@ -31,14 +31,14 @@ class Length(Base):
     __slots__ = ()
     _SDM_NAME = 'length'
     _SDM_ATT_MAP = {
-        'Name': 'name',
-        'IsEditable': 'isEditable',
-        'Encoding': 'encoding',
         'Description': 'description',
-        'Value': 'value',
+        'Encoding': 'encoding',
+        'IsEditable': 'isEditable',
         'IsRequired': 'isRequired',
-        'SizeType': 'sizeType',
+        'Name': 'name',
         'Size': 'size',
+        'SizeType': 'sizeType',
+        'Value': 'value',
     }
 
     def __init__(self, parent):

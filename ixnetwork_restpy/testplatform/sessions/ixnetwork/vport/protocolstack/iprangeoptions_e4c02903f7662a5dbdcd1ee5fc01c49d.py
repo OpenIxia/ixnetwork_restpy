@@ -33,13 +33,13 @@ class IpRangeOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'ipRangeOptions'
     _SDM_ATT_MAP = {
+        'GatewayArpRequestRate': 'gatewayArpRequestRate',
         'Icmpv6DiscardRouterAdvertisements': 'icmpv6DiscardRouterAdvertisements',
-        'ObjectId': 'objectId',
         'Ipv6AddressMode': 'ipv6AddressMode',
-        'MaxOutstandingGatewayArpRequests': 'maxOutstandingGatewayArpRequests',
         'Ipv6ConfigRate': 'ipv6ConfigRate',
         'Ipv6ConfigRateEnable': 'ipv6ConfigRateEnable',
-        'GatewayArpRequestRate': 'gatewayArpRequestRate',
+        'MaxOutstandingGatewayArpRequests': 'maxOutstandingGatewayArpRequests',
+        'ObjectId': 'objectId',
     }
 
     def __init__(self, parent):

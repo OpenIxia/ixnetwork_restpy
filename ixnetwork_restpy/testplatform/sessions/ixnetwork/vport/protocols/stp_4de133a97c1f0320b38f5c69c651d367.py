@@ -31,8 +31,8 @@ class Stp(Base):
     __slots__ = ()
     _SDM_NAME = 'stp'
     _SDM_ATT_MAP = {
-        'RunningState': 'runningState',
         'Enabled': 'enabled',
+        'RunningState': 'runningState',
     }
 
     def __init__(self, parent):

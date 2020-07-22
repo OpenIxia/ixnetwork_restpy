@@ -34,8 +34,8 @@ class NetTopologyCustom(Base):
     _SDM_NAME = 'netTopologyCustom'
     _SDM_ATT_MAP = {
         'IncludeEntryPoint': 'includeEntryPoint',
-        'NumberOfNodes': 'numberOfNodes',
         'LinkMultiplier': 'linkMultiplier',
+        'NumberOfNodes': 'numberOfNodes',
     }
 
     def __init__(self, parent):

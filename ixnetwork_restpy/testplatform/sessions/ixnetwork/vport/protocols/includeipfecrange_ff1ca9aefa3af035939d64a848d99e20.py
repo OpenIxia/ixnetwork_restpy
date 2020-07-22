@@ -33,11 +33,11 @@ class IncludeIpFecRange(Base):
     __slots__ = ()
     _SDM_NAME = 'includeIpFecRange'
     _SDM_ATT_MAP = {
-        'FirstNetwork': 'firstNetwork',
-        'NumberOfNetworks': 'numberOfNetworks',
-        'Enabled': 'enabled',
-        'MaskWidth': 'maskWidth',
         'EnableExactPrefixMatch': 'enableExactPrefixMatch',
+        'Enabled': 'enabled',
+        'FirstNetwork': 'firstNetwork',
+        'MaskWidth': 'maskWidth',
+        'NumberOfNetworks': 'numberOfNetworks',
     }
 
     def __init__(self, parent):

@@ -33,17 +33,17 @@ class AncpDslResyncTlv(Base):
     __slots__ = ()
     _SDM_NAME = 'ancpDslResyncTlv'
     _SDM_ATT_MAP = {
-        'StepValue': 'stepValue',
-        'LastValue': 'lastValue',
         'Code': 'code',
-        'Name': 'name',
-        'ObjectId': 'objectId',
+        'FirstValue': 'firstValue',
+        'LastValue': 'lastValue',
         'MaxValue': 'maxValue',
-        'Value': 'value',
         'MinValue': 'minValue',
         'Mode': 'mode',
+        'Name': 'name',
+        'ObjectId': 'objectId',
+        'StepValue': 'stepValue',
         'Type': 'type',
-        'FirstValue': 'firstValue',
+        'Value': 'value',
     }
 
     def __init__(self, parent):

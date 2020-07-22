@@ -33,10 +33,10 @@ class OpaqueValueElement(Base):
     __slots__ = ()
     _SDM_NAME = 'opaqueValueElement'
     _SDM_ATT_MAP = {
+        'Increment': 'increment',
         'Length': 'length',
         'Type': 'type',
         'Value': 'value',
-        'Increment': 'increment',
     }
 
     def __init__(self, parent):

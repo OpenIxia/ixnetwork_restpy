@@ -33,11 +33,11 @@ class Interface(Base):
     __slots__ = ()
     _SDM_NAME = 'interface'
     _SDM_ATT_MAP = {
-        'Eui64Id': 'eui64Id',
-        'Type': 'type',
-        'Enabled': 'enabled',
         'Description': 'description',
+        'Enabled': 'enabled',
+        'Eui64Id': 'eui64Id',
         'Mtu': 'mtu',
+        'Type': 'type',
     }
 
     def __init__(self, parent):

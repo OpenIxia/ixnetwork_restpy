@@ -31,10 +31,10 @@ class ErroredFrameTlv(Base):
     __slots__ = ()
     _SDM_NAME = 'erroredFrameTlv'
     _SDM_ATT_MAP = {
+        'Enabled': 'enabled',
         'Frames': 'frames',
         'Threshold': 'threshold',
         'Window': 'window',
-        'Enabled': 'enabled',
     }
 
     def __init__(self, parent):

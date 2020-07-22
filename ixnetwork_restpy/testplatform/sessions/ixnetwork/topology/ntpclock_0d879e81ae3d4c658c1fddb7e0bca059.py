@@ -33,23 +33,23 @@ class Ntpclock(Base):
     __slots__ = ()
     _SDM_NAME = 'ntpclock'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Status': 'status',
-        'Errors': 'errors',
-        'Name': 'name',
-        'IsParentV6': 'isParentV6',
-        'StackedLayers': 'stackedLayers',
-        'MaximumFrequencyTolerance': 'maximumFrequencyTolerance',
-        'Precision': 'precision',
-        'NtpServerCount': 'ntpServerCount',
-        'ConnectedVia': 'connectedVia',
-        'DescriptiveName': 'descriptiveName',
         'AcceptNTPPacketswithCryptoNAK': 'acceptNTPPacketswithCryptoNAK',
+        'Active': 'active',
+        'ConnectedVia': 'connectedVia',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Errors': 'errors',
+        'IsParentV6': 'isParentV6',
+        'MaximumFrequencyTolerance': 'maximumFrequencyTolerance',
         'Mimimumsurvivorcount': 'mimimumsurvivorcount',
         'Multiplier': 'multiplier',
-        'Active': 'active',
-        'StateCounts': 'stateCounts',
+        'Name': 'name',
+        'NtpServerCount': 'ntpServerCount',
+        'Precision': 'precision',
         'SessionStatus': 'sessionStatus',
+        'StackedLayers': 'stackedLayers',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
     }
 
     def __init__(self, parent):

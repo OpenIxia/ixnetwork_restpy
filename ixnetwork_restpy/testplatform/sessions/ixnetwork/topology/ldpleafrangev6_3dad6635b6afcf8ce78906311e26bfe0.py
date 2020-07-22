@@ -31,22 +31,22 @@ class LdpLeafRangeV6(Base):
     __slots__ = ()
     _SDM_NAME = 'ldpLeafRangeV6'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'RootAddressStep': 'rootAddressStep',
-        'Name': 'name',
-        'LspCountPerRoot': 'lspCountPerRoot',
-        'LabelValueStart': 'labelValueStart',
-        'LSPType': 'lSPType',
-        'GroupCountPerLsp': 'groupCountPerLsp',
-        'GroupAddressV6': 'groupAddressV6',
-        'GroupAddressV4': 'groupAddressV4',
-        'LabelValueStep': 'labelValueStep',
-        'RootAddress': 'rootAddress',
-        'DescriptiveName': 'descriptiveName',
         'Active': 'active',
-        'NumberOfTLVs': 'numberOfTLVs',
         'ContinuousIncrementOVAcrossRoot': 'continuousIncrementOVAcrossRoot',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'GroupAddressV4': 'groupAddressV4',
+        'GroupAddressV6': 'groupAddressV6',
+        'GroupCountPerLsp': 'groupCountPerLsp',
+        'LSPType': 'lSPType',
+        'LabelValueStart': 'labelValueStart',
+        'LabelValueStep': 'labelValueStep',
+        'LspCountPerRoot': 'lspCountPerRoot',
+        'Name': 'name',
+        'NumberOfTLVs': 'numberOfTLVs',
+        'RootAddress': 'rootAddress',
         'RootAddressCount': 'rootAddressCount',
+        'RootAddressStep': 'rootAddressStep',
     }
 
     def __init__(self, parent):

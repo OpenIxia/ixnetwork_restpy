@@ -34,19 +34,19 @@ class NetworkRangeInfo(Base):
     _SDM_NAME = 'networkRangeInfo'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'NetworkRangeIp': 'networkRangeIp',
-        'NumColumns': 'numColumns',
-        'Name': 'name',
-        'NetworkRangeInterfaceIpMask': 'networkRangeInterfaceIpMask',
-        'NetworkRangeLinkType': 'networkRangeLinkType',
-        'NetworkRangeIPByMask': 'networkRangeIPByMask',
-        'NetworkRangeRIDIncrement': 'networkRangeRIDIncrement',
-        'NumRows': 'numRows',
-        'NetworkRangeIpIncrementBy': 'networkRangeIpIncrementBy',
         'DescriptiveName': 'descriptiveName',
+        'Name': 'name',
+        'NetworkRangeIPByMask': 'networkRangeIPByMask',
         'NetworkRangeInterfaceIp': 'networkRangeInterfaceIp',
+        'NetworkRangeInterfaceIpMask': 'networkRangeInterfaceIpMask',
+        'NetworkRangeIp': 'networkRangeIp',
+        'NetworkRangeIpIncrementBy': 'networkRangeIpIncrementBy',
         'NetworkRangeIpMask': 'networkRangeIpMask',
+        'NetworkRangeLinkType': 'networkRangeLinkType',
         'NetworkRangeRID': 'networkRangeRID',
+        'NetworkRangeRIDIncrement': 'networkRangeRIDIncrement',
+        'NumColumns': 'numColumns',
+        'NumRows': 'numRows',
     }
 
     def __init__(self, parent):

@@ -33,13 +33,13 @@ class SwitchPacketIn(Base):
     __slots__ = ()
     _SDM_NAME = 'switchPacketIn'
     _SDM_ATT_MAP = {
-        'ConsultFlowTable': 'consultFlowTable',
         'AuxiliaryId': 'auxiliaryId',
+        'ConsultFlowTable': 'consultFlowTable',
         'Enabled': 'enabled',
-        'PhysicalInPort': 'physicalInPort',
         'InPort': 'inPort',
-        'PacketInName': 'packetInName',
         'PacketIn': 'packetIn',
+        'PacketInName': 'packetInName',
+        'PhysicalInPort': 'physicalInPort',
         'SendPacketIn': 'sendPacketIn',
     }
 

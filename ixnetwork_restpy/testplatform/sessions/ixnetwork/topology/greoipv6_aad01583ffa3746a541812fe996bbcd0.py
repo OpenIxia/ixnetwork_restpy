@@ -33,23 +33,23 @@ class Greoipv6(Base):
     __slots__ = ()
     _SDM_NAME = 'greoipv6'
     _SDM_ATT_MAP = {
+        'ConnectedVia': 'connectedVia',
         'Count': 'count',
-        'Status': 'status',
-        'Errors': 'errors',
-        'Name': 'name',
+        'DescriptiveName': 'descriptiveName',
+        'DestIp': 'destIp',
         'EnableChecksum': 'enableChecksum',
         'EnableKey': 'enableKey',
-        'StackedLayers': 'stackedLayers',
-        'OutKey': 'outKey',
-        'DestIp': 'destIp',
-        'ConnectedVia': 'connectedVia',
-        'DescriptiveName': 'descriptiveName',
         'EnableSequenceNumber': 'enableSequenceNumber',
+        'Errors': 'errors',
         'InKey': 'inKey',
-        'SrcIp': 'srcIp',
-        'StateCounts': 'stateCounts',
         'Multiplier': 'multiplier',
+        'Name': 'name',
+        'OutKey': 'outKey',
         'SessionStatus': 'sessionStatus',
+        'SrcIp': 'srcIp',
+        'StackedLayers': 'stackedLayers',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
     }
 
     def __init__(self, parent):

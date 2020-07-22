@@ -33,8 +33,8 @@ class Bgp8277SRSegmentIdList(Base):
     _SDM_NAME = 'Bgp8277SRSegmentIdList'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'IncrementMode': 'incrementMode',
         'DescriptiveName': 'descriptiveName',
+        'IncrementMode': 'incrementMode',
         'Name': 'name',
         'SegmentId': 'segmentId',
     }

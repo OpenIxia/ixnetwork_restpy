@@ -32,14 +32,14 @@ class LdpTLVList(Base):
     __slots__ = ()
     _SDM_NAME = 'ldpTLVList'
     _SDM_ATT_MAP = {
+        'Active': 'active',
         'Count': 'count',
-        'Name': 'name',
-        'TlvLength': 'tlvLength',
-        'Value': 'value',
         'DescriptiveName': 'descriptiveName',
         'Increment': 'increment',
-        'Active': 'active',
+        'Name': 'name',
+        'TlvLength': 'tlvLength',
         'Type': 'type',
+        'Value': 'value',
     }
 
     def __init__(self, parent):

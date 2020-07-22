@@ -33,13 +33,13 @@ class Vlan(Base):
     __slots__ = ()
     _SDM_NAME = 'vlan'
     _SDM_ATT_MAP = {
-        'InternalRootPathCost': 'internalRootPathCost',
         'Enabled': 'enabled',
-        'PortPriority': 'portPriority',
-        'VlanId': 'vlanId',
-        'Priority': 'priority',
+        'InternalRootPathCost': 'internalRootPathCost',
         'Mac': 'mac',
+        'PortPriority': 'portPriority',
+        'Priority': 'priority',
         'UpdateRequired': 'updateRequired',
+        'VlanId': 'vlanId',
     }
 
     def __init__(self, parent):

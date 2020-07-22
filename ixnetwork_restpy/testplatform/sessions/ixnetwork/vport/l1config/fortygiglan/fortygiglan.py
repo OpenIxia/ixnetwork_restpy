@@ -31,19 +31,19 @@ class FortyGigLan(Base):
     __slots__ = ()
     _SDM_NAME = 'fortyGigLan'
     _SDM_ATT_MAP = {
-        'EnablePPM': 'enablePPM',
-        'Loopback': 'loopback',
-        'AvailableSpeeds': 'availableSpeeds',
-        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
-        'EnabledFlowControl': 'enabledFlowControl',
-        'Ppm': 'ppm',
-        'CanModifySpeed': 'canModifySpeed',
-        'EnableLASIMonitoring': 'enableLASIMonitoring',
-        'TransmitClocking': 'transmitClocking',
-        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
-        'SelectedSpeeds': 'selectedSpeeds',
         'AutoInstrumentation': 'autoInstrumentation',
+        'AvailableSpeeds': 'availableSpeeds',
+        'CanModifySpeed': 'canModifySpeed',
+        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
+        'EnableLASIMonitoring': 'enableLASIMonitoring',
+        'EnablePPM': 'enablePPM',
+        'EnabledFlowControl': 'enabledFlowControl',
         'FlowControlDirectedAddress': 'flowControlDirectedAddress',
+        'Loopback': 'loopback',
+        'Ppm': 'ppm',
+        'SelectedSpeeds': 'selectedSpeeds',
+        'TransmitClocking': 'transmitClocking',
+        'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
     }
 
     def __init__(self, parent):

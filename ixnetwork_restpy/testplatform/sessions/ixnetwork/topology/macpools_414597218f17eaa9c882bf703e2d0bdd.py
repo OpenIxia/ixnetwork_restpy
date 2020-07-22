@@ -34,16 +34,16 @@ class MacPools(Base):
     _SDM_NAME = 'macPools'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'LastMacAddress': 'lastMacAddress',
-        'UseVlans': 'useVlans',
-        'EnableVlans': 'enableVlans',
-        'VlanCount': 'vlanCount',
-        'NumberOfAddresses': 'numberOfAddresses',
-        'Mac': 'mac',
         'DescriptiveName': 'descriptiveName',
-        'PrefixLength': 'prefixLength',
-        'NumberOfAddressesAsy': 'numberOfAddressesAsy',
+        'EnableVlans': 'enableVlans',
+        'LastMacAddress': 'lastMacAddress',
+        'Mac': 'mac',
         'Name': 'name',
+        'NumberOfAddresses': 'numberOfAddresses',
+        'NumberOfAddressesAsy': 'numberOfAddressesAsy',
+        'PrefixLength': 'prefixLength',
+        'UseVlans': 'useVlans',
+        'VlanCount': 'vlanCount',
     }
 
     def __init__(self, parent):

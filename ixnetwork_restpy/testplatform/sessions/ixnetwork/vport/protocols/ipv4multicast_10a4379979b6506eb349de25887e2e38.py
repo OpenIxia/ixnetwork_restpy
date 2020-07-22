@@ -32,12 +32,12 @@ class Ipv4Multicast(Base):
     __slots__ = ()
     _SDM_NAME = 'ipv4Multicast'
     _SDM_ATT_MAP = {
-        'LspId': 'lspId',
-        'SequenceNumber': 'sequenceNumber',
         'Age': 'age',
         'HostName': 'hostName',
-        'VlanId': 'vlanId',
         'Ipv4MulticastGroupAddress': 'ipv4MulticastGroupAddress',
+        'LspId': 'lspId',
+        'SequenceNumber': 'sequenceNumber',
+        'VlanId': 'vlanId',
     }
 
     def __init__(self, parent):

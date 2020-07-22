@@ -33,23 +33,23 @@ class CfmBridge(Base):
     __slots__ = ()
     _SDM_NAME = 'cfmBridge'
     _SDM_ATT_MAP = {
-        'AllowCfmMaidFormatsinY1731': 'allowCfmMaidFormatsinY1731',
-        'Count': 'count',
-        'Errors': 'errors',
-        'Name': 'name',
-        'EtherType': 'etherType',
-        'StateCounts': 'stateCounts',
-        'StackedLayers': 'stackedLayers',
-        'EncapsulationType': 'encapsulationType',
-        'Status': 'status',
-        'ConnectedVia': 'connectedVia',
-        'DescriptiveName': 'descriptiveName',
-        'Multiplier': 'multiplier',
         'Active': 'active',
-        'NumberOfMPs': 'numberOfMPs',
-        'SessionStatus': 'sessionStatus',
+        'AllowCfmMaidFormatsinY1731': 'allowCfmMaidFormatsinY1731',
+        'ConnectedVia': 'connectedVia',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
         'EnableOutOfSequenceCcmDetection': 'enableOutOfSequenceCcmDetection',
+        'EncapsulationType': 'encapsulationType',
+        'Errors': 'errors',
+        'EtherType': 'etherType',
+        'Multiplier': 'multiplier',
+        'Name': 'name',
+        'NumberOfMPs': 'numberOfMPs',
         'OperationMode': 'operationMode',
+        'SessionStatus': 'sessionStatus',
+        'StackedLayers': 'stackedLayers',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
     }
 
     def __init__(self, parent):

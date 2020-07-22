@@ -31,19 +31,19 @@ class Egress(Base):
     __slots__ = ()
     _SDM_NAME = 'egress'
     _SDM_ATT_MAP = {
-        'ReflectRro': 'reflectRro',
-        'Rro': 'rro',
-        'PathErrorTlv': 'pathErrorTlv',
-        'ReservationTlv': 'reservationTlv',
-        'ReservationStyle': 'reservationStyle',
-        'TimeoutMultiplier': 'timeoutMultiplier',
-        'EgressBehavior': 'egressBehavior',
-        'LabelValue': 'labelValue',
         'Bandwidth': 'bandwidth',
-        'ReservationTearTlv': 'reservationTearTlv',
-        'RefreshInterval': 'refreshInterval',
+        'EgressBehavior': 'egressBehavior',
         'EnableFixedLabelForResv': 'enableFixedLabelForResv',
+        'LabelValue': 'labelValue',
+        'PathErrorTlv': 'pathErrorTlv',
+        'ReflectRro': 'reflectRro',
+        'RefreshInterval': 'refreshInterval',
+        'ReservationStyle': 'reservationStyle',
+        'ReservationTearTlv': 'reservationTearTlv',
+        'ReservationTlv': 'reservationTlv',
+        'Rro': 'rro',
         'SendResvConfirmation': 'sendResvConfirmation',
+        'TimeoutMultiplier': 'timeoutMultiplier',
     }
 
     def __init__(self, parent):

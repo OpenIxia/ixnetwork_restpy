@@ -33,11 +33,11 @@ class TunnelHeadTrafficEndPoint(Base):
     __slots__ = ()
     _SDM_NAME = 'tunnelHeadTrafficEndPoint'
     _SDM_ATT_MAP = {
-        'InsertExplicitTrafficItem': 'insertExplicitTrafficItem',
-        'IpCount': 'ipCount',
-        'InsertIpv6ExplicitNull': 'insertIpv6ExplicitNull',
-        'IpStart': 'ipStart',
         'EndPointType': 'endPointType',
+        'InsertExplicitTrafficItem': 'insertExplicitTrafficItem',
+        'InsertIpv6ExplicitNull': 'insertIpv6ExplicitNull',
+        'IpCount': 'ipCount',
+        'IpStart': 'ipStart',
     }
 
     def __init__(self, parent):

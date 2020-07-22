@@ -33,9 +33,9 @@ class NetTopologyRing(Base):
     __slots__ = ()
     _SDM_NAME = 'netTopologyRing'
     _SDM_ATT_MAP = {
-        'Nodes': 'nodes',
         'IncludeEntryPoint': 'includeEntryPoint',
         'LinkMultiplier': 'linkMultiplier',
+        'Nodes': 'nodes',
     }
 
     def __init__(self, parent):

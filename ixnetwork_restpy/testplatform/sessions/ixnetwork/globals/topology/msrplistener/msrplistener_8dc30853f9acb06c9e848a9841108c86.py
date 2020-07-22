@@ -32,9 +32,9 @@ class MsrpListener(Base):
     _SDM_NAME = 'msrpListener'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'RowNames': 'rowNames',
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
+        'RowNames': 'rowNames',
     }
 
     def __init__(self, parent):

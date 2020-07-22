@@ -33,11 +33,11 @@ class FcFportGlobals(Base):
     __slots__ = ()
     _SDM_NAME = 'fcFportGlobals'
     _SDM_ATT_MAP = {
-        'RetryInterval': 'retryInterval',
         'AcceptPartialConfig': 'acceptPartialConfig',
-        'ObjectId': 'objectId',
         'MaxPacketsPerSecond': 'maxPacketsPerSecond',
         'MaxRetries': 'maxRetries',
+        'ObjectId': 'objectId',
+        'RetryInterval': 'retryInterval',
     }
 
     def __init__(self, parent):

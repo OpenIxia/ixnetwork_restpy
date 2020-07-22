@@ -32,17 +32,17 @@ class Ipv6(Base):
     _SDM_NAME = 'ipv6'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'SuppressNsForDuplicateGateway': 'suppressNsForDuplicateGateway',
-        'Name': 'name',
-        'MaxRaInterval': 'maxRaInterval',
+        'DescriptiveName': 'descriptiveName',
+        'EnableNaRouterBit': 'enableNaRouterBit',
         'InitialRaCount': 'initialRaCount',
         'MaxInitialRaInterval': 'maxInitialRaInterval',
-        'DescriptiveName': 'descriptiveName',
-        'RaRtrLifetime': 'raRtrLifetime',
-        'EnableNaRouterBit': 'enableNaRouterBit',
+        'MaxRaInterval': 'maxRaInterval',
+        'Name': 'name',
         'PermanentMacForGateway': 'permanentMacForGateway',
-        'RowNames': 'rowNames',
+        'RaRtrLifetime': 'raRtrLifetime',
         'ReSendNsOnLinkUp': 'reSendNsOnLinkUp',
+        'RowNames': 'rowNames',
+        'SuppressNsForDuplicateGateway': 'suppressNsForDuplicateGateway',
     }
 
     def __init__(self, parent):

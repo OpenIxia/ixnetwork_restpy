@@ -32,16 +32,16 @@ class Ipv4(Base):
     _SDM_NAME = 'ipv4'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'Name': 'name',
-        'RarpTransmitInterval': 'rarpTransmitInterval',
-        'GratarpTransmitCount': 'gratarpTransmitCount',
-        'SuppressArpForDuplicateGateway': 'suppressArpForDuplicateGateway',
         'DescriptiveName': 'descriptiveName',
-        'ReSendArpOnLinkUp': 'reSendArpOnLinkUp',
-        'PermanentMacForGateway': 'permanentMacForGateway',
-        'RowNames': 'rowNames',
-        'RarpTransmitCount': 'rarpTransmitCount',
+        'GratarpTransmitCount': 'gratarpTransmitCount',
         'GratarpTransmitInterval': 'gratarpTransmitInterval',
+        'Name': 'name',
+        'PermanentMacForGateway': 'permanentMacForGateway',
+        'RarpTransmitCount': 'rarpTransmitCount',
+        'RarpTransmitInterval': 'rarpTransmitInterval',
+        'ReSendArpOnLinkUp': 'reSendArpOnLinkUp',
+        'RowNames': 'rowNames',
+        'SuppressArpForDuplicateGateway': 'suppressArpForDuplicateGateway',
     }
 
     def __init__(self, parent):

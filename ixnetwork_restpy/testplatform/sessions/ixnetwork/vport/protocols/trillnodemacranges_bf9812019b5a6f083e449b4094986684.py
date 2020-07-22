@@ -35,11 +35,11 @@ class TrillNodeMacRanges(Base):
     _SDM_ATT_MAP = {
         'Count': 'count',
         'EnableMacRanges': 'enableMacRanges',
-        'TopologyId': 'topologyId',
-        'VlanId': 'vlanId',
-        'UnicastMacStep': 'unicastMacStep',
         'InterNodeMacStep': 'interNodeMacStep',
         'StartUnicastMac': 'startUnicastMac',
+        'TopologyId': 'topologyId',
+        'UnicastMacStep': 'unicastMacStep',
+        'VlanId': 'vlanId',
     }
 
     def __init__(self, parent):

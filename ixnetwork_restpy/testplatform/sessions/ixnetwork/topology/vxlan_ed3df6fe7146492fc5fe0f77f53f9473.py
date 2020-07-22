@@ -33,23 +33,23 @@ class Vxlan(Base):
     __slots__ = ()
     _SDM_NAME = 'vxlan'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Status': 'status',
-        'Errors': 'errors',
-        'Name': 'name',
-        'ExternalLearning': 'externalLearning',
-        'EnableStaticInfo': 'enableStaticInfo',
-        'StackedLayers': 'stackedLayers',
-        'Vni': 'vni',
-        'RunningMode': 'runningMode',
-        'StaticInfoCount': 'staticInfoCount',
         'ConnectedVia': 'connectedVia',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
-        'Multiplier': 'multiplier',
+        'EnableStaticInfo': 'enableStaticInfo',
+        'Errors': 'errors',
+        'ExternalLearning': 'externalLearning',
         'Ipv4_multicast': 'ipv4_multicast',
+        'Multiplier': 'multiplier',
+        'Name': 'name',
         'OvsdbConnectorMultiplier': 'ovsdbConnectorMultiplier',
-        'StateCounts': 'stateCounts',
+        'RunningMode': 'runningMode',
         'SessionStatus': 'sessionStatus',
+        'StackedLayers': 'stackedLayers',
+        'StateCounts': 'stateCounts',
+        'StaticInfoCount': 'staticInfoCount',
+        'Status': 'status',
+        'Vni': 'vni',
     }
 
     def __init__(self, parent):

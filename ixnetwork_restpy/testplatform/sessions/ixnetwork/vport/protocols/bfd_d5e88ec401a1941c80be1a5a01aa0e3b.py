@@ -31,10 +31,10 @@ class Bfd(Base):
     __slots__ = ()
     _SDM_NAME = 'bfd'
     _SDM_ATT_MAP = {
-        'PacketsPerInterval': 'packetsPerInterval',
         'Enabled': 'enabled',
-        'RunningState': 'runningState',
         'IntervalValue': 'intervalValue',
+        'PacketsPerInterval': 'packetsPerInterval',
+        'RunningState': 'runningState',
     }
 
     def __init__(self, parent):

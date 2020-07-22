@@ -33,19 +33,19 @@ class TunnelHeadToLeaf(Base):
     __slots__ = ()
     _SDM_NAME = 'tunnelHeadToLeaf'
     _SDM_ATT_MAP = {
-        'HeadIpStart': 'headIpStart',
-        'IsSendingAsEro': 'isSendingAsEro',
-        'IsPrependDut': 'isPrependDut',
-        'IsSendingAsSero': 'isSendingAsSero',
-        'TunnelLeafIpStart': 'tunnelLeafIpStart',
-        'IsAppendTunnelLeaf': 'isAppendTunnelLeaf',
-        'SubObjectList': 'subObjectList',
-        'Enabled': 'enabled',
-        'TunnelLeafCount': 'tunnelLeafCount',
         'DutHopType': 'dutHopType',
-        'TunnelLeafPrefixLength': 'tunnelLeafPrefixLength',
         'DutPrefixLength': 'dutPrefixLength',
+        'Enabled': 'enabled',
+        'HeadIpStart': 'headIpStart',
+        'IsAppendTunnelLeaf': 'isAppendTunnelLeaf',
+        'IsPrependDut': 'isPrependDut',
+        'IsSendingAsEro': 'isSendingAsEro',
+        'IsSendingAsSero': 'isSendingAsSero',
+        'SubObjectList': 'subObjectList',
+        'TunnelLeafCount': 'tunnelLeafCount',
         'TunnelLeafHopType': 'tunnelLeafHopType',
+        'TunnelLeafIpStart': 'tunnelLeafIpStart',
+        'TunnelLeafPrefixLength': 'tunnelLeafPrefixLength',
     }
 
     def __init__(self, parent):

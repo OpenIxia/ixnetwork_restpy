@@ -33,8 +33,8 @@ class ExternalLink(Base):
     __slots__ = ()
     _SDM_NAME = 'externalLink'
     _SDM_ATT_MAP = {
-        'ToNetworkTopology': 'toNetworkTopology',
         'FromNodeIndex': 'fromNodeIndex',
+        'ToNetworkTopology': 'toNetworkTopology',
         'ToNodeIndex': 'toNodeIndex',
     }
 

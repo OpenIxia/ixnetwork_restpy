@@ -33,18 +33,18 @@ class SwitchPorts(Base):
     __slots__ = ()
     _SDM_NAME = 'switchPorts'
     _SDM_ATT_MAP = {
-        'NumberOfPorts': 'numberOfPorts',
-        'MaxSpeed': 'maxSpeed',
-        'EthernetAddress': 'ethernetAddress',
-        'RemoteSwitch': 'remoteSwitch',
-        'PortLivenessSupport': 'portLivenessSupport',
-        'Enabled': 'enabled',
         'ConnectionType': 'connectionType',
-        'TransmissionDelay': 'transmissionDelay',
-        'RemoteSwitchPort': 'remoteSwitchPort',
-        'PortNumber': 'portNumber',
-        'PortName': 'portName',
         'CurrentSpeed': 'currentSpeed',
+        'Enabled': 'enabled',
+        'EthernetAddress': 'ethernetAddress',
+        'MaxSpeed': 'maxSpeed',
+        'NumberOfPorts': 'numberOfPorts',
+        'PortLivenessSupport': 'portLivenessSupport',
+        'PortName': 'portName',
+        'PortNumber': 'portNumber',
+        'RemoteSwitch': 'remoteSwitch',
+        'RemoteSwitchPort': 'remoteSwitchPort',
+        'TransmissionDelay': 'transmissionDelay',
     }
 
     def __init__(self, parent):

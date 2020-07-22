@@ -34,8 +34,8 @@ class AuxiliaryConnection(Base):
     _SDM_NAME = 'auxiliaryConnection'
     _SDM_ATT_MAP = {
         'AuxiliaryId': 'auxiliaryId',
-        'Enable': 'enable',
         'ConnectionType': 'connectionType',
+        'Enable': 'enable',
         'UdpSourcePortNumber': 'udpSourcePortNumber',
     }
 

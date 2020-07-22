@@ -31,20 +31,20 @@ class InterestedVlanList(Base):
     __slots__ = ()
     _SDM_NAME = 'interestedVlanList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'NoOfSpanningTreeRoots': 'noOfSpanningTreeRoots',
-        'VlanIdIncr': 'vlanIdIncr',
-        'Name': 'name',
-        'M4BitEnabled': 'm4BitEnabled',
-        'IncludeInLSP': 'includeInLSP',
-        'DescriptiveName': 'descriptiveName',
-        'M6BitEnabled': 'm6BitEnabled',
-        'IncludeInMGroupPDU': 'includeInMGroupPDU',
-        'StartVlanId': 'startVlanId',
         'Active': 'active',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'IncludeInLSP': 'includeInLSP',
+        'IncludeInMGroupPDU': 'includeInMGroupPDU',
+        'M4BitEnabled': 'm4BitEnabled',
+        'M6BitEnabled': 'm6BitEnabled',
+        'Name': 'name',
         'Nickname': 'nickname',
-        'VlanCount': 'vlanCount',
+        'NoOfSpanningTreeRoots': 'noOfSpanningTreeRoots',
         'StartSpanningTreeRootBridgeId': 'startSpanningTreeRootBridgeId',
+        'StartVlanId': 'startVlanId',
+        'VlanCount': 'vlanCount',
+        'VlanIdIncr': 'vlanIdIncr',
     }
 
     def __init__(self, parent):

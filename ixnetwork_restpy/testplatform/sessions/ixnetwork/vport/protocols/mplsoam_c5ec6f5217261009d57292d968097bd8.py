@@ -31,8 +31,8 @@ class MplsOam(Base):
     __slots__ = ()
     _SDM_NAME = 'mplsOam'
     _SDM_ATT_MAP = {
-        'RunningState': 'runningState',
         'Enabled': 'enabled',
+        'RunningState': 'runningState',
     }
 
     def __init__(self, parent):

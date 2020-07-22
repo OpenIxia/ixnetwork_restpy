@@ -31,11 +31,11 @@ class EthernetImpairment(Base):
     __slots__ = ()
     _SDM_NAME = 'ethernetImpairment'
     _SDM_ATT_MAP = {
-        'EnablePPM': 'enablePPM',
         'AvailableSpeeds': 'availableSpeeds',
-        'Ppm': 'ppm',
         'CanModifySpeed': 'canModifySpeed',
         'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
+        'EnablePPM': 'enablePPM',
+        'Ppm': 'ppm',
         'SelectedSpeeds': 'selectedSpeeds',
     }
 

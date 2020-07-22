@@ -33,12 +33,12 @@ class TrafficSelection(Base):
     __slots__ = ()
     _SDM_NAME = 'trafficSelection'
     _SDM_ATT_MAP = {
-        'ItemType': 'itemType',
-        'IsGenerated': 'isGenerated',
-        'TrafficItemType': 'trafficItemType',
-        'Role': 'role',
         'Id__': '__id__',
         'IncludeMode': 'includeMode',
+        'IsGenerated': 'isGenerated',
+        'ItemType': 'itemType',
+        'Role': 'role',
+        'TrafficItemType': 'trafficItemType',
     }
 
     def __init__(self, parent):

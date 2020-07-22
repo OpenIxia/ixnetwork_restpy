@@ -31,22 +31,22 @@ class PacketInHeaders(Base):
     __slots__ = ()
     _SDM_NAME = 'packetInHeaders'
     _SDM_ATT_MAP = {
-        'Ipv4Protocol': 'ipv4Protocol',
-        'TcpSourcePort': 'tcpSourcePort',
-        'Ipv4SourceAddress': 'ipv4SourceAddress',
-        'UdpSourcePort': 'udpSourcePort',
-        'VlanPriority': 'vlanPriority',
-        'TcpDestinationPort': 'tcpDestinationPort',
-        'UniquePacketCount': 'uniquePacketCount',
-        'Ipv6DestinationAddress': 'ipv6DestinationAddress',
-        'VlanId': 'vlanId',
-        'Ipv6SourceAddress': 'ipv6SourceAddress',
-        'EthernetType': 'ethernetType',
-        'Ipv6FlowLabel': 'ipv6FlowLabel',
         'EthernetDestinationAddress': 'ethernetDestinationAddress',
-        'Ipv4DestinationAddress': 'ipv4DestinationAddress',
-        'UdpDestinationPort': 'udpDestinationPort',
         'EthernetSourceAddress': 'ethernetSourceAddress',
+        'EthernetType': 'ethernetType',
+        'Ipv4DestinationAddress': 'ipv4DestinationAddress',
+        'Ipv4Protocol': 'ipv4Protocol',
+        'Ipv4SourceAddress': 'ipv4SourceAddress',
+        'Ipv6DestinationAddress': 'ipv6DestinationAddress',
+        'Ipv6FlowLabel': 'ipv6FlowLabel',
+        'Ipv6SourceAddress': 'ipv6SourceAddress',
+        'TcpDestinationPort': 'tcpDestinationPort',
+        'TcpSourcePort': 'tcpSourcePort',
+        'UdpDestinationPort': 'udpDestinationPort',
+        'UdpSourcePort': 'udpSourcePort',
+        'UniquePacketCount': 'uniquePacketCount',
+        'VlanId': 'vlanId',
+        'VlanPriority': 'vlanPriority',
     }
 
     def __init__(self, parent):

@@ -33,8 +33,8 @@ class FrameRate(Base):
     _SDM_ATT_MAP = {
         'BitRateUnitsType': 'bitRateUnitsType',
         'EnforceMinimumInterPacketGap': 'enforceMinimumInterPacketGap',
-        'Rate': 'rate',
         'InterPacketGapUnitsType': 'interPacketGapUnitsType',
+        'Rate': 'rate',
         'Type': 'type',
     }
 

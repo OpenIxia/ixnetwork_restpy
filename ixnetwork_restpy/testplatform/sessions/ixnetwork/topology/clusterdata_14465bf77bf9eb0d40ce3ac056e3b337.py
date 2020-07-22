@@ -31,24 +31,24 @@ class ClusterData(Base):
     __slots__ = ()
     _SDM_NAME = 'clusterData'
     _SDM_ATT_MAP = {
+        'ActionTriggered': 'actionTriggered',
+        'AttachAtStart': 'attachAtStart',
+        'AutoSyncAtStart': 'autoSyncAtStart',
+        'BindingStatus': 'bindingStatus',
+        'BindingsCount': 'bindingsCount',
         'Count': 'count',
         'CurrentRetryCount': 'currentRetryCount',
-        'Name': 'name',
-        'LogicalSwitchName': 'logicalSwitchName',
-        'ProgressStatus': 'progressStatus',
-        'AutoSyncAtStart': 'autoSyncAtStart',
-        'Vlan': 'vlan',
-        'PhysicalSwitchName': 'physicalSwitchName',
-        'Vni': 'vni',
-        'RetryStatus': 'retryStatus',
-        'AttachAtStart': 'attachAtStart',
-        'ErrorStatus': 'errorStatus',
         'DescriptiveName': 'descriptiveName',
-        'ActionTriggered': 'actionTriggered',
-        'PhysicalPortName': 'physicalPortName',
+        'ErrorStatus': 'errorStatus',
+        'LogicalSwitchName': 'logicalSwitchName',
         'MaxRetryCount': 'maxRetryCount',
-        'BindingsCount': 'bindingsCount',
-        'BindingStatus': 'bindingStatus',
+        'Name': 'name',
+        'PhysicalPortName': 'physicalPortName',
+        'PhysicalSwitchName': 'physicalSwitchName',
+        'ProgressStatus': 'progressStatus',
+        'RetryStatus': 'retryStatus',
+        'Vlan': 'vlan',
+        'Vni': 'vni',
     }
 
     def __init__(self, parent):

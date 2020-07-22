@@ -35,8 +35,8 @@ class IsisSpbMacCloudConfig(Base):
     _SDM_ATT_MAP = {
         'Active': 'active',
         'Count': 'count',
-        'Isid': 'isid',
         'DescriptiveName': 'descriptiveName',
+        'Isid': 'isid',
         'Name': 'name',
     }
 

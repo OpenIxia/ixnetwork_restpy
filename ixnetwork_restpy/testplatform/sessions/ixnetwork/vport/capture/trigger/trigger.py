@@ -31,15 +31,15 @@ class Trigger(Base):
     __slots__ = ()
     _SDM_NAME = 'trigger'
     _SDM_ATT_MAP = {
-        'CaptureTriggerFrameSizeFrom': 'captureTriggerFrameSizeFrom',
-        'CaptureTriggerPattern': 'captureTriggerPattern',
-        'CaptureTriggerEnable': 'captureTriggerEnable',
-        'CaptureTriggerSA': 'captureTriggerSA',
         'CaptureTriggerDA': 'captureTriggerDA',
-        'CaptureTriggerFrameSizeTo': 'captureTriggerFrameSizeTo',
-        'CaptureTriggerFrameSizeEnable': 'captureTriggerFrameSizeEnable',
-        'CaptureTriggerExpressionString': 'captureTriggerExpressionString',
+        'CaptureTriggerEnable': 'captureTriggerEnable',
         'CaptureTriggerError': 'captureTriggerError',
+        'CaptureTriggerExpressionString': 'captureTriggerExpressionString',
+        'CaptureTriggerFrameSizeEnable': 'captureTriggerFrameSizeEnable',
+        'CaptureTriggerFrameSizeFrom': 'captureTriggerFrameSizeFrom',
+        'CaptureTriggerFrameSizeTo': 'captureTriggerFrameSizeTo',
+        'CaptureTriggerPattern': 'captureTriggerPattern',
+        'CaptureTriggerSA': 'captureTriggerSA',
     }
 
     def __init__(self, parent):

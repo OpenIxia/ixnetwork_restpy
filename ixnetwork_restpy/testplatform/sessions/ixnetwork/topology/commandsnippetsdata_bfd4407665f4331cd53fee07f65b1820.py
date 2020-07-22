@@ -31,15 +31,15 @@ class CommandSnippetsData(Base):
     __slots__ = ()
     _SDM_NAME = 'commandSnippetsData'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'TransmissionBehaviour': 'transmissionBehaviour',
-        'TransmissionCount': 'transmissionCount',
-        'Name': 'name',
-        'CommandSnippetFile': 'commandSnippetFile',
-        'PeriodicTransmissionInterval': 'periodicTransmissionInterval',
-        'DescriptiveName': 'descriptiveName',
         'Active': 'active',
         'CommandSnippetDirectory': 'commandSnippetDirectory',
+        'CommandSnippetFile': 'commandSnippetFile',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Name': 'name',
+        'PeriodicTransmissionInterval': 'periodicTransmissionInterval',
+        'TransmissionBehaviour': 'transmissionBehaviour',
+        'TransmissionCount': 'transmissionCount',
     }
 
     def __init__(self, parent):

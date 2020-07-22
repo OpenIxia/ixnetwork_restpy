@@ -31,16 +31,16 @@ class Results(Base):
     __slots__ = ()
     _SDM_NAME = 'results'
     _SDM_ATT_MAP = {
-        'Status': 'status',
         'CurrentActions': 'currentActions',
-        'IsRunning': 'isRunning',
         'CurrentViews': 'currentViews',
-        'ResultPath': 'resultPath',
-        'TrafficStatus': 'trafficStatus',
-        'Result': 'result',
-        'StartTime': 'startTime',
         'Duration': 'duration',
+        'IsRunning': 'isRunning',
         'Progress': 'progress',
+        'Result': 'result',
+        'ResultPath': 'resultPath',
+        'StartTime': 'startTime',
+        'Status': 'status',
+        'TrafficStatus': 'trafficStatus',
         'WaitingStatus': 'waitingStatus',
     }
 

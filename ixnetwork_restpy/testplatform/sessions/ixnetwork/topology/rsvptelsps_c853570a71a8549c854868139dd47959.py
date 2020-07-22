@@ -33,23 +33,23 @@ class RsvpteLsps(Base):
     __slots__ = ()
     _SDM_NAME = 'rsvpteLsps'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'ExpectedPceInitiatedLspsCount': 'expectedPceInitiatedLspsCount',
-        'Errors': 'errors',
-        'Name': 'name',
-        'P2mpIngressLspCount': 'p2mpIngressLspCount',
-        'Status': 'status',
-        'StackedLayers': 'stackedLayers',
-        'LocalIp': 'localIp',
-        'ConnectedVia': 'connectedVia',
-        'DescriptiveName': 'descriptiveName',
-        'SessionStatus': 'sessionStatus',
-        'Multiplier': 'multiplier',
         'Active': 'active',
-        'P2mpEgressTunnelCount': 'p2mpEgressTunnelCount',
-        'IngressP2PLsps': 'ingressP2PLsps',
-        'StateCounts': 'stateCounts',
+        'ConnectedVia': 'connectedVia',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
         'EnableP2PEgress': 'enableP2PEgress',
+        'Errors': 'errors',
+        'ExpectedPceInitiatedLspsCount': 'expectedPceInitiatedLspsCount',
+        'IngressP2PLsps': 'ingressP2PLsps',
+        'LocalIp': 'localIp',
+        'Multiplier': 'multiplier',
+        'Name': 'name',
+        'P2mpEgressTunnelCount': 'p2mpEgressTunnelCount',
+        'P2mpIngressLspCount': 'p2mpIngressLspCount',
+        'SessionStatus': 'sessionStatus',
+        'StackedLayers': 'stackedLayers',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
     }
 
     def __init__(self, parent):

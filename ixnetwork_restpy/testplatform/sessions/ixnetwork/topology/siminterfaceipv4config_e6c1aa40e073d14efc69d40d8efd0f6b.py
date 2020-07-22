@@ -33,12 +33,12 @@ class SimInterfaceIPv4Config(Base):
     _SDM_NAME = 'simInterfaceIPv4Config'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'ToIP': 'toIP',
-        'Name': 'name',
+        'DescriptiveName': 'descriptiveName',
         'EnableIp': 'enableIp',
         'FromIP': 'fromIP',
-        'DescriptiveName': 'descriptiveName',
+        'Name': 'name',
         'SubnetPrefixLength': 'subnetPrefixLength',
+        'ToIP': 'toIP',
     }
 
     def __init__(self, parent):

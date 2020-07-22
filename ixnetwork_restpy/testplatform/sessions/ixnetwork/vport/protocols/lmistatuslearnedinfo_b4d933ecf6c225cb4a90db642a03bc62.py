@@ -32,22 +32,22 @@ class LmiStatusLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'lmiStatusLearnedInfo'
     _SDM_ATT_MAP = {
-        'LmiStatus': 'lmiStatus',
-        'SendSequenceNumber': 'sendSequenceNumber',
-        'DuplicatedIe': 'duplicatedIe',
-        'ProtocolVersion': 'protocolVersion',
         'DataInstance': 'dataInstance',
-        'ReceiveSequenceNumber': 'receiveSequenceNumber',
-        'InvalidProtocolVersion': 'invalidProtocolVersion',
-        'UnrecognizedIe': 'unrecognizedIe',
-        'InvalidNonMandatoryIe': 'invalidNonMandatoryIe',
-        'InvalidMsgType': 'invalidMsgType',
-        'MandatoryIeMissing': 'mandatoryIeMissing',
+        'DuplicatedIe': 'duplicatedIe',
         'InvalidEvcReferenceId': 'invalidEvcReferenceId',
-        'OutOfSequenceIe': 'outOfSequenceIe',
         'InvalidMandatoryIe': 'invalidMandatoryIe',
+        'InvalidMsgType': 'invalidMsgType',
+        'InvalidNonMandatoryIe': 'invalidNonMandatoryIe',
+        'InvalidProtocolVersion': 'invalidProtocolVersion',
+        'LmiStatus': 'lmiStatus',
+        'MandatoryIeMissing': 'mandatoryIeMissing',
+        'OutOfSequenceIe': 'outOfSequenceIe',
+        'ProtocolVersion': 'protocolVersion',
+        'ReceiveSequenceNumber': 'receiveSequenceNumber',
+        'SendSequenceNumber': 'sendSequenceNumber',
         'ShortMsgCounter': 'shortMsgCounter',
         'UnexpectedIe': 'unexpectedIe',
+        'UnrecognizedIe': 'unrecognizedIe',
     }
 
     def __init__(self, parent):

@@ -33,18 +33,18 @@ class CfmCustomTLVList(Base):
     _SDM_NAME = 'cfmCustomTLVList'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'IncludeTLVinLTM': 'includeTLVinLTM',
-        'IncludeTLVinCCM': 'includeTLVinCCM',
-        'Type': 'type',
-        'IncludeTLVinLBR': 'includeTLVinLBR',
-        'IncludeTLVinLMR': 'includeTLVinLMR',
-        'Value': 'value',
-        'Length': 'length',
-        'IncludeTLVinLMM': 'includeTLVinLMM',
-        'IncludeTLVinLBM': 'includeTLVinLBM',
         'DescriptiveName': 'descriptiveName',
+        'IncludeTLVinCCM': 'includeTLVinCCM',
+        'IncludeTLVinLBM': 'includeTLVinLBM',
+        'IncludeTLVinLBR': 'includeTLVinLBR',
+        'IncludeTLVinLMM': 'includeTLVinLMM',
+        'IncludeTLVinLMR': 'includeTLVinLMR',
+        'IncludeTLVinLTM': 'includeTLVinLTM',
         'IncludeTLVinLTR': 'includeTLVinLTR',
+        'Length': 'length',
         'Name': 'name',
+        'Type': 'type',
+        'Value': 'value',
     }
 
     def __init__(self, parent):

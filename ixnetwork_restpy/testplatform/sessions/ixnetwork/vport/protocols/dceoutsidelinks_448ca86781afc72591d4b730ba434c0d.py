@@ -33,8 +33,8 @@ class DceOutsideLinks(Base):
     __slots__ = ()
     _SDM_NAME = 'dceOutsideLinks'
     _SDM_ATT_MAP = {
-        'ConnectionRow': 'connectionRow',
         'ConnectionCol': 'connectionCol',
+        'ConnectionRow': 'connectionRow',
         'LinkedRid': 'linkedRid',
     }
 

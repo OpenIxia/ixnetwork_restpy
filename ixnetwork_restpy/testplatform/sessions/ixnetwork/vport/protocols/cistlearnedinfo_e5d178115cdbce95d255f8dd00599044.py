@@ -31,11 +31,11 @@ class CistLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'cistLearnedInfo'
     _SDM_ATT_MAP = {
+        'RegRootCost': 'regRootCost',
         'RegRootMac': 'regRootMac',
         'RegRootPriority': 'regRootPriority',
-        'RootMac': 'rootMac',
-        'RegRootCost': 'regRootCost',
         'RootCost': 'rootCost',
+        'RootMac': 'rootMac',
         'RootPriority': 'rootPriority',
     }
 

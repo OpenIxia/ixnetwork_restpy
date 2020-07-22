@@ -31,14 +31,14 @@ class SbfdResponder(Base):
     __slots__ = ()
     _SDM_NAME = 'sbfdResponder'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'MinRxInterval': 'minRxInterval',
-        'SBFDDiscriminator': 'sBFDDiscriminator',
-        'DescriptiveName': 'descriptiveName',
-        'SBFDState': 'sBFDState',
         'Active': 'active',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
         'EnableLearnedInformation': 'enableLearnedInformation',
+        'MinRxInterval': 'minRxInterval',
+        'Name': 'name',
+        'SBFDDiscriminator': 'sBFDDiscriminator',
+        'SBFDState': 'sBFDState',
     }
 
     def __init__(self, parent):

@@ -35,8 +35,8 @@ class LdpPseudoRouter(Base):
         'Active': 'active',
         'Count': 'count',
         'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
         'LabelValue': 'labelValue',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

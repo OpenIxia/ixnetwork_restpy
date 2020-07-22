@@ -32,20 +32,20 @@ class EidToRlocMapCacheInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'eidToRlocMapCacheInfo'
     _SDM_ATT_MAP = {
+        'Action': 'action',
         'ExpiresAfter': 'expiresAfter',
         'InstanceId': 'instanceId',
+        'MapReplyRx': 'mapReplyRx',
         'MapRequestTx': 'mapRequestTx',
-        'RemoteEidMappingStatus': 'remoteEidMappingStatus',
-        'RemoteEidPrefixAfi': 'remoteEidPrefixAfi',
         'MapVersionNumber': 'mapVersionNumber',
-        'RlocProbeRequestTx': 'rlocProbeRequestTx',
+        'NegativeMapReplyRx': 'negativeMapReplyRx',
+        'RemoteEidMappingStatus': 'remoteEidMappingStatus',
+        'RemoteEidPrefix': 'remoteEidPrefix',
+        'RemoteEidPrefixAfi': 'remoteEidPrefixAfi',
         'RemoteEidPrefixLength': 'remoteEidPrefixLength',
         'ResponderIp': 'responderIp',
-        'RemoteEidPrefix': 'remoteEidPrefix',
-        'Action': 'action',
         'RlocProbeReplyRx': 'rlocProbeReplyRx',
-        'MapReplyRx': 'mapReplyRx',
-        'NegativeMapReplyRx': 'negativeMapReplyRx',
+        'RlocProbeRequestTx': 'rlocProbeRequestTx',
     }
 
     def __init__(self, parent):

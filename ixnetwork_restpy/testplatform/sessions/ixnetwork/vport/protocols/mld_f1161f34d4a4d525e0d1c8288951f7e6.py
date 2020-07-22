@@ -31,15 +31,15 @@ class Mld(Base):
     __slots__ = ()
     _SDM_NAME = 'mld'
     _SDM_ATT_MAP = {
-        'TimePeriod': 'timePeriod',
-        'Enabled': 'enabled',
-        'NumberOfGroups': 'numberOfGroups',
-        'Mldv2Report': 'mldv2Report',
-        'RunningState': 'runningState',
-        'NumberOfQueries': 'numberOfQueries',
         'EnableDoneOnStop': 'enableDoneOnStop',
         'EnableUnicastMode': 'enableUnicastMode',
+        'Enabled': 'enabled',
+        'Mldv2Report': 'mldv2Report',
+        'NumberOfGroups': 'numberOfGroups',
+        'NumberOfQueries': 'numberOfQueries',
         'QueryTimePeriod': 'queryTimePeriod',
+        'RunningState': 'runningState',
+        'TimePeriod': 'timePeriod',
     }
 
     def __init__(self, parent):

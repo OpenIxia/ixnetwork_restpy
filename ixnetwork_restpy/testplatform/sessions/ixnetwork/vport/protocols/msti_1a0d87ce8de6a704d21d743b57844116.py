@@ -33,17 +33,17 @@ class Msti(Base):
     __slots__ = ()
     _SDM_NAME = 'msti'
     _SDM_ATT_MAP = {
-        'MstiName': 'mstiName',
-        'VlanStart': 'vlanStart',
-        'InternalRootPathCost': 'internalRootPathCost',
         'Enabled': 'enabled',
+        'InternalRootPathCost': 'internalRootPathCost',
+        'Mac': 'mac',
+        'MstiHops': 'mstiHops',
         'MstiId': 'mstiId',
+        'MstiName': 'mstiName',
         'PortPriority': 'portPriority',
         'Priority': 'priority',
-        'Mac': 'mac',
-        'VlanStop': 'vlanStop',
         'UpdateRequired': 'updateRequired',
-        'MstiHops': 'mstiHops',
+        'VlanStart': 'vlanStart',
+        'VlanStop': 'vlanStop',
     }
 
     def __init__(self, parent):

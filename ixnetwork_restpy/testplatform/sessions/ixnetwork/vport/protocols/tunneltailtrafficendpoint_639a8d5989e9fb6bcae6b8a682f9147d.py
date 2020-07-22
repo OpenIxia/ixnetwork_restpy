@@ -33,9 +33,9 @@ class TunnelTailTrafficEndPoint(Base):
     __slots__ = ()
     _SDM_NAME = 'tunnelTailTrafficEndPoint'
     _SDM_ATT_MAP = {
+        'EndPointType': 'endPointType',
         'IpCount': 'ipCount',
         'IpStart': 'ipStart',
-        'EndPointType': 'endPointType',
     }
 
     def __init__(self, parent):

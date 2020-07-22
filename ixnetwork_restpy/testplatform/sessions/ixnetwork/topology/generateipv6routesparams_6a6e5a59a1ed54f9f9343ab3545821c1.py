@@ -31,21 +31,21 @@ class GenerateIpv6RoutesParams(Base):
     __slots__ = ()
     _SDM_NAME = 'generateIpv6RoutesParams'
     _SDM_ATT_MAP = {
+        'AddressRangesToSkip': 'addressRangesToSkip',
+        'CustomDistributionFile': 'customDistributionFile',
         'DuplicateRoutesAsPathSuffix': 'duplicateRoutesAsPathSuffix',
         'DuplicateRoutesPerDevicePercent': 'duplicateRoutesPerDevicePercent',
-        'SkipLoopback': 'skipLoopback',
+        'NetworkAddressStart': 'networkAddressStart',
+        'NetworkAddressStep': 'networkAddressStep',
+        'PrefixLengthDistributionScope': 'prefixLengthDistributionScope',
+        'PrefixLengthDistributionType': 'prefixLengthDistributionType',
+        'PrefixLengthEnd': 'prefixLengthEnd',
+        'PrefixLengthStart': 'prefixLengthStart',
         'PrimaryRoutesAsPathSuffix': 'primaryRoutesAsPathSuffix',
         'PrimaryRoutesPerDevice': 'primaryRoutesPerDevice',
-        'NetworkAddressStart': 'networkAddressStart',
-        'PrefixLengthDistributionType': 'prefixLengthDistributionType',
-        'AddressRangesToSkip': 'addressRangesToSkip',
-        'SkipMcast': 'skipMcast',
-        'PrefixLengthDistributionScope': 'prefixLengthDistributionScope',
-        'PrefixLengthStart': 'prefixLengthStart',
-        'NetworkAddressStep': 'networkAddressStep',
-        'CustomDistributionFile': 'customDistributionFile',
-        'PrefixLengthEnd': 'prefixLengthEnd',
         'PrimaryRoutesPerRange': 'primaryRoutesPerRange',
+        'SkipLoopback': 'skipLoopback',
+        'SkipMcast': 'skipMcast',
     }
 
     def __init__(self, parent):

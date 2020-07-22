@@ -6,6 +6,12 @@ from ixnetwork_restpy.select import Select
 from ixnetwork_restpy.assistants.statistics.statviewassistant import StatViewAssistant
 
 
+try:
+    basestring
+except NameError:
+    basestring = str
+
+
 class PortMapAssistant(object):
     def __init__(self, IxNetwork):
         """Create mappings between test port locations and virtual ports.
@@ -195,7 +201,7 @@ class PortMapAssistant(object):
                 xpath = self._find_xpath(v, card_port)
                 if xpath is not None:
                     return xpath
-            elif isinstance(v, str) and card_port in v: 
+            elif isinstance(v, basestring) and card_port in v: 
                 return nested_dict['xpath']
         return None
 

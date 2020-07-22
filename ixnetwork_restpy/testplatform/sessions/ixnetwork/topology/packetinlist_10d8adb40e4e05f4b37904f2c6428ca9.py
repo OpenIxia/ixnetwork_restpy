@@ -32,16 +32,16 @@ class PacketInList(Base):
     __slots__ = ()
     _SDM_NAME = 'packetInList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
         'AuxiliaryId': 'auxiliaryId',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
         'FlowTable': 'flowTable',
         'InPort': 'inPort',
-        'PhysicalInPort': 'physicalInPort',
+        'Name': 'name',
         'PacketInName': 'packetInName',
-        'DescriptiveName': 'descriptiveName',
-        'SwitchName': 'switchName',
+        'PhysicalInPort': 'physicalInPort',
         'SendPacketIn': 'sendPacketIn',
+        'SwitchName': 'switchName',
     }
 
     def __init__(self, parent):

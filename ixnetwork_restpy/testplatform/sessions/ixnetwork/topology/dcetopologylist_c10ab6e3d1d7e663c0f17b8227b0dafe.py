@@ -31,16 +31,16 @@ class DceTopologyList(Base):
     __slots__ = ()
     _SDM_NAME = 'dceTopologyList'
     _SDM_ATT_MAP = {
+        'Active': 'active',
         'Count': 'count',
-        'Name': 'name',
+        'DescriptiveName': 'descriptiveName',
         'EnableFTAG': 'enableFTAG',
-        'TopologyId': 'topologyId',
-        'StartFTAGValue': 'startFTAGValue',
+        'InterestedVlanRangeCount': 'interestedVlanRangeCount',
+        'Name': 'name',
         'NicknameCount': 'nicknameCount',
         'NoOfTreesToCompute': 'noOfTreesToCompute',
-        'InterestedVlanRangeCount': 'interestedVlanRangeCount',
-        'DescriptiveName': 'descriptiveName',
-        'Active': 'active',
+        'StartFTAGValue': 'startFTAGValue',
+        'TopologyId': 'topologyId',
     }
 
     def __init__(self, parent):

@@ -31,24 +31,24 @@ class Atm(Base):
     __slots__ = ()
     _SDM_NAME = 'atm'
     _SDM_ATT_MAP = {
-        'Ppm': 'ppm',
+        'AvailableSpeeds': 'availableSpeeds',
+        'C2Expected': 'c2Expected',
+        'C2Tx': 'c2Tx',
+        'CanModifySpeed': 'canModifySpeed',
+        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
+        'CellHeader': 'cellHeader',
+        'CosetActive': 'cosetActive',
+        'CrcSize': 'crcSize',
+        'DataScrambling': 'dataScrambling',
         'EnablePPM': 'enablePPM',
         'FillerCell': 'fillerCell',
-        'TransmitClocking': 'transmitClocking',
-        'CosetActive': 'cosetActive',
-        'AvailableSpeeds': 'availableSpeeds',
-        'Loopback': 'loopback',
-        'DataScrambling': 'dataScrambling',
-        'CanModifySpeed': 'canModifySpeed',
-        'PatternMatching': 'patternMatching',
-        'C2Tx': 'c2Tx',
         'InterfaceType': 'interfaceType',
-        'C2Expected': 'c2Expected',
-        'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
-        'SelectedSpeeds': 'selectedSpeeds',
-        'CellHeader': 'cellHeader',
-        'CrcSize': 'crcSize',
+        'Loopback': 'loopback',
+        'PatternMatching': 'patternMatching',
+        'Ppm': 'ppm',
         'ReassemblyTimeout': 'reassemblyTimeout',
+        'SelectedSpeeds': 'selectedSpeeds',
+        'TransmitClocking': 'transmitClocking',
     }
 
     def __init__(self, parent):

@@ -33,14 +33,14 @@ class Dhcpv6ClientGlobals(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcpv6ClientGlobals'
     _SDM_ATT_MAP = {
-        'SetupRateMax': 'setupRateMax',
+        'Dhcp6InfMaxRc': 'dhcp6InfMaxRc',
+        'Dhcp6InfMaxRt': 'dhcp6InfMaxRt',
+        'Dhcp6InfTimeout': 'dhcp6InfTimeout',
         'MaxOutstandingRequests': 'maxOutstandingRequests',
         'ObjectId': 'objectId',
-        'Dhcp6InfTimeout': 'dhcp6InfTimeout',
-        'Dhcp6InfMaxRt': 'dhcp6InfMaxRt',
-        'Dhcp6InfMaxRc': 'dhcp6InfMaxRc',
         'SetupRateIncrement': 'setupRateIncrement',
         'SetupRateInitial': 'setupRateInitial',
+        'SetupRateMax': 'setupRateMax',
     }
 
     def __init__(self, parent):

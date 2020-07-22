@@ -32,12 +32,12 @@ class Dhcp6LearnedInfo(Base):
     _SDM_NAME = 'dhcp6LearnedInfo'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'TabbedDiscoveredPrefix': 'tabbedDiscoveredPrefix',
-        'TabbedDiscoveredGateways': 'tabbedDiscoveredGateways',
-        'TabbedDiscoveredPrefixLength': 'tabbedDiscoveredPrefixLength',
         'DescriptiveName': 'descriptiveName',
-        'TabbedDiscoveredAddresses': 'tabbedDiscoveredAddresses',
         'Name': 'name',
+        'TabbedDiscoveredAddresses': 'tabbedDiscoveredAddresses',
+        'TabbedDiscoveredGateways': 'tabbedDiscoveredGateways',
+        'TabbedDiscoveredPrefix': 'tabbedDiscoveredPrefix',
+        'TabbedDiscoveredPrefixLength': 'tabbedDiscoveredPrefixLength',
     }
 
     def __init__(self, parent):

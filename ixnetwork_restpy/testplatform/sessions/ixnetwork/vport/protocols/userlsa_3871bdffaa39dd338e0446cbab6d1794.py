@@ -33,19 +33,19 @@ class UserLsa(Base):
     __slots__ = ()
     _SDM_NAME = 'userLsa'
     _SDM_ATT_MAP = {
-        'ExpandIntoLinksOrAttachedRouters': 'expandIntoLinksOrAttachedRouters',
         'AdvertisingRouterId': 'advertisingRouterId',
-        'OptBitExternalAttributes': 'optBitExternalAttributes',
-        'Option': 'option',
-        'OptBitLsaNoForward': 'optBitLsaNoForward',
-        'OptBitDemandCircuit': 'optBitDemandCircuit',
-        'LsaType': 'lsaType',
         'Enabled': 'enabled',
+        'ExpandIntoLinksOrAttachedRouters': 'expandIntoLinksOrAttachedRouters',
+        'LinkStateId': 'linkStateId',
+        'LsaType': 'lsaType',
+        'OptBitDemandCircuit': 'optBitDemandCircuit',
+        'OptBitExternalAttributes': 'optBitExternalAttributes',
+        'OptBitExternalRouting': 'optBitExternalRouting',
+        'OptBitLsaNoForward': 'optBitLsaNoForward',
+        'OptBitMulticast': 'optBitMulticast',
         'OptBitNssaCapability': 'optBitNssaCapability',
         'OptBitTypeOfService': 'optBitTypeOfService',
-        'OptBitMulticast': 'optBitMulticast',
-        'LinkStateId': 'linkStateId',
-        'OptBitExternalRouting': 'optBitExternalRouting',
+        'Option': 'option',
     }
 
     def __init__(self, parent):

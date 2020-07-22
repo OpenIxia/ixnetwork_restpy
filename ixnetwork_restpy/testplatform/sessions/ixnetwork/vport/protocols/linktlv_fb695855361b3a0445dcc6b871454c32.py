@@ -32,25 +32,25 @@ class LinkTlv(Base):
     __slots__ = ()
     _SDM_NAME = 'linkTlv'
     _SDM_ATT_MAP = {
-        'LinkType': 'linkType',
-        'MaxResBandwidth': 'maxResBandwidth',
-        'LinkMetric': 'linkMetric',
+        'EnableLinkId': 'enableLinkId',
+        'EnableLinkMetric': 'enableLinkMetric',
+        'EnableLinkResourceClass': 'enableLinkResourceClass',
         'EnableLinkType': 'enableLinkType',
+        'EnableLocalIpAddress': 'enableLocalIpAddress',
+        'EnableMaxBandwidth': 'enableMaxBandwidth',
         'EnableMaxResBandwidth': 'enableMaxResBandwidth',
+        'EnableRemoteIpAddress': 'enableRemoteIpAddress',
         'EnableUnreservedBandwidth': 'enableUnreservedBandwidth',
+        'LinkId': 'linkId',
+        'LinkLocalIpAddress': 'linkLocalIpAddress',
+        'LinkMetric': 'linkMetric',
+        'LinkRemoteIpAddress': 'linkRemoteIpAddress',
+        'LinkResourceClass': 'linkResourceClass',
+        'LinkType': 'linkType',
         'LinkUnreservedBandwidth': 'linkUnreservedBandwidth',
         'MaxBandwidth': 'maxBandwidth',
+        'MaxResBandwidth': 'maxResBandwidth',
         'SubTlvs': 'subTlvs',
-        'LinkRemoteIpAddress': 'linkRemoteIpAddress',
-        'EnableLinkMetric': 'enableLinkMetric',
-        'EnableLinkId': 'enableLinkId',
-        'LinkId': 'linkId',
-        'EnableRemoteIpAddress': 'enableRemoteIpAddress',
-        'EnableLocalIpAddress': 'enableLocalIpAddress',
-        'EnableLinkResourceClass': 'enableLinkResourceClass',
-        'LinkLocalIpAddress': 'linkLocalIpAddress',
-        'EnableMaxBandwidth': 'enableMaxBandwidth',
-        'LinkResourceClass': 'linkResourceClass',
     }
 
     def __init__(self, parent):

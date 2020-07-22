@@ -34,8 +34,8 @@ class FcoeClientOptionSet(Base):
     _SDM_NAME = 'fcoeClientOptionSet'
     _SDM_ATT_MAP = {
         'Defaultp': 'defaultp',
-        'ObjectId': 'objectId',
         'Name': 'name',
+        'ObjectId': 'objectId',
     }
 
     def __init__(self, parent):

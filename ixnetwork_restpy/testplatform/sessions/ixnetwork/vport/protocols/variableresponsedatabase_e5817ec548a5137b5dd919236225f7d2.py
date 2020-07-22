@@ -33,12 +33,12 @@ class VariableResponseDatabase(Base):
     __slots__ = ()
     _SDM_NAME = 'variableResponseDatabase'
     _SDM_ATT_MAP = {
-        'VariableLeaf': 'variableLeaf',
         'Enabled': 'enabled',
         'VariableBranch': 'variableBranch',
+        'VariableIndication': 'variableIndication',
+        'VariableLeaf': 'variableLeaf',
         'VariableValue': 'variableValue',
         'VariableWidth': 'variableWidth',
-        'VariableIndication': 'variableIndication',
     }
 
     def __init__(self, parent):

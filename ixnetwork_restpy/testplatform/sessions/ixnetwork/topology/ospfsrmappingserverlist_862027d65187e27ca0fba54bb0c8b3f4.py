@@ -31,23 +31,23 @@ class OspfSRMappingServerList(Base):
     __slots__ = ()
     _SDM_NAME = 'ospfSRMappingServerList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'VFlag': 'vFlag',
-        'NetworkAddress': 'networkAddress',
-        'MFlag': 'mFlag',
-        'Algorithm': 'algorithm',
-        'PrefixLength': 'prefixLength',
-        'NpFlag': 'npFlag',
-        'EFlag': 'eFlag',
-        'Name': 'name',
-        'LastNetworkAddress': 'lastNetworkAddress',
-        'Range': 'range',
-        'DescriptiveName': 'descriptiveName',
-        'IaFlag': 'iaFlag',
         'Active': 'active',
-        'SidIndexLabel': 'sidIndexLabel',
-        'LocalRouterID': 'localRouterID',
+        'Algorithm': 'algorithm',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'EFlag': 'eFlag',
+        'IaFlag': 'iaFlag',
         'LFlag': 'lFlag',
+        'LastNetworkAddress': 'lastNetworkAddress',
+        'LocalRouterID': 'localRouterID',
+        'MFlag': 'mFlag',
+        'Name': 'name',
+        'NetworkAddress': 'networkAddress',
+        'NpFlag': 'npFlag',
+        'PrefixLength': 'prefixLength',
+        'Range': 'range',
+        'SidIndexLabel': 'sidIndexLabel',
+        'VFlag': 'vFlag',
     }
 
     def __init__(self, parent):

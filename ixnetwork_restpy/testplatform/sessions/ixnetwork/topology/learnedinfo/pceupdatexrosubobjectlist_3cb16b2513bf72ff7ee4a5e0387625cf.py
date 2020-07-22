@@ -32,20 +32,20 @@ class PceUpdateXroSubObjectList(Base):
     __slots__ = ()
     _SDM_NAME = 'pceUpdateXroSubObjectList'
     _SDM_ATT_MAP = {
-        'Ipv4Address': 'ipv4Address',
-        'InterfaceId': 'interfaceId',
-        'PFlagXro': 'pFlagXro',
-        'Ipv6Address': 'ipv6Address',
-        'Attribute': 'attribute',
-        'PceId32': 'pceId32',
-        'PceId128': 'pceId128',
-        'RouterId': 'routerId',
-        'AsNumber': 'asNumber',
-        'XBit': 'xBit',
-        'SubObjectType': 'subObjectType',
-        'SrlgId': 'srlgId',
         'ActiveXRO': 'activeXRO',
+        'AsNumber': 'asNumber',
+        'Attribute': 'attribute',
+        'InterfaceId': 'interfaceId',
+        'Ipv4Address': 'ipv4Address',
+        'Ipv6Address': 'ipv6Address',
+        'PFlagXro': 'pFlagXro',
+        'PceId128': 'pceId128',
+        'PceId32': 'pceId32',
         'PrefixLength': 'prefixLength',
+        'RouterId': 'routerId',
+        'SrlgId': 'srlgId',
+        'SubObjectType': 'subObjectType',
+        'XBit': 'xBit',
     }
 
     def __init__(self, parent):

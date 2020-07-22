@@ -33,14 +33,14 @@ class RouteRange(Base):
     __slots__ = ()
     _SDM_NAME = 'routeRange'
     _SDM_ATT_MAP = {
-        'MaskWidth': 'maskWidth',
-        'RouteOrigin': 'routeOrigin',
+        'Enabled': 'enabled',
         'FirstRoute': 'firstRoute',
         'IsRedistributed': 'isRedistributed',
+        'MaskWidth': 'maskWidth',
         'Metric': 'metric',
-        'Enabled': 'enabled',
-        'Step': 'step',
         'NumberOfRoutes': 'numberOfRoutes',
+        'RouteOrigin': 'routeOrigin',
+        'Step': 'step',
         'Type': 'type',
     }
 

@@ -34,9 +34,9 @@ class MacRanges(Base):
     _SDM_NAME = 'macRanges'
     _SDM_ATT_MAP = {
         'Count': 'count',
+        'Enabled': 'enabled',
         'MacAddress': 'macAddress',
         'Step': 'step',
-        'Enabled': 'enabled',
         'TrafficGroupId': 'trafficGroupId',
     }
 

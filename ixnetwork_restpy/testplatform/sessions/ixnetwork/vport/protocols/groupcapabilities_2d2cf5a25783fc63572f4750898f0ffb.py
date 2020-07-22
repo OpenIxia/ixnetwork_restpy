@@ -31,10 +31,10 @@ class GroupCapabilities(Base):
     __slots__ = ()
     _SDM_NAME = 'groupCapabilities'
     _SDM_ATT_MAP = {
-        'SelectWeight': 'selectWeight',
-        'ChainingChecks': 'chainingChecks',
         'Chaining': 'chaining',
+        'ChainingChecks': 'chainingChecks',
         'SelectLiveness': 'selectLiveness',
+        'SelectWeight': 'selectWeight',
     }
 
     def __init__(self, parent):

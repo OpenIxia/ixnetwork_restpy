@@ -32,17 +32,17 @@ class LearnedBgpAdVplsLabels(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedBgpAdVplsLabels'
     _SDM_ATT_MAP = {
-        'PwState': 'pwState',
-        'PeerAddress': 'peerAddress',
         'CBit': 'cBit',
-        'SourceAii': 'sourceAii',
-        'Mtu': 'mtu',
-        'VplsId': 'vplsId',
-        'TargetAii': 'targetAii',
-        'LocalPwSubState': 'localPwSubState',
-        'Label': 'label',
-        'RemotePwSubState': 'remotePwSubState',
         'GroupId': 'groupId',
+        'Label': 'label',
+        'LocalPwSubState': 'localPwSubState',
+        'Mtu': 'mtu',
+        'PeerAddress': 'peerAddress',
+        'PwState': 'pwState',
+        'RemotePwSubState': 'remotePwSubState',
+        'SourceAii': 'sourceAii',
+        'TargetAii': 'targetAii',
+        'VplsId': 'vplsId',
     }
 
     def __init__(self, parent):

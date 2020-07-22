@@ -32,12 +32,12 @@ class OspfBierBSObjectList(Base):
     __slots__ = ()
     _SDM_NAME = 'ospfBierBSObjectList'
     _SDM_ATT_MAP = {
+        'BIERBitStringLength': 'BIERBitStringLength',
         'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'LabelStart': 'labelStart',
         'MaxSI': 'maxSI',
         'Name': 'name',
-        'BIERBitStringLength': 'BIERBitStringLength',
-        'LabelStart': 'labelStart',
-        'DescriptiveName': 'descriptiveName',
     }
 
     def __init__(self, parent):

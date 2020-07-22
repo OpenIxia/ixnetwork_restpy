@@ -31,20 +31,20 @@ class DceSimulatedMCastIpv6GroupList(Base):
     __slots__ = ()
     _SDM_NAME = 'dceSimulatedMCastIpv6GroupList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'InterGrpUcastAddrIncr': 'interGrpUcastAddrIncr',
-        'Name': 'name',
-        'McastAddrCnt': 'mcastAddrCnt',
-        'StartMcastAddr': 'startMcastAddr',
-        'UcastSrcCnt': 'ucastSrcCnt',
-        'SrcGrpMapping': 'srcGrpMapping',
-        'StartUcastAddr': 'startUcastAddr',
-        'DescriptiveName': 'descriptiveName',
-        'VlanId': 'vlanId',
-        'UcastAddrIncr': 'ucastAddrIncr',
         'Active': 'active',
-        'TopologyId': 'topologyId',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'InterGrpUcastAddrIncr': 'interGrpUcastAddrIncr',
+        'McastAddrCnt': 'mcastAddrCnt',
         'McastAddrIncr': 'mcastAddrIncr',
+        'Name': 'name',
+        'SrcGrpMapping': 'srcGrpMapping',
+        'StartMcastAddr': 'startMcastAddr',
+        'StartUcastAddr': 'startUcastAddr',
+        'TopologyId': 'topologyId',
+        'UcastAddrIncr': 'ucastAddrIncr',
+        'UcastSrcCnt': 'ucastSrcCnt',
+        'VlanId': 'vlanId',
     }
 
     def __init__(self, parent):

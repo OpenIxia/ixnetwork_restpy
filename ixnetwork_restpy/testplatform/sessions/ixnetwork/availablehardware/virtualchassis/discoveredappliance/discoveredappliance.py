@@ -32,10 +32,10 @@ class DiscoveredAppliance(Base):
     __slots__ = ()
     _SDM_NAME = 'discoveredAppliance'
     _SDM_ATT_MAP = {
-        'ApplianceType': 'applianceType',
         'ApplianceName': 'applianceName',
-        'ManagementIp': 'managementIp',
+        'ApplianceType': 'applianceType',
         'InterfacesNumber': 'interfacesNumber',
+        'ManagementIp': 'managementIp',
     }
 
     def __init__(self, parent):

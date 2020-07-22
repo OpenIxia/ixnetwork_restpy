@@ -31,24 +31,24 @@ class RsvpP2mpIngressSubLsps(Base):
     __slots__ = ()
     _SDM_NAME = 'rsvpP2mpIngressSubLsps'
     _SDM_ATT_MAP = {
-        'Count': 'count',
+        'Active': 'active',
         'AppendLeaf': 'appendLeaf',
-        'SendAsEro': 'sendAsEro',
-        'Name': 'name',
-        'PrefixLengthOfLeaf': 'prefixLengthOfLeaf',
-        'SendAsSero': 'sendAsSero',
-        'P2mpIdAsIp': 'p2mpIdAsIp',
-        'SessionInformation': 'sessionInformation',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
         'EnableEro': 'enableEro',
         'LeafIp': 'leafIp',
         'LocalIp': 'localIp',
-        'State': 'state',
+        'Name': 'name',
         'NumberOfEroSubObjects': 'numberOfEroSubObjects',
-        'DescriptiveName': 'descriptiveName',
+        'P2mpIdAsIp': 'p2mpIdAsIp',
         'P2mpIdAsNum': 'p2mpIdAsNum',
-        'Active': 'active',
         'PrefixLengthOfDut': 'prefixLengthOfDut',
+        'PrefixLengthOfLeaf': 'prefixLengthOfLeaf',
         'PrependDut': 'prependDut',
+        'SendAsEro': 'sendAsEro',
+        'SendAsSero': 'sendAsSero',
+        'SessionInformation': 'sessionInformation',
+        'State': 'state',
     }
 
     def __init__(self, parent):

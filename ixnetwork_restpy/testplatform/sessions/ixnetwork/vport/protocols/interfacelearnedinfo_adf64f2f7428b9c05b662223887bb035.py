@@ -32,10 +32,10 @@ interface.
     __slots__ = ()
     _SDM_NAME = 'interfaceLearnedInfo'
     _SDM_ATT_MAP = {
-        'PrefixLength': 'prefixLength',
         'GatewayIp': 'gatewayIp',
         'IpType': 'ipType',
         'OwnIp': 'ownIp',
+        'PrefixLength': 'prefixLength',
     }
 
     def __init__(self, parent):

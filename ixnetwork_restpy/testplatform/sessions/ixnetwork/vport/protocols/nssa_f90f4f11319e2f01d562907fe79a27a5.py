@@ -32,13 +32,13 @@ class Nssa(Base):
     __slots__ = ()
     _SDM_NAME = 'nssa'
     _SDM_ATT_MAP = {
-        'Metric': 'metric',
-        'NumberOfLsa': 'numberOfLsa',
-        'RouteTag': 'routeTag',
-        'IncrementLinkStateIdBy': 'incrementLinkStateIdBy',
-        'NetworkMask': 'networkMask',
         'EBit': 'eBit',
         'ForwardingAddress': 'forwardingAddress',
+        'IncrementLinkStateIdBy': 'incrementLinkStateIdBy',
+        'Metric': 'metric',
+        'NetworkMask': 'networkMask',
+        'NumberOfLsa': 'numberOfLsa',
+        'RouteTag': 'routeTag',
     }
 
     def __init__(self, parent):

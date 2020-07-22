@@ -33,9 +33,9 @@ class TrafficSelection(Base):
     __slots__ = ()
     _SDM_NAME = 'trafficSelection'
     _SDM_ATT_MAP = {
-        'IsGenerated': 'isGenerated',
         'Id__': '__id__',
         'IncludeMode': 'includeMode',
+        'IsGenerated': 'isGenerated',
         'ItemType': 'itemType',
     }
 

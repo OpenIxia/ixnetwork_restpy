@@ -31,12 +31,12 @@ class L2VcIpRange(Base):
     __slots__ = ()
     _SDM_NAME = 'l2VcIpRange'
     _SDM_ATT_MAP = {
-        'PeerAddress': 'peerAddress',
-        'NumHosts': 'numHosts',
-        'Mask': 'mask',
-        'IncrementBy': 'incrementBy',
-        'StartAddress': 'startAddress',
         'Enabled': 'enabled',
+        'IncrementBy': 'incrementBy',
+        'Mask': 'mask',
+        'NumHosts': 'numHosts',
+        'PeerAddress': 'peerAddress',
+        'StartAddress': 'startAddress',
     }
 
     def __init__(self, parent):

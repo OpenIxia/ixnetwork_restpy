@@ -33,17 +33,17 @@ class FcClientOptions(Base):
     __slots__ = ()
     _SDM_NAME = 'fcClientOptions'
     _SDM_ATT_MAP = {
-        'EdTov': 'edTov',
-        'ObjectId': 'objectId',
-        'SetupRate': 'setupRate',
-        'MaxPacketsPerSecond': 'maxPacketsPerSecond',
-        'OverrideGlobalRate': 'overrideGlobalRate',
-        'B2bRxSize': 'b2bRxSize',
         'Associates': 'associates',
         'B2bCredit': 'b2bCredit',
+        'B2bRxSize': 'b2bRxSize',
+        'EdTov': 'edTov',
+        'EdTovMode': 'edTovMode',
+        'MaxPacketsPerSecond': 'maxPacketsPerSecond',
+        'ObjectId': 'objectId',
+        'OverrideGlobalRate': 'overrideGlobalRate',
         'RtTov': 'rtTov',
         'RtTovMode': 'rtTovMode',
-        'EdTovMode': 'edTovMode',
+        'SetupRate': 'setupRate',
         'TeardownRate': 'teardownRate',
     }
 

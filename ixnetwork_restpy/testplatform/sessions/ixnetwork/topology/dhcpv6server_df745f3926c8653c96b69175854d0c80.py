@@ -33,24 +33,24 @@ class Dhcpv6server(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcpv6server'
     _SDM_ATT_MAP = {
+        'ConnectedVia': 'connectedVia',
         'Count': 'count',
-        'Status': 'status',
+        'DescriptiveName': 'descriptiveName',
+        'DnsDomain': 'dnsDomain',
         'Errors': 'errors',
+        'IpDns1': 'ipDns1',
         'IpDns2': 'ipDns2',
+        'Multiplier': 'multiplier',
         'Name': 'name',
         'PoolCount': 'poolCount',
-        'IpDns1': 'ipDns1',
-        'DnsDomain': 'dnsDomain',
-        'SubnetAddrAssign': 'subnetAddrAssign',
-        'StackedLayers': 'stackedLayers',
-        'UseRapidCommit': 'useRapidCommit',
-        'ConnectedVia': 'connectedVia',
-        'DescriptiveName': 'descriptiveName',
-        'Multiplier': 'multiplier',
         'ReconfviaRelay': 'reconfviaRelay',
         'SessionInfo': 'sessionInfo',
-        'StateCounts': 'stateCounts',
         'SessionStatus': 'sessionStatus',
+        'StackedLayers': 'stackedLayers',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
+        'SubnetAddrAssign': 'subnetAddrAssign',
+        'UseRapidCommit': 'useRapidCommit',
     }
 
     def __init__(self, parent):

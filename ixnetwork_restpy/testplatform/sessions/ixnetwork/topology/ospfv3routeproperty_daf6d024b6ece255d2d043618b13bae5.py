@@ -33,23 +33,23 @@ class Ospfv3RouteProperty(Base):
     __slots__ = ()
     _SDM_NAME = 'ospfv3RouteProperty'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'VFlag': 'vFlag',
-        'MFlag': 'mFlag',
+        'Active': 'active',
         'Algorithm': 'algorithm',
+        'AllowPropagate': 'allowPropagate',
         'AutoSelectForwardingAddress': 'autoSelectForwardingAddress',
         'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
-        'NpFlag': 'npFlag',
-        'Metric': 'metric',
-        'RouteOrigin': 'routeOrigin',
-        'EFlag': 'eFlag',
-        'Name': 'name',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
-        'AllowPropagate': 'allowPropagate',
-        'Active': 'active',
+        'EFlag': 'eFlag',
         'ForwardingAddress': 'forwardingAddress',
-        'SidIndexLabel': 'sidIndexLabel',
         'LFlag': 'lFlag',
+        'MFlag': 'mFlag',
+        'Metric': 'metric',
+        'Name': 'name',
+        'NpFlag': 'npFlag',
+        'RouteOrigin': 'routeOrigin',
+        'SidIndexLabel': 'sidIndexLabel',
+        'VFlag': 'vFlag',
     }
 
     def __init__(self, parent):

@@ -32,11 +32,11 @@ class Ipv6Multicast(Base):
     __slots__ = ()
     _SDM_NAME = 'ipv6Multicast'
     _SDM_ATT_MAP = {
-        'LspId': 'lspId',
-        'SequenceNumber': 'sequenceNumber',
         'Age': 'age',
         'HostName': 'hostName',
         'Ipv6MulticastGroupAddress': 'ipv6MulticastGroupAddress',
+        'LspId': 'lspId',
+        'SequenceNumber': 'sequenceNumber',
         'VlanId': 'vlanId',
     }
 

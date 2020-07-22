@@ -33,18 +33,18 @@ class PimRouter(Base):
     __slots__ = ()
     _SDM_NAME = 'pimRouter'
     _SDM_ATT_MAP = {
+        'Active': 'active',
         'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
         'DrPriority': 'drPriority',
         'Errors': 'errors',
         'JoinPruneHoldTime': 'joinPruneHoldTime',
-        'StateCounts': 'stateCounts',
-        'Status': 'status',
         'JoinPruneInterval': 'joinPruneInterval',
-        'DescriptiveName': 'descriptiveName',
-        'Active': 'active',
-        'SessionStatus': 'sessionStatus',
         'LocalRouterId': 'localRouterId',
         'Name': 'name',
+        'SessionStatus': 'sessionStatus',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
     }
 
     def __init__(self, parent):

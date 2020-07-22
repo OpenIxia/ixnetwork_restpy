@@ -35,9 +35,9 @@ class PtpOptions(Base):
     _SDM_ATT_MAP = {
         'MaxOutstanding': 'maxOutstanding',
         'ObjectId': 'objectId',
-        'SetupRate': 'setupRate',
-        'Role': 'role',
         'OverrideGlobalRateOptions': 'overrideGlobalRateOptions',
+        'Role': 'role',
+        'SetupRate': 'setupRate',
         'TeardownRate': 'teardownRate',
     }
 

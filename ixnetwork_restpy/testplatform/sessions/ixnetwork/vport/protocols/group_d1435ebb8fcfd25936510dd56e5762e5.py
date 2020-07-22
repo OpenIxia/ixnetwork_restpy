@@ -33,15 +33,15 @@ class Group(Base):
     __slots__ = ()
     _SDM_NAME = 'group'
     _SDM_ATT_MAP = {
-        'IncrementStep': 'incrementStep',
-        'SourceMode': 'sourceMode',
+        'EnablePacking': 'enablePacking',
         'Enabled': 'enabled',
         'GroupCount': 'groupCount',
-        'SourcesPerRecord': 'sourcesPerRecord',
         'GroupFrom': 'groupFrom',
+        'IncrementStep': 'incrementStep',
         'RecordsPerFrame': 'recordsPerFrame',
+        'SourceMode': 'sourceMode',
+        'SourcesPerRecord': 'sourcesPerRecord',
         'UpdateRequired': 'updateRequired',
-        'EnablePacking': 'enablePacking',
     }
 
     def __init__(self, parent):

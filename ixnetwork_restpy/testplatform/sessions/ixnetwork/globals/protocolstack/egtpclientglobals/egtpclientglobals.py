@@ -33,20 +33,20 @@ class EgtpClientGlobals(Base):
     __slots__ = ()
     _SDM_NAME = 'egtpClientGlobals'
     _SDM_ATT_MAP = {
+        'EnableDynamicQosCtrl': 'enableDynamicQosCtrl',
         'EnableGatewayArp': 'enableGatewayArp',
+        'EnablePartialNegotiation': 'enablePartialNegotiation',
+        'GatewayArpRequestRate': 'gatewayArpRequestRate',
+        'MaxMbrUAndD': 'maxMbrUAndD',
+        'MaxOutstandingGatewayArpRequests': 'maxOutstandingGatewayArpRequests',
+        'MaxOutstandingReleases': 'maxOutstandingReleases',
         'MaxOutstandingRequests': 'maxOutstandingRequests',
         'ObjectId': 'objectId',
         'SendOneArpFromEachInterface': 'sendOneArpFromEachInterface',
-        'UseMaxRatesForDcp': 'useMaxRatesForDcp',
-        'MaxMbrUAndD': 'maxMbrUAndD',
-        'EnableDynamicQosCtrl': 'enableDynamicQosCtrl',
-        'MaxOutstandingReleases': 'maxOutstandingReleases',
-        'MaxOutstandingGatewayArpRequests': 'maxOutstandingGatewayArpRequests',
-        'TsSpec': 'tsSpec',
-        'EnablePartialNegotiation': 'enablePartialNegotiation',
-        'TeardownRateInitial': 'teardownRateInitial',
-        'GatewayArpRequestRate': 'gatewayArpRequestRate',
         'SetupRateInitial': 'setupRateInitial',
+        'TeardownRateInitial': 'teardownRateInitial',
+        'TsSpec': 'tsSpec',
+        'UseMaxRatesForDcp': 'useMaxRatesForDcp',
     }
 
     def __init__(self, parent):

@@ -35,16 +35,16 @@ class SpbIsIdRange(Base):
     _SDM_ATT_MAP = {
         'CMacAddressCount': 'cMacAddressCount',
         'CMacAddressStep': 'cMacAddressStep',
-        'TBit': 'tBit',
+        'CVlan': 'cVlan',
         'Enabled': 'enabled',
-        'SVlan': 'sVlan',
-        'RBit': 'rBit',
-        'StartCmacAddress': 'startCmacAddress',
         'ISid': 'iSid',
         'ITagEthernetType': 'iTagEthernetType',
+        'RBit': 'rBit',
+        'SVlan': 'sVlan',
+        'StartCmacAddress': 'startCmacAddress',
+        'TBit': 'tBit',
         'TrafficDestMacAddress': 'trafficDestMacAddress',
         'TransmissionType': 'transmissionType',
-        'CVlan': 'cVlan',
         'VlanType': 'vlanType',
     }
 

@@ -32,10 +32,10 @@ class Range(Base):
     __slots__ = ()
     _SDM_NAME = 'range'
     _SDM_ATT_MAP = {
-        'To': 'to',
         'From': 'from',
         'MaxValue': 'maxValue',
         'MinValue': 'minValue',
+        'To': 'to',
     }
 
     def __init__(self, parent):

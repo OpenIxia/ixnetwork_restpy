@@ -31,15 +31,15 @@ class Filter(Base):
     __slots__ = ()
     _SDM_NAME = 'filter'
     _SDM_ATT_MAP = {
+        'CaptureFilterDA': 'captureFilterDA',
+        'CaptureFilterEnable': 'captureFilterEnable',
+        'CaptureFilterError': 'captureFilterError',
+        'CaptureFilterExpressionString': 'captureFilterExpressionString',
         'CaptureFilterFrameSizeEnable': 'captureFilterFrameSizeEnable',
         'CaptureFilterFrameSizeFrom': 'captureFilterFrameSizeFrom',
         'CaptureFilterFrameSizeTo': 'captureFilterFrameSizeTo',
-        'CaptureFilterDA': 'captureFilterDA',
-        'CaptureFilterExpressionString': 'captureFilterExpressionString',
-        'CaptureFilterEnable': 'captureFilterEnable',
-        'CaptureFilterError': 'captureFilterError',
-        'CaptureFilterSA': 'captureFilterSA',
         'CaptureFilterPattern': 'captureFilterPattern',
+        'CaptureFilterSA': 'captureFilterSA',
     }
 
     def __init__(self, parent):

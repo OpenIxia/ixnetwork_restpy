@@ -32,11 +32,11 @@ class Instruction(Base):
     _SDM_NAME = 'instruction'
     _SDM_ATT_MAP = {
         'ExperimenterData': 'experimenterData',
-        'ExperimenterId': 'experimenterId',
-        'ExperimenterDataLengthMiss': 'experimenterDataLengthMiss',
-        'ExperimenterIdMiss': 'experimenterIdMiss',
         'ExperimenterDataLength': 'experimenterDataLength',
+        'ExperimenterDataLengthMiss': 'experimenterDataLengthMiss',
         'ExperimenterDataMiss': 'experimenterDataMiss',
+        'ExperimenterId': 'experimenterId',
+        'ExperimenterIdMiss': 'experimenterIdMiss',
     }
 
     def __init__(self, parent):

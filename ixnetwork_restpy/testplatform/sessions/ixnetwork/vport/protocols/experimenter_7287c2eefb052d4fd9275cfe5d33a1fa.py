@@ -32,13 +32,13 @@ class Experimenter(Base):
     _SDM_NAME = 'experimenter'
     _SDM_ATT_MAP = {
         'ExperimenterData': 'experimenterData',
-        'ExperimenterId': 'experimenterId',
-        'ExperimenterField': 'experimenterField',
-        'ExperimenterDataLengthMiss': 'experimenterDataLengthMiss',
-        'ExperimenterIdMiss': 'experimenterIdMiss',
         'ExperimenterDataLength': 'experimenterDataLength',
-        'ExperimenterFieldMiss': 'experimenterFieldMiss',
+        'ExperimenterDataLengthMiss': 'experimenterDataLengthMiss',
         'ExperimenterDataMiss': 'experimenterDataMiss',
+        'ExperimenterField': 'experimenterField',
+        'ExperimenterFieldMiss': 'experimenterFieldMiss',
+        'ExperimenterId': 'experimenterId',
+        'ExperimenterIdMiss': 'experimenterIdMiss',
     }
 
     def __init__(self, parent):

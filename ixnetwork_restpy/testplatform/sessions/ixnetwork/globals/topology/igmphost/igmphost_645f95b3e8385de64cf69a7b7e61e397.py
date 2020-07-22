@@ -32,15 +32,15 @@ class IgmpHost(Base):
     _SDM_NAME = 'igmpHost'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'InterStbStartDelay': 'interStbStartDelay',
-        'Name': 'name',
-        'IntervalInMs': 'intervalInMs',
-        'Enabled': 'enabled',
-        'UnicastMode': 'unicastMode',
-        'IPDSCP': 'iPDSCP',
         'DescriptiveName': 'descriptiveName',
-        'RowNames': 'rowNames',
+        'Enabled': 'enabled',
+        'IPDSCP': 'iPDSCP',
+        'InterStbStartDelay': 'interStbStartDelay',
+        'IntervalInMs': 'intervalInMs',
+        'Name': 'name',
         'RatePerInterval': 'ratePerInterval',
+        'RowNames': 'rowNames',
+        'UnicastMode': 'unicastMode',
     }
 
     def __init__(self, parent):

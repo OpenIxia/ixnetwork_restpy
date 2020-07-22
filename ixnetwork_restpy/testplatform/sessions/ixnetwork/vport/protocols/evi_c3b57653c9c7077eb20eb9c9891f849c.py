@@ -33,21 +33,21 @@ class Evi(Base):
     __slots__ = ()
     _SDM_NAME = 'evi'
     _SDM_ATT_MAP = {
-        'RdEvi': 'rdEvi',
+        'AdRouteLabel': 'adRouteLabel',
+        'AutoConfigureRdEvi': 'autoConfigureRdEvi',
         'AutoConfigureRdIpAddress': 'autoConfigureRdIpAddress',
+        'Enabled': 'enabled',
         'ExportTargetList': 'exportTargetList',
+        'ImportTargetList': 'importTargetList',
+        'IncludePmsiTunnelAttribute': 'includePmsiTunnelAttribute',
         'MplsAssignedUpstreamOrDownStreamLabel': 'mplsAssignedUpstreamOrDownStreamLabel',
-        'RsvpP2mpIdAsNumber': 'rsvpP2mpIdAsNumber',
+        'MulticastTunnelType': 'multicastTunnelType',
+        'RdEvi': 'rdEvi',
         'RdIpAddress': 'rdIpAddress',
         'RsvpP2mpId': 'rsvpP2mpId',
-        'Enabled': 'enabled',
-        'MulticastTunnelType': 'multicastTunnelType',
-        'AdRouteLabel': 'adRouteLabel',
-        'UseUpstreamOrDownStreamAssignedLabel': 'useUpstreamOrDownStreamAssignedLabel',
-        'AutoConfigureRdEvi': 'autoConfigureRdEvi',
+        'RsvpP2mpIdAsNumber': 'rsvpP2mpIdAsNumber',
         'RsvpTunnelId': 'rsvpTunnelId',
-        'IncludePmsiTunnelAttribute': 'includePmsiTunnelAttribute',
-        'ImportTargetList': 'importTargetList',
+        'UseUpstreamOrDownStreamAssignedLabel': 'useUpstreamOrDownStreamAssignedLabel',
         'UseV4MappedV6Address': 'useV4MappedV6Address',
     }
 

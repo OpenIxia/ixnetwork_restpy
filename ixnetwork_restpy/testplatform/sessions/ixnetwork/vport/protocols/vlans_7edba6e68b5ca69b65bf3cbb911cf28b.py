@@ -34,13 +34,13 @@ class Vlans(Base):
     _SDM_NAME = 'vlans'
     _SDM_ATT_MAP = {
         'CVlanId': 'cVlanId',
+        'CVlanPriority': 'cVlanPriority',
         'CVlanTpId': 'cVlanTpId',
         'Enabled': 'enabled',
-        'SVlanPriority': 'sVlanPriority',
         'SVlanId': 'sVlanId',
+        'SVlanPriority': 'sVlanPriority',
         'SVlanTpId': 'sVlanTpId',
         'Type': 'type',
-        'CVlanPriority': 'cVlanPriority',
     }
 
     def __init__(self, parent):

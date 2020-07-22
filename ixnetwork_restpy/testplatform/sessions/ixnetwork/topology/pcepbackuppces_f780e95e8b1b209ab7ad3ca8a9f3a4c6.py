@@ -31,12 +31,12 @@ class PcepBackupPCEs(Base):
     __slots__ = ()
     _SDM_NAME = 'pcepBackupPCEs'
     _SDM_ATT_MAP = {
-        'Count': 'count',
+        'Active': 'active',
         'BackupPceRole': 'backupPceRole',
         'BackupPceSessionState': 'backupPceSessionState',
-        'Name': 'name',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
-        'Active': 'active',
+        'Name': 'name',
         'PceIpv4Address': 'pceIpv4Address',
     }
 

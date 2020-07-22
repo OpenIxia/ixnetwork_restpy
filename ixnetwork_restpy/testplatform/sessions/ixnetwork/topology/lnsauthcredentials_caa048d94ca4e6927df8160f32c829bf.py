@@ -32,10 +32,10 @@ class LnsAuthCredentials(Base):
     _SDM_NAME = 'lnsAuthCredentials'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'LacHostName': 'lacHostName',
         'DescriptiveName': 'descriptiveName',
-        'Name': 'name',
+        'LacHostName': 'lacHostName',
         'LacSecret': 'lacSecret',
+        'Name': 'name',
     }
 
     def __init__(self, parent):

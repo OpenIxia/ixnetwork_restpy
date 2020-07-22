@@ -31,8 +31,8 @@ class Impairment(Base):
     __slots__ = ()
     _SDM_NAME = 'impairment'
     _SDM_ATT_MAP = {
-        'State': 'state',
         'Errors': 'errors',
+        'State': 'state',
         'Warnings': 'warnings',
     }
 

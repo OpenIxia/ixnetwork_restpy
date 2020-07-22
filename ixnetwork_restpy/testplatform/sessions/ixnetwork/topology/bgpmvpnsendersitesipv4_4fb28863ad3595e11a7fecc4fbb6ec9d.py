@@ -33,23 +33,23 @@ class BgpMVpnSenderSitesIpv4(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpMVpnSenderSitesIpv4'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'StartSourceAddressIpv4': 'startSourceAddressIpv4',
-        'SourceAddressCount': 'sourceAddressCount',
-        'Name': 'name',
-        'SetNextHop': 'setNextHop',
-        'StartGroupAddressIpv4': 'startGroupAddressIpv4',
-        'Ipv6NextHop': 'ipv6NextHop',
-        'SourceMaskWidth': 'sourceMaskWidth',
-        'Ipv4NextHop': 'ipv4NextHop',
-        'DescriptiveName': 'descriptiveName',
-        'SendTriggeredSourceActiveADRoute': 'sendTriggeredSourceActiveADRoute',
         'Active': 'active',
-        'GroupAddressCount': 'groupAddressCount',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
         'EnableNextHop': 'enableNextHop',
-        'SourceGroupMapping': 'sourceGroupMapping',
+        'GroupAddressCount': 'groupAddressCount',
         'GroupMaskWidth': 'groupMaskWidth',
+        'Ipv4NextHop': 'ipv4NextHop',
+        'Ipv6NextHop': 'ipv6NextHop',
+        'Name': 'name',
+        'SendTriggeredSourceActiveADRoute': 'sendTriggeredSourceActiveADRoute',
+        'SetNextHop': 'setNextHop',
         'SetNextHopIpType': 'setNextHopIpType',
+        'SourceAddressCount': 'sourceAddressCount',
+        'SourceGroupMapping': 'sourceGroupMapping',
+        'SourceMaskWidth': 'sourceMaskWidth',
+        'StartGroupAddressIpv4': 'startGroupAddressIpv4',
+        'StartSourceAddressIpv4': 'startSourceAddressIpv4',
     }
 
     def __init__(self, parent):

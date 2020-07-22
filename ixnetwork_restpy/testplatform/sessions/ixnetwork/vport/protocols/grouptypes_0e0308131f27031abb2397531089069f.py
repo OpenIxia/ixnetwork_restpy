@@ -31,8 +31,8 @@ class GroupTypes(Base):
     __slots__ = ()
     _SDM_NAME = 'groupTypes'
     _SDM_ATT_MAP = {
-        'FastFailover': 'fastFailover',
         'All': 'all',
+        'FastFailover': 'fastFailover',
         'Indirect': 'indirect',
         'Select': 'select',
     }

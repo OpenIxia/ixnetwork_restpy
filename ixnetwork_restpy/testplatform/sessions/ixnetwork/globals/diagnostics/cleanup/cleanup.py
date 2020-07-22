@@ -31,20 +31,20 @@ class Cleanup(Base):
     __slots__ = ()
     _SDM_NAME = 'cleanup'
     _SDM_ATT_MAP = {
-        'ProfileStackmanager': 'profileStackmanager',
-        'ProfileImpairment': 'profileImpairment',
-        'ProfileHlapi': 'profileHlapi',
-        'ProfileMiddleware': 'profileMiddleware',
-        'ProfileAes': 'profileAes',
-        'CleanupChassis': 'cleanupChassis',
-        'ProfileAllprofiles': 'profileAllprofiles',
-        'ProfileStatviewerreporter': 'profileStatviewerreporter',
-        'ClientDaysOld': 'clientDaysOld',
-        'CleanupClient': 'cleanupClient',
-        'ProfileAnalyzer': 'profileAnalyzer',
-        'ProfileQuicktests': 'profileQuicktests',
         'ChassisDaysOld': 'chassisDaysOld',
+        'CleanupChassis': 'cleanupChassis',
+        'CleanupClient': 'cleanupClient',
+        'ClientDaysOld': 'clientDaysOld',
+        'ProfileAes': 'profileAes',
+        'ProfileAllprofiles': 'profileAllprofiles',
+        'ProfileAnalyzer': 'profileAnalyzer',
+        'ProfileHlapi': 'profileHlapi',
+        'ProfileImpairment': 'profileImpairment',
         'ProfileIxloadlite': 'profileIxloadlite',
+        'ProfileMiddleware': 'profileMiddleware',
+        'ProfileQuicktests': 'profileQuicktests',
+        'ProfileStackmanager': 'profileStackmanager',
+        'ProfileStatviewerreporter': 'profileStatviewerreporter',
     }
 
     def __init__(self, parent):

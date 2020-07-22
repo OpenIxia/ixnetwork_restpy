@@ -31,13 +31,13 @@ class TrillNodeTopologyList(Base):
     __slots__ = ()
     _SDM_NAME = 'trillNodeTopologyList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'TopologyId': 'topologyId',
-        'NoOfTreesToCompute': 'noOfTreesToCompute',
-        'InterestedVlanRangeCount': 'interestedVlanRangeCount',
-        'DescriptiveName': 'descriptiveName',
         'Active': 'active',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'InterestedVlanRangeCount': 'interestedVlanRangeCount',
+        'Name': 'name',
+        'NoOfTreesToCompute': 'noOfTreesToCompute',
+        'TopologyId': 'topologyId',
     }
 
     def __init__(self, parent):

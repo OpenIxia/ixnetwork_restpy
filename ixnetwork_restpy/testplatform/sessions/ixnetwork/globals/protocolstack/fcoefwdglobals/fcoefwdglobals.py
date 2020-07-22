@@ -33,13 +33,13 @@ class FcoeFwdGlobals(Base):
     __slots__ = ()
     _SDM_NAME = 'fcoeFwdGlobals'
     _SDM_ATT_MAP = {
-        'RetryInterval': 'retryInterval',
         'AcceptPartialConfig': 'acceptPartialConfig',
+        'DcbxTimeout': 'dcbxTimeout',
         'FipClearVlinkWithPortIds': 'fipClearVlinkWithPortIds',
-        'ObjectId': 'objectId',
         'MaxPacketsPerSecond': 'maxPacketsPerSecond',
         'MaxRetries': 'maxRetries',
-        'DcbxTimeout': 'dcbxTimeout',
+        'ObjectId': 'objectId',
+        'RetryInterval': 'retryInterval',
     }
 
     def __init__(self, parent):

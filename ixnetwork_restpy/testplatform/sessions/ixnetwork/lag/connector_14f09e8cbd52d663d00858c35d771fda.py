@@ -33,8 +33,8 @@ class Connector(Base):
     __slots__ = ()
     _SDM_NAME = 'connector'
     _SDM_ATT_MAP = {
-        'Count': 'count',
         'ConnectedTo': 'connectedTo',
+        'Count': 'count',
         'PropagateMultiplier': 'propagateMultiplier',
     }
 

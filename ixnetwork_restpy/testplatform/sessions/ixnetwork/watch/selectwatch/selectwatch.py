@@ -33,15 +33,15 @@ class SelectWatch(Base):
     __slots__ = ()
     _SDM_NAME = 'selectWatch'
     _SDM_ATT_MAP = {
-        'Selects': 'selects',
-        'IsDisabled': 'isDisabled',
         'AverageExecutionTime': 'averageExecutionTime',
-        'Topic': 'topic',
-        'Token': 'token',
+        'IsDisabled': 'isDisabled',
         'LastExecutionTime': 'lastExecutionTime',
         'LastNotification': 'lastNotification',
         'MaxExecutionTime': 'maxExecutionTime',
         'PollInterval': 'pollInterval',
+        'Selects': 'selects',
+        'Token': 'token',
+        'Topic': 'topic',
     }
 
     def __init__(self, parent):

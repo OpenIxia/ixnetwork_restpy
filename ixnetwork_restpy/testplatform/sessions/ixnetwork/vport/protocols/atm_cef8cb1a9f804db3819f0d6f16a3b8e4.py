@@ -33,13 +33,13 @@ class Atm(Base):
     __slots__ = ()
     _SDM_NAME = 'atm'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'IncrementVci': 'incrementVci',
-        'Name': 'name',
         'AtmEncapsulation': 'atmEncapsulation',
+        'Count': 'count',
         'Enabled': 'enabled',
-        'TrafficGroupId': 'trafficGroupId',
+        'IncrementVci': 'incrementVci',
         'IncrementVpi': 'incrementVpi',
+        'Name': 'name',
+        'TrafficGroupId': 'trafficGroupId',
         'Vci': 'vci',
         'Vpi': 'vpi',
     }

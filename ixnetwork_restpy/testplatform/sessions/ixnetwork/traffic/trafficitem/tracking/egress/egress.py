@@ -31,13 +31,13 @@ class Egress(Base):
     __slots__ = ()
     _SDM_NAME = 'egress'
     _SDM_ATT_MAP = {
-        'CustomWidthBits': 'customWidthBits',
-        'AvailableOffsets': 'availableOffsets',
-        'Enabled': 'enabled',
         'AvailableEncapsulations': 'availableEncapsulations',
+        'AvailableOffsets': 'availableOffsets',
         'CustomOffsetBits': 'customOffsetBits',
-        'Offset': 'offset',
+        'CustomWidthBits': 'customWidthBits',
+        'Enabled': 'enabled',
         'Encapsulation': 'encapsulation',
+        'Offset': 'offset',
     }
 
     def __init__(self, parent):

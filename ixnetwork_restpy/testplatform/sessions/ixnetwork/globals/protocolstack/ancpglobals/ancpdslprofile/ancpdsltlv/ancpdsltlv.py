@@ -34,12 +34,12 @@ class AncpDslTlv(Base):
     _SDM_NAME = 'ancpDslTlv'
     _SDM_ATT_MAP = {
         'Code': 'code',
+        'MaxValue': 'maxValue',
+        'MinValue': 'minValue',
         'Name': 'name',
         'ObjectId': 'objectId',
-        'MaxValue': 'maxValue',
-        'Value': 'value',
-        'MinValue': 'minValue',
         'Type': 'type',
+        'Value': 'value',
     }
 
     def __init__(self, parent):

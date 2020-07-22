@@ -32,15 +32,15 @@ class NestedCounter(Base):
     __slots__ = ()
     _SDM_NAME = 'nestedCounter'
     _SDM_ATT_MAP = {
-        'OuterLoopLoopCount': 'outerLoopLoopCount',
         'AvailableWidths': 'availableWidths',
         'BitOffset': 'bitOffset',
-        'InnerLoopLoopCount': 'innerLoopLoopCount',
-        'OuterLoopIncrementBy': 'outerLoopIncrementBy',
-        'InnerLoopRepeatValue': 'innerLoopRepeatValue',
-        'Width': 'width',
         'InnerLoopIncrementBy': 'innerLoopIncrementBy',
+        'InnerLoopLoopCount': 'innerLoopLoopCount',
+        'InnerLoopRepeatValue': 'innerLoopRepeatValue',
+        'OuterLoopIncrementBy': 'outerLoopIncrementBy',
+        'OuterLoopLoopCount': 'outerLoopLoopCount',
         'StartValue': 'startValue',
+        'Width': 'width',
     }
 
     def __init__(self, parent):

@@ -33,11 +33,11 @@ class Lag(Base):
     __slots__ = ()
     _SDM_NAME = 'lag'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Vports': 'vports',
-        'DescriptiveName': 'descriptiveName',
         'AggregationStatus': 'aggregationStatus',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
         'Name': 'name',
+        'Vports': 'vports',
     }
 
     def __init__(self, parent):

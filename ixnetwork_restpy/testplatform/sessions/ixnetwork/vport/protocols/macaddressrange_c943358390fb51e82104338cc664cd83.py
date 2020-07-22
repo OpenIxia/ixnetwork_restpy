@@ -33,21 +33,21 @@ class MacAddressRange(Base):
     __slots__ = ()
     _SDM_NAME = 'macAddressRange'
     _SDM_ATT_MAP = {
-        'Tpid': 'tpid',
-        'Enabled': 'enabled',
-        'VlanPriority': 'vlanPriority',
-        'IncrementVlanMode': 'incrementVlanMode',
-        'MacCountPerL2Site': 'macCountPerL2Site',
-        'VlanId': 'vlanId',
-        'StartMacAddress': 'startMacAddress',
-        'IncrementVlan': 'incrementVlan',
-        'SkipVlanIdZero': 'skipVlanIdZero',
         'EnableVlan': 'enableVlan',
+        'Enabled': 'enabled',
+        'IncrementVlan': 'incrementVlan',
+        'IncrementVlanMode': 'incrementVlanMode',
         'IncremetVlanMode': 'incremetVlanMode',
-        'TotalMacCount': 'totalMacCount',
-        'MacIncrement': 'macIncrement',
-        'VlanCount': 'vlanCount',
         'MacCount': 'macCount',
+        'MacCountPerL2Site': 'macCountPerL2Site',
+        'MacIncrement': 'macIncrement',
+        'SkipVlanIdZero': 'skipVlanIdZero',
+        'StartMacAddress': 'startMacAddress',
+        'TotalMacCount': 'totalMacCount',
+        'Tpid': 'tpid',
+        'VlanCount': 'vlanCount',
+        'VlanId': 'vlanId',
+        'VlanPriority': 'vlanPriority',
     }
 
     def __init__(self, parent):

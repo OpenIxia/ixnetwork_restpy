@@ -32,21 +32,21 @@ class BgpExtendedCommunitiesList(Base):
     __slots__ = ()
     _SDM_NAME = 'bgpExtendedCommunitiesList'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'AssignedNumber4Bytes': 'assignedNumber4Bytes',
-        'Name': 'name',
-        'LinkBandwidth': 'linkBandwidth',
-        'Ip': 'ip',
-        'AssignedNumber2Bytes': 'assignedNumber2Bytes',
         'AsNumber2Bytes': 'asNumber2Bytes',
         'AsNumber4Bytes': 'asNumber4Bytes',
-        'SubType': 'subType',
-        'OpaqueData': 'opaqueData',
-        'DescriptiveName': 'descriptiveName',
-        'Type': 'type',
-        'ColorReservedBits': 'colorReservedBits',
+        'AssignedNumber2Bytes': 'assignedNumber2Bytes',
+        'AssignedNumber4Bytes': 'assignedNumber4Bytes',
         'ColorCOBits': 'colorCOBits',
+        'ColorReservedBits': 'colorReservedBits',
         'ColorValue': 'colorValue',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Ip': 'ip',
+        'LinkBandwidth': 'linkBandwidth',
+        'Name': 'name',
+        'OpaqueData': 'opaqueData',
+        'SubType': 'subType',
+        'Type': 'type',
     }
 
     def __init__(self, parent):

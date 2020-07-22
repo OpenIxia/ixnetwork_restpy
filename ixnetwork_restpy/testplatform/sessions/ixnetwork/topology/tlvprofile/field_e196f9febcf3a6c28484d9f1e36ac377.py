@@ -32,14 +32,14 @@ class Field(Base):
     __slots__ = ()
     _SDM_NAME = 'field'
     _SDM_ATT_MAP = {
-        'Name': 'name',
-        'IsEditable': 'isEditable',
-        'Encoding': 'encoding',
-        'IsEnabled': 'isEnabled',
         'Description': 'description',
-        'Value': 'value',
-        'SizeType': 'sizeType',
+        'Encoding': 'encoding',
+        'IsEditable': 'isEditable',
+        'IsEnabled': 'isEnabled',
+        'Name': 'name',
         'Size': 'size',
+        'SizeType': 'sizeType',
+        'Value': 'value',
     }
 
     def __init__(self, parent):

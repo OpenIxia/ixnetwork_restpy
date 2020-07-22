@@ -31,14 +31,14 @@ class IsisSRTunnelList(Base):
     __slots__ = ()
     _SDM_NAME = 'isisSRTunnelList'
     _SDM_ATT_MAP = {
+        'Active': 'active',
         'Count': 'count',
-        'SourceIpv4': 'sourceIpv4',
-        'SourceIpv6': 'sourceIpv6',
+        'DescriptiveName': 'descriptiveName',
         'Name': 'name',
         'NumberOfSegments': 'numberOfSegments',
-        'DescriptiveName': 'descriptiveName',
+        'SourceIpv4': 'sourceIpv4',
+        'SourceIpv6': 'sourceIpv6',
         'TunnelDescription': 'tunnelDescription',
-        'Active': 'active',
         'UsingHeadEndNodePrefix': 'usingHeadEndNodePrefix',
     }
 

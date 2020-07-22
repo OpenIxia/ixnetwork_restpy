@@ -31,23 +31,23 @@ class EgtpNbS5S8Range(Base):
     __slots__ = ()
     _SDM_NAME = 'egtpNbS5S8Range'
     _SDM_ATT_MAP = {
-        'RAIMNC3': 'rAIMNC3',
-        'RAIMNC2': 'rAIMNC2',
-        'RAIMNC1': 'rAIMNC1',
-        'ParentSgw': 'parentSgw',
+        'ECI': 'eCI',
+        'Enabled': 'enabled',
+        'MCC': 'mCC',
+        'MNC': 'mNC',
         'Name': 'name',
         'ObjectId': 'objectId',
-        'Enabled': 'enabled',
-        'RAIRAC': 'rAIRAC',
-        'MCC': 'mCC',
-        'ECI': 'eCI',
         'ParentMme': 'parentMme',
-        'RAIMCC2': 'rAIMCC2',
+        'ParentSgw': 'parentSgw',
         'RAILAC': 'rAILAC',
         'RAIMCC1': 'rAIMCC1',
-        'TAC': 'tAC',
-        'MNC': 'mNC',
+        'RAIMCC2': 'rAIMCC2',
         'RAIMCC3': 'rAIMCC3',
+        'RAIMNC1': 'rAIMNC1',
+        'RAIMNC2': 'rAIMNC2',
+        'RAIMNC3': 'rAIMNC3',
+        'RAIRAC': 'rAIRAC',
+        'TAC': 'tAC',
     }
 
     def __init__(self, parent):

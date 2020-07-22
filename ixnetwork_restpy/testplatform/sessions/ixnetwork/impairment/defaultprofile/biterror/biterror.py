@@ -31,10 +31,10 @@ class BitError(Base):
     __slots__ = ()
     _SDM_NAME = 'bitError'
     _SDM_ATT_MAP = {
-        'SkipEndOctets': 'skipEndOctets',
-        'SkipStartOctets': 'skipStartOctets',
         'Enabled': 'enabled',
         'LogRate': 'logRate',
+        'SkipEndOctets': 'skipEndOctets',
+        'SkipStartOctets': 'skipStartOctets',
     }
 
     def __init__(self, parent):

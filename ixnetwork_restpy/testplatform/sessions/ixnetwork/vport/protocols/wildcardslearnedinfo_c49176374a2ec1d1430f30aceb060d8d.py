@@ -33,11 +33,11 @@ class WildcardsLearnedInfo(Base):
     _SDM_NAME = 'wildcardsLearnedInfo'
     _SDM_ATT_MAP = {
         'ExperimenterData': 'experimenterData',
-        'SupportedField': 'supportedField',
-        'ExperimenterId': 'experimenterId',
         'ExperimenterDataLength': 'experimenterDataLength',
+        'ExperimenterId': 'experimenterId',
         'NextTableIds': 'nextTableIds',
         'Property': 'property',
+        'SupportedField': 'supportedField',
     }
 
     def __init__(self, parent):

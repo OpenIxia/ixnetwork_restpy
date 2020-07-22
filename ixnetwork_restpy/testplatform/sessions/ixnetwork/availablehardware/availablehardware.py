@@ -31,8 +31,8 @@ class AvailableHardware(Base):
     __slots__ = ()
     _SDM_NAME = 'availableHardware'
     _SDM_ATT_MAP = {
-        'IsOffChassis': 'isOffChassis',
         'IsLocked': 'isLocked',
+        'IsOffChassis': 'isOffChassis',
         'OffChassisHwM': 'offChassisHwM',
     }
 

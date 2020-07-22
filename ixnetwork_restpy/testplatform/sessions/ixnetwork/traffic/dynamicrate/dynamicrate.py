@@ -32,14 +32,14 @@ class DynamicRate(Base):
     __slots__ = ()
     _SDM_NAME = 'dynamicRate'
     _SDM_ATT_MAP = {
-        'EnforceMinimumInterPacketGap': 'enforceMinimumInterPacketGap',
-        'TrafficItemName': 'trafficItemName',
-        'OverSubscribed': 'overSubscribed',
-        'RateType': 'rateType',
         'BitRateUnitsType': 'bitRateUnitsType',
-        'Rate': 'rate',
-        'InterPacketGapUnitsType': 'interPacketGapUnitsType',
+        'EnforceMinimumInterPacketGap': 'enforceMinimumInterPacketGap',
         'HighLevelStreamName': 'highLevelStreamName',
+        'InterPacketGapUnitsType': 'interPacketGapUnitsType',
+        'OverSubscribed': 'overSubscribed',
+        'Rate': 'rate',
+        'RateType': 'rateType',
+        'TrafficItemName': 'trafficItemName',
         'TxPort': 'txPort',
     }
 

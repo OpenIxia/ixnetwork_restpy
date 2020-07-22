@@ -31,17 +31,17 @@ class RsvpPcepExpectedInitiatedLsps(Base):
     __slots__ = ()
     _SDM_NAME = 'rsvpPcepExpectedInitiatedLsps'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'BackupLspId': 'backupLspId',
-        'NumberOfRroSubObjects': 'numberOfRroSubObjects',
-        'Name': 'name',
-        'EnableRRO': 'enableRRO',
-        'SessionInformation': 'sessionInformation',
-        'SymbolicPathName': 'symbolicPathName',
-        'LocalIp': 'localIp',
-        'State': 'state',
-        'DescriptiveName': 'descriptiveName',
         'Active': 'active',
+        'BackupLspId': 'backupLspId',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'EnableRRO': 'enableRRO',
+        'LocalIp': 'localIp',
+        'Name': 'name',
+        'NumberOfRroSubObjects': 'numberOfRroSubObjects',
+        'SessionInformation': 'sessionInformation',
+        'State': 'state',
+        'SymbolicPathName': 'symbolicPathName',
     }
 
     def __init__(self, parent):

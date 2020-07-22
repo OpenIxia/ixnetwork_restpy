@@ -1,6 +1,10 @@
 # Release Notes
 
 ### Jul 2020
+* 1.0.55
+  * PortMapAssistant.Connect method bug fix
+  * StatViewAssistant processes snapshots using in memory IO 
+  * removal of duplicate attempts in test platform determination 
 * 1.0.54
   * inclusion of uhd_restpy package in distribution
   * PortMapAssistant supports user defined timeouts on the .Connect method

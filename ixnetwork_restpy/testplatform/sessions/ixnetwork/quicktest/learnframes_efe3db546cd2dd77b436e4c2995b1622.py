@@ -31,12 +31,12 @@ class LearnFrames(Base):
     __slots__ = ()
     _SDM_NAME = 'learnFrames'
     _SDM_ATT_MAP = {
-        'LearnWaitTimeBeforeTransmit': 'learnWaitTimeBeforeTransmit',
-        'LearnNumFrames': 'learnNumFrames',
         'LearnFrameSize': 'learnFrameSize',
-        'LearnRate': 'learnRate',
         'LearnFrequency': 'learnFrequency',
+        'LearnNumFrames': 'learnNumFrames',
+        'LearnRate': 'learnRate',
         'LearnWaitTime': 'learnWaitTime',
+        'LearnWaitTimeBeforeTransmit': 'learnWaitTimeBeforeTransmit',
     }
 
     def __init__(self, parent):

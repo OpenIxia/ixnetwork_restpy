@@ -31,22 +31,22 @@ class ApplyActionsMiss(Base):
     __slots__ = ()
     _SDM_NAME = 'applyActionsMiss'
     _SDM_ATT_MAP = {
-        'PushVlan': 'pushVlan',
-        'Group': 'group',
-        'SetMplsTtl': 'setMplsTtl',
-        'PopMpls': 'popMpls',
-        'SetNetworkTtl': 'setNetworkTtl',
-        'PushMpls': 'pushMpls',
-        'CopyTtlOut': 'copyTtlOut',
-        'PopVlan': 'popVlan',
-        'PopPbb': 'popPbb',
-        'SetQueue': 'setQueue',
-        'DecrementNetworkTtl': 'decrementNetworkTtl',
-        'Output': 'output',
         'CopyTtlIn': 'copyTtlIn',
-        'PushPbb': 'pushPbb',
-        'SetField': 'setField',
+        'CopyTtlOut': 'copyTtlOut',
         'DecrementMplsTtl': 'decrementMplsTtl',
+        'DecrementNetworkTtl': 'decrementNetworkTtl',
+        'Group': 'group',
+        'Output': 'output',
+        'PopMpls': 'popMpls',
+        'PopPbb': 'popPbb',
+        'PopVlan': 'popVlan',
+        'PushMpls': 'pushMpls',
+        'PushPbb': 'pushPbb',
+        'PushVlan': 'pushVlan',
+        'SetField': 'setField',
+        'SetMplsTtl': 'setMplsTtl',
+        'SetNetworkTtl': 'setNetworkTtl',
+        'SetQueue': 'setQueue',
     }
 
     def __init__(self, parent):

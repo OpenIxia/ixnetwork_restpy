@@ -33,15 +33,15 @@ class Session(Base):
     __slots__ = ()
     _SDM_NAME = 'session'
     _SDM_ATT_MAP = {
-        'RemoteBfdAddress': 'remoteBfdAddress',
-        'LocalBfdAddress': 'localBfdAddress',
-        'IpType': 'ipType',
-        'RemoteDiscLearned': 'remoteDiscLearned',
+        'BfdSessionType': 'bfdSessionType',
         'Enabled': 'enabled',
         'EnabledAutoChooseSource': 'enabledAutoChooseSource',
-        'RemoteDisc': 'remoteDisc',
+        'IpType': 'ipType',
+        'LocalBfdAddress': 'localBfdAddress',
         'MyDisc': 'myDisc',
-        'BfdSessionType': 'bfdSessionType',
+        'RemoteBfdAddress': 'remoteBfdAddress',
+        'RemoteDisc': 'remoteDisc',
+        'RemoteDiscLearned': 'remoteDiscLearned',
     }
 
     def __init__(self, parent):

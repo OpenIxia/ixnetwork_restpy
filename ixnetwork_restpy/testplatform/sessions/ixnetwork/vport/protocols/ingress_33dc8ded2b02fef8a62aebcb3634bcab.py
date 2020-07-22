@@ -31,14 +31,14 @@ class Ingress(Base):
     __slots__ = ()
     _SDM_NAME = 'ingress'
     _SDM_ATT_MAP = {
-        'Rro': 'rro',
         'EnableEro': 'enableEro',
-        'PrependDutToEro': 'prependDutToEro',
-        'ReservationErrorTlv': 'reservationErrorTlv',
-        'SendRro': 'sendRro',
-        'TunnelIdsCount': 'tunnelIdsCount',
         'Ero': 'ero',
         'PrefixLength': 'prefixLength',
+        'PrependDutToEro': 'prependDutToEro',
+        'ReservationErrorTlv': 'reservationErrorTlv',
+        'Rro': 'rro',
+        'SendRro': 'sendRro',
+        'TunnelIdsCount': 'tunnelIdsCount',
         'TunnelIdsStart': 'tunnelIdsStart',
     }
 

@@ -31,21 +31,21 @@ class Data(Base):
     __slots__ = ()
     _SDM_NAME = 'data'
     _SDM_ATT_MAP = {
-        'ColumnCount': 'columnCount',
-        'EgressMode': 'egressMode',
         'AllowPaging': 'allowPaging',
+        'ColumnCaptions': 'columnCaptions',
+        'ColumnCount': 'columnCount',
+        'CurrentPage': 'currentPage',
+        'EgressMode': 'egressMode',
+        'EgressPageSize': 'egressPageSize',
+        'IsBlocked': 'isBlocked',
+        'IsReady': 'isReady',
         'PageSize': 'pageSize',
         'PageValues': 'pageValues',
-        'ColumnCaptions': 'columnCaptions',
-        'RowValues': 'rowValues',
-        'TotalRows': 'totalRows',
-        'IsReady': 'isReady',
-        'EgressPageSize': 'egressPageSize',
         'RowCount': 'rowCount',
+        'RowValues': 'rowValues',
         'Timestamp': 'timestamp',
-        'IsBlocked': 'isBlocked',
         'TotalPages': 'totalPages',
-        'CurrentPage': 'currentPage',
+        'TotalRows': 'totalRows',
     }
 
     def __init__(self, parent):

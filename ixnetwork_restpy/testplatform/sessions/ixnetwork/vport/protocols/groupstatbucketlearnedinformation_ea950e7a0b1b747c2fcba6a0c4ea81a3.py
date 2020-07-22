@@ -32,13 +32,13 @@ class GroupStatBucketLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'groupStatBucketLearnedInformation'
     _SDM_ATT_MAP = {
-        'DataPathIdAsHex': 'dataPathIdAsHex',
-        'LocalIp': 'localIp',
         'ByteCount': 'byteCount',
-        'RemoteIp': 'remoteIp',
-        'PacketCount': 'packetCount',
         'DataPathId': 'dataPathId',
+        'DataPathIdAsHex': 'dataPathIdAsHex',
         'GroupId': 'groupId',
+        'LocalIp': 'localIp',
+        'PacketCount': 'packetCount',
+        'RemoteIp': 'remoteIp',
     }
 
     def __init__(self, parent):

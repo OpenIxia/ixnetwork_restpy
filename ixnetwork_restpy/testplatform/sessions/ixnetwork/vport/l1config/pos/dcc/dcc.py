@@ -31,13 +31,13 @@ class Dcc(Base):
     __slots__ = ()
     _SDM_NAME = 'dcc'
     _SDM_ATT_MAP = {
-        'OverheadByte': 'overheadByte',
         'AvailableSpeeds': 'availableSpeeds',
         'CanModifySpeed': 'canModifySpeed',
-        'Crc': 'crc',
-        'TimeFill': 'timeFill',
         'CanSetMultipleSpeeds': 'canSetMultipleSpeeds',
+        'Crc': 'crc',
+        'OverheadByte': 'overheadByte',
         'SelectedSpeeds': 'selectedSpeeds',
+        'TimeFill': 'timeFill',
     }
 
     def __init__(self, parent):

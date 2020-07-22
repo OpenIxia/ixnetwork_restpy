@@ -31,15 +31,15 @@ class Dhcpv6server(Base):
     __slots__ = ()
     _SDM_NAME = 'dhcpv6server'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Name': 'name',
-        'ReconfigureTimeout': 'reconfigureTimeout',
-        'PingTimeout': 'pingTimeout',
-        'DescriptiveName': 'descriptiveName',
-        'ReconfigureMaxRc': 'reconfigureMaxRc',
-        'PingCheck': 'pingCheck',
-        'RowNames': 'rowNames',
         'AdvertiseTimeout': 'advertiseTimeout',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Name': 'name',
+        'PingCheck': 'pingCheck',
+        'PingTimeout': 'pingTimeout',
+        'ReconfigureMaxRc': 'reconfigureMaxRc',
+        'ReconfigureTimeout': 'reconfigureTimeout',
+        'RowNames': 'rowNames',
     }
 
     def __init__(self, parent):

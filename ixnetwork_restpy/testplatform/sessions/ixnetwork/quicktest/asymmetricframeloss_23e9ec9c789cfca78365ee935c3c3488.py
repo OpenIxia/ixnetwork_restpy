@@ -34,9 +34,9 @@ class AsymmetricFrameLoss(Base):
     _SDM_NAME = 'asymmetricFrameLoss'
     _SDM_ATT_MAP = {
         'ForceApplyQTConfig': 'forceApplyQTConfig',
+        'InputParameters': 'inputParameters',
         'Mode': 'mode',
         'Name': 'name',
-        'InputParameters': 'inputParameters',
     }
 
     def __init__(self, parent):

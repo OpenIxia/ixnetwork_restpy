@@ -31,15 +31,15 @@ class TrillPingOam(Base):
     __slots__ = ()
     _SDM_NAME = 'trillPingOam'
     _SDM_ATT_MAP = {
-        'SourceNickname': 'sourceNickname',
-        'NoOfPingRequests': 'noOfPingRequests',
+        'AlertFlag': 'alertFlag',
         'DestinationNickname': 'destinationNickname',
         'EtherType': 'etherType',
-        'SilentFlag': 'silentFlag',
-        'NativeFlag': 'nativeFlag',
-        'TimeOut': 'timeOut',
-        'AlertFlag': 'alertFlag',
         'HopCount': 'hopCount',
+        'NativeFlag': 'nativeFlag',
+        'NoOfPingRequests': 'noOfPingRequests',
+        'SilentFlag': 'silentFlag',
+        'SourceNickname': 'sourceNickname',
+        'TimeOut': 'timeOut',
     }
 
     def __init__(self, parent):

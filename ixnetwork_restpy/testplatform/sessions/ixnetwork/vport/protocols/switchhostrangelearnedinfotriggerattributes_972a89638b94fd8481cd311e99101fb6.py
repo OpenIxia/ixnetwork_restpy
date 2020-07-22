@@ -31,20 +31,20 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
     __slots__ = ()
     _SDM_NAME = 'switchHostRangeLearnedInfoTriggerAttributes'
     _SDM_ATT_MAP = {
-        'DestinationCustomMacAddressStep': 'destinationCustomMacAddressStep',
-        'DestinationCustomIpv4Address': 'destinationCustomIpv4Address',
-        'DestinationHostList': 'destinationHostList',
-        'DestinationCustomIpv4AddressStep': 'destinationCustomIpv4AddressStep',
         'CustomPacket': 'customPacket',
-        'SourceHostList': 'sourceHostList',
+        'DestinationCustom': 'destinationCustom',
+        'DestinationCustomIpv4Address': 'destinationCustomIpv4Address',
+        'DestinationCustomIpv4AddressStep': 'destinationCustomIpv4AddressStep',
+        'DestinationCustomMacAddress': 'destinationCustomMacAddress',
+        'DestinationCustomMacAddressStep': 'destinationCustomMacAddressStep',
+        'DestinationHostList': 'destinationHostList',
+        'MeshingType': 'meshingType',
+        'PacketType': 'packetType',
+        'PeriodIntervalInMs': 'periodIntervalInMs',
         'Periodic': 'periodic',
         'PeriodicIterationNumber': 'periodicIterationNumber',
         'ResponseTimeout': 'responseTimeout',
-        'DestinationCustom': 'destinationCustom',
-        'DestinationCustomMacAddress': 'destinationCustomMacAddress',
-        'MeshingType': 'meshingType',
-        'PeriodIntervalInMs': 'periodIntervalInMs',
-        'PacketType': 'packetType',
+        'SourceHostList': 'sourceHostList',
     }
 
     def __init__(self, parent):

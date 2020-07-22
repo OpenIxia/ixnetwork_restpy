@@ -31,11 +31,11 @@ class OfTopologyLearnedInformation(Base):
     __slots__ = ()
     _SDM_NAME = 'ofTopologyLearnedInformation'
     _SDM_ATT_MAP = {
+        'EnableInstallLldpFlow': 'enableInstallLldpFlow',
         'EnableRefreshLldpLearnedInformation': 'enableRefreshLldpLearnedInformation',
-        'LldpResponseTimeOut': 'lldpResponseTimeOut',
         'IsOfTopologyLearnedInformationRefreshed': 'isOfTopologyLearnedInformationRefreshed',
         'LldpDestinationMac': 'lldpDestinationMac',
-        'EnableInstallLldpFlow': 'enableInstallLldpFlow',
+        'LldpResponseTimeOut': 'lldpResponseTimeOut',
     }
 
     def __init__(self, parent):

@@ -33,9 +33,9 @@ class PceUpdateRsvpMetricSubObjectList(Base):
     _SDM_NAME = 'pceUpdateRsvpMetricSubObjectList'
     _SDM_ATT_MAP = {
         'ActiveThisMetric': 'activeThisMetric',
-        'MetricValue': 'metricValue',
         'BFlag': 'bFlag',
         'MetricType': 'metricType',
+        'MetricValue': 'metricValue',
     }
 
     def __init__(self, parent):

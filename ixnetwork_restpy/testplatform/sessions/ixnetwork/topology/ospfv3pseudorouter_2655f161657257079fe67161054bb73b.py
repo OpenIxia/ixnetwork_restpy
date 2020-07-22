@@ -32,22 +32,22 @@ class Ospfv3PseudoRouter(Base):
     __slots__ = ()
     _SDM_NAME = 'ospfv3PseudoRouter'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'VFlag': 'vFlag',
-        'MFlag': 'mFlag',
+        'Active': 'active',
         'Algorithm': 'algorithm',
+        'BBit': 'bBit',
         'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
-        'EFlag': 'eFlag',
-        'Name': 'name',
-        'SrgbRangeCount': 'srgbRangeCount',
+        'Count': 'count',
         'DescriptiveName': 'descriptiveName',
+        'EBit': 'eBit',
+        'EFlag': 'eFlag',
+        'EnableSrMpls': 'enableSrMpls',
+        'LFlag': 'lFlag',
+        'MFlag': 'mFlag',
+        'Name': 'name',
         'NpFlag': 'npFlag',
         'SidIndexLabel': 'sidIndexLabel',
-        'Active': 'active',
-        'EBit': 'eBit',
-        'LFlag': 'lFlag',
-        'EnableSrMpls': 'enableSrMpls',
-        'BBit': 'bBit',
+        'SrgbRangeCount': 'srgbRangeCount',
+        'VFlag': 'vFlag',
     }
 
     def __init__(self, parent):

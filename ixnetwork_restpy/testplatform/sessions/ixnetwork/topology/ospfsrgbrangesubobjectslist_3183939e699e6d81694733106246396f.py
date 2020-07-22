@@ -33,9 +33,9 @@ class OspfSRGBRangeSubObjectsList(Base):
     _SDM_NAME = 'ospfSRGBRangeSubObjectsList'
     _SDM_ATT_MAP = {
         'Count': 'count',
-        'SidCount': 'sidCount',
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
+        'SidCount': 'sidCount',
         'StartSIDLabel': 'startSIDLabel',
     }
 

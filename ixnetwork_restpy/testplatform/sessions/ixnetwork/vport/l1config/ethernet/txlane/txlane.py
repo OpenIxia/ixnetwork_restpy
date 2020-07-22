@@ -31,16 +31,16 @@ class TxLane(Base):
     __slots__ = ()
     _SDM_NAME = 'txLane'
     _SDM_ATT_MAP = {
-        'SynchronizedSkewVal': 'synchronizedSkewVal',
-        'PcsLane': 'pcsLane',
-        'LaneMappingType': 'laneMappingType',
         'IsSkewSynchronized': 'isSkewSynchronized',
-        'PhysicalLanes': 'physicalLanes',
-        'NoOfLanes': 'noOfLanes',
-        'MinSkewVal': 'minSkewVal',
-        'SkewValues': 'skewValues',
+        'LaneMappingType': 'laneMappingType',
         'MaxSkewVal': 'maxSkewVal',
+        'MinSkewVal': 'minSkewVal',
+        'NoOfLanes': 'noOfLanes',
+        'PcsLane': 'pcsLane',
+        'PhysicalLanes': 'physicalLanes',
         'Resolution': 'resolution',
+        'SkewValues': 'skewValues',
+        'SynchronizedSkewVal': 'synchronizedSkewVal',
     }
 
     def __init__(self, parent):

@@ -33,23 +33,23 @@ class IsisTrillSimRouter(Base):
     __slots__ = ()
     _SDM_NAME = 'isisTrillSimRouter'
     _SDM_ATT_MAP = {
-        'Count': 'count',
-        'Status': 'status',
-        'Errors': 'errors',
-        'Name': 'name',
-        'StateCounts': 'stateCounts',
-        'TrillMCastMacGroupCount': 'trillMCastMacGroupCount',
-        'StackedLayers': 'stackedLayers',
-        'TrillMCastIpv4GroupCount': 'trillMCastIpv4GroupCount',
-        'BroadcastRootPriority': 'broadcastRootPriority',
-        'TrillMCastIpv6GroupCount': 'trillMCastIpv6GroupCount',
-        'ConnectedVia': 'connectedVia',
-        'DescriptiveName': 'descriptiveName',
-        'Multiplier': 'multiplier',
         'Active': 'active',
-        'SystemId': 'systemId',
+        'BroadcastRootPriority': 'broadcastRootPriority',
+        'ConnectedVia': 'connectedVia',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Errors': 'errors',
+        'Multiplier': 'multiplier',
+        'Name': 'name',
         'Nickname': 'nickname',
         'SessionStatus': 'sessionStatus',
+        'StackedLayers': 'stackedLayers',
+        'StateCounts': 'stateCounts',
+        'Status': 'status',
+        'SystemId': 'systemId',
+        'TrillMCastIpv4GroupCount': 'trillMCastIpv4GroupCount',
+        'TrillMCastIpv6GroupCount': 'trillMCastIpv6GroupCount',
+        'TrillMCastMacGroupCount': 'trillMCastMacGroupCount',
     }
 
     def __init__(self, parent):

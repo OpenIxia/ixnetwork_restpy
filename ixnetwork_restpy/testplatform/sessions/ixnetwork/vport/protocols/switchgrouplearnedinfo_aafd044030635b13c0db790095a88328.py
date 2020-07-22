@@ -32,18 +32,18 @@ class SwitchGroupLearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'switchGroupLearnedInfo'
     _SDM_ATT_MAP = {
-        'GroupType': 'groupType',
-        'NumOfBuckets': 'numOfBuckets',
-        'DatapathIdInHex': 'datapathIdInHex',
-        'NegotiatedVersion': 'negotiatedVersion',
-        'DurationInNs': 'durationInNs',
-        'LocalIp': 'localIp',
         'ByteCount': 'byteCount',
-        'PacketCount': 'packetCount',
-        'Duration': 'duration',
-        'ReferenceCount': 'referenceCount',
         'DatapathId': 'datapathId',
+        'DatapathIdInHex': 'datapathIdInHex',
+        'Duration': 'duration',
+        'DurationInNs': 'durationInNs',
         'GroupId': 'groupId',
+        'GroupType': 'groupType',
+        'LocalIp': 'localIp',
+        'NegotiatedVersion': 'negotiatedVersion',
+        'NumOfBuckets': 'numOfBuckets',
+        'PacketCount': 'packetCount',
+        'ReferenceCount': 'referenceCount',
     }
 
     def __init__(self, parent):

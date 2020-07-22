@@ -31,13 +31,13 @@ class Cfm(Base):
     __slots__ = ()
     _SDM_NAME = 'cfm'
     _SDM_ATT_MAP = {
-        'RunningState': 'runningState',
-        'SuppressErrorsOnAis': 'suppressErrorsOnAis',
-        'Enabled': 'enabled',
         'EnableOptionalLmFunctionality': 'enableOptionalLmFunctionality',
-        'SendCcm': 'sendCcm',
-        'ReceiveCcm': 'receiveCcm',
         'EnableOptionalTlvValidation': 'enableOptionalTlvValidation',
+        'Enabled': 'enabled',
+        'ReceiveCcm': 'receiveCcm',
+        'RunningState': 'runningState',
+        'SendCcm': 'sendCcm',
+        'SuppressErrorsOnAis': 'suppressErrorsOnAis',
     }
 
     def __init__(self, parent):

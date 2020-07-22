@@ -32,19 +32,19 @@ class LearnedInfo(Base):
     __slots__ = ()
     _SDM_NAME = 'learnedInfo'
     _SDM_ATT_MAP = {
+        'DesMinTxInterval': 'desMinTxInterval',
+        'MyDisc': 'myDisc',
+        'MyIpAddress': 'myIpAddress',
         'PeerDisc': 'peerDisc',
         'PeerFlags': 'peerFlags',
-        'ReqMinEchoInterval': 'reqMinEchoInterval',
-        'DesMinTxInterval': 'desMinTxInterval',
         'PeerIpAddress': 'peerIpAddress',
-        'ProtocolUsingSession': 'protocolUsingSession',
-        'SessionType': 'sessionType',
-        'SessionState': 'sessionState',
-        'MyIpAddress': 'myIpAddress',
-        'ReqMinRxInterval': 'reqMinRxInterval',
         'PeerState': 'peerState',
-        'MyDisc': 'myDisc',
         'PeerUpTime': 'peerUpTime',
+        'ProtocolUsingSession': 'protocolUsingSession',
+        'ReqMinEchoInterval': 'reqMinEchoInterval',
+        'ReqMinRxInterval': 'reqMinRxInterval',
+        'SessionState': 'sessionState',
+        'SessionType': 'sessionType',
     }
 
     def __init__(self, parent):

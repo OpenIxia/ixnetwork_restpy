@@ -32,22 +32,22 @@ class SpbRbridges(Base):
     __slots__ = ()
     _SDM_NAME = 'spbRbridges'
     _SDM_ATT_MAP = {
-        'AuxillaryMcidConfigName': 'auxillaryMcidConfigName',
-        'UseFlagBit': 'useFlagBit',
-        'MBit': 'mBit',
-        'EctAlgorithm': 'ectAlgorithm',
-        'LinkMetric': 'linkMetric',
-        'SequenceNumber': 'sequenceNumber',
-        'BridgeMacAddress': 'bridgeMacAddress',
-        'McidConfigName': 'mcidConfigName',
         'Age': 'age',
-        'HostName': 'hostName',
-        'BridgePriority': 'bridgePriority',
-        'RBit': 'rBit',
+        'AuxillaryMcidConfigName': 'auxillaryMcidConfigName',
         'BaseVid': 'baseVid',
-        'SystemId': 'systemId',
+        'BridgeMacAddress': 'bridgeMacAddress',
+        'BridgePriority': 'bridgePriority',
+        'EctAlgorithm': 'ectAlgorithm',
+        'HostName': 'hostName',
         'IsId': 'isId',
+        'LinkMetric': 'linkMetric',
+        'MBit': 'mBit',
+        'McidConfigName': 'mcidConfigName',
+        'RBit': 'rBit',
+        'SequenceNumber': 'sequenceNumber',
+        'SystemId': 'systemId',
         'TBit': 'tBit',
+        'UseFlagBit': 'useFlagBit',
     }
 
     def __init__(self, parent):

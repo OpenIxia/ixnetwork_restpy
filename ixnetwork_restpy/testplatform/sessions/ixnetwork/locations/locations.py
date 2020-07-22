@@ -33,23 +33,23 @@ class Locations(Base):
     __slots__ = ()
     _SDM_NAME = 'locations'
     _SDM_ATT_MAP = {
-        'IsMaster': 'isMaster',
-        'ErrorState': 'errorState',
-        'MasterDevice': 'masterDevice',
-        'ErrorDescription': 'errorDescription',
-        'Ip': 'ip',
-        'Hostname': 'hostname',
-        'SequenceId': 'sequenceId',
         'CableLength': 'cableLength',
-        'OsType': 'osType',
-        'State': 'state',
-        'IxosBuildNumber': 'ixosBuildNumber',
-        'DeviceType': 'deviceType',
         'ChainTopology': 'chainTopology',
         'ConnectRetries': 'connectRetries',
+        'DeviceType': 'deviceType',
+        'ErrorDescription': 'errorDescription',
+        'ErrorState': 'errorState',
+        'Hostname': 'hostname',
+        'Ip': 'ip',
+        'IsMaster': 'isMaster',
         'IxnBuildNumber': 'ixnBuildNumber',
-        'ProtocolBuildNumber': 'protocolBuildNumber',
+        'IxosBuildNumber': 'ixosBuildNumber',
         'LicenseErrors': 'licenseErrors',
+        'MasterDevice': 'masterDevice',
+        'OsType': 'osType',
+        'ProtocolBuildNumber': 'protocolBuildNumber',
+        'SequenceId': 'sequenceId',
+        'State': 'state',
     }
 
     def __init__(self, parent):

@@ -32,11 +32,11 @@ class Card(Base):
     __slots__ = ()
     _SDM_NAME = 'card'
     _SDM_ATT_MAP = {
-        'AggregationSupported': 'aggregationSupported',
-        'CardId': 'cardId',
         'AggregationMode': 'aggregationMode',
-        'Description': 'description',
+        'AggregationSupported': 'aggregationSupported',
         'AvailableModes': 'availableModes',
+        'CardId': 'cardId',
+        'Description': 'description',
     }
 
     def __init__(self, parent):

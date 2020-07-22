@@ -34,9 +34,9 @@ class Rfc3918joinRate(Base):
     _SDM_NAME = 'rfc3918joinRate'
     _SDM_ATT_MAP = {
         'ForceApplyQTConfig': 'forceApplyQTConfig',
+        'InputParameters': 'inputParameters',
         'Mode': 'mode',
         'Name': 'name',
-        'InputParameters': 'inputParameters',
     }
 
     def __init__(self, parent):

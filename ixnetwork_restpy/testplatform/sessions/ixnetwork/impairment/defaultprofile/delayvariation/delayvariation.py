@@ -31,12 +31,12 @@ class DelayVariation(Base):
     __slots__ = ()
     _SDM_NAME = 'delayVariation'
     _SDM_ATT_MAP = {
-        'ExponentialMeanArrival': 'exponentialMeanArrival',
-        'Enabled': 'enabled',
-        'UniformSpread': 'uniformSpread',
-        'GaussianStandardDeviation': 'gaussianStandardDeviation',
-        'Units': 'units',
         'Distribution': 'distribution',
+        'Enabled': 'enabled',
+        'ExponentialMeanArrival': 'exponentialMeanArrival',
+        'GaussianStandardDeviation': 'gaussianStandardDeviation',
+        'UniformSpread': 'uniformSpread',
+        'Units': 'units',
     }
 
     def __init__(self, parent):
