@@ -135,7 +135,12 @@ class Base(object):
         try:
             return self._properties[name]
         except Exception as e:
-            raise NotFoundError('The attribute %s is not in the internal list of object dicts. (%s)' % (name, e))
+            msg = """The attribute %s is not in the internal list of object dicts. 
+            If there is a find method execute that prior to executing a property accessor.
+            Check the number of encapsulated resources using the len method.
+            %s
+            """ % (name, e)
+            raise NotFoundError(msg)
 
     def _set_attribute(self, name, value):
         """Update a property on the server and save it locally if there is no exception
@@ -155,7 +160,7 @@ class Base(object):
         instances = ''
         for i in range(len(self)):
             properties = self._object_properties[i]
-            instances += '\n%s[%s]: %s' % (self.__class__.__name__, i, properties['href'])
+            instances += '\n%s[%s]: %s' % (self.__class__.__name__, i, self.href)
             for key in sorted(properties.keys()):
                 if key == 'href':
                     continue
@@ -273,8 +278,7 @@ class Base(object):
     def _update(self, locals_dict):
         payload = self._build_payload(locals_dict)
         if payload is not None:
-            self._connection._update(self._properties['href'], payload)
-            return self.refresh()
+            self._connection._update(self.href, payload)
         return self
 
     def _delete(self):
@@ -287,7 +291,7 @@ class Base(object):
             raise e
 
     def _execute(self, operation, child=None, payload=None, response_object=None):
-        url = self._properties['href']
+        url = self.href
         if child is not None:
             url = '%s/%s' % (url, child)
         if operation is not None:
@@ -322,7 +326,7 @@ class Base(object):
         for properties in self._object_properties:
             selects.append(
                 {
-                    'from': properties['href'],
+                    'from': self.href,
                     'properties': ['*'],
                     'children': [],
                     'inlines': []
@@ -345,6 +349,21 @@ class Base(object):
         response = self._connection._read(href)
         self._set_properties(response, clear=True)
         return self
+
+    def __is_key_value_in_response(self, key_value, response):
+        """Return whether or not a key is in a response
+        """
+        if isinstance(response, list):
+            for item in response:
+                if self.__is_key_value_in_response(key_value, item) is True:
+                    return True
+        elif isinstance(response, dict):
+            if key_value in response.keys():
+                return True
+            for value in response.values():
+                if self.__is_key_value_in_response(key_value, value) is True:
+                    return True
+        return False
 
     def _select(self, locals_dict=dict()):
         selects = []
@@ -377,7 +396,10 @@ class Base(object):
         if 'ixnetwork' in self._parent.href:
             end = self._parent.href.index('ixnetwork') + len('ixnetwork')
         url = '%s/operations/select' % self._parent.href[0:end]
-        responses = self._connection._execute(url, payload)
+        while True:
+            responses = self._connection._execute(url, payload)
+            if self.__is_key_value_in_response('objRef', responses) is False:
+                break
         self._set_properties(None, clear=True)
         # process children of from
         for response in responses:

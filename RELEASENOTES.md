@@ -1,5 +1,10 @@
 # Release Notes
 
+### Aug 2020
+* 1.0.56
+  * fixed intermittent KeyError: 'href' bug
+  * enhanced KeyError message when error is valid
+
 ### Jul 2020
 * 1.0.55
   * PortMapAssistant.Connect method bug fix

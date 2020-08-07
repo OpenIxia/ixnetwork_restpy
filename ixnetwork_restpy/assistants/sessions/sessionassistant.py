@@ -76,7 +76,7 @@ class SessionAssistant(object):
         if SessionId is not None:
             session = testplatform.Sessions.find(Id=SessionId)
             if len(session) == 0:
-                raise NotFoundError('Session %s does not exist on %s:%s', (SessionId, testplatform.Hostname, testplatform.RestPort))
+                raise NotFoundError('Session %s does not exist on %s:%s' % (SessionId, testplatform.Hostname, testplatform.RestPort))
             session.Name = SessionName
         elif SessionName is not None:
             session = testplatform.Sessions.find(Name=SessionName)
