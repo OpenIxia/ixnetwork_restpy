@@ -163,7 +163,7 @@ class SwitchTablesList(Base):
         """
         Returns
         -------
-        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
         return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
 
@@ -414,7 +414,7 @@ class SwitchTablesList(Base):
         Args
         ----
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - ParentSwitch (str): Parent Switch Name
 

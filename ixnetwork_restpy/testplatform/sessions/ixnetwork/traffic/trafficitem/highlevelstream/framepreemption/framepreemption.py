@@ -25,8 +25,9 @@ from ixnetwork_restpy.files import Files
 
 class FramePreemption(Base):
     """
-    The FramePreemption class encapsulates a list of framePreemption resources that are managed by the system.
+    The FramePreemption class encapsulates a list of framePreemption resources that are managed by the user.
     A list of resources can be retrieved from the server using the FramePreemption.find() method.
+    The list can be managed by using the FramePreemption.add() and FramePreemption.remove() methods.
     """
 
     __slots__ = ()
@@ -132,6 +133,38 @@ class FramePreemption(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def add(self, AutoFragmentCount=None, Enable=None, FragmentCount=None, FrameType=None, LastFragment=None, SmdType=None):
+        """Adds a new framePreemption resource on the server and adds it to the container.
+
+        Args
+        ----
+        - AutoFragmentCount (bool): Let the fragments be auto counted
+        - Enable (bool): Enable frame preemption on the given stream. Disabled indicates an express frame
+        - FragmentCount (number): Set the fragment count (a value between 0 and 3)
+        - FrameType (str(control | fragment | invalid | wholeFrame)): Select the frame type
+        - LastFragment (bool): Indicates if this is the last fragment of the preemptable packet
+        - SmdType (str(autoSMDC | autoSMDS | invalidSMD | smdC0 | smdC1 | smdC2 | smdC3 | smdE | smdR | smdS0 | smdS1 | smdS2 | smdS3 | smdV)): Select the SMD type
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved framePreemption resources using find and the newly added framePreemption resources available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def remove(self):
+        """Deletes all the contained framePreemption resources in this instance from the server.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        self._delete()
 
     def find(self, AutoFragmentCount=None, Enable=None, FragmentCount=None, FrameType=None, LastFragment=None, SmdType=None):
         """Finds and retrieves framePreemption resources from the server.

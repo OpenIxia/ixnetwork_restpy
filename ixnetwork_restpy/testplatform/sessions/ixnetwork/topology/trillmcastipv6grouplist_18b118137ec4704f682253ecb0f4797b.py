@@ -75,7 +75,7 @@ class TrillMCastIpv6GroupList(Base):
         """
         Returns
         -------
-        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
         return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
 

@@ -149,6 +149,20 @@ class Ixnetwork(Base):
         return Statistics(self)._select()
 
     @property
+    def Timeline(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.timeline.timeline.Timeline): An instance of the Timeline class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.timeline.timeline import Timeline
+        return Timeline(self)._select()
+
+    @property
     def Topology(self):
         """
         Returns
@@ -1468,7 +1482,7 @@ class Ixnetwork(Base):
 
         startAllProtocols(Arg1=enum)
         ----------------------------
-        - Arg1 (str(async | sync)): An enum indicating whether or not the exec will be executed synchronously or asynsynchronously
+        - Arg1 (str(async | sync)): An enum indicating whether or not the exec will be executed synchronously or asynchronously
 
         Raises
         ------
@@ -1523,7 +1537,7 @@ class Ixnetwork(Base):
 
         stopAllProtocols(Arg1=enum)
         ---------------------------
-        - Arg1 (str(async | sync)): An enum indicating whether or not the exec will be executed synchronously or asynsynchronously
+        - Arg1 (str(async | sync)): An enum indicating whether or not the exec will be executed synchronously or asynchronously
 
         Raises
         ------

@@ -215,7 +215,7 @@ class IsisTrillRouter(Base):
         """
         Returns
         -------
-        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
         return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
 
@@ -540,7 +540,7 @@ class IsisTrillRouter(Base):
         Args
         ----
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - LocalSystemID (list(str)): System ID
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario

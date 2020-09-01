@@ -75,7 +75,7 @@ class BgpEpePeerSetList(Base):
         """
         Returns
         -------
-        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
         return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
 
@@ -220,7 +220,7 @@ class BgpEpePeerSetList(Base):
         ----
         - BBit (bool): B-Flag:Backup Flag.If set, the SID refers to a path that is eligible for protection.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - LBit (bool): L-Flag: Local Flag. If set, then the value/index carried by the SID has local significance.
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - PBit (bool): P-Flag: Persistent Flag: If set, the SID is persistently allocated, i.e. the SID value remains consistent across router restart and session/interface flap

@@ -972,7 +972,7 @@ class BgpIpv4Peer(Base):
         """DEPRECATED 
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer used to connect to the wire
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
@@ -1003,7 +1003,7 @@ class BgpIpv4Peer(Base):
         """
         Returns
         -------
-        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
         return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
 
@@ -1968,7 +1968,7 @@ class BgpIpv4Peer(Base):
         - BgpLsNoOfCommunities (number): Number of Communities
         - CapabilityIpv4MplsAddPath (bool): IPv4 MPLS Add Path Capability
         - CapabilityIpv6MplsAddPath (bool): IPv6 MPLS Add Path Capability
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - EnableEpeTraffic (bool): Enable EPE Traffic
         - EthernetSegmentsCountV4 (number): Number of Ethernet Segments
         - IpVrfToIpVrfType (str(interfaceLess | interfacefullWithCorefacingIRB | interfacefullWithUnnumberedCorefacingIRB)): IP-VRF-to-IP-VRF Model Type
@@ -2009,7 +2009,7 @@ class BgpIpv4Peer(Base):
         - BgpLsNoOfCommunities (number): Number of Communities
         - CapabilityIpv4MplsAddPath (bool): IPv4 MPLS Add Path Capability
         - CapabilityIpv6MplsAddPath (bool): IPv6 MPLS Add Path Capability
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - EnableEpeTraffic (bool): Enable EPE Traffic
         - EthernetSegmentsCountV4 (number): Number of Ethernet Segments
         - IpVrfToIpVrfType (str(interfaceLess | interfacefullWithCorefacingIRB | interfacefullWithUnnumberedCorefacingIRB)): IP-VRF-to-IP-VRF Model Type
@@ -2069,9 +2069,9 @@ class BgpIpv4Peer(Base):
         - BgpLsNoOfCommunities (number): Number of Communities
         - CapabilityIpv4MplsAddPath (bool): IPv4 MPLS Add Path Capability
         - CapabilityIpv6MplsAddPath (bool): IPv6 MPLS Add Path Capability
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - EnableEpeTraffic (bool): Enable EPE Traffic
         - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - EthernetSegmentsCountV4 (number): Number of Ethernet Segments

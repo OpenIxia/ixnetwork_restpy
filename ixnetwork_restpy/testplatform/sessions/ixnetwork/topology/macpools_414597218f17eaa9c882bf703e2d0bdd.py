@@ -203,7 +203,7 @@ class MacPools(Base):
         """
         Returns
         -------
-        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
         return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
 
@@ -363,7 +363,7 @@ class MacPools(Base):
         Args
         ----
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - LastMacAddress (list(str)): Last Address of network addresses in the simulated MAC network range
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NumberOfAddresses (number): Number of MAC addresses in the simulated MAC range

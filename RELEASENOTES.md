@@ -1,5 +1,9 @@
 # Release Notes
 
+### Sep 2020
+* 1.0.57
+  * classes generated from IxNetwork build 9.10
+
 ### Aug 2020
 * 1.0.56
   * fixed intermittent KeyError: 'href' bug

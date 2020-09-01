@@ -109,7 +109,7 @@ class FlowSet(Base):
         """
         Returns
         -------
-        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
         return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
 
@@ -240,7 +240,7 @@ class FlowSet(Base):
         Args
         ----
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - FlowAdvertise (bool): If selected, the flows are advertised by the OF Channel.
         - FlowSetId (str): Specify the controller Flow Set identifier.
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario

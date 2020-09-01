@@ -36,7 +36,9 @@ class Dhcpv4server(Base):
         'ConnectedVia': 'connectedVia',
         'Count': 'count',
         'DescriptiveName': 'descriptiveName',
+        'EnableIgnoreOpt': 'enableIgnoreOpt',
         'Errors': 'errors',
+        'IgnoreOpt': 'ignoreOpt',
         'Multiplier': 'multiplier',
         'Name': 'name',
         'PoolCount': 'poolCount',
@@ -85,7 +87,7 @@ class Dhcpv4server(Base):
         """DEPRECATED 
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer used to connect to the wire
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
@@ -106,9 +108,19 @@ class Dhcpv4server(Base):
         """
         Returns
         -------
-        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
         return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+
+    @property
+    def EnableIgnoreOpt(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enables DHCP Server to ignore options provided in the Ignore Options field
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableIgnoreOpt']))
 
     @property
     def Errors(self):
@@ -118,6 +130,16 @@ class Dhcpv4server(Base):
         - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+
+    @property
+    def IgnoreOpt(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Choose which Option needs to get ignored by the server (can be given multiple by comma separated)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IgnoreOpt']))
 
     @property
     def Multiplier(self):
@@ -232,7 +254,7 @@ class Dhcpv4server(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - PoolCount (number): number of DHCP pools a single server has
@@ -249,7 +271,7 @@ class Dhcpv4server(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - PoolCount (number): number of DHCP pools a single server has
@@ -284,9 +306,9 @@ class Dhcpv4server(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
@@ -324,7 +346,7 @@ class Dhcpv4server(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Subnet=None, SubnetAddrAssign=None, UseRapidCommit=None):
+    def get_device_ids(self, PortNames=None, EnableIgnoreOpt=None, IgnoreOpt=None, Subnet=None, SubnetAddrAssign=None, UseRapidCommit=None):
         """Base class infrastructure that gets a list of dhcpv4server device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -332,6 +354,8 @@ class Dhcpv4server(Base):
         Args
         ----
         - PortNames (str): optional regex of port names
+        - EnableIgnoreOpt (str): optional regex of enableIgnoreOpt
+        - IgnoreOpt (str): optional regex of ignoreOpt
         - Subnet (str): optional regex of subnet
         - SubnetAddrAssign (str): optional regex of subnetAddrAssign
         - UseRapidCommit (str): optional regex of useRapidCommit

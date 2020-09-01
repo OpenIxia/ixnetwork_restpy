@@ -249,6 +249,25 @@ class AppLibProfile(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('addAppLibraryFlow', payload=payload, response_object=None)
 
+    def AddAppLibraryFlowEx(self, *args, **kwargs):
+        """Executes the addAppLibraryFlowEx operation on the server.
+
+        This exec adds a flow to an application traffic profile.
+
+        addAppLibraryFlowEx(Arg2=list)
+        ------------------------------
+        - Arg2 (list(str)): This object specifies an array of the flow names to be added.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('addAppLibraryFlowEx', payload=payload, response_object=None)
+
     def DistributeFlowsEvenly(self):
         """Executes the distributeFlowsEvenly operation on the server.
 

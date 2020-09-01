@@ -332,7 +332,7 @@ class IsisL3PseudoRouter(Base):
         """
         Returns
         -------
-        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
         return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
 
@@ -1065,7 +1065,7 @@ class IsisL3PseudoRouter(Base):
         Args
         ----
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - EnableSR (bool): This enables SR MPLS on all the simulated ISIS router(s)
         - FlexAlgoCount (number): If the count is greater than 0, then the Flex Algo tab will appear. Default is 0. Range is 0-128.
         - LocatorCount (number): Locator Count

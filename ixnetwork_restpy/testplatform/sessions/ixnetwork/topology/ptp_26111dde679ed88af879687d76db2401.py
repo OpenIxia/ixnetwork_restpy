@@ -408,7 +408,7 @@ class Ptp(Base):
         """DEPRECATED 
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer used to connect to the wire
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
@@ -609,7 +609,7 @@ class Ptp(Base):
         """
         Returns
         -------
-        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
         return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
 
@@ -1777,7 +1777,7 @@ class Ptp(Base):
         ----
         - AtoiTlvCount (number): ATOI TLV Count
         - AvnuMode (str(aVNU_NA | aVNU_GPTP)): AVNU Mode
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - EnableATOITlv (bool): Enable ATOI TLV
         - EnableCmlds (bool): Enable Cmlds
         - EnableNegativeTesting (bool): Enable Negative Conformance Test
@@ -1802,7 +1802,7 @@ class Ptp(Base):
         ----
         - AtoiTlvCount (number): ATOI TLV Count
         - AvnuMode (str(aVNU_NA | aVNU_GPTP)): AVNU Mode
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - EnableATOITlv (bool): Enable ATOI TLV
         - EnableCmlds (bool): Enable Cmlds
         - EnableNegativeTesting (bool): Enable Negative Conformance Test
@@ -1845,9 +1845,9 @@ class Ptp(Base):
         ----
         - AtoiTlvCount (number): ATOI TLV Count
         - AvnuMode (str(aVNU_NA | aVNU_GPTP)): AVNU Mode
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer used to connect to the wire
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offers more context
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - EnableATOITlv (bool): Enable ATOI TLV
         - EnableCmlds (bool): Enable Cmlds
         - EnableNegativeTesting (bool): Enable Negative Conformance Test
