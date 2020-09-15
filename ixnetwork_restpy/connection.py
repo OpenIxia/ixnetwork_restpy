@@ -51,6 +51,7 @@ class Connection(object):
     TRACE_ALL = 'all'
     PLATFORMS = {
         'Jetty': 'linux',
+        'nginx/1.17.8': 'linux',
         'SelfHost': 'windows',
         'Kestrel': 'windows',
         'Microsoft-HTTPAPI/2.0': 'connection_manager'

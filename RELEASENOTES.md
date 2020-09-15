@@ -1,6 +1,8 @@
 # Release Notes
 
 ### Sep 2020
+* 1.0.58
+  * WatchAssistant
 * 1.0.57
   * classes generated from IxNetwork build 9.10
 

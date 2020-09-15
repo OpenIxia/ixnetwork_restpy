@@ -13,6 +13,7 @@ from ixnetwork_restpy.errors import *
 from ixnetwork_restpy.testplatform.testplatform import TestPlatform
 from ixnetwork_restpy.assistants.statistics.statviewassistant import StatViewAssistant
 from ixnetwork_restpy.assistants.ports.portmapassistant import PortMapAssistant
+from ixnetwork_restpy.assistants.watch.watchassistant import WatchAssistant
 
 
 class SessionAssistant(object):
@@ -109,4 +110,18 @@ class SessionAssistant(object):
         """Get an instance of the StatViewAssistant class
         """
         return StatViewAssistant(self._ixnetwork, ViewName, Timeout, LocalCsvStorage)
+
+    def WatchAssistant(self, Callback=None):
+        """Get an instance of the WatchAssistant class
+
+        Args
+        ----
+        - Callback (method(ws, message)): the callback that receives notification data. 
+            The message will be a json string and will need to be converted to a dict using json
+            The resulting dict will be of the form:
+                message = { 'key': 'topic', 'value': 'variant' }
+            If no callback is provided then a default one will be assigned that 
+            prints received messages to the console
+        """
+        return WatchAssistant(self._ixnetwork, Callback)
         

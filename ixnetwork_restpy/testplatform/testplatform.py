@@ -169,11 +169,11 @@ class TestPlatform(Base):
 
     @property
     def Scheme(self):
-        """Returns whether or not the requests are being submitted using the https scheme
+        """Returns the type of scheme
 
         Returns
         -------
-        - bool: The scheme
+        - str: The type of scheme http or https
         """
         return self._get_attribute('scheme')
 
