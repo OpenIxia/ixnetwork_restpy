@@ -70,7 +70,7 @@ class SessionAssistant(object):
             verify_cert=VerifyCertificates,
             trace=LogLevel)
         if ApiKey is not None:
-            testplatform.Authenticate = ApiKey
+            testplatform.ApiKey = ApiKey
         elif UserName is not None and Password is not None:
             testplatform.Authenticate(UserName, Password)
         session = None

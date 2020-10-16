@@ -1,5 +1,11 @@
 # Release Notes
 
+### Oct 2020
+* 1.0.59
+  * bug fix: SessionAssistant ApiKey not passed
+  * bug fix: python 2.7 import ixnetwork_restpy
+  * bug fix: StatViewAssistant column csv exception 
+
 ### Sep 2020
 * 1.0.58
   * WatchAssistant

@@ -78,9 +78,12 @@ class StatViewAssistant(object):
             '%s.csv' % snapshot_name, return_content=True))
         self._IxNetwork._connection._delete_file(self._IxNetwork.href, 
             '%s.csv' % snapshot_name)
-        self._IxNetwork._connection._delete_file(self._IxNetwork.href, 
-            '%s.csv.columns' % snapshot_name)
-
+        try:
+            self._IxNetwork._connection._delete_file(self._IxNetwork.href, 
+                '%s.csv.columns' % snapshot_name)
+        except Exception as e:
+            self._IxNetwork.info(e)
+            
     @property
     def _is_view_ready(self):
         start = time.time()
