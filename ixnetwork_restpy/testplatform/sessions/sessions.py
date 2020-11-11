@@ -373,5 +373,4 @@ class Sessions(Base):
 
         if self._parent.Platform == 'linux' and remote_filename is not None:
             remote_filename = remote_filename.replace('\\', '/')
-        return self._connection._delete_file('%s/ixnetwork' % self.href,
-            remote_filename=remote_filename)
+        return self._connection._delete_file('%s/ixnetwork' % self.href, remote_filename)
