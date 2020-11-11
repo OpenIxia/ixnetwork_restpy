@@ -358,3 +358,20 @@ class Sessions(Base):
             remote_filename = remote_filename.replace('\\', '/')
         return self._connection._put_file('%s/ixnetwork' % self.href, 
             local_filename=local_filename, remote_filename=remote_filename)
+
+    def DeleteFile(self, remote_filename):
+        """delete a file to the IxNetwork session instance
+        Args
+
+        - remote_filename (str): the name of the file that will be deleted on the IxNetwork session instance
+       
+        Returns
+        -------
+        - None is case of success
+
+        """
+
+        if self._parent.Platform == 'linux' and remote_filename is not None:
+            remote_filename = remote_filename.replace('\\', '/')
+        return self._connection._delete_file('%s/ixnetwork' % self.href,
+            remote_filename=remote_filename)
