@@ -322,7 +322,7 @@ class Sessions(Base):
         """
         href = '%s/ixnetwork/files' % self.href
         if remote_directory is not None:
-            href = '%s?absolute=remote_directory'
+            href = '%s?absolute=remote_directory' % (href, remote_directory)
         return self._connection._read(href)
 
     def DownloadFile(self, remote_filename, local_filename = None):
