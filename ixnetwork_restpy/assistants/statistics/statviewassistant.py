@@ -87,17 +87,25 @@ class StatViewAssistant(object):
     @property
     def _is_view_ready(self):
         start = time.time()
+        # Find the right view(s)
         while self._View is None:
             view = self._Statistics.View.find(Caption='^%s$' % self._ViewName)
-            if (len(view)) == 1:
+            if (len(view)) >= 1:
                 self._View = view
                 break
             if time.time() - start > self._Timeout:
                 raise NotFoundError('After %s seconds the %s view does not exist.' % (self._Timeout, self._ViewName))
             time.sleep(2)
+        # Wait until the/a view has data or time runs out
+        # For multiple matching views, return successfully if any has data
         while True:
-            if self._View.Data.IsReady is True:
-                break
+            if len(self._View) == 1:
+                if self._View.Data.IsReady is True:
+                    return
+            else:
+                for v in self._View:
+                    if v.Data.IsReady is True:
+                        return
             if time.time() - start > self._Timeout:
                raise NotFoundError('After %s seconds the %s view has no data available.' % (self._Timeout, self._View.Caption))
             time.sleep(2)
