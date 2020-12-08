@@ -65,6 +65,20 @@ class Ixnetwork(Base):
         return Impairment(self)._select()
 
     @property
+    def Lag(self):
+        """
+        Returns
+        -------
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.lag.lag_cd537f07f912db233dacbe727e8568d7.Lag): An instance of the Lag class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from uhd_restpy.testplatform.sessions.ixnetwork.lag.lag_cd537f07f912db233dacbe727e8568d7 import Lag
+        return Lag(self)
+
+    @property
     def Locations(self):
         """
         Returns
@@ -615,6 +629,19 @@ class Ixnetwork(Base):
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getAvailableStatsForSourceType', payload=payload, response_object=None)
+
+    def GetChassisMode(self):
+        """Executes the getChassisMode operation on the server.
+
+        Get current chassis mode(default/highRoute/unknown) for the default chassis.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = None
+        return self._execute('getChassisMode', payload=payload, response_object=None)
 
     def GetConfiguredProtocols(self):
         """Executes the getConfiguredProtocols operation on the server.
@@ -1244,6 +1271,27 @@ class Ixnetwork(Base):
         """
         payload = None
         return self._execute('sendRsAll', payload=payload, response_object=None)
+
+    def SetChassisMode(self, *args, **kwargs):
+        """Executes the setChassisMode operation on the server.
+
+        Switch Mode(default/highRoute) for the default chassis.
+
+        setChassisMode(Arg1=enum, Arg2=bool)object
+        ------------------------------------------
+        - Arg1 (str(default | highRoute)): Takes as input corresponding mode (default/highRoute).
+        - Arg2 (bool): take ownership if required.
+        - Returns dict(arg1:str,arg2:str): Result if succesful or not,chassis hostname and the response message.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('setChassisMode', payload=payload, response_object=None)
 
     def SetGuardRailVersion(self, *args, **kwargs):
         """Executes the setGuardRailVersion operation on the server.

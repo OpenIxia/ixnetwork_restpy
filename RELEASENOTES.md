@@ -1,5 +1,12 @@
 # Release Notes
 
+### Dec 2020
+* 1.0.60
+  * support uhd 9.10.2011.61
+  * bug fix: print version number once
+  * bug fix: support __getitem__ slice
+  * bug fix: issue #37 Session.GetFileList fails when passed a remote_directory
+
 ### Oct 2020
 * 1.0.59
   * bug fix: SessionAssistant ApiKey not passed

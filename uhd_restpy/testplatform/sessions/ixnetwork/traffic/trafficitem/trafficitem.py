@@ -88,6 +88,20 @@ class TrafficItem(Base):
         return ConfigElement(self)
 
     @property
+    def EgressTracking(self):
+        """
+        Returns
+        -------
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.egresstracking.EgressTracking): An instance of the EgressTracking class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.egresstracking import EgressTracking
+        return EgressTracking(self)
+
+    @property
     def EndpointSet(self):
         """
         Returns

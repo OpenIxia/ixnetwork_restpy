@@ -33,6 +33,7 @@ class Sessions(Base):
     
     def __init__(self, parent):
         super(Sessions, self).__init__(parent)
+        self._build_numbers = []
 
     @property
     def Ixnetwork(self):
@@ -49,15 +50,17 @@ class Sessions(Base):
         ixnetwork = Ixnetwork(self)
         response = ixnetwork._connection._read('%s/ixnetwork/globals' % self.href)
         build_number = response['buildNumber']
-        user_name = response['username']
-        from distutils.version import LooseVersion
-        if len(build_number) == 0:
-            self.warn('Using DEBUG version of IxNetwork api server')
-        elif LooseVersion(build_number) < LooseVersion('8.52'):
-            raise ValueError('IxNetwork api server version %s is not supported. The minimum version supported is 8.52' % build_number)
-        else:
-            self.info('Using IxNetwork api server version %s' % (build_number))
-            self.info('User info %s' % (user_name))
+        if build_number not in self._build_numbers:
+            user_name = response['username']
+            from distutils.version import LooseVersion
+            if len(build_number) == 0:
+                self.warn('Using DEBUG version of IxNetwork api server')
+            elif LooseVersion(build_number) < LooseVersion('8.52'):
+                raise ValueError('IxNetwork api server version %s is not supported. The minimum version supported is 8.52' % build_number)
+            else:
+                self.info('Using IxNetwork api server version %s' % (build_number))
+                self.info('User info %s' % (user_name))
+            self._build_numbers.append(build_number)
         ixnetwork._set_properties(ixnetwork._connection._read('%s/%s' % (self.href, Ixnetwork._SDM_NAME)))
         return ixnetwork
     
@@ -322,7 +325,7 @@ class Sessions(Base):
         """
         href = '%s/ixnetwork/files' % self.href
         if remote_directory is not None:
-            href = '%s?absolute=remote_directory'
+            href = '%s?absolute=%s' % (href, remote_directory)
         return self._connection._read(href)
 
     def DownloadFile(self, remote_filename, local_filename = None):

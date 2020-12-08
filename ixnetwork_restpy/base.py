@@ -65,13 +65,22 @@ class Base(object):
         return self[self._index]
 
     def __getitem__(self, index):
-        if index >= len(self._object_properties):
-            raise IndexError
-        elif index < 0 and len(self._object_properties) + index in range(len(self._object_properties)):
-            index = len(self._object_properties) + index
-        item = self.__class__(self._parent)
-        item._object_properties.append(self._object_properties[index])
-        return item
+        if isinstance(index, slice) is True:
+            start, stop, step = index.indices(len(self))
+            item = self.__class__(self._parent)
+            for i in range(start, stop, step):
+                item._object_properties.append(self._object_properties[i])
+            return item
+        elif isinstance(index, int) is True:
+            if index >= len(self._object_properties):
+                raise IndexError
+            elif index < 0 and len(self._object_properties) + index in range(len(self._object_properties)):
+                index = len(self._object_properties) + index
+            item = self.__class__(self._parent)
+            item._object_properties.append(self._object_properties[index])
+            return item
+        else:
+            raise NotImplemented('support for index of %s is not implemented' % index)
 
     @property
     def index(self):

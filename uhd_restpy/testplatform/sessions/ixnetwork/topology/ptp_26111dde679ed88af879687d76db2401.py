@@ -304,7 +304,7 @@ class Ptp(Base):
         """
         Returns
         -------
-        - obj(uhd_restpy.multivalue.Multivalue): Select this check box to set the 'PTP Timescale flag' in all Announce messages.
+        - obj(uhd_restpy.multivalue.Multivalue): Select this check box to set the 'PTP Timescale flag' in PTP messages based on profile. For 802.1 AS, the field is used in all messages. For other profiles this field is used only in announce message
         """
         from uhd_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AnnouncePtpTimescale']))
