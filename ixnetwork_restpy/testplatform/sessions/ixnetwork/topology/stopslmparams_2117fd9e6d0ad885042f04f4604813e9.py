@@ -23,28 +23,15 @@ from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
-class StopCcmEmulatedMpParams(Base):
-    """Stop CCM PDU Transmission.
-    The StopCcmEmulatedMpParams class encapsulates a required stopCcmEmulatedMpParams resource which will be retrieved from the server every time the property is accessed.
+class StopSlmParams(Base):
+    """Stop SLM PDU Transmission.
+    The StopSlmParams class encapsulates a required stopSlmParams resource which will be retrieved from the server every time the property is accessed.
     """
 
     __slots__ = ()
-    _SDM_NAME = 'stopCcmEmulatedMpParams'
+    _SDM_NAME = 'stopSlmParams'
     _SDM_ATT_MAP = {
     }
 
     def __init__(self, parent):
-        super(StopCcmEmulatedMpParams, self).__init__(parent)
-
-    def StopCcmEmulatedMp(self):
-        """Executes the stopCcmEmulatedMp operation on the server.
-
-        Stop CCM PDU Transmission
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        return self._execute('stopCcmEmulatedMp', payload=payload, response_object=None)
+        super(StopSlmParams, self).__init__(parent)

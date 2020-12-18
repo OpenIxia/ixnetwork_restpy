@@ -137,7 +137,7 @@ class Lac(Base):
 
     @property
     def Callingnum(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Calling Number AVP in ICRQ

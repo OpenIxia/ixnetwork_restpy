@@ -23,13 +23,13 @@ from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
-class BgpSRTEPoliciesListV6(Base):
+class BgpSRTEPoliciesListV4(Base):
     """
-    The BgpSRTEPoliciesListV6 class encapsulates a required bgpSRTEPoliciesListV6 resource which will be retrieved from the server every time the property is accessed.
+    The BgpSRTEPoliciesListV4 class encapsulates a required bgpSRTEPoliciesListV4 resource which will be retrieved from the server every time the property is accessed.
     """
 
     __slots__ = ()
-    _SDM_NAME = 'bgpSRTEPoliciesListV6'
+    _SDM_NAME = 'bgpSRTEPoliciesListV4'
     _SDM_ATT_MAP = {
         'Active': 'active',
         'AddPathId': 'addPathId',
@@ -46,14 +46,17 @@ class BgpSRTEPoliciesListV6(Base):
         'EnableCluster': 'enableCluster',
         'EnableCommunity': 'enableCommunity',
         'EnableExtendedCommunity': 'enableExtendedCommunity',
+        'EnableLinkLocal': 'enableLinkLocal',
         'EnableLocalPreference': 'enableLocalPreference',
         'EnableMultiExitDiscriminator': 'enableMultiExitDiscriminator',
         'EnableNextHop': 'enableNextHop',
         'EnableOrigin': 'enableOrigin',
         'EnableOriginatorId': 'enableOriginatorId',
+        'EnableSendWithdraw': 'enableSendWithdraw',
         'EndPointV4': 'endPointV4',
         'EndPointV6': 'endPointV6',
         'Ipv4NextHop': 'ipv4NextHop',
+        'Ipv6LinkLocalNextHop': 'ipv6LinkLocalNextHop',
         'Ipv6NextHop': 'ipv6NextHop',
         'LocalPreference': 'localPreference',
         'MultiExitDiscriminator': 'multiExitDiscriminator',
@@ -62,7 +65,7 @@ class BgpSRTEPoliciesListV6(Base):
         'NoOfClusters': 'noOfClusters',
         'NoOfCommunities': 'noOfCommunities',
         'NoOfExtendedCommunity': 'noOfExtendedCommunity',
-        'NumberOfTunnelsV6': 'numberOfTunnelsV6',
+        'NumberOfTunnelsV4': 'numberOfTunnelsV4',
         'Origin': 'origin',
         'OriginatorId': 'originatorId',
         'OverridePeerAsSetMode': 'overridePeerAsSetMode',
@@ -74,7 +77,7 @@ class BgpSRTEPoliciesListV6(Base):
     }
 
     def __init__(self, parent):
-        super(BgpSRTEPoliciesListV6, self).__init__(parent)
+        super(BgpSRTEPoliciesListV4, self).__init__(parent)
 
     @property
     def BgpAsPathSegmentList(self):
@@ -133,18 +136,18 @@ class BgpSRTEPoliciesListV6(Base):
         return BgpExtendedCommunitiesList(self)
 
     @property
-    def BgpSRTEPoliciesTunnelEncapsulationListV6(self):
+    def BgpSRTEPoliciesTunnelEncapsulationListV4(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciestunnelencapsulationlistv6_06a39e2bd20cfd0da5c5d6f0ce3c9027.BgpSRTEPoliciesTunnelEncapsulationListV6): An instance of the BgpSRTEPoliciesTunnelEncapsulationListV6 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciestunnelencapsulationlistv4_92b9a5bbebe14b523f238427c0265124.BgpSRTEPoliciesTunnelEncapsulationListV4): An instance of the BgpSRTEPoliciesTunnelEncapsulationListV4 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciestunnelencapsulationlistv6_06a39e2bd20cfd0da5c5d6f0ce3c9027 import BgpSRTEPoliciesTunnelEncapsulationListV6
-        return BgpSRTEPoliciesTunnelEncapsulationListV6(self)._select()
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciestunnelencapsulationlistv4_92b9a5bbebe14b523f238427c0265124 import BgpSRTEPoliciesTunnelEncapsulationListV4
+        return BgpSRTEPoliciesTunnelEncapsulationListV4(self)._select()
 
     @property
     def Active(self):
@@ -295,6 +298,16 @@ class BgpSRTEPoliciesListV6(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableExtendedCommunity']))
 
     @property
+    def EnableLinkLocal(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If this is enabled pick Link Local IPv6 from interface.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableLinkLocal']))
+
+    @property
     def EnableLocalPreference(self):
         """
         Returns
@@ -345,6 +358,16 @@ class BgpSRTEPoliciesListV6(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableOriginatorId']))
 
     @property
+    def EnableSendWithdraw(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Send Withdraw
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableSendWithdraw']))
+
+    @property
     def EndPointV4(self):
         """
         Returns
@@ -373,6 +396,16 @@ class BgpSRTEPoliciesListV6(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4NextHop']))
+
+    @property
+    def Ipv6LinkLocalNextHop(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): When next hop type is Global+ Link Local use this Link Local IPv6 address.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv6LinkLocalNextHop']))
 
     @property
     def Ipv6NextHop(self):
@@ -465,16 +498,16 @@ class BgpSRTEPoliciesListV6(Base):
         self._set_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunity'], value)
 
     @property
-    def NumberOfTunnelsV6(self):
+    def NumberOfTunnelsV4(self):
         """
         Returns
         -------
         - number: Count of Tunnel TLVs Per Policy
         """
-        return self._get_attribute(self._SDM_ATT_MAP['NumberOfTunnelsV6'])
-    @NumberOfTunnelsV6.setter
-    def NumberOfTunnelsV6(self, value):
-        self._set_attribute(self._SDM_ATT_MAP['NumberOfTunnelsV6'], value)
+        return self._get_attribute(self._SDM_ATT_MAP['NumberOfTunnelsV4'])
+    @NumberOfTunnelsV4.setter
+    def NumberOfTunnelsV4(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['NumberOfTunnelsV4'], value)
 
     @property
     def Origin(self):
@@ -556,8 +589,8 @@ class BgpSRTEPoliciesListV6(Base):
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrtepolicyName']))
 
-    def update(self, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None, NumberOfTunnelsV6=None):
-        """Updates bgpSRTEPoliciesListV6 resource on the server.
+    def update(self, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None, NumberOfTunnelsV4=None):
+        """Updates bgpSRTEPoliciesListV4 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
@@ -569,7 +602,7 @@ class BgpSRTEPoliciesListV6(Base):
         - NoOfClusters (number): Number of Clusters
         - NoOfCommunities (number): Number of Communities
         - NoOfExtendedCommunity (number): Number of Extended Communities
-        - NumberOfTunnelsV6 (number): Count of Tunnel TLVs Per Policy
+        - NumberOfTunnelsV4 (number): Count of Tunnel TLVs Per Policy
 
         Raises
         ------
@@ -577,8 +610,8 @@ class BgpSRTEPoliciesListV6(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def get_device_ids(self, PortNames=None, Active=None, AddPathId=None, AggregatorAs=None, AggregatorId=None, AsSetMode=None, Distinguisher=None, EnableAddPath=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EndPointV4=None, EndPointV6=None, Ipv4NextHop=None, Ipv6NextHop=None, LocalPreference=None, MultiExitDiscriminator=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, PolicyColor=None, PolicyType=None, SetNextHop=None, SetNextHopIpType=None, SrtepolicyName=None):
-        """Base class infrastructure that gets a list of bgpSRTEPoliciesListV6 device ids encapsulated by this object.
+    def get_device_ids(self, PortNames=None, Active=None, AddPathId=None, AggregatorAs=None, AggregatorId=None, AsSetMode=None, Distinguisher=None, EnableAddPath=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableLinkLocal=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableSendWithdraw=None, EndPointV4=None, EndPointV6=None, Ipv4NextHop=None, Ipv6LinkLocalNextHop=None, Ipv6NextHop=None, LocalPreference=None, MultiExitDiscriminator=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, PolicyColor=None, PolicyType=None, SetNextHop=None, SetNextHopIpType=None, SrtepolicyName=None):
+        """Base class infrastructure that gets a list of bgpSRTEPoliciesListV4 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
@@ -598,14 +631,17 @@ class BgpSRTEPoliciesListV6(Base):
         - EnableCluster (str): optional regex of enableCluster
         - EnableCommunity (str): optional regex of enableCommunity
         - EnableExtendedCommunity (str): optional regex of enableExtendedCommunity
+        - EnableLinkLocal (str): optional regex of enableLinkLocal
         - EnableLocalPreference (str): optional regex of enableLocalPreference
         - EnableMultiExitDiscriminator (str): optional regex of enableMultiExitDiscriminator
         - EnableNextHop (str): optional regex of enableNextHop
         - EnableOrigin (str): optional regex of enableOrigin
         - EnableOriginatorId (str): optional regex of enableOriginatorId
+        - EnableSendWithdraw (str): optional regex of enableSendWithdraw
         - EndPointV4 (str): optional regex of endPointV4
         - EndPointV6 (str): optional regex of endPointV6
         - Ipv4NextHop (str): optional regex of ipv4NextHop
+        - Ipv6LinkLocalNextHop (str): optional regex of ipv6LinkLocalNextHop
         - Ipv6NextHop (str): optional regex of ipv6NextHop
         - LocalPreference (str): optional regex of localPreference
         - MultiExitDiscriminator (str): optional regex of multiExitDiscriminator

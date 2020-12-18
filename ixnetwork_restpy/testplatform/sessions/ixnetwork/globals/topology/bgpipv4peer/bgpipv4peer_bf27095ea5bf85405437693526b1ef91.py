@@ -42,6 +42,7 @@ class BgpIpv4Peer(Base):
         'DisableReceivedUpdateValidation': 'disableReceivedUpdateValidation',
         'ENLPType': 'eNLPType',
         'EVPNSIDType': 'eVPNSIDType',
+        'EnBGPFastFailoverOnLinkDown': 'enBGPFastFailoverOnLinkDown',
         'EnLenthForPolicyNLRI': 'enLenthForPolicyNLRI',
         'EnableAdVplsPrefixLength': 'enableAdVplsPrefixLength',
         'IBgpTester4BytesAsNumber': 'iBgpTester4BytesAsNumber',
@@ -72,6 +73,7 @@ class BgpIpv4Peer(Base):
         'RowNames': 'rowNames',
         'SRv6VPNSIDTLVType': 'sRv6VPNSIDTLVType',
         'SegmentListType': 'segmentListType',
+        'SessionRetryDelayTime': 'sessionRetryDelayTime',
         'SrtePolicyAttrType': 'srtePolicyAttrType',
         'SrtePolicySAFI': 'srtePolicySAFI',
         'SrtePolicyType': 'srtePolicyType',
@@ -236,6 +238,16 @@ class BgpIpv4Peer(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EVPNSIDType']))
+
+    @property
+    def EnBGPFastFailoverOnLinkDown(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable quick termination of the BGP connections instead of Hold Time Expiry when the physical link goes down of the connected port.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnBGPFastFailoverOnLinkDown']))
 
     @property
     def EnLenthForPolicyNLRI(self):
@@ -539,6 +551,16 @@ class BgpIpv4Peer(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SegmentListType']))
 
     @property
+    def SessionRetryDelayTime(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The time (in Secs) to wait before BGP Active Peer retries session establishment after a connection is closed gracefully. Permitted value range is 1-60 secs.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SessionRetryDelayTime']))
+
+    @property
     def SrtePolicyAttrType(self):
         """
         Returns
@@ -657,7 +679,7 @@ class BgpIpv4Peer(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def get_device_ids(self, PortNames=None, BIERTunnelType=None, LLGRCapabilityCode=None, BgpConfMemType=None, BgpRouterId=None, BindingType=None, ColorType=None, DisableReceivedUpdateValidation=None, ENLPType=None, EVPNSIDType=None, EnLenthForPolicyNLRI=None, EnableAdVplsPrefixLength=None, IBgpTester4BytesAsNumber=None, IBgpTesterAsNumber=None, InitiateEbgpActiveConnection=None, InitiateIbgpActiveConnection=None, Ipv4AddrIndexType=None, Ipv4LocRemoteAddrType=None, Ipv4NodeAddrType=None, Ipv6AddrIndexType=None, Ipv6LocRemoteAddrType=None, Ipv6NodeAddrType=None, Ipv6SIDType=None, LenthForPolicyNLRI=None, MldpP2mpFecType=None, MplsSIDType=None, PeerAdjSidType=None, PeerNodeSidType=None, PeerSetSidType=None, PolicyNameType=None, PolicyPriorityType=None, PreferenceType=None, PrefixSIDAttrType=None, ProtoclIdType=None, RemoteEndpointType=None, RequestVpnLabelExchangeOverLsp=None, SRv6VPNSIDTLVType=None, SegmentListType=None, SrtePolicyAttrType=None, SrtePolicySAFI=None, SrtePolicyType=None, TriggerVplsPwInitiation=None, UdpDestinationPort=None, UseUnicastDestMacForBierTraffic=None, VPNSIDType=None, VrfRouteImportExtendedCommunitySubType=None, WeightType=None):
+    def get_device_ids(self, PortNames=None, BIERTunnelType=None, LLGRCapabilityCode=None, BgpConfMemType=None, BgpRouterId=None, BindingType=None, ColorType=None, DisableReceivedUpdateValidation=None, ENLPType=None, EVPNSIDType=None, EnBGPFastFailoverOnLinkDown=None, EnLenthForPolicyNLRI=None, EnableAdVplsPrefixLength=None, IBgpTester4BytesAsNumber=None, IBgpTesterAsNumber=None, InitiateEbgpActiveConnection=None, InitiateIbgpActiveConnection=None, Ipv4AddrIndexType=None, Ipv4LocRemoteAddrType=None, Ipv4NodeAddrType=None, Ipv6AddrIndexType=None, Ipv6LocRemoteAddrType=None, Ipv6NodeAddrType=None, Ipv6SIDType=None, LenthForPolicyNLRI=None, MldpP2mpFecType=None, MplsSIDType=None, PeerAdjSidType=None, PeerNodeSidType=None, PeerSetSidType=None, PolicyNameType=None, PolicyPriorityType=None, PreferenceType=None, PrefixSIDAttrType=None, ProtoclIdType=None, RemoteEndpointType=None, RequestVpnLabelExchangeOverLsp=None, SRv6VPNSIDTLVType=None, SegmentListType=None, SessionRetryDelayTime=None, SrtePolicyAttrType=None, SrtePolicySAFI=None, SrtePolicyType=None, TriggerVplsPwInitiation=None, UdpDestinationPort=None, UseUnicastDestMacForBierTraffic=None, VPNSIDType=None, VrfRouteImportExtendedCommunitySubType=None, WeightType=None):
         """Base class infrastructure that gets a list of bgpIpv4Peer device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -674,6 +696,7 @@ class BgpIpv4Peer(Base):
         - DisableReceivedUpdateValidation (str): optional regex of disableReceivedUpdateValidation
         - ENLPType (str): optional regex of eNLPType
         - EVPNSIDType (str): optional regex of eVPNSIDType
+        - EnBGPFastFailoverOnLinkDown (str): optional regex of enBGPFastFailoverOnLinkDown
         - EnLenthForPolicyNLRI (str): optional regex of enLenthForPolicyNLRI
         - EnableAdVplsPrefixLength (str): optional regex of enableAdVplsPrefixLength
         - IBgpTester4BytesAsNumber (str): optional regex of iBgpTester4BytesAsNumber
@@ -702,6 +725,7 @@ class BgpIpv4Peer(Base):
         - RequestVpnLabelExchangeOverLsp (str): optional regex of requestVpnLabelExchangeOverLsp
         - SRv6VPNSIDTLVType (str): optional regex of sRv6VPNSIDTLVType
         - SegmentListType (str): optional regex of segmentListType
+        - SessionRetryDelayTime (str): optional regex of sessionRetryDelayTime
         - SrtePolicyAttrType (str): optional regex of srtePolicyAttrType
         - SrtePolicySAFI (str): optional regex of srtePolicySAFI
         - SrtePolicyType (str): optional regex of srtePolicyType

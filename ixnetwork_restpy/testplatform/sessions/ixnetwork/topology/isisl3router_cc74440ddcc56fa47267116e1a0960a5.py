@@ -59,7 +59,13 @@ class IsisL3Router(Base):
         'DomainTransmitPasswordOrMD5Key': 'domainTransmitPasswordOrMD5Key',
         'EFlag': 'eFlag',
         'EFlagOfSRv6CapTlv': 'eFlagOfSRv6CapTlv',
+        'Enable': 'enable',
         'EnableBIER': 'enableBIER',
+        'EnableBit4': 'enableBit4',
+        'EnableBit5': 'enableBit5',
+        'EnableBit6': 'enableBit6',
+        'EnableBit7': 'enableBit7',
+        'EnableBit8': 'enableBit8',
         'EnableHelloPadding': 'enableHelloPadding',
         'EnableHitlessRestart': 'enableHitlessRestart',
         'EnableHostName': 'enableHostName',
@@ -68,10 +74,13 @@ class IsisL3Router(Base):
         'EnableMI': 'enableMI',
         'EnableMTIPv6': 'enableMTIPv6',
         'EnableMappingServer': 'enableMappingServer',
+        'EnableNFlag': 'enableNFlag',
+        'EnableRFlag': 'enableRFlag',
         'EnableSR': 'enableSR',
         'EnableTE': 'enableTE',
         'EnableWMforTE': 'enableWMforTE',
         'EnableWideMetric': 'enableWideMetric',
+        'EnableXFlag': 'enableXFlag',
         'Errors': 'errors',
         'FlexAlgoCount': 'flexAlgoCount',
         'Funcflags': 'funcflags',
@@ -226,7 +235,7 @@ class IsisL3Router(Base):
 
     @property
     def IsisMultiTopologyValuesList(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isismultitopologyvalueslist_aade22a247f2e2b1f2285c77e9114dda.IsisMultiTopologyValuesList): An instance of the IsisMultiTopologyValuesList class
@@ -591,6 +600,16 @@ class IsisL3Router(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EFlagOfSRv6CapTlv']))
 
     @property
+    def Enable(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This,if enabled, sends the prefix attributes flags.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Enable']))
+
+    @property
     def EnableBIER(self):
         """
         Returns
@@ -601,6 +620,56 @@ class IsisL3Router(Base):
     @EnableBIER.setter
     def EnableBIER(self, value):
         self._set_attribute(self._SDM_ATT_MAP['EnableBIER'], value)
+
+    @property
+    def EnableBit4(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 4th bit of the byte representing the flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit4']))
+
+    @property
+    def EnableBit5(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 5th bit of the byte representing the flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit5']))
+
+    @property
+    def EnableBit6(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 6th bit of the byte representing the flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit6']))
+
+    @property
+    def EnableBit7(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 7th bit of the byte representing the flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit7']))
+
+    @property
+    def EnableBit8(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 8th bit of the byte representing the flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit8']))
 
     @property
     def EnableHelloPadding(self):
@@ -664,7 +733,7 @@ class IsisL3Router(Base):
 
     @property
     def EnableMTIPv6(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable MT for IPv6
@@ -681,6 +750,26 @@ class IsisL3Router(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableMappingServer']))
+
+    @property
+    def EnableNFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables node flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableNFlag']))
+
+    @property
+    def EnableRFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables redistribution flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableRFlag']))
 
     @property
     def EnableSR(self):
@@ -723,6 +812,16 @@ class IsisL3Router(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableWideMetric']))
+
+    @property
+    def EnableXFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables external flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableXFlag']))
 
     @property
     def Errors(self):
@@ -1218,7 +1317,7 @@ class IsisL3Router(Base):
 
     @property
     def MtCount(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - number: MT Count
@@ -1737,7 +1836,7 @@ class IsisL3Router(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, BIERNodePrefix=None, Active=None, AdvertiseNodeMsd=None, AdvertiseSRLB=None, AdvertiseSRMSPreference=None, AdvertiseSidAsLocator=None, Algorithm=None, AreaAddresses=None, AreaAuthenticationType=None, AreaTransmitPasswordOrMD5Key=None, Attached=None, BIERIPv6NodePrefix=None, BierNFlag=None, BierRFlag=None, CSNPInterval=None, ConfigureSIDIndexLabel=None, DBit=None, DBitForSRv6Cap=None, DBitInsideSRv6SidTLV=None, DiscardLSPs=None, Distribution=None, DomainAuthenticationType=None, DomainTransmitPasswordOrMD5Key=None, EFlag=None, EFlagOfSRv6CapTlv=None, EnableHelloPadding=None, EnableHitlessRestart=None, EnableHostName=None, EnableITID=None, EnableIpV6TE=None, EnableMI=None, EnableMTIPv6=None, EnableMappingServer=None, EnableTE=None, EnableWMforTE=None, EnableWideMetric=None, Funcflags=None, Function=None, HitlessRestartMode=None, HitlessRestartTime=None, HitlessRestartVersion=None, HostName=None, IgnoreReceiveMD5=None, Iid=None, IncludeMaxSlMsd=None, IncludeMaximumEndDMsd=None, IncludeMaximumEndDSrhTLV=None, IncludeMaximumEndPopMsd=None, IncludeMaximumEndPopSrhTLV=None, IncludeMaximumSLTLV=None, IncludeMaximumTEncapMsd=None, IncludeMaximumTEncapSrhTLV=None, IncludeMaximumTInsertMsd=None, IncludeMaximumTInsertSrhTLV=None, IncludePrefixAttrFlags=None, InterLSPsOrMGroupPDUBurstGap=None, IpV6TERouterId=None, Ipv4Flag=None, Ipv6Flag=None, Ipv6NodePrefix=None, Ipv6Srh=None, Itid=None, LFlag=None, LSPLifetime=None, LSPRefreshRate=None, LSPorMGroupPDUMinTransmissionInterval=None, LocatorPrefixLength=None, Mask=None, MaxAreaAddresses=None, MaxEndD=None, MaxEndDMsd=None, MaxEndPopMsd=None, MaxEndPopSrh=None, MaxLSPSize=None, MaxLSPsOrMGroupPDUsPerBurst=None, MaxSL=None, MaxSlMsd=None, MaxTEncap=None, MaxTEncapMsd=None, MaxTInsert=None, MaxTInsertMsd=None, MvDontAdvNodePrefix=None, NFlag=None, NodePrefix=None, OFlagOfSRv6Cap=None, OFlagOfSRv6CapTlv=None, Overloaded=None, PFlag=None, PSNPInterval=None, PartitionRepair=None, PrefixAdvertisementType=None, PrefixLength=None, RFlag=None, Redistribution=None, RedistributionForSRv6=None, ReservedInsideFlagsOfSRv6SidTLV=None, ReservedInsideSRv6CapFlag=None, RouteMetric=None, RouteOrigin=None, RtrcapId=None, RtrcapIdForSrv6=None, SBit=None, SBitForSRv6Cap=None, SIDIndexLabel=None, SRv6NodePrefix=None, SRv6NodePrefixLength=None, SrlbFlags=None, SrmsPreference=None, TERouterId=None, VFlag=None):
+    def get_device_ids(self, PortNames=None, BIERNodePrefix=None, Active=None, AdvertiseNodeMsd=None, AdvertiseSRLB=None, AdvertiseSRMSPreference=None, AdvertiseSidAsLocator=None, Algorithm=None, AreaAddresses=None, AreaAuthenticationType=None, AreaTransmitPasswordOrMD5Key=None, Attached=None, BIERIPv6NodePrefix=None, BierNFlag=None, BierRFlag=None, CSNPInterval=None, ConfigureSIDIndexLabel=None, DBit=None, DBitForSRv6Cap=None, DBitInsideSRv6SidTLV=None, DiscardLSPs=None, Distribution=None, DomainAuthenticationType=None, DomainTransmitPasswordOrMD5Key=None, EFlag=None, EFlagOfSRv6CapTlv=None, Enable=None, EnableBit4=None, EnableBit5=None, EnableBit6=None, EnableBit7=None, EnableBit8=None, EnableHelloPadding=None, EnableHitlessRestart=None, EnableHostName=None, EnableITID=None, EnableIpV6TE=None, EnableMI=None, EnableMTIPv6=None, EnableMappingServer=None, EnableNFlag=None, EnableRFlag=None, EnableTE=None, EnableWMforTE=None, EnableWideMetric=None, EnableXFlag=None, Funcflags=None, Function=None, HitlessRestartMode=None, HitlessRestartTime=None, HitlessRestartVersion=None, HostName=None, IgnoreReceiveMD5=None, Iid=None, IncludeMaxSlMsd=None, IncludeMaximumEndDMsd=None, IncludeMaximumEndDSrhTLV=None, IncludeMaximumEndPopMsd=None, IncludeMaximumEndPopSrhTLV=None, IncludeMaximumSLTLV=None, IncludeMaximumTEncapMsd=None, IncludeMaximumTEncapSrhTLV=None, IncludeMaximumTInsertMsd=None, IncludeMaximumTInsertSrhTLV=None, IncludePrefixAttrFlags=None, InterLSPsOrMGroupPDUBurstGap=None, IpV6TERouterId=None, Ipv4Flag=None, Ipv6Flag=None, Ipv6NodePrefix=None, Ipv6Srh=None, Itid=None, LFlag=None, LSPLifetime=None, LSPRefreshRate=None, LSPorMGroupPDUMinTransmissionInterval=None, LocatorPrefixLength=None, Mask=None, MaxAreaAddresses=None, MaxEndD=None, MaxEndDMsd=None, MaxEndPopMsd=None, MaxEndPopSrh=None, MaxLSPSize=None, MaxLSPsOrMGroupPDUsPerBurst=None, MaxSL=None, MaxSlMsd=None, MaxTEncap=None, MaxTEncapMsd=None, MaxTInsert=None, MaxTInsertMsd=None, MvDontAdvNodePrefix=None, NFlag=None, NodePrefix=None, OFlagOfSRv6Cap=None, OFlagOfSRv6CapTlv=None, Overloaded=None, PFlag=None, PSNPInterval=None, PartitionRepair=None, PrefixAdvertisementType=None, PrefixLength=None, RFlag=None, Redistribution=None, RedistributionForSRv6=None, ReservedInsideFlagsOfSRv6SidTLV=None, ReservedInsideSRv6CapFlag=None, RouteMetric=None, RouteOrigin=None, RtrcapId=None, RtrcapIdForSrv6=None, SBit=None, SBitForSRv6Cap=None, SIDIndexLabel=None, SRv6NodePrefix=None, SRv6NodePrefixLength=None, SrlbFlags=None, SrmsPreference=None, TERouterId=None, VFlag=None):
         """Base class infrastructure that gets a list of isisL3Router device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -1770,6 +1869,12 @@ class IsisL3Router(Base):
         - DomainTransmitPasswordOrMD5Key (str): optional regex of domainTransmitPasswordOrMD5Key
         - EFlag (str): optional regex of eFlag
         - EFlagOfSRv6CapTlv (str): optional regex of eFlagOfSRv6CapTlv
+        - Enable (str): optional regex of enable
+        - EnableBit4 (str): optional regex of enableBit4
+        - EnableBit5 (str): optional regex of enableBit5
+        - EnableBit6 (str): optional regex of enableBit6
+        - EnableBit7 (str): optional regex of enableBit7
+        - EnableBit8 (str): optional regex of enableBit8
         - EnableHelloPadding (str): optional regex of enableHelloPadding
         - EnableHitlessRestart (str): optional regex of enableHitlessRestart
         - EnableHostName (str): optional regex of enableHostName
@@ -1778,9 +1883,12 @@ class IsisL3Router(Base):
         - EnableMI (str): optional regex of enableMI
         - EnableMTIPv6 (str): optional regex of enableMTIPv6
         - EnableMappingServer (str): optional regex of enableMappingServer
+        - EnableNFlag (str): optional regex of enableNFlag
+        - EnableRFlag (str): optional regex of enableRFlag
         - EnableTE (str): optional regex of enableTE
         - EnableWMforTE (str): optional regex of enableWMforTE
         - EnableWideMetric (str): optional regex of enableWideMetric
+        - EnableXFlag (str): optional regex of enableXFlag
         - Funcflags (str): optional regex of funcflags
         - Function (str): optional regex of function
         - HitlessRestartMode (str): optional regex of hitlessRestartMode

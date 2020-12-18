@@ -44,6 +44,8 @@ class Pppoxclient(Base):
         'AuthRetries': 'authRetries',
         'AuthTimeout': 'authTimeout',
         'AuthType': 'authType',
+        'CalledNum': 'calledNum',
+        'CallingNum': 'callingNum',
         'ChapName': 'chapName',
         'ChapSecret': 'chapSecret',
         'ClientDnsOptions': 'clientDnsOptions',
@@ -91,6 +93,8 @@ class Pppoxclient(Base):
         'Errors': 'errors',
         'HostUniq': 'hostUniq',
         'HostUniqLength': 'hostUniqLength',
+        'LastRxLcpReq': 'lastRxLcpReq',
+        'LastSentLcpReq': 'lastSentLcpReq',
         'LcpAccm': 'lcpAccm',
         'LcpEnableAccm': 'lcpEnableAccm',
         'LcpMaxFailure': 'lcpMaxFailure',
@@ -117,6 +121,11 @@ class Pppoxclient(Base):
         'PapPassword': 'papPassword',
         'PapUser': 'papUser',
         'PonTypeTlv': 'ponTypeTlv',
+        'ProxyAuthChal': 'proxyAuthChal',
+        'ProxyAuthId': 'proxyAuthId',
+        'ProxyAuthName': 'proxyAuthName',
+        'ProxyAuthRes': 'proxyAuthRes',
+        'ProxyAuthType': 'proxyAuthType',
         'RedialMax': 'redialMax',
         'RedialTimeout': 'redialTimeout',
         'RxConnectSpeed': 'rxConnectSpeed',
@@ -611,6 +620,26 @@ class Pppoxclient(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AuthType']))
 
     @property
+    def CalledNum(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Calling Number AVP in ICRQ
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CalledNum']))
+
+    @property
+    def CallingNum(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Calling Number AVP in ICRQ
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CallingNum']))
+
+    @property
     def ChapName(self):
         """
         Returns
@@ -1072,6 +1101,26 @@ class Pppoxclient(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['HostUniqLength']))
 
     @property
+    def LastRxLcpReq(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Value configured (Hex format) in this field will be sent under AVP type 28 in ICCN.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LastRxLcpReq']))
+
+    @property
+    def LastSentLcpReq(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Value configured (Hex format) in this field will be sent under AVP type 27 in ICCN.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LastSentLcpReq']))
+
+    @property
     def LcpAccm(self):
         """
         Returns
@@ -1336,6 +1385,56 @@ class Pppoxclient(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PonTypeTlv']))
 
     @property
+    def ProxyAuthChal(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Value configured (String format) in this field will be sent under AVP type 31 in ICCN.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProxyAuthChal']))
+
+    @property
+    def ProxyAuthId(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Value configured (Decimal format) in this field will be sent under AVP type 32 in ICCN.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProxyAuthId']))
+
+    @property
+    def ProxyAuthName(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Value configured (String format) in this field will be sent under AVP type 30 in ICCN.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProxyAuthName']))
+
+    @property
+    def ProxyAuthRes(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Value configured (String format) in this field will be sent under AVP type 33 in ICCN.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProxyAuthRes']))
+
+    @property
+    def ProxyAuthType(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Used to determine Proxy Authentication Type AVP 29 that will be sent in ICCN.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ProxyAuthType']))
+
+    @property
     def RedialMax(self):
         """
         Returns
@@ -1579,7 +1678,7 @@ class Pppoxclient(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, AcMatchMac=None, AcMatchName=None, AcOptions=None, ActualRateDownstream=None, ActualRateUpstream=None, AgentAccessAggregationCircuitId=None, AgentCircuitId=None, AgentRemoteId=None, AuthRetries=None, AuthTimeout=None, AuthType=None, ChapName=None, ChapSecret=None, ClientDnsOptions=None, ClientLocalIp=None, ClientLocalIpv6Iid=None, ClientNcpOptions=None, ClientNetmask=None, ClientNetmaskOptions=None, ClientPrimaryDnsAddress=None, ClientSecondaryDnsAddress=None, ClientSignalIWF=None, ClientSignalLoopChar=None, ClientSignalLoopEncapsulation=None, ClientSignalLoopId=None, ClientV6NcpOptions=None, ClientWinsOptions=None, ClientWinsPrimaryAddress=None, ClientWinsSecondaryAddress=None, ConnectSpeedUpdateEnable=None, DataLink=None, DomainList=None, DslTypeTlv=None, EchoReqInterval=None, EnableDomainGroups=None, EnableEchoReq=None, EnableEchoRsp=None, EnableHostUniq=None, EnableMaxPayload=None, EnableRedial=None, Encaps1=None, Encaps2=None, EndpointDiscNegotiation=None, EndpointDiscriminatorClass=None, HostUniq=None, HostUniqLength=None, LcpAccm=None, LcpEnableAccm=None, LcpMaxFailure=None, LcpRetries=None, LcpStartDelay=None, LcpTermRetries=None, LcpTimeout=None, MaxPayload=None, MlpppIPAddress=None, MlpppMACAddress=None, Mrru=None, MrruNegotiation=None, MruNegotiation=None, Mtu=None, NcpRetries=None, NcpTimeout=None, NcpType=None, PadiRetries=None, PadiTimeout=None, PadrRetries=None, PadrTimeout=None, PapPassword=None, PapUser=None, PonTypeTlv=None, RedialMax=None, RedialTimeout=None, RxConnectSpeed=None, ServiceName=None, ServiceOptions=None, TxConnectSpeed=None, UnlimitedRedialAttempts=None, UserDefinedDslType=None, UserDefinedPonType=None):
+    def get_device_ids(self, PortNames=None, AcMatchMac=None, AcMatchName=None, AcOptions=None, ActualRateDownstream=None, ActualRateUpstream=None, AgentAccessAggregationCircuitId=None, AgentCircuitId=None, AgentRemoteId=None, AuthRetries=None, AuthTimeout=None, AuthType=None, CalledNum=None, CallingNum=None, ChapName=None, ChapSecret=None, ClientDnsOptions=None, ClientLocalIp=None, ClientLocalIpv6Iid=None, ClientNcpOptions=None, ClientNetmask=None, ClientNetmaskOptions=None, ClientPrimaryDnsAddress=None, ClientSecondaryDnsAddress=None, ClientSignalIWF=None, ClientSignalLoopChar=None, ClientSignalLoopEncapsulation=None, ClientSignalLoopId=None, ClientV6NcpOptions=None, ClientWinsOptions=None, ClientWinsPrimaryAddress=None, ClientWinsSecondaryAddress=None, ConnectSpeedUpdateEnable=None, DataLink=None, DomainList=None, DslTypeTlv=None, EchoReqInterval=None, EnableDomainGroups=None, EnableEchoReq=None, EnableEchoRsp=None, EnableHostUniq=None, EnableMaxPayload=None, EnableRedial=None, Encaps1=None, Encaps2=None, EndpointDiscNegotiation=None, EndpointDiscriminatorClass=None, HostUniq=None, HostUniqLength=None, LastRxLcpReq=None, LastSentLcpReq=None, LcpAccm=None, LcpEnableAccm=None, LcpMaxFailure=None, LcpRetries=None, LcpStartDelay=None, LcpTermRetries=None, LcpTimeout=None, MaxPayload=None, MlpppIPAddress=None, MlpppMACAddress=None, Mrru=None, MrruNegotiation=None, MruNegotiation=None, Mtu=None, NcpRetries=None, NcpTimeout=None, NcpType=None, PadiRetries=None, PadiTimeout=None, PadrRetries=None, PadrTimeout=None, PapPassword=None, PapUser=None, PonTypeTlv=None, ProxyAuthChal=None, ProxyAuthId=None, ProxyAuthName=None, ProxyAuthRes=None, ProxyAuthType=None, RedialMax=None, RedialTimeout=None, RxConnectSpeed=None, ServiceName=None, ServiceOptions=None, TxConnectSpeed=None, UnlimitedRedialAttempts=None, UserDefinedDslType=None, UserDefinedPonType=None):
         """Base class infrastructure that gets a list of pppoxclient device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -1598,6 +1697,8 @@ class Pppoxclient(Base):
         - AuthRetries (str): optional regex of authRetries
         - AuthTimeout (str): optional regex of authTimeout
         - AuthType (str): optional regex of authType
+        - CalledNum (str): optional regex of calledNum
+        - CallingNum (str): optional regex of callingNum
         - ChapName (str): optional regex of chapName
         - ChapSecret (str): optional regex of chapSecret
         - ClientDnsOptions (str): optional regex of clientDnsOptions
@@ -1633,6 +1734,8 @@ class Pppoxclient(Base):
         - EndpointDiscriminatorClass (str): optional regex of endpointDiscriminatorClass
         - HostUniq (str): optional regex of hostUniq
         - HostUniqLength (str): optional regex of hostUniqLength
+        - LastRxLcpReq (str): optional regex of lastRxLcpReq
+        - LastSentLcpReq (str): optional regex of lastSentLcpReq
         - LcpAccm (str): optional regex of lcpAccm
         - LcpEnableAccm (str): optional regex of lcpEnableAccm
         - LcpMaxFailure (str): optional regex of lcpMaxFailure
@@ -1657,6 +1760,11 @@ class Pppoxclient(Base):
         - PapPassword (str): optional regex of papPassword
         - PapUser (str): optional regex of papUser
         - PonTypeTlv (str): optional regex of ponTypeTlv
+        - ProxyAuthChal (str): optional regex of proxyAuthChal
+        - ProxyAuthId (str): optional regex of proxyAuthId
+        - ProxyAuthName (str): optional regex of proxyAuthName
+        - ProxyAuthRes (str): optional regex of proxyAuthRes
+        - ProxyAuthType (str): optional regex of proxyAuthType
         - RedialMax (str): optional regex of redialMax
         - RedialTimeout (str): optional regex of redialTimeout
         - RxConnectSpeed (str): optional regex of rxConnectSpeed

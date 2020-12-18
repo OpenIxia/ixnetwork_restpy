@@ -51,13 +51,13 @@ class BgpSRTEPoliciesSegmentListV6(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciessegmentscollectionv6_7dace127dbb526f56b4a0b3fbf40ea33.BgpSRTEPoliciesSegmentsCollectionV6): An instance of the BgpSRTEPoliciesSegmentsCollectionV6 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciessegmentscollectionv6_a255a79981c0700cc96bda6f1de0a800.BgpSRTEPoliciesSegmentsCollectionV6): An instance of the BgpSRTEPoliciesSegmentsCollectionV6 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciessegmentscollectionv6_7dace127dbb526f56b4a0b3fbf40ea33 import BgpSRTEPoliciesSegmentsCollectionV6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciessegmentscollectionv6_a255a79981c0700cc96bda6f1de0a800 import BgpSRTEPoliciesSegmentsCollectionV6
         return BgpSRTEPoliciesSegmentsCollectionV6(self)._select()
 
     @property
@@ -125,7 +125,7 @@ class BgpSRTEPoliciesSegmentListV6(Base):
         """
         Returns
         -------
-        - number: Count of Segments Per Segment List
+        - number: Count of Segments Per Segment List.
         """
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfSegmentsV6'])
     @NumberOfSegmentsV6.setter
@@ -170,7 +170,7 @@ class BgpSRTEPoliciesSegmentListV6(Base):
         Args
         ----
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - NumberOfSegmentsV6 (number): Count of Segments Per Segment List
+        - NumberOfSegmentsV6 (number): Count of Segments Per Segment List.
 
         Raises
         ------

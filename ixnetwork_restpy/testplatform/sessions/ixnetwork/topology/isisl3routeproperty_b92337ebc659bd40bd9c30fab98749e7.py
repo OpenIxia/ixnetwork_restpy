@@ -45,10 +45,22 @@ class IsisL3RouteProperty(Base):
         'DBitInsideSRv6SidTLV': 'dBitInsideSRv6SidTLV',
         'DescriptiveName': 'descriptiveName',
         'EFlag': 'eFlag',
+        'Enable': 'enable',
+        'EnableBit4': 'enableBit4',
+        'EnableBit5': 'enableBit5',
+        'EnableBit6': 'enableBit6',
+        'EnableBit7': 'enableBit7',
+        'EnableBit8': 'enableBit8',
+        'EnableNFlag': 'enableNFlag',
+        'EnableRFlag': 'enableRFlag',
+        'EnableXFlag': 'enableXFlag',
         'Funcflags': 'funcflags',
         'Function': 'function',
+        'IPv6SourceRouterID': 'iPv6SourceRouterID',
         'IncludeBIERInfo': 'includeBIERInfo',
         'IncludeBSLObject': 'includeBSLObject',
+        'IncludeSourceRouterID': 'includeSourceRouterID',
+        'Ipv4SourceRouterID': 'ipv4SourceRouterID',
         'Ipv6SID': 'ipv6SID',
         'Ipv6Srh': 'ipv6Srh',
         'LFlag': 'lFlag',
@@ -58,7 +70,9 @@ class IsisL3RouteProperty(Base):
         'Metric': 'metric',
         'NFlag': 'nFlag',
         'Name': 'name',
+        'NoOfMtIds': 'noOfMtIds',
         'NoOfSidperPrefix': 'noOfSidperPrefix',
+        'OverWriteRoutersMt': 'overWriteRoutersMt',
         'PFlag': 'pFlag',
         'RFlag': 'rFlag',
         'Redistribution': 'redistribution',
@@ -113,6 +127,20 @@ class IsisL3RouteProperty(Base):
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import EvpnIPv6PrefixRange
         return EvpnIPv6PrefixRange(self)
+
+    @property
+    def IsisL3PrefixesMtId(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3prefixesmtid_c3122c5d3adb2a25f8100a28e93af4ac.IsisL3PrefixesMtId): An instance of the IsisL3PrefixesMtId class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3prefixesmtid_c3122c5d3adb2a25f8100a28e93af4ac import IsisL3PrefixesMtId
+        return IsisL3PrefixesMtId(self)._select()
 
     @property
     def IsisL3PrefixesSrSid(self):
@@ -257,6 +285,96 @@ class IsisL3RouteProperty(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EFlag']))
 
     @property
+    def Enable(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This,if enabled, sends the prefix attributes flags.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Enable']))
+
+    @property
+    def EnableBit4(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 4th bit of the byte representing the flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit4']))
+
+    @property
+    def EnableBit5(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 5th bit of the byte representing the flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit5']))
+
+    @property
+    def EnableBit6(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 6th bit of the byte representing the flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit6']))
+
+    @property
+    def EnableBit7(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 7th bit of the byte representing the flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit7']))
+
+    @property
+    def EnableBit8(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 8th bit of the byte representing the flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit8']))
+
+    @property
+    def EnableNFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables node flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableNFlag']))
+
+    @property
+    def EnableRFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables redistribution flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableRFlag']))
+
+    @property
+    def EnableXFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables external flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableXFlag']))
+
+    @property
     def Funcflags(self):
         """DEPRECATED 
         Returns
@@ -275,6 +393,16 @@ class IsisL3RouteProperty(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Function']))
+
+    @property
+    def IPv6SourceRouterID(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This takes the value of the ipv6 source router id.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IPv6SourceRouterID']))
 
     @property
     def IncludeBIERInfo(self):
@@ -297,6 +425,26 @@ class IsisL3RouteProperty(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeBSLObject']))
+
+    @property
+    def IncludeSourceRouterID(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This drop box is provided to select ipv4 or ipv6 source id or none of them.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeSourceRouterID']))
+
+    @property
+    def Ipv4SourceRouterID(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This takes the value of the ipv4 source router id.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4SourceRouterID']))
 
     @property
     def Ipv6SID(self):
@@ -390,6 +538,18 @@ class IsisL3RouteProperty(Base):
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
+    def NoOfMtIds(self):
+        """
+        Returns
+        -------
+        - number: Number of MTIDs
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['NoOfMtIds'])
+    @NoOfMtIds.setter
+    def NoOfMtIds(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['NoOfMtIds'], value)
+
+    @property
     def NoOfSidperPrefix(self):
         """
         Returns
@@ -400,6 +560,18 @@ class IsisL3RouteProperty(Base):
     @NoOfSidperPrefix.setter
     def NoOfSidperPrefix(self, value):
         self._set_attribute(self._SDM_ATT_MAP['NoOfSidperPrefix'], value)
+
+    @property
+    def OverWriteRoutersMt(self):
+        """
+        Returns
+        -------
+        - bool: If false, routers MT IDs which is union of all interfaces MTIDs would be used. If true, configured MT IDs in route range would be used
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['OverWriteRoutersMt'])
+    @OverWriteRoutersMt.setter
+    def OverWriteRoutersMt(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['OverWriteRoutersMt'], value)
 
     @property
     def PFlag(self):
@@ -481,7 +653,7 @@ class IsisL3RouteProperty(Base):
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VFlag']))
 
-    def update(self, IncludeBIERInfo=None, Name=None, NoOfSidperPrefix=None):
+    def update(self, IncludeBIERInfo=None, Name=None, NoOfMtIds=None, NoOfSidperPrefix=None, OverWriteRoutersMt=None):
         """Updates isisL3RouteProperty resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -491,7 +663,9 @@ class IsisL3RouteProperty(Base):
         ----
         - IncludeBIERInfo (bool): Include BIER Info
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfMtIds (number): Number of MTIDs
         - NoOfSidperPrefix (number): Number of SID's per prefix
+        - OverWriteRoutersMt (bool): If false, routers MT IDs which is union of all interfaces MTIDs would be used. If true, configured MT IDs in route range would be used
 
         Raises
         ------
@@ -499,7 +673,7 @@ class IsisL3RouteProperty(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, IncludeBIERInfo=None, LocalSystemID=None, Name=None, NoOfSidperPrefix=None):
+    def find(self, Count=None, DescriptiveName=None, IncludeBIERInfo=None, LocalSystemID=None, Name=None, NoOfMtIds=None, NoOfSidperPrefix=None, OverWriteRoutersMt=None):
         """Finds and retrieves isisL3RouteProperty resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisL3RouteProperty resources from the server.
@@ -513,7 +687,9 @@ class IsisL3RouteProperty(Base):
         - IncludeBIERInfo (bool): Include BIER Info
         - LocalSystemID (list(str)): System ID
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfMtIds (number): Number of MTIDs
         - NoOfSidperPrefix (number): Number of SID's per prefix
+        - OverWriteRoutersMt (bool): If false, routers MT IDs which is union of all interfaces MTIDs would be used. If true, configured MT IDs in route range would be used
 
         Returns
         -------
@@ -543,7 +719,7 @@ class IsisL3RouteProperty(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, BAR=None, BFRId=None, BFRIdStep=None, BIERBitStringLength=None, IPA=None, Active=None, AdvIPv6Prefix=None, Algorithm=None, ConfigureSIDIndexLabel=None, DBitInsideSRv6SidTLV=None, EFlag=None, Funcflags=None, Function=None, IncludeBSLObject=None, Ipv6SID=None, Ipv6Srh=None, LFlag=None, LabelRangeSize=None, LabelStart=None, Metric=None, NFlag=None, PFlag=None, RFlag=None, Redistribution=None, ReservedInsideFlagsOfSRv6SidTLV=None, RouteOrigin=None, SIDIndexLabel=None, SubDomainId=None, VFlag=None):
+    def get_device_ids(self, PortNames=None, BAR=None, BFRId=None, BFRIdStep=None, BIERBitStringLength=None, IPA=None, Active=None, AdvIPv6Prefix=None, Algorithm=None, ConfigureSIDIndexLabel=None, DBitInsideSRv6SidTLV=None, EFlag=None, Enable=None, EnableBit4=None, EnableBit5=None, EnableBit6=None, EnableBit7=None, EnableBit8=None, EnableNFlag=None, EnableRFlag=None, EnableXFlag=None, Funcflags=None, Function=None, IPv6SourceRouterID=None, IncludeBSLObject=None, IncludeSourceRouterID=None, Ipv4SourceRouterID=None, Ipv6SID=None, Ipv6Srh=None, LFlag=None, LabelRangeSize=None, LabelStart=None, Metric=None, NFlag=None, PFlag=None, RFlag=None, Redistribution=None, ReservedInsideFlagsOfSRv6SidTLV=None, RouteOrigin=None, SIDIndexLabel=None, SubDomainId=None, VFlag=None):
         """Base class infrastructure that gets a list of isisL3RouteProperty device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -562,9 +738,21 @@ class IsisL3RouteProperty(Base):
         - ConfigureSIDIndexLabel (str): optional regex of configureSIDIndexLabel
         - DBitInsideSRv6SidTLV (str): optional regex of dBitInsideSRv6SidTLV
         - EFlag (str): optional regex of eFlag
+        - Enable (str): optional regex of enable
+        - EnableBit4 (str): optional regex of enableBit4
+        - EnableBit5 (str): optional regex of enableBit5
+        - EnableBit6 (str): optional regex of enableBit6
+        - EnableBit7 (str): optional regex of enableBit7
+        - EnableBit8 (str): optional regex of enableBit8
+        - EnableNFlag (str): optional regex of enableNFlag
+        - EnableRFlag (str): optional regex of enableRFlag
+        - EnableXFlag (str): optional regex of enableXFlag
         - Funcflags (str): optional regex of funcflags
         - Function (str): optional regex of function
+        - IPv6SourceRouterID (str): optional regex of iPv6SourceRouterID
         - IncludeBSLObject (str): optional regex of includeBSLObject
+        - IncludeSourceRouterID (str): optional regex of includeSourceRouterID
+        - Ipv4SourceRouterID (str): optional regex of ipv4SourceRouterID
         - Ipv6SID (str): optional regex of ipv6SID
         - Ipv6Srh (str): optional regex of ipv6Srh
         - LFlag (str): optional regex of lFlag

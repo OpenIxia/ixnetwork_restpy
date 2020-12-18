@@ -59,13 +59,13 @@ class Dhcpv4server(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp4serversessions_ee4473f2c9917b461897bbf5dd13f9d0.Dhcp4ServerSessions): An instance of the Dhcp4ServerSessions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp4serversessions_3f809ab43e58e348a7e95564311b0ea1.Dhcp4ServerSessions): An instance of the Dhcp4ServerSessions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp4serversessions_ee4473f2c9917b461897bbf5dd13f9d0 import Dhcp4ServerSessions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp4serversessions_3f809ab43e58e348a7e95564311b0ea1 import Dhcp4ServerSessions
         return Dhcp4ServerSessions(self)._select()
 
     @property

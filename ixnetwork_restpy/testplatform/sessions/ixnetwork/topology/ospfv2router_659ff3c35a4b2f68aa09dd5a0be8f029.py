@@ -40,6 +40,7 @@ class Ospfv2Router(Base):
         'BierNFlag': 'bierNFlag',
         'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
         'Count': 'count',
+        'DemandCircuit': 'demandCircuit',
         'DescriptiveName': 'descriptiveName',
         'DiscardLearnedLsa': 'discardLearnedLsa',
         'DoNotGenerateRouterLsa': 'doNotGenerateRouterLsa',
@@ -51,6 +52,8 @@ class Ospfv2Router(Base):
         'EnableSegmentRouting': 'enableSegmentRouting',
         'EnableSrlb': 'enableSrlb',
         'Errors': 'errors',
+        'ExternalAttribute': 'externalAttribute',
+        'ExternalCapability': 'externalCapability',
         'GracefulRestart': 'gracefulRestart',
         'HighPerfLearningModeForSR': 'highPerfLearningModeForSR',
         'InterFloodLsUpdateBurstGap': 'interFloodLsUpdateBurstGap',
@@ -62,11 +65,14 @@ class Ospfv2Router(Base):
         'MFlag': 'mFlag',
         'MappingServerPreferenceValue': 'mappingServerPreferenceValue',
         'MaxLsUpdatesPerBurst': 'maxLsUpdatesPerBurst',
+        'MulticastCapability': 'multicastCapability',
         'Name': 'name',
         'NoOfAddressPrefix': 'noOfAddressPrefix',
         'NoOfBIERSubDomains': 'noOfBIERSubDomains',
         'NpFlag': 'npFlag',
+        'NssaCapability': 'nssaCapability',
         'OobResyncBreakout': 'oobResyncBreakout',
+        'OpaqueLsaForwarded': 'opaqueLsaForwarded',
         'SRAlgorithmCount': 'sRAlgorithmCount',
         'SessionInfo': 'sessionInfo',
         'SessionStatus': 'sessionStatus',
@@ -81,6 +87,8 @@ class Ospfv2Router(Base):
         'SupportReasonSoftRestart': 'supportReasonSoftRestart',
         'SupportReasonSwitchRedundantCntrlProcessor': 'supportReasonSwitchRedundantCntrlProcessor',
         'SupportReasonUnknown': 'supportReasonUnknown',
+        'TypeOfServiceRouting': 'typeOfServiceRouting',
+        'Unused': 'unused',
         'VFlag': 'vFlag',
     }
 
@@ -223,6 +231,16 @@ class Ospfv2Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Count'])
 
     @property
+    def DemandCircuit(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 5 : The DC-Bit should be set in all LSAs originated by Router implementing the Demand Circuit functionality.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DemandCircuit']))
+
+    @property
     def DescriptiveName(self):
         """
         Returns
@@ -337,6 +355,26 @@ class Ospfv2Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
     @property
+    def ExternalAttribute(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 4 : The EA-bit describes the router's willingness to receive and forward External-Attributes-LSAs.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternalAttribute']))
+
+    @property
+    def ExternalCapability(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 1 : The E-bit represents OSPF's ExternalRoutingCapability. This bit can be set in all LSAs associated with the backbone, non-stub areas and AS-external-LSAs.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternalCapability']))
+
+    @property
     def GracefulRestart(self):
         """
         Returns
@@ -445,6 +483,16 @@ class Ospfv2Router(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MaxLsUpdatesPerBurst']))
 
     @property
+    def MulticastCapability(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 2 : The MC-bit describes the multicast capability of the various pieces of the OSPF routing domain.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MulticastCapability']))
+
+    @property
     def Name(self):
         """
         Returns
@@ -491,6 +539,16 @@ class Ospfv2Router(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NpFlag']))
 
     @property
+    def NssaCapability(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 3 : The N/P-bit used only in the Type-7 LSA header. It flags the NSSA border router to translate the Type-7 LSA into a Type-5 LSA.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NssaCapability']))
+
+    @property
     def OobResyncBreakout(self):
         """
         Returns
@@ -499,6 +557,16 @@ class Ospfv2Router(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OobResyncBreakout']))
+
+    @property
+    def OpaqueLsaForwarded(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 6: The O-bit describes the router's willingness to receive and forward Opaque LSAs.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OpaqueLsaForwarded']))
 
     @property
     def SRAlgorithmCount(self):
@@ -643,6 +711,26 @@ class Ospfv2Router(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SupportReasonUnknown']))
 
     @property
+    def TypeOfServiceRouting(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 0 : The T-bit represents OSPF's TOS routing capability.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TypeOfServiceRouting']))
+
+    @property
+    def Unused(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 7 (Unused).
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Unused']))
+
+    @property
     def VFlag(self):
         """
         Returns
@@ -732,7 +820,7 @@ class Ospfv2Router(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, BIERPrefix=None, Active=None, Algorithm=None, BBit=None, BierAFlag=None, BierNFlag=None, ConfigureSIDIndexLabel=None, DiscardLearnedLsa=None, DoNotGenerateRouterLsa=None, EBit=None, EFlag=None, EnableMappingServer=None, EnableMappingServerPreference=None, GracefulRestart=None, HighPerfLearningModeForSR=None, InterFloodLsUpdateBurstGap=None, LFlag=None, LsaRefreshTime=None, LsaRetransmitTime=None, MFlag=None, MappingServerPreferenceValue=None, MaxLsUpdatesPerBurst=None, NpFlag=None, OobResyncBreakout=None, SidIndexLabel=None, StrictLsaChecking=None, SupportForRfc3623=None, SupportReasonSoftReloadUpgrade=None, SupportReasonSoftRestart=None, SupportReasonSwitchRedundantCntrlProcessor=None, SupportReasonUnknown=None, VFlag=None):
+    def get_device_ids(self, PortNames=None, BIERPrefix=None, Active=None, Algorithm=None, BBit=None, BierAFlag=None, BierNFlag=None, ConfigureSIDIndexLabel=None, DemandCircuit=None, DiscardLearnedLsa=None, DoNotGenerateRouterLsa=None, EBit=None, EFlag=None, EnableMappingServer=None, EnableMappingServerPreference=None, ExternalAttribute=None, ExternalCapability=None, GracefulRestart=None, HighPerfLearningModeForSR=None, InterFloodLsUpdateBurstGap=None, LFlag=None, LsaRefreshTime=None, LsaRetransmitTime=None, MFlag=None, MappingServerPreferenceValue=None, MaxLsUpdatesPerBurst=None, MulticastCapability=None, NpFlag=None, NssaCapability=None, OobResyncBreakout=None, OpaqueLsaForwarded=None, SidIndexLabel=None, StrictLsaChecking=None, SupportForRfc3623=None, SupportReasonSoftReloadUpgrade=None, SupportReasonSoftRestart=None, SupportReasonSwitchRedundantCntrlProcessor=None, SupportReasonUnknown=None, TypeOfServiceRouting=None, Unused=None, VFlag=None):
         """Base class infrastructure that gets a list of ospfv2Router device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -747,12 +835,15 @@ class Ospfv2Router(Base):
         - BierAFlag (str): optional regex of bierAFlag
         - BierNFlag (str): optional regex of bierNFlag
         - ConfigureSIDIndexLabel (str): optional regex of configureSIDIndexLabel
+        - DemandCircuit (str): optional regex of demandCircuit
         - DiscardLearnedLsa (str): optional regex of discardLearnedLsa
         - DoNotGenerateRouterLsa (str): optional regex of doNotGenerateRouterLsa
         - EBit (str): optional regex of eBit
         - EFlag (str): optional regex of eFlag
         - EnableMappingServer (str): optional regex of enableMappingServer
         - EnableMappingServerPreference (str): optional regex of enableMappingServerPreference
+        - ExternalAttribute (str): optional regex of externalAttribute
+        - ExternalCapability (str): optional regex of externalCapability
         - GracefulRestart (str): optional regex of gracefulRestart
         - HighPerfLearningModeForSR (str): optional regex of highPerfLearningModeForSR
         - InterFloodLsUpdateBurstGap (str): optional regex of interFloodLsUpdateBurstGap
@@ -762,8 +853,11 @@ class Ospfv2Router(Base):
         - MFlag (str): optional regex of mFlag
         - MappingServerPreferenceValue (str): optional regex of mappingServerPreferenceValue
         - MaxLsUpdatesPerBurst (str): optional regex of maxLsUpdatesPerBurst
+        - MulticastCapability (str): optional regex of multicastCapability
         - NpFlag (str): optional regex of npFlag
+        - NssaCapability (str): optional regex of nssaCapability
         - OobResyncBreakout (str): optional regex of oobResyncBreakout
+        - OpaqueLsaForwarded (str): optional regex of opaqueLsaForwarded
         - SidIndexLabel (str): optional regex of sidIndexLabel
         - StrictLsaChecking (str): optional regex of strictLsaChecking
         - SupportForRfc3623 (str): optional regex of supportForRfc3623
@@ -771,6 +865,8 @@ class Ospfv2Router(Base):
         - SupportReasonSoftRestart (str): optional regex of supportReasonSoftRestart
         - SupportReasonSwitchRedundantCntrlProcessor (str): optional regex of supportReasonSwitchRedundantCntrlProcessor
         - SupportReasonUnknown (str): optional regex of supportReasonUnknown
+        - TypeOfServiceRouting (str): optional regex of typeOfServiceRouting
+        - Unused (str): optional regex of unused
         - VFlag (str): optional regex of vFlag
 
         Returns

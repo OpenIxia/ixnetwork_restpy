@@ -49,15 +49,25 @@ class IsisL3(Base):
         'DedicatedOnePlusOne': 'dedicatedOnePlusOne',
         'DedicatedOneToOne': 'dedicatedOneToOne',
         'DescriptiveName': 'descriptiveName',
+        'Enable': 'enable',
         'Enable3WayHandshake': 'enable3WayHandshake',
         'EnableAdjSID': 'enableAdjSID',
         'EnableAppSpecSrlg': 'enableAppSpecSrlg',
         'EnableBfdRegistration': 'enableBfdRegistration',
+        'EnableBit4': 'enableBit4',
+        'EnableBit5': 'enableBit5',
+        'EnableBit6': 'enableBit6',
+        'EnableBit7': 'enableBit7',
+        'EnableBit8': 'enableBit8',
         'EnableConfiguredHoldTime': 'enableConfiguredHoldTime',
         'EnableIPv6SID': 'enableIPv6SID',
         'EnableLinkProtection': 'enableLinkProtection',
         'EnableMT': 'enableMT',
+        'EnableMt': 'enableMt',
+        'EnableNFlag': 'enableNFlag',
+        'EnableRFlag': 'enableRFlag',
         'EnableSRLG': 'enableSRLG',
+        'EnableXFlag': 'enableXFlag',
         'Enhanced': 'enhanced',
         'Errors': 'errors',
         'ExtendedLocalCircuitId': 'extendedLocalCircuitId',
@@ -91,6 +101,7 @@ class IsisL3(Base):
         'Name': 'name',
         'NetworkType': 'networkType',
         'NoOfAppSpecSrlg': 'noOfAppSpecSrlg',
+        'NoOfMtIds': 'noOfMtIds',
         'NoOfTeProfile': 'noOfTeProfile',
         'OverrideFFlag': 'overrideFFlag',
         'PFlag': 'pFlag',
@@ -141,6 +152,20 @@ class IsisL3(Base):
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisappspecsrlglist_c86dcbcff988ad5c54aecdd16dd33b6f import IsisAppSpecSrlgList
         return IsisAppSpecSrlgList(self)._select()
+
+    @property
+    def IsisMTIDList(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isismtidlist_3211cc3f9b41cec9c22bf8c56a3743d4.IsisMTIDList): An instance of the IsisMTIDList class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isismtidlist_3211cc3f9b41cec9c22bf8c56a3743d4 import IsisMTIDList
+        return IsisMTIDList(self)._select()
 
     @property
     def IsisSRv6AdjSIDList(self):
@@ -375,6 +400,16 @@ class IsisL3(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
 
     @property
+    def Enable(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This,if enabled, sends the prefix attributes flags.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Enable']))
+
+    @property
     def Enable3WayHandshake(self):
         """
         Returns
@@ -415,6 +450,56 @@ class IsisL3(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBfdRegistration']))
 
     @property
+    def EnableBit4(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 4th bit of the byte representing flags.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit4']))
+
+    @property
+    def EnableBit5(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 5th bit of the byte representing flags.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit5']))
+
+    @property
+    def EnableBit6(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 6th bit of the byte representing flags.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit6']))
+
+    @property
+    def EnableBit7(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 7th bit of the byte representing flags.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit7']))
+
+    @property
+    def EnableBit8(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 8th bit of the byte representing flags.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit8']))
+
+    @property
     def EnableConfiguredHoldTime(self):
         """
         Returns
@@ -446,13 +531,45 @@ class IsisL3(Base):
 
     @property
     def EnableMT(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable MT
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableMT']))
+
+    @property
+    def EnableMt(self):
+        """
+        Returns
+        -------
+        - bool: Enable MT
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['EnableMt'])
+    @EnableMt.setter
+    def EnableMt(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['EnableMt'], value)
+
+    @property
+    def EnableNFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables node flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableNFlag']))
+
+    @property
+    def EnableRFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables redistribution flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableRFlag']))
 
     @property
     def EnableSRLG(self):
@@ -463,6 +580,16 @@ class IsisL3(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableSRLG']))
+
+    @property
+    def EnableXFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables external flag, which is the 1st bit of the byte.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableXFlag']))
 
     @property
     def Enhanced(self):
@@ -595,7 +722,7 @@ class IsisL3(Base):
 
     @property
     def Ipv6MTMetric(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 MT Metric
@@ -799,6 +926,18 @@ class IsisL3(Base):
         self._set_attribute(self._SDM_ATT_MAP['NoOfAppSpecSrlg'], value)
 
     @property
+    def NoOfMtIds(self):
+        """
+        Returns
+        -------
+        - number: Number of Multi Topologies
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['NoOfMtIds'])
+    @NoOfMtIds.setter
+    def NoOfMtIds(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['NoOfMtIds'], value)
+
+    @property
     def NoOfTeProfile(self):
         """
         Returns
@@ -980,7 +1119,7 @@ class IsisL3(Base):
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Weight']))
 
-    def update(self, AdjSidCount=None, ConnectedVia=None, Multiplier=None, Name=None, NoOfAppSpecSrlg=None, NoOfTeProfile=None, SrlgCount=None, StackedLayers=None):
+    def update(self, AdjSidCount=None, ConnectedVia=None, EnableMt=None, Multiplier=None, Name=None, NoOfAppSpecSrlg=None, NoOfMtIds=None, NoOfTeProfile=None, SrlgCount=None, StackedLayers=None):
         """Updates isisL3 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -990,9 +1129,11 @@ class IsisL3(Base):
         ----
         - AdjSidCount (number): Adj SID Count
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - EnableMt (bool): Enable MT
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NoOfAppSpecSrlg (number): This field value shows how many SRLG Value columns would be there in the GUI.
+        - NoOfMtIds (number): Number of Multi Topologies
         - NoOfTeProfile (number): Number of TE Profile
         - SrlgCount (number): This field value shows how many SRLG Value columns would be there in the GUI.
         - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
@@ -1003,16 +1144,18 @@ class IsisL3(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AdjSidCount=None, ConnectedVia=None, Multiplier=None, Name=None, NoOfAppSpecSrlg=None, NoOfTeProfile=None, SrlgCount=None, StackedLayers=None):
+    def add(self, AdjSidCount=None, ConnectedVia=None, EnableMt=None, Multiplier=None, Name=None, NoOfAppSpecSrlg=None, NoOfMtIds=None, NoOfTeProfile=None, SrlgCount=None, StackedLayers=None):
         """Adds a new isisL3 resource on the server and adds it to the container.
 
         Args
         ----
         - AdjSidCount (number): Adj SID Count
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - EnableMt (bool): Enable MT
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NoOfAppSpecSrlg (number): This field value shows how many SRLG Value columns would be there in the GUI.
+        - NoOfMtIds (number): Number of Multi Topologies
         - NoOfTeProfile (number): Number of TE Profile
         - SrlgCount (number): This field value shows how many SRLG Value columns would be there in the GUI.
         - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
@@ -1037,7 +1180,7 @@ class IsisL3(Base):
         """
         self._delete()
 
-    def find(self, AdjSidCount=None, ConnectedVia=None, Count=None, DescriptiveName=None, Errors=None, LocalSystemID=None, Multiplier=None, Name=None, NoOfAppSpecSrlg=None, NoOfTeProfile=None, SessionInfo=None, SessionStatus=None, SrlgCount=None, StackedLayers=None, StateCounts=None, Status=None):
+    def find(self, AdjSidCount=None, ConnectedVia=None, Count=None, DescriptiveName=None, EnableMt=None, Errors=None, LocalSystemID=None, Multiplier=None, Name=None, NoOfAppSpecSrlg=None, NoOfMtIds=None, NoOfTeProfile=None, SessionInfo=None, SessionStatus=None, SrlgCount=None, StackedLayers=None, StateCounts=None, Status=None):
         """Finds and retrieves isisL3 resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisL3 resources from the server.
@@ -1050,11 +1193,13 @@ class IsisL3(Base):
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - EnableMt (bool): Enable MT
         - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - LocalSystemID (list(str)): System ID
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NoOfAppSpecSrlg (number): This field value shows how many SRLG Value columns would be there in the GUI.
+        - NoOfMtIds (number): Number of Multi Topologies
         - NoOfTeProfile (number): Number of TE Profile
         - SessionInfo (list(str[ifaceSessInfoFsmNotStarted | ifaceSessInfoNotAllNbrInFull | iPAddressNotRcvd | none])): Logs additional information about the session state
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
@@ -1091,7 +1236,7 @@ class IsisL3(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, AdjSID=None, AdvertiseLinkMsd=None, AuthType=None, AutoAdjustArea=None, AutoAdjustMTU=None, AutoAdjustSupportedProtocols=None, BFlag=None, CircuitTranmitPasswordOrMD5Key=None, ConfiguredHoldTime=None, DedicatedOnePlusOne=None, DedicatedOneToOne=None, Enable3WayHandshake=None, EnableAdjSID=None, EnableAppSpecSrlg=None, EnableBfdRegistration=None, EnableConfiguredHoldTime=None, EnableIPv6SID=None, EnableLinkProtection=None, EnableMT=None, EnableSRLG=None, Enhanced=None, ExtendedLocalCircuitId=None, ExtraTraffic=None, FFlag=None, Funcflags=None, Function=None, IncludeMaxSlMsd=None, IncludeMaximumEndDMsd=None, IncludeMaximumEndPopMsd=None, IncludeMaximumTEncapMsd=None, IncludeMaximumTInsertMsd=None, InterfaceMetric=None, Ipv6MTMetric=None, Ipv6SidValue=None, LFlag=None, Level1DeadInterval=None, Level1HelloInterval=None, Level1Priority=None, Level2DeadInterval=None, Level2HelloInterval=None, Level2Priority=None, LevelType=None, MaxEndDMsd=None, MaxEndPopMsd=None, MaxSlMsd=None, MaxTEncap=None, MaxTInsertMsd=None, NetworkType=None, OverrideFFlag=None, PFlag=None, Reserved0x40=None, Reserved0x80=None, SFlag=None, Shared=None, Srv6SidFlags=None, SuppressHello=None, Unprotected=None, VFlag=None, Weight=None):
+    def get_device_ids(self, PortNames=None, Active=None, AdjSID=None, AdvertiseLinkMsd=None, AuthType=None, AutoAdjustArea=None, AutoAdjustMTU=None, AutoAdjustSupportedProtocols=None, BFlag=None, CircuitTranmitPasswordOrMD5Key=None, ConfiguredHoldTime=None, DedicatedOnePlusOne=None, DedicatedOneToOne=None, Enable=None, Enable3WayHandshake=None, EnableAdjSID=None, EnableAppSpecSrlg=None, EnableBfdRegistration=None, EnableBit4=None, EnableBit5=None, EnableBit6=None, EnableBit7=None, EnableBit8=None, EnableConfiguredHoldTime=None, EnableIPv6SID=None, EnableLinkProtection=None, EnableMT=None, EnableNFlag=None, EnableRFlag=None, EnableSRLG=None, EnableXFlag=None, Enhanced=None, ExtendedLocalCircuitId=None, ExtraTraffic=None, FFlag=None, Funcflags=None, Function=None, IncludeMaxSlMsd=None, IncludeMaximumEndDMsd=None, IncludeMaximumEndPopMsd=None, IncludeMaximumTEncapMsd=None, IncludeMaximumTInsertMsd=None, InterfaceMetric=None, Ipv6MTMetric=None, Ipv6SidValue=None, LFlag=None, Level1DeadInterval=None, Level1HelloInterval=None, Level1Priority=None, Level2DeadInterval=None, Level2HelloInterval=None, Level2Priority=None, LevelType=None, MaxEndDMsd=None, MaxEndPopMsd=None, MaxSlMsd=None, MaxTEncap=None, MaxTInsertMsd=None, NetworkType=None, OverrideFFlag=None, PFlag=None, Reserved0x40=None, Reserved0x80=None, SFlag=None, Shared=None, Srv6SidFlags=None, SuppressHello=None, Unprotected=None, VFlag=None, Weight=None):
         """Base class infrastructure that gets a list of isisL3 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -1111,15 +1256,24 @@ class IsisL3(Base):
         - ConfiguredHoldTime (str): optional regex of configuredHoldTime
         - DedicatedOnePlusOne (str): optional regex of dedicatedOnePlusOne
         - DedicatedOneToOne (str): optional regex of dedicatedOneToOne
+        - Enable (str): optional regex of enable
         - Enable3WayHandshake (str): optional regex of enable3WayHandshake
         - EnableAdjSID (str): optional regex of enableAdjSID
         - EnableAppSpecSrlg (str): optional regex of enableAppSpecSrlg
         - EnableBfdRegistration (str): optional regex of enableBfdRegistration
+        - EnableBit4 (str): optional regex of enableBit4
+        - EnableBit5 (str): optional regex of enableBit5
+        - EnableBit6 (str): optional regex of enableBit6
+        - EnableBit7 (str): optional regex of enableBit7
+        - EnableBit8 (str): optional regex of enableBit8
         - EnableConfiguredHoldTime (str): optional regex of enableConfiguredHoldTime
         - EnableIPv6SID (str): optional regex of enableIPv6SID
         - EnableLinkProtection (str): optional regex of enableLinkProtection
         - EnableMT (str): optional regex of enableMT
+        - EnableNFlag (str): optional regex of enableNFlag
+        - EnableRFlag (str): optional regex of enableRFlag
         - EnableSRLG (str): optional regex of enableSRLG
+        - EnableXFlag (str): optional regex of enableXFlag
         - Enhanced (str): optional regex of enhanced
         - ExtendedLocalCircuitId (str): optional regex of extendedLocalCircuitId
         - ExtraTraffic (str): optional regex of extraTraffic

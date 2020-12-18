@@ -296,7 +296,7 @@ class Ospfv2(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 7
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 5
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DemandCircuit']))

@@ -1,6 +1,8 @@
 # Release Notes
 
 ### Dec 2020
+* 1.0.61
+  * support ixnetwork 9.10.2011.91
 * 1.0.60
   * support uhd 9.10.2011.61
   * bug fix: print version number once

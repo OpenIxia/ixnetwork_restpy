@@ -37,6 +37,17 @@ class IPv4PseudoNodeRoutes(Base):
         'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
         'Count': 'count',
         'DescriptiveName': 'descriptiveName',
+        'EnableBit4': 'enableBit4',
+        'EnableBit5': 'enableBit5',
+        'EnableBit6': 'enableBit6',
+        'EnableBit7': 'enableBit7',
+        'EnableBit8': 'enableBit8',
+        'EnableNFlag': 'enableNFlag',
+        'EnableRFlag': 'enableRFlag',
+        'EnableXFlag': 'enableXFlag',
+        'IPv6SourceRouterID': 'iPv6SourceRouterID',
+        'IncludePrefixAttrFlags': 'includePrefixAttrFlags',
+        'IncludeSourceRouterID': 'includeSourceRouterID',
         'Ipv4EFlag': 'ipv4EFlag',
         'Ipv4LFlag': 'ipv4LFlag',
         'Ipv4Metric': 'ipv4Metric',
@@ -45,9 +56,11 @@ class IPv4PseudoNodeRoutes(Base):
         'Ipv4RFlag': 'ipv4RFlag',
         'Ipv4Redistribution': 'ipv4Redistribution',
         'Ipv4RouteOrigin': 'ipv4RouteOrigin',
+        'Ipv4SourceRouterID': 'ipv4SourceRouterID',
         'Ipv4VFlag': 'ipv4VFlag',
         'Name': 'name',
         'NetworkAddress': 'networkAddress',
+        'NoOfSidPerNodeRoutes': 'noOfSidPerNodeRoutes',
         'PrefixLength': 'prefixLength',
         'RangeSize': 'rangeSize',
         'SIDIndexLabel': 'sIDIndexLabel',
@@ -55,6 +68,20 @@ class IPv4PseudoNodeRoutes(Base):
 
     def __init__(self, parent):
         super(IPv4PseudoNodeRoutes, self).__init__(parent)
+
+    @property
+    def PseudoRoutesSid(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pseudoroutessid_2945568b93e033040e1720a03e86ab6f.PseudoRoutesSid): An instance of the PseudoRoutesSid class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pseudoroutessid_2945568b93e033040e1720a03e86ab6f import PseudoRoutesSid
+        return PseudoRoutesSid(self)._select()
 
     @property
     def Tag(self):
@@ -82,7 +109,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def Algorithm(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm
@@ -92,7 +119,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def ConfigureSIDIndexLabel(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Configure SID/Index/Label
@@ -119,8 +146,118 @@ class IPv4PseudoNodeRoutes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
 
     @property
-    def Ipv4EFlag(self):
+    def EnableBit4(self):
         """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 4th bit of the byte representing flags.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit4']))
+
+    @property
+    def EnableBit5(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 5th bit of the byte representing flags.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit5']))
+
+    @property
+    def EnableBit6(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 6th bit of the byte representing flags.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit6']))
+
+    @property
+    def EnableBit7(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 7th bit of the byte representing flags.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit7']))
+
+    @property
+    def EnableBit8(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 8th bit of the byte representing flags.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableBit8']))
+
+    @property
+    def EnableNFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables Node flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableNFlag']))
+
+    @property
+    def EnableRFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables redistribution flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableRFlag']))
+
+    @property
+    def EnableXFlag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables external flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableXFlag']))
+
+    @property
+    def IPv6SourceRouterID(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This takes the value of the ipv6 source router id.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IPv6SourceRouterID']))
+
+    @property
+    def IncludePrefixAttrFlags(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select this check box to include the prefix attribute flags.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludePrefixAttrFlags']))
+
+    @property
+    def IncludeSourceRouterID(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This drop box is provided to select ipv4 or ipv6 source id or none of them.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['IncludeSourceRouterID']))
+
+    @property
+    def Ipv4EFlag(self):
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Explicit NULL flag
@@ -130,7 +267,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def Ipv4LFlag(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Local Flag
@@ -150,7 +287,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def Ipv4NFlag(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Nodal prefix flag
@@ -160,7 +297,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def Ipv4PFlag(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): No-PHP flag. If set, then the penultimate hop MUST NOT pop the Prefix-SID before delivering the packet to the node that advertised the Prefix-SID.
@@ -170,7 +307,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def Ipv4RFlag(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Redistribution flag
@@ -199,8 +336,18 @@ class IPv4PseudoNodeRoutes(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4RouteOrigin']))
 
     @property
-    def Ipv4VFlag(self):
+    def Ipv4SourceRouterID(self):
         """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This takes the value of the ipv4 source router id.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4SourceRouterID']))
+
+    @property
+    def Ipv4VFlag(self):
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Value Flag
@@ -231,6 +378,18 @@ class IPv4PseudoNodeRoutes(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NetworkAddress']))
 
     @property
+    def NoOfSidPerNodeRoutes(self):
+        """
+        Returns
+        -------
+        - number: Number of SID per node routes
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['NoOfSidPerNodeRoutes'])
+    @NoOfSidPerNodeRoutes.setter
+    def NoOfSidPerNodeRoutes(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['NoOfSidPerNodeRoutes'], value)
+
+    @property
     def PrefixLength(self):
         """
         Returns
@@ -252,7 +411,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def SIDIndexLabel(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): SID/Index/Label
@@ -260,7 +419,7 @@ class IPv4PseudoNodeRoutes(Base):
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SIDIndexLabel']))
 
-    def update(self, Name=None):
+    def update(self, Name=None, NoOfSidPerNodeRoutes=None):
         """Updates IPv4PseudoNodeRoutes resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -269,6 +428,7 @@ class IPv4PseudoNodeRoutes(Base):
         Args
         ----
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfSidPerNodeRoutes (number): Number of SID per node routes
 
         Raises
         ------
@@ -276,7 +436,7 @@ class IPv4PseudoNodeRoutes(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, Name=None):
+    def find(self, Count=None, DescriptiveName=None, Name=None, NoOfSidPerNodeRoutes=None):
         """Finds and retrieves IPv4PseudoNodeRoutes resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve IPv4PseudoNodeRoutes resources from the server.
@@ -288,6 +448,7 @@ class IPv4PseudoNodeRoutes(Base):
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfSidPerNodeRoutes (number): Number of SID per node routes
 
         Returns
         -------
@@ -317,7 +478,7 @@ class IPv4PseudoNodeRoutes(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, ConfigureSIDIndexLabel=None, Ipv4EFlag=None, Ipv4LFlag=None, Ipv4Metric=None, Ipv4NFlag=None, Ipv4PFlag=None, Ipv4RFlag=None, Ipv4Redistribution=None, Ipv4RouteOrigin=None, Ipv4VFlag=None, NetworkAddress=None, PrefixLength=None, RangeSize=None, SIDIndexLabel=None):
+    def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, ConfigureSIDIndexLabel=None, EnableBit4=None, EnableBit5=None, EnableBit6=None, EnableBit7=None, EnableBit8=None, EnableNFlag=None, EnableRFlag=None, EnableXFlag=None, IPv6SourceRouterID=None, IncludePrefixAttrFlags=None, IncludeSourceRouterID=None, Ipv4EFlag=None, Ipv4LFlag=None, Ipv4Metric=None, Ipv4NFlag=None, Ipv4PFlag=None, Ipv4RFlag=None, Ipv4Redistribution=None, Ipv4RouteOrigin=None, Ipv4SourceRouterID=None, Ipv4VFlag=None, NetworkAddress=None, PrefixLength=None, RangeSize=None, SIDIndexLabel=None):
         """Base class infrastructure that gets a list of IPv4PseudoNodeRoutes device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -328,6 +489,17 @@ class IPv4PseudoNodeRoutes(Base):
         - Active (str): optional regex of active
         - Algorithm (str): optional regex of algorithm
         - ConfigureSIDIndexLabel (str): optional regex of configureSIDIndexLabel
+        - EnableBit4 (str): optional regex of enableBit4
+        - EnableBit5 (str): optional regex of enableBit5
+        - EnableBit6 (str): optional regex of enableBit6
+        - EnableBit7 (str): optional regex of enableBit7
+        - EnableBit8 (str): optional regex of enableBit8
+        - EnableNFlag (str): optional regex of enableNFlag
+        - EnableRFlag (str): optional regex of enableRFlag
+        - EnableXFlag (str): optional regex of enableXFlag
+        - IPv6SourceRouterID (str): optional regex of iPv6SourceRouterID
+        - IncludePrefixAttrFlags (str): optional regex of includePrefixAttrFlags
+        - IncludeSourceRouterID (str): optional regex of includeSourceRouterID
         - Ipv4EFlag (str): optional regex of ipv4EFlag
         - Ipv4LFlag (str): optional regex of ipv4LFlag
         - Ipv4Metric (str): optional regex of ipv4Metric
@@ -336,6 +508,7 @@ class IPv4PseudoNodeRoutes(Base):
         - Ipv4RFlag (str): optional regex of ipv4RFlag
         - Ipv4Redistribution (str): optional regex of ipv4Redistribution
         - Ipv4RouteOrigin (str): optional regex of ipv4RouteOrigin
+        - Ipv4SourceRouterID (str): optional regex of ipv4SourceRouterID
         - Ipv4VFlag (str): optional regex of ipv4VFlag
         - NetworkAddress (str): optional regex of networkAddress
         - PrefixLength (str): optional regex of prefixLength

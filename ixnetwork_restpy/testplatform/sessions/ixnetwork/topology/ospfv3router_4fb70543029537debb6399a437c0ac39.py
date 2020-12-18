@@ -61,6 +61,7 @@ class Ospfv3Router(Base):
         'MaxNumLsaPerSecond': 'maxNumLsaPerSecond',
         'Name': 'name',
         'NpFlag': 'npFlag',
+        'PrefixOptions': 'prefixOptions',
         'SessionInfo': 'sessionInfo',
         'SessionStatus': 'sessionStatus',
         'SidIndexLabel': 'sidIndexLabel',
@@ -300,7 +301,7 @@ class Ospfv3Router(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): The IPv6 loopback prefix
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Node IPv6 loopback address advertised in Extended Intra Area LSAs by OSPFv3 routers
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LoopbackAddress']))
@@ -366,6 +367,16 @@ class Ospfv3Router(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NpFlag']))
+
+    @property
+    def PrefixOptions(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix options bits (N, DN, P, x, LA, NU) advertised along with Node Loopback Address in Extended Intra Area LSAs by OSPFv3 routers. Default value is 0x20 which indicates N (Node) bit is set.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixOptions']))
 
     @property
     def SessionInfo(self):
@@ -531,7 +542,7 @@ class Ospfv3Router(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, BBit=None, ConfigureSIDIndexLabel=None, DisableAutoGenerateLinkLsa=None, DisableAutoGenerateRouterLsa=None, DiscardLearnedLsa=None, EBit=None, EFlag=None, EnableGracefulRestartHelperMode=None, EnableStrictLsaChecking=None, EnableSupportReasonSwReloadUpgrade=None, EnableSupportReasonSwRestart=None, EnableSupportReasonSwitchToRedundantControlProcessor=None, EnableSupportReasonUnknown=None, LFlag=None, LoopbackAddress=None, LsaRefreshTime=None, LsaRetransmitTime=None, MFlag=None, MaxNumLsaPerSecond=None, NpFlag=None, SidIndexLabel=None, VFlag=None):
+    def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, BBit=None, ConfigureSIDIndexLabel=None, DisableAutoGenerateLinkLsa=None, DisableAutoGenerateRouterLsa=None, DiscardLearnedLsa=None, EBit=None, EFlag=None, EnableGracefulRestartHelperMode=None, EnableStrictLsaChecking=None, EnableSupportReasonSwReloadUpgrade=None, EnableSupportReasonSwRestart=None, EnableSupportReasonSwitchToRedundantControlProcessor=None, EnableSupportReasonUnknown=None, LFlag=None, LoopbackAddress=None, LsaRefreshTime=None, LsaRetransmitTime=None, MFlag=None, MaxNumLsaPerSecond=None, NpFlag=None, PrefixOptions=None, SidIndexLabel=None, VFlag=None):
         """Base class infrastructure that gets a list of ospfv3Router device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -561,6 +572,7 @@ class Ospfv3Router(Base):
         - MFlag (str): optional regex of mFlag
         - MaxNumLsaPerSecond (str): optional regex of maxNumLsaPerSecond
         - NpFlag (str): optional regex of npFlag
+        - PrefixOptions (str): optional regex of prefixOptions
         - SidIndexLabel (str): optional regex of sidIndexLabel
         - VFlag (str): optional regex of vFlag
 

@@ -70,6 +70,7 @@ class CfmMp(Base):
         'DmDestinationMacAddress': 'dmDestinationMacAddress',
         'DmMethod': 'dmMethod',
         'DmPriority': 'dmPriority',
+        'Enable1slRx': 'enable1slRx',
         'EnableAisRx': 'enableAisRx',
         'EnableAutoDm': 'enableAutoDm',
         'EnableAutoLb': 'enableAutoLb',
@@ -82,6 +83,7 @@ class CfmMp(Base):
         'EnableOrganizationSpecificTlv': 'enableOrganizationSpecificTlv',
         'EnablePortStatusTlv': 'enablePortStatusTlv',
         'EnableSenderIdTlv': 'enableSenderIdTlv',
+        'EnableSlmRx': 'enableSlmRx',
         'EnableTstRx': 'enableTstRx',
         'EnableVlan': 'enableVlan',
         'InterRemoteMepRxIncrementStep': 'interRemoteMepRxIncrementStep',
@@ -121,6 +123,7 @@ class CfmMp(Base):
         'MpType': 'mpType',
         'Name': 'name',
         'NumberOfCustomTLVs': 'numberOfCustomTLVs',
+        'NumberOfSlm': 'numberOfSlm',
         'OrganizationSpecificTlvLength': 'organizationSpecificTlvLength',
         'OrganizationSpecificTlvValue': 'organizationSpecificTlvValue',
         'OverrideVlanPriority': 'overrideVlanPriority',
@@ -130,6 +133,9 @@ class CfmMp(Base):
         'SVlanTpid': 'sVlanTpid',
         'ShortMaName': 'shortMaName',
         'ShortMaNameFormat': 'shortMaNameFormat',
+        'SlmInitialTxfcb': 'slmInitialTxfcb',
+        'SlmSimulatedLossInRxPath': 'slmSimulatedLossInRxPath',
+        'SlmTxfcbStep': 'slmTxfcbStep',
         'TstEnableUnicastMac': 'tstEnableUnicastMac',
         'TstIncrementPacketLength': 'tstIncrementPacketLength',
         'TstInitialPatternValue': 'tstInitialPatternValue',
@@ -165,6 +171,20 @@ class CfmMp(Base):
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmcustomtlvlist_798bcbc04fddcff054434d56d2b00117 import CfmCustomTLVList
         return CfmCustomTLVList(self)
+
+    @property
+    def CfmSlm(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmslm_a552256bb40704de586bc05808a60f7f.CfmSlm): An instance of the CfmSlm class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmslm_a552256bb40704de586bc05808a60f7f import CfmSlm
+        return CfmSlm(self)._select()
 
     @property
     def StartCcmEmulatedMpParams(self):
@@ -583,6 +603,16 @@ class CfmMp(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DmPriority']))
 
     @property
+    def Enable1slRx(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enables 1SL Rx transmission.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Enable1slRx']))
+
+    @property
     def EnableAisRx(self):
         """
         Returns
@@ -701,6 +731,16 @@ class CfmMp(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableSenderIdTlv']))
+
+    @property
+    def EnableSlmRx(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enables SLM Rx and SLR transmission.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableSlmRx']))
 
     @property
     def EnableTstRx(self):
@@ -1096,6 +1136,18 @@ class CfmMp(Base):
         self._set_attribute(self._SDM_ATT_MAP['NumberOfCustomTLVs'], value)
 
     @property
+    def NumberOfSlm(self):
+        """
+        Returns
+        -------
+        - number: Number of SLM Tests per MEP
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['NumberOfSlm'])
+    @NumberOfSlm.setter
+    def NumberOfSlm(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['NumberOfSlm'], value)
+
+    @property
     def OrganizationSpecificTlvLength(self):
         """
         Returns
@@ -1184,6 +1236,36 @@ class CfmMp(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ShortMaNameFormat']))
+
+    @property
+    def SlmInitialTxfcb(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): A 4-octet integer value representing the number of SLR frames transmitted.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmInitialTxfcb']))
+
+    @property
+    def SlmSimulatedLossInRxPath(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Simulate percentage loss in SLR transmission(in Rx Path).
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmSimulatedLossInRxPath']))
+
+    @property
+    def SlmTxfcbStep(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): A 4-octet integer value representing the TxFcb Step.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmTxfcbStep']))
 
     @property
     def TstEnableUnicastMac(self):
@@ -1355,7 +1437,7 @@ class CfmMp(Base):
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanTpid']))
 
-    def update(self, Name=None, NumberOfCustomTLVs=None):
+    def update(self, Name=None, NumberOfCustomTLVs=None, NumberOfSlm=None):
         """Updates cfmMp resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -1365,6 +1447,7 @@ class CfmMp(Base):
         ----
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NumberOfCustomTLVs (number): Number of Custom TLVs for PDUs.
+        - NumberOfSlm (number): Number of SLM Tests per MEP
 
         Raises
         ------
@@ -1372,7 +1455,7 @@ class CfmMp(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def get_device_ids(self, PortNames=None, Active=None, AisEnableUnicastMac=None, AisInterval=None, AisMode=None, AisPriority=None, AisUnicastMac=None, AutoDmTimeout=None, AutoDmTimer=None, AutoLbIteration=None, AutoLbTimeoutInSec=None, AutoLbTimerInSec=None, AutoLmIteration=None, AutoLmTimeout=None, AutoLmTimer=None, AutoLtIteration=None, AutoLtTimeoutInSec=None, AutoLtTimerInSec=None, AutoLtTtl=None, AutodmIteration=None, CVlanId=None, CVlanPriority=None, CVlanTpid=None, CciInterval=None, CcmLmmTxFcf=None, CcmLmmTxFcfStepPer100mSec=None, CcmPriority=None, CcmRxFcb=None, CcmRxFcbStepPer100mSec=None, ChassisId=None, ChassisIdLength=None, ChassisIdSubType=None, DataTlvLength=None, DataTlvValue=None, DmAllRemoteMeps=None, DmDestinationMacAddress=None, DmMethod=None, DmPriority=None, EnableAisRx=None, EnableAutoDm=None, EnableAutoLb=None, EnableAutoLm=None, EnableAutoLt=None, EnableDataTlv=None, EnableInterfaceStatusTlv=None, EnableLckRx=None, EnableLmCounterUpdate=None, EnableOrganizationSpecificTlv=None, EnablePortStatusTlv=None, EnableSenderIdTlv=None, EnableTstRx=None, EnableVlan=None, InterRemoteMepRxIncrementStep=None, InterRemoteMepTxIncrementStep=None, LbAllRemoteMeps=None, LbDestinationMacAddress=None, LbmPriority=None, LckEnableUnicastMac=None, LckInterval=None, LckMode=None, LckPriority=None, LckSupportAisGeneration=None, LckUnicastMac=None, LmAllRemoteMeps=None, LmDestinationMacAddress=None, LmMethodType=None, LmmPriority=None, LmrPriority=None, LmrRxFcf=None, LmrRxFcfStepPer100mSec=None, LmrTxFcb=None, LmrTxFcbStepPer100mSec=None, LtAllRemoteMeps=None, LtDestinationMacAddress=None, LtmPriority=None, ManagementAddress=None, ManagementAddressDomain=None, ManagementAddressDomainLength=None, ManagementAddressLength=None, MdMegLevel=None, MdName=None, MdNameFormat=None, MegId=None, MegIdFormat=None, MepId=None, MpType=None, OrganizationSpecificTlvLength=None, OrganizationSpecificTlvValue=None, OverrideVlanPriority=None, Rdi=None, SVlanId=None, SVlanPriority=None, SVlanTpid=None, ShortMaName=None, ShortMaNameFormat=None, TstEnableUnicastMac=None, TstIncrementPacketLength=None, TstInitialPatternValue=None, TstInterval=None, TstMode=None, TstOverwriteSequenceNumber=None, TstPacketLength=None, TstPacketLengthStep=None, TstPatternType=None, TstPriority=None, TstSequenceNumber=None, TstTestType=None, TstUnicastMac=None, VlanId=None, VlanPriority=None, VlanStacking=None, VlanTpid=None):
+    def get_device_ids(self, PortNames=None, Active=None, AisEnableUnicastMac=None, AisInterval=None, AisMode=None, AisPriority=None, AisUnicastMac=None, AutoDmTimeout=None, AutoDmTimer=None, AutoLbIteration=None, AutoLbTimeoutInSec=None, AutoLbTimerInSec=None, AutoLmIteration=None, AutoLmTimeout=None, AutoLmTimer=None, AutoLtIteration=None, AutoLtTimeoutInSec=None, AutoLtTimerInSec=None, AutoLtTtl=None, AutodmIteration=None, CVlanId=None, CVlanPriority=None, CVlanTpid=None, CciInterval=None, CcmLmmTxFcf=None, CcmLmmTxFcfStepPer100mSec=None, CcmPriority=None, CcmRxFcb=None, CcmRxFcbStepPer100mSec=None, ChassisId=None, ChassisIdLength=None, ChassisIdSubType=None, DataTlvLength=None, DataTlvValue=None, DmAllRemoteMeps=None, DmDestinationMacAddress=None, DmMethod=None, DmPriority=None, Enable1slRx=None, EnableAisRx=None, EnableAutoDm=None, EnableAutoLb=None, EnableAutoLm=None, EnableAutoLt=None, EnableDataTlv=None, EnableInterfaceStatusTlv=None, EnableLckRx=None, EnableLmCounterUpdate=None, EnableOrganizationSpecificTlv=None, EnablePortStatusTlv=None, EnableSenderIdTlv=None, EnableSlmRx=None, EnableTstRx=None, EnableVlan=None, InterRemoteMepRxIncrementStep=None, InterRemoteMepTxIncrementStep=None, LbAllRemoteMeps=None, LbDestinationMacAddress=None, LbmPriority=None, LckEnableUnicastMac=None, LckInterval=None, LckMode=None, LckPriority=None, LckSupportAisGeneration=None, LckUnicastMac=None, LmAllRemoteMeps=None, LmDestinationMacAddress=None, LmMethodType=None, LmmPriority=None, LmrPriority=None, LmrRxFcf=None, LmrRxFcfStepPer100mSec=None, LmrTxFcb=None, LmrTxFcbStepPer100mSec=None, LtAllRemoteMeps=None, LtDestinationMacAddress=None, LtmPriority=None, ManagementAddress=None, ManagementAddressDomain=None, ManagementAddressDomainLength=None, ManagementAddressLength=None, MdMegLevel=None, MdName=None, MdNameFormat=None, MegId=None, MegIdFormat=None, MepId=None, MpType=None, OrganizationSpecificTlvLength=None, OrganizationSpecificTlvValue=None, OverrideVlanPriority=None, Rdi=None, SVlanId=None, SVlanPriority=None, SVlanTpid=None, ShortMaName=None, ShortMaNameFormat=None, SlmInitialTxfcb=None, SlmSimulatedLossInRxPath=None, SlmTxfcbStep=None, TstEnableUnicastMac=None, TstIncrementPacketLength=None, TstInitialPatternValue=None, TstInterval=None, TstMode=None, TstOverwriteSequenceNumber=None, TstPacketLength=None, TstPacketLengthStep=None, TstPatternType=None, TstPriority=None, TstSequenceNumber=None, TstTestType=None, TstUnicastMac=None, VlanId=None, VlanPriority=None, VlanStacking=None, VlanTpid=None):
         """Base class infrastructure that gets a list of cfmMp device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -1417,6 +1500,7 @@ class CfmMp(Base):
         - DmDestinationMacAddress (str): optional regex of dmDestinationMacAddress
         - DmMethod (str): optional regex of dmMethod
         - DmPriority (str): optional regex of dmPriority
+        - Enable1slRx (str): optional regex of enable1slRx
         - EnableAisRx (str): optional regex of enableAisRx
         - EnableAutoDm (str): optional regex of enableAutoDm
         - EnableAutoLb (str): optional regex of enableAutoLb
@@ -1429,6 +1513,7 @@ class CfmMp(Base):
         - EnableOrganizationSpecificTlv (str): optional regex of enableOrganizationSpecificTlv
         - EnablePortStatusTlv (str): optional regex of enablePortStatusTlv
         - EnableSenderIdTlv (str): optional regex of enableSenderIdTlv
+        - EnableSlmRx (str): optional regex of enableSlmRx
         - EnableTstRx (str): optional regex of enableTstRx
         - EnableVlan (str): optional regex of enableVlan
         - InterRemoteMepRxIncrementStep (str): optional regex of interRemoteMepRxIncrementStep
@@ -1474,6 +1559,9 @@ class CfmMp(Base):
         - SVlanTpid (str): optional regex of sVlanTpid
         - ShortMaName (str): optional regex of shortMaName
         - ShortMaNameFormat (str): optional regex of shortMaNameFormat
+        - SlmInitialTxfcb (str): optional regex of slmInitialTxfcb
+        - SlmSimulatedLossInRxPath (str): optional regex of slmSimulatedLossInRxPath
+        - SlmTxfcbStep (str): optional regex of slmTxfcbStep
         - TstEnableUnicastMac (str): optional regex of tstEnableUnicastMac
         - TstIncrementPacketLength (str): optional regex of tstIncrementPacketLength
         - TstInitialPatternValue (str): optional regex of tstInitialPatternValue

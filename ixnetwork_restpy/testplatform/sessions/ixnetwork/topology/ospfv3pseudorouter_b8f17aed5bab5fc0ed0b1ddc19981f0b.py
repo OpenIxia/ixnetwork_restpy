@@ -42,9 +42,11 @@ class Ospfv3PseudoRouter(Base):
         'EFlag': 'eFlag',
         'EnableSrMpls': 'enableSrMpls',
         'LFlag': 'lFlag',
+        'LoopbackAddress': 'loopbackAddress',
         'MFlag': 'mFlag',
         'Name': 'name',
         'NpFlag': 'npFlag',
+        'PrefixOptions': 'prefixOptions',
         'SidIndexLabel': 'sidIndexLabel',
         'SrgbRangeCount': 'srgbRangeCount',
         'VFlag': 'vFlag',
@@ -252,6 +254,16 @@ class Ospfv3PseudoRouter(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LFlag']))
 
     @property
+    def LoopbackAddress(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Node IPv6 loopback address advertised in Extended Intra Area LSAs by OSPFv3 routers
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LoopbackAddress']))
+
+    @property
     def MFlag(self):
         """
         Returns
@@ -282,6 +294,16 @@ class Ospfv3PseudoRouter(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NpFlag']))
+
+    @property
+    def PrefixOptions(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix options bits (N, DN, P, x, LA, NU) advertised along with Node Loopback Address in Extended Intra Area LSAs by OSPFv3 routers. Default value is 0x20 which indicates N (Node) bit is set.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixOptions']))
 
     @property
     def SidIndexLabel(self):
@@ -376,7 +398,7 @@ class Ospfv3PseudoRouter(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, BBit=None, ConfigureSIDIndexLabel=None, EBit=None, EFlag=None, LFlag=None, MFlag=None, NpFlag=None, SidIndexLabel=None, VFlag=None):
+    def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, BBit=None, ConfigureSIDIndexLabel=None, EBit=None, EFlag=None, LFlag=None, LoopbackAddress=None, MFlag=None, NpFlag=None, PrefixOptions=None, SidIndexLabel=None, VFlag=None):
         """Base class infrastructure that gets a list of ospfv3PseudoRouter device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -391,8 +413,10 @@ class Ospfv3PseudoRouter(Base):
         - EBit (str): optional regex of eBit
         - EFlag (str): optional regex of eFlag
         - LFlag (str): optional regex of lFlag
+        - LoopbackAddress (str): optional regex of loopbackAddress
         - MFlag (str): optional regex of mFlag
         - NpFlag (str): optional regex of npFlag
+        - PrefixOptions (str): optional regex of prefixOptions
         - SidIndexLabel (str): optional regex of sidIndexLabel
         - VFlag (str): optional regex of vFlag
 

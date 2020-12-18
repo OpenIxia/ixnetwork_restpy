@@ -38,19 +38,27 @@ class OspfPseudoRouter(Base):
         'BBit': 'bBit',
         'ConfigureSIDIndexLabel': 'configureSIDIndexLabel',
         'Count': 'count',
+        'DemandCircuit': 'demandCircuit',
         'DescriptiveName': 'descriptiveName',
         'EBit': 'eBit',
         'EFlag': 'eFlag',
         'EnableSegmentRouting': 'enableSegmentRouting',
         'EnableSrlb': 'enableSrlb',
+        'ExternalAttribute': 'externalAttribute',
+        'ExternalCapability': 'externalCapability',
         'LFlag': 'lFlag',
         'MFlag': 'mFlag',
+        'MulticastCapability': 'multicastCapability',
         'Name': 'name',
         'NpFlag': 'npFlag',
+        'NssaCapability': 'nssaCapability',
+        'OpaqueLsaForwarded': 'opaqueLsaForwarded',
         'SRAlgorithmCount': 'sRAlgorithmCount',
         'SidIndexLabel': 'sidIndexLabel',
         'SrgbRangeCount': 'srgbRangeCount',
         'SrlbRangeCount': 'srlbRangeCount',
+        'TypeOfServiceRouting': 'typeOfServiceRouting',
+        'Unused': 'unused',
         'VFlag': 'vFlag',
     }
 
@@ -229,6 +237,16 @@ class OspfPseudoRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Count'])
 
     @property
+    def DemandCircuit(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 5 : The DC-Bit should be set in all LSAs originated by Router implementing the Demand Circuit functionality.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DemandCircuit']))
+
+    @property
     def DescriptiveName(self):
         """
         Returns
@@ -282,6 +300,26 @@ class OspfPseudoRouter(Base):
         self._set_attribute(self._SDM_ATT_MAP['EnableSrlb'], value)
 
     @property
+    def ExternalAttribute(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 4 : The EA-bit describes the router's willingness to receive and forward External-Attributes-LSAs.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternalAttribute']))
+
+    @property
+    def ExternalCapability(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 1 : The E-bit represents OSPF's ExternalRoutingCapability. This bit can be set in all LSAs associated with the backbone, non-stub areas and AS-external-LSAs.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ExternalCapability']))
+
+    @property
     def LFlag(self):
         """
         Returns
@@ -300,6 +338,16 @@ class OspfPseudoRouter(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MFlag']))
+
+    @property
+    def MulticastCapability(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 2 : The MC-bit describes the multicast capability of the various pieces of the OSPF routing domain.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MulticastCapability']))
 
     @property
     def Name(self):
@@ -322,6 +370,26 @@ class OspfPseudoRouter(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NpFlag']))
+
+    @property
+    def NssaCapability(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 3 : The N/P-bit used only in the Type-7 LSA header. It flags the NSSA border router to translate the Type-7 LSA into a Type-5 LSA.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NssaCapability']))
+
+    @property
+    def OpaqueLsaForwarded(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 6: The O-bit describes the router's willingness to receive and forward Opaque LSAs.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OpaqueLsaForwarded']))
 
     @property
     def SRAlgorithmCount(self):
@@ -368,6 +436,26 @@ class OspfPseudoRouter(Base):
     @SrlbRangeCount.setter
     def SrlbRangeCount(self, value):
         self._set_attribute(self._SDM_ATT_MAP['SrlbRangeCount'], value)
+
+    @property
+    def TypeOfServiceRouting(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 0 : The T-bit represents OSPF's TOS routing capability.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TypeOfServiceRouting']))
+
+    @property
+    def Unused(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 7 (Unused).
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Unused']))
 
     @property
     def VFlag(self):
@@ -446,7 +534,7 @@ class OspfPseudoRouter(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None, AdvertiseRouterIdAsStubNetwork=None, Algorithm=None, BBit=None, ConfigureSIDIndexLabel=None, EBit=None, EFlag=None, LFlag=None, MFlag=None, NpFlag=None, SidIndexLabel=None, VFlag=None):
+    def get_device_ids(self, PortNames=None, Active=None, AdvertiseRouterIdAsStubNetwork=None, Algorithm=None, BBit=None, ConfigureSIDIndexLabel=None, DemandCircuit=None, EBit=None, EFlag=None, ExternalAttribute=None, ExternalCapability=None, LFlag=None, MFlag=None, MulticastCapability=None, NpFlag=None, NssaCapability=None, OpaqueLsaForwarded=None, SidIndexLabel=None, TypeOfServiceRouting=None, Unused=None, VFlag=None):
         """Base class infrastructure that gets a list of ospfPseudoRouter device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -459,12 +547,20 @@ class OspfPseudoRouter(Base):
         - Algorithm (str): optional regex of algorithm
         - BBit (str): optional regex of bBit
         - ConfigureSIDIndexLabel (str): optional regex of configureSIDIndexLabel
+        - DemandCircuit (str): optional regex of demandCircuit
         - EBit (str): optional regex of eBit
         - EFlag (str): optional regex of eFlag
+        - ExternalAttribute (str): optional regex of externalAttribute
+        - ExternalCapability (str): optional regex of externalCapability
         - LFlag (str): optional regex of lFlag
         - MFlag (str): optional regex of mFlag
+        - MulticastCapability (str): optional regex of multicastCapability
         - NpFlag (str): optional regex of npFlag
+        - NssaCapability (str): optional regex of nssaCapability
+        - OpaqueLsaForwarded (str): optional regex of opaqueLsaForwarded
         - SidIndexLabel (str): optional regex of sidIndexLabel
+        - TypeOfServiceRouting (str): optional regex of typeOfServiceRouting
+        - Unused (str): optional regex of unused
         - VFlag (str): optional regex of vFlag
 
         Returns

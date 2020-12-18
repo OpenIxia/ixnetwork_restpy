@@ -41,6 +41,7 @@ class Dhcp6ServerSessions(Base):
         'DescriptiveName': 'descriptiveName',
         'EnableAddressMatchDuid': 'enableAddressMatchDuid',
         'EnablePrefixMatchDuid': 'enablePrefixMatchDuid',
+        'EnableVssAddrAssgnmt': 'enableVssAddrAssgnmt',
         'IaType': 'iaType',
         'Ignore': 'ignore',
         'IgnoreMask': 'ignoreMask',
@@ -62,6 +63,8 @@ class Dhcp6ServerSessions(Base):
         'PrefixLength': 'prefixLength',
         'PrefixesPerIA': 'prefixesPerIA',
         'UseCustomTimes': 'useCustomTimes',
+        'VpnId': 'vpnId',
+        'VpnName': 'vpnName',
     }
 
     def __init__(self, parent):
@@ -164,6 +167,16 @@ class Dhcp6ServerSessions(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnablePrefixMatchDuid']))
+
+    @property
+    def EnableVssAddrAssgnmt(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, DHCP server will assign leases based on VPN.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['EnableVssAddrAssgnmt']))
 
     @property
     def IaType(self):
@@ -377,6 +390,26 @@ class Dhcp6ServerSessions(Base):
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseCustomTimes']))
 
+    @property
+    def VpnId(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Based on this VPN ID, DHCP server will assign leases.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VpnId']))
+
+    @property
+    def VpnName(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Based on this VPN Name, DHCP server will assign leases.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VpnName']))
+
     def update(self, Name=None):
         """Updates dhcp6ServerSessions resource on the server.
 
@@ -393,7 +426,7 @@ class Dhcp6ServerSessions(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def get_device_ids(self, PortNames=None, AddressDuidMask=None, AddressDuidPattern=None, AddressesPerIA=None, CustomRebindTime=None, CustomRenewTime=None, DefaultLeaseTime=None, EnableAddressMatchDuid=None, EnablePrefixMatchDuid=None, IaType=None, Ignore=None, IgnoreMask=None, IgnorePattern=None, IpAddress=None, IpAddressIncrement=None, IpAddressPD=None, IpPrefix=None, IpPrefixIncrement=None, LeaseTimeIncrement=None, Nak=None, NakMask=None, NakPattern=None, PoolPrefixSize=None, PoolSize=None, PrefixDuidIncrement=None, PrefixDuidStart=None, PrefixLength=None, PrefixesPerIA=None, UseCustomTimes=None):
+    def get_device_ids(self, PortNames=None, AddressDuidMask=None, AddressDuidPattern=None, AddressesPerIA=None, CustomRebindTime=None, CustomRenewTime=None, DefaultLeaseTime=None, EnableAddressMatchDuid=None, EnablePrefixMatchDuid=None, EnableVssAddrAssgnmt=None, IaType=None, Ignore=None, IgnoreMask=None, IgnorePattern=None, IpAddress=None, IpAddressIncrement=None, IpAddressPD=None, IpPrefix=None, IpPrefixIncrement=None, LeaseTimeIncrement=None, Nak=None, NakMask=None, NakPattern=None, PoolPrefixSize=None, PoolSize=None, PrefixDuidIncrement=None, PrefixDuidStart=None, PrefixLength=None, PrefixesPerIA=None, UseCustomTimes=None, VpnId=None, VpnName=None):
         """Base class infrastructure that gets a list of dhcp6ServerSessions device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -409,6 +442,7 @@ class Dhcp6ServerSessions(Base):
         - DefaultLeaseTime (str): optional regex of defaultLeaseTime
         - EnableAddressMatchDuid (str): optional regex of enableAddressMatchDuid
         - EnablePrefixMatchDuid (str): optional regex of enablePrefixMatchDuid
+        - EnableVssAddrAssgnmt (str): optional regex of enableVssAddrAssgnmt
         - IaType (str): optional regex of iaType
         - Ignore (str): optional regex of ignore
         - IgnoreMask (str): optional regex of ignoreMask
@@ -429,6 +463,8 @@ class Dhcp6ServerSessions(Base):
         - PrefixLength (str): optional regex of prefixLength
         - PrefixesPerIA (str): optional regex of prefixesPerIA
         - UseCustomTimes (str): optional regex of useCustomTimes
+        - VpnId (str): optional regex of vpnId
+        - VpnName (str): optional regex of vpnName
 
         Returns
         -------

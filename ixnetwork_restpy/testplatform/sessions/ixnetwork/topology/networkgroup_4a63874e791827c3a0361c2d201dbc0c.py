@@ -287,13 +287,13 @@ class NetworkGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3routeproperty_a6c8c14dbcd51f5aa443f5e32d58e8f0.IsisL3RouteProperty): An instance of the IsisL3RouteProperty class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3routeproperty_b92337ebc659bd40bd9c30fab98749e7.IsisL3RouteProperty): An instance of the IsisL3RouteProperty class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3routeproperty_a6c8c14dbcd51f5aa443f5e32d58e8f0 import IsisL3RouteProperty
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3routeproperty_b92337ebc659bd40bd9c30fab98749e7 import IsisL3RouteProperty
         return IsisL3RouteProperty(self)
 
     @property

@@ -447,13 +447,13 @@ class BgpIpv4Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepolicieslistv4_c6a7fd9f152535f84e9942f14a3b305c.BgpSRTEPoliciesListV4): An instance of the BgpSRTEPoliciesListV4 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepolicieslistv4_f2d756189af5037098439a3ddb4c82c5.BgpSRTEPoliciesListV4): An instance of the BgpSRTEPoliciesListV4 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepolicieslistv4_c6a7fd9f152535f84e9942f14a3b305c import BgpSRTEPoliciesListV4
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepolicieslistv4_f2d756189af5037098439a3ddb4c82c5 import BgpSRTEPoliciesListV4
         return BgpSRTEPoliciesListV4(self)._select()
 
     @property

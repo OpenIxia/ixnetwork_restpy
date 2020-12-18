@@ -74,13 +74,13 @@ class CfmBridge(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmmp_455bcaf1d68b20d894a87383d2cb1965.CfmMp): An instance of the CfmMp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmmp_8584bca4487041ab880565a01c8deaf3.CfmMp): An instance of the CfmMp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmmp_455bcaf1d68b20d894a87383d2cb1965 import CfmMp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmmp_8584bca4487041ab880565a01c8deaf3 import CfmMp
         return CfmMp(self)._select()
 
     @property

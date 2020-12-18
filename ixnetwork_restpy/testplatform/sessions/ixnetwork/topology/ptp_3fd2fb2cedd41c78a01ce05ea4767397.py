@@ -53,6 +53,7 @@ class Ptp(Base):
         'CommunicationMode': 'communicationMode',
         'ConnectedVia': 'connectedVia',
         'Count': 'count',
+        'CqaAnalysisServer': 'cqaAnalysisServer',
         'CumulativeScaledRateOffset': 'cumulativeScaledRateOffset',
         'CurrentLocalOffset': 'currentLocalOffset',
         'CurrentUtcOffset': 'currentUtcOffset',
@@ -81,6 +82,7 @@ class Ptp(Base):
         'EnableCmlds': 'enableCmlds',
         'EnableNegativeTesting': 'enableNegativeTesting',
         'Errors': 'errors',
+        'FileLocation': 'fileLocation',
         'FolderPath': 'folderPath',
         'FollowUpBadCrcRate': 'followUpBadCrcRate',
         'FollowUpDelay': 'followUpDelay',
@@ -101,6 +103,7 @@ class Ptp(Base):
         'LastGmPhaseChange': 'lastGmPhaseChange',
         'LeapSecondJump': 'leapSecondJump',
         'LearnPortId': 'learnPortId',
+        'LinkDelay': 'linkDelay',
         'LogAnnounceInterval': 'logAnnounceInterval',
         'LogCleanUpOption': 'logCleanUpOption',
         'LogDelayReqInterval': 'logDelayReqInterval',
@@ -150,6 +153,7 @@ class Ptp(Base):
         'ReverseSyncIntervalPercent': 'reverseSyncIntervalPercent',
         'Role': 'role',
         'RxCalibration': 'rxCalibration',
+        'SaveDataToFile': 'saveDataToFile',
         'ScaledLastGmFreqChange': 'scaledLastGmFreqChange',
         'SendMulticastAnnounce': 'sendMulticastAnnounce',
         'SessionInfo': 'sessionInfo',
@@ -171,6 +175,7 @@ class Ptp(Base):
         'Status': 'status',
         'StepMode': 'stepMode',
         'StepsRemoved': 'stepsRemoved',
+        'StreamDataToCQA': 'streamDataToCQA',
         'StrictGrant': 'strictGrant',
         'SyncDropRate': 'syncDropRate',
         'SyncReceiptTimeout': 'syncReceiptTimeout',
@@ -186,6 +191,7 @@ class Ptp(Base):
         'TxCalibration': 'txCalibration',
         'TxTwoStepCalibration': 'txTwoStepCalibration',
         'UpdateTime': 'updateTime',
+        'UseMeasuredP2PDelay': 'useMeasuredP2PDelay',
     }
 
     def __init__(self, parent):
@@ -304,7 +310,7 @@ class Ptp(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Select this check box to set the 'PTP Timescale flag' in all Announce messages.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select this check box to set the 'PTP Timescale flag' in PTP messages based on profile. For 802.1 AS, the field is set in all messages. For other profiles this field is used only in announce message. This flag will be encoded based on input
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AnnouncePtpTimescale']))
@@ -423,6 +429,16 @@ class Ptp(Base):
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Count'])
+
+    @property
+    def CqaAnalysisServer(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Clock Quality Analysis Server IP address. Please provide a valid IPv4 Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['CqaAnalysisServer']))
 
     @property
     def CumulativeScaledRateOffset(self):
@@ -709,6 +725,16 @@ class Ptp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
     @property
+    def FileLocation(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Folder To Store Files with Timestamp Information
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['FileLocation']))
+
+    @property
     def FolderPath(self):
         """
         Returns
@@ -909,6 +935,16 @@ class Ptp(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LearnPortId']))
+
+    @property
+    def LinkDelay(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): PTP slave will use this field value for Time Error calculation If Use measured delay by PTP is False This field will only be used for Peer Delay mechanism
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LinkDelay']))
 
     @property
     def LogAnnounceInterval(self):
@@ -1410,6 +1446,16 @@ class Ptp(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RxCalibration']))
 
     @property
+    def SaveDataToFile(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If this option is enabled Slave PTP session will store records relate to timestamp in the folder path mentioned in CQA Folder Path
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SaveDataToFile']))
+
+    @property
     def ScaledLastGmFreqChange(self):
         """
         Returns
@@ -1618,6 +1664,16 @@ class Ptp(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StepsRemoved']))
 
     @property
+    def StreamDataToCQA(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If this option is enabled Slave PTP session will provide information regarding the quality of the master Clock to CQA
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StreamDataToCQA']))
+
+    @property
     def StrictGrant(self):
         """
         Returns
@@ -1767,6 +1823,16 @@ class Ptp(Base):
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UpdateTime']))
 
+    @property
+    def UseMeasuredP2PDelay(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If this option is enabled PTP slave will use Calculated delay for Time Error calculation Otherwise, PTP slave will use User Provided delay for Time Error calculation This field will only be used for Peer Delay mechanism
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseMeasuredP2PDelay']))
+
     def update(self, AtoiTlvCount=None, AvnuMode=None, ConnectedVia=None, EnableATOITlv=None, EnableCmlds=None, EnableNegativeTesting=None, Frequency=None, LogCleanUpOption=None, LogFileAge=None, Multiplier=None, Name=None, NumberOFMsgs=None, StackedLayers=None):
         """Updates ptp resource on the server.
 
@@ -1893,7 +1959,7 @@ class Ptp(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, AllowedFaults=None, AllowedLostResponse=None, AlternateMasterFlag=None, AnnounceCurrentUtcOffsetValid=None, AnnounceDropRate=None, AnnounceFrequencyTraceable=None, AnnounceLeap59=None, AnnounceLeap61=None, AnnouncePtpTimescale=None, AnnounceReceiptTimeout=None, AnnounceTimeTraceable=None, Bmca=None, ClockAccuracy=None, ClockClass=None, ClockIdentity=None, CommunicationMode=None, CumulativeScaledRateOffset=None, CurrentLocalOffset=None, CurrentUtcOffset=None, CustomClockId=None, DaylightSaving=None, DefaultSystemFrameRateDenominator=None, DefaultSystemFrameRateNumerator=None, DelayAsymmetry=None, DelayMechanism=None, DelayReqDropRate=None, DelayReqOffset=None, DelayReqResidenceTime=None, DelayReqSpread=None, DelayRespDropRate=None, DelayRespReceiptTimeout=None, DelayRespResidenceTime=None, DelayResponseDelay=None, DelayResponseDelayInsertionRate=None, Domain=None, DropMalformed=None, DropSignalReqAnnounce=None, DropSignalReqDelayResp=None, DropSignalReqSync=None, FolderPath=None, FollowUpBadCrcRate=None, FollowUpDelay=None, FollowUpDelayInsertionRate=None, FollowUpDropRate=None, FollowUpResidenceTime=None, GPTPCapableReceiptTimeout=None, GmTimeBaseIndicator=None, GrandmasterID=None, GrandmasterIdentity=None, GrantDelayRespDurationInterval=None, GrantSyncDurationInterval=None, GrantUnicastDurationInterval=None, HandleAnnounceTlv=None, HandleCancelTlv=None, JumpSeconds=None, LastGmPhaseChange=None, LeapSecondJump=None, LearnPortId=None, LogAnnounceInterval=None, LogDelayReqInterval=None, LogFuturePacketInfo=None, LogManagementMsgInterval=None, LogSignallingInterval=None, LogSyncInterval=None, MasterClockId=None, MasterCount=None, MasterIpAddress=None, MasterIpIncrementBy=None, MasterIpv6Address=None, MasterIpv6IncrementBy=None, MasterLockingStatus=None, MasterMacAddress=None, MasterMacIncrementBy=None, MeanLinkDelayThreshold=None, MulticastAddress=None, NanosecondsPerSecond=None, NotSlave=None, NumRecords=None, OffsetBaseddebuggabilityEnabled=None, OffsetLimit=None, OffsetScaledLogVariance=None, OneWay=None, PDelayFollowUpDelay=None, PDelayFollowUpDelayInsertionRate=None, PDelayFollowUpDropRate=None, PDelayFollowUpResidenceTime=None, PathTraceTLV=None, PortNumber=None, PreviousJamLocalOffset=None, Priority1=None, Priority2=None, Profile=None, RenewalInvited=None, RequestAttempts=None, RequestHolddown=None, RequestInterval=None, Reserved=None, ReverseSync=None, ReverseSyncIntervalPercent=None, Role=None, RxCalibration=None, ScaledLastGmFreqChange=None, SendMulticastAnnounce=None, SignalInterval=None, SignalUnicastHandling=None, SignallingDropRate=None, SimulateBoundary=None, SimulateTransparent=None, SlaveCount=None, SlaveIpAddress=None, SlaveIpIncrementBy=None, SlaveIpv6Address=None, SlaveIpv6IncrementBy=None, SlaveMacAddress=None, SlaveMacIncrementBy=None, StepMode=None, StepsRemoved=None, StrictGrant=None, SyncDropRate=None, SyncReceiptTimeout=None, SyncReceiptTimeoutgPTP=None, SyncResidenceTime=None, TimeAddressFlags=None, TimeOfNextJam=None, TimeOfNextJump=None, TimeOfPreviousJam=None, TimeSource=None, TimestampOffset=None, TotalTimeInaccuracy=None, TxCalibration=None, TxTwoStepCalibration=None, UpdateTime=None):
+    def get_device_ids(self, PortNames=None, AllowedFaults=None, AllowedLostResponse=None, AlternateMasterFlag=None, AnnounceCurrentUtcOffsetValid=None, AnnounceDropRate=None, AnnounceFrequencyTraceable=None, AnnounceLeap59=None, AnnounceLeap61=None, AnnouncePtpTimescale=None, AnnounceReceiptTimeout=None, AnnounceTimeTraceable=None, Bmca=None, ClockAccuracy=None, ClockClass=None, ClockIdentity=None, CommunicationMode=None, CqaAnalysisServer=None, CumulativeScaledRateOffset=None, CurrentLocalOffset=None, CurrentUtcOffset=None, CustomClockId=None, DaylightSaving=None, DefaultSystemFrameRateDenominator=None, DefaultSystemFrameRateNumerator=None, DelayAsymmetry=None, DelayMechanism=None, DelayReqDropRate=None, DelayReqOffset=None, DelayReqResidenceTime=None, DelayReqSpread=None, DelayRespDropRate=None, DelayRespReceiptTimeout=None, DelayRespResidenceTime=None, DelayResponseDelay=None, DelayResponseDelayInsertionRate=None, Domain=None, DropMalformed=None, DropSignalReqAnnounce=None, DropSignalReqDelayResp=None, DropSignalReqSync=None, FileLocation=None, FolderPath=None, FollowUpBadCrcRate=None, FollowUpDelay=None, FollowUpDelayInsertionRate=None, FollowUpDropRate=None, FollowUpResidenceTime=None, GPTPCapableReceiptTimeout=None, GmTimeBaseIndicator=None, GrandmasterID=None, GrandmasterIdentity=None, GrantDelayRespDurationInterval=None, GrantSyncDurationInterval=None, GrantUnicastDurationInterval=None, HandleAnnounceTlv=None, HandleCancelTlv=None, JumpSeconds=None, LastGmPhaseChange=None, LeapSecondJump=None, LearnPortId=None, LinkDelay=None, LogAnnounceInterval=None, LogDelayReqInterval=None, LogFuturePacketInfo=None, LogManagementMsgInterval=None, LogSignallingInterval=None, LogSyncInterval=None, MasterClockId=None, MasterCount=None, MasterIpAddress=None, MasterIpIncrementBy=None, MasterIpv6Address=None, MasterIpv6IncrementBy=None, MasterLockingStatus=None, MasterMacAddress=None, MasterMacIncrementBy=None, MeanLinkDelayThreshold=None, MulticastAddress=None, NanosecondsPerSecond=None, NotSlave=None, NumRecords=None, OffsetBaseddebuggabilityEnabled=None, OffsetLimit=None, OffsetScaledLogVariance=None, OneWay=None, PDelayFollowUpDelay=None, PDelayFollowUpDelayInsertionRate=None, PDelayFollowUpDropRate=None, PDelayFollowUpResidenceTime=None, PathTraceTLV=None, PortNumber=None, PreviousJamLocalOffset=None, Priority1=None, Priority2=None, Profile=None, RenewalInvited=None, RequestAttempts=None, RequestHolddown=None, RequestInterval=None, Reserved=None, ReverseSync=None, ReverseSyncIntervalPercent=None, Role=None, RxCalibration=None, SaveDataToFile=None, ScaledLastGmFreqChange=None, SendMulticastAnnounce=None, SignalInterval=None, SignalUnicastHandling=None, SignallingDropRate=None, SimulateBoundary=None, SimulateTransparent=None, SlaveCount=None, SlaveIpAddress=None, SlaveIpIncrementBy=None, SlaveIpv6Address=None, SlaveIpv6IncrementBy=None, SlaveMacAddress=None, SlaveMacIncrementBy=None, StepMode=None, StepsRemoved=None, StreamDataToCQA=None, StrictGrant=None, SyncDropRate=None, SyncReceiptTimeout=None, SyncReceiptTimeoutgPTP=None, SyncResidenceTime=None, TimeAddressFlags=None, TimeOfNextJam=None, TimeOfNextJump=None, TimeOfPreviousJam=None, TimeSource=None, TimestampOffset=None, TotalTimeInaccuracy=None, TxCalibration=None, TxTwoStepCalibration=None, UpdateTime=None, UseMeasuredP2PDelay=None):
         """Base class infrastructure that gets a list of ptp device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -1917,6 +1983,7 @@ class Ptp(Base):
         - ClockClass (str): optional regex of clockClass
         - ClockIdentity (str): optional regex of clockIdentity
         - CommunicationMode (str): optional regex of communicationMode
+        - CqaAnalysisServer (str): optional regex of cqaAnalysisServer
         - CumulativeScaledRateOffset (str): optional regex of cumulativeScaledRateOffset
         - CurrentLocalOffset (str): optional regex of currentLocalOffset
         - CurrentUtcOffset (str): optional regex of currentUtcOffset
@@ -1940,6 +2007,7 @@ class Ptp(Base):
         - DropSignalReqAnnounce (str): optional regex of dropSignalReqAnnounce
         - DropSignalReqDelayResp (str): optional regex of dropSignalReqDelayResp
         - DropSignalReqSync (str): optional regex of dropSignalReqSync
+        - FileLocation (str): optional regex of fileLocation
         - FolderPath (str): optional regex of folderPath
         - FollowUpBadCrcRate (str): optional regex of followUpBadCrcRate
         - FollowUpDelay (str): optional regex of followUpDelay
@@ -1959,6 +2027,7 @@ class Ptp(Base):
         - LastGmPhaseChange (str): optional regex of lastGmPhaseChange
         - LeapSecondJump (str): optional regex of leapSecondJump
         - LearnPortId (str): optional regex of learnPortId
+        - LinkDelay (str): optional regex of linkDelay
         - LogAnnounceInterval (str): optional regex of logAnnounceInterval
         - LogDelayReqInterval (str): optional regex of logDelayReqInterval
         - LogFuturePacketInfo (str): optional regex of logFuturePacketInfo
@@ -2002,6 +2071,7 @@ class Ptp(Base):
         - ReverseSyncIntervalPercent (str): optional regex of reverseSyncIntervalPercent
         - Role (str): optional regex of role
         - RxCalibration (str): optional regex of rxCalibration
+        - SaveDataToFile (str): optional regex of saveDataToFile
         - ScaledLastGmFreqChange (str): optional regex of scaledLastGmFreqChange
         - SendMulticastAnnounce (str): optional regex of sendMulticastAnnounce
         - SignalInterval (str): optional regex of signalInterval
@@ -2018,6 +2088,7 @@ class Ptp(Base):
         - SlaveMacIncrementBy (str): optional regex of slaveMacIncrementBy
         - StepMode (str): optional regex of stepMode
         - StepsRemoved (str): optional regex of stepsRemoved
+        - StreamDataToCQA (str): optional regex of streamDataToCQA
         - StrictGrant (str): optional regex of strictGrant
         - SyncDropRate (str): optional regex of syncDropRate
         - SyncReceiptTimeout (str): optional regex of syncReceiptTimeout
@@ -2033,6 +2104,7 @@ class Ptp(Base):
         - TxCalibration (str): optional regex of txCalibration
         - TxTwoStepCalibration (str): optional regex of txTwoStepCalibration
         - UpdateTime (str): optional regex of updateTime
+        - UseMeasuredP2PDelay (str): optional regex of useMeasuredP2PDelay
 
         Returns
         -------

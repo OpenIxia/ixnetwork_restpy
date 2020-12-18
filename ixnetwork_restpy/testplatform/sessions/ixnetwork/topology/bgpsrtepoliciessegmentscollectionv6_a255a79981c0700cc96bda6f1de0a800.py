@@ -32,6 +32,8 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
     _SDM_NAME = 'bgpSRTEPoliciesSegmentsCollectionV6'
     _SDM_ATT_MAP = {
         'Active': 'active',
+        'Aflag': 'aflag',
+        'Algorithm': 'algorithm',
         'BottomOfStack': 'bottomOfStack',
         'Count': 'count',
         'DescriptiveName': 'descriptiveName',
@@ -51,11 +53,13 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
         'OptionalTLVType': 'optionalTLVType',
         'OptionalTimeToLive': 'optionalTimeToLive',
         'OptionalTrafficClass': 'optionalTrafficClass',
+        'RemainingBits': 'remainingBits',
         'SegmentListNumber': 'segmentListNumber',
         'SegmentType': 'segmentType',
         'SrtepolicyName': 'srtepolicyName',
         'TimeToLive': 'timeToLive',
         'TrafficClass': 'trafficClass',
+        'Vflag': 'vflag',
     }
 
     def __init__(self, parent):
@@ -70,6 +74,26 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+    @property
+    def Aflag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This flag indicates the presence of SR Algorithm id in the SR Algorithm field applicable to various Segment Types.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Aflag']))
+
+    @property
+    def Algorithm(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): 1 octet specifying SR Algorithm.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Algorithm']))
 
     @property
     def BottomOfStack(self):
@@ -262,6 +286,16 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OptionalTrafficClass']))
 
     @property
+    def RemainingBits(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Remaining Flag Bits takes the 6-bit flags value in Hex format. It ignores the bit position for flags exposed separately in GUI. For example, the 1st and 2nd bits are ignored since they are set using the V Flag and A Flag settings.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RemainingBits']))
+
+    @property
     def SegmentListNumber(self):
         """
         Returns
@@ -309,6 +343,16 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TrafficClass']))
 
+    @property
+    def Vflag(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This flag is used by SRPM for the purpose of SID verification.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Vflag']))
+
     def update(self, Name=None):
         """Updates bgpSRTEPoliciesSegmentsCollectionV6 resource on the server.
 
@@ -325,7 +369,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def get_device_ids(self, PortNames=None, Active=None, BottomOfStack=None, InterfaceIndex=None, Ipv4LocalAddress=None, Ipv4NodeAddress=None, Ipv4RemoteAddress=None, Ipv6LocalAddress=None, Ipv6NodeAddress=None, Ipv6RemoteAddress=None, Ipv6SID=None, Label=None, OptionalBottomOfStack=None, OptionalIpv6SID=None, OptionalLabel=None, OptionalTLVType=None, OptionalTimeToLive=None, OptionalTrafficClass=None, SegmentType=None, TimeToLive=None, TrafficClass=None):
+    def get_device_ids(self, PortNames=None, Active=None, Aflag=None, Algorithm=None, BottomOfStack=None, InterfaceIndex=None, Ipv4LocalAddress=None, Ipv4NodeAddress=None, Ipv4RemoteAddress=None, Ipv6LocalAddress=None, Ipv6NodeAddress=None, Ipv6RemoteAddress=None, Ipv6SID=None, Label=None, OptionalBottomOfStack=None, OptionalIpv6SID=None, OptionalLabel=None, OptionalTLVType=None, OptionalTimeToLive=None, OptionalTrafficClass=None, RemainingBits=None, SegmentType=None, TimeToLive=None, TrafficClass=None, Vflag=None):
         """Base class infrastructure that gets a list of bgpSRTEPoliciesSegmentsCollectionV6 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -334,6 +378,8 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
         ----
         - PortNames (str): optional regex of port names
         - Active (str): optional regex of active
+        - Aflag (str): optional regex of aflag
+        - Algorithm (str): optional regex of algorithm
         - BottomOfStack (str): optional regex of bottomOfStack
         - InterfaceIndex (str): optional regex of interfaceIndex
         - Ipv4LocalAddress (str): optional regex of ipv4LocalAddress
@@ -350,9 +396,11 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
         - OptionalTLVType (str): optional regex of optionalTLVType
         - OptionalTimeToLive (str): optional regex of optionalTimeToLive
         - OptionalTrafficClass (str): optional regex of optionalTrafficClass
+        - RemainingBits (str): optional regex of remainingBits
         - SegmentType (str): optional regex of segmentType
         - TimeToLive (str): optional regex of timeToLive
         - TrafficClass (str): optional regex of trafficClass
+        - Vflag (str): optional regex of vflag
 
         Returns
         -------

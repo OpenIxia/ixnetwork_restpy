@@ -42,6 +42,7 @@ class Ospfv3PseudoInterface(Base):
         'Metric': 'metric',
         'Name': 'name',
         'PFlag': 'pFlag',
+        'PseudoNetworkType': 'pseudoNetworkType',
         'VFlag': 'vFlag',
         'Weight': 'weight',
     }
@@ -150,6 +151,16 @@ class Ospfv3PseudoInterface(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PFlag']))
 
     @property
+    def PseudoNetworkType(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This defines the network types of the simulated links between the simulated routers.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PseudoNetworkType']))
+
+    @property
     def VFlag(self):
         """
         Returns
@@ -226,7 +237,7 @@ class Ospfv3PseudoInterface(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, AdjSID=None, BFlag=None, EnableAdjSID=None, GFlag=None, LFlag=None, Metric=None, PFlag=None, VFlag=None, Weight=None):
+    def get_device_ids(self, PortNames=None, AdjSID=None, BFlag=None, EnableAdjSID=None, GFlag=None, LFlag=None, Metric=None, PFlag=None, PseudoNetworkType=None, VFlag=None, Weight=None):
         """Base class infrastructure that gets a list of ospfv3PseudoInterface device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
@@ -241,6 +252,7 @@ class Ospfv3PseudoInterface(Base):
         - LFlag (str): optional regex of lFlag
         - Metric (str): optional regex of metric
         - PFlag (str): optional regex of pFlag
+        - PseudoNetworkType (str): optional regex of pseudoNetworkType
         - VFlag (str): optional regex of vFlag
         - Weight (str): optional regex of weight
 

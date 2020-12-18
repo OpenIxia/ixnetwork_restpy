@@ -34,12 +34,15 @@ class TrafficItem(Base):
     _SDM_NAME = 'trafficItem'
     _SDM_ATT_MAP = {
         'AllowSelfDestined': 'allowSelfDestined',
+        'BgpEpeOrdinalValue': 'bgpEpeOrdinalValue',
+        'BgpEpeSidType': 'bgpEpeSidType',
         'BiDirectional': 'biDirectional',
         'EgressEnabled': 'egressEnabled',
         'EnableDynamicMplsLabelValues': 'enableDynamicMplsLabelValues',
         'EnableMacsecEgressOnlyAutoConfig': 'enableMacsecEgressOnlyAutoConfig',
         'Enabled': 'enabled',
         'Errors': 'errors',
+        'EvpnNextHopOrdinalValue': 'evpnNextHopOrdinalValue',
         'FlowGroupCount': 'flowGroupCount',
         'FrerDuplicateElimination': 'frerDuplicateElimination',
         'HasOpenFlow': 'hasOpenFlow',
@@ -54,6 +57,7 @@ class TrafficItem(Base):
         'NumVlansForMulticastReplication': 'numVlansForMulticastReplication',
         'OrdinalNo': 'ordinalNo',
         'OriginatorType': 'originatorType',
+        'RawTrafficRxPortsBehavior': 'rawTrafficRxPortsBehavior',
         'RegenerateCount': 'regenerateCount',
         'RoundRobinPacketOrdering': 'roundRobinPacketOrdering',
         'RouteMesh': 'routeMesh',
@@ -198,6 +202,30 @@ class TrafficItem(Base):
         self._set_attribute(self._SDM_ATT_MAP['AllowSelfDestined'], value)
 
     @property
+    def BgpEpeOrdinalValue(self):
+        """
+        Returns
+        -------
+        - number: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['BgpEpeOrdinalValue'])
+    @BgpEpeOrdinalValue.setter
+    def BgpEpeOrdinalValue(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['BgpEpeOrdinalValue'], value)
+
+    @property
+    def BgpEpeSidType(self):
+        """
+        Returns
+        -------
+        - str(adjSID | nodeSID | setSID): 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['BgpEpeSidType'])
+    @BgpEpeSidType.setter
+    def BgpEpeSidType(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['BgpEpeSidType'], value)
+
+    @property
     def BiDirectional(self):
         """
         Returns
@@ -265,6 +293,18 @@ class TrafficItem(Base):
         - list(str): Displays the errors.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
+
+    @property
+    def EvpnNextHopOrdinalValue(self):
+        """
+        Returns
+        -------
+        - number: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['EvpnNextHopOrdinalValue'])
+    @EvpnNextHopOrdinalValue.setter
+    def EvpnNextHopOrdinalValue(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['EvpnNextHopOrdinalValue'], value)
 
     @property
     def FlowGroupCount(self):
@@ -432,6 +472,18 @@ class TrafficItem(Base):
         self._set_attribute(self._SDM_ATT_MAP['OriginatorType'], value)
 
     @property
+    def RawTrafficRxPortsBehavior(self):
+        """
+        Returns
+        -------
+        - str(loadBalanced | replicated): 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['RawTrafficRxPortsBehavior'])
+    @RawTrafficRxPortsBehavior.setter
+    def RawTrafficRxPortsBehavior(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['RawTrafficRxPortsBehavior'], value)
+
+    @property
     def RegenerateCount(self):
         """
         Returns
@@ -590,17 +642,20 @@ class TrafficItem(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Warnings'])
 
-    def update(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, EnableMacsecEgressOnlyAutoConfig=None, Enabled=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, LabelPreferences=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None):
+    def update(self, AllowSelfDestined=None, BgpEpeOrdinalValue=None, BgpEpeSidType=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, EnableMacsecEgressOnlyAutoConfig=None, Enabled=None, EvpnNextHopOrdinalValue=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, LabelPreferences=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RawTrafficRxPortsBehavior=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None):
         """Updates trafficItem resource on the server.
 
         Args
         ----
         - AllowSelfDestined (bool): If true, this helps to send traffic from routes on an Ixia port to other routes on the same Ixia port.
+        - BgpEpeOrdinalValue (number): 
+        - BgpEpeSidType (str(adjSID | nodeSID | setSID)): 
         - BiDirectional (bool): If true, this enables traffic to be sent in forward and reverse destination.
         - EgressEnabled (bool): Enables the egress.
         - EnableDynamicMplsLabelValues (bool): Enables the dynamic MPLS label values.
         - EnableMacsecEgressOnlyAutoConfig (bool): 
         - Enabled (bool): If true, this enables the selected traffic item.
+        - EvpnNextHopOrdinalValue (number): 
         - FrerDuplicateElimination (bool): 
         - HasOpenFlow (bool): Indicates whether or not this trafficItem has openflow.
         - HostsPerNetwork (number): The number of emulated hosts for the traffic stream.
@@ -614,6 +669,7 @@ class TrafficItem(Base):
         - NumVlansForMulticastReplication (number): Set the number of vlans for multicast replication
         - OrdinalNo (number): Signifies the ordinal number
         - OriginatorType (str(endUser | quickTest)): Indicates who created this trafficItem.
+        - RawTrafficRxPortsBehavior (str(loadBalanced | replicated)): 
         - RoundRobinPacketOrdering (bool): This option enables Round Robin Packet Ordering within endpoints across Rx ports.
         - RouteMesh (str(fullMesh | oneToOne)): The traffic flow type between each pair of source route endpoint and destination route endpoint.
         - SrcDestMesh (str(fullMesh | manyToMany | none | oneToOne)): Select the options to set the traffic mesh type between the Source Endpoint and Destination endpoint.
@@ -632,17 +688,20 @@ class TrafficItem(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, EnableMacsecEgressOnlyAutoConfig=None, Enabled=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, LabelPreferences=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None):
+    def add(self, AllowSelfDestined=None, BgpEpeOrdinalValue=None, BgpEpeSidType=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, EnableMacsecEgressOnlyAutoConfig=None, Enabled=None, EvpnNextHopOrdinalValue=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, LabelPreferences=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RawTrafficRxPortsBehavior=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None):
         """Adds a new trafficItem resource on the server and adds it to the container.
 
         Args
         ----
         - AllowSelfDestined (bool): If true, this helps to send traffic from routes on an Ixia port to other routes on the same Ixia port.
+        - BgpEpeOrdinalValue (number): 
+        - BgpEpeSidType (str(adjSID | nodeSID | setSID)): 
         - BiDirectional (bool): If true, this enables traffic to be sent in forward and reverse destination.
         - EgressEnabled (bool): Enables the egress.
         - EnableDynamicMplsLabelValues (bool): Enables the dynamic MPLS label values.
         - EnableMacsecEgressOnlyAutoConfig (bool): 
         - Enabled (bool): If true, this enables the selected traffic item.
+        - EvpnNextHopOrdinalValue (number): 
         - FrerDuplicateElimination (bool): 
         - HasOpenFlow (bool): Indicates whether or not this trafficItem has openflow.
         - HostsPerNetwork (number): The number of emulated hosts for the traffic stream.
@@ -656,6 +715,7 @@ class TrafficItem(Base):
         - NumVlansForMulticastReplication (number): Set the number of vlans for multicast replication
         - OrdinalNo (number): Signifies the ordinal number
         - OriginatorType (str(endUser | quickTest)): Indicates who created this trafficItem.
+        - RawTrafficRxPortsBehavior (str(loadBalanced | replicated)): 
         - RoundRobinPacketOrdering (bool): This option enables Round Robin Packet Ordering within endpoints across Rx ports.
         - RouteMesh (str(fullMesh | oneToOne)): The traffic flow type between each pair of source route endpoint and destination route endpoint.
         - SrcDestMesh (str(fullMesh | manyToMany | none | oneToOne)): Select the options to set the traffic mesh type between the Source Endpoint and Destination endpoint.
@@ -688,7 +748,7 @@ class TrafficItem(Base):
         """
         self._delete()
 
-    def find(self, AllowSelfDestined=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, EnableMacsecEgressOnlyAutoConfig=None, Enabled=None, Errors=None, FlowGroupCount=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, LabelPreferences=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RegenerateCount=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, State=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None, Warnings=None):
+    def find(self, AllowSelfDestined=None, BgpEpeOrdinalValue=None, BgpEpeSidType=None, BiDirectional=None, EgressEnabled=None, EnableDynamicMplsLabelValues=None, EnableMacsecEgressOnlyAutoConfig=None, Enabled=None, Errors=None, EvpnNextHopOrdinalValue=None, FlowGroupCount=None, FrerDuplicateElimination=None, HasOpenFlow=None, HostsPerNetwork=None, InterAsBgpPreference=None, InterAsLdpPreference=None, LabelPreferences=None, MaxNumberOfVpnLabelStack=None, MergeDestinations=None, MulticastForwardingMode=None, Name=None, NumVlansForMulticastReplication=None, OrdinalNo=None, OriginatorType=None, RawTrafficRxPortsBehavior=None, RegenerateCount=None, RoundRobinPacketOrdering=None, RouteMesh=None, SrcDestMesh=None, State=None, Suspend=None, TrafficItemType=None, TrafficType=None, TransmitMode=None, TransportLdpPreference=None, TransportRsvpTePreference=None, UseControlPlaneFrameSize=None, UseControlPlaneRate=None, Warnings=None):
         """Finds and retrieves trafficItem resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve trafficItem resources from the server.
@@ -698,12 +758,15 @@ class TrafficItem(Base):
         Args
         ----
         - AllowSelfDestined (bool): If true, this helps to send traffic from routes on an Ixia port to other routes on the same Ixia port.
+        - BgpEpeOrdinalValue (number): 
+        - BgpEpeSidType (str(adjSID | nodeSID | setSID)): 
         - BiDirectional (bool): If true, this enables traffic to be sent in forward and reverse destination.
         - EgressEnabled (bool): Enables the egress.
         - EnableDynamicMplsLabelValues (bool): Enables the dynamic MPLS label values.
         - EnableMacsecEgressOnlyAutoConfig (bool): 
         - Enabled (bool): If true, this enables the selected traffic item.
         - Errors (list(str)): Displays the errors.
+        - EvpnNextHopOrdinalValue (number): 
         - FlowGroupCount (number): Indicates the number of flow groups.
         - FrerDuplicateElimination (bool): 
         - HasOpenFlow (bool): Indicates whether or not this trafficItem has openflow.
@@ -718,6 +781,7 @@ class TrafficItem(Base):
         - NumVlansForMulticastReplication (number): Set the number of vlans for multicast replication
         - OrdinalNo (number): Signifies the ordinal number
         - OriginatorType (str(endUser | quickTest)): Indicates who created this trafficItem.
+        - RawTrafficRxPortsBehavior (str(loadBalanced | replicated)): 
         - RegenerateCount (number): 
         - RoundRobinPacketOrdering (bool): This option enables Round Robin Packet Ordering within endpoints across Rx ports.
         - RouteMesh (str(fullMesh | oneToOne)): The traffic flow type between each pair of source route endpoint and destination route endpoint.
