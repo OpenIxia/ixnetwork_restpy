@@ -1,5 +1,9 @@
 # Release Notes
 
+### Jan 2021
+* 1.0.62
+  * refresh multivalue when parent object pattern has changed
+
 ### Dec 2020
 * 1.0.61
   * support ixnetwork 9.10.2011.91

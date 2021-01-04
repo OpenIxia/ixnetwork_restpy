@@ -48,6 +48,8 @@ class Multivalue(Base):
         """
         if self._pattern is None:
             self._custom_select()
+        if self._properties['pattern'] not in self._properties:
+            self._custom_select()
         if self._properties['pattern'] == 'singleValue':
             self._pattern = self._format_value(self._properties['singleValue']['value'])
         elif self._properties['pattern'] == 'counter':
