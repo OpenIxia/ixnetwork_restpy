@@ -20,7 +20,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
-from io import IOBase
 
 
 class Multivalue(Base):
@@ -265,13 +264,13 @@ class Multivalue(Base):
             file in the package installation for an example of how to set the 
             value list using the different methods.
         """
-        if isinstance(values, IOBase) is True:
-            values = [line.strip() for line in values if line.strip()]
+        if isinstance(values, list) is True:
+            pass
         elif self._is_str(values) is True:
             with open(values, 'r') as fp:
                 values = [line.strip() for line in fp if line.strip()]
-        elif isinstance(values, list) is False:
-            raise TypeError('Type {} not supported for value list'.format(type(values)))
+        else:
+            values = [line.strip() for line in values if line.strip()]
         self._set_pattern('valueList', {'values': values})
 
     def RandomRange(self, min_value=None, max_value=None, step_value=None, seed=None):
