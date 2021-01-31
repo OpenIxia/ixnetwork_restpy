@@ -95,7 +95,7 @@ class PortMapAssistant(object):
         self._map = {}
         return self
 
-    def Connect(self, ForceOwnership=True, HostReadyTimeout=60, LinkUpTimeout=300):
+    def Connect(self, ForceOwnership=True, HostReadyTimeout=60, LinkUpTimeout=300, IgnoreLinkUp=False):
         """Connect virtual ports to test ports
 
         Args
@@ -117,9 +117,12 @@ class PortMapAssistant(object):
         start = time.time()
         self._connect_ports(ForceOwnership)
         self._IxNetwork.info('PortMapAssistant._connect_ports duration: %ssecs' % (time.time() - start))
-        start = time.time()
-        self._check_link_state(LinkUpTimeout)
-        self._IxNetwork.info('PortMapAssistant._check_link_state duration: %ssecs' % (time.time() - start))
+        if IgnoreLinkUp is False:
+            start = time.time()
+            self._check_link_state(LinkUpTimeout)
+            self._IxNetwork.info('PortMapAssistant._check_link_state duration: %ssecs' % (time.time() - start))
+        else:
+            self._IxNetwork.warn('Bypassing link state check')
         return self
 
     def _add_hosts(self, HostReadyTimeout):

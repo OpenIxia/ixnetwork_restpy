@@ -35,3 +35,16 @@ class StopSlmParams(Base):
 
     def __init__(self, parent):
         super(StopSlmParams, self).__init__(parent)
+
+    def StopSlm(self):
+        """Executes the stopSlm operation on the server.
+
+        Stop SLM PDU Transmission.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        return self._execute('stopSlm', payload=payload, response_object=None)

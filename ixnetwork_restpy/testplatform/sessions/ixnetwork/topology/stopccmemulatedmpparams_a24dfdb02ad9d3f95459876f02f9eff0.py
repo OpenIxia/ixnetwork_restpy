@@ -39,7 +39,7 @@ class StopCcmEmulatedMpParams(Base):
     def StopCcmEmulatedMp(self):
         """Executes the stopCcmEmulatedMp operation on the server.
 
-        Stop CCM PDU Transmission
+        Stop CCM PDU Transmission.
 
         Raises
         ------

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.errors import IxNetworkError
+from ixnetwork_restpy.multivalue import Multivalue
 import time
 
 
@@ -305,11 +306,15 @@ class Sessions(Base):
                             break
                 else:
                     class_name = '%s%s' % (piece[0].upper(), piece[1:])
-                    node = getattr(node, class_name)
-                    if hasattr(node, 'find') is True:
-                        node.find()
+                    if class_name == 'Multivalue':
+                        return Multivalue(node, href)
+                    else:
+                        node = getattr(node, class_name)
+                        if hasattr(node, 'find') is True:
+                            node.find()
             return node
-        except:
+        except Exception as e:
+            self.warn(e)
             return None
 
     def GetFileList(self, remote_directory=None):
@@ -328,7 +333,7 @@ class Sessions(Base):
             href = '%s?absolute=%s' % (href, remote_directory)
         return self._connection._read(href)
 
-    def DownloadFile(self, remote_filename, local_filename = None):
+    def DownloadFile(self, remote_filename, local_filename=None):
         """Download a file from the IxNetwork session instance
 
         Args

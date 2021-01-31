@@ -1928,7 +1928,7 @@ class CfmMp(Base):
     def StartCcmEmulatedMp(self, *args, **kwargs):
         """Executes the startCcmEmulatedMp operation on the server.
 
-        Start CCM PDU Transmission
+        Start CCM PDU Transmission.
 
         DEPRECATED startCcmEmulatedMp(Arg2=list)list
         --------------------------------------------
@@ -1973,7 +1973,7 @@ class CfmMp(Base):
     def StopCcmEmulatedMp(self, *args, **kwargs):
         """Executes the stopCcmEmulatedMp operation on the server.
 
-        Stop CCM PDU Transmission
+        Stop CCM PDU Transmission.
 
         DEPRECATED stopCcmEmulatedMp(Arg2=list)list
         -------------------------------------------

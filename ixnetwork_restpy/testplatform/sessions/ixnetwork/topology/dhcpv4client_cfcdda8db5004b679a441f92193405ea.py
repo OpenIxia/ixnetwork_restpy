@@ -657,6 +657,31 @@ class Dhcpv4client(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('abort', payload=payload, response_object=None)
 
+    def Inform(self, *args, **kwargs):
+        """Executes the inform operation on the server.
+
+        Sends Inform packet.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        inform(SessionIndices=list)
+        ---------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        inform(SessionIndices=string)
+        -----------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('inform', payload=payload, response_object=None)
+
     def Rebind(self, *args, **kwargs):
         """Executes the rebind operation on the server.
 

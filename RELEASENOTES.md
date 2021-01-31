@@ -1,6 +1,10 @@
 # Release Notes
 
 ### Jan 2021
+* 1.0.63
+  * return multivalue object given a valid multivalue href
+  * PortMapAssistant option to bypass link state check
+  * allow Multivalue.ValueList method to accept a list of values in a file
 * 1.0.62
   * refresh multivalue when parent object pattern has changed
 

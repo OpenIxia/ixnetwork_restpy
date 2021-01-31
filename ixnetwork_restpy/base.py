@@ -509,3 +509,8 @@ class Base(object):
         - message (str): a message to be logged at DEBUG level
         """
         self._connection._debug(message)
+
+    def _is_str(self, value):
+        """Portable determination if value is of type 'string'
+        """
+        return isinstance(value, ("".__class__, u"".__class__))

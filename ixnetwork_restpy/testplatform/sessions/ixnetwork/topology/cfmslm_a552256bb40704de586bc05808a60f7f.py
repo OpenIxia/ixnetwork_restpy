@@ -351,3 +351,63 @@ class CfmSlm(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
+
+    def StartSlm(self, *args, **kwargs):
+        """Executes the startSlm operation on the server.
+
+        Start SLM
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        startSlm(SessionIndices=list)
+        -----------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        startSlm(SessionIndices=string)
+        -------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        startSlm(Arg2=list)list
+        -----------------------
+        - Arg2 (list(number)): List of indices into the network info. An empty list indicates all instances in the node specific data.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('startSlm', payload=payload, response_object=None)
+
+    def StopSlm(self, *args, **kwargs):
+        """Executes the stopSlm operation on the server.
+
+        Stop SLM
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stopSlm(SessionIndices=list)
+        ----------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        stopSlm(SessionIndices=string)
+        ------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        DEPRECATED stopSlm(Arg2=list)list
+        ---------------------------------
+        - Arg2 (list(number)): List of indices into the network info. An empty list indicates all instances in the node specific data.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopSlm', payload=payload, response_object=None)

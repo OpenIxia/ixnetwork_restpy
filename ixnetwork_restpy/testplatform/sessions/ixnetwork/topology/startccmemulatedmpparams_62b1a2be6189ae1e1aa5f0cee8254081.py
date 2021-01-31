@@ -39,7 +39,7 @@ class StartCcmEmulatedMpParams(Base):
     def StartCcmEmulatedMp(self):
         """Executes the startCcmEmulatedMp operation on the server.
 
-        Start CCM PDU Transmission
+        Start CCM PDU Transmission.
 
         Raises
         ------

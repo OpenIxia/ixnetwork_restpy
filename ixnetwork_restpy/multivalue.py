@@ -20,6 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
+from io import IOBase
 
 
 class Multivalue(Base):
@@ -246,8 +247,31 @@ class Multivalue(Base):
         
         Args
         ----
-        - values (list(str)): List of string values. Each value must be according to the format property
+        - values (Union[list(str), str, IOBase]): Value list values. 
+            Each value in the value list must adhere to the format property of
+            this object.
+
+            If the type(values) is a list then it will be directly assigned
+            to the valueList.
+            
+            If the type(values) is a str then it is assumed to be a filename
+            and the file will be opened and the contents will be read from that 
+            file and assigned to the valueList.
+            
+            If the type(values) is an IOBase object then the contents will be
+            read from that file object and the file object will not be closed.
+
+            See the pytest_tests/multivalue_tests/test_multivalue_valuelist.py
+            file in the package installation for an example of how to set the 
+            value list using the different methods.
         """
+        if isinstance(values, IOBase) is True:
+            values = [line.strip() for line in values if line.strip()]
+        elif self._is_str(values) is True:
+            with open(values, 'r') as fp:
+                values = [line.strip() for line in fp if line.strip()]
+        elif isinstance(values, list) is False:
+            raise TypeError('Type {} not supported for value list'.format(type(values)))
         self._set_pattern('valueList', {'values': values})
 
     def RandomRange(self, min_value=None, max_value=None, step_value=None, seed=None):
