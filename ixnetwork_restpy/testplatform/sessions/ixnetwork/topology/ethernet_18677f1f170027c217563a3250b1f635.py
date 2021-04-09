@@ -255,13 +255,13 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3_2471ee7fdf32e67045bfc6c9e14f54d6.IsisL3): An instance of the IsisL3 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3_dd64c602d4f484ff78cfcd9dc64c9599.IsisL3): An instance of the IsisL3 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3_2471ee7fdf32e67045bfc6c9e14f54d6 import IsisL3
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3_dd64c602d4f484ff78cfcd9dc64c9599 import IsisL3
         return IsisL3(self)
 
     @property
@@ -391,17 +391,31 @@ class Ethernet(Base):
         return LightweightDhcpv6relayAgent(self)
 
     @property
-    def Mka(self):
+    def Macsec(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_d0af5e39c81cb01eb75d4a693187a9ca.Mka): An instance of the Mka class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.macsec_173e8708a4fd94b3f300346a0d2ddde4.Macsec): An instance of the Macsec class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_d0af5e39c81cb01eb75d4a693187a9ca import Mka
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.macsec_173e8708a4fd94b3f300346a0d2ddde4 import Macsec
+        return Macsec(self)
+
+    @property
+    def Mka(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_01fbc78a6ba07ec3cc23255410857b27.Mka): An instance of the Mka class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_01fbc78a6ba07ec3cc23255410857b27 import Mka
         return Mka(self)
 
     @property
@@ -465,13 +479,13 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_d7a99a629d894d9e4fc7eae719c12528.Pppoxclient): An instance of the Pppoxclient class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_57c51b5ca094121e33c3a9ba5033980f.Pppoxclient): An instance of the Pppoxclient class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_d7a99a629d894d9e4fc7eae719c12528 import Pppoxclient
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_57c51b5ca094121e33c3a9ba5033980f import Pppoxclient
         return Pppoxclient(self)
 
     @property
@@ -493,13 +507,13 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_3fd2fb2cedd41c78a01ce05ea4767397.Ptp): An instance of the Ptp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_26111dde679ed88af879687d76db2401.Ptp): An instance of the Ptp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_3fd2fb2cedd41c78a01ce05ea4767397 import Ptp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_26111dde679ed88af879687d76db2401 import Ptp
         return Ptp(self)
 
     @property
@@ -521,13 +535,13 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_89175be6eeaf724ac873ac56e1db38b0.StaticMacsec): An instance of the StaticMacsec class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_70e39a2312e7d8eadf5e901b9bbce6c2.StaticMacsec): An instance of the StaticMacsec class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_89175be6eeaf724ac873ac56e1db38b0 import StaticMacsec
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_70e39a2312e7d8eadf5e901b9bbce6c2 import StaticMacsec
         return StaticMacsec(self)
 
     @property

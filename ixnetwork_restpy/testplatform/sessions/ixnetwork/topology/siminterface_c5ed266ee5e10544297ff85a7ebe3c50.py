@@ -48,13 +48,13 @@ class SimInterface(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudointerface_9126bc028693cbbf9d918cf385cfa24d.IsisL3PseudoInterface): An instance of the IsisL3PseudoInterface class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudointerface_89754a450e3c5a1e7f9a873f3cd3b99a.IsisL3PseudoInterface): An instance of the IsisL3PseudoInterface class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudointerface_9126bc028693cbbf9d918cf385cfa24d import IsisL3PseudoInterface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudointerface_89754a450e3c5a1e7f9a873f3cd3b99a import IsisL3PseudoInterface
         return IsisL3PseudoInterface(self)
 
     @property

@@ -74,13 +74,13 @@ class CfmBridge(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmmp_8584bca4487041ab880565a01c8deaf3.CfmMp): An instance of the CfmMp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmmp_455bcaf1d68b20d894a87383d2cb1965.CfmMp): An instance of the CfmMp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmmp_8584bca4487041ab880565a01c8deaf3 import CfmMp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmmp_455bcaf1d68b20d894a87383d2cb1965 import CfmMp
         return CfmMp(self)._select()
 
     @property
@@ -727,26 +727,6 @@ class CfmBridge(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getCfmLoopbackDbLearnedInformation', payload=payload, response_object=None)
 
-    def GetCfmSLMDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmSLMDbLearnedInformation operation on the server.
-
-        Get Learned SLM Information
-
-        getCfmSLMDbLearnedInformation(Arg2=list)list
-        --------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmSLMDbLearnedInformation', payload=payload, response_object=None)
-
     def GetCfmTSTDbLearnedInformation(self, *args, **kwargs):
         """Executes the getCfmTSTDbLearnedInformation operation on the server.
 
@@ -1071,31 +1051,6 @@ class CfmBridge(Base):
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getPeriodicLTLearnedInformation', payload=payload, response_object=None)
-
-    def GetSLMLearnedInfo(self, *args, **kwargs):
-        """Executes the getSLMLearnedInfo operation on the server.
-
-        Get SLM Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getSLMLearnedInfo(SessionIndices=list)
-        --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getSLMLearnedInfo(SessionIndices=string)
-        ----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getSLMLearnedInfo', payload=payload, response_object=None)
 
     def GetTSTLearnedInfo(self, *args, **kwargs):
         """Executes the getTSTLearnedInfo operation on the server.

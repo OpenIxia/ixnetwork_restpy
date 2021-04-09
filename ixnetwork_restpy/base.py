@@ -21,11 +21,10 @@
 # THE SOFTWARE. 
 import sys
 import re
-import logging
 from inspect import isclass
-from ixnetwork_restpy.connection import Connection
 from ixnetwork_restpy.errors import NotFoundError
 from ixnetwork_restpy.files import Files
+from requests import utils
 
 
 try:
@@ -217,7 +216,9 @@ class Base(object):
         public_key = '%s%s' % (key[0].upper(), key[1:])
         if isinstance(value, Files):
             if value.is_local_file:
-                upload_url = '%s/files?filename=%s' % (self.href[0:self.href.find('ixnetwork') + len('ixnetwork')], value.file_name)
+                base = self.href[0:self.href.find('ixnetwork') + len('ixnetwork')]
+                filename = utils.quote(value.file_name)
+                upload_url = '%s/files?filename=%s' % (base, filename)
                 self._connection._execute(upload_url, payload=value)
             return value.file_name
         elif isinstance(value, Base):

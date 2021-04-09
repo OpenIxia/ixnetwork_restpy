@@ -148,13 +148,13 @@ class DeviceGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3router_cc74440ddcc56fa47267116e1a0960a5.IsisL3Router): An instance of the IsisL3Router class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3router_502c03d3345feb0ad46b4b9e2d2f2e95.IsisL3Router): An instance of the IsisL3Router class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3router_cc74440ddcc56fa47267116e1a0960a5 import IsisL3Router
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3router_502c03d3345feb0ad46b4b9e2d2f2e95 import IsisL3Router
         return IsisL3Router(self)
 
     @property
@@ -330,13 +330,13 @@ class DeviceGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2router_659ff3c35a4b2f68aa09dd5a0be8f029.Ospfv2Router): An instance of the Ospfv2Router class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2router_128102e8c3e6c39adb7b7129aa61b772.Ospfv2Router): An instance of the Ospfv2Router class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2router_659ff3c35a4b2f68aa09dd5a0be8f029 import Ospfv2Router
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2router_128102e8c3e6c39adb7b7129aa61b772 import Ospfv2Router
         return Ospfv2Router(self)
 
     @property
@@ -344,13 +344,13 @@ class DeviceGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3router_4fb70543029537debb6399a437c0ac39.Ospfv3Router): An instance of the Ospfv3Router class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3router_b2d6b4f2e4d28091cc2ded1e4203f935.Ospfv3Router): An instance of the Ospfv3Router class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3router_4fb70543029537debb6399a437c0ac39 import Ospfv3Router
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3router_b2d6b4f2e4d28091cc2ded1e4203f935 import Ospfv3Router
         return Ospfv3Router(self)
 
     @property

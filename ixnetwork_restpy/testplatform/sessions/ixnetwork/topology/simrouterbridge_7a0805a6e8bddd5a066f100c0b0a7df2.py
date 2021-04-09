@@ -48,13 +48,13 @@ class SimRouterBridge(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmsimulatedmp_d0096b7abd3340f4c8bdf5e2ba2578fb.CfmSimulatedMp): An instance of the CfmSimulatedMp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmsimulatedmp_67cd757b726cce9c0de4f91be721d97e.CfmSimulatedMp): An instance of the CfmSimulatedMp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmsimulatedmp_d0096b7abd3340f4c8bdf5e2ba2578fb import CfmSimulatedMp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmsimulatedmp_67cd757b726cce9c0de4f91be721d97e import CfmSimulatedMp
         return CfmSimulatedMp(self)
 
     @property

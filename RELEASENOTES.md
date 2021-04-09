@@ -1,5 +1,10 @@
 # Release Notes
 
+### Apr 2021
+* 1.0.65
+  * support ixnetwork 9.15.2101.8
+  * escape filename in query string param
+
 ### Jan 2021
 * 1.0.64
   * return multivalue object given a valid multivalue href

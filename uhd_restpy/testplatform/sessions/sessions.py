@@ -366,3 +366,8 @@ class Sessions(Base):
             remote_filename = remote_filename.replace('\\', '/')
         return self._connection._put_file('%s/ixnetwork' % self.href, 
             local_filename=local_filename, remote_filename=remote_filename)
+
+    def RemoveFile(self, remote_filename):
+        if self._parent.Platform == 'linux' and remote_filename is not None:
+            remote_filename = remote_filename.replace('\\', '/')
+        return self._connection._delete_file('%s/ixnetwork' % self.href, remote_filename=remote_filename)

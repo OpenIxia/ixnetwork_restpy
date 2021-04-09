@@ -24,7 +24,7 @@ from ixnetwork_restpy.files import Files
 
 
 class IsisPseudoMultiTopologyValuesList(Base):
-    """DEPRECATED ISIS MT Values
+    """ISIS MT Values
     The IsisPseudoMultiTopologyValuesList class encapsulates a list of IsisPseudoMultiTopologyValuesList resources that are managed by the system.
     A list of resources can be retrieved from the server using the IsisPseudoMultiTopologyValuesList.find() method.
     """
@@ -62,7 +62,7 @@ class IsisPseudoMultiTopologyValuesList(Base):
 
     @property
     def EnableMtId(self):
-        """DEPRECATED 
+        """
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enable MT-Id
@@ -72,7 +72,7 @@ class IsisPseudoMultiTopologyValuesList(Base):
 
     @property
     def MtId(self):
-        """DEPRECATED 
+        """
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): MT Id

@@ -27,7 +27,7 @@ import time
 import json
 import logging
 import pkg_resources
-from requests import Session, request
+from requests import Session, request, utils
 from requests.exceptions import ConnectTimeout
 from io import BufferedReader
 from ixnetwork_restpy.errors import *
@@ -261,7 +261,7 @@ class Connection(object):
 
     def _get_file(self, url, remote_filename, remote_directory=None, local_filename=None, local_directory=None, return_content=False):
         headers = self._headers
-        url = '%s/files?filename=%s' % (url, remote_filename)
+        url = '%s/files?filename=%s' % (url, utils.quote(remote_filename))
         connection, url = self._normalize_url(url)
         if remote_directory is not None:
             url = '%s&absolute=%s' % (url, remote_directory)
@@ -289,7 +289,7 @@ class Connection(object):
         headers['Content-Type'] = 'application/octet-stream'
         if remote_filename is None:
             remote_filename = os.path.basename(local_filename)
-        url = '%s/files?filename=%s' % (url, remote_filename)
+        url = '%s/files?filename=%s' % (url, utils.quote(remote_filename))
         connection, url = self._normalize_url(url)
         with open(os.path.normpath(local_filename), 'rb') as fid:
             data = fid.read()
@@ -301,7 +301,7 @@ class Connection(object):
 
     def _delete_file(self, url, remote_filename):
         headers = self._headers
-        url = '%s/files?filename=%s' % (url, remote_filename)
+        url = '%s/files?filename=%s' % (url, utils.quote(remote_filename))
         connection, url = self._normalize_url(url)
         response = self._session.request('DELETE', url, headers=headers, verify=self._verify_cert)
         if response.status_code == 204:
@@ -388,7 +388,7 @@ class Connection(object):
             url = response.headers['location']
             if url.find('://') != -1:
                 self._scheme = url[:url.find('://')]
-                self._hostname = url[url.find('://')+3:url.find('/', url.find('://')+3)]
+                self._hostname = url[url.find('://') + 3:url.find('/', url.find('://') + 3)]
                 if self._scheme == 'https':
                     self._rest_port = 443
                 splitter = ']:' if ']' in self._hostname else ':'
@@ -411,7 +411,7 @@ class Connection(object):
                 if state == 'IN_PROGRESS':
                     time.sleep(1)
                     state_url = async_status['url']
-                    if state_url.startswith(self._scheme) == False:
+                    if state_url.startswith(self._scheme) is False:
                         state_url = '%s/%s' % (connection, state_url.strip('/'))
                     self._print_request('GET', state_url)
                     response = self._session.request('GET', state_url, headers=headers, verify=self._verify_cert)
@@ -438,7 +438,7 @@ class Connection(object):
                 return self._send_recv('GET', href)
             if response.headers.get('Content-Type'):
                 if 'application/json' in response.headers['Content-Type']:
-                   return response.json()
+                    return response.json()
             return None
         else:
             self._process_response_status_code(url, headers, response)
