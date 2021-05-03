@@ -122,7 +122,7 @@ class BondedGRE(Base):
         """DEPRECATED 
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
@@ -180,7 +180,7 @@ class BondedGRE(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/30/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
@@ -261,7 +261,7 @@ class BondedGRE(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
@@ -316,10 +316,10 @@ class BondedGRE(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - TunnelType (str(dsl | lte)): Determines the Tunnel type to be used
 
         Raises
@@ -333,10 +333,10 @@ class BondedGRE(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - TunnelType (str(dsl | lte)): Determines the Tunnel type to be used
 
         Returns
@@ -369,17 +369,17 @@ class BondedGRE(Base):
         Args
         ----
         - BSessionInfo (list(str[activeHello | bondingTunnel | configured | denied | diagEnd | dSLFail | dSLTunnel | established | establishing | helloPaused | idleHello | lTEFail | lTETunnel | overflowedToLTETunnel | overflowingToLTETunnel | partiallyConfigured | switchedToDSLTunnel | switchingToActiveHello | switchingToDSLTunnel | switchingToIdleHello | tearedDown | unconfigured | waitForLTE])): Current BondedGRE session state: Configured - The GRE session is in configured state. Unconfigured - The GRE session is in unconfigured state. Establishing - GRE Tunnel setup request message sent, waiting for Accept message from HAAP. Established - GRE Tunnel setup request has been accepted by the HAAP. Teared Down - The tunnel has been teared down by the HAAP. Denied (with error code) - GRE Tunnel setup request has been denied by the HAAP. Idle Hello - HG has entered in Idle Hello state. Active Hello - HG has entered in Active Hello state. Switching to Idle Hello - The tunnel is entering into Idle Hello state. Switching to Active Hello - The tunnel is entering into Active Hello state. Hello Paused - The tunnel has entered into Hello Paused state.
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - DhcpIp (list(str)): The discovered IPv4 addresses.
         - ErrorCode (list(number)): The HAAP uses the Error Code attribute to inform the HG of the error code. It depicts why the GRE Tunnel Setup Request is denied. The list of codes is as follows: 0: No Error. 1: The HAAP was not reachable over LTE during the GRE Tunnel Setup Request. 2: The HAAP was not reachable via DSL during the GRE Tunnel Setup Request. 3: The LTE GRE tunnel to the HAAP failed. 4: The DSL GRE tunnel to the HAAP failed. 5: The given DSL User ID is not allowed to use the GRE Tunnel Bonding service. 6: The given User Alias / User ID (Globally Unique Identifier (GUID) is not allowed to use the GRE Tunnel Bonding service. 7: The LTE and DSL User IDs do not match. 8: The HAAP denied the GRE Tunnel Setup Request because a bonding session with the same User ID already exists. 9: The HAAP denied the GRE Tunnel Setup Request because the user's CIN is not permitted. 10: The HAAP terminated a GRE Tunnel Bonding session for maintenance reasons. 11: There was a communication error between the HAAP and the management system during the LTE GRE Tunnel Setup Request. 12: There was a communication error between the HAAP and the management system during the DSL GRE Tunnel Setup Request.
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/30/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - HomeGatewayInfo (list(str[activeHello | bondingTunnel | configured | denied | diagEnd | dSLFail | dSLTunnel | established | establishing | helloPaused | idleHello | lTEFail | lTETunnel | overflowedToLTETunnel | overflowingToLTETunnel | partiallyConfigured | switchedToDSLTunnel | switchingToActiveHello | switchingToDSLTunnel | switchingToIdleHello | tearedDown | unconfigured | waitForLTE])): Current Home Gateway session state: Unconfigured - The HG is in unconfigured state. Configured - The HG is in configured state. Partially Configured - Only one tunnel (DSL/LTE) is configured in the HG. Diagnostic Start: Bonding Tunnel - HG has entered in diagnostic mode to test the performance of the entire bonding tunnel. Diagnostic Start: DSL Tunnel - HG has entered in diagnostic mode to test the performance of the DSL bonding tunnel. Diagnostic Start: LTE Tunnel - HG has entered in diagnostic mode to test the performance of the LTE tunnel. Diagnostic End - End of diagnostic operation. DSL Link Failure - DSL Link has failed. LTE Link Failure - LTE Link has failed. Switching to DSL Tunnel - HG uses this attribute to inform the HAAP to use the DSL GRE tunnel only. Switching to DSL Tunnel (Acknowledged) - HAAP has sent acknowledgment to the notification Switching to DSL Tunnel sent by HG. Overflowing to LTE Tunnel - HG uses this attribute to inform the HAAP that the LTE GRE tunnel can be used again. Overflowing to LTE Tunnel (Acknowledged) - HAAP has sent acknowledgment to the notification Overflowing to LTE Tunnel sent by HG.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         - TunnelType (str(dsl | lte)): Determines the Tunnel type to be used
@@ -441,7 +441,7 @@ class BondedGRE(Base):
     def Abort(self, *args, **kwargs):
         """Executes the abort operation on the server.
 
-        Abort CPF control plane (equals to demote to kUnconfigured state).
+        Abort selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -651,7 +651,7 @@ class BondedGRE(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start CPF control plane (equals to promote to negotiated state).
+        Start selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -676,7 +676,7 @@ class BondedGRE(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+        Stop selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -745,14 +745,14 @@ class BondedGRE(Base):
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        teardown(Error_code=number)
-        ---------------------------
-        - Error_code (number): This parameter requires a error_code of type kInteger
-
         teardown(Error_code=number, SessionIndices=list)
         ------------------------------------------------
         - Error_code (number): This parameter requires a error_code of type kInteger
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        teardown(Error_code=number)
+        ---------------------------
+        - Error_code (number): This parameter requires a error_code of type kInteger
 
         teardown(SessionIndices=string, Error_code=number)
         --------------------------------------------------

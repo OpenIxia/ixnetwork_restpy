@@ -105,13 +105,13 @@ class DotOneX(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv4client_cfcdda8db5004b679a441f92193405ea.Dhcpv4client): An instance of the Dhcpv4client class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv4client_2efe527fac3c70d878c70b3cf02fb51b.Dhcpv4client): An instance of the Dhcpv4client class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv4client_cfcdda8db5004b679a441f92193405ea import Dhcpv4client
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv4client_2efe527fac3c70d878c70b3cf02fb51b import Dhcpv4client
         return Dhcpv4client(self)
 
     @property
@@ -245,13 +245,13 @@ class DotOneX(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3_dd64c602d4f484ff78cfcd9dc64c9599.IsisL3): An instance of the IsisL3 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3_2471ee7fdf32e67045bfc6c9e14f54d6.IsisL3): An instance of the IsisL3 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3_dd64c602d4f484ff78cfcd9dc64c9599 import IsisL3
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3_2471ee7fdf32e67045bfc6c9e14f54d6 import IsisL3
         return IsisL3(self)
 
     @property
@@ -381,31 +381,17 @@ class DotOneX(Base):
         return LightweightDhcpv6relayAgent(self)
 
     @property
-    def Macsec(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.macsec_173e8708a4fd94b3f300346a0d2ddde4.Macsec): An instance of the Macsec class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.macsec_173e8708a4fd94b3f300346a0d2ddde4 import Macsec
-        return Macsec(self)
-
-    @property
     def Mka(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_01fbc78a6ba07ec3cc23255410857b27.Mka): An instance of the Mka class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_76533539023538ec251283792c97e862.Mka): An instance of the Mka class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_01fbc78a6ba07ec3cc23255410857b27 import Mka
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_76533539023538ec251283792c97e862 import Mka
         return Mka(self)
 
     @property
@@ -455,13 +441,13 @@ class DotOneX(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_57c51b5ca094121e33c3a9ba5033980f.Pppoxclient): An instance of the Pppoxclient class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_d7a99a629d894d9e4fc7eae719c12528.Pppoxclient): An instance of the Pppoxclient class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_57c51b5ca094121e33c3a9ba5033980f import Pppoxclient
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_d7a99a629d894d9e4fc7eae719c12528 import Pppoxclient
         return Pppoxclient(self)
 
     @property
@@ -483,13 +469,13 @@ class DotOneX(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_26111dde679ed88af879687d76db2401.Ptp): An instance of the Ptp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_fa00a1af0dbeaf7283dc30ee1de74ba7.Ptp): An instance of the Ptp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_26111dde679ed88af879687d76db2401 import Ptp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_fa00a1af0dbeaf7283dc30ee1de74ba7 import Ptp
         return Ptp(self)
 
     @property
@@ -511,13 +497,13 @@ class DotOneX(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_70e39a2312e7d8eadf5e901b9bbce6c2.StaticMacsec): An instance of the StaticMacsec class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_89175be6eeaf724ac873ac56e1db38b0.StaticMacsec): An instance of the StaticMacsec class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_70e39a2312e7d8eadf5e901b9bbce6c2 import StaticMacsec
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_89175be6eeaf724ac873ac56e1db38b0 import StaticMacsec
         return StaticMacsec(self)
 
     @property
@@ -579,7 +565,7 @@ class DotOneX(Base):
         """DEPRECATED 
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
@@ -609,7 +595,7 @@ class DotOneX(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/30/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
@@ -722,7 +708,7 @@ class DotOneX(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): 
+        - str(None | /api/v1/sessions/30/ixnetwork/topology/.../*): 
         """
         return self._get_attribute(self._SDM_ATT_MAP['ParentEth'])
     @ParentEth.setter
@@ -802,7 +788,7 @@ class DotOneX(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
@@ -885,11 +871,11 @@ class DotOneX(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - ParentEth (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): 
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - ParentEth (str(None | /api/v1/sessions/30/ixnetwork/topology/.../*)): 
+        - StackedLayers (list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
         Raises
         ------
@@ -902,11 +888,11 @@ class DotOneX(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - ParentEth (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): 
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - ParentEth (str(None | /api/v1/sessions/30/ixnetwork/topology/.../*)): 
+        - StackedLayers (list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
         Returns
         -------
@@ -937,16 +923,16 @@ class DotOneX(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/30/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - ParentEth (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): 
+        - ParentEth (str(None | /api/v1/sessions/30/ixnetwork/topology/.../*)): 
         - SessionInfo (list(str[acquired | authenticated | authenticating | configured | connecting | disconnected | eapFailure | forceAuth | forceUnAuth | genFailure | held | initFailure | invalidFailure | loadFailure | logoff | restart | unconfigured])): Current 802.1x session state: Log Off - Supplicant has been sent EAPOL-Logoff message. Stopped - Supplicant disconnected succesfully. Authenticating - Supplicant is being authenticated. but negotiation didn't complete yet. Held - Supplicant ignores and discards all EAPOL packets. Authenticated - Authenticator has successfully authenticated the Supplicant. Restart - Supplicant is entered Restart state. Force Authentication - This state is entered because DUT's portControl is set to force-authorized. Force UnAuthentication - This state is entered because DUT's portControl is set to force-unauthorized. Unconfigured - Supplicant Unconfigured state. Configured - Supplicant initilize state. Authentication Failure - Supplicant's authentication failed. CA Cert Load Failed - Supplicant's unable to load CA certificate. Failed To Load Certificate/Key - Failed to load certificate or certificate key. Invalid EAP - Invalid EAP. Generic EAP Failure - Generic EAP Failure.
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
@@ -1022,7 +1008,7 @@ class DotOneX(Base):
     def Abort(self, *args, **kwargs):
         """Executes the abort operation on the server.
 
-        Abort CPF control plane (equals to demote to kUnconfigured state).
+        Abort selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -1072,7 +1058,7 @@ class DotOneX(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start CPF control plane (equals to promote to negotiated state).
+        Start selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -1097,7 +1083,7 @@ class DotOneX(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+        Stop selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 

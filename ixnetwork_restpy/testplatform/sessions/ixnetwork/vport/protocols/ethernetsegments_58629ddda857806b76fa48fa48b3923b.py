@@ -463,8 +463,6 @@ class EthernetSegments(Base):
     def FlushRemoteCmacForwardingTable(self):
         """Executes the flushRemoteCmacForwardingTable operation on the server.
 
-        NOT DEFINED
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server

@@ -51,6 +51,7 @@ class Capture(Base):
         'DecodeAsNetworkProtocols': 'decodeAsNetworkProtocols',
         'DecodeAsTransportProtocols': 'decodeAsTransportProtocols',
         'DisplayFiltersControlCapture': 'displayFiltersControlCapture',
+        'HardwareEnabled': 'hardwareEnabled',
         'IsCaptureRunning': 'isCaptureRunning',
         'IsControlCaptureRunning': 'isControlCaptureRunning',
         'SliceSize': 'sliceSize',
@@ -334,6 +335,18 @@ class Capture(Base):
         self._set_attribute(self._SDM_ATT_MAP['DisplayFiltersControlCapture'], value)
 
     @property
+    def HardwareEnabled(self):
+        """
+        Returns
+        -------
+        - bool: If true, enables the capture of data plane traffic. Note that in order for data traffic to be captured, the vport attritbute -rxMode must be set to capture.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['HardwareEnabled'])
+    @HardwareEnabled.setter
+    def HardwareEnabled(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['HardwareEnabled'], value)
+
+    @property
     def IsCaptureRunning(self):
         """
         Returns
@@ -387,7 +400,7 @@ class Capture(Base):
     def TriggerPosition(self, value):
         self._set_attribute(self._SDM_ATT_MAP['TriggerPosition'], value)
 
-    def update(self, AfterTriggerFilter=None, BeforeTriggerFilter=None, CaptureMode=None, ContinuousFilters=None, ControlActiveCapture=None, ControlBufferBehaviour=None, ControlBufferSize=None, ControlCaptureFilter=None, ControlCaptureTrigger=None, ControlInterfaceType=None, ControlSliceSize=None, DisplayFiltersControlCapture=None, SliceSize=None, SoftwareEnabled=None, TriggerPosition=None):
+    def update(self, AfterTriggerFilter=None, BeforeTriggerFilter=None, CaptureMode=None, ContinuousFilters=None, ControlActiveCapture=None, ControlBufferBehaviour=None, ControlBufferSize=None, ControlCaptureFilter=None, ControlCaptureTrigger=None, ControlInterfaceType=None, ControlSliceSize=None, DisplayFiltersControlCapture=None, HardwareEnabled=None, SliceSize=None, SoftwareEnabled=None, TriggerPosition=None):
         """Updates capture resource on the server.
 
         Args
@@ -404,6 +417,7 @@ class Capture(Base):
         - ControlInterfaceType (str(anyInterface | specificInterface)): Enables control capture on the desired interfaces.
         - ControlSliceSize (number): Sets the size of the control capture slices.
         - DisplayFiltersControlCapture (str): Displays the packet filter set inside the control capture that is used to filter the already captured packets
+        - HardwareEnabled (bool): If true, enables the capture of data plane traffic. Note that in order for data traffic to be captured, the vport attritbute -rxMode must be set to capture.
         - SliceSize (number): The size of the capture slice.
         - SoftwareEnabled (bool): If true, enables the capture of control plane traffic. Note that in order for data traffic to be captured, the vport attritbute -rxMode must be set to capture.
         - TriggerPosition (number): Controls the dividing line within the capture buffer between before trigger data and post trigger data. This control is only useful in triggered mode.
@@ -476,7 +490,7 @@ class Capture(Base):
         mergeCapture(Arg2=enum, Arg3=href, Arg4=enum, Arg5=string)
         ----------------------------------------------------------
         - Arg2 (str(control | data)): The capture type, could be either control or data.
-        - Arg3 (str(None | /api/v1/sessions/1/ixnetwork/vport/.../capture)): The capture object of a port.
+        - Arg3 (str(None | /api/v1/sessions/7/ixnetwork/vport/.../capture)): The capture object of a port.
         - Arg4 (str(control | data)): The capture type, could be either control or data.
         - Arg5 (str): The full path where the resulted merged capture will be saved, the result capture name needs to contain extension also.
 
@@ -499,7 +513,7 @@ class Capture(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        This command starts the capture process for a port or group of ports.
+        The command starts the capture porcess for the specified port.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -520,7 +534,7 @@ class Capture(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        This command stops captures for the specified capture configuration.
+        The command stops the capture on a port.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 

@@ -107,7 +107,7 @@ class TlvProfile(Base):
 
         copyTlv(Arg2=href)href
         ----------------------
-        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/globals/.../topology)): An object reference to a source template tlv
+        - Arg2 (str(None | /api/v1/sessions/7/ixnetwork/globals/.../topology)): An object reference to a source template tlv
         - Returns str(None): An object reference to the newly created topology tlv as a result of the copy operation
 
         Raises

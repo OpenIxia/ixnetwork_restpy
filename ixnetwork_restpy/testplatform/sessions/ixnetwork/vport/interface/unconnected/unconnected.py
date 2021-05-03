@@ -42,7 +42,7 @@ class Unconnected(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The name of a specified connected protocol interface on the link that is directly connected to the DUT.
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface): The name of a specified connected protocol interface on the link that is directly connected to the DUT.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
@@ -54,7 +54,7 @@ class Unconnected(Base):
 
         Args
         ----
-        - ConnectedVia (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The name of a specified connected protocol interface on the link that is directly connected to the DUT.
+        - ConnectedVia (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The name of a specified connected protocol interface on the link that is directly connected to the DUT.
 
         Raises
         ------

@@ -230,7 +230,7 @@ class Interface(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The OSI interface ID for this interface.
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface): The OSI interface ID for this interface.
         """
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceId'])
     @InterfaceId.setter
@@ -459,7 +459,7 @@ class Interface(Base):
         - EnableConnectedToDut (bool): If enabled, this ISIS interface is directly connected to the DUT.
         - Enabled (bool): Enables the use of this interface for the simulated router.
         - ExtendedCircuitId (number): The integer value of the local circuit ID.
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The OSI interface ID for this interface.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The OSI interface ID for this interface.
         - InterfaceIp (str): The IP address for this interface.
         - InterfaceIpMask (str): Available only when Interface Connected to DUT is disabled. The mask used with the IPv4 address for this virtual interface on the emulated ISIS router. This interface address is used to connect to virtual ISIS Network Ranges behind the Ixia-emulated ISIS router.
         - Ipv6MtMetric (number): This metric is same as the Interface Metric. If true, it allows you to enter data.
@@ -502,7 +502,7 @@ class Interface(Base):
         - EnableConnectedToDut (bool): If enabled, this ISIS interface is directly connected to the DUT.
         - Enabled (bool): Enables the use of this interface for the simulated router.
         - ExtendedCircuitId (number): The integer value of the local circuit ID.
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The OSI interface ID for this interface.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The OSI interface ID for this interface.
         - InterfaceIp (str): The IP address for this interface.
         - InterfaceIpMask (str): Available only when Interface Connected to DUT is disabled. The mask used with the IPv4 address for this virtual interface on the emulated ISIS router. This interface address is used to connect to virtual ISIS Network Ranges behind the Ixia-emulated ISIS router.
         - Ipv6MtMetric (number): This metric is same as the Interface Metric. If true, it allows you to enter data.
@@ -563,7 +563,7 @@ class Interface(Base):
         - EnableConnectedToDut (bool): If enabled, this ISIS interface is directly connected to the DUT.
         - Enabled (bool): Enables the use of this interface for the simulated router.
         - ExtendedCircuitId (number): The integer value of the local circuit ID.
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The OSI interface ID for this interface.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The OSI interface ID for this interface.
         - InterfaceIp (str): The IP address for this interface.
         - InterfaceIpMask (str): Available only when Interface Connected to DUT is disabled. The mask used with the IPv4 address for this virtual interface on the emulated ISIS router. This interface address is used to connect to virtual ISIS Network Ranges behind the Ixia-emulated ISIS router.
         - Ipv6MtMetric (number): This metric is same as the Interface Metric. If true, it allows you to enter data.

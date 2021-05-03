@@ -130,6 +130,20 @@ class Globals(Base):
         return Preferences(self)._select()
 
     @property
+    def ProgressDialog(self):
+        """
+        Returns
+        -------
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.globals.progressdialog.progressdialog.ProgressDialog): An instance of the ProgressDialog class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from uhd_restpy.testplatform.sessions.ixnetwork.globals.progressdialog.progressdialog import ProgressDialog
+        return ProgressDialog(self)._select()
+
+    @property
     def ProtocolStack(self):
         """
         Returns

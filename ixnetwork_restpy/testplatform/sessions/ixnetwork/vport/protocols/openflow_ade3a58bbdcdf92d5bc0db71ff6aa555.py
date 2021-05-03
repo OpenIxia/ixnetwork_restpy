@@ -229,8 +229,6 @@ class OpenFlow(Base):
     def Start(self):
         """Executes the start operation on the server.
 
-        This describes the start value of the trigger settings.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -241,8 +239,6 @@ class OpenFlow(Base):
 
     def Stop(self):
         """Executes the stop operation on the server.
-
-        This describes the stop value of the trigger settings.
 
         Raises
         ------

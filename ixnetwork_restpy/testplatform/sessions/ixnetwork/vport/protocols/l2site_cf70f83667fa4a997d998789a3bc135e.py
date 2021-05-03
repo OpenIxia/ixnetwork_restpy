@@ -435,7 +435,7 @@ class L2Site(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
+        - str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
@@ -472,7 +472,7 @@ class L2Site(Base):
         - TargetAssignedNumberIncrement (number): Signifies increment of the target assigned number
         - TargetIncrementAs (number): Signifies increment as target
         - TargetIpIncrement (str): Signifies the increment of IP as target
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
 
         Raises
         ------
@@ -510,7 +510,7 @@ class L2Site(Base):
         - TargetAssignedNumberIncrement (number): Signifies increment of the target assigned number
         - TargetIncrementAs (number): Signifies increment as target
         - TargetIpIncrement (str): Signifies the increment of IP as target
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
 
         Returns
         -------
@@ -567,7 +567,7 @@ class L2Site(Base):
         - TargetAssignedNumberIncrement (number): Signifies increment of the target assigned number
         - TargetIncrementAs (number): Signifies increment as target
         - TargetIpIncrement (str): Signifies the increment of IP as target
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
 
         Returns
         -------
@@ -599,8 +599,6 @@ class L2Site(Base):
 
     def RefreshLearnedInfo(self):
         """Executes the refreshLearnedInfo operation on the server.
-
-        This function argument allows to refreshe the BGP learned information from the DUT.
 
         Raises
         ------

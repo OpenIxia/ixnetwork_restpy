@@ -74,13 +74,13 @@ class CfmBridge(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmmp_455bcaf1d68b20d894a87383d2cb1965.CfmMp): An instance of the CfmMp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmmp_8584bca4487041ab880565a01c8deaf3.CfmMp): An instance of the CfmMp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmmp_455bcaf1d68b20d894a87383d2cb1965 import CfmMp
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmmp_8584bca4487041ab880565a01c8deaf3 import CfmMp
         return CfmMp(self)._select()
 
     @property
@@ -178,7 +178,7 @@ class CfmBridge(Base):
         """DEPRECATED 
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
@@ -228,7 +228,7 @@ class CfmBridge(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/30/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
@@ -302,7 +302,7 @@ class CfmBridge(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
@@ -335,11 +335,11 @@ class CfmBridge(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NumberOfMPs (number): Number of MPs
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
         Raises
         ------
@@ -352,11 +352,11 @@ class CfmBridge(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NumberOfMPs (number): Number of MPs
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
         Returns
         -------
@@ -387,15 +387,15 @@ class CfmBridge(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/30/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NumberOfMPs (number): Number of MPs
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/30/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
@@ -455,7 +455,7 @@ class CfmBridge(Base):
     def Abort(self, *args, **kwargs):
         """Executes the abort operation on the server.
 
-        Abort CPF control plane (equals to demote to kUnconfigured state).
+        Abort selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -726,6 +726,26 @@ class CfmBridge(Base):
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getCfmLoopbackDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmSLMDbLearnedInformation(self, *args, **kwargs):
+        """Executes the getCfmSLMDbLearnedInformation operation on the server.
+
+        Get Learned SLM Information
+
+        getCfmSLMDbLearnedInformation(Arg2=list)list
+        --------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmSLMDbLearnedInformation', payload=payload, response_object=None)
 
     def GetCfmTSTDbLearnedInformation(self, *args, **kwargs):
         """Executes the getCfmTSTDbLearnedInformation operation on the server.
@@ -1052,6 +1072,31 @@ class CfmBridge(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getPeriodicLTLearnedInformation', payload=payload, response_object=None)
 
+    def GetSLMLearnedInfo(self, *args, **kwargs):
+        """Executes the getSLMLearnedInfo operation on the server.
+
+        Get SLM Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getSLMLearnedInfo(SessionIndices=list)
+        --------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        getSLMLearnedInfo(SessionIndices=string)
+        ----------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getSLMLearnedInfo', payload=payload, response_object=None)
+
     def GetTSTLearnedInfo(self, *args, **kwargs):
         """Executes the getTSTLearnedInfo operation on the server.
 
@@ -1105,7 +1150,7 @@ class CfmBridge(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start CPF control plane (equals to promote to negotiated state).
+        Start selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -1130,7 +1175,7 @@ class CfmBridge(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+        Stop selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 

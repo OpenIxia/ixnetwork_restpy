@@ -116,7 +116,7 @@ class Interface(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The unique identifier for this interface.
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface): The unique identifier for this interface.
         """
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceId'])
     @InterfaceId.setter
@@ -164,7 +164,7 @@ class Interface(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../all | /api/v1/sessions/1/ixnetwork/vport/.../msti | /api/v1/sessions/1/ixnetwork/vport/.../vlan): The identifier for this MSTI or the identifier for the first VLAN in the range.
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../all | /api/v1/sessions/30/ixnetwork/vport/.../msti | /api/v1/sessions/30/ixnetwork/vport/.../vlan): The identifier for this MSTI or the identifier for the first VLAN in the range.
         """
         return self._get_attribute(self._SDM_ATT_MAP['MstiOrVlanId'])
     @MstiOrVlanId.setter
@@ -204,11 +204,11 @@ class Interface(Base):
         - BdpuGap (number): The length of time between transmissions of BPDUs, in milliseconds. The valid range is 0 msec to 60,000 msec. (default = 0)
         - Cost (number): The administrative path cost assigned to this interface. The valid range is 0 to 4294967295. (default = 1)
         - Enabled (bool): Enables or disables the use of the interface. (default = disabled)
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The unique identifier for this interface.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The unique identifier for this interface.
         - JitterEnabled (bool): Staggered transmit (jitter) for Hello messages. If set, then the jitter feature is enabled. (default = enabled)
         - JitterPercentage (number): The maximum percentage of +/- variation (jitter) from the Hello message transmission interval.
         - LinkType (str(pointToPoint | shared)): The type of link attached to this interface.
-        - MstiOrVlanId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../all | /api/v1/sessions/1/ixnetwork/vport/.../msti | /api/v1/sessions/1/ixnetwork/vport/.../vlan)): The identifier for this MSTI or the identifier for the first VLAN in the range.
+        - MstiOrVlanId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../all | /api/v1/sessions/30/ixnetwork/vport/.../msti | /api/v1/sessions/30/ixnetwork/vport/.../vlan)): The identifier for this MSTI or the identifier for the first VLAN in the range.
         - PortNo (number): The port number associated with this STP interface. If enableAutoPickPortNum is set, the port number will be automatically assigned (not editable by the user). If enableAutoPickPortNum is not set, the port number can be configured by the user. The valid range is 1 to 4,095. (default = 1)
         - Pvid (number): The Port VLAN ID. This value must be the same for all ports participating in the PVST+/RPVST+ protocol. The valid range is 1 to 4,094. (default = 1)
 
@@ -227,11 +227,11 @@ class Interface(Base):
         - BdpuGap (number): The length of time between transmissions of BPDUs, in milliseconds. The valid range is 0 msec to 60,000 msec. (default = 0)
         - Cost (number): The administrative path cost assigned to this interface. The valid range is 0 to 4294967295. (default = 1)
         - Enabled (bool): Enables or disables the use of the interface. (default = disabled)
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The unique identifier for this interface.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The unique identifier for this interface.
         - JitterEnabled (bool): Staggered transmit (jitter) for Hello messages. If set, then the jitter feature is enabled. (default = enabled)
         - JitterPercentage (number): The maximum percentage of +/- variation (jitter) from the Hello message transmission interval.
         - LinkType (str(pointToPoint | shared)): The type of link attached to this interface.
-        - MstiOrVlanId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../all | /api/v1/sessions/1/ixnetwork/vport/.../msti | /api/v1/sessions/1/ixnetwork/vport/.../vlan)): The identifier for this MSTI or the identifier for the first VLAN in the range.
+        - MstiOrVlanId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../all | /api/v1/sessions/30/ixnetwork/vport/.../msti | /api/v1/sessions/30/ixnetwork/vport/.../vlan)): The identifier for this MSTI or the identifier for the first VLAN in the range.
         - PortNo (number): The port number associated with this STP interface. If enableAutoPickPortNum is set, the port number will be automatically assigned (not editable by the user). If enableAutoPickPortNum is not set, the port number can be configured by the user. The valid range is 1 to 4,095. (default = 1)
         - Pvid (number): The Port VLAN ID. This value must be the same for all ports participating in the PVST+/RPVST+ protocol. The valid range is 1 to 4,094. (default = 1)
 
@@ -268,11 +268,11 @@ class Interface(Base):
         - BdpuGap (number): The length of time between transmissions of BPDUs, in milliseconds. The valid range is 0 msec to 60,000 msec. (default = 0)
         - Cost (number): The administrative path cost assigned to this interface. The valid range is 0 to 4294967295. (default = 1)
         - Enabled (bool): Enables or disables the use of the interface. (default = disabled)
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The unique identifier for this interface.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The unique identifier for this interface.
         - JitterEnabled (bool): Staggered transmit (jitter) for Hello messages. If set, then the jitter feature is enabled. (default = enabled)
         - JitterPercentage (number): The maximum percentage of +/- variation (jitter) from the Hello message transmission interval.
         - LinkType (str(pointToPoint | shared)): The type of link attached to this interface.
-        - MstiOrVlanId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../all | /api/v1/sessions/1/ixnetwork/vport/.../msti | /api/v1/sessions/1/ixnetwork/vport/.../vlan)): The identifier for this MSTI or the identifier for the first VLAN in the range.
+        - MstiOrVlanId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../all | /api/v1/sessions/30/ixnetwork/vport/.../msti | /api/v1/sessions/30/ixnetwork/vport/.../vlan)): The identifier for this MSTI or the identifier for the first VLAN in the range.
         - PortNo (number): The port number associated with this STP interface. If enableAutoPickPortNum is set, the port number will be automatically assigned (not editable by the user). If enableAutoPickPortNum is not set, the port number can be configured by the user. The valid range is 1 to 4,095. (default = 1)
         - Pvid (number): The Port VLAN ID. This value must be the same for all ports participating in the PVST+/RPVST+ protocol. The valid range is 1 to 4,094. (default = 1)
 
@@ -306,8 +306,6 @@ class Interface(Base):
 
     def UpdateParameters(self):
         """Executes the updateParameters operation on the server.
-
-        Updates the current STP bridge interface parameters.
 
         Raises
         ------

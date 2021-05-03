@@ -275,8 +275,6 @@ class Group(Base):
     def UpdateSources(self):
         """Executes the updateSources operation on the server.
 
-        This command is used to update the host group source information for IGMP.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server

@@ -89,8 +89,6 @@ class Rip(Base):
     def Start(self):
         """Executes the start operation on the server.
 
-        Starts the RIP protocol on a port or group of ports simultaneously.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -101,8 +99,6 @@ class Rip(Base):
 
     def Stop(self):
         """Executes the stop operation on the server.
-
-        Stops the RIP protocol on a port or group of ports simultaneously.
 
         Raises
         ------

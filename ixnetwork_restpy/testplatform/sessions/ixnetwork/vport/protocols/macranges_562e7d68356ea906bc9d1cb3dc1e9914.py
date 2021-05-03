@@ -211,7 +211,7 @@ class MacRanges(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
+        - str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
@@ -247,7 +247,7 @@ class MacRanges(Base):
         - SVlanTpId (str): The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
         - StartMacAddress (str): The MAC address of the first entry in the range.
         - Step (str): The amount to increment each MAC address in the range.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
         - Type (str(singleVlan | stackedVlan)): Selects the VLAN type, either single or stacked. Stacked VLANS have an inner and outer value. Default = single.
 
         Raises
@@ -273,7 +273,7 @@ class MacRanges(Base):
         - SVlanTpId (str): The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
         - StartMacAddress (str): The MAC address of the first entry in the range.
         - Step (str): The amount to increment each MAC address in the range.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
         - Type (str(singleVlan | stackedVlan)): Selects the VLAN type, either single or stacked. Stacked VLANS have an inner and outer value. Default = single.
 
         Returns
@@ -318,7 +318,7 @@ class MacRanges(Base):
         - SVlanTpId (str): The Tag Protocol ID. EtherTypes identify the protocol that follows the VLAN header. Select from a list of hex options: 0x8100, 0x9100, 0x9200, 0x88A8.
         - StartMacAddress (str): The MAC address of the first entry in the range.
         - Step (str): The amount to increment each MAC address in the range.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
         - Type (str(singleVlan | stackedVlan)): Selects the VLAN type, either single or stacked. Stacked VLANS have an inner and outer value. Default = single.
 
         Returns

@@ -379,7 +379,7 @@ class Interface(Base):
         """DEPRECATED 
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The identifier for this PIM-SM Interface.
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface): The identifier for this PIM-SM Interface.
         """
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceId'])
     @InterfaceId.setter
@@ -415,7 +415,7 @@ class Interface(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range): The interfaces that are associated with the selected interface type.
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range): The interfaces that are associated with the selected interface type.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Interfaces'])
     @Interfaces.setter
@@ -544,7 +544,7 @@ class Interface(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this emulated router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup): The name of the group to which this emulated router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
@@ -597,10 +597,10 @@ class Interface(Base):
         - GenerationIdMode (str(incremental | random | constant)): The mode used for creating the 32-bit value for the Generation ID. This can either be incrementing, random or constant. (default = constant)
         - HelloHoldTime (number): The amount of time that neighbor routers should hold the interface as reachable.
         - HelloInterval (number): The interval between transmitted hello messages.
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The identifier for this PIM-SM Interface.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The identifier for this PIM-SM Interface.
         - InterfaceIndex (number): The assigned protocol interface ID for this PIM-SM interface.
         - InterfaceType (str): The type of interface to be selected for this PIM-SM interface.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - Interfaces (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
         - LanPruneDelay (number): The value of the LAN Prune (propagation) Delay for this PIM-SM interface. The expected delay for messages propagated on the link. It indicates to an upstream router how long to wait for a Join override message before it prunes an interface.The default value is 500 msec. The valid range is 100 to 0x7FFF msec. (LAN Prune Delay is an Option included in Hello messages.)
         - LanPruneDelayTBit (bool): If enabled, the T flag bit in the LAN Prune Delay option of the Hello message is set (= 1). Setting this bit specifies that the sending PIM-SM router has the ability to disable Join message suppression.
         - LearnSelectedRpSet (bool): If enabled, this displays only the best RP per group (member of selected RP set).
@@ -610,7 +610,7 @@ class Interface(Base):
         - SendHelloLanPruneDelayOption (bool): If set, the LAN Prune propagation delay is enabled for this interface, as indicated in the pruneDelay option. The option is indicated in Hello messages from the interface. (default = true)
         - ShowSelectedRpSetOnly (bool): If enabled, this displays only the best RP per group (member of selected RP set).
         - SupportUnicastBootstrap (bool): If enabled, this supports the sending and processing of Unicast bootstrap messages.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this emulated router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this emulated router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         - TriggeredHelloDelay (number): The time (in seconds) after which the router senses a delay in sending or receiving PIM-SM hello message.
         - UpstreamNeighbor (str): The IP address of the upstream neighbor.
 
@@ -642,10 +642,10 @@ class Interface(Base):
         - GenerationIdMode (str(incremental | random | constant)): The mode used for creating the 32-bit value for the Generation ID. This can either be incrementing, random or constant. (default = constant)
         - HelloHoldTime (number): The amount of time that neighbor routers should hold the interface as reachable.
         - HelloInterval (number): The interval between transmitted hello messages.
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The identifier for this PIM-SM Interface.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The identifier for this PIM-SM Interface.
         - InterfaceIndex (number): The assigned protocol interface ID for this PIM-SM interface.
         - InterfaceType (str): The type of interface to be selected for this PIM-SM interface.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - Interfaces (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
         - LanPruneDelay (number): The value of the LAN Prune (propagation) Delay for this PIM-SM interface. The expected delay for messages propagated on the link. It indicates to an upstream router how long to wait for a Join override message before it prunes an interface.The default value is 500 msec. The valid range is 100 to 0x7FFF msec. (LAN Prune Delay is an Option included in Hello messages.)
         - LanPruneDelayTBit (bool): If enabled, the T flag bit in the LAN Prune Delay option of the Hello message is set (= 1). Setting this bit specifies that the sending PIM-SM router has the ability to disable Join message suppression.
         - LearnSelectedRpSet (bool): If enabled, this displays only the best RP per group (member of selected RP set).
@@ -655,7 +655,7 @@ class Interface(Base):
         - SendHelloLanPruneDelayOption (bool): If set, the LAN Prune propagation delay is enabled for this interface, as indicated in the pruneDelay option. The option is indicated in Hello messages from the interface. (default = true)
         - ShowSelectedRpSetOnly (bool): If enabled, this displays only the best RP per group (member of selected RP set).
         - SupportUnicastBootstrap (bool): If enabled, this supports the sending and processing of Unicast bootstrap messages.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this emulated router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this emulated router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         - TriggeredHelloDelay (number): The time (in seconds) after which the router senses a delay in sending or receiving PIM-SM hello message.
         - UpstreamNeighbor (str): The IP address of the upstream neighbor.
 
@@ -705,10 +705,10 @@ class Interface(Base):
         - GenerationIdMode (str(incremental | random | constant)): The mode used for creating the 32-bit value for the Generation ID. This can either be incrementing, random or constant. (default = constant)
         - HelloHoldTime (number): The amount of time that neighbor routers should hold the interface as reachable.
         - HelloInterval (number): The interval between transmitted hello messages.
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The identifier for this PIM-SM Interface.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The identifier for this PIM-SM Interface.
         - InterfaceIndex (number): The assigned protocol interface ID for this PIM-SM interface.
         - InterfaceType (str): The type of interface to be selected for this PIM-SM interface.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - Interfaces (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
         - IsRefreshRpSetComplete (bool): If enabled, shows the desired set of RPs.
         - LanPruneDelay (number): The value of the LAN Prune (propagation) Delay for this PIM-SM interface. The expected delay for messages propagated on the link. It indicates to an upstream router how long to wait for a Join override message before it prunes an interface.The default value is 500 msec. The valid range is 100 to 0x7FFF msec. (LAN Prune Delay is an Option included in Hello messages.)
         - LanPruneDelayTBit (bool): If enabled, the T flag bit in the LAN Prune Delay option of the Hello message is set (= 1). Setting this bit specifies that the sending PIM-SM router has the ability to disable Join message suppression.
@@ -719,7 +719,7 @@ class Interface(Base):
         - SendHelloLanPruneDelayOption (bool): If set, the LAN Prune propagation delay is enabled for this interface, as indicated in the pruneDelay option. The option is indicated in Hello messages from the interface. (default = true)
         - ShowSelectedRpSetOnly (bool): If enabled, this displays only the best RP per group (member of selected RP set).
         - SupportUnicastBootstrap (bool): If enabled, this supports the sending and processing of Unicast bootstrap messages.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this emulated router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this emulated router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         - TriggeredHelloDelay (number): The time (in seconds) after which the router senses a delay in sending or receiving PIM-SM hello message.
         - UpstreamNeighbor (str): The IP address of the upstream neighbor.
 
@@ -754,8 +754,6 @@ class Interface(Base):
     def GetInterfaceAccessorIfaceList(self):
         """Executes the getInterfaceAccessorIfaceList operation on the server.
 
-        Gets the interface accesor Iface list.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -766,8 +764,6 @@ class Interface(Base):
 
     def RefreshCrpBsrLearnedInfo(self):
         """Executes the refreshCrpBsrLearnedInfo operation on the server.
-
-        If true, refreshes the Bsr learned information
 
         Raises
         ------

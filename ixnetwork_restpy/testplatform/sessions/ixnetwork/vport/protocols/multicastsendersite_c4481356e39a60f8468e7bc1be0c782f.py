@@ -237,7 +237,7 @@ class MulticastSenderSite(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): Creates traffic using MPLS Labels of S-PMSI Tunnel and S-PMSI Upstream Assigned Label.
+        - str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup): Creates traffic using MPLS Labels of S-PMSI Tunnel and S-PMSI Upstream Assigned Label.
         """
         return self._get_attribute(self._SDM_ATT_MAP['SPmsiTrafficGroupId'])
     @SPmsiTrafficGroupId.setter
@@ -382,7 +382,7 @@ class MulticastSenderSite(Base):
         - SPmsiRsvpTunnelCount (number): The total count of the S-PMSI RSVP Tunnel Count.
         - SPmsiRsvpTunnelId (number): The first Tunnel ID value in the range of Tunnel IDs.
         - SPmsiRsvpTunnelIdStep (number): Indicates the P2MP ID. This accepts only integer values.
-        - SPmsiTrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Creates traffic using MPLS Labels of S-PMSI Tunnel and S-PMSI Upstream Assigned Label.
+        - SPmsiTrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): Creates traffic using MPLS Labels of S-PMSI Tunnel and S-PMSI Upstream Assigned Label.
         - SPmsiTunnelCount (number): Signifies the SPMSI tunnel count
         - SendTriggeredSourceActiveAdRoute (bool): If true, allows to send the Source Active A-D Route after receiving Source Tree Join C-Multicast route.
         - SetLeafInformationRequiredBit (bool): his is used to send S-PMSI A-D Route with Leaf Information Required bit Set.
@@ -418,7 +418,7 @@ class MulticastSenderSite(Base):
         - SPmsiRsvpTunnelCount (number): The total count of the S-PMSI RSVP Tunnel Count.
         - SPmsiRsvpTunnelId (number): The first Tunnel ID value in the range of Tunnel IDs.
         - SPmsiRsvpTunnelIdStep (number): Indicates the P2MP ID. This accepts only integer values.
-        - SPmsiTrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Creates traffic using MPLS Labels of S-PMSI Tunnel and S-PMSI Upstream Assigned Label.
+        - SPmsiTrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): Creates traffic using MPLS Labels of S-PMSI Tunnel and S-PMSI Upstream Assigned Label.
         - SPmsiTunnelCount (number): Signifies the SPMSI tunnel count
         - SendTriggeredSourceActiveAdRoute (bool): If true, allows to send the Source Active A-D Route after receiving Source Tree Join C-Multicast route.
         - SetLeafInformationRequiredBit (bool): his is used to send S-PMSI A-D Route with Leaf Information Required bit Set.
@@ -472,7 +472,7 @@ class MulticastSenderSite(Base):
         - SPmsiRsvpTunnelCount (number): The total count of the S-PMSI RSVP Tunnel Count.
         - SPmsiRsvpTunnelId (number): The first Tunnel ID value in the range of Tunnel IDs.
         - SPmsiRsvpTunnelIdStep (number): Indicates the P2MP ID. This accepts only integer values.
-        - SPmsiTrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Creates traffic using MPLS Labels of S-PMSI Tunnel and S-PMSI Upstream Assigned Label.
+        - SPmsiTrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): Creates traffic using MPLS Labels of S-PMSI Tunnel and S-PMSI Upstream Assigned Label.
         - SPmsiTunnelCount (number): Signifies the SPMSI tunnel count
         - SendTriggeredSourceActiveAdRoute (bool): If true, allows to send the Source Active A-D Route after receiving Source Tree Join C-Multicast route.
         - SetLeafInformationRequiredBit (bool): his is used to send S-PMSI A-D Route with Leaf Information Required bit Set.
@@ -514,8 +514,6 @@ class MulticastSenderSite(Base):
 
     def SwitchToSpmsi(self):
         """Executes the switchToSpmsi operation on the server.
-
-        This exec switches the tunnel to sPMSI.
 
         Raises
         ------

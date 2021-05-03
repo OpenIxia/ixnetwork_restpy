@@ -201,8 +201,6 @@ class Lisp(Base):
     def Start(self):
         """Executes the start operation on the server.
 
-        NOT DEFINED
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -213,8 +211,6 @@ class Lisp(Base):
 
     def Stop(self):
         """Executes the stop operation on the server.
-
-        NOT DEFINED
 
         Raises
         ------

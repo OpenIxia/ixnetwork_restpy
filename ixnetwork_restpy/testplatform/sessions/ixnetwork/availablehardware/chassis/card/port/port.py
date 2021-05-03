@@ -186,7 +186,7 @@ class Port(Base):
 
         copyTapSettings(Arg2=list)
         --------------------------
-        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port])): 
+        - Arg2 (list(str[None | /api/v1/sessions/30/ixnetwork/availableHardware/.../port])): 
 
         Raises
         ------

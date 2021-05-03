@@ -180,7 +180,7 @@ class Host(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range): The interfaces that are associated with the selected interface type.
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range): The interfaces that are associated with the selected interface type.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Interfaces'])
     @Interfaces.setter
@@ -192,7 +192,7 @@ class Host(Base):
         """DEPRECATED 
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The name of the protocol interface being used for this emulated MLD Host. There may be multiple IPv6 protocol interfaces to select from.NOTE: Only enabled protocol interfaces configured with IPv6 addresses will be listed here.
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface): The name of the protocol interface being used for this emulated MLD Host. There may be multiple IPv6 protocol interfaces to select from.NOTE: Only enabled protocol interfaces configured with IPv6 addresses will be listed here.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterface'])
     @ProtocolInterface.setter
@@ -228,7 +228,7 @@ class Host(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
@@ -261,11 +261,11 @@ class Host(Base):
         - Enabled (bool): Enables the use of the host in the MLD simulation.
         - InterfaceIndex (number): The assigned protocol interface ID for this MLD interface.
         - InterfaceType (str): The type of interface to be selected for this MLD interface.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The name of the protocol interface being used for this emulated MLD Host. There may be multiple IPv6 protocol interfaces to select from.NOTE: Only enabled protocol interfaces configured with IPv6 addresses will be listed here.
+        - Interfaces (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - ProtocolInterface (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The name of the protocol interface being used for this emulated MLD Host. There may be multiple IPv6 protocol interfaces to select from.NOTE: Only enabled protocol interfaces configured with IPv6 addresses will be listed here.
         - ReportFreq (number): Can be configured only when the Unsolicited Response Mode option is enabled. Otherwise, it is read-only. When Unsolicited Response Mode is enabled, specifies the frequency, in seconds, with which unsolicited messages are generated.
         - RobustnessVariable (number): NOT DEFINED
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         - Version (str(version1 | version2)): Sets the MLD version number that is to be simulated on the host: 1 or 2.
 
         Raises
@@ -288,11 +288,11 @@ class Host(Base):
         - Enabled (bool): Enables the use of the host in the MLD simulation.
         - InterfaceIndex (number): The assigned protocol interface ID for this MLD interface.
         - InterfaceType (str): The type of interface to be selected for this MLD interface.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The name of the protocol interface being used for this emulated MLD Host. There may be multiple IPv6 protocol interfaces to select from.NOTE: Only enabled protocol interfaces configured with IPv6 addresses will be listed here.
+        - Interfaces (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - ProtocolInterface (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The name of the protocol interface being used for this emulated MLD Host. There may be multiple IPv6 protocol interfaces to select from.NOTE: Only enabled protocol interfaces configured with IPv6 addresses will be listed here.
         - ReportFreq (number): Can be configured only when the Unsolicited Response Mode option is enabled. Otherwise, it is read-only. When Unsolicited Response Mode is enabled, specifies the frequency, in seconds, with which unsolicited messages are generated.
         - RobustnessVariable (number): NOT DEFINED
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         - Version (str(version1 | version2)): Sets the MLD version number that is to be simulated on the host: 1 or 2.
 
         Returns
@@ -333,11 +333,11 @@ class Host(Base):
         - Enabled (bool): Enables the use of the host in the MLD simulation.
         - InterfaceIndex (number): The assigned protocol interface ID for this MLD interface.
         - InterfaceType (str): The type of interface to be selected for this MLD interface.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The name of the protocol interface being used for this emulated MLD Host. There may be multiple IPv6 protocol interfaces to select from.NOTE: Only enabled protocol interfaces configured with IPv6 addresses will be listed here.
+        - Interfaces (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - ProtocolInterface (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The name of the protocol interface being used for this emulated MLD Host. There may be multiple IPv6 protocol interfaces to select from.NOTE: Only enabled protocol interfaces configured with IPv6 addresses will be listed here.
         - ReportFreq (number): Can be configured only when the Unsolicited Response Mode option is enabled. Otherwise, it is read-only. When Unsolicited Response Mode is enabled, specifies the frequency, in seconds, with which unsolicited messages are generated.
         - RobustnessVariable (number): NOT DEFINED
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         - Version (str(version1 | version2)): Sets the MLD version number that is to be simulated on the host: 1 or 2.
 
         Returns
@@ -370,8 +370,6 @@ class Host(Base):
 
     def GetInterfaceAccessorIfaceList(self):
         """Executes the getInterfaceAccessorIfaceList operation on the server.
-
-        Gets the interface accesor Iface list.
 
         Raises
         ------

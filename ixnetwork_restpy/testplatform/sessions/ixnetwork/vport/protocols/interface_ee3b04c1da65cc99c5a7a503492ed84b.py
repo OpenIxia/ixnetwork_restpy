@@ -204,7 +204,7 @@ class Interface(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range): The interfaces that are associated with the selected interface type.
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range): The interfaces that are associated with the selected interface type.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Interfaces'])
     @Interfaces.setter
@@ -240,7 +240,7 @@ class Interface(Base):
         """DEPRECATED 
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): This is the name of this emulated OSPFv3 interface on this emulated router.
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface): This is the name of this emulated OSPFv3 interface on this emulated router.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterface'])
     @ProtocolInterface.setter
@@ -276,10 +276,10 @@ class Interface(Base):
         - InterfaceIndex (number): The assigned protocol interface ID for this OSPFv3 interface.
         - InterfaceType (str(pointToPoint | broadcast)): Indicates the type of network for the interface.
         - InterfaceTypes (str): The type of interface to be selected for this OSPFv3 interface.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - Interfaces (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
         - LinkMetric (number): The metric for the link connecting the grid with the emulated OSPFv3 router.
         - Priority (number): Indicates the OSPF interface priority
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): This is the name of this emulated OSPFv3 interface on this emulated router.
+        - ProtocolInterface (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): This is the name of this emulated OSPFv3 interface on this emulated router.
         - RouterOptions (number): Options related to the interface. Multiple options may be or'd together. (default = 0x13).
 
         Raises
@@ -305,10 +305,10 @@ class Interface(Base):
         - InterfaceIndex (number): The assigned protocol interface ID for this OSPFv3 interface.
         - InterfaceType (str(pointToPoint | broadcast)): Indicates the type of network for the interface.
         - InterfaceTypes (str): The type of interface to be selected for this OSPFv3 interface.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - Interfaces (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
         - LinkMetric (number): The metric for the link connecting the grid with the emulated OSPFv3 router.
         - Priority (number): Indicates the OSPF interface priority
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): This is the name of this emulated OSPFv3 interface on this emulated router.
+        - ProtocolInterface (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): This is the name of this emulated OSPFv3 interface on this emulated router.
         - RouterOptions (number): Options related to the interface. Multiple options may be or'd together. (default = 0x13).
 
         Returns
@@ -352,10 +352,10 @@ class Interface(Base):
         - InterfaceIndex (number): The assigned protocol interface ID for this OSPFv3 interface.
         - InterfaceType (str(pointToPoint | broadcast)): Indicates the type of network for the interface.
         - InterfaceTypes (str): The type of interface to be selected for this OSPFv3 interface.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - Interfaces (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
         - LinkMetric (number): The metric for the link connecting the grid with the emulated OSPFv3 router.
         - Priority (number): Indicates the OSPF interface priority
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): This is the name of this emulated OSPFv3 interface on this emulated router.
+        - ProtocolInterface (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): This is the name of this emulated OSPFv3 interface on this emulated router.
         - RouterOptions (number): Options related to the interface. Multiple options may be or'd together. (default = 0x13).
 
         Returns
@@ -388,8 +388,6 @@ class Interface(Base):
 
     def GetInterfaceAccessorIfaceList(self):
         """Executes the getInterfaceAccessorIfaceList operation on the server.
-
-        Fetches interface accessor Iface list.
 
         Raises
         ------

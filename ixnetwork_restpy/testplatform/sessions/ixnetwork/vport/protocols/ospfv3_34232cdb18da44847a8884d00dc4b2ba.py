@@ -103,22 +103,20 @@ class OspfV3(Base):
     def GracefulRouterRestart(self, *args, **kwargs):
         """Executes the gracefulRouterRestart operation on the server.
 
-        NOT DEFINED
-
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        gracefulRouterRestart(Arg2=list)string
-        --------------------------------------
-        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../router])): NOT DEFINED
-        - Returns str: NOT DEFINED
 
         gracefulRouterRestart(Arg2=list, Arg3=number, Arg4=enum, Arg5=number)string
         ---------------------------------------------------------------------------
-        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../router])): NOT DEFINED
-        - Arg3 (number): NOT DEFINED
-        - Arg4 (str(softwareReloadOrUpgrade | softwareRestart | switchToRedundantControlProcessor | unknown)): NOT DEFINED
-        - Arg5 (number): NOT DEFINED
-        - Returns str: NOT DEFINED
+        - Arg2 (list(str[None | /api/v1/sessions/30/ixnetwork/vport/.../router])): 
+        - Arg3 (number): 
+        - Arg4 (str(softwareReloadOrUpgrade | softwareRestart | switchToRedundantControlProcessor | unknown)): 
+        - Arg5 (number): 
+        - Returns str: 
+
+        gracefulRouterRestart(Arg2=list)string
+        --------------------------------------
+        - Arg2 (list(str[None | /api/v1/sessions/30/ixnetwork/vport/.../router])): 
+        - Returns str: 
 
         Raises
         ------
@@ -133,8 +131,6 @@ class OspfV3(Base):
     def Start(self):
         """Executes the start operation on the server.
 
-        Starts the OSPFv3 protocol on a port or group of ports simultaneously.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -145,8 +141,6 @@ class OspfV3(Base):
 
     def Stop(self):
         """Executes the stop operation on the server.
-
-        Stops the OSPFv3 protocol on a port or group of ports simultaneously.
 
         Raises
         ------

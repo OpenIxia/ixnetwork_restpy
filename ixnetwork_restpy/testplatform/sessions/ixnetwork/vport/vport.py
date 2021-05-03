@@ -56,7 +56,6 @@ class Vport(Base):
         'IxosChassisVersion': 'ixosChassisVersion',
         'Licenses': 'licenses',
         'Location': 'location',
-        'MacsecEnabled': 'macsecEnabled',
         'Name': 'name',
         'ResourceMode': 'resourceMode',
         'RxMode': 'rxMode',
@@ -252,7 +251,7 @@ class Vport(Base):
         """DEPRECATED 
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port): The physical port to which the unassigned port is assigned.
+        - str(None | /api/v1/sessions/30/ixnetwork/availableHardware/.../port): The physical port to which the unassigned port is assigned.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedTo'])
     @ConnectedTo.setter
@@ -419,15 +418,6 @@ class Vport(Base):
         self._set_attribute(self._SDM_ATT_MAP['Location'], value)
 
     @property
-    def MacsecEnabled(self):
-        """
-        Returns
-        -------
-        - bool: 
-        """
-        return self._get_attribute(self._SDM_ATT_MAP['MacsecEnabled'])
-
-    @property
     def Name(self):
         """
         Returns
@@ -555,7 +545,7 @@ class Vport(Base):
         """
         Returns
         -------
-        - str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe): The type of port selection.
+        - str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan): The type of port selection.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
@@ -588,7 +578,7 @@ class Vport(Base):
 
         Args
         ----
-        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
+        - ConnectedTo (str(None | /api/v1/sessions/30/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
         - IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
         - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
         - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
@@ -599,7 +589,7 @@ class Vport(Base):
         - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
         - TxGapControlMode (str(fixedMode | averageMode)): This object controls the Gap Control mode of the port.
         - TxMode (str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment)): The transmit mode.
-        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe)): The type of port selection.
+        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan)): The type of port selection.
         - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
 
         Raises
@@ -613,7 +603,7 @@ class Vport(Base):
 
         Args
         ----
-        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
+        - ConnectedTo (str(None | /api/v1/sessions/30/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
         - IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
         - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
         - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
@@ -624,7 +614,7 @@ class Vport(Base):
         - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
         - TxGapControlMode (str(fixedMode | averageMode)): This object controls the Gap Control mode of the port.
         - TxMode (str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment)): The transmit mode.
-        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe)): The type of port selection.
+        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan)): The type of port selection.
         - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
 
         Returns
@@ -647,7 +637,7 @@ class Vport(Base):
         """
         self._delete()
 
-    def find(self, ActualSpeed=None, AdminMode=None, AssignedTo=None, AssignedToDisplayName=None, CaptureSupported=None, ConnectedTo=None, ConnectionInfo=None, ConnectionState=None, ConnectionStatus=None, ConnectionStatusDisplayName=None, DpdkPerformanceAcceleration=None, InternalId=None, IsAvailable=None, IsConnected=None, IsFramePreemptionSupported=None, IsMapped=None, IsPullOnly=None, IsVMPort=None, IxnChassisVersion=None, IxnClientVersion=None, IxosChassisVersion=None, Licenses=None, Location=None, MacsecEnabled=None, Name=None, ResourceMode=None, RxMode=None, State=None, StateDetail=None, TraceEnabled=None, TraceLevel=None, TraceTag=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None, UseGlobalSettings=None, ValidTxModes=None):
+    def find(self, ActualSpeed=None, AdminMode=None, AssignedTo=None, AssignedToDisplayName=None, CaptureSupported=None, ConnectedTo=None, ConnectionInfo=None, ConnectionState=None, ConnectionStatus=None, ConnectionStatusDisplayName=None, DpdkPerformanceAcceleration=None, InternalId=None, IsAvailable=None, IsConnected=None, IsFramePreemptionSupported=None, IsMapped=None, IsPullOnly=None, IsVMPort=None, IxnChassisVersion=None, IxnClientVersion=None, IxosChassisVersion=None, Licenses=None, Location=None, Name=None, ResourceMode=None, RxMode=None, State=None, StateDetail=None, TraceEnabled=None, TraceLevel=None, TraceTag=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None, UseGlobalSettings=None, ValidTxModes=None):
         """Finds and retrieves vport resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vport resources from the server.
@@ -661,7 +651,7 @@ class Vport(Base):
         - AssignedTo (str): (Read Only) A new port is assigned with this option.
         - AssignedToDisplayName (str): 
         - CaptureSupported (str(data | control | dataAndControl | none)): 
-        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
+        - ConnectedTo (str(None | /api/v1/sessions/30/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
         - ConnectionInfo (str): Detailed information about location of the physical port that is assigned to this port configuration.
         - ConnectionState (str(assignedInUseByOther | assignedUnconnected | connectedLinkDown | connectedLinkUp | connecting | unassigned)): Consolidated state of the vport. This combines the connection state with link state.
         - ConnectionStatus (str): A string describing the status of the hardware connected to this vport
@@ -679,7 +669,6 @@ class Vport(Base):
         - IxosChassisVersion (str): (Read Only) If true, the installer installs the same resources as installed by IxOS on a chassis.
         - Licenses (str): Number of licenses.
         - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
-        - MacsecEnabled (bool): 
         - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
         - ResourceMode (str): 
         - RxMode (str(capture | measure | captureAndMeasure | packetImpairment)): The receive mode of the virtual port.
@@ -691,7 +680,7 @@ class Vport(Base):
         - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
         - TxGapControlMode (str(fixedMode | averageMode)): This object controls the Gap Control mode of the port.
         - TxMode (str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment)): The transmit mode.
-        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe)): The type of port selection.
+        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan)): The type of port selection.
         - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
         - ValidTxModes (list(str[interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse])): 
 
@@ -723,26 +712,6 @@ class Vport(Base):
         """
         return self._read(href)
 
-    def AddGclEntry(self, *args, **kwargs):
-        """Executes the addGclEntry operation on the server.
-
-        Add an entry to the GCL list
-
-        addGclEntry(Arg2=string, Arg3=string)
-        -------------------------------------
-        - Arg2 (str): String stating duration of this entry
-        - Arg3 (str): String stating gate states
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('addGclEntry', payload=payload, response_object=None)
-
     def AddQuickFlowGroups(self, *args, **kwargs):
         """Executes the addQuickFlowGroups operation on the server.
 
@@ -770,7 +739,7 @@ class Vport(Base):
         assignPorts(Arg2=bool)list
         --------------------------
         - Arg2 (bool): If true, it will clear ownership on the hardware ports which have location attribute set.
-        - Returns list(str[None | /api/v1/sessions/1/ixnetwork/vport]): Returns a list of virtual port object references that were successfully connected.
+        - Returns list(str[None | /api/v1/sessions/30/ixnetwork/vport]): Returns a list of virtual port object references that were successfully connected.
 
         Raises
         ------
@@ -785,8 +754,6 @@ class Vport(Base):
     def ClearNeighborSolicitation(self):
         """Executes the clearNeighborSolicitation operation on the server.
 
-        NOT DEFINED
-
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         Raises
@@ -799,8 +766,6 @@ class Vport(Base):
 
     def ClearNeighborTable(self):
         """Executes the clearNeighborTable operation on the server.
-
-        This exec clears the learned neighbor table for the specified vport.
 
         Raises
         ------
@@ -839,7 +804,7 @@ class Vport(Base):
     def ConnectPorts(self, *args, **kwargs):
         """Executes the connectPorts operation on the server.
 
-        Connect a list of ports.
+        Connect a list of ports and optionally take ownership, wait for link-up.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -864,7 +829,7 @@ class Vport(Base):
 
         copyTapSettings(Arg2=list)
         --------------------------
-        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport])): 
+        - Arg2 (list(str[None | /api/v1/sessions/30/ixnetwork/vport])): 
 
         Raises
         ------
@@ -924,18 +889,16 @@ class Vport(Base):
     def IgmpJoin(self, *args, **kwargs):
         """Executes the igmpJoin operation on the server.
 
-        NOT DEFINED
-
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        igmpJoin(Arg2=string)
-        ---------------------
-        - Arg2 (str): NOT DEFINED
 
         igmpJoin(Arg2=string, Arg3=number)
         ----------------------------------
-        - Arg2 (str): NOT DEFINED
-        - Arg3 (number): NOT DEFINED
+        - Arg2 (str): 
+        - Arg3 (number): 
+
+        igmpJoin(Arg2=string)
+        ---------------------
+        - Arg2 (str): 
 
         Raises
         ------
@@ -950,18 +913,16 @@ class Vport(Base):
     def IgmpLeave(self, *args, **kwargs):
         """Executes the igmpLeave operation on the server.
 
-        NOT DEFINED
-
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        igmpLeave(Arg2=string)
-        ----------------------
-        - Arg2 (str): NOT DEFINED
 
         igmpLeave(Arg2=string, Arg3=number)
         -----------------------------------
-        - Arg2 (str): NOT DEFINED
-        - Arg3 (number): NOT DEFINED
+        - Arg2 (str): 
+        - Arg3 (number): 
+
+        igmpLeave(Arg2=string)
+        ----------------------
+        - Arg2 (str): 
 
         Raises
         ------
@@ -1046,8 +1007,6 @@ class Vport(Base):
     def RefreshUnresolvedNeighbors(self):
         """Executes the refreshUnresolvedNeighbors operation on the server.
 
-        Refresh unresolved neighbours.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -1081,25 +1040,6 @@ class Vport(Base):
         """
         payload = { "Arg1": self }
         return self._execute('releasePort', payload=payload, response_object=None)
-
-    def RemoveGclEntry(self, *args, **kwargs):
-        """Executes the removeGclEntry operation on the server.
-
-        Remove an entry from the GCL list
-
-        removeGclEntry(Arg2=number)
-        ---------------------------
-        - Arg2 (number): Integer indicating GCL table entry index to remove
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('removeGclEntry', payload=payload, response_object=None)
 
     def ResetPortCpu(self):
         """Executes the resetPortCpu operation on the server.
@@ -1182,14 +1122,12 @@ class Vport(Base):
     def SendArp(self, *args, **kwargs):
         """Executes the sendArp operation on the server.
 
-        NOT DEFINED
-
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         sendArp(Arg2=list)bool
         ----------------------
-        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../interface])): NOT DEFINED
-        - Returns bool: NOT DEFINED
+        - Arg2 (list(str[None | /api/v1/sessions/30/ixnetwork/vport/.../interface])): 
+        - Returns bool: 
 
         Raises
         ------
@@ -1204,8 +1142,6 @@ class Vport(Base):
     def SendArpAll(self):
         """Executes the sendArpAll operation on the server.
 
-        NOT DEFINED
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -1217,14 +1153,12 @@ class Vport(Base):
     def SendNs(self, *args, **kwargs):
         """Executes the sendNs operation on the server.
 
-        NOT DEFINED
-
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         sendNs(Arg2=list)bool
         ---------------------
-        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../interface])): NOT DEFINED
-        - Returns bool: NOT DEFINED
+        - Arg2 (list(str[None | /api/v1/sessions/30/ixnetwork/vport/.../interface])): 
+        - Returns bool: 
 
         Raises
         ------
@@ -1239,8 +1173,6 @@ class Vport(Base):
     def SendNsAll(self):
         """Executes the sendNsAll operation on the server.
 
-        NOT DEFINED
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -1252,14 +1184,12 @@ class Vport(Base):
     def SendRs(self, *args, **kwargs):
         """Executes the sendRs operation on the server.
 
-        NOT DEFINED
-
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         sendRs(Arg2=list)bool
         ---------------------
-        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../interface])): NOT DEFINED
-        - Returns bool: NOT DEFINED
+        - Arg2 (list(str[None | /api/v1/sessions/30/ixnetwork/vport/.../interface])): 
+        - Returns bool: 
 
         Raises
         ------
@@ -1273,8 +1203,6 @@ class Vport(Base):
 
     def SendRsAll(self):
         """Executes the sendRsAll operation on the server.
-
-        NOT DEFINED
 
         Raises
         ------
@@ -1401,24 +1329,3 @@ class Vport(Base):
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('unassignPorts', payload=payload, response_object=None)
-
-    def UpdateGclEntry(self, *args, **kwargs):
-        """Executes the updateGclEntry operation on the server.
-
-        Update an entry in the GCL list
-
-        updateGclEntry(Arg2=number, Arg3=string, Arg4=string)
-        -----------------------------------------------------
-        - Arg2 (number): Integer indicating GCL table index to update
-        - Arg3 (str): String stating the new duration of this entry
-        - Arg4 (str): String stating gate states
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('updateGclEntry', payload=payload, response_object=None)

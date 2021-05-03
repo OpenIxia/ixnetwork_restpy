@@ -72,7 +72,7 @@ class Link(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../mp]): Attaches multiple MPs to the link. MPs must be previously configured.
+        - list(str[None | /api/v1/sessions/30/ixnetwork/vport/.../mp]): Attaches multiple MPs to the link. MPs must be previously configured.
         """
         return self._get_attribute(self._SDM_ATT_MAP['MoreMps'])
     @MoreMps.setter
@@ -84,7 +84,7 @@ class Link(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../mp): Sets the link MP to be facing away from the Ixia chassis. The MP must be previous configued.
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../mp): Sets the link MP to be facing away from the Ixia chassis. The MP must be previous configued.
         """
         return self._get_attribute(self._SDM_ATT_MAP['MpOutwardsIxia'])
     @MpOutwardsIxia.setter
@@ -96,7 +96,7 @@ class Link(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../mp): Sets the link MP to be facing towards from the Ixia chassis. The MP must be previous configued.
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../mp): Sets the link MP to be facing towards from the Ixia chassis. The MP must be previous configued.
         """
         return self._get_attribute(self._SDM_ATT_MAP['MpTowardsIxia'])
     @MpTowardsIxia.setter
@@ -110,9 +110,9 @@ class Link(Base):
         ----
         - Enabled (bool): If true, the link is enabled.
         - LinkType (str(broadcast | pointToPoint)): Sets the link type.
-        - MoreMps (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../mp])): Attaches multiple MPs to the link. MPs must be previously configured.
-        - MpOutwardsIxia (str(None | /api/v1/sessions/1/ixnetwork/vport/.../mp)): Sets the link MP to be facing away from the Ixia chassis. The MP must be previous configued.
-        - MpTowardsIxia (str(None | /api/v1/sessions/1/ixnetwork/vport/.../mp)): Sets the link MP to be facing towards from the Ixia chassis. The MP must be previous configued.
+        - MoreMps (list(str[None | /api/v1/sessions/30/ixnetwork/vport/.../mp])): Attaches multiple MPs to the link. MPs must be previously configured.
+        - MpOutwardsIxia (str(None | /api/v1/sessions/30/ixnetwork/vport/.../mp)): Sets the link MP to be facing away from the Ixia chassis. The MP must be previous configued.
+        - MpTowardsIxia (str(None | /api/v1/sessions/30/ixnetwork/vport/.../mp)): Sets the link MP to be facing towards from the Ixia chassis. The MP must be previous configued.
 
         Raises
         ------
@@ -127,9 +127,9 @@ class Link(Base):
         ----
         - Enabled (bool): If true, the link is enabled.
         - LinkType (str(broadcast | pointToPoint)): Sets the link type.
-        - MoreMps (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../mp])): Attaches multiple MPs to the link. MPs must be previously configured.
-        - MpOutwardsIxia (str(None | /api/v1/sessions/1/ixnetwork/vport/.../mp)): Sets the link MP to be facing away from the Ixia chassis. The MP must be previous configued.
-        - MpTowardsIxia (str(None | /api/v1/sessions/1/ixnetwork/vport/.../mp)): Sets the link MP to be facing towards from the Ixia chassis. The MP must be previous configued.
+        - MoreMps (list(str[None | /api/v1/sessions/30/ixnetwork/vport/.../mp])): Attaches multiple MPs to the link. MPs must be previously configured.
+        - MpOutwardsIxia (str(None | /api/v1/sessions/30/ixnetwork/vport/.../mp)): Sets the link MP to be facing away from the Ixia chassis. The MP must be previous configued.
+        - MpTowardsIxia (str(None | /api/v1/sessions/30/ixnetwork/vport/.../mp)): Sets the link MP to be facing towards from the Ixia chassis. The MP must be previous configued.
 
         Returns
         -------
@@ -162,9 +162,9 @@ class Link(Base):
         ----
         - Enabled (bool): If true, the link is enabled.
         - LinkType (str(broadcast | pointToPoint)): Sets the link type.
-        - MoreMps (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../mp])): Attaches multiple MPs to the link. MPs must be previously configured.
-        - MpOutwardsIxia (str(None | /api/v1/sessions/1/ixnetwork/vport/.../mp)): Sets the link MP to be facing away from the Ixia chassis. The MP must be previous configued.
-        - MpTowardsIxia (str(None | /api/v1/sessions/1/ixnetwork/vport/.../mp)): Sets the link MP to be facing towards from the Ixia chassis. The MP must be previous configued.
+        - MoreMps (list(str[None | /api/v1/sessions/30/ixnetwork/vport/.../mp])): Attaches multiple MPs to the link. MPs must be previously configured.
+        - MpOutwardsIxia (str(None | /api/v1/sessions/30/ixnetwork/vport/.../mp)): Sets the link MP to be facing away from the Ixia chassis. The MP must be previous configued.
+        - MpTowardsIxia (str(None | /api/v1/sessions/30/ixnetwork/vport/.../mp)): Sets the link MP to be facing towards from the Ixia chassis. The MP must be previous configued.
 
         Returns
         -------

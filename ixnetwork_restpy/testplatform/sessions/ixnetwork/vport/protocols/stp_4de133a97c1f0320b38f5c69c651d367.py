@@ -103,8 +103,6 @@ class Stp(Base):
     def Start(self):
         """Executes the start operation on the server.
 
-        Starts STP on a port or group of ports.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -115,8 +113,6 @@ class Stp(Base):
 
     def Stop(self):
         """Executes the stop operation on the server.
-
-        Stops STP on a port or group of ports.
 
         Raises
         ------

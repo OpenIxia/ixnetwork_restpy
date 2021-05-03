@@ -391,8 +391,6 @@ class OfChannelSwitchLearnedInfo(Base):
     def AddRecordForTrigger(self):
         """Executes the addRecordForTrigger operation on the server.
 
-        API to add record for trigger to be sent.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server

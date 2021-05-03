@@ -74,7 +74,7 @@ class Layer47AppLibraryTrafficFilter(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters): Returns a list with all the filters that are present in the selected drill down views. This includes filters that cannot be applied for the current drill down view.
+        - str(None | /api/v1/sessions/30/ixnetwork/statistics/.../availableAdvancedFilters): Returns a list with all the filters that are present in the selected drill down views. This includes filters that cannot be applied for the current drill down view.
         """
         return self._get_attribute(self._SDM_ATT_MAP['AllAdvancedFilters'])
 
@@ -83,7 +83,7 @@ class Layer47AppLibraryTrafficFilter(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters): Specifies a list that contains only the filters which can be applied on the current drill down view.
+        - str(None | /api/v1/sessions/30/ixnetwork/statistics/.../availableAdvancedFilters): Specifies a list that contains only the filters which can be applied on the current drill down view.
         """
         return self._get_attribute(self._SDM_ATT_MAP['MatchingAdvancedFilters'])
 
@@ -165,8 +165,8 @@ class Layer47AppLibraryTrafficFilter(Base):
         Args
         ----
         - AdvancedFilterName (str): Specifies an advanced filter from the ones available in the selected drill down view.
-        - AllAdvancedFilters (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters)): Returns a list with all the filters that are present in the selected drill down views. This includes filters that cannot be applied for the current drill down view.
-        - MatchingAdvancedFilters (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters)): Specifies a list that contains only the filters which can be applied on the current drill down view.
+        - AllAdvancedFilters (str(None | /api/v1/sessions/30/ixnetwork/statistics/.../availableAdvancedFilters)): Returns a list with all the filters that are present in the selected drill down views. This includes filters that cannot be applied for the current drill down view.
+        - MatchingAdvancedFilters (str(None | /api/v1/sessions/30/ixnetwork/statistics/.../availableAdvancedFilters)): Specifies a list that contains only the filters which can be applied on the current drill down view.
         - TopxEnabled (bool): The view only shows the number of rows specified by TopXValue. If the view is OnDemand, it will become RealTime.
         - TopxValue (number): The number of rows to be shown when TopXEnabled is set to true.
 
@@ -205,7 +205,7 @@ class Layer47AppLibraryTrafficFilter(Base):
 
         addAdvancedFilter(Arg2=href)
         ----------------------------
-        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters)): NOT DEFINED
+        - Arg2 (str(None | /api/v1/sessions/30/ixnetwork/statistics/.../availableAdvancedFilters)): NOT DEFINED
 
         Raises
         ------

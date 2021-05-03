@@ -1132,7 +1132,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
+        - list(str[None | /api/v1/sessions/30/ixnetwork/vport | /api/v1/sessions/30/ixnetwork/vport/.../lan]): Protocol Items
         """
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolItem'])
     @ProtocolItem.setter
@@ -1359,7 +1359,7 @@ class TestConfig(Base):
         - PercentMulticastFrames (number): The percentage of multicast frames.
         - PercentUnicastFrames (number): The percentage of unicast frames.
         - PortMACAddress (str): The MAC address of the port.
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/30/ixnetwork/vport | /api/v1/sessions/30/ixnetwork/vport/.../lan])): Protocol Items
         - RatePass (number): A Pass criteria applied to each trial in the test to determine whether the trialpassed or failed.
         - ReportSequenceError (bool): Reports sequence errors in the test result.
         - SendJoinsBeforeLeave (bool): 

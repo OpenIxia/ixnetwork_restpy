@@ -117,8 +117,6 @@ class Bfd(Base):
     def Start(self):
         """Executes the start operation on the server.
 
-        Starts the BFD protocol on a port or group of ports.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -129,8 +127,6 @@ class Bfd(Base):
 
     def Stop(self):
         """Executes the stop operation on the server.
-
-        Stops the BFD protocol on a port or group of ports.
 
         Raises
         ------

@@ -439,8 +439,6 @@ class Bgp(Base):
     def Start(self):
         """Executes the start operation on the server.
 
-        This function allows to Start BGP on a group of ports simultaneously.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -451,8 +449,6 @@ class Bgp(Base):
 
     def Stop(self):
         """Executes the stop operation on the server.
-
-        This function allows to Stop BGP on a group of ports simultaneously.
 
         Raises
         ------

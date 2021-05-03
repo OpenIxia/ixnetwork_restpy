@@ -33,6 +33,7 @@ class Testworkflow(Base):
     _SDM_ATT_MAP = {
         'CurrentDescription': 'currentDescription',
         'CurrentState': 'currentState',
+        'IsCaptureRunning': 'isCaptureRunning',
     }
 
     def __init__(self, parent):
@@ -55,6 +56,15 @@ class Testworkflow(Base):
         - str(kApplyTraffic | kConnectPorts | kError | kGenerateTraffic | kIdle | kReleaseCrashedPorts | kStartLAG | kStartProtocols | kStartTopology | kStartTraffic | kStopLAG | kStopProtocols | kStopTraffic | kWaitForChassisUp | kWaitForLicenseBroadcast | kWaitForPortsUp | kWaitForProtocolsUp): 
         """
         return self._get_attribute(self._SDM_ATT_MAP['CurrentState'])
+
+    @property
+    def IsCaptureRunning(self):
+        """
+        Returns
+        -------
+        - bool: Indicates whether capture is running on any port in config.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['IsCaptureRunning'])
 
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
@@ -120,7 +130,7 @@ class Testworkflow(Base):
 
         startselected(Arg2=href, Arg3=bool)
         -----------------------------------
-        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/topology | /api/v1/sessions/1/ixnetwork/topology | /api/v1/sessions/1/ixnetwork/topology/.../deviceGroup)): objref to /topology or device group
+        - Arg2 (str(None | /api/v1/sessions/7/ixnetwork/topology | /api/v1/sessions/7/ixnetwork/topology | /api/v1/sessions/7/ixnetwork/topology/.../deviceGroup)): objref to /topology or device group
         - Arg3 (bool): a boolean indicating if ownership should be taken forcefully
 
         Raises

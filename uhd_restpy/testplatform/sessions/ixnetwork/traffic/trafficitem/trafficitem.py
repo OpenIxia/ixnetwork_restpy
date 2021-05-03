@@ -833,11 +833,15 @@ class TrafficItem(Base):
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        startLearning(Arg2=number, Arg3=number, Arg4=number)
-        ----------------------------------------------------
+        startLearning(Arg2=number, Arg3=number, Arg4=number, Arg5=bool, Arg6=bool, Arg7=bool, Arg8=bool)
+        ------------------------------------------------------------------------------------------------
         - Arg2 (number): The framesize of the learning frame.
         - Arg3 (number): The framecount of the learning frames.
         - Arg4 (number): The frames per second of the learning frames.
+        - Arg5 (bool): Send gratuitous ARP frames.
+        - Arg6 (bool): Send MAC frames.
+        - Arg7 (bool): Send Fast Path frames.
+        - Arg8 (bool): Send full mesh.
 
         startLearning(Arg2=number, Arg3=number, Arg4=number, Arg5=bool, Arg6=bool, Arg7=bool)
         -------------------------------------------------------------------------------------
@@ -848,15 +852,11 @@ class TrafficItem(Base):
         - Arg6 (bool): Send MAC frames.
         - Arg7 (bool): Send Fast Path frames.
 
-        startLearning(Arg2=number, Arg3=number, Arg4=number, Arg5=bool, Arg6=bool, Arg7=bool, Arg8=bool)
-        ------------------------------------------------------------------------------------------------
+        startLearning(Arg2=number, Arg3=number, Arg4=number)
+        ----------------------------------------------------
         - Arg2 (number): The framesize of the learning frame.
         - Arg3 (number): The framecount of the learning frames.
         - Arg4 (number): The frames per second of the learning frames.
-        - Arg5 (bool): Send gratuitous ARP frames.
-        - Arg6 (bool): Send MAC frames.
-        - Arg7 (bool): Send Fast Path frames.
-        - Arg8 (bool): Send full mesh.
 
         Raises
         ------

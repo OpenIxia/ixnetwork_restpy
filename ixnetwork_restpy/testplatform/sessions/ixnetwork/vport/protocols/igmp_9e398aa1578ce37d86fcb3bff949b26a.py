@@ -215,12 +215,10 @@ class Igmp(Base):
     def Join(self, *args, **kwargs):
         """Executes the join operation on the server.
 
-        NOT DEFINED
-
         join(Arg2=string, Arg3=number)
         ------------------------------
-        - Arg2 (str): NOT DEFINED
-        - Arg3 (number): NOT DEFINED
+        - Arg2 (str): 
+        - Arg3 (number): 
 
         Raises
         ------
@@ -235,12 +233,10 @@ class Igmp(Base):
     def Leave(self, *args, **kwargs):
         """Executes the leave operation on the server.
 
-        NOT DEFINED
-
         leave(Arg2=string, Arg3=number)
         -------------------------------
-        - Arg2 (str): NOT DEFINED
-        - Arg3 (number): NOT DEFINED
+        - Arg2 (str): 
+        - Arg3 (number): 
 
         Raises
         ------
@@ -255,8 +251,6 @@ class Igmp(Base):
     def Start(self):
         """Executes the start operation on the server.
 
-        Starts the EIGRP protocol on a port or group of ports simultaneously.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -267,8 +261,6 @@ class Igmp(Base):
 
     def Stop(self):
         """Executes the stop operation on the server.
-
-        Stops the IGMP protocol on a port or group of ports simultaneously.
 
         Raises
         ------

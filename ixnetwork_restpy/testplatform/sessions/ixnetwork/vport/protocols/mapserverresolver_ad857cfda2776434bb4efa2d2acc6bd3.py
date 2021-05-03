@@ -99,7 +99,7 @@ class MapServerResolver(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../router): It gives details about the internal ixia msmr router
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../router): It gives details about the internal ixia msmr router
         """
         return self._get_attribute(self._SDM_ATT_MAP['InternalIxiaMsmrRouter'])
     @InternalIxiaMsmrRouter.setter
@@ -151,7 +151,7 @@ class MapServerResolver(Base):
         - Enabled (bool): If true, it enables the protocol
         - ExternalMsmrAddress (str): It gives details about the external Msmr address
         - Family (str(ipv4 | ipv6)): It gives details about the ip family it represents
-        - InternalIxiaMsmrRouter (str(None | /api/v1/sessions/1/ixnetwork/vport/.../router)): It gives details about the internal ixia msmr router
+        - InternalIxiaMsmrRouter (str(None | /api/v1/sessions/30/ixnetwork/vport/.../router)): It gives details about the internal ixia msmr router
         - Key (str): it gives details about the key
         - MsmrLocation (str(internal | external)): It details about the msmr location
         - Type (str(ms | mr | msmr)): It gives details about the type
@@ -171,7 +171,7 @@ class MapServerResolver(Base):
         - Enabled (bool): If true, it enables the protocol
         - ExternalMsmrAddress (str): It gives details about the external Msmr address
         - Family (str(ipv4 | ipv6)): It gives details about the ip family it represents
-        - InternalIxiaMsmrRouter (str(None | /api/v1/sessions/1/ixnetwork/vport/.../router)): It gives details about the internal ixia msmr router
+        - InternalIxiaMsmrRouter (str(None | /api/v1/sessions/30/ixnetwork/vport/.../router)): It gives details about the internal ixia msmr router
         - Key (str): it gives details about the key
         - MsmrLocation (str(internal | external)): It details about the msmr location
         - Type (str(ms | mr | msmr)): It gives details about the type
@@ -209,7 +209,7 @@ class MapServerResolver(Base):
         - Enabled (bool): If true, it enables the protocol
         - ExternalMsmrAddress (str): It gives details about the external Msmr address
         - Family (str(ipv4 | ipv6)): It gives details about the ip family it represents
-        - InternalIxiaMsmrRouter (str(None | /api/v1/sessions/1/ixnetwork/vport/.../router)): It gives details about the internal ixia msmr router
+        - InternalIxiaMsmrRouter (str(None | /api/v1/sessions/30/ixnetwork/vport/.../router)): It gives details about the internal ixia msmr router
         - Key (str): it gives details about the key
         - MsmrLocation (str(internal | external)): It details about the msmr location
         - Type (str(ms | mr | msmr)): It gives details about the type

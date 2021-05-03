@@ -70,7 +70,7 @@ class Interface(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): It gives the protocol interfaces
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface): It gives the protocol interfaces
         """
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterfaces'])
     @ProtocolInterfaces.setter
@@ -84,7 +84,7 @@ class Interface(Base):
         ----
         - Enabled (bool): If True, it gives details about the interface
         - MapRegisterOrRequestTxInterface (bool): If true, it maps register or requests Tx interface
-        - ProtocolInterfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): It gives the protocol interfaces
+        - ProtocolInterfaces (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): It gives the protocol interfaces
 
         Raises
         ------
@@ -99,7 +99,7 @@ class Interface(Base):
         ----
         - Enabled (bool): If True, it gives details about the interface
         - MapRegisterOrRequestTxInterface (bool): If true, it maps register or requests Tx interface
-        - ProtocolInterfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): It gives the protocol interfaces
+        - ProtocolInterfaces (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): It gives the protocol interfaces
 
         Returns
         -------
@@ -132,7 +132,7 @@ class Interface(Base):
         ----
         - Enabled (bool): If True, it gives details about the interface
         - MapRegisterOrRequestTxInterface (bool): If true, it maps register or requests Tx interface
-        - ProtocolInterfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): It gives the protocol interfaces
+        - ProtocolInterfaces (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): It gives the protocol interfaces
 
         Returns
         -------

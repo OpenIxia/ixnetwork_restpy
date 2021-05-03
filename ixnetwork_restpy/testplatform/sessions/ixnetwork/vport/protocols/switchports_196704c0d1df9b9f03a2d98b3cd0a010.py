@@ -295,8 +295,6 @@ class SwitchPorts(Base):
     def SimulatePortUpDown(self):
         """Executes the simulatePortUpDown operation on the server.
 
-        Exec to simulate port up and down.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server

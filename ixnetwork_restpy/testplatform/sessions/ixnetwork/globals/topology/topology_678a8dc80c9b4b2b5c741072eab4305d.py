@@ -75,13 +75,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv4peer.bgpipv4peer_439a44dd340bf6fd724df996ab26569d.BgpIpv4Peer): An instance of the BgpIpv4Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv4peer.bgpipv4peer_a0cdc3c071406e922841f5820d83e340.BgpIpv4Peer): An instance of the BgpIpv4Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv4peer.bgpipv4peer_439a44dd340bf6fd724df996ab26569d import BgpIpv4Peer
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv4peer.bgpipv4peer_a0cdc3c071406e922841f5820d83e340 import BgpIpv4Peer
         return BgpIpv4Peer(self)._select()
 
     @property
@@ -89,13 +89,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv6peer.bgpipv6peer_7e5e36454dedaa483fd7dd20abef422b.BgpIpv6Peer): An instance of the BgpIpv6Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv6peer.bgpipv6peer_ab51eeb3a359346cdad8fa15fbb15a9b.BgpIpv6Peer): An instance of the BgpIpv6Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv6peer.bgpipv6peer_7e5e36454dedaa483fd7dd20abef422b import BgpIpv6Peer
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv6peer.bgpipv6peer_ab51eeb3a359346cdad8fa15fbb15a9b import BgpIpv6Peer
         return BgpIpv6Peer(self)._select()
 
     @property
@@ -397,13 +397,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.ipv6_a9f2dfb33a5d9c10d60b9830b8455095.Ipv6): An instance of the Ipv6 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.ipv6_aff699fde2f7d9e05075621534ea8b2d.Ipv6): An instance of the Ipv6 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.ipv6_a9f2dfb33a5d9c10d60b9830b8455095 import Ipv6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.ipv6_aff699fde2f7d9e05075621534ea8b2d import Ipv6
         return Ipv6(self)._select()
 
     @property
@@ -621,13 +621,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.macsec.macsec_b93abc2847815d89651f09c37d6efa2f.Macsec): An instance of the Macsec class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.macsec.macsec_8998c1b41f29384c2c688534cb45d85d.Macsec): An instance of the Macsec class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.macsec.macsec_b93abc2847815d89651f09c37d6efa2f import Macsec
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.macsec.macsec_8998c1b41f29384c2c688534cb45d85d import Macsec
         return Macsec(self)._select()
 
     @property
@@ -775,13 +775,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ospfv2router.ospfv2router_74c05cad626e75b691d6431d3166eb2c.Ospfv2Router): An instance of the Ospfv2Router class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ospfv2router.ospfv2router_fc60e2637a549cc6f1633d0088abb4ee.Ospfv2Router): An instance of the Ospfv2Router class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ospfv2router.ospfv2router_74c05cad626e75b691d6431d3166eb2c import Ospfv2Router
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ospfv2router.ospfv2router_fc60e2637a549cc6f1633d0088abb4ee import Ospfv2Router
         return Ospfv2Router(self)
 
     @property
@@ -1050,7 +1050,7 @@ class Topology(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport]): List of virtual ports included in the port level configuration
+        - list(str[None | /api/v1/sessions/30/ixnetwork/vport]): List of virtual ports included in the port level configuration
         """
         return self._get_attribute(self._SDM_ATT_MAP['Vports'])
 

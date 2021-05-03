@@ -117,8 +117,6 @@ class Ripng(Base):
     def Start(self):
         """Executes the start operation on the server.
 
-        Starts the RIPng protocol on a port or group of ports simultaneously.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -129,8 +127,6 @@ class Ripng(Base):
 
     def Stop(self):
         """Executes the stop operation on the server.
-
-        Stops the RIPng protocol on a port or group of ports simultaneously.
 
         Raises
         ------

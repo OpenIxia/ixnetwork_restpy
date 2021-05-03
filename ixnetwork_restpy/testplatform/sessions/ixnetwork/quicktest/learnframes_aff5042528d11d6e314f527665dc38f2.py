@@ -24,7 +24,7 @@ from ixnetwork_restpy.files import Files
 
 
 class LearnFrames(Base):
-    """The learning frames that IxNetwork sends during the test.
+    """NOT DEFINED
     The LearnFrames class encapsulates a required learnFrames resource which will be retrieved from the server every time the property is accessed.
     """
 
@@ -53,7 +53,7 @@ class LearnFrames(Base):
         """
         Returns
         -------
-        - bool: If true, the fast path is enabled.
+        - bool: NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP['FastPathEnable'])
     @FastPathEnable.setter
@@ -65,7 +65,7 @@ class LearnFrames(Base):
         """
         Returns
         -------
-        - number: Specifies the size of the learning frames in the fast path.
+        - number: NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP['FastPathLearnFrameSize'])
     @FastPathLearnFrameSize.setter
@@ -77,7 +77,7 @@ class LearnFrames(Base):
         """
         Returns
         -------
-        - number: The learnt information on the number of frames to be transferred.
+        - number: NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP['FastPathNumFrames'])
     @FastPathNumFrames.setter
@@ -89,7 +89,7 @@ class LearnFrames(Base):
         """
         Returns
         -------
-        - number: The learnt information on the rate the data is to be transferred.
+        - number: NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP['FastPathRate'])
     @FastPathRate.setter
@@ -101,7 +101,7 @@ class LearnFrames(Base):
         """
         Returns
         -------
-        - number: Specifies the size of the learning frames.
+        - number: NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP['LearnFrameSize'])
     @LearnFrameSize.setter
@@ -113,7 +113,7 @@ class LearnFrames(Base):
         """
         Returns
         -------
-        - str(never | onBinaryIteration | oncePerFramesize | oncePerTest | onTrial): Allows to choose how frequently IxNetwork sends learning frames during the test.
+        - str(never | onBinaryIteration | oncePerFramesize | oncePerTest | onTrial): NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP['LearnFrequency'])
     @LearnFrequency.setter
@@ -125,7 +125,7 @@ class LearnFrames(Base):
         """
         Returns
         -------
-        - number: Specifies the number of learning frames that IxNetwork sends for each address.
+        - number: NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP['LearnNumFrames'])
     @LearnNumFrames.setter
@@ -137,7 +137,7 @@ class LearnFrames(Base):
         """
         Returns
         -------
-        - number: Specifies the rate at which IxNetwork sends learn frames to the DUT.
+        - number: NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP['LearnRate'])
     @LearnRate.setter
@@ -149,7 +149,7 @@ class LearnFrames(Base):
         """
         Returns
         -------
-        - bool: Sends learning frames to MAC address only.
+        - bool: NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP['LearnSendMacOnly'])
     @LearnSendMacOnly.setter
@@ -161,7 +161,7 @@ class LearnFrames(Base):
         """
         Returns
         -------
-        - bool: The learnt information on the router sent solicitation.
+        - bool: NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP['LearnSendRouterSolicitation'])
     @LearnSendRouterSolicitation.setter
@@ -173,7 +173,7 @@ class LearnFrames(Base):
         """
         Returns
         -------
-        - number: Specifies the length of time in ms that IxNetwork pauses before sending all the learning frames from all the ports.
+        - number: NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP['LearnWaitTime'])
     @LearnWaitTime.setter
@@ -185,7 +185,7 @@ class LearnFrames(Base):
         """
         Returns
         -------
-        - number: The time in ms that IxNetwork waits before sending all the learning frames from all the ports.
+        - number: NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP['LearnWaitTimeBeforeTransmit'])
     @LearnWaitTimeBeforeTransmit.setter
@@ -197,18 +197,18 @@ class LearnFrames(Base):
 
         Args
         ----
-        - FastPathEnable (bool): If true, the fast path is enabled.
-        - FastPathLearnFrameSize (number): Specifies the size of the learning frames in the fast path.
-        - FastPathNumFrames (number): The learnt information on the number of frames to be transferred.
-        - FastPathRate (number): The learnt information on the rate the data is to be transferred.
-        - LearnFrameSize (number): Specifies the size of the learning frames.
-        - LearnFrequency (str(never | onBinaryIteration | oncePerFramesize | oncePerTest | onTrial)): Allows to choose how frequently IxNetwork sends learning frames during the test.
-        - LearnNumFrames (number): Specifies the number of learning frames that IxNetwork sends for each address.
-        - LearnRate (number): Specifies the rate at which IxNetwork sends learn frames to the DUT.
-        - LearnSendMacOnly (bool): Sends learning frames to MAC address only.
-        - LearnSendRouterSolicitation (bool): The learnt information on the router sent solicitation.
-        - LearnWaitTime (number): Specifies the length of time in ms that IxNetwork pauses before sending all the learning frames from all the ports.
-        - LearnWaitTimeBeforeTransmit (number): The time in ms that IxNetwork waits before sending all the learning frames from all the ports.
+        - FastPathEnable (bool): NOT DEFINED
+        - FastPathLearnFrameSize (number): NOT DEFINED
+        - FastPathNumFrames (number): NOT DEFINED
+        - FastPathRate (number): NOT DEFINED
+        - LearnFrameSize (number): NOT DEFINED
+        - LearnFrequency (str(never | onBinaryIteration | oncePerFramesize | oncePerTest | onTrial)): NOT DEFINED
+        - LearnNumFrames (number): NOT DEFINED
+        - LearnRate (number): NOT DEFINED
+        - LearnSendMacOnly (bool): NOT DEFINED
+        - LearnSendRouterSolicitation (bool): NOT DEFINED
+        - LearnWaitTime (number): NOT DEFINED
+        - LearnWaitTimeBeforeTransmit (number): NOT DEFINED
 
         Raises
         ------

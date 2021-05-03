@@ -67,8 +67,6 @@ class HostTopologyLearnedInformation(Base):
     def RefreshHostRangeLearnedInformation(self):
         """Executes the refreshHostRangeLearnedInformation operation on the server.
 
-        NOT DEFINED
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server

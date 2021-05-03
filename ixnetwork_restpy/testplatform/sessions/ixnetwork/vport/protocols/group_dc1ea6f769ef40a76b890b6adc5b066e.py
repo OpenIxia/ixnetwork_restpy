@@ -222,12 +222,10 @@ class Group(Base):
     def UpdateGroupMod(self, *args, **kwargs):
         """Executes the updateGroupMod operation on the server.
 
-        NOT DEFINED
-
         updateGroupMod(Arg2=enum)bool
         -----------------------------
-        - Arg2 (str(sendGroupAdd | sendGroupModify | sendGroupRemove)): NOT DEFINED
-        - Returns bool: NOT DEFINED
+        - Arg2 (str(sendGroupAdd | sendGroupModify | sendGroupRemove)): 
+        - Returns bool: 
 
         Raises
         ------

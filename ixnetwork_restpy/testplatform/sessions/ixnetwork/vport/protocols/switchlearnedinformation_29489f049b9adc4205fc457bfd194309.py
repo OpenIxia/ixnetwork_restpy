@@ -463,8 +463,6 @@ class SwitchLearnedInformation(Base):
     def ClearRecordsForTrigger(self):
         """Executes the clearRecordsForTrigger operation on the server.
 
-        API to clear records for any trigger.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -475,8 +473,6 @@ class SwitchLearnedInformation(Base):
 
     def RefreshFlows(self):
         """Executes the refreshFlows operation on the server.
-
-        This describes that the flows learned information is refreshed.
 
         Raises
         ------
@@ -489,8 +485,6 @@ class SwitchLearnedInformation(Base):
     def RefreshGroupLearnedInformation(self):
         """Executes the refreshGroupLearnedInformation operation on the server.
 
-        NOT DEFINED
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -501,8 +495,6 @@ class SwitchLearnedInformation(Base):
 
     def RefreshMeterLearnedInformation(self):
         """Executes the refreshMeterLearnedInformation operation on the server.
-
-        NOT DEFINED
 
         Raises
         ------
@@ -515,8 +507,6 @@ class SwitchLearnedInformation(Base):
     def RefreshOfChannelLearnedInformation(self):
         """Executes the refreshOfChannelLearnedInformation operation on the server.
 
-        This describes that the ofChannellearned information is refreshed.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -528,8 +518,6 @@ class SwitchLearnedInformation(Base):
     def RefreshTableFeature(self):
         """Executes the refreshTableFeature operation on the server.
 
-        NOT DEFINED
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -540,8 +528,6 @@ class SwitchLearnedInformation(Base):
 
     def Trigger(self):
         """Executes the trigger operation on the server.
-
-        API to send Trigger.
 
         Raises
         ------

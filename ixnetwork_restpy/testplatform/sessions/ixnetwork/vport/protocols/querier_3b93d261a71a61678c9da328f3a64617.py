@@ -126,7 +126,7 @@ class Querier(Base):
         """DEPRECATED 
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The interface associated with the IGMP querier. The interface must be previously configured.
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface): The interface associated with the IGMP querier. The interface must be previously configured.
         """
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceId'])
     @InterfaceId.setter
@@ -162,7 +162,7 @@ class Querier(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range): The interfaces that are associated with the selected interface type.
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range): The interfaces that are associated with the selected interface type.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Interfaces'])
     @Interfaces.setter
@@ -322,10 +322,10 @@ class Querier(Base):
         - Enabled (bool): If true, the querier is enabled.
         - GeneralQueryInterval (number): The amount of time in seconds between IGMP General Query messages sent by the querier. The default query interval is 125 seconds.
         - GqResponseInterval (number): The maximum amount of time in seconds that the IGMP querier waits to receive a response to a General Query message. The default query response interval is 10000 milliseconds and must be less than the query interval.
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The interface associated with the IGMP querier. The interface must be previously configured.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The interface associated with the IGMP querier. The interface must be previously configured.
         - InterfaceIndex (number): The assigned protocol interface ID for this SM interface.
         - InterfaceType (str): Indicates the type of network for the interface.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - Interfaces (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
         - RobustnessVariable (number): Defines the subnet vulnerability to lost packets. IGMP can recover from robustness variable minus 1 lost IGMP packets. The robustness variable should be set to a value of 2 or greater. The default robustness variable value is 2.
         - RouterAlert (bool): If true, sets the Send Router Alert bit in the IP header.
         - SqResponseInterval (number): The maximum amount of time in seconds that the IGMP querier waits to receive a response to a Specific Query message. The default query response interval is 1000 milliseconds and must be less than the query interval.
@@ -351,10 +351,10 @@ class Querier(Base):
         - Enabled (bool): If true, the querier is enabled.
         - GeneralQueryInterval (number): The amount of time in seconds between IGMP General Query messages sent by the querier. The default query interval is 125 seconds.
         - GqResponseInterval (number): The maximum amount of time in seconds that the IGMP querier waits to receive a response to a General Query message. The default query response interval is 10000 milliseconds and must be less than the query interval.
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The interface associated with the IGMP querier. The interface must be previously configured.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The interface associated with the IGMP querier. The interface must be previously configured.
         - InterfaceIndex (number): The assigned protocol interface ID for this SM interface.
         - InterfaceType (str): Indicates the type of network for the interface.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - Interfaces (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
         - RobustnessVariable (number): Defines the subnet vulnerability to lost packets. IGMP can recover from robustness variable minus 1 lost IGMP packets. The robustness variable should be set to a value of 2 or greater. The default robustness variable value is 2.
         - RouterAlert (bool): If true, sets the Send Router Alert bit in the IP header.
         - SqResponseInterval (number): The maximum amount of time in seconds that the IGMP querier waits to receive a response to a Specific Query message. The default query response interval is 1000 milliseconds and must be less than the query interval.
@@ -398,10 +398,10 @@ class Querier(Base):
         - Enabled (bool): If true, the querier is enabled.
         - GeneralQueryInterval (number): The amount of time in seconds between IGMP General Query messages sent by the querier. The default query interval is 125 seconds.
         - GqResponseInterval (number): The maximum amount of time in seconds that the IGMP querier waits to receive a response to a General Query message. The default query response interval is 10000 milliseconds and must be less than the query interval.
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The interface associated with the IGMP querier. The interface must be previously configured.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The interface associated with the IGMP querier. The interface must be previously configured.
         - InterfaceIndex (number): The assigned protocol interface ID for this SM interface.
         - InterfaceType (str): Indicates the type of network for the interface.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - Interfaces (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
         - IsQuerier (bool): If true, this IGMP entity is a querier.
         - IsRefreshComplete (bool): If true, the querier information is current.
         - QuerierAddress (str): The querier IP address.
@@ -447,8 +447,6 @@ class Querier(Base):
     def GetInterfaceAccessorIfaceList(self):
         """Executes the getInterfaceAccessorIfaceList operation on the server.
 
-        Fetches interface accessor Iface list.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -459,8 +457,6 @@ class Querier(Base):
 
     def RefreshLearnedInfo(self):
         """Executes the refreshLearnedInfo operation on the server.
-
-        Refreshes the IGMP learned information.
 
         Raises
         ------

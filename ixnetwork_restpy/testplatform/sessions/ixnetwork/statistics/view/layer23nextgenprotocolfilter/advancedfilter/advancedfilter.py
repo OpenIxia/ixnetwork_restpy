@@ -83,7 +83,7 @@ class AdvancedFilter(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters): Gets the id of the filter, which is used to add the filter to a view.
+        - str(None | /api/v1/sessions/30/ixnetwork/statistics/.../availableAdvancedFilters): Gets the id of the filter, which is used to add the filter to a view.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TrackingFilterId'])
     @TrackingFilterId.setter
@@ -98,7 +98,7 @@ class AdvancedFilter(Base):
         - Expression (str): Specifies the filter body. This is a string that must have a specific format.This can be empty (no filter). The available operations and statistics can be obtained from availableAdvancedFilterOptions.
         - Name (str): Specifies the filter name. It must be unique per view.
         - SortingStats (str): Specifies the list of statistics by which the view will be sorted.
-        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters)): Gets the id of the filter, which is used to add the filter to a view.
+        - TrackingFilterId (str(None | /api/v1/sessions/30/ixnetwork/statistics/.../availableAdvancedFilters)): Gets the id of the filter, which is used to add the filter to a view.
 
         Raises
         ------
@@ -114,7 +114,7 @@ class AdvancedFilter(Base):
         - Expression (str): Specifies the filter body. This is a string that must have a specific format.This can be empty (no filter). The available operations and statistics can be obtained from availableAdvancedFilterOptions.
         - Name (str): Specifies the filter name. It must be unique per view.
         - SortingStats (str): Specifies the list of statistics by which the view will be sorted.
-        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters)): Gets the id of the filter, which is used to add the filter to a view.
+        - TrackingFilterId (str(None | /api/v1/sessions/30/ixnetwork/statistics/.../availableAdvancedFilters)): Gets the id of the filter, which is used to add the filter to a view.
 
         Returns
         -------
@@ -148,7 +148,7 @@ class AdvancedFilter(Base):
         - Expression (str): Specifies the filter body. This is a string that must have a specific format.This can be empty (no filter). The available operations and statistics can be obtained from availableAdvancedFilterOptions.
         - Name (str): Specifies the filter name. It must be unique per view.
         - SortingStats (str): Specifies the list of statistics by which the view will be sorted.
-        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters)): Gets the id of the filter, which is used to add the filter to a view.
+        - TrackingFilterId (str(None | /api/v1/sessions/30/ixnetwork/statistics/.../availableAdvancedFilters)): Gets the id of the filter, which is used to add the filter to a view.
 
         Returns
         -------

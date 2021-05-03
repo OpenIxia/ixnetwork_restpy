@@ -195,7 +195,7 @@ class CsvSnapshot(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../view]): NOT DEFINED
+        - list(str[None | /api/v1/sessions/7/ixnetwork/statistics/.../view]): NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP['Views'])
     @Views.setter
@@ -218,7 +218,7 @@ class CsvSnapshot(Base):
         - OpenViewer (bool): 
         - SnapshotViewContents (str(allPages | currentPage)): NOT DEFINED
         - SnapshotViewCsvGenerationMode (str(appendCSVFile | newCSVFile | overwriteCSVFile)): NOT DEFINED
-        - Views (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../view])): NOT DEFINED
+        - Views (list(str[None | /api/v1/sessions/7/ixnetwork/statistics/.../view])): NOT DEFINED
 
         Raises
         ------

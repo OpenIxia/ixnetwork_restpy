@@ -1047,8 +1047,6 @@ class ControllerTables(Base):
     def TableModificationTrigger(self):
         """Executes the tableModificationTrigger operation on the server.
 
-        NOT DEFINED
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server

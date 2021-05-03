@@ -36,9 +36,11 @@ class Data(Base):
         'ColumnCount': 'columnCount',
         'CurrentPage': 'currentPage',
         'EgressMode': 'egressMode',
+        'EgressOption': 'egressOption',
         'EgressPageSize': 'egressPageSize',
         'IsBlocked': 'isBlocked',
         'IsReady': 'isReady',
+        'LastPageSize': 'lastPageSize',
         'PageSize': 'pageSize',
         'PageValues': 'pageValues',
         'RowCount': 'rowCount',
@@ -131,6 +133,18 @@ class Data(Base):
         self._set_attribute(self._SDM_ATT_MAP['EgressMode'], value)
 
     @property
+    def EgressOption(self):
+        """
+        Returns
+        -------
+        - str(rowsWithNoPackets | rowsWithPackets | showAll): 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['EgressOption'])
+    @EgressOption.setter
+    def EgressOption(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['EgressOption'], value)
+
+    @property
     def EgressPageSize(self):
         """
         Returns
@@ -159,6 +173,15 @@ class Data(Base):
         - bool: 
         """
         return self._get_attribute(self._SDM_ATT_MAP['IsReady'])
+
+    @property
+    def LastPageSize(self):
+        """
+        Returns
+        -------
+        - number: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['LastPageSize'])
 
     @property
     def PageSize(self):
@@ -226,13 +249,14 @@ class Data(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['TotalRows'])
 
-    def update(self, CurrentPage=None, EgressMode=None, EgressPageSize=None, PageSize=None):
+    def update(self, CurrentPage=None, EgressMode=None, EgressOption=None, EgressPageSize=None, PageSize=None):
         """Updates data resource on the server.
 
         Args
         ----
         - CurrentPage (number): 
         - EgressMode (str(conditional | paged)): 
+        - EgressOption (str(rowsWithNoPackets | rowsWithPackets | showAll)): 
         - EgressPageSize (number): 
         - PageSize (number): 
 

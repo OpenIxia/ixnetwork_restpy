@@ -62,13 +62,13 @@ class SimRouter(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudorouter_eb611bec8e6885a729e2fa754f47907e.IsisL3PseudoRouter): An instance of the IsisL3PseudoRouter class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudorouter_85a56cb1f0a833e5ddef28a9b9e69093.IsisL3PseudoRouter): An instance of the IsisL3PseudoRouter class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudorouter_eb611bec8e6885a729e2fa754f47907e import IsisL3PseudoRouter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudorouter_85a56cb1f0a833e5ddef28a9b9e69093 import IsisL3PseudoRouter
         return IsisL3PseudoRouter(self)
 
     @property
@@ -90,13 +90,13 @@ class SimRouter(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudorouter_12b3393450e65ec5e296c3ab57a0b3a5.OspfPseudoRouter): An instance of the OspfPseudoRouter class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudorouter_4f8ac1720e067552c5d841a1a42fd3a1.OspfPseudoRouter): An instance of the OspfPseudoRouter class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudorouter_12b3393450e65ec5e296c3ab57a0b3a5 import OspfPseudoRouter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudorouter_4f8ac1720e067552c5d841a1a42fd3a1 import OspfPseudoRouter
         return OspfPseudoRouter(self)
 
     @property
@@ -104,13 +104,13 @@ class SimRouter(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3pseudorouter_2655f161657257079fe67161054bb73b.Ospfv3PseudoRouter): An instance of the Ospfv3PseudoRouter class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3pseudorouter_b8f17aed5bab5fc0ed0b1ddc19981f0b.Ospfv3PseudoRouter): An instance of the Ospfv3PseudoRouter class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3pseudorouter_2655f161657257079fe67161054bb73b import Ospfv3PseudoRouter
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3pseudorouter_b8f17aed5bab5fc0ed0b1ddc19981f0b import Ospfv3PseudoRouter
         return Ospfv3PseudoRouter(self)
 
     @property

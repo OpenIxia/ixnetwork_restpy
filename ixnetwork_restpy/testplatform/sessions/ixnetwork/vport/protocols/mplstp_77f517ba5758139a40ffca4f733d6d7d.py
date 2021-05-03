@@ -215,8 +215,6 @@ class MplsTp(Base):
     def Start(self):
         """Executes the start operation on the server.
 
-        This signifies the starting of the MPLSTP protocol on a port or group of ports.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -227,8 +225,6 @@ class MplsTp(Base):
 
     def Stop(self):
         """Executes the stop operation on the server.
-
-        This signifies the stopping of the MPLSTP protocol on a port or group of ports.
 
         Raises
         ------

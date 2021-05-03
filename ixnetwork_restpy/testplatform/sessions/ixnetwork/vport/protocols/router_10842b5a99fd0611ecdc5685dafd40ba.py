@@ -319,7 +319,7 @@ class Router(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this emulated OSPF router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup): The name of the group to which this emulated OSPF router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
@@ -346,7 +346,7 @@ class Router(Base):
         - LsaRetransmitTime (number): Indicates the time in seconds after which OSPF retransmits LSA if LS Acknowledgement is not received
         - MaxNumLsaPerSecond (number): Limits the number of LSAs that will be sent per second.
         - RouterId (str): Used to set the ID of the router, expressed as an IPv4 address.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this emulated OSPF router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this emulated OSPF router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
         Raises
         ------
@@ -374,7 +374,7 @@ class Router(Base):
         - LsaRetransmitTime (number): Indicates the time in seconds after which OSPF retransmits LSA if LS Acknowledgement is not received
         - MaxNumLsaPerSecond (number): Limits the number of LSAs that will be sent per second.
         - RouterId (str): Used to set the ID of the router, expressed as an IPv4 address.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this emulated OSPF router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this emulated OSPF router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
         Returns
         -------
@@ -421,7 +421,7 @@ class Router(Base):
         - LsaRetransmitTime (number): Indicates the time in seconds after which OSPF retransmits LSA if LS Acknowledgement is not received
         - MaxNumLsaPerSecond (number): Limits the number of LSAs that will be sent per second.
         - RouterId (str): Used to set the ID of the router, expressed as an IPv4 address.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this emulated OSPF router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this emulated OSPF router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
         Returns
         -------
@@ -454,16 +454,14 @@ class Router(Base):
     def GracefulRouterRestart(self, *args, **kwargs):
         """Executes the gracefulRouterRestart operation on the server.
 
-        NOT DEFINED
-
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         gracefulRouterRestart(Arg2=number, Arg3=enum, Arg4=number)string
         ----------------------------------------------------------------
-        - Arg2 (number): NOT DEFINED
-        - Arg3 (str(softwareReloadOrUpgrade | softwareRestart | switchToRedundantControlProcessor | unknown)): NOT DEFINED
-        - Arg4 (number): NOT DEFINED
-        - Returns str: NOT DEFINED
+        - Arg2 (number): 
+        - Arg3 (str(softwareReloadOrUpgrade | softwareRestart | switchToRedundantControlProcessor | unknown)): 
+        - Arg4 (number): 
+        - Returns str: 
 
         Raises
         ------
@@ -477,8 +475,6 @@ class Router(Base):
 
     def RefreshLearnedLsa(self):
         """Executes the refreshLearnedLsa operation on the server.
-
-        This exec refreshes the learned OSPFv3 LSA from the DUT.
 
         Raises
         ------

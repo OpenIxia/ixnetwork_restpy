@@ -59,7 +59,7 @@ class Interface(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The assigned interface ID.
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface): The assigned interface ID.
         """
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceId'])
     @InterfaceId.setter
@@ -96,7 +96,7 @@ class Interface(Base):
         Args
         ----
         - Enabled (bool): Enables this particular RIPng interface.
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The assigned interface ID.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The assigned interface ID.
         - InterfaceMetric (number): The value of the metric assigned to this particular interface. This value is added to the RIPng routing metric before transmission on this interface. It allows metrics for routes with the same standard RIPng routing metric to be identified by the particular interface.The default value is'0. Care should be taken so the combined metric value for a route does not exceed 15. A combined metric of 16 or above indicates that the route is unreachable.
         - ResponseMode (str(splitHorizon | noSplitHorizon | poisonReverse)): The response mode of the RIPng interface.
 
@@ -112,7 +112,7 @@ class Interface(Base):
         Args
         ----
         - Enabled (bool): Enables this particular RIPng interface.
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The assigned interface ID.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The assigned interface ID.
         - InterfaceMetric (number): The value of the metric assigned to this particular interface. This value is added to the RIPng routing metric before transmission on this interface. It allows metrics for routes with the same standard RIPng routing metric to be identified by the particular interface.The default value is'0. Care should be taken so the combined metric value for a route does not exceed 15. A combined metric of 16 or above indicates that the route is unreachable.
         - ResponseMode (str(splitHorizon | noSplitHorizon | poisonReverse)): The response mode of the RIPng interface.
 
@@ -146,7 +146,7 @@ class Interface(Base):
         Args
         ----
         - Enabled (bool): Enables this particular RIPng interface.
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The assigned interface ID.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The assigned interface ID.
         - InterfaceMetric (number): The value of the metric assigned to this particular interface. This value is added to the RIPng routing metric before transmission on this interface. It allows metrics for routes with the same standard RIPng routing metric to be identified by the particular interface.The default value is'0. Care should be taken so the combined metric value for a route does not exceed 15. A combined metric of 16 or above indicates that the route is unreachable.
         - ResponseMode (str(splitHorizon | noSplitHorizon | poisonReverse)): The response mode of the RIPng interface.
 

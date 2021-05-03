@@ -96,7 +96,7 @@ class Fr(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
@@ -112,7 +112,7 @@ class Fr(Base):
         - Dlci (number): The Data Link Connection Identifier (DLCI) value.
         - EnableIncrement (bool): Creates a range of DLCIs for this entry. Each additional DLCI value will be incremented by 1.
         - Enabled (bool): Check this box to enable this Frame Relay (FR) DLCI entry.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
         Raises
         ------
@@ -129,7 +129,7 @@ class Fr(Base):
         - Dlci (number): The Data Link Connection Identifier (DLCI) value.
         - EnableIncrement (bool): Creates a range of DLCIs for this entry. Each additional DLCI value will be incremented by 1.
         - Enabled (bool): Check this box to enable this Frame Relay (FR) DLCI entry.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
         Returns
         -------
@@ -164,7 +164,7 @@ class Fr(Base):
         - Dlci (number): The Data Link Connection Identifier (DLCI) value.
         - EnableIncrement (bool): Creates a range of DLCIs for this entry. Each additional DLCI value will be incremented by 1.
         - Enabled (bool): Check this box to enable this Frame Relay (FR) DLCI entry.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
         Returns
         -------

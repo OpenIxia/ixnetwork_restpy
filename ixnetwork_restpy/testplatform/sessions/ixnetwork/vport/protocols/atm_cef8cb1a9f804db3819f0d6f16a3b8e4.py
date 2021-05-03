@@ -124,7 +124,7 @@ class Atm(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
@@ -166,7 +166,7 @@ class Atm(Base):
         - IncrementVci (number): Creates multiple VCIs. Each additional VCI will be incremented by 1.
         - IncrementVpi (number): Creates multiple VPIs. Each additional VPI will be incremented by 1.
         - Name (str): The identifier associated with this ATM VPI/VCI entry.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         - Vci (number): The value for the first ATM Virtual Circuit Identifier (VCI). The VCI value is used with a VPI value - a VPI/VCI pair - to identify a specific ATM link.
         - Vpi (number): The value for the first ATM Virtual Port Identifier (VPI). The VPI value is used with a VCI value - a VPI/VCI pair - to identify a specific ATM virtual link.
 
@@ -187,7 +187,7 @@ class Atm(Base):
         - IncrementVci (number): Creates multiple VCIs. Each additional VCI will be incremented by 1.
         - IncrementVpi (number): Creates multiple VPIs. Each additional VPI will be incremented by 1.
         - Name (str): The identifier associated with this ATM VPI/VCI entry.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         - Vci (number): The value for the first ATM Virtual Circuit Identifier (VCI). The VCI value is used with a VPI value - a VPI/VCI pair - to identify a specific ATM link.
         - Vpi (number): The value for the first ATM Virtual Port Identifier (VPI). The VPI value is used with a VCI value - a VPI/VCI pair - to identify a specific ATM virtual link.
 
@@ -226,7 +226,7 @@ class Atm(Base):
         - IncrementVci (number): Creates multiple VCIs. Each additional VCI will be incremented by 1.
         - IncrementVpi (number): Creates multiple VPIs. Each additional VPI will be incremented by 1.
         - Name (str): The identifier associated with this ATM VPI/VCI entry.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         - Vci (number): The value for the first ATM Virtual Circuit Identifier (VCI). The VCI value is used with a VPI value - a VPI/VCI pair - to identify a specific ATM link.
         - Vpi (number): The value for the first ATM Virtual Port Identifier (VPI). The VPI value is used with a VCI value - a VPI/VCI pair - to identify a specific ATM virtual link.
 

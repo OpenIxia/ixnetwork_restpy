@@ -38,6 +38,7 @@ class UhdOneHundredGigLan(Base):
         'EnableAutoNegotiation': 'enableAutoNegotiation',
         'EnablePPM': 'enablePPM',
         'EnableRsFec': 'enableRsFec',
+        'EnabledFlowControl': 'enabledFlowControl',
         'FirecodeForceOff': 'firecodeForceOff',
         'FirecodeForceOn': 'firecodeForceOn',
         'ForceDisableFEC': 'forceDisableFEC',
@@ -55,6 +56,20 @@ class UhdOneHundredGigLan(Base):
 
     def __init__(self, parent):
         super(UhdOneHundredGigLan, self).__init__(parent)
+
+    @property
+    def Fcoe(self):
+        """
+        Returns
+        -------
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.vport.l1config.uhdonehundredgiglan.fcoe.fcoe.Fcoe): An instance of the Fcoe class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from uhd_restpy.testplatform.sessions.ixnetwork.vport.l1config.uhdonehundredgiglan.fcoe.fcoe import Fcoe
+        return Fcoe(self)._select()
 
     @property
     def AutoInstrumentation(self):
@@ -127,6 +142,18 @@ class UhdOneHundredGigLan(Base):
     @EnableRsFec.setter
     def EnableRsFec(self, value):
         self._set_attribute(self._SDM_ATT_MAP['EnableRsFec'], value)
+
+    @property
+    def EnabledFlowControl(self):
+        """
+        Returns
+        -------
+        - bool: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['EnabledFlowControl'])
+    @EnabledFlowControl.setter
+    def EnabledFlowControl(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['EnabledFlowControl'], value)
 
     @property
     def FirecodeForceOff(self):
@@ -278,7 +305,7 @@ class UhdOneHundredGigLan(Base):
     def Speed(self, value):
         self._set_attribute(self._SDM_ATT_MAP['Speed'], value)
 
-    def update(self, AutoInstrumentation=None, EnableAutoNegotiation=None, EnableRsFec=None, FirecodeForceOff=None, FirecodeForceOn=None, ForceDisableFEC=None, IeeeL1Defaults=None, LaserOn=None, LinkTraining=None, Loopback=None, Mtu=None, RsFecForceOn=None, SelectedSpeeds=None, Speed=None):
+    def update(self, AutoInstrumentation=None, EnableAutoNegotiation=None, EnableRsFec=None, EnabledFlowControl=None, FirecodeForceOff=None, FirecodeForceOn=None, ForceDisableFEC=None, IeeeL1Defaults=None, LaserOn=None, LinkTraining=None, Loopback=None, Mtu=None, RsFecForceOn=None, SelectedSpeeds=None, Speed=None):
         """Updates uhdOneHundredGigLan resource on the server.
 
         Args
@@ -286,6 +313,7 @@ class UhdOneHundredGigLan(Base):
         - AutoInstrumentation (str(endOfFrame | floating)): 
         - EnableAutoNegotiation (bool): 
         - EnableRsFec (bool): 
+        - EnabledFlowControl (bool): 
         - FirecodeForceOff (bool): 
         - FirecodeForceOn (bool): 
         - ForceDisableFEC (bool): 

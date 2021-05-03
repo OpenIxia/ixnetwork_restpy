@@ -61,7 +61,7 @@ class PassCriteria(Base):
         """
         Returns
         -------
-        - str(average | maximum): Signifies the threshold mode of data error.
+        - str(average | maximum): The data error calculated for the threshold mode.
         """
         return self._get_attribute(self._SDM_ATT_MAP['DataErrorThresholdMode'])
     @DataErrorThresholdMode.setter
@@ -73,7 +73,7 @@ class PassCriteria(Base):
         """
         Returns
         -------
-        - number: The integer value for the threshold data error.
+        - number: The interger value for the threshold data error.
         """
         return self._get_attribute(self._SDM_ATT_MAP['DataErrorThresholdValue'])
     @DataErrorThresholdValue.setter
@@ -109,7 +109,7 @@ class PassCriteria(Base):
         """
         Returns
         -------
-        - bool: If true, enables pass and fail criteria.
+        - bool: If true, the pass fail criteria is set.
         """
         return self._get_attribute(self._SDM_ATT_MAP['EnablePassFail'])
     @EnablePassFail.setter
@@ -181,7 +181,7 @@ class PassCriteria(Base):
         """
         Returns
         -------
-        - number: The value by which legacy threshold value is to be measured.
+        - number: The value by which leagcy threshold value is to be measured.
         """
         return self._get_attribute(self._SDM_ATT_MAP['LatencyThresholdValue'])
     @LatencyThresholdValue.setter
@@ -193,7 +193,7 @@ class PassCriteria(Base):
         """
         Returns
         -------
-        - str(average | maximum): Signifies the threshold mode for latency variation.
+        - str(average | maximum): The latency variation threshold mode.
         """
         return self._get_attribute(self._SDM_ATT_MAP['LatencyVarThresholdMode'])
     @LatencyVarThresholdMode.setter
@@ -229,7 +229,7 @@ class PassCriteria(Base):
         """
         Returns
         -------
-        - str(average | minimum): Signifies the pass criteria for load rate mode.
+        - str(average | minimum): The pass critria set for the load rate mode.
         """
         return self._get_attribute(self._SDM_ATT_MAP['PassCriteriaLoadRateMode'])
     @PassCriteriaLoadRateMode.setter
@@ -241,7 +241,7 @@ class PassCriteria(Base):
         """
         Returns
         -------
-        - str(fps | gbps | kbps | mbps | percent): Signifies the pass criteria for load rate scale.
+        - str(fps | gbps | kbps | mbps | percent): The pass criteria scale in which the load rateis to be measured.
         """
         return self._get_attribute(self._SDM_ATT_MAP['PassCriteriaLoadRateScale'])
     @PassCriteriaLoadRateScale.setter
@@ -253,7 +253,7 @@ class PassCriteria(Base):
         """
         Returns
         -------
-        - number: Signifies the pass criteria load rate value.
+        - number: The pass criteria for the Value of the load rate.
         """
         return self._get_attribute(self._SDM_ATT_MAP['PassCriteriaLoadRateValue'])
     @PassCriteriaLoadRateValue.setter
@@ -277,7 +277,7 @@ class PassCriteria(Base):
         """
         Returns
         -------
-        - str(average | maximum): Signifies the sequence errors for threshold mode.
+        - str(average | maximum): The recorded sequence error in the threshold mode.
         """
         return self._get_attribute(self._SDM_ATT_MAP['SeqErrorsThresholdMode'])
     @SeqErrorsThresholdMode.setter
@@ -289,7 +289,7 @@ class PassCriteria(Base):
         """
         Returns
         -------
-        - number: Signifies the sequence errors threshold value.
+        - number: The integer value for the threshold data error.
         """
         return self._get_attribute(self._SDM_ATT_MAP['SeqErrorsThresholdValue'])
     @SeqErrorsThresholdValue.setter
@@ -301,26 +301,26 @@ class PassCriteria(Base):
 
         Args
         ----
-        - DataErrorThresholdMode (str(average | maximum)): Signifies the threshold mode of data error.
-        - DataErrorThresholdValue (number): The integer value for the threshold data error.
+        - DataErrorThresholdMode (str(average | maximum)): The data error calculated for the threshold mode.
+        - DataErrorThresholdValue (number): The interger value for the threshold data error.
         - EnableDataIntegrityPassFail (bool): If true, the data integrity pass /fail criteria is set.
         - EnableLatencyPassFail (bool): If true, the latency pass fail criteria is set.
-        - EnablePassFail (bool): If true, enables pass and fail criteria.
+        - EnablePassFail (bool): If true, the pass fail criteria is set.
         - EnableRatePassFail (bool): If true, the rate of pass and fail criteria is set.
         - EnableSequenceErrorsPassFail (bool): If true, the sequence errors for the pass and fail criteria is set.
         - EnableStandardDeviationPassFail (bool): If true, Standard Deviation for the Pass/Fail criteria is set.
         - LatencyThresholdMode (str(average | maximum)): The threshold mode for the latency.
         - LatencyThresholdScale (str(ms | ns | us)): The scale by which the latency threshold is measured.
-        - LatencyThresholdValue (number): The value by which legacy threshold value is to be measured.
-        - LatencyVarThresholdMode (str(average | maximum)): Signifies the threshold mode for latency variation.
+        - LatencyThresholdValue (number): The value by which leagcy threshold value is to be measured.
+        - LatencyVarThresholdMode (str(average | maximum)): The latency variation threshold mode.
         - LatencyVariationThresholdScale (str(ms | ns | us)): The scale by which the latency variation threshold is measured.
         - LatencyVariationThresholdValue (number): The value by which the variation in latency threshold is measured.
-        - PassCriteriaLoadRateMode (str(average | minimum)): Signifies the pass criteria for load rate mode.
-        - PassCriteriaLoadRateScale (str(fps | gbps | kbps | mbps | percent)): Signifies the pass criteria for load rate scale.
-        - PassCriteriaLoadRateValue (number): Signifies the pass criteria load rate value.
+        - PassCriteriaLoadRateMode (str(average | minimum)): The pass critria set for the load rate mode.
+        - PassCriteriaLoadRateScale (str(fps | gbps | kbps | mbps | percent)): The pass criteria scale in which the load rateis to be measured.
+        - PassCriteriaLoadRateValue (number): The pass criteria for the Value of the load rate.
         - PassFailFrequency (str(framesizes | trials)): NOT DEFINED
-        - SeqErrorsThresholdMode (str(average | maximum)): Signifies the sequence errors for threshold mode.
-        - SeqErrorsThresholdValue (number): Signifies the sequence errors threshold value.
+        - SeqErrorsThresholdMode (str(average | maximum)): The recorded sequence error in the threshold mode.
+        - SeqErrorsThresholdValue (number): The integer value for the threshold data error.
 
         Raises
         ------

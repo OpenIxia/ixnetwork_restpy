@@ -196,7 +196,7 @@ class Interface(Base):
         """DEPRECATED 
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): This is a local ID and is unique per router.
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface): This is a local ID and is unique per router.
         """
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceId'])
     @InterfaceId.setter
@@ -232,7 +232,7 @@ class Interface(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range): The interfaces that are associated with the selected interface type.
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range): The interfaces that are associated with the selected interface type.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Interfaces'])
     @Interfaces.setter
@@ -314,10 +314,10 @@ class Interface(Base):
         - EnableDemandMode (bool): Enables demand mode. 1 indicates demand mode enabled, and 0 indicates demand mode disabled.
         - Enabled (bool): Enables the use of the simulated interface.
         - FlapTxInterval (number): BFD sessions will flap every flapTxIntvs. (default = 0)
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): This is a local ID and is unique per router.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): This is a local ID and is unique per router.
         - InterfaceIndex (number): The assigned protocol interface ID for this BFD interface.
         - InterfaceType (str): The type of interface to be selected for this BFD interface.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - Interfaces (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
         - IpDifferentiatedServiceField (number): Sets the TOS byte for IP Differentiated Service Field
         - MinRxInterval (number): This option indicates the desired minimum interval between received BFD control packets.
         - Multiplier (number): Multiplier * intv defines the timeout period. (default = 3)
@@ -345,10 +345,10 @@ class Interface(Base):
         - EnableDemandMode (bool): Enables demand mode. 1 indicates demand mode enabled, and 0 indicates demand mode disabled.
         - Enabled (bool): Enables the use of the simulated interface.
         - FlapTxInterval (number): BFD sessions will flap every flapTxIntvs. (default = 0)
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): This is a local ID and is unique per router.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): This is a local ID and is unique per router.
         - InterfaceIndex (number): The assigned protocol interface ID for this BFD interface.
         - InterfaceType (str): The type of interface to be selected for this BFD interface.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - Interfaces (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
         - IpDifferentiatedServiceField (number): Sets the TOS byte for IP Differentiated Service Field
         - MinRxInterval (number): This option indicates the desired minimum interval between received BFD control packets.
         - Multiplier (number): Multiplier * intv defines the timeout period. (default = 3)
@@ -394,10 +394,10 @@ class Interface(Base):
         - EnableDemandMode (bool): Enables demand mode. 1 indicates demand mode enabled, and 0 indicates demand mode disabled.
         - Enabled (bool): Enables the use of the simulated interface.
         - FlapTxInterval (number): BFD sessions will flap every flapTxIntvs. (default = 0)
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): This is a local ID and is unique per router.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): This is a local ID and is unique per router.
         - InterfaceIndex (number): The assigned protocol interface ID for this BFD interface.
         - InterfaceType (str): The type of interface to be selected for this BFD interface.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - Interfaces (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range | /api/v1/sessions/30/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
         - IpDifferentiatedServiceField (number): Sets the TOS byte for IP Differentiated Service Field
         - MinRxInterval (number): This option indicates the desired minimum interval between received BFD control packets.
         - Multiplier (number): Multiplier * intv defines the timeout period. (default = 3)
@@ -434,8 +434,6 @@ class Interface(Base):
 
     def GetInterfaceAccessorIfaceList(self):
         """Executes the getInterfaceAccessorIfaceList operation on the server.
-
-        NOT DEFINED
 
         Raises
         ------

@@ -1159,7 +1159,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
+        - list(str[None | /api/v1/sessions/30/ixnetwork/vport | /api/v1/sessions/30/ixnetwork/vport/.../lan]): Protocol Items
         """
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolItem'])
     @ProtocolItem.setter
@@ -1400,7 +1400,7 @@ class TestConfig(Base):
         - PortDelayValue (number): NOT DEFINED
         - PortDownTime (number): NOT DEFINED
         - PortMACAddress (str): NOT DEFINED
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/30/ixnetwork/vport | /api/v1/sessions/30/ixnetwork/vport/.../lan])): Protocol Items
         - ReportSequenceError (bool): NOT DEFINED
         - RouterAlert (bool): NOT DEFINED
         - ShowDetailedBinaryResults (bool): NOT DEFINED

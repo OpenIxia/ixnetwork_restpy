@@ -141,7 +141,7 @@ class Dot1xRange(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../nacSequence): Nac Sequence used by this range.
+        - str(None | /api/v1/sessions/30/ixnetwork/globals/.../nacSequence): Nac Sequence used by this range.
         """
         return self._get_attribute(self._SDM_ATT_MAP['NacSequence'])
     @NacSequence.setter
@@ -229,7 +229,7 @@ class Dot1xRange(Base):
         - HostAuthMode (str): Machine Authentification Method.
         - HostName (str): The MachineName used to authentificate the port.
         - HostPassword (str): The MachinePassword used to authentificate the port.
-        - NacSequence (str(None | /api/v1/sessions/1/ixnetwork/globals/.../nacSequence)): Nac Sequence used by this range.
+        - NacSequence (str(None | /api/v1/sessions/30/ixnetwork/globals/.../nacSequence)): Nac Sequence used by this range.
         - Name (str): Name of range
         - Protocol (str): Authentification Protocol.
         - UserName (str): The UserName used to authentificate the port.
@@ -254,7 +254,7 @@ class Dot1xRange(Base):
         - HostAuthMode (str): Machine Authentification Method.
         - HostName (str): The MachineName used to authentificate the port.
         - HostPassword (str): The MachinePassword used to authentificate the port.
-        - NacSequence (str(None | /api/v1/sessions/1/ixnetwork/globals/.../nacSequence)): Nac Sequence used by this range.
+        - NacSequence (str(None | /api/v1/sessions/30/ixnetwork/globals/.../nacSequence)): Nac Sequence used by this range.
         - Name (str): Name of range
         - Protocol (str): Authentification Protocol.
         - UserName (str): The UserName used to authentificate the port.
@@ -297,7 +297,7 @@ class Dot1xRange(Base):
         - HostAuthMode (str): Machine Authentification Method.
         - HostName (str): The MachineName used to authentificate the port.
         - HostPassword (str): The MachinePassword used to authentificate the port.
-        - NacSequence (str(None | /api/v1/sessions/1/ixnetwork/globals/.../nacSequence)): Nac Sequence used by this range.
+        - NacSequence (str(None | /api/v1/sessions/30/ixnetwork/globals/.../nacSequence)): Nac Sequence used by this range.
         - Name (str): Name of range
         - ObjectId (str): Unique identifier for this object
         - Protocol (str): Authentification Protocol.
@@ -332,26 +332,6 @@ class Dot1xRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
-
-    def CustomProtocolStack(self, *args, **kwargs):
-        """Executes the customProtocolStack operation on the server.
-
-        Create custom protocol stack under /vport/protocolStack
-
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
-        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
-        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
         """Executes the disableProtocolStack operation on the server.

@@ -497,13 +497,13 @@ class DotOneX(Base):
         """
         Returns
         -------
-        - obj(uhd_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_89175be6eeaf724ac873ac56e1db38b0.StaticMacsec): An instance of the StaticMacsec class
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_8110b7f298f49e93ae0a260c3194bffb.StaticMacsec): An instance of the StaticMacsec class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from uhd_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_89175be6eeaf724ac873ac56e1db38b0 import StaticMacsec
+        from uhd_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_8110b7f298f49e93ae0a260c3194bffb import StaticMacsec
         return StaticMacsec(self)
 
     @property
@@ -565,7 +565,7 @@ class DotOneX(Base):
         """DEPRECATED 
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
@@ -595,7 +595,7 @@ class DotOneX(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/7/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
@@ -708,7 +708,7 @@ class DotOneX(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): 
+        - str(None | /api/v1/sessions/7/ixnetwork/topology/.../*): 
         """
         return self._get_attribute(self._SDM_ATT_MAP['ParentEth'])
     @ParentEth.setter
@@ -788,7 +788,7 @@ class DotOneX(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
@@ -871,11 +871,11 @@ class DotOneX(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - ParentEth (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): 
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - ParentEth (str(None | /api/v1/sessions/7/ixnetwork/topology/.../*)): 
+        - StackedLayers (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
         Raises
         ------
@@ -888,11 +888,11 @@ class DotOneX(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - ParentEth (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): 
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - ParentEth (str(None | /api/v1/sessions/7/ixnetwork/topology/.../*)): 
+        - StackedLayers (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
         Returns
         -------
@@ -923,16 +923,16 @@ class DotOneX(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/7/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - ParentEth (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): 
+        - ParentEth (str(None | /api/v1/sessions/7/ixnetwork/topology/.../*)): 
         - SessionInfo (list(str[acquired | authenticated | authenticating | configured | connecting | disconnected | eapFailure | forceAuth | forceUnAuth | genFailure | held | initFailure | invalidFailure | loadFailure | logoff | restart | unconfigured])): Current 802.1x session state: Log Off - Supplicant has been sent EAPOL-Logoff message. Stopped - Supplicant disconnected succesfully. Authenticating - Supplicant is being authenticated. but negotiation didn't complete yet. Held - Supplicant ignores and discards all EAPOL packets. Authenticated - Authenticator has successfully authenticated the Supplicant. Restart - Supplicant is entered Restart state. Force Authentication - This state is entered because DUT's portControl is set to force-authorized. Force UnAuthentication - This state is entered because DUT's portControl is set to force-unauthorized. Unconfigured - Supplicant Unconfigured state. Configured - Supplicant initilize state. Authentication Failure - Supplicant's authentication failed. CA Cert Load Failed - Supplicant's unable to load CA certificate. Failed To Load Certificate/Key - Failed to load certificate or certificate key. Invalid EAP - Invalid EAP. Generic EAP Failure - Generic EAP Failure.
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
@@ -1008,7 +1008,7 @@ class DotOneX(Base):
     def Abort(self, *args, **kwargs):
         """Executes the abort operation on the server.
 
-        Abort CPF control plane (equals to demote to kUnconfigured state).
+        Abort selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -1058,7 +1058,7 @@ class DotOneX(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start CPF control plane (equals to promote to negotiated state).
+        Start selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -1083,7 +1083,7 @@ class DotOneX(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+        Stop selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 

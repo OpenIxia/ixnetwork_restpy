@@ -694,8 +694,6 @@ class Bridge(Base):
     def BridgeTopologyChange(self):
         """Executes the bridgeTopologyChange operation on the server.
 
-        This commands checks to see if there has been a topology change in the specified STP bridge.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -706,8 +704,6 @@ class Bridge(Base):
 
     def CistTopologyChange(self):
         """Executes the cistTopologyChange operation on the server.
-
-        This command checks to see if a topology change has occurred on the specified STP bridge CIST.
 
         Raises
         ------
@@ -720,8 +716,6 @@ class Bridge(Base):
     def RefreshLearnedInfo(self):
         """Executes the refreshLearnedInfo operation on the server.
 
-        This exec refreshes the STP learned information from the DUT.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -732,8 +726,6 @@ class Bridge(Base):
 
     def UpdateParameters(self):
         """Executes the updateParameters operation on the server.
-
-        Updates the current STP parameters for the STP bridge.
 
         Raises
         ------

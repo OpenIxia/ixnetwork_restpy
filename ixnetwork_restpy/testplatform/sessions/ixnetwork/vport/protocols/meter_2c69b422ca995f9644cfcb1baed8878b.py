@@ -220,12 +220,10 @@ class Meter(Base):
     def UpdateMeterMod(self, *args, **kwargs):
         """Executes the updateMeterMod operation on the server.
 
-        NOT DEFINED
-
         updateMeterMod(Arg2=enum)bool
         -----------------------------
-        - Arg2 (str(sendMeterAdd | sendMeterModify | sendMeterRemove)): NOT DEFINED
-        - Returns bool: NOT DEFINED
+        - Arg2 (str(sendMeterAdd | sendMeterModify | sendMeterRemove)): 
+        - Returns bool: 
 
         Raises
         ------

@@ -881,8 +881,6 @@ class SenderRange(Base):
     def DoMakeBeforeBreak(self):
         """Executes the doMakeBeforeBreak operation on the server.
 
-        NOT DEFINED
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -893,8 +891,6 @@ class SenderRange(Base):
 
     def SendReEvaluationRequest(self):
         """Executes the sendReEvaluationRequest operation on the server.
-
-        NOT DEFINED
 
         Raises
         ------

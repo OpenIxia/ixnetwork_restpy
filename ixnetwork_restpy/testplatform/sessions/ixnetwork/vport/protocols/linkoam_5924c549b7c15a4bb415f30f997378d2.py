@@ -89,8 +89,6 @@ class LinkOam(Base):
     def Start(self):
         """Executes the start operation on the server.
 
-        Starts the Link OAM protocol.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -101,8 +99,6 @@ class LinkOam(Base):
 
     def Stop(self):
         """Executes the stop operation on the server.
-
-        Stops the Link OAM protocol
 
         Raises
         ------

@@ -197,8 +197,6 @@ class RouteImportOptions(Base):
     def GetSupportedBGPRouteFileTypes(self):
         """Executes the getSupportedBGPRouteFileTypes operation on the server.
 
-        This function allows to Get supported BGP router.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -210,11 +208,9 @@ class RouteImportOptions(Base):
     def ImportOpaqueRouteRangeFromFile(self, *args, **kwargs):
         """Executes the importOpaqueRouteRangeFromFile operation on the server.
 
-        This function allows to import opaque route range from file.
-
         importOpaqueRouteRangeFromFile(Arg2=href)
         -----------------------------------------
-        - Arg2 (obj(ixnetwork_restpy.files.Files)): NOT DEFINED
+        - Arg2 (obj(ixnetwork_restpy.files.Files)): 
 
         Raises
         ------

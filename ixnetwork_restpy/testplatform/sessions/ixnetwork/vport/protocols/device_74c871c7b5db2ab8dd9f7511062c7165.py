@@ -260,14 +260,12 @@ class Device(Base):
     def AddTlsCertificates(self, *args, **kwargs):
         """Executes the addTlsCertificates operation on the server.
 
-        Exec to add TLS certificates.
-
         addTlsCertificates(Arg2=href, Arg3=href, Arg4=href)number
         ---------------------------------------------------------
-        - Arg2 (obj(ixnetwork_restpy.files.Files)): NOT DEFINED
-        - Arg3 (obj(ixnetwork_restpy.files.Files)): NOT DEFINED
-        - Arg4 (obj(ixnetwork_restpy.files.Files)): NOT DEFINED
-        - Returns number: NOT DEFINED
+        - Arg2 (obj(ixnetwork_restpy.files.Files)): 
+        - Arg3 (obj(ixnetwork_restpy.files.Files)): 
+        - Arg4 (obj(ixnetwork_restpy.files.Files)): 
+        - Returns number: 
 
         Raises
         ------

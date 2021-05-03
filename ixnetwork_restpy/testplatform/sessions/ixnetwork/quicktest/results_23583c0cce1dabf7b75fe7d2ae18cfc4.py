@@ -24,7 +24,7 @@ from ixnetwork_restpy.files import Files
 
 
 class Results(Base):
-    """This object shows the results of the DHCP server in progress.
+    """NOT DEFINED
     The Results class encapsulates a required results resource which will be retrieved from the server every time the property is accessed.
     """
 

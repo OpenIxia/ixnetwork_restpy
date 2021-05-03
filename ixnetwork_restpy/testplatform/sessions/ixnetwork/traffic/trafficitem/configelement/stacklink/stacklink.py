@@ -43,7 +43,7 @@ class StackLink(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../stackLink): Indicates which stack item this is linked to.
+        - str(None | /api/v1/sessions/30/ixnetwork/traffic/.../stackLink): Indicates which stack item this is linked to.
         """
         return self._get_attribute(self._SDM_ATT_MAP['LinkedTo'])
     @LinkedTo.setter
@@ -55,7 +55,7 @@ class StackLink(Base):
 
         Args
         ----
-        - LinkedTo (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../stackLink)): Indicates which stack item this is linked to.
+        - LinkedTo (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../stackLink)): Indicates which stack item this is linked to.
 
         Raises
         ------
@@ -72,7 +72,7 @@ class StackLink(Base):
 
         Args
         ----
-        - LinkedTo (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../stackLink)): Indicates which stack item this is linked to.
+        - LinkedTo (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../stackLink)): Indicates which stack item this is linked to.
 
         Returns
         -------

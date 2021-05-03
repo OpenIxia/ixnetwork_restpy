@@ -111,7 +111,7 @@ class Ip(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): There may be multiple interfaces listed.
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface): There may be multiple interfaces listed.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterface'])
     @ProtocolInterface.setter
@@ -135,7 +135,7 @@ class Ip(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
@@ -152,9 +152,9 @@ class Ip(Base):
         - IpStart (str): The first IP address in the range.
         - IpType (str(ipv4 | ipv6)): The Internet Protocol (IP version).
         - Mask (number): The number of bits in the network mask to be used to extract network and subnetwork information from the IP address.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): There may be multiple interfaces listed.
+        - ProtocolInterface (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): There may be multiple interfaces listed.
         - Step (number): The increment value to be used for each additional address, to create a range of IP addresses.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
         Raises
         ------
@@ -172,9 +172,9 @@ class Ip(Base):
         - IpStart (str): The first IP address in the range.
         - IpType (str(ipv4 | ipv6)): The Internet Protocol (IP version).
         - Mask (number): The number of bits in the network mask to be used to extract network and subnetwork information from the IP address.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): There may be multiple interfaces listed.
+        - ProtocolInterface (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): There may be multiple interfaces listed.
         - Step (number): The increment value to be used for each additional address, to create a range of IP addresses.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
         Returns
         -------
@@ -210,9 +210,9 @@ class Ip(Base):
         - IpStart (str): The first IP address in the range.
         - IpType (str(ipv4 | ipv6)): The Internet Protocol (IP version).
         - Mask (number): The number of bits in the network mask to be used to extract network and subnetwork information from the IP address.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): There may be multiple interfaces listed.
+        - ProtocolInterface (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): There may be multiple interfaces listed.
         - Step (number): The increment value to be used for each additional address, to create a range of IP addresses.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
         Returns
         -------

@@ -173,26 +173,6 @@ class FcoeFwdOptions(Base):
         """
         return self._read(href)
 
-    def CustomProtocolStack(self, *args, **kwargs):
-        """Executes the customProtocolStack operation on the server.
-
-        Create custom protocol stack under /vport/protocolStack
-
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
-        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
-        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
-
     def DisableProtocolStack(self, *args, **kwargs):
         """Executes the disableProtocolStack operation on the server.
 

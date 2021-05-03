@@ -98,7 +98,7 @@ class RxSakPool(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): 12 bytes Salt which DUT is expected to use for encrypting MACsec packets in case of XPN cipher suites.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): 12 bytes Salt value for XPN cipher suites.
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RxSalt']))
@@ -108,7 +108,7 @@ class RxSakPool(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): 4 bytes short SCI which DUT is expected to use for encrypting MACsec packets in case of XPN cipher suites.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): 4 bytes Short SCI for XPN cipher suites.
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RxSsci']))

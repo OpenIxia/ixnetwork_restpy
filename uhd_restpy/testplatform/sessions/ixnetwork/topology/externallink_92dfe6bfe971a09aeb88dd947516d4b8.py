@@ -58,7 +58,7 @@ class ExternalLink(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): Network Topology this link is pointing to
+        - str(None | /api/v1/sessions/7/ixnetwork/topology/.../*): Network Topology this link is pointing to
         """
         return self._get_attribute(self._SDM_ATT_MAP['ToNetworkTopology'])
     @ToNetworkTopology.setter
@@ -83,7 +83,7 @@ class ExternalLink(Base):
         Args
         ----
         - FromNodeIndex (number): Index of the originating node as defined in fromNetworkTopology
-        - ToNetworkTopology (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): Network Topology this link is pointing to
+        - ToNetworkTopology (str(None | /api/v1/sessions/7/ixnetwork/topology/.../*)): Network Topology this link is pointing to
         - ToNodeIndex (number): Index of the target node as defined in toNetworkTopology
 
         Raises
@@ -98,7 +98,7 @@ class ExternalLink(Base):
         Args
         ----
         - FromNodeIndex (number): Index of the originating node as defined in fromNetworkTopology
-        - ToNetworkTopology (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): Network Topology this link is pointing to
+        - ToNetworkTopology (str(None | /api/v1/sessions/7/ixnetwork/topology/.../*)): Network Topology this link is pointing to
         - ToNodeIndex (number): Index of the target node as defined in toNetworkTopology
 
         Returns
@@ -131,7 +131,7 @@ class ExternalLink(Base):
         Args
         ----
         - FromNodeIndex (number): Index of the originating node as defined in fromNetworkTopology
-        - ToNetworkTopology (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): Network Topology this link is pointing to
+        - ToNetworkTopology (str(None | /api/v1/sessions/7/ixnetwork/topology/.../*)): Network Topology this link is pointing to
         - ToNodeIndex (number): Index of the target node as defined in toNetworkTopology
 
         Returns

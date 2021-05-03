@@ -140,16 +140,24 @@ class Base(object):
     def _get_attribute(self, name):
         """The main accessor for all attributes
         """
-        try:
-            return self._properties[name]
-        except Exception as e:
-            msg = """The attribute %s is not in the internal list of object dicts. 
-            If there is a find method execute that prior to executing a property accessor.
-            Check the number of encapsulated resources using the len method.
-            %s
-            """ % (name, e)
+        if len(self._object_properties) == 0:
+            msg = (
+                'Failed to get the {}.{} property as the {} object has no '
+                'encapsulated resources. '
+                ).format(
+                    self.__class__.__name__,
+                    name,
+                    self.__class__.__name__)
+            if 'find' in dir(self):
+                msg += (
+                    'Either the {}.find() method was not called or it failed '
+                    'to retrieve any resources from the server.'
+                    ).format(
+                        self.__class__.__name__)
             raise NotFoundError(msg)
-
+        else:
+            return self._properties[name]
+            
     def _set_attribute(self, name, value):
         """Update a property on the server and save it locally if there is no exception
         """

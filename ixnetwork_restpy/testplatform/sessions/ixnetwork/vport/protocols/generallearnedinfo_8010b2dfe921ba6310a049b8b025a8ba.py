@@ -441,8 +441,6 @@ class GeneralLearnedInfo(Base):
     def AddRecordForTrigger(self):
         """Executes the addRecordForTrigger operation on the server.
 
-        This signifies the record added for trigger settings.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server

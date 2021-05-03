@@ -1048,7 +1048,7 @@ class BgpIpv6Peer(Base):
         """DEPRECATED 
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
@@ -1245,7 +1245,7 @@ class BgpIpv6Peer(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/7/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
@@ -2082,7 +2082,7 @@ class BgpIpv6Peer(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
@@ -2248,7 +2248,7 @@ class BgpIpv6Peer(Base):
         - BgpLsNoOfCommunities (number): Number of Communities
         - CapabilityIpv4MplsAddPath (bool): IPv4 MPLS Add Path Capability
         - CapabilityIpv6MplsAddPath (bool): IPv6 MPLS Add Path Capability
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - CopyTtl (bool): Copy TTL from customer packet to outer IPv6 header
         - EnSRv6DataPlane (bool): Ingress Peer Supports SRv6 VPN
         - EnableEpeTraffic (bool): Enable EPE Traffic
@@ -2274,7 +2274,7 @@ class BgpIpv6Peer(Base):
         - SRGBRangeCount (number): SRGB Range Count
         - SegmentLeftValue (number): Segment Left value to be used in top SRH. This zero index based value start from egress node.
         - Srv6Ttl (number): TTL value to be used in outer IPv6 header
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - UdpPortEndValue (number): UDP Port End Value
         - UdpPortStartValue (number): UDP Port Start Value
         - UseStaticPolicy (bool): If enabled then SRTE policy will be advertised
@@ -2297,7 +2297,7 @@ class BgpIpv6Peer(Base):
         - BgpLsNoOfCommunities (number): Number of Communities
         - CapabilityIpv4MplsAddPath (bool): IPv4 MPLS Add Path Capability
         - CapabilityIpv6MplsAddPath (bool): IPv6 MPLS Add Path Capability
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - CopyTtl (bool): Copy TTL from customer packet to outer IPv6 header
         - EnSRv6DataPlane (bool): Ingress Peer Supports SRv6 VPN
         - EnableEpeTraffic (bool): Enable EPE Traffic
@@ -2323,7 +2323,7 @@ class BgpIpv6Peer(Base):
         - SRGBRangeCount (number): SRGB Range Count
         - SegmentLeftValue (number): Segment Left value to be used in top SRH. This zero index based value start from egress node.
         - Srv6Ttl (number): TTL value to be used in outer IPv6 header
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - UdpPortEndValue (number): UDP Port End Value
         - UdpPortStartValue (number): UDP Port Start Value
         - UseStaticPolicy (bool): If enabled then SRTE policy will be advertised
@@ -2365,7 +2365,7 @@ class BgpIpv6Peer(Base):
         - BgpLsNoOfCommunities (number): Number of Communities
         - CapabilityIpv4MplsAddPath (bool): IPv4 MPLS Add Path Capability
         - CapabilityIpv6MplsAddPath (bool): IPv6 MPLS Add Path Capability
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - CopyTtl (bool): Copy TTL from customer packet to outer IPv6 header
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
@@ -2373,7 +2373,7 @@ class BgpIpv6Peer(Base):
         - EnSRv6DataPlane (bool): Ingress Peer Supports SRv6 VPN
         - EnableEpeTraffic (bool): Enable EPE Traffic
         - EnableReducedEncapsulation (bool): Enable Reduced Encapsulation in Data-Plane for SRv6
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/7/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - EthernetSegmentsCountV6 (number): Number of Ethernet Segments
         - IpVrfToIpVrfType (str(interfaceLess | interfacefullWithCorefacingIRB | interfacefullWithUnnumberedCorefacingIRB)): IP-VRF-to-IP-VRF Model Type
         - Ipv4MplsCapability (bool): IPv4 MPLS Capability: AFI=1, SAFI=4
@@ -2399,7 +2399,7 @@ class BgpIpv6Peer(Base):
         - SessionInfo (list(str[aSRoutingLoopErrorRx | attributeFlagErrorRx | attributesLengthErrorRx | authenticationFailureErrorRx | badBGPIdentifierErrorRx | badMessageLengthErrorRx | badMessageTypeErrorRx | badPeerASErrorRx | bGPHeaderErrorRx | bGPHeaderErrorTx | bGPHoldTimerExpiredErrorRx | bGPOpenPacketErrorRx | bGPStateMachineErrorRx | bGPUpdatePacketErrorRx | ceaseErrorRx | ceaseNotificationErrorTx | connectionNotsynchronizedErrorRx | holdtimeExpiredErrorTx | invalidASPathErrorRx | invalidNetworkFieldErrorRx | invalidNextHopAttributeErrorRx | invalidOriginAttributeErrorRx | malformedAttributeListErrorRx | missingWellKnownAttributeErrorRx | none | openPacketErrTx | optionalAttributeErrorRx | stateMachineErrorTx | unacceptableHoldTimeErrorRx | unrecognizedWellKnownAttributeErrorRx | unspecifiedErrorRx | unspecifiedErrorTx | unspecifiedSubcodeErrorRx | unsupportedOptionalParameterErrorRx | unsupportedversionNumberErrorRx | updatePacketErrorTx])): Logs additional information about the session state
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         - Srv6Ttl (number): TTL value to be used in outer IPv6 header
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         - UdpPortEndValue (number): UDP Port End Value
@@ -2570,7 +2570,7 @@ class BgpIpv6Peer(Base):
     def Abort(self, *args, **kwargs):
         """Executes the abort operation on the server.
 
-        Abort CPF control plane (equals to demote to kUnconfigured state).
+        Abort selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -2649,16 +2649,16 @@ class BgpIpv6Peer(Base):
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        breakTCPSession(Notification_code=number, Notification_sub_code=number)
-        -----------------------------------------------------------------------
-        - Notification_code (number): This parameter requires a notification_code of type kInteger
-        - Notification_sub_code (number): This parameter requires a notification_sub_code of type kInteger
-
         breakTCPSession(Notification_code=number, Notification_sub_code=number, SessionIndices=list)
         --------------------------------------------------------------------------------------------
         - Notification_code (number): This parameter requires a notification_code of type kInteger
         - Notification_sub_code (number): This parameter requires a notification_sub_code of type kInteger
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        breakTCPSession(Notification_code=number, Notification_sub_code=number)
+        -----------------------------------------------------------------------
+        - Notification_code (number): This parameter requires a notification_code of type kInteger
+        - Notification_sub_code (number): This parameter requires a notification_sub_code of type kInteger
 
         breakTCPSession(SessionIndices=string, Notification_code=number, Notification_sub_code=number)
         ----------------------------------------------------------------------------------------------
@@ -3224,14 +3224,14 @@ class BgpIpv6Peer(Base):
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        gracefulRestart(Restart_time=number)
-        ------------------------------------
-        - Restart_time (number): This parameter requires a restart_time of type kInteger
-
         gracefulRestart(Restart_time=number, SessionIndices=list)
         ---------------------------------------------------------
         - Restart_time (number): This parameter requires a restart_time of type kInteger
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        gracefulRestart(Restart_time=number)
+        ------------------------------------
+        - Restart_time (number): This parameter requires a restart_time of type kInteger
 
         gracefulRestart(SessionIndices=string, Restart_time=number)
         -----------------------------------------------------------
@@ -3346,16 +3346,16 @@ class BgpIpv6Peer(Base):
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        resumeTCPSession(Notification_code=number, Notification_sub_code=number)
-        ------------------------------------------------------------------------
-        - Notification_code (number): This parameter requires a notification_code of type kInteger
-        - Notification_sub_code (number): This parameter requires a notification_sub_code of type kInteger
-
         resumeTCPSession(Notification_code=number, Notification_sub_code=number, SessionIndices=list)
         ---------------------------------------------------------------------------------------------
         - Notification_code (number): This parameter requires a notification_code of type kInteger
         - Notification_sub_code (number): This parameter requires a notification_sub_code of type kInteger
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        resumeTCPSession(Notification_code=number, Notification_sub_code=number)
+        ------------------------------------------------------------------------
+        - Notification_code (number): This parameter requires a notification_code of type kInteger
+        - Notification_sub_code (number): This parameter requires a notification_sub_code of type kInteger
 
         resumeTCPSession(SessionIndices=string, Notification_code=number, Notification_sub_code=number)
         -----------------------------------------------------------------------------------------------
@@ -3398,7 +3398,7 @@ class BgpIpv6Peer(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start CPF control plane (equals to promote to negotiated state).
+        Start selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -3423,7 +3423,7 @@ class BgpIpv6Peer(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+        Stop selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 

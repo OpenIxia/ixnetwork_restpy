@@ -60,13 +60,13 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudosrv6endsidlist_541f5f93c3d1828a205bdca154abe5ac.IsisPseudoSRv6EndSIDList): An instance of the IsisPseudoSRv6EndSIDList class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudosrv6endsidlist_7f1f5407e7e0f543c58ead0450ef8be9.IsisPseudoSRv6EndSIDList): An instance of the IsisPseudoSRv6EndSIDList class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudosrv6endsidlist_541f5f93c3d1828a205bdca154abe5ac import IsisPseudoSRv6EndSIDList
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudosrv6endsidlist_7f1f5407e7e0f543c58ead0450ef8be9 import IsisPseudoSRv6EndSIDList
         return IsisPseudoSRv6EndSIDList(self)._select()
 
     @property

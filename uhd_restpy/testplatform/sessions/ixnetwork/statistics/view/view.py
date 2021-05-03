@@ -870,7 +870,7 @@ class View(Base):
 
         setEgressViewMode(Arg2=enum)number
         ----------------------------------
-        - Arg2 (str(kAll | kRowsWithNoPackets | kRowsWithPackets)): 
+        - Arg2 (str(kAll | kNotDefined | kRowsWithNoPackets | kRowsWithPackets)): 
         - Returns number: 
 
         Raises

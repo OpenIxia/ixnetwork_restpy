@@ -321,7 +321,7 @@ class MplsTrafficEndPoint(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): NOT DEFINED
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface): NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterface'])
     @ProtocolInterface.setter
@@ -402,7 +402,7 @@ class MplsTrafficEndPoint(Base):
         - MplsPayloadType (str(ethernet | ipv4 | ipv6)): Specify the MPLS Payload Type.
         - MplsTrafficClass (str): The MPLS Traffic Class value.
         - Name (str): The name of the Traffic Source Endpoint.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): NOT DEFINED
+        - ProtocolInterface (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): NOT DEFINED
         - RangeSize (number): Specify the size of the Range.
         - VlanCount (number): Specify the VLAN count. The default value is 1.
         - VlanId (str): Specify the VLAN ID (Outer and Inner).
@@ -440,7 +440,7 @@ class MplsTrafficEndPoint(Base):
         - MplsPayloadType (str(ethernet | ipv4 | ipv6)): Specify the MPLS Payload Type.
         - MplsTrafficClass (str): The MPLS Traffic Class value.
         - Name (str): The name of the Traffic Source Endpoint.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): NOT DEFINED
+        - ProtocolInterface (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): NOT DEFINED
         - RangeSize (number): Specify the size of the Range.
         - VlanCount (number): Specify the VLAN count. The default value is 1.
         - VlanId (str): Specify the VLAN ID (Outer and Inner).
@@ -496,7 +496,7 @@ class MplsTrafficEndPoint(Base):
         - MplsPayloadType (str(ethernet | ipv4 | ipv6)): Specify the MPLS Payload Type.
         - MplsTrafficClass (str): The MPLS Traffic Class value.
         - Name (str): The name of the Traffic Source Endpoint.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): NOT DEFINED
+        - ProtocolInterface (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): NOT DEFINED
         - RangeSize (number): Specify the size of the Range.
         - VlanCount (number): Specify the VLAN count. The default value is 1.
         - VlanId (str): Specify the VLAN ID (Outer and Inner).

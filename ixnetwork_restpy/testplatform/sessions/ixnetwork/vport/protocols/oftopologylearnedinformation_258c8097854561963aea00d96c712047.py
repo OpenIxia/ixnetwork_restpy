@@ -131,8 +131,6 @@ class OfTopologyLearnedInformation(Base):
     def RefreshOfTopology(self):
         """Executes the refreshOfTopology operation on the server.
 
-        Exec to refresh ofChannel topology.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server

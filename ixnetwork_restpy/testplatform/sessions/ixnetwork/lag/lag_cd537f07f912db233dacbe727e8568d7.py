@@ -115,7 +115,7 @@ class Lag(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport]): Virtual port information.
+        - list(str[None | /api/v1/sessions/30/ixnetwork/vport]): Virtual port information.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Vports'])
     @Vports.setter
@@ -128,7 +128,7 @@ class Lag(Base):
         Args
         ----
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - Vports (list(str[None | /api/v1/sessions/1/ixnetwork/vport])): Virtual port information.
+        - Vports (list(str[None | /api/v1/sessions/30/ixnetwork/vport])): Virtual port information.
 
         Raises
         ------
@@ -142,7 +142,7 @@ class Lag(Base):
         Args
         ----
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - Vports (list(str[None | /api/v1/sessions/1/ixnetwork/vport])): Virtual port information.
+        - Vports (list(str[None | /api/v1/sessions/30/ixnetwork/vport])): Virtual port information.
 
         Returns
         -------
@@ -177,7 +177,7 @@ class Lag(Base):
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - Vports (list(str[None | /api/v1/sessions/1/ixnetwork/vport])): Virtual port information.
+        - Vports (list(str[None | /api/v1/sessions/30/ixnetwork/vport])): Virtual port information.
 
         Returns
         -------

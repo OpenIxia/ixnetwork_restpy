@@ -131,8 +131,6 @@ class Ospf(Base):
     def Start(self):
         """Executes the start operation on the server.
 
-        Starts the OSPF protocol on a port or group of ports simultaneously.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -143,8 +141,6 @@ class Ospf(Base):
 
     def Stop(self):
         """Executes the stop operation on the server.
-
-        Stops the MLD protocol on a port or group of ports simultaneously.
 
         Raises
         ------

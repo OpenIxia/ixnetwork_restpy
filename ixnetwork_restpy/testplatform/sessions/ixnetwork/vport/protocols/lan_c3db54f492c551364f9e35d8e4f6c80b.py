@@ -99,7 +99,7 @@ class Lan(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): References a traffic group identifier as configured by the trafficGroup object.
+        - str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup): References a traffic group identifier as configured by the trafficGroup object.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
@@ -151,7 +151,7 @@ class Lan(Base):
         - MacAddress (str): The first 6-byte MAC Address in the range. (default = 00:00:00:00:00:00)
         - MacCount (number): The number of MAC addresses in the LAN range. The valid range is 1 to 500. (default = 1)
         - MacIncrement (bool): If enabled, a 6-byte increment value will be added for each additional MAC address to create a range of MAC addresses.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): References a traffic group identifier as configured by the trafficGroup object.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): References a traffic group identifier as configured by the trafficGroup object.
         - VlanEnabled (bool): Enables the use of this STP LAN. (default = disabled)
         - VlanId (number): The identifier for the first VLAN in the range. Valid range: 1 to 4094.
         - VlanIncrement (bool): If enabled, an increment value will be added for each additional VLAN to create a range of MAC addresses.
@@ -171,7 +171,7 @@ class Lan(Base):
         - MacAddress (str): The first 6-byte MAC Address in the range. (default = 00:00:00:00:00:00)
         - MacCount (number): The number of MAC addresses in the LAN range. The valid range is 1 to 500. (default = 1)
         - MacIncrement (bool): If enabled, a 6-byte increment value will be added for each additional MAC address to create a range of MAC addresses.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): References a traffic group identifier as configured by the trafficGroup object.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): References a traffic group identifier as configured by the trafficGroup object.
         - VlanEnabled (bool): Enables the use of this STP LAN. (default = disabled)
         - VlanId (number): The identifier for the first VLAN in the range. Valid range: 1 to 4094.
         - VlanIncrement (bool): If enabled, an increment value will be added for each additional VLAN to create a range of MAC addresses.
@@ -209,7 +209,7 @@ class Lan(Base):
         - MacAddress (str): The first 6-byte MAC Address in the range. (default = 00:00:00:00:00:00)
         - MacCount (number): The number of MAC addresses in the LAN range. The valid range is 1 to 500. (default = 1)
         - MacIncrement (bool): If enabled, a 6-byte increment value will be added for each additional MAC address to create a range of MAC addresses.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): References a traffic group identifier as configured by the trafficGroup object.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): References a traffic group identifier as configured by the trafficGroup object.
         - VlanEnabled (bool): Enables the use of this STP LAN. (default = disabled)
         - VlanId (number): The identifier for the first VLAN in the range. Valid range: 1 to 4094.
         - VlanIncrement (bool): If enabled, an increment value will be added for each additional VLAN to create a range of MAC addresses.

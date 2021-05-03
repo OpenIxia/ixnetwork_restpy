@@ -183,7 +183,7 @@ class PceUpdateSrEroSubObjectList(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): NAI (Node or Adjacency Identifier) contains the NAI associated with the SID. Depending on the value of SID Type, the NAI can have different formats such as, Not Applicable IPv4 Node ID IPv6 Node ID IPv4 Adjacency IPv6 Adjacency Unnumbered Adjacency with IPv4 NodeIDs
+        - obj(ixnetwork_restpy.multivalue.Multivalue): NAI (Node or Adjacency Identifier) contains the NAI associated with the SID. Depending on the value of SID Type, the NAI can have different formats such as, Not Applicable IPv4 Node ID IPv6 Node ID IPv4 Adjacency IPv6 Global Adjacency Unnumbered Adjacency with IPv4 NodeIDs IPv6 adjacency with link-local IPv6 addresses
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NaiType']))

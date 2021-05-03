@@ -807,7 +807,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
+        - list(str[None | /api/v1/sessions/30/ixnetwork/vport | /api/v1/sessions/30/ixnetwork/vport/.../lan]): Protocol Items
         """
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolItem'])
     @ProtocolItem.setter
@@ -1009,7 +1009,7 @@ class TestConfig(Base):
         - PortDelayEnabled (bool): NOT DEFINED
         - PortDelayUnit (str(bytes | nanoseconds)): NOT DEFINED
         - PortDelayValue (number): NOT DEFINED
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/30/ixnetwork/vport | /api/v1/sessions/30/ixnetwork/vport/.../lan])): Protocol Items
         - ReportSequenceError (bool): NOT DEFINED
         - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): NOT DEFINED
         - Rfc2889ordering (str(val2889Ordering)): NOT DEFINED

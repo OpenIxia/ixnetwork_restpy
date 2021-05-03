@@ -275,8 +275,6 @@ class GroupRange(Base):
     def UpdateSource(self):
         """Executes the updateSource operation on the server.
 
-        Updates the source information for the group host for MLD.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server

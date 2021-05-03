@@ -585,8 +585,6 @@ class LearnedInformation(Base):
     def ClearRecordsForTrigger(self):
         """Executes the clearRecordsForTrigger operation on the server.
 
-        This signifies the record cleared for trigger settings.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -598,8 +596,6 @@ class LearnedInformation(Base):
     def RefreshLearnedInformation(self):
         """Executes the refreshLearnedInformation operation on the server.
 
-        This signifies that the learned information is refreshed.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -610,8 +606,6 @@ class LearnedInformation(Base):
 
     def Trigger(self):
         """Executes the trigger operation on the server.
-
-        This signifies the learned info trigger settings.
 
         Raises
         ------

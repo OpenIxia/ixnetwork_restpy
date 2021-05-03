@@ -1018,7 +1018,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
+        - list(str[None | /api/v1/sessions/7/ixnetwork/vport | /api/v1/sessions/7/ixnetwork/vport/.../lan]): Protocol Items
         """
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolItem'])
     @ProtocolItem.setter
@@ -1150,7 +1150,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(dict(arg1:number,arg2:str[None | /api/v1/sessions/1/ixnetwork/quickTest/.../customImix | /api/v1/sessions/1/ixnetwork/quickTest/.../imix])): 
+        - list(dict(arg1:number,arg2:str[None | /api/v1/sessions/7/ixnetwork/quickTest/.../customImix | /api/v1/sessions/7/ixnetwork/quickTest/.../imix])): 
         """
         return self._get_attribute(self._SDM_ATT_MAP['SpyderFramesizeList'])
     @SpyderFramesizeList.setter
@@ -1427,7 +1427,7 @@ class TestConfig(Base):
         - PortDelayEnabled (bool): Enables the port delay.
         - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured
         - PortDelayValue (number): Sets the port delay value.
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/7/ixnetwork/vport | /api/v1/sessions/7/ixnetwork/vport/.../lan])): Protocol Items
         - RandomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): The random values of the load unit.
         - RateSelect (str(fpsRate | kbpsRate | percentMaxRate)): The rate selected.
         - ReportSequenceError (bool): Reports sequence errors in the test result.
@@ -1438,7 +1438,7 @@ class TestConfig(Base):
         - Runmode (str(duration | noframes)): Specifies the number of frames that IxNetwork sends from each port in running mode.
         - SendFullyMeshed (bool): Indicates the source group mapping type used for sending data.
         - ShowDetailedBinaryResults (bool): 
-        - SpyderFramesizeList (list(dict(arg1:number,arg2:str[None | /api/v1/sessions/1/ixnetwork/quickTest/.../customImix | /api/v1/sessions/1/ixnetwork/quickTest/.../imix]))): 
+        - SpyderFramesizeList (list(dict(arg1:number,arg2:str[None | /api/v1/sessions/7/ixnetwork/quickTest/.../customImix | /api/v1/sessions/7/ixnetwork/quickTest/.../imix]))): 
         - StaggeredStart (bool): Starts test with a stagger.
         - StepIncrementFrameSize (number): The incremental step value of the frame size.
         - StepIncrementIpv4Ratio (str): The step in which the ipv4 ratio loop is incremented

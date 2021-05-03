@@ -24,7 +24,7 @@ from ixnetwork_restpy.files import Files
 
 
 class StopCcmEmulatedMpParams(Base):
-    """Stop CCM PDU Transmission
+    """Stop CCM PDU Transmission.
     The StopCcmEmulatedMpParams class encapsulates a required stopCcmEmulatedMpParams resource which will be retrieved from the server every time the property is accessed.
     """
 
@@ -39,7 +39,7 @@ class StopCcmEmulatedMpParams(Base):
     def StopCcmEmulatedMp(self):
         """Executes the stopCcmEmulatedMp operation on the server.
 
-        Stop CCM PDU Transmission
+        Stop CCM PDU Transmission.
 
         Raises
         ------

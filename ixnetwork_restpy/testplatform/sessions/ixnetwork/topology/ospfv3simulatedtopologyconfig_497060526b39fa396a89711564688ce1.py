@@ -174,7 +174,7 @@ class Ospfv3SimulatedTopologyConfig(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start CPF control plane (equals to promote to negotiated state).
+        Start OSPFv3 Simulated Topology
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -199,7 +199,7 @@ class Ospfv3SimulatedTopologyConfig(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+        Stop OSPFv3 Simulated Topology
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 

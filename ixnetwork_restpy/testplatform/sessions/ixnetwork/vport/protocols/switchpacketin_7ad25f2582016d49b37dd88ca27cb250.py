@@ -227,12 +227,10 @@ class SwitchPacketIn(Base):
     def SendSwitchPacketInOption(self, *args, **kwargs):
         """Executes the sendSwitchPacketInOption operation on the server.
 
-        NOT DEFINED
-
         sendSwitchPacketInOption(Arg2=enum)bool
         ---------------------------------------
-        - Arg2 (str(sendPause | sendStart | sendStop)): NOT DEFINED
-        - Returns bool: NOT DEFINED
+        - Arg2 (str(sendPause | sendStart | sendStop)): 
+        - Returns bool: 
 
         Raises
         ------

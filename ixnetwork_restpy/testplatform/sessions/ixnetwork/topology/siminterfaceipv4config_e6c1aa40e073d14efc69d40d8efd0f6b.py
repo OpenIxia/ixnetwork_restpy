@@ -49,13 +49,13 @@ class SimInterfaceIPv4Config(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudointerface_f8951a0e4c7d97b10ce403458d4a9a66.OspfPseudoInterface): An instance of the OspfPseudoInterface class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudointerface_afec4e0a68426f52e059c0c356a42b8b.OspfPseudoInterface): An instance of the OspfPseudoInterface class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudointerface_f8951a0e4c7d97b10ce403458d4a9a66 import OspfPseudoInterface
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudointerface_afec4e0a68426f52e059c0c356a42b8b import OspfPseudoInterface
         return OspfPseudoInterface(self)
 
     @property

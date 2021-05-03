@@ -326,8 +326,6 @@ class OfChannelLearnedInformation(Base):
     def AddRecordForTrigger(self):
         """Executes the addRecordForTrigger operation on the server.
 
-        This describes the record added for trigger settings.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -338,8 +336,6 @@ class OfChannelLearnedInformation(Base):
 
     def ConfigureOfChannel(self):
         """Executes the configureOfChannel operation on the server.
-
-        It is a command that will configure controller OF channel from controller OF channel learned information.
 
         Raises
         ------

@@ -127,7 +127,7 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../switchHostRanges]): NOT DEFINED
+        - list(str[None | /api/v1/sessions/30/ixnetwork/vport/.../switchHostRanges]): NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP['DestinationHostList'])
     @DestinationHostList.setter
@@ -211,7 +211,7 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../switchHostRanges]): NOT DEFINED
+        - list(str[None | /api/v1/sessions/30/ixnetwork/vport/.../switchHostRanges]): NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP['SourceHostList'])
     @SourceHostList.setter
@@ -229,14 +229,14 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
         - DestinationCustomIpv4AddressStep (str): NOT DEFINED
         - DestinationCustomMacAddress (str): NOT DEFINED
         - DestinationCustomMacAddressStep (str): NOT DEFINED
-        - DestinationHostList (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../switchHostRanges])): NOT DEFINED
+        - DestinationHostList (list(str[None | /api/v1/sessions/30/ixnetwork/vport/.../switchHostRanges])): NOT DEFINED
         - MeshingType (str(fullyMesh)): NOT DEFINED
         - PacketType (str(arp | ping | custom)): NOT DEFINED
         - PeriodIntervalInMs (number): NOT DEFINED
         - Periodic (bool): NOT DEFINED
         - PeriodicIterationNumber (number): NOT DEFINED
         - ResponseTimeout (number): NOT DEFINED
-        - SourceHostList (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../switchHostRanges])): NOT DEFINED
+        - SourceHostList (list(str[None | /api/v1/sessions/30/ixnetwork/vport/.../switchHostRanges])): NOT DEFINED
 
         Raises
         ------

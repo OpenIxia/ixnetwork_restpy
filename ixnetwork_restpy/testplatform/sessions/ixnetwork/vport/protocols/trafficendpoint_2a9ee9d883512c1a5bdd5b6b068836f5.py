@@ -597,7 +597,7 @@ class TrafficEndPoint(Base):
         """DEPRECATED 
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): Specifies the name of the protocol interface being used for this OpenFlow configuration.
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface): Specifies the name of the protocol interface being used for this OpenFlow configuration.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterface'])
     @ProtocolInterface.setter
@@ -735,7 +735,7 @@ class TrafficEndPoint(Base):
         - PbbSourceMac (str): Specifies the B-Source MAC.
         - PbbVlanId (str): Specifies the B-VLAN ID.
         - PbbVlanPcp (str): Specifies the B-VLAN priority.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): Specifies the name of the protocol interface being used for this OpenFlow configuration.
+        - ProtocolInterface (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): Specifies the name of the protocol interface being used for this OpenFlow configuration.
         - RangeSize (number): Specifies the size of the traffic range.
         - SourcePort (str): Specifies the transport source port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         - UdpDestination (str): Value of the UDP destination field.
@@ -797,7 +797,7 @@ class TrafficEndPoint(Base):
         - PbbSourceMac (str): Specifies the B-Source MAC.
         - PbbVlanId (str): Specifies the B-VLAN ID.
         - PbbVlanPcp (str): Specifies the B-VLAN priority.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): Specifies the name of the protocol interface being used for this OpenFlow configuration.
+        - ProtocolInterface (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): Specifies the name of the protocol interface being used for this OpenFlow configuration.
         - RangeSize (number): Specifies the size of the traffic range.
         - SourcePort (str): Specifies the transport source port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         - UdpDestination (str): Value of the UDP destination field.
@@ -877,7 +877,7 @@ class TrafficEndPoint(Base):
         - PbbSourceMac (str): Specifies the B-Source MAC.
         - PbbVlanId (str): Specifies the B-VLAN ID.
         - PbbVlanPcp (str): Specifies the B-VLAN priority.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): Specifies the name of the protocol interface being used for this OpenFlow configuration.
+        - ProtocolInterface (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): Specifies the name of the protocol interface being used for this OpenFlow configuration.
         - RangeSize (number): Specifies the size of the traffic range.
         - SourcePort (str): Specifies the transport source port. This attribute is of range kind and can take wildcard as input. It is composed of sub-attributes like, startValue, stepValue, repeatCount, wrapCount, and incrementMode.
         - UdpDestination (str): Value of the UDP destination field.

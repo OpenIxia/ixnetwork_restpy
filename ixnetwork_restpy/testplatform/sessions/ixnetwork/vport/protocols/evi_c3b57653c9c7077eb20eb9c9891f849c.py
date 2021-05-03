@@ -415,8 +415,6 @@ class Evi(Base):
     def AdvertiseAliasing(self):
         """Executes the advertiseAliasing operation on the server.
 
-        NOT DEFINED
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -427,8 +425,6 @@ class Evi(Base):
 
     def WithdrawAliasing(self):
         """Executes the withdrawAliasing operation on the server.
-
-        NOT DEFINED
 
         Raises
         ------

@@ -275,7 +275,7 @@ class SwitchPorts(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../switch): Specifies the internal remote Switch to which this port is connected
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../switch): Specifies the internal remote Switch to which this port is connected
         """
         return self._get_attribute(self._SDM_ATT_MAP['RemoteSwitch'])
     @RemoteSwitch.setter
@@ -287,7 +287,7 @@ class SwitchPorts(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../switchPorts): Specifies the switchPort (of the internal remote switch) to which this switch port is connected
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../switchPorts): Specifies the switchPort (of the internal remote switch) to which this switch port is connected
         """
         return self._get_attribute(self._SDM_ATT_MAP['RemoteSwitchPort'])
     @RemoteSwitchPort.setter
@@ -320,8 +320,8 @@ class SwitchPorts(Base):
         - PortLivenessSupport (bool): If selected, port liveness is supported in its port state. A port is considered live when it is not down or when its link is not down.
         - PortName (str): The description of the port. For an assigned port, the format is - (Chassis name) (card no.): (port no.) - (type). For an unassigned port configuration, the format is - (Port type) Port 00x.
         - PortNumber (str): Specify the port number for this OpenFlow Channel. The OpenFlow pipeline receives and sends packets on ports.
-        - RemoteSwitch (str(None | /api/v1/sessions/1/ixnetwork/vport/.../switch)): Specifies the internal remote Switch to which this port is connected
-        - RemoteSwitchPort (str(None | /api/v1/sessions/1/ixnetwork/vport/.../switchPorts)): Specifies the switchPort (of the internal remote switch) to which this switch port is connected
+        - RemoteSwitch (str(None | /api/v1/sessions/30/ixnetwork/vport/.../switch)): Specifies the internal remote Switch to which this port is connected
+        - RemoteSwitchPort (str(None | /api/v1/sessions/30/ixnetwork/vport/.../switchPorts)): Specifies the switchPort (of the internal remote switch) to which this switch port is connected
         - TransmissionDelay (number): Specifies the time required in transmitting packets through link
 
         Raises
@@ -344,8 +344,8 @@ class SwitchPorts(Base):
         - PortLivenessSupport (bool): If selected, port liveness is supported in its port state. A port is considered live when it is not down or when its link is not down.
         - PortName (str): The description of the port. For an assigned port, the format is - (Chassis name) (card no.): (port no.) - (type). For an unassigned port configuration, the format is - (Port type) Port 00x.
         - PortNumber (str): Specify the port number for this OpenFlow Channel. The OpenFlow pipeline receives and sends packets on ports.
-        - RemoteSwitch (str(None | /api/v1/sessions/1/ixnetwork/vport/.../switch)): Specifies the internal remote Switch to which this port is connected
-        - RemoteSwitchPort (str(None | /api/v1/sessions/1/ixnetwork/vport/.../switchPorts)): Specifies the switchPort (of the internal remote switch) to which this switch port is connected
+        - RemoteSwitch (str(None | /api/v1/sessions/30/ixnetwork/vport/.../switch)): Specifies the internal remote Switch to which this port is connected
+        - RemoteSwitchPort (str(None | /api/v1/sessions/30/ixnetwork/vport/.../switchPorts)): Specifies the switchPort (of the internal remote switch) to which this switch port is connected
         - TransmissionDelay (number): Specifies the time required in transmitting packets through link
 
         Returns
@@ -386,8 +386,8 @@ class SwitchPorts(Base):
         - PortLivenessSupport (bool): If selected, port liveness is supported in its port state. A port is considered live when it is not down or when its link is not down.
         - PortName (str): The description of the port. For an assigned port, the format is - (Chassis name) (card no.): (port no.) - (type). For an unassigned port configuration, the format is - (Port type) Port 00x.
         - PortNumber (str): Specify the port number for this OpenFlow Channel. The OpenFlow pipeline receives and sends packets on ports.
-        - RemoteSwitch (str(None | /api/v1/sessions/1/ixnetwork/vport/.../switch)): Specifies the internal remote Switch to which this port is connected
-        - RemoteSwitchPort (str(None | /api/v1/sessions/1/ixnetwork/vport/.../switchPorts)): Specifies the switchPort (of the internal remote switch) to which this switch port is connected
+        - RemoteSwitch (str(None | /api/v1/sessions/30/ixnetwork/vport/.../switch)): Specifies the internal remote Switch to which this port is connected
+        - RemoteSwitchPort (str(None | /api/v1/sessions/30/ixnetwork/vport/.../switchPorts)): Specifies the switchPort (of the internal remote switch) to which this switch port is connected
         - TransmissionDelay (number): Specifies the time required in transmitting packets through link
 
         Returns
@@ -420,8 +420,6 @@ class SwitchPorts(Base):
 
     def SimulatePortUpDown(self):
         """Executes the simulatePortUpDown operation on the server.
-
-        NOT DEFINED
 
         Raises
         ------

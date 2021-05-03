@@ -36,10 +36,12 @@ class Page(Base):
         'ColumnCount': 'columnCount',
         'CurrentPage': 'currentPage',
         'EgressMode': 'egressMode',
+        'EgressOption': 'egressOption',
         'EgressPageSize': 'egressPageSize',
         'IsBlocked': 'isBlocked',
         'IsReady': 'isReady',
         'IsReadyTimeout': 'isReadyTimeout',
+        'LastPageSize': 'lastPageSize',
         'PageSize': 'pageSize',
         'PageValues': 'pageValues',
         'RowCount': 'rowCount',
@@ -132,6 +134,18 @@ class Page(Base):
         self._set_attribute(self._SDM_ATT_MAP['EgressMode'], value)
 
     @property
+    def EgressOption(self):
+        """
+        Returns
+        -------
+        - str(rowsWithNoPackets | rowsWithPackets | showAll): 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['EgressOption'])
+    @EgressOption.setter
+    def EgressOption(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['EgressOption'], value)
+
+    @property
     def EgressPageSize(self):
         """
         Returns
@@ -172,6 +186,15 @@ class Page(Base):
     @IsReadyTimeout.setter
     def IsReadyTimeout(self, value):
         self._set_attribute(self._SDM_ATT_MAP['IsReadyTimeout'], value)
+
+    @property
+    def LastPageSize(self):
+        """
+        Returns
+        -------
+        - number: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['LastPageSize'])
 
     @property
     def PageSize(self):
@@ -239,13 +262,14 @@ class Page(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['TotalRows'])
 
-    def update(self, CurrentPage=None, EgressMode=None, EgressPageSize=None, IsReadyTimeout=None, PageSize=None):
+    def update(self, CurrentPage=None, EgressMode=None, EgressOption=None, EgressPageSize=None, IsReadyTimeout=None, PageSize=None):
         """Updates page resource on the server.
 
         Args
         ----
         - CurrentPage (number): The current page number being displayed.
         - EgressMode (str(conditional | paged)): Emulates conditional or paged egress tracking view based on selected mode.
+        - EgressOption (str(rowsWithNoPackets | rowsWithPackets | showAll)): 
         - EgressPageSize (number): The current egress page size across all ingress rows. Default = 3
         - IsReadyTimeout (number): The maximum time (in seconds) for the -isReady attribute to wait before it returns false in case the page has no data.
         - PageSize (number): The number of statistics per page.

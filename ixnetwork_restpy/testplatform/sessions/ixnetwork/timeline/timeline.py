@@ -83,7 +83,7 @@ class Timeline(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/timeline/.../test): The id of the test under execution
+        - str(None | /api/v1/sessions/30/ixnetwork/timeline/.../test): The id of the test under execution
         """
         return self._get_attribute(self._SDM_ATT_MAP['ExecutingTest'])
     @ExecutingTest.setter
@@ -104,7 +104,7 @@ class Timeline(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/topology): Id for the topology with monitor port (when a monitor port is used)
+        - str(None | /api/v1/sessions/30/ixnetwork/topology): Id for the topology with monitor port (when a monitor port is used)
         """
         return self._get_attribute(self._SDM_ATT_MAP['MonitorTopologyId'])
 
@@ -143,7 +143,7 @@ class Timeline(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/timeline/.../test]): The desired order for the tests to run
+        - list(str[None | /api/v1/sessions/30/ixnetwork/timeline/.../test]): The desired order for the tests to run
         """
         return self._get_attribute(self._SDM_ATT_MAP['TestOrder'])
     @TestOrder.setter
@@ -155,7 +155,7 @@ class Timeline(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): Id for the topology with timing port (when a timing port is used
+        - list(str[None | /api/v1/sessions/30/ixnetwork/topology]): Id for the topology with timing port (when a timing port is used
         """
         return self._get_attribute(self._SDM_ATT_MAP['TimingTopologyIds'])
 
@@ -164,9 +164,9 @@ class Timeline(Base):
 
         Args
         ----
-        - ExecutingTest (str(None | /api/v1/sessions/1/ixnetwork/timeline/.../test)): The id of the test under execution
+        - ExecutingTest (str(None | /api/v1/sessions/30/ixnetwork/timeline/.../test)): The id of the test under execution
         - PauseOnError (bool): Pauses the test when an error is found
-        - TestOrder (list(str[None | /api/v1/sessions/1/ixnetwork/timeline/.../test])): The desired order for the tests to run
+        - TestOrder (list(str[None | /api/v1/sessions/30/ixnetwork/timeline/.../test])): The desired order for the tests to run
 
         Raises
         ------
@@ -195,7 +195,7 @@ class Timeline(Base):
         createProtocol(Arg2=enum)href
         -----------------------------
         - Arg2 (str(bgpBfdIpv4PeerIpv4Pools | bgpBfdIpv6PeerIpv6Pools | bgpBfdMixedPeerPools | bgpIpv4PeerIpv4Pools | bgpIpv6PeerIpv6Pools | bgpMixedPeerPools | chainedIpv4 | chainedIpv6 | ethernetVlan | ipv4 | ipv4IgmpHost | ipv4IgmpQuerierHost | ipv4ipv6 | ipv6 | ipv6MldHost | ipv6MldQuerierHost)): The protocol type (from the list of supported protocol types for QT) to be created
-        - Returns str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): 
+        - Returns str(None | /api/v1/sessions/30/ixnetwork/topology/.../*): 
 
         Raises
         ------
@@ -216,7 +216,7 @@ class Timeline(Base):
         --------------------------------------
         - Arg2 (str(rfc2544back2back | rfc2544frameLoss | rfc2544throughput | rfc2889addressCache | rfc2889addressRate | rfc3918joinLeaveDelay | rfc3918mixedClassThroughput | rfc7747failover | rfc7747ribIn | trafficTest)): The list with all supported tests
         - Arg3 (str(bgpBfdIpv4PeerIpv4Pools | bgpBfdIpv6PeerIpv6Pools | bgpBfdMixedPeerPools | bgpIpv4PeerIpv4Pools | bgpIpv6PeerIpv6Pools | bgpMixedPeerPools | chainedIpv4 | chainedIpv6 | ethernetVlan | ipv4 | ipv4IgmpHost | ipv4IgmpQuerierHost | ipv4ipv6 | ipv6 | ipv6MldHost | ipv6MldQuerierHost | none)): The list of supported protocols
-        - Returns dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/timeline/.../test],arg2:str[None | /api/v1/sessions/1/ixnetwork/quickTest/.../*],arg3:list[str[None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem]]): 
+        - Returns dict(arg1:str[None | /api/v1/sessions/30/ixnetwork/timeline/.../test],arg2:str[None | /api/v1/sessions/30/ixnetwork/quickTest/.../*],arg3:list[str[None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficItem]]): 
 
         Raises
         ------
@@ -236,7 +236,7 @@ class Timeline(Base):
         createTraffic(Arg2=enum)href
         ----------------------------
         - Arg2 (str(ethernetVlan | ipv4 | ipv4WithChainedDG | ipv4WithDG | ipv6 | ipv6WithChainedDG | ipv6WithDG)): The desired traffic added from Timeline
-        - Returns str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem): 
+        - Returns str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficItem): 
 
         Raises
         ------

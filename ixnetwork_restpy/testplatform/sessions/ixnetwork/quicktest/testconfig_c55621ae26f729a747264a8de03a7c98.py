@@ -910,7 +910,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
+        - list(str[None | /api/v1/sessions/30/ixnetwork/vport | /api/v1/sessions/30/ixnetwork/vport/.../lan]): Protocol Items
         """
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolItem'])
     @ProtocolItem.setter
@@ -1108,7 +1108,7 @@ class TestConfig(Base):
         - Numtrials (number): It provides with the number trials
         - OffsetTime (number): It provides details about the off set time
         - PercentMaxRate (number): It provides with the percentage of the maximum rate
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/30/ixnetwork/vport | /api/v1/sessions/30/ixnetwork/vport/.../lan])): Protocol Items
         - Rfc2889ordering (str(val2889Ordering)): The rfc 2889 ordering in the the test configuration is shown here
         - StaggeredStart (bool): It gives a staggered start to the test configuration
         - StepBurdenIncrementLoadRate (number): It gives details about the step burden incremental load rate

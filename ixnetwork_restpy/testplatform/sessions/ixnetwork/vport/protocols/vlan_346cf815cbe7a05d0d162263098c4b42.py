@@ -257,8 +257,6 @@ class Vlan(Base):
     def TopologyChange(self):
         """Executes the topologyChange operation on the server.
 
-        This commands checks to see if there has been a topology change for the specified STP VLAN.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -269,8 +267,6 @@ class Vlan(Base):
 
     def UpdateParameters(self):
         """Executes the updateParameters operation on the server.
-
-        Updates the current STP VLAN parameters.
 
         Raises
         ------

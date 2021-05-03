@@ -535,14 +535,14 @@ class OspfRouteProperty(Base):
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        ageOutRoutes(Percentage=number)
-        -------------------------------
-        - Percentage (number): This parameter requires a percentage of type kInteger
-
         ageOutRoutes(Percentage=number, SessionIndices=list)
         ----------------------------------------------------
         - Percentage (number): This parameter requires a percentage of type kInteger
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        ageOutRoutes(Percentage=number)
+        -------------------------------
+        - Percentage (number): This parameter requires a percentage of type kInteger
 
         ageOutRoutes(SessionIndices=string, Percentage=number)
         ------------------------------------------------------
@@ -628,7 +628,7 @@ class OspfRouteProperty(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start CPF control plane (equals to promote to negotiated state).
+        Start selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -653,7 +653,7 @@ class OspfRouteProperty(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+        Stop selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 

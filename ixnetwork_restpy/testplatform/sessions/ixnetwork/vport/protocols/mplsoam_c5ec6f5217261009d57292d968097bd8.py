@@ -103,8 +103,6 @@ class MplsOam(Base):
     def Start(self):
         """Executes the start operation on the server.
 
-        This signifies the starting of the MPLS-OAM protocol on a port or group of ports.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -115,8 +113,6 @@ class MplsOam(Base):
 
     def Stop(self):
         """Executes the stop operation on the server.
-
-        This signifies the stopping of the MPLS OAM protocol on a port or group of ports simultaneously.
 
         Raises
         ------

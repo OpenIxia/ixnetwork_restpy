@@ -32,6 +32,7 @@ class Egress(Base):
     __slots__ = ()
     _SDM_NAME = 'egress'
     _SDM_ATT_MAP = {
+        'CommitEgressPage': 'commitEgressPage',
         'CurrentPage': 'currentPage',
         'RowCount': 'rowCount',
         'TotalPages': 'totalPages',
@@ -53,6 +54,18 @@ class Egress(Base):
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egress.flowcondition.flowcondition import FlowCondition
         return FlowCondition(self)
+
+    @property
+    def CommitEgressPage(self):
+        """
+        Returns
+        -------
+        - bool: Attribute used to commit egress paging from TCL
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['CommitEgressPage'])
+    @CommitEgressPage.setter
+    def CommitEgressPage(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['CommitEgressPage'], value)
 
     @property
     def CurrentPage(self):
@@ -84,11 +97,12 @@ class Egress(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['TotalPages'])
 
-    def update(self, CurrentPage=None):
+    def update(self, CommitEgressPage=None, CurrentPage=None):
         """Updates egress resource on the server.
 
         Args
         ----
+        - CommitEgressPage (bool): Attribute used to commit egress paging from TCL
         - CurrentPage (number): Determines the current egress page for the indicated ingress page.
 
         Raises
@@ -97,7 +111,7 @@ class Egress(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, CurrentPage=None, RowCount=None, TotalPages=None):
+    def find(self, CommitEgressPage=None, CurrentPage=None, RowCount=None, TotalPages=None):
         """Finds and retrieves egress resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egress resources from the server.
@@ -106,6 +120,7 @@ class Egress(Base):
 
         Args
         ----
+        - CommitEgressPage (bool): Attribute used to commit egress paging from TCL
         - CurrentPage (number): Determines the current egress page for the indicated ingress page.
         - RowCount (number): Displays the particular row number in the view.
         - TotalPages (number): The total number of egress pages.

@@ -173,8 +173,6 @@ class Rsvp(Base):
     def Start(self):
         """Executes the start operation on the server.
 
-        Starts RSVP on a port or a group of ports.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -185,8 +183,6 @@ class Rsvp(Base):
 
     def Stop(self):
         """Executes the stop operation on the server.
-
-        Stops RSVP on a port or group of ports.
 
         Raises
         ------

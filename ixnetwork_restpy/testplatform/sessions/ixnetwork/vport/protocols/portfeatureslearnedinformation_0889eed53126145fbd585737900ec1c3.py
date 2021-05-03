@@ -298,8 +298,6 @@ class PortFeaturesLearnedInformation(Base):
     def AddRecordForTrigger(self):
         """Executes the addRecordForTrigger operation on the server.
 
-        NOT DEFINED
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server

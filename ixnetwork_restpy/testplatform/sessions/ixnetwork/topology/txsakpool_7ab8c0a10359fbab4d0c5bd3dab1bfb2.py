@@ -100,7 +100,7 @@ class TxSakPool(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): 128 bit value of Secure Association Key used for encryption of transmitted MACsec packets.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): 128 bit value of Secure Association Key with which DUT is expected to encrypt MACsec packets.
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TxSak128']))
@@ -120,7 +120,7 @@ class TxSakPool(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): 12 bytes Salt used for encryption of transmitted MACsec packets in case of XPN cipher suites.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): 12 bytes Salt value for XPN cipher suites.
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TxSalt']))
@@ -130,7 +130,7 @@ class TxSakPool(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): 4 bytes short SCI used for encryption of transmitted MACsec packets in case of XPN cipher suites.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): 4 bytes Short SCI for XPN cipher suites.
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TxSsci']))

@@ -1520,8 +1520,6 @@ class Bridge(Base):
     def RefreshAisLearnedInfo(self):
         """Executes the refreshAisLearnedInfo operation on the server.
 
-        NOT DEFINED
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -1532,8 +1530,6 @@ class Bridge(Base):
 
     def RefreshCcmLearnedInfo(self):
         """Executes the refreshCcmLearnedInfo operation on the server.
-
-        This command is used to refresh the learned CCM information on the bridge.
 
         Raises
         ------
@@ -1546,8 +1542,6 @@ class Bridge(Base):
     def RefreshLckLearnedInfo(self):
         """Executes the refreshLckLearnedInfo operation on the server.
 
-        NOT DEFINED
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -1558,8 +1552,6 @@ class Bridge(Base):
 
     def RefreshTstLearnedInfo(self):
         """Executes the refreshTstLearnedInfo operation on the server.
-
-        NOT DEFINED
 
         Raises
         ------
@@ -1572,8 +1564,6 @@ class Bridge(Base):
     def StartDelayMeasurement(self):
         """Executes the startDelayMeasurement operation on the server.
 
-        This command is used to refresh the learned CFM ITU information on this bridge.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -1584,8 +1574,6 @@ class Bridge(Base):
 
     def StartLinkTrace(self):
         """Executes the startLinkTrace operation on the server.
-
-        This command is used to refresh the learned CFM LT information on this bridge.
 
         Raises
         ------
@@ -1598,8 +1586,6 @@ class Bridge(Base):
     def StartLoopback(self):
         """Executes the startLoopback operation on the server.
 
-        This command is used to refresh the learned CFM LB information on this bridge.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -1611,8 +1597,6 @@ class Bridge(Base):
     def StartLossMeasurement(self):
         """Executes the startLossMeasurement operation on the server.
 
-        NOT DEFINED
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -1623,8 +1607,6 @@ class Bridge(Base):
 
     def UpdatePeriodicOamLearnedInfo(self):
         """Executes the updatePeriodicOamLearnedInfo operation on the server.
-
-        This command updates the periodic OAM learned information on this bridge.
 
         Raises
         ------

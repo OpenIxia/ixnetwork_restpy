@@ -145,7 +145,7 @@ class OpenFlowChannel(Base):
         """DEPRECATED 
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
@@ -223,7 +223,7 @@ class OpenFlowChannel(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/7/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
@@ -348,7 +348,7 @@ class OpenFlowChannel(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
@@ -423,12 +423,12 @@ class OpenFlowChannel(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - GroupsPerChannel (number): Number of Groups per Channel
         - MetersPerChannel (number): Number of Meters per Channel
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - TablesPerChannel (number): Number of Tables per Channel
 
         Raises
@@ -442,12 +442,12 @@ class OpenFlowChannel(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - GroupsPerChannel (number): Number of Groups per Channel
         - MetersPerChannel (number): Number of Meters per Channel
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - TablesPerChannel (number): Number of Tables per Channel
 
         Returns
@@ -479,19 +479,19 @@ class OpenFlowChannel(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - ControllerIndex (list(str)): Parent Controller Index
         - ControllerName (str): Parent Controller Name
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/7/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - GroupsPerChannel (number): Number of Groups per Channel
         - LocalIp (list(str)): The local IP address of the interface. This field is auto-populated and cannot be changed.
         - MetersPerChannel (number): Number of Meters per Channel
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         - TablesPerChannel (number): Number of Tables per Channel
@@ -560,7 +560,7 @@ class OpenFlowChannel(Base):
     def Abort(self, *args, **kwargs):
         """Executes the abort operation on the server.
 
-        Abort CPF control plane (equals to demote to kUnconfigured state).
+        Abort selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -874,16 +874,16 @@ class OpenFlowChannel(Base):
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendEchoRequest(EnableEchoTimeout=bool, EchoTimeoutVal=number)
-        --------------------------------------------------------------
-        - EnableEchoTimeout (bool): This parameter requires a enableEchoTimeout of type kBool
-        - EchoTimeoutVal (number): This parameter requires a echoTimeoutVal of type kInteger
-
         sendEchoRequest(EnableEchoTimeout=bool, EchoTimeoutVal=number, SessionIndices=list)
         -----------------------------------------------------------------------------------
         - EnableEchoTimeout (bool): This parameter requires a enableEchoTimeout of type kBool
         - EchoTimeoutVal (number): This parameter requires a echoTimeoutVal of type kInteger
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        sendEchoRequest(EnableEchoTimeout=bool, EchoTimeoutVal=number)
+        --------------------------------------------------------------
+        - EnableEchoTimeout (bool): This parameter requires a enableEchoTimeout of type kBool
+        - EchoTimeoutVal (number): This parameter requires a echoTimeoutVal of type kInteger
 
         sendEchoRequest(SessionIndices=string, EnableEchoTimeout=bool, EchoTimeoutVal=number)
         -------------------------------------------------------------------------------------
@@ -915,13 +915,6 @@ class OpenFlowChannel(Base):
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendExperimenterMessage(ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string)
-        -------------------------------------------------------------------------------------------------------------------------------------------------
-        - ExperimenterDataLength (number): This parameter requires a experimenterDataLength of type kInteger
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ExperimenterData (str): This parameter requires a experimenterData of type kString
-
         sendExperimenterMessage(ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string, SessionIndices=list)
         ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
         - ExperimenterDataLength (number): This parameter requires a experimenterDataLength of type kInteger
@@ -929,6 +922,13 @@ class OpenFlowChannel(Base):
         - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
         - ExperimenterData (str): This parameter requires a experimenterData of type kString
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        sendExperimenterMessage(ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string)
+        -------------------------------------------------------------------------------------------------------------------------------------------------
+        - ExperimenterDataLength (number): This parameter requires a experimenterDataLength of type kInteger
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ExperimenterData (str): This parameter requires a experimenterData of type kString
 
         sendExperimenterMessage(SessionIndices=string, ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string)
         ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -964,13 +964,6 @@ class OpenFlowChannel(Base):
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendExperimenterStatRequest(ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string)
-        -----------------------------------------------------------------------------------------------------------------------------------------------------
-        - ExperimenterDataLength (number): This parameter requires a experimenterDataLength of type kInteger
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ExperimenterData (str): This parameter requires a experimenterData of type kString
-
         sendExperimenterStatRequest(ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string, SessionIndices=list)
         --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         - ExperimenterDataLength (number): This parameter requires a experimenterDataLength of type kInteger
@@ -978,6 +971,13 @@ class OpenFlowChannel(Base):
         - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
         - ExperimenterData (str): This parameter requires a experimenterData of type kString
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        sendExperimenterStatRequest(ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string)
+        -----------------------------------------------------------------------------------------------------------------------------------------------------
+        - ExperimenterDataLength (number): This parameter requires a experimenterDataLength of type kInteger
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ExperimenterData (str): This parameter requires a experimenterData of type kString
 
         sendExperimenterStatRequest(SessionIndices=string, ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string)
         ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1043,16 +1043,16 @@ class OpenFlowChannel(Base):
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendGetQueueConfigRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null)
-        -------------------------------------------------------------------------------
-        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-
         sendGetQueueConfigRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null, SessionIndices=list)
         ----------------------------------------------------------------------------------------------------
         - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
         - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        sendGetQueueConfigRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null)
+        -------------------------------------------------------------------------------
+        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
 
         sendGetQueueConfigRequest(SessionIndices=string, OutputPortType=enum, ErrorUnsupportedTypeFormat=null)
         ------------------------------------------------------------------------------------------------------
@@ -1144,16 +1144,16 @@ class OpenFlowChannel(Base):
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendGroupStatsRequest(GroupIDType=enum, GroupID=number)
-        -------------------------------------------------------
-        - GroupIDType (str(enumOpt-Manual | enumOpt-OFPG_ALL | enumOpt-OFPG_ANY)): This parameter requires a groupIDType of type kEnumValue=enumOpt-Manual,enumOpt-OFPG_ALL,enumOpt-OFPG_ANY
-        - GroupID (number): This parameter requires a groupID of type kInteger
-
         sendGroupStatsRequest(GroupIDType=enum, GroupID=number, SessionIndices=list)
         ----------------------------------------------------------------------------
         - GroupIDType (str(enumOpt-Manual | enumOpt-OFPG_ALL | enumOpt-OFPG_ANY)): This parameter requires a groupIDType of type kEnumValue=enumOpt-Manual,enumOpt-OFPG_ALL,enumOpt-OFPG_ANY
         - GroupID (number): This parameter requires a groupID of type kInteger
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        sendGroupStatsRequest(GroupIDType=enum, GroupID=number)
+        -------------------------------------------------------
+        - GroupIDType (str(enumOpt-Manual | enumOpt-OFPG_ALL | enumOpt-OFPG_ANY)): This parameter requires a groupIDType of type kEnumValue=enumOpt-Manual,enumOpt-OFPG_ALL,enumOpt-OFPG_ANY
+        - GroupID (number): This parameter requires a groupID of type kInteger
 
         sendGroupStatsRequest(SessionIndices=string, GroupIDType=enum, GroupID=number)
         ------------------------------------------------------------------------------
@@ -1185,16 +1185,16 @@ class OpenFlowChannel(Base):
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendMeterConfigRequest(MeterIDType=enum, ErrorUnsupportedTypeFormat=null)
-        -------------------------------------------------------------------------
-        - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-
         sendMeterConfigRequest(MeterIDType=enum, ErrorUnsupportedTypeFormat=null, SessionIndices=list)
         ----------------------------------------------------------------------------------------------
         - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
         - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        sendMeterConfigRequest(MeterIDType=enum, ErrorUnsupportedTypeFormat=null)
+        -------------------------------------------------------------------------
+        - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
 
         sendMeterConfigRequest(SessionIndices=string, MeterIDType=enum, ErrorUnsupportedTypeFormat=null)
         ------------------------------------------------------------------------------------------------
@@ -1278,16 +1278,16 @@ class OpenFlowChannel(Base):
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendMeterStatsRequest(MeterIDType=enum, ErrorUnsupportedTypeFormat=null)
-        ------------------------------------------------------------------------
-        - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-
         sendMeterStatsRequest(MeterIDType=enum, ErrorUnsupportedTypeFormat=null, SessionIndices=list)
         ---------------------------------------------------------------------------------------------
         - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
         - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        sendMeterStatsRequest(MeterIDType=enum, ErrorUnsupportedTypeFormat=null)
+        ------------------------------------------------------------------------
+        - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
 
         sendMeterStatsRequest(SessionIndices=string, MeterIDType=enum, ErrorUnsupportedTypeFormat=null)
         -----------------------------------------------------------------------------------------------
@@ -1342,16 +1342,16 @@ class OpenFlowChannel(Base):
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendPortStatsRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null)
-        --------------------------------------------------------------------------
-        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY | enumOpt-OFPP_NONE)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY,enumOpt-OFPP_NONE
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-
         sendPortStatsRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null, SessionIndices=list)
         -----------------------------------------------------------------------------------------------
         - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY | enumOpt-OFPP_NONE)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY,enumOpt-OFPP_NONE
         - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        sendPortStatsRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null)
+        --------------------------------------------------------------------------
+        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY | enumOpt-OFPP_NONE)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY,enumOpt-OFPP_NONE
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
 
         sendPortStatsRequest(SessionIndices=string, OutputPortType=enum, ErrorUnsupportedTypeFormat=null)
         -------------------------------------------------------------------------------------------------
@@ -1383,13 +1383,6 @@ class OpenFlowChannel(Base):
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendQueueStatsRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null, QueueType=enum, ErrorUnsupportedTypeFormat=null)
-        ----------------------------------------------------------------------------------------------------------------------------
-        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - QueueType (str(enumOpt-MANUAL | enumOpt-OFPQ_ALL)): This parameter requires a queueType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPQ_ALL
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-
         sendQueueStatsRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null, QueueType=enum, ErrorUnsupportedTypeFormat=null, SessionIndices=list)
         -------------------------------------------------------------------------------------------------------------------------------------------------
         - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
@@ -1397,6 +1390,13 @@ class OpenFlowChannel(Base):
         - QueueType (str(enumOpt-MANUAL | enumOpt-OFPQ_ALL)): This parameter requires a queueType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPQ_ALL
         - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        sendQueueStatsRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null, QueueType=enum, ErrorUnsupportedTypeFormat=null)
+        ----------------------------------------------------------------------------------------------------------------------------
+        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - QueueType (str(enumOpt-MANUAL | enumOpt-OFPQ_ALL)): This parameter requires a queueType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPQ_ALL
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
 
         sendQueueStatsRequest(SessionIndices=string, OutputPortType=enum, ErrorUnsupportedTypeFormat=null, QueueType=enum, ErrorUnsupportedTypeFormat=null)
         ---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1432,18 +1432,18 @@ class OpenFlowChannel(Base):
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        sendTableModRequest(TableIdType=enum, TableId=number, ErrorUnsupportedTypeFormat=null)
-        --------------------------------------------------------------------------------------
-        - TableIdType (str(enumOpt-ALL_TABLE | enumOpt-MANUAL)): This parameter requires a tableIdType of type kEnumValue=enumOpt-ALL_TABLE,enumOpt-MANUAL
-        - TableId (number): This parameter requires a tableId of type kInteger
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-
         sendTableModRequest(TableIdType=enum, TableId=number, ErrorUnsupportedTypeFormat=null, SessionIndices=list)
         -----------------------------------------------------------------------------------------------------------
         - TableIdType (str(enumOpt-ALL_TABLE | enumOpt-MANUAL)): This parameter requires a tableIdType of type kEnumValue=enumOpt-ALL_TABLE,enumOpt-MANUAL
         - TableId (number): This parameter requires a tableId of type kInteger
         - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        sendTableModRequest(TableIdType=enum, TableId=number, ErrorUnsupportedTypeFormat=null)
+        --------------------------------------------------------------------------------------
+        - TableIdType (str(enumOpt-ALL_TABLE | enumOpt-MANUAL)): This parameter requires a tableIdType of type kEnumValue=enumOpt-ALL_TABLE,enumOpt-MANUAL
+        - TableId (number): This parameter requires a tableId of type kInteger
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
 
         sendTableModRequest(SessionIndices=string, TableIdType=enum, TableId=number, ErrorUnsupportedTypeFormat=null)
         -------------------------------------------------------------------------------------------------------------
@@ -1503,7 +1503,7 @@ class OpenFlowChannel(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start CPF control plane (equals to promote to negotiated state).
+        Start selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -1553,7 +1553,7 @@ class OpenFlowChannel(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+        Stop selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 

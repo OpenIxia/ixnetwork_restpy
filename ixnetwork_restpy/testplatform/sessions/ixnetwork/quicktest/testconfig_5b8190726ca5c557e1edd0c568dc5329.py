@@ -2587,7 +2587,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
+        - list(str[None | /api/v1/sessions/30/ixnetwork/vport | /api/v1/sessions/30/ixnetwork/vport/.../lan]): Protocol Items
         """
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolItem'])
     @ProtocolItem.setter
@@ -2863,7 +2863,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(dict(arg1:number,arg2:str[None | /api/v1/sessions/1/ixnetwork/quickTest/.../customImix | /api/v1/sessions/1/ixnetwork/quickTest/.../imix])): 
+        - list(dict(arg1:number,arg2:str[None | /api/v1/sessions/30/ixnetwork/quickTest/.../customImix | /api/v1/sessions/30/ixnetwork/quickTest/.../imix])): 
         """
         return self._get_attribute(self._SDM_ATT_MAP['SpyderFramesizeList'])
     @SpyderFramesizeList.setter
@@ -3999,7 +3999,7 @@ class TestConfig(Base):
         - PortDelayEnabled (bool): NOT DEFINED
         - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured
         - PortDelayValue (number): Sets the port delay value
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/30/ixnetwork/vport | /api/v1/sessions/30/ixnetwork/vport/.../lan])): Protocol Items
         - QuickBackoffIteration (number): Sets the quicksearch backoff iteration
         - QuickEnableBackoffIteration (bool): Enables the quick search backoff iteration
         - QuickEnableSaturationIteration (bool): Enables the Quick Search saturation iteration
@@ -4022,7 +4022,7 @@ class TestConfig(Base):
         - SearchBase (str(rate | replicationCount)): NOT DEFINED
         - SendFullyMeshed (bool): Indicates the source group mapping type used for sending data.
         - ShowDetailedBinaryResults (bool): NOT DEFINED
-        - SpyderFramesizeList (list(dict(arg1:number,arg2:str[None | /api/v1/sessions/1/ixnetwork/quickTest/.../customImix | /api/v1/sessions/1/ixnetwork/quickTest/.../imix]))): 
+        - SpyderFramesizeList (list(dict(arg1:number,arg2:str[None | /api/v1/sessions/30/ixnetwork/quickTest/.../customImix | /api/v1/sessions/30/ixnetwork/quickTest/.../imix]))): 
         - StaggeredStart (bool): Starts test with a stagger.
         - StepComboLoadRate (number): The step value of combination load rate.
         - StepFrameLossUnit (str(% | frames)): The frame loss unit.

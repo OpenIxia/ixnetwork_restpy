@@ -24,7 +24,7 @@ from ixnetwork_restpy.files import Files
 
 
 class StartCcmEmulatedMpParams(Base):
-    """Start CCM PDU Transmission
+    """Start CCM PDU Transmission.
     The StartCcmEmulatedMpParams class encapsulates a required startCcmEmulatedMpParams resource which will be retrieved from the server every time the property is accessed.
     """
 
@@ -39,7 +39,7 @@ class StartCcmEmulatedMpParams(Base):
     def StartCcmEmulatedMp(self):
         """Executes the startCcmEmulatedMp operation on the server.
 
-        Start CCM PDU Transmission
+        Start CCM PDU Transmission.
 
         Raises
         ------

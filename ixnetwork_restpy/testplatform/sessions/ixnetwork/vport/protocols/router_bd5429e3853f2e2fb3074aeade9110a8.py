@@ -350,7 +350,7 @@ class Router(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
@@ -362,7 +362,7 @@ class Router(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The string interface description for the transport address.
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface): The string interface description for the transport address.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TransportAddress'])
     @TransportAddress.setter
@@ -400,8 +400,8 @@ class Router(Base):
         - ReconnectTime (number): This Fault Tolerant (FT) Reconnect Timer value is advertised in the FT Session TLV in the Initialization message sent by a neighbor LSR. It is a request sent by an LSR to its neighbor(s) in the event that the receiving neighbor detects that the LDP session has failed, the receiver should maintain MPLS forwarding state and wait for the sender to perform a restart of the control plane and LDP protocol. If the value = 0, the sender is indicating that it will not preserve its MPLS forwarding state across the restart.
         - RecoveryTime (number): The restarting LSR is advertising the amount of time that it will retain its MPLS forwarding state. This time period begins when it sends the restart Initialization message, with the FT session TLV, to the neighbor LSRs (to re-establish the LDP session). This timer allows the neighbors some time to resync the LSPs in an orderly manner. If the value = 0, it means that the restarting LSR was not able to preserve the MPLS forwarding state.
         - RouterId (str): The ID of the simulated router, expressed as an IP address.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
-        - TransportAddress (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The string interface description for the transport address.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TransportAddress (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The string interface description for the transport address.
         - UseTransportAddress (bool): The boolean value for the transport address.
 
         Raises
@@ -429,8 +429,8 @@ class Router(Base):
         - ReconnectTime (number): This Fault Tolerant (FT) Reconnect Timer value is advertised in the FT Session TLV in the Initialization message sent by a neighbor LSR. It is a request sent by an LSR to its neighbor(s) in the event that the receiving neighbor detects that the LDP session has failed, the receiver should maintain MPLS forwarding state and wait for the sender to perform a restart of the control plane and LDP protocol. If the value = 0, the sender is indicating that it will not preserve its MPLS forwarding state across the restart.
         - RecoveryTime (number): The restarting LSR is advertising the amount of time that it will retain its MPLS forwarding state. This time period begins when it sends the restart Initialization message, with the FT session TLV, to the neighbor LSRs (to re-establish the LDP session). This timer allows the neighbors some time to resync the LSPs in an orderly manner. If the value = 0, it means that the restarting LSR was not able to preserve the MPLS forwarding state.
         - RouterId (str): The ID of the simulated router, expressed as an IP address.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
-        - TransportAddress (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The string interface description for the transport address.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TransportAddress (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The string interface description for the transport address.
         - UseTransportAddress (bool): The boolean value for the transport address.
 
         Returns
@@ -477,8 +477,8 @@ class Router(Base):
         - ReconnectTime (number): This Fault Tolerant (FT) Reconnect Timer value is advertised in the FT Session TLV in the Initialization message sent by a neighbor LSR. It is a request sent by an LSR to its neighbor(s) in the event that the receiving neighbor detects that the LDP session has failed, the receiver should maintain MPLS forwarding state and wait for the sender to perform a restart of the control plane and LDP protocol. If the value = 0, the sender is indicating that it will not preserve its MPLS forwarding state across the restart.
         - RecoveryTime (number): The restarting LSR is advertising the amount of time that it will retain its MPLS forwarding state. This time period begins when it sends the restart Initialization message, with the FT session TLV, to the neighbor LSRs (to re-establish the LDP session). This timer allows the neighbors some time to resync the LSPs in an orderly manner. If the value = 0, it means that the restarting LSR was not able to preserve the MPLS forwarding state.
         - RouterId (str): The ID of the simulated router, expressed as an IP address.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
-        - TransportAddress (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The string interface description for the transport address.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TransportAddress (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The string interface description for the transport address.
         - UseTransportAddress (bool): The boolean value for the transport address.
 
         Returns
@@ -511,8 +511,6 @@ class Router(Base):
 
     def RefreshBgpAdVplsLearnedInfo(self):
         """Executes the refreshBgpAdVplsLearnedInfo operation on the server.
-
-        If enabled, it refreshes BGP advanced LSP learned information.
 
         Raises
         ------

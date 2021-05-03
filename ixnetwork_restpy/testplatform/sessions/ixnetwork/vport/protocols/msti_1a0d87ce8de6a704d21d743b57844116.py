@@ -321,8 +321,6 @@ class Msti(Base):
     def TopologyChange(self):
         """Executes the topologyChange operation on the server.
 
-        This command checks to see if a topology change has occurred on the specified STP bridge MSTI.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -333,8 +331,6 @@ class Msti(Base):
 
     def UpdateParameters(self):
         """Executes the updateParameters operation on the server.
-
-        Updates the current STP parameters on the specified bridge MSTI.
 
         Raises
         ------

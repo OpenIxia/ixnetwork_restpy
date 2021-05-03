@@ -127,8 +127,6 @@ class Lacp(Base):
     def RefreshLacpPortLearnedInfo(self):
         """Executes the refreshLacpPortLearnedInfo operation on the server.
 
-        This exec refreshes the LACP port learned information.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -139,8 +137,6 @@ class Lacp(Base):
 
     def SendMarkerRequest(self):
         """Executes the sendMarkerRequest operation on the server.
-
-        This sends a marker request. The contents of the marker PDU contain the current view of partner (which can be defaulted if no partner is present). The marker will be sent regardless of which state the link is in.
 
         Raises
         ------
@@ -153,8 +149,6 @@ class Lacp(Base):
     def SendUpdate(self):
         """Executes the sendUpdate operation on the server.
 
-        This exec sends an update to the actor's partners after a change has been made to the link's parameters.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -165,8 +159,6 @@ class Lacp(Base):
 
     def Start(self):
         """Executes the start operation on the server.
-
-        This exec starts the LACP protocol.
 
         Raises
         ------
@@ -179,8 +171,6 @@ class Lacp(Base):
     def StartPdu(self):
         """Executes the startPdu operation on the server.
 
-        This exec starts PDUs related to LACP (for example, LACPDU, Marker Request PDU, Marker Response PDU) while the protocol is running on the port.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -192,8 +182,6 @@ class Lacp(Base):
     def Stop(self):
         """Executes the stop operation on the server.
 
-        This exec stops the LACP protocol.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -204,8 +192,6 @@ class Lacp(Base):
 
     def StopPdu(self):
         """Executes the stopPdu operation on the server.
-
-        This exec stops PDUs related to LACP (for example, LACPDU, Marker Request PDU, Marker Response PDU) while the protocol is running on the port.
 
         Raises
         ------

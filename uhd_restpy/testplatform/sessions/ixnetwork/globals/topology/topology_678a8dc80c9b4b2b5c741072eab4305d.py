@@ -364,7 +364,7 @@ class Topology(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport]): List of virtual ports included in the port level configuration
+        - list(str[None | /api/v1/sessions/7/ixnetwork/vport]): List of virtual ports included in the port level configuration
         """
         return self._get_attribute(self._SDM_ATT_MAP['Vports'])
 

@@ -729,7 +729,7 @@ class IsisL3Router(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/7/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
@@ -1691,7 +1691,7 @@ class IsisL3Router(Base):
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - EnableBIER (bool): Enable BIER
         - EnableSR (bool): This enables SR MPLS on all the emulated ISIS router(s)
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/7/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - FlexAlgoCount (number): If the count is greater than 0, then the Flex Algo tab will appear after ISIS-L3 RTR tab. Default is 0. Range is 0-128.
         - LocalSystemID (list(str)): System ID
         - LocatorCount (number): Locator Count
@@ -1869,7 +1869,7 @@ class IsisL3Router(Base):
     def Abort(self, *args, **kwargs):
         """Executes the abort operation on the server.
 
-        Abort CPF control plane (equals to demote to kUnconfigured state).
+        Abort selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -1969,7 +1969,7 @@ class IsisL3Router(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start CPF control plane (equals to promote to negotiated state).
+        Start selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -1994,7 +1994,7 @@ class IsisL3Router(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+        Stop selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 

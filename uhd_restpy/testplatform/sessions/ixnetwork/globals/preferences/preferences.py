@@ -40,6 +40,7 @@ class Preferences(Base):
         'DeleteDumpFilesOlderThan': 'deleteDumpFilesOlderThan',
         'EnableAutoSave': 'enableAutoSave',
         'EnableCloudTools': 'enableCloudTools',
+        'ForceLegacyPortNameInStats': 'forceLegacyPortNameInStats',
         'IncludeTroubleshootingComments': 'includeTroubleshootingComments',
         'LatestConfigInDiagEnabled': 'latestConfigInDiagEnabled',
         'PhyMode': 'phyMode',
@@ -166,6 +167,18 @@ class Preferences(Base):
     @EnableCloudTools.setter
     def EnableCloudTools(self, value):
         self._set_attribute(self._SDM_ATT_MAP['EnableCloudTools'], value)
+
+    @property
+    def ForceLegacyPortNameInStats(self):
+        """
+        Returns
+        -------
+        - bool: When false, IxNetwork statistics show port name in <Chassis/Front Panel Port Number> format. When true, it is in <Chassis/Card/Port> format
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['ForceLegacyPortNameInStats'])
+    @ForceLegacyPortNameInStats.setter
+    def ForceLegacyPortNameInStats(self, value):
+        self._set_attribute(self._SDM_ATT_MAP['ForceLegacyPortNameInStats'], value)
 
     @property
     def IncludeTroubleshootingComments(self):
@@ -332,7 +345,7 @@ class Preferences(Base):
     def TransmitMode(self, value):
         self._set_attribute(self._SDM_ATT_MAP['TransmitMode'], value)
 
-    def update(self, AllowProtocolSessionStateLog=None, AutoSaveIntervalMin=None, AutoSaveLocation=None, ClientTraceLevel=None, ConfigurationAtIxNetworkStartup=None, ConnectPortsOnLoadConfig=None, DeleteDumpFilesOlderThan=None, EnableAutoSave=None, EnableCloudTools=None, IncludeTroubleshootingComments=None, LatestConfigInDiagEnabled=None, PhyMode=None, PingChassisOnConnect=None, RebootPortsOnConnect=None, ReceiveMode=None, RecentChassisList=None, ResourceManagerLocation=None, ScriptgenTextEditorPath=None, StreamLogsToSyslogServer=None, SyslogHost=None, SyslogPort=None, TransmitMode=None):
+    def update(self, AllowProtocolSessionStateLog=None, AutoSaveIntervalMin=None, AutoSaveLocation=None, ClientTraceLevel=None, ConfigurationAtIxNetworkStartup=None, ConnectPortsOnLoadConfig=None, DeleteDumpFilesOlderThan=None, EnableAutoSave=None, EnableCloudTools=None, ForceLegacyPortNameInStats=None, IncludeTroubleshootingComments=None, LatestConfigInDiagEnabled=None, PhyMode=None, PingChassisOnConnect=None, RebootPortsOnConnect=None, ReceiveMode=None, RecentChassisList=None, ResourceManagerLocation=None, ScriptgenTextEditorPath=None, StreamLogsToSyslogServer=None, SyslogHost=None, SyslogPort=None, TransmitMode=None):
         """Updates preferences resource on the server.
 
         Args
@@ -346,6 +359,7 @@ class Preferences(Base):
         - DeleteDumpFilesOlderThan (number): Dump Files older than the days set are deleted automatically. Need to restart IxNetwork for this option to take effect.
         - EnableAutoSave (bool): If true,saves the configuration automatically. IxNetwork wont prompt to open the auto backup file when running in TCL Server mode. For performance reasons users additionally have to add a decimal registry key ForceAutoSave in Computer/HKEY_CURRENT_USER/Software/Ixia Communications/IxNetwork/Debug to do the auto save. Doesnt work yet on Linux
         - EnableCloudTools (bool): Controls whether Cloud Tool options will be enabled or not. This is related to learning MAC / IP address for a topology running on VM ports, deployed in AWS
+        - ForceLegacyPortNameInStats (bool): When false, IxNetwork statistics show port name in <Chassis/Front Panel Port Number> format. When true, it is in <Chassis/Card/Port> format
         - IncludeTroubleshootingComments (bool): Includes troubleshooting comments in the script
         - LatestConfigInDiagEnabled (bool): 
         - PhyMode (str(copper | fiber)): Set the media in Default Port Settings

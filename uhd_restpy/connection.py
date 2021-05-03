@@ -341,7 +341,12 @@ class Connection(object):
                     if server_info is not None:
                         errors.append(server_info)
                         server_info = None
-                    errors.append('\t%s [%s] %s' % (error['lastModified'], error['errorLevel'][1:].upper(), error['description']))
+                    errors.append('\t%s [%s] [%s] %s' % (
+                        error['lastModified'], 
+                        error['errorLevel'][1:].upper(), 
+                        error['name'],
+                        error['description'])
+                    )
         except:
             pass
         # raise the appropriate error

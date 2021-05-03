@@ -379,7 +379,7 @@ class NeighborPair(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
@@ -412,7 +412,7 @@ class NeighborPair(Base):
         - RefreshReduction (bool): Enables or disables the feature.
         - RestartTimeInterval (number): This value along with the Recovery Time is advertised in the Hello-packets as part of a Restart-capability object.
         - SummaryRefreshInterval (number): The interval between summary refresh messages.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
         Raises
         ------
@@ -446,7 +446,7 @@ class NeighborPair(Base):
         - RefreshReduction (bool): Enables or disables the feature.
         - RestartTimeInterval (number): This value along with the Recovery Time is advertised in the Hello-packets as part of a Restart-capability object.
         - SummaryRefreshInterval (number): The interval between summary refresh messages.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
         Returns
         -------
@@ -500,7 +500,7 @@ class NeighborPair(Base):
         - RefreshReduction (bool): Enables or disables the feature.
         - RestartTimeInterval (number): This value along with the Recovery Time is advertised in the Hello-packets as part of a Restart-capability object.
         - SummaryRefreshInterval (number): The interval between summary refresh messages.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
         Returns
         -------
@@ -533,8 +533,6 @@ class NeighborPair(Base):
     def RefreshAssignedLabelInfo(self):
         """Executes the refreshAssignedLabelInfo operation on the server.
 
-        This exec refreshes the RSVP assigned label information from the DUT.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -546,8 +544,6 @@ class NeighborPair(Base):
     def RefreshReceivedLabelInfo(self):
         """Executes the refreshReceivedLabelInfo operation on the server.
 
-        This exec refreshes the RSVP received label information from the DUT.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -558,8 +554,6 @@ class NeighborPair(Base):
 
     def RestartNeighbor(self):
         """Executes the restartNeighbor operation on the server.
-
-        This command restarts the specifed RSVP neighbor.
 
         Raises
         ------

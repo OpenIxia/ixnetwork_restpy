@@ -271,8 +271,6 @@ class Ldp(Base):
     def Start(self):
         """Executes the start operation on the server.
 
-        Starts the LDP protocol on a port or group of ports.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -283,8 +281,6 @@ class Ldp(Base):
 
     def Stop(self):
         """Executes the stop operation on the server.
-
-        Stops the LDP protocol on a port of group of ports simultaneously.
 
         Raises
         ------

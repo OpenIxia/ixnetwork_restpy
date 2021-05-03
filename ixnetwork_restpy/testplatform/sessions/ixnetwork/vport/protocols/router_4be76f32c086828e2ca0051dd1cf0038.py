@@ -294,7 +294,7 @@ class Router(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this emulated OSPF router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup): The name of the group to which this emulated OSPF router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
@@ -322,7 +322,7 @@ class Router(Base):
         - SupportReasonSoftRestart (bool): If enabled, Graceful Restart Helper Mode will be supported on this emulated OSPFv2 Router when the restart reason is an OSPFv2 software restart (on the restarting router). (Planned or unplanned outage) The default is checked/enabled.
         - SupportReasonSwotchRedundantCntrlProcessor (bool): If enabled, Graceful Restart Helper Mode will be supported on this emulated OSPFv2 Router when the restart reason is a unplanned switchover to a redundant control processor on the restarting router. (Unplanned outage)
         - SupportReasonUnknown (bool): If enabled, Graceful Restart Helper Mode will be supported on this emulated OSPFv2 Router when the restart reason is unknown and unplanned. (Unplanned outage) The default is enabled.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this emulated OSPF router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this emulated OSPF router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
         Raises
         ------
@@ -351,7 +351,7 @@ class Router(Base):
         - SupportReasonSoftRestart (bool): If enabled, Graceful Restart Helper Mode will be supported on this emulated OSPFv2 Router when the restart reason is an OSPFv2 software restart (on the restarting router). (Planned or unplanned outage) The default is checked/enabled.
         - SupportReasonSwotchRedundantCntrlProcessor (bool): If enabled, Graceful Restart Helper Mode will be supported on this emulated OSPFv2 Router when the restart reason is a unplanned switchover to a redundant control processor on the restarting router. (Unplanned outage)
         - SupportReasonUnknown (bool): If enabled, Graceful Restart Helper Mode will be supported on this emulated OSPFv2 Router when the restart reason is unknown and unplanned. (Unplanned outage) The default is enabled.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this emulated OSPF router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this emulated OSPF router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
         Returns
         -------
@@ -398,7 +398,7 @@ class Router(Base):
         - SupportReasonSoftRestart (bool): If enabled, Graceful Restart Helper Mode will be supported on this emulated OSPFv2 Router when the restart reason is an OSPFv2 software restart (on the restarting router). (Planned or unplanned outage) The default is checked/enabled.
         - SupportReasonSwotchRedundantCntrlProcessor (bool): If enabled, Graceful Restart Helper Mode will be supported on this emulated OSPFv2 Router when the restart reason is a unplanned switchover to a redundant control processor on the restarting router. (Unplanned outage)
         - SupportReasonUnknown (bool): If enabled, Graceful Restart Helper Mode will be supported on this emulated OSPFv2 Router when the restart reason is unknown and unplanned. (Unplanned outage) The default is enabled.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this emulated OSPF router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this emulated OSPF router is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
         Returns
         -------

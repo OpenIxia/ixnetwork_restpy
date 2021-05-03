@@ -46,7 +46,7 @@ class NacSequence(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/globals/.../nacPosture]): List of NacPostures.
+        - list(str[None | /api/v1/sessions/7/ixnetwork/globals/.../nacPosture]): List of NacPostures.
         """
         return self._get_attribute(self._SDM_ATT_MAP['NacPostures'])
     @NacPostures.setter
@@ -79,7 +79,7 @@ class NacSequence(Base):
 
         Args
         ----
-        - NacPostures (list(str[None | /api/v1/sessions/1/ixnetwork/globals/.../nacPosture])): List of NacPostures.
+        - NacPostures (list(str[None | /api/v1/sessions/7/ixnetwork/globals/.../nacPosture])): List of NacPostures.
         - Name (str): Unique name for this NAC Sequence.
 
         Raises
@@ -93,7 +93,7 @@ class NacSequence(Base):
 
         Args
         ----
-        - NacPostures (list(str[None | /api/v1/sessions/1/ixnetwork/globals/.../nacPosture])): List of NacPostures.
+        - NacPostures (list(str[None | /api/v1/sessions/7/ixnetwork/globals/.../nacPosture])): List of NacPostures.
         - Name (str): Unique name for this NAC Sequence.
 
         Returns
@@ -125,7 +125,7 @@ class NacSequence(Base):
 
         Args
         ----
-        - NacPostures (list(str[None | /api/v1/sessions/1/ixnetwork/globals/.../nacPosture])): List of NacPostures.
+        - NacPostures (list(str[None | /api/v1/sessions/7/ixnetwork/globals/.../nacPosture])): List of NacPostures.
         - Name (str): Unique name for this NAC Sequence.
         - ObjectId (str): Unique identifier for this object
 

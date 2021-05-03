@@ -345,7 +345,7 @@ class HighLevelStream(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport]): A list of virtual ports that are the receiving ports
+        - list(str[None | /api/v1/sessions/30/ixnetwork/lag | /api/v1/sessions/30/ixnetwork/vport]): A list of virtual ports that are the receiving ports
         """
         return self._get_attribute(self._SDM_ATT_MAP['RxPortIds'])
     @RxPortIds.setter
@@ -387,7 +387,7 @@ class HighLevelStream(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport): The virtual port that is the transmitting port.
+        - str(None | /api/v1/sessions/30/ixnetwork/lag | /api/v1/sessions/30/ixnetwork/vport): The virtual port that is the transmitting port.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TxPortId'])
     @TxPortId.setter
@@ -415,9 +415,9 @@ class HighLevelStream(Base):
         - Pause (bool): If true then pause is enabled.
         - PreambleCustomSize (number): Customizes the preamble size of the frame.
         - PreambleFrameSizeMode (str(auto | custom)): The starting size of the frame.
-        - RxPortIds (list(str[None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport])): A list of virtual ports that are the receiving ports
+        - RxPortIds (list(str[None | /api/v1/sessions/30/ixnetwork/lag | /api/v1/sessions/30/ixnetwork/vport])): A list of virtual ports that are the receiving ports
         - Suspend (bool): Suspends all traffic on this high level stream.
-        - TxPortId (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)): The virtual port that is the transmitting port.
+        - TxPortId (str(None | /api/v1/sessions/30/ixnetwork/lag | /api/v1/sessions/30/ixnetwork/vport)): The virtual port that is the transmitting port.
 
         Raises
         ------
@@ -449,11 +449,11 @@ class HighLevelStream(Base):
         - Pause (bool): If true then pause is enabled.
         - PreambleCustomSize (number): Customizes the preamble size of the frame.
         - PreambleFrameSizeMode (str(auto | custom)): The starting size of the frame.
-        - RxPortIds (list(str[None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport])): A list of virtual ports that are the receiving ports
+        - RxPortIds (list(str[None | /api/v1/sessions/30/ixnetwork/lag | /api/v1/sessions/30/ixnetwork/vport])): A list of virtual ports that are the receiving ports
         - RxPortNames (list(str)): A list of names from the receiving virtual ports.
         - State (str): (Read only) Denotes the current state of the stream.
         - Suspend (bool): Suspends all traffic on this high level stream.
-        - TxPortId (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)): The virtual port that is the transmitting port.
+        - TxPortId (str(None | /api/v1/sessions/30/ixnetwork/lag | /api/v1/sessions/30/ixnetwork/vport)): The virtual port that is the transmitting port.
         - TxPortName (str): The name of the virtual port that is the transmitting port.
 
         Returns

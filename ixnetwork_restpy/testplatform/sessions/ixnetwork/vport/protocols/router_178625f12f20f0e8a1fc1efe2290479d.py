@@ -103,7 +103,7 @@ class Router(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The ID associated with the simulated interface.
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface): The ID associated with the simulated interface.
         """
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceId'])
     @InterfaceId.setter
@@ -151,7 +151,7 @@ class Router(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
@@ -190,11 +190,11 @@ class Router(Base):
         - AuthorizationPassword (str): If enableAuthorization is set, this is the 16-character password to be used. Only simple password authentication is supported.
         - EnableAuthorization (bool): Indicates whether authorization is included in update messages.
         - Enabled (bool): Enables or disables the simulated router.
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The ID associated with the simulated interface.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The ID associated with the simulated interface.
         - ReceiveType (str(receiveVersion1 | receiveVersion2 | receiveVersion1And2)): Filters the RIP version of messages this router will receive.
         - ResponseMode (str(default | splitHorizon | poisonReverse | splitHorizonSpaceSaver | silent)): Controls the manner in which received routes are repeated back to their source. The modes are split horizon, no split horizon, and split horizon with poison reverse.
         - SendType (str(multicast | broadcastV1 | broadcastV2)): The method for sending RIP packets.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         - UpdateInterval (number): The time, in seconds, between transmitted update messages.
         - UpdateIntervalOffset (number): A random percentage of the time value, expressed in seconds, is added to or subtracted from the update interval to stagger the transmission of messages.
 
@@ -212,11 +212,11 @@ class Router(Base):
         - AuthorizationPassword (str): If enableAuthorization is set, this is the 16-character password to be used. Only simple password authentication is supported.
         - EnableAuthorization (bool): Indicates whether authorization is included in update messages.
         - Enabled (bool): Enables or disables the simulated router.
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The ID associated with the simulated interface.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The ID associated with the simulated interface.
         - ReceiveType (str(receiveVersion1 | receiveVersion2 | receiveVersion1And2)): Filters the RIP version of messages this router will receive.
         - ResponseMode (str(default | splitHorizon | poisonReverse | splitHorizonSpaceSaver | silent)): Controls the manner in which received routes are repeated back to their source. The modes are split horizon, no split horizon, and split horizon with poison reverse.
         - SendType (str(multicast | broadcastV1 | broadcastV2)): The method for sending RIP packets.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         - UpdateInterval (number): The time, in seconds, between transmitted update messages.
         - UpdateIntervalOffset (number): A random percentage of the time value, expressed in seconds, is added to or subtracted from the update interval to stagger the transmission of messages.
 
@@ -252,11 +252,11 @@ class Router(Base):
         - AuthorizationPassword (str): If enableAuthorization is set, this is the 16-character password to be used. Only simple password authentication is supported.
         - EnableAuthorization (bool): Indicates whether authorization is included in update messages.
         - Enabled (bool): Enables or disables the simulated router.
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The ID associated with the simulated interface.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The ID associated with the simulated interface.
         - ReceiveType (str(receiveVersion1 | receiveVersion2 | receiveVersion1And2)): Filters the RIP version of messages this router will receive.
         - ResponseMode (str(default | splitHorizon | poisonReverse | splitHorizonSpaceSaver | silent)): Controls the manner in which received routes are repeated back to their source. The modes are split horizon, no split horizon, and split horizon with poison reverse.
         - SendType (str(multicast | broadcastV1 | broadcastV2)): The method for sending RIP packets.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         - UpdateInterval (number): The time, in seconds, between transmitted update messages.
         - UpdateIntervalOffset (number): A random percentage of the time value, expressed in seconds, is added to or subtracted from the update interval to stagger the transmission of messages.
 

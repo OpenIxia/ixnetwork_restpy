@@ -148,13 +148,13 @@ class DeviceGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3router_502c03d3345feb0ad46b4b9e2d2f2e95.IsisL3Router): An instance of the IsisL3Router class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3router_d361218740d3267022bce12b7b124967.IsisL3Router): An instance of the IsisL3Router class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3router_502c03d3345feb0ad46b4b9e2d2f2e95 import IsisL3Router
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3router_d361218740d3267022bce12b7b124967 import IsisL3Router
         return IsisL3Router(self)
 
     @property
@@ -330,13 +330,13 @@ class DeviceGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2router_128102e8c3e6c39adb7b7129aa61b772.Ospfv2Router): An instance of the Ospfv2Router class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2router_18cdb9707bffd56b0efa6b810027c1a1.Ospfv2Router): An instance of the Ospfv2Router class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2router_128102e8c3e6c39adb7b7129aa61b772 import Ospfv2Router
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2router_18cdb9707bffd56b0efa6b810027c1a1 import Ospfv2Router
         return Ospfv2Router(self)
 
     @property
@@ -344,13 +344,13 @@ class DeviceGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3router_b2d6b4f2e4d28091cc2ded1e4203f935.Ospfv3Router): An instance of the Ospfv3Router class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3router_4fb70543029537debb6399a437c0ac39.Ospfv3Router): An instance of the Ospfv3Router class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3router_b2d6b4f2e4d28091cc2ded1e4203f935 import Ospfv3Router
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3router_4fb70543029537debb6399a437c0ac39 import Ospfv3Router
         return Ospfv3Router(self)
 
     @property
@@ -414,7 +414,7 @@ class DeviceGroup(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/30/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
@@ -507,7 +507,7 @@ class DeviceGroup(Base):
         ----
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/30/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - Multiplier (number): Number of device instances per parent device instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
@@ -563,7 +563,7 @@ class DeviceGroup(Base):
     def Abort(self, *args, **kwargs):
         """Executes the abort operation on the server.
 
-        Abort CPF control plane (equals to demote to kUnconfigured state).
+        Abort selected Device Groups.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -592,8 +592,8 @@ class DeviceGroup(Base):
 
         copyPaste(Arg2=href)list
         ------------------------
-        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork//.../*)): The destination node below which the copied node will be pasted
-        - Returns list(str[None | /api/v1/sessions/1/ixnetwork//.../*]): The newly copied node.
+        - Arg2 (str(None | /api/v1/sessions/30/ixnetwork//.../*)): The destination node below which the copied node will be pasted
+        - Returns list(str[None | /api/v1/sessions/30/ixnetwork//.../*]): The newly copied node.
 
         Raises
         ------
@@ -640,7 +640,7 @@ class DeviceGroup(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start CPF control plane (equals to promote to negotiated state).
+        Start selected Device Groups.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -665,7 +665,7 @@ class DeviceGroup(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+        Stop selected Device Groups.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 

@@ -38,20 +38,6 @@ class ProtocolStack(Base):
         super(ProtocolStack, self).__init__(parent)
 
     @property
-    def AmtOptions(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.amtoptions_920d5afd3e8b6201245458975a82c0db.AmtOptions): An instance of the AmtOptions class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.amtoptions_920d5afd3e8b6201245458975a82c0db import AmtOptions
-        return AmtOptions(self)
-
-    @property
     def AncpOptions(self):
         """
         Returns
@@ -162,90 +148,6 @@ class ProtocolStack(Base):
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.eapoudpoptions_c637c5c5d1e6ed49fb44ea5297e78110 import EapoUdpOptions
         return EapoUdpOptions(self)
-
-    @property
-    def EgtpClientOptions(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpclientoptions_faed49d1cd6032d1d86c972d66b3a5fe.EgtpClientOptions): An instance of the EgtpClientOptions class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpclientoptions_faed49d1cd6032d1d86c972d66b3a5fe import EgtpClientOptions
-        return EgtpClientOptions(self)
-
-    @property
-    def EgtpOptionsBase(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpoptionsbase_2c116dc95d43ffef03c94ddbd3b750be.EgtpOptionsBase): An instance of the EgtpOptionsBase class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpoptionsbase_2c116dc95d43ffef03c94ddbd3b750be import EgtpOptionsBase
-        return EgtpOptionsBase(self)
-
-    @property
-    def EgtpS5S8PgwOptions(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtps5s8pgwoptions_0ecee2b136b9e205c98c111ae43d2529.EgtpS5S8PgwOptions): An instance of the EgtpS5S8PgwOptions class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtps5s8pgwoptions_0ecee2b136b9e205c98c111ae43d2529 import EgtpS5S8PgwOptions
-        return EgtpS5S8PgwOptions(self)
-
-    @property
-    def EgtpS5S8SgwOptions(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtps5s8sgwoptions_85e0aea713fb798872e1eb8bc6544fe9.EgtpS5S8SgwOptions): An instance of the EgtpS5S8SgwOptions class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtps5s8sgwoptions_85e0aea713fb798872e1eb8bc6544fe9 import EgtpS5S8SgwOptions
-        return EgtpS5S8SgwOptions(self)
-
-    @property
-    def EgtpServerOptions(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpserveroptions_0da9d0ef7484fcc78603ede124e9e586.EgtpServerOptions): An instance of the EgtpServerOptions class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpserveroptions_0da9d0ef7484fcc78603ede124e9e586 import EgtpServerOptions
-        return EgtpServerOptions(self)
-
-    @property
-    def EgtpSgwOptions(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpsgwoptions_a815efe97f0053663dab2a194220b27f.EgtpSgwOptions): An instance of the EgtpSgwOptions class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpsgwoptions_a815efe97f0053663dab2a194220b27f import EgtpSgwOptions
-        return EgtpSgwOptions(self)
 
     @property
     def Ethernet(self):
@@ -458,20 +360,6 @@ class ProtocolStack(Base):
         return PtpOptions(self)
 
     @property
-    def SmDnsOptions(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.smdnsoptions_653d7eba98b73b1fad589c57df4e06db.SmDnsOptions): An instance of the SmDnsOptions class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.smdnsoptions_653d7eba98b73b1fad589c57df4e06db import SmDnsOptions
-        return SmDnsOptions(self)
-
-    @property
     def StaticHostsOptions(self):
         """
         Returns
@@ -549,26 +437,6 @@ class ProtocolStack(Base):
         - str: Unique identifier for this object
         """
         return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
-
-    def CustomProtocolStack(self, *args, **kwargs):
-        """Executes the customProtocolStack operation on the server.
-
-        Create custom protocol stack under /vport/protocolStack
-
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
-        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
-        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
         """Executes the disableProtocolStack operation on the server.

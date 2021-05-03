@@ -224,8 +224,6 @@ class OpaqueRouteRange(Base):
     def ApplyOpaqueRouteRange(self):
         """Executes the applyOpaqueRouteRange operation on the server.
 
-        This function allows to Apply the route range information on the opaque route block.
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server

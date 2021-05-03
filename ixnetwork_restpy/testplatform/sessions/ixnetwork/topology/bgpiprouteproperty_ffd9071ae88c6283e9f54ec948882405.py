@@ -1349,14 +1349,14 @@ class BgpIPRouteProperty(Base):
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        ageOutRoutes(Percentage=number)
-        -------------------------------
-        - Percentage (number): This parameter requires a percentage of type kInteger
-
         ageOutRoutes(Percentage=number, SessionIndices=list)
         ----------------------------------------------------
         - Percentage (number): This parameter requires a percentage of type kInteger
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+
+        ageOutRoutes(Percentage=number)
+        -------------------------------
+        - Percentage (number): This parameter requires a percentage of type kInteger
 
         ageOutRoutes(SessionIndices=string, Percentage=number)
         ------------------------------------------------------
@@ -1475,15 +1475,6 @@ class BgpIPRouteProperty(Base):
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        importBgpRoutes(Arg2=enum, Arg3=bool, Arg4=enum, Arg5=enum, Arg6=href)list
-        --------------------------------------------------------------------------
-        - Arg2 (str(roundRobin | replicate)): Option to specify distribution type, for distributing imported routes across all BGP Peer. Options: Round-Robin, for allocating routes sequentially, and Replicate, for allocating all routes to each Peer.
-        - Arg3 (bool): Import only the best routes (provided route file has this information).
-        - Arg4 (str(overwriteTestersAddress | preserveFromFile)): Option for setting Next Hop modification type.
-        - Arg5 (str(csv | juniper | cisco)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
-        - Arg6 (obj(ixnetwork_restpy.files.Files)): Select source file having route information.
-        - Returns list(str): ID to associate each asynchronous action invocation.
-
         DEPRECATED importBgpRoutes(Arg2=enum, Arg3=bool, Arg4=enum, Arg5=enum, Arg6=href, Arg7=number)list
         --------------------------------------------------------------------------------------------------
         - Arg2 (str(roundRobin | replicate)): Option to specify distribution type, for distributing imported routes across all BGP Peer. Options: Round-Robin, for allocating routes sequentially, and Replicate, for allocating all routes to each Peer.
@@ -1492,6 +1483,15 @@ class BgpIPRouteProperty(Base):
         - Arg5 (str(csv | juniper | cisco)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
         - Arg6 (obj(ixnetwork_restpy.files.Files)): Select source file having route information.
         - Arg7 (number): Specify maximum routes(per port) that you want to import. Based on Card Memory, the Max Route Limit Per Port are: - 4GB or more => 2.0 million 2GB => 1.6 million 1GB => 0.8 million Less than 1GB => 0.5 million
+        - Returns list(str): ID to associate each asynchronous action invocation.
+
+        importBgpRoutes(Arg2=enum, Arg3=bool, Arg4=enum, Arg5=enum, Arg6=href)list
+        --------------------------------------------------------------------------
+        - Arg2 (str(roundRobin | replicate)): Option to specify distribution type, for distributing imported routes across all BGP Peer. Options: Round-Robin, for allocating routes sequentially, and Replicate, for allocating all routes to each Peer.
+        - Arg3 (bool): Import only the best routes (provided route file has this information).
+        - Arg4 (str(overwriteTestersAddress | preserveFromFile)): Option for setting Next Hop modification type.
+        - Arg5 (str(csv | juniper | cisco)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
+        - Arg6 (obj(ixnetwork_restpy.files.Files)): Select source file having route information.
         - Returns list(str): ID to associate each asynchronous action invocation.
 
         Raises
@@ -1552,7 +1552,7 @@ class BgpIPRouteProperty(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start CPF control plane (equals to promote to negotiated state).
+        Start selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -1577,7 +1577,7 @@ class BgpIPRouteProperty(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+        Stop selected protocols.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 

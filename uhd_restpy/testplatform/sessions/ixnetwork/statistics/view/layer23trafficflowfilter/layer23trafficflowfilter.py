@@ -100,7 +100,7 @@ class Layer23TrafficFlowFilter(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter]): Selected port filters from the availablePortFilter list.
+        - list(str[None | /api/v1/sessions/7/ixnetwork/statistics/.../availablePortFilter]): Selected port filters from the availablePortFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP['PortFilterIds'])
     @PortFilterIds.setter
@@ -112,7 +112,7 @@ class Layer23TrafficFlowFilter(Base):
         """DEPRECATED 
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrafficItemFilter): Selected traffic item filter from the availableTrafficItemFilter list.
+        - str(None | /api/v1/sessions/7/ixnetwork/statistics/.../availableTrafficItemFilter): Selected traffic item filter from the availableTrafficItemFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TrafficItemFilterId'])
     @TrafficItemFilterId.setter
@@ -124,7 +124,7 @@ class Layer23TrafficFlowFilter(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrafficItemFilter]): Selected traffic item filters from the availableTrafficItemFilter list.
+        - list(str[None | /api/v1/sessions/7/ixnetwork/statistics/.../availableTrafficItemFilter]): Selected traffic item filters from the availableTrafficItemFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TrafficItemFilterIds'])
     @TrafficItemFilterIds.setter
@@ -138,9 +138,9 @@ class Layer23TrafficFlowFilter(Base):
         ----
         - AggregatedAcrossPorts (bool): If true, displays aggregated stat value across ports selected by portFilterIds. Default = false
         - EgressLatencyBinDisplayOption (str(none | showEgressFlatView | showEgressRows | showLatencyBinStats)): Emulates Latency Bin SV or Egress Tracking SV.
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter])): Selected port filters from the availablePortFilter list.
-        - TrafficItemFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrafficItemFilter)): Selected traffic item filter from the availableTrafficItemFilter list.
-        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
+        - PortFilterIds (list(str[None | /api/v1/sessions/7/ixnetwork/statistics/.../availablePortFilter])): Selected port filters from the availablePortFilter list.
+        - TrafficItemFilterId (str(None | /api/v1/sessions/7/ixnetwork/statistics/.../availableTrafficItemFilter)): Selected traffic item filter from the availableTrafficItemFilter list.
+        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/7/ixnetwork/statistics/.../availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
 
         Raises
         ------
@@ -155,9 +155,9 @@ class Layer23TrafficFlowFilter(Base):
         ----
         - AggregatedAcrossPorts (bool): If true, displays aggregated stat value across ports selected by portFilterIds. Default = false
         - EgressLatencyBinDisplayOption (str(none | showEgressFlatView | showEgressRows | showLatencyBinStats)): Emulates Latency Bin SV or Egress Tracking SV.
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter])): Selected port filters from the availablePortFilter list.
-        - TrafficItemFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrafficItemFilter)): Selected traffic item filter from the availableTrafficItemFilter list.
-        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
+        - PortFilterIds (list(str[None | /api/v1/sessions/7/ixnetwork/statistics/.../availablePortFilter])): Selected port filters from the availablePortFilter list.
+        - TrafficItemFilterId (str(None | /api/v1/sessions/7/ixnetwork/statistics/.../availableTrafficItemFilter)): Selected traffic item filter from the availableTrafficItemFilter list.
+        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/7/ixnetwork/statistics/.../availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
 
         Returns
         -------
@@ -190,9 +190,9 @@ class Layer23TrafficFlowFilter(Base):
         ----
         - AggregatedAcrossPorts (bool): If true, displays aggregated stat value across ports selected by portFilterIds. Default = false
         - EgressLatencyBinDisplayOption (str(none | showEgressFlatView | showEgressRows | showLatencyBinStats)): Emulates Latency Bin SV or Egress Tracking SV.
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter])): Selected port filters from the availablePortFilter list.
-        - TrafficItemFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrafficItemFilter)): Selected traffic item filter from the availableTrafficItemFilter list.
-        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
+        - PortFilterIds (list(str[None | /api/v1/sessions/7/ixnetwork/statistics/.../availablePortFilter])): Selected port filters from the availablePortFilter list.
+        - TrafficItemFilterId (str(None | /api/v1/sessions/7/ixnetwork/statistics/.../availableTrafficItemFilter)): Selected traffic item filter from the availableTrafficItemFilter list.
+        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/7/ixnetwork/statistics/.../availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
 
         Returns
         -------

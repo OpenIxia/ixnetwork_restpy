@@ -58,7 +58,7 @@ class AllFlowsFilter(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableStatisticFilter): The reference statistic by which the data will be sorted in created SV.
+        - str(None | /api/v1/sessions/30/ixnetwork/statistics/.../availableStatisticFilter): The reference statistic by which the data will be sorted in created SV.
         """
         return self._get_attribute(self._SDM_ATT_MAP['SortByStatisticId'])
     @SortByStatisticId.setter
@@ -83,7 +83,7 @@ class AllFlowsFilter(Base):
         Args
         ----
         - NumberOfResults (number): Number of traffic flows to be displayed.
-        - SortByStatisticId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableStatisticFilter)): The reference statistic by which the data will be sorted in created SV.
+        - SortByStatisticId (str(None | /api/v1/sessions/30/ixnetwork/statistics/.../availableStatisticFilter)): The reference statistic by which the data will be sorted in created SV.
         - SortingCondition (str(bestPerformers | worstPerformers)): Sets the display order of the view.
 
         Raises
@@ -98,7 +98,7 @@ class AllFlowsFilter(Base):
         Args
         ----
         - NumberOfResults (number): Number of traffic flows to be displayed.
-        - SortByStatisticId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableStatisticFilter)): The reference statistic by which the data will be sorted in created SV.
+        - SortByStatisticId (str(None | /api/v1/sessions/30/ixnetwork/statistics/.../availableStatisticFilter)): The reference statistic by which the data will be sorted in created SV.
         - SortingCondition (str(bestPerformers | worstPerformers)): Sets the display order of the view.
 
         Returns
@@ -131,7 +131,7 @@ class AllFlowsFilter(Base):
         Args
         ----
         - NumberOfResults (number): Number of traffic flows to be displayed.
-        - SortByStatisticId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableStatisticFilter)): The reference statistic by which the data will be sorted in created SV.
+        - SortByStatisticId (str(None | /api/v1/sessions/30/ixnetwork/statistics/.../availableStatisticFilter)): The reference statistic by which the data will be sorted in created SV.
         - SortingCondition (str(bestPerformers | worstPerformers)): Sets the display order of the view.
 
         Returns

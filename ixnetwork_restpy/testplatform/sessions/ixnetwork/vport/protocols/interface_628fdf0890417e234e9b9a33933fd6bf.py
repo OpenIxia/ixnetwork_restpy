@@ -57,7 +57,7 @@ class Interface(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The interface identifier for the interface.
+        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface): The interface identifier for the interface.
         """
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceId'])
     @InterfaceId.setter
@@ -70,7 +70,7 @@ class Interface(Base):
         Args
         ----
         - Enabled (bool): If true, the interface is enabled.
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The interface identifier for the interface.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The interface identifier for the interface.
 
         Raises
         ------
@@ -84,7 +84,7 @@ class Interface(Base):
         Args
         ----
         - Enabled (bool): If true, the interface is enabled.
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The interface identifier for the interface.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The interface identifier for the interface.
 
         Returns
         -------
@@ -116,7 +116,7 @@ class Interface(Base):
         Args
         ----
         - Enabled (bool): If true, the interface is enabled.
-        - InterfaceId (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The interface identifier for the interface.
+        - InterfaceId (str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface)): The interface identifier for the interface.
 
         Returns
         -------

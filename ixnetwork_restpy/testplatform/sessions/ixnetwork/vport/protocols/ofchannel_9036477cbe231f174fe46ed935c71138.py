@@ -718,8 +718,6 @@ class OfChannel(Base):
     def UpdateRole(self):
         """Executes the updateRole operation on the server.
 
-        NOT DEFINED
-
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server

@@ -206,20 +206,6 @@ class L1Config(Base):
         return KrakenFourHundredGigLan(self)._select()
 
     @property
-    def Novus5GTenTwentyFiveGigLan(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.novus5gtentwentyfivegiglan.novus5gtentwentyfivegiglan.Novus5GTenTwentyFiveGigLan): An instance of the Novus5GTenTwentyFiveGigLan class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.novus5gtentwentyfivegiglan.novus5gtentwentyfivegiglan import Novus5GTenTwentyFiveGigLan
-        return Novus5GTenTwentyFiveGigLan(self)._select()
-
-    @property
     def NovusHundredGigLan(self):
         """
         Returns
@@ -260,20 +246,6 @@ class L1Config(Base):
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.pos.pos import Pos
         return Pos(self)._select()
-
-    @property
-    def Qbv(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.qbv.qbv.Qbv): An instance of the Qbv class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.qbv.qbv import Qbv
-        return Qbv(self)._select()
 
     @property
     def RxFilters(self):
@@ -350,7 +322,7 @@ class L1Config(Base):
         """
         Returns
         -------
-        - str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe): Indicates the five types of ports for configuration to choose from.
+        - str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan): Indicates the five types of ports for configuration to choose from.
         """
         return self._get_attribute(self._SDM_ATT_MAP['CurrentType'])
     @CurrentType.setter
@@ -362,7 +334,7 @@ class L1Config(Base):
 
         Args
         ----
-        - CurrentType (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe)): Indicates the five types of ports for configuration to choose from.
+        - CurrentType (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan)): Indicates the five types of ports for configuration to choose from.
 
         Raises
         ------

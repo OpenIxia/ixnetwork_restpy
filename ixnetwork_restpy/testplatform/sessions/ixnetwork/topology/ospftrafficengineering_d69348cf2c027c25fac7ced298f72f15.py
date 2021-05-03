@@ -24,7 +24,7 @@ from ixnetwork_restpy.files import Files
 
 
 class OspfTrafficEngineering(Base):
-    """Ospf Traffic Engineering Configuration
+    """DEPRECATED Ospf Traffic Engineering Configuration
     The OspfTrafficEngineering class encapsulates a required ospfTrafficEngineering resource which will be retrieved from the server every time the property is accessed.
     """
 
@@ -54,7 +54,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def AdministratorGroup(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Administrator Group
@@ -64,7 +64,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def BandwidthPriority0(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 0 (B/sec)
@@ -74,7 +74,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def BandwidthPriority1(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 1 (B/sec)
@@ -84,7 +84,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def BandwidthPriority2(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 2 (B/sec)
@@ -94,7 +94,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def BandwidthPriority3(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 3 (B/sec)
@@ -104,7 +104,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def BandwidthPriority4(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 4 (B/sec)
@@ -114,7 +114,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def BandwidthPriority5(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 5 (B/sec)
@@ -124,7 +124,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def BandwidthPriority6(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 6 (B/sec)
@@ -134,7 +134,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def BandwidthPriority7(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Bandwidth for Priority 7 (B/sec)
@@ -162,7 +162,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def Enable(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Enabled
@@ -172,7 +172,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def MaxBandwidth(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Bandwidth (B/sec)
@@ -182,7 +182,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def MaxReservableBandwidth(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Reservable Bandwidth (B/sec)
@@ -192,7 +192,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def MetricLevel(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): TE Metric Level

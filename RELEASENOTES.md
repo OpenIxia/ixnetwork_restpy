@@ -1,5 +1,12 @@
 # Release Notes
 
+### May 2021
+* 1.0.66
+  * support uhd 1.3.3003.48
+  * support ixnetwork 9.10.2011.111
+  * enhance index out of range error message
+  * add error name to 4xx, 5xx global apperror errors
+
 ### Apr 2021
 * 1.0.65
   * support ixnetwork 9.15.2101.8

@@ -1374,12 +1374,10 @@ class ControllerTableFlowRanges(Base):
     def UpdateFlowMod(self, *args, **kwargs):
         """Executes the updateFlowMod operation on the server.
 
-        NOT DEFINED
-
         updateFlowMod(Arg2=enum)bool
         ----------------------------
-        - Arg2 (str(sendFlowAdd | sendFlowModify | sendFlowRemove)): NOT DEFINED
-        - Returns bool: NOT DEFINED
+        - Arg2 (str(sendFlowAdd | sendFlowModify | sendFlowRemove)): 
+        - Returns bool: 
 
         Raises
         ------
