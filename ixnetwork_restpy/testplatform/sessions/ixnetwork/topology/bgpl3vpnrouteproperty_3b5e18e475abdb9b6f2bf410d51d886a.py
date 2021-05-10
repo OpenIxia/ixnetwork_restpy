@@ -1213,14 +1213,14 @@ class BgpL3VpnRouteProperty(Base):
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
+        ageOutRoutes(Percentage=number)
+        -------------------------------
+        - Percentage (number): This parameter requires a percentage of type kInteger
+
         ageOutRoutes(Percentage=number, SessionIndices=list)
         ----------------------------------------------------
         - Percentage (number): This parameter requires a percentage of type kInteger
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        ageOutRoutes(Percentage=number)
-        -------------------------------
-        - Percentage (number): This parameter requires a percentage of type kInteger
 
         ageOutRoutes(SessionIndices=string, Percentage=number)
         ------------------------------------------------------
@@ -1356,7 +1356,7 @@ class BgpL3VpnRouteProperty(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected protocols.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -1381,7 +1381,7 @@ class BgpL3VpnRouteProperty(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected protocols.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 

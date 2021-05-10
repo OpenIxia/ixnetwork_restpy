@@ -72,7 +72,7 @@ class Layer23ProtocolStackFilter(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/7/ixnetwork/statistics/.../availableProtocolStackFilter]): Selected protocol stack filters from the availableProtocolStackFilter list.
+        - list(str[None | /api/v1/sessions/9/ixnetwork/statistics/.../availableProtocolStackFilter]): Selected protocol stack filters from the availableProtocolStackFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolStackFilterId'])
     @ProtocolStackFilterId.setter
@@ -96,7 +96,7 @@ class Layer23ProtocolStackFilter(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/7/ixnetwork/statistics/.../statistic): The reference statistic by which the data will be sorted in created SV.
+        - str(None | /api/v1/sessions/9/ixnetwork/statistics/.../statistic): The reference statistic by which the data will be sorted in created SV.
         """
         return self._get_attribute(self._SDM_ATT_MAP['SortingStatistic'])
     @SortingStatistic.setter
@@ -110,9 +110,9 @@ class Layer23ProtocolStackFilter(Base):
         ----
         - DrilldownType (str(perRange | perSession)): Emulates perRange or perSession view based on the option seleted.
         - NumberOfResults (number): Number of traffic flows to be displayed.
-        - ProtocolStackFilterId (list(str[None | /api/v1/sessions/7/ixnetwork/statistics/.../availableProtocolStackFilter])): Selected protocol stack filters from the availableProtocolStackFilter list.
+        - ProtocolStackFilterId (list(str[None | /api/v1/sessions/9/ixnetwork/statistics/.../availableProtocolStackFilter])): Selected protocol stack filters from the availableProtocolStackFilter list.
         - SortAscending (bool): Sets the display order of the view.
-        - SortingStatistic (str(None | /api/v1/sessions/7/ixnetwork/statistics/.../statistic)): The reference statistic by which the data will be sorted in created SV.
+        - SortingStatistic (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../statistic)): The reference statistic by which the data will be sorted in created SV.
 
         Raises
         ------
@@ -127,9 +127,9 @@ class Layer23ProtocolStackFilter(Base):
         ----
         - DrilldownType (str(perRange | perSession)): Emulates perRange or perSession view based on the option seleted.
         - NumberOfResults (number): Number of traffic flows to be displayed.
-        - ProtocolStackFilterId (list(str[None | /api/v1/sessions/7/ixnetwork/statistics/.../availableProtocolStackFilter])): Selected protocol stack filters from the availableProtocolStackFilter list.
+        - ProtocolStackFilterId (list(str[None | /api/v1/sessions/9/ixnetwork/statistics/.../availableProtocolStackFilter])): Selected protocol stack filters from the availableProtocolStackFilter list.
         - SortAscending (bool): Sets the display order of the view.
-        - SortingStatistic (str(None | /api/v1/sessions/7/ixnetwork/statistics/.../statistic)): The reference statistic by which the data will be sorted in created SV.
+        - SortingStatistic (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../statistic)): The reference statistic by which the data will be sorted in created SV.
 
         Returns
         -------
@@ -162,9 +162,9 @@ class Layer23ProtocolStackFilter(Base):
         ----
         - DrilldownType (str(perRange | perSession)): Emulates perRange or perSession view based on the option seleted.
         - NumberOfResults (number): Number of traffic flows to be displayed.
-        - ProtocolStackFilterId (list(str[None | /api/v1/sessions/7/ixnetwork/statistics/.../availableProtocolStackFilter])): Selected protocol stack filters from the availableProtocolStackFilter list.
+        - ProtocolStackFilterId (list(str[None | /api/v1/sessions/9/ixnetwork/statistics/.../availableProtocolStackFilter])): Selected protocol stack filters from the availableProtocolStackFilter list.
         - SortAscending (bool): Sets the display order of the view.
-        - SortingStatistic (str(None | /api/v1/sessions/7/ixnetwork/statistics/.../statistic)): The reference statistic by which the data will be sorted in created SV.
+        - SortingStatistic (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../statistic)): The reference statistic by which the data will be sorted in created SV.
 
         Returns
         -------

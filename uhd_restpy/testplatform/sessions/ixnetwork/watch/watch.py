@@ -166,7 +166,7 @@ class Watch(Base):
 
         addSelectWatch(Selects=list, WatchTopic=string)object
         -----------------------------------------------------
-        - Selects (list(dict(from:str[None | /api/v1/sessions/7/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(child:str,properties:list[str])]))): 
+        - Selects (list(dict(from:str[None | /api/v1/sessions/9/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(child:str,properties:list[str])]))): 
         - WatchTopic (str): 
         - Returns dict(arg1:str,arg2:number): 
 

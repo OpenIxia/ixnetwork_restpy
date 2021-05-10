@@ -38,17 +38,31 @@ class ProtocolStack(Base):
         super(ProtocolStack, self).__init__(parent)
 
     @property
-    def AncpOptions(self):
+    def AmtOptions(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancpoptions_f260f6494b4e2ad033aeceec23cac54c.AncpOptions): An instance of the AncpOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.amtoptions_b8687d0aa450eedabad5937a3dd0d921.AmtOptions): An instance of the AmtOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancpoptions_f260f6494b4e2ad033aeceec23cac54c import AncpOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.amtoptions_b8687d0aa450eedabad5937a3dd0d921 import AmtOptions
+        return AmtOptions(self)
+
+    @property
+    def AncpOptions(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancpoptions_60d2d5e33cccc1428aa5ab66090e545f.AncpOptions): An instance of the AncpOptions class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancpoptions_60d2d5e33cccc1428aa5ab66090e545f import AncpOptions
         return AncpOptions(self)
 
     @property
@@ -56,13 +70,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcphostsoptions_1aa84c4d3616ee0c49f129eb60e368f5.DhcpHostsOptions): An instance of the DhcpHostsOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcphostsoptions_191fedb8ef50cd521c12d7ded5cc3bc5.DhcpHostsOptions): An instance of the DhcpHostsOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcphostsoptions_1aa84c4d3616ee0c49f129eb60e368f5 import DhcpHostsOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcphostsoptions_191fedb8ef50cd521c12d7ded5cc3bc5 import DhcpHostsOptions
         return DhcpHostsOptions(self)
 
     @property
@@ -70,13 +84,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpoptions_26f3d4f3f49721f70d8d3209df521d26.DhcpOptions): An instance of the DhcpOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpoptions_9729e8bd162874e29097793e120e81b6.DhcpOptions): An instance of the DhcpOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpoptions_26f3d4f3f49721f70d8d3209df521d26 import DhcpOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpoptions_9729e8bd162874e29097793e120e81b6 import DhcpOptions
         return DhcpOptions(self)
 
     @property
@@ -84,13 +98,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6clientoptions_b7c7438f131dab8b0781a2aab896c6bf.Dhcpv6ClientOptions): An instance of the Dhcpv6ClientOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6clientoptions_132f5e3e6310e86ccbbac482ccd94671.Dhcpv6ClientOptions): An instance of the Dhcpv6ClientOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6clientoptions_b7c7438f131dab8b0781a2aab896c6bf import Dhcpv6ClientOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6clientoptions_132f5e3e6310e86ccbbac482ccd94671 import Dhcpv6ClientOptions
         return Dhcpv6ClientOptions(self)
 
     @property
@@ -98,13 +112,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6pdclientoptions_ca2a2ece3298de61d5b8bdd7a850035f.Dhcpv6PdClientOptions): An instance of the Dhcpv6PdClientOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6pdclientoptions_bd222f1628f075889e823bc4a6e1f541.Dhcpv6PdClientOptions): An instance of the Dhcpv6PdClientOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6pdclientoptions_ca2a2ece3298de61d5b8bdd7a850035f import Dhcpv6PdClientOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6pdclientoptions_bd222f1628f075889e823bc4a6e1f541 import Dhcpv6PdClientOptions
         return Dhcpv6PdClientOptions(self)
 
     @property
@@ -112,13 +126,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6serveroptions_a3f49164e013779eb52f1890d0a76869.Dhcpv6ServerOptions): An instance of the Dhcpv6ServerOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6serveroptions_53ee0b2472ff273e656afeded14cc6a7.Dhcpv6ServerOptions): An instance of the Dhcpv6ServerOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6serveroptions_a3f49164e013779eb52f1890d0a76869 import Dhcpv6ServerOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6serveroptions_53ee0b2472ff273e656afeded14cc6a7 import Dhcpv6ServerOptions
         return Dhcpv6ServerOptions(self)
 
     @property
@@ -126,13 +140,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dot1xoptions_8a46299312ed9582fb7d7b160232f3c4.Dot1xOptions): An instance of the Dot1xOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dot1xoptions_c27d674f9a6209c0c34607209e0a9bac.Dot1xOptions): An instance of the Dot1xOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dot1xoptions_8a46299312ed9582fb7d7b160232f3c4 import Dot1xOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dot1xoptions_c27d674f9a6209c0c34607209e0a9bac import Dot1xOptions
         return Dot1xOptions(self)
 
     @property
@@ -140,27 +154,111 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.eapoudpoptions_c637c5c5d1e6ed49fb44ea5297e78110.EapoUdpOptions): An instance of the EapoUdpOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.eapoudpoptions_f04b43d99a8c8e63cc9e7d622d06bfd6.EapoUdpOptions): An instance of the EapoUdpOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.eapoudpoptions_c637c5c5d1e6ed49fb44ea5297e78110 import EapoUdpOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.eapoudpoptions_f04b43d99a8c8e63cc9e7d622d06bfd6 import EapoUdpOptions
         return EapoUdpOptions(self)
+
+    @property
+    def EgtpClientOptions(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpclientoptions_31e0757ccf11d7e1c6855fdd46442542.EgtpClientOptions): An instance of the EgtpClientOptions class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpclientoptions_31e0757ccf11d7e1c6855fdd46442542 import EgtpClientOptions
+        return EgtpClientOptions(self)
+
+    @property
+    def EgtpOptionsBase(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpoptionsbase_32e4941bfba82166b4f883cdd51ee159.EgtpOptionsBase): An instance of the EgtpOptionsBase class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpoptionsbase_32e4941bfba82166b4f883cdd51ee159 import EgtpOptionsBase
+        return EgtpOptionsBase(self)
+
+    @property
+    def EgtpS5S8PgwOptions(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtps5s8pgwoptions_dadee44b5f7ce54b3b4f2cf31bab949e.EgtpS5S8PgwOptions): An instance of the EgtpS5S8PgwOptions class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtps5s8pgwoptions_dadee44b5f7ce54b3b4f2cf31bab949e import EgtpS5S8PgwOptions
+        return EgtpS5S8PgwOptions(self)
+
+    @property
+    def EgtpS5S8SgwOptions(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtps5s8sgwoptions_9c9b6793368b14b5dae66276ece6b8df.EgtpS5S8SgwOptions): An instance of the EgtpS5S8SgwOptions class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtps5s8sgwoptions_9c9b6793368b14b5dae66276ece6b8df import EgtpS5S8SgwOptions
+        return EgtpS5S8SgwOptions(self)
+
+    @property
+    def EgtpServerOptions(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpserveroptions_f4463e6fa600456177448ed49c1d5b23.EgtpServerOptions): An instance of the EgtpServerOptions class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpserveroptions_f4463e6fa600456177448ed49c1d5b23 import EgtpServerOptions
+        return EgtpServerOptions(self)
+
+    @property
+    def EgtpSgwOptions(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpsgwoptions_d547c3e160d4f868199b7631c4804e68.EgtpSgwOptions): An instance of the EgtpSgwOptions class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpsgwoptions_d547c3e160d4f868199b7631c4804e68 import EgtpSgwOptions
+        return EgtpSgwOptions(self)
 
     @property
     def Ethernet(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernet_9270cf428cd566d0179a6cc2d36c2c51.Ethernet): An instance of the Ethernet class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernet_d38c7e88fb6f87dcc64e871cf7fb904c.Ethernet): An instance of the Ethernet class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernet_9270cf428cd566d0179a6cc2d36c2c51 import Ethernet
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernet_d38c7e88fb6f87dcc64e871cf7fb904c import Ethernet
         return Ethernet(self)
 
     @property
@@ -168,13 +266,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernetendpoint_d505a70c25c539a0f7f57c724fbbdc10.EthernetEndpoint): An instance of the EthernetEndpoint class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernetendpoint_07ba999c5a07ba0fd133662d8bd1eae1.EthernetEndpoint): An instance of the EthernetEndpoint class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernetendpoint_d505a70c25c539a0f7f57c724fbbdc10 import EthernetEndpoint
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernetendpoint_07ba999c5a07ba0fd133662d8bd1eae1 import EthernetEndpoint
         return EthernetEndpoint(self)
 
     @property
@@ -182,13 +280,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernetoptions_e2afbb391332ae673b33d4fa99666abc.EthernetOptions): An instance of the EthernetOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernetoptions_99c7302b2004441d3a0f14c74b218a11.EthernetOptions): An instance of the EthernetOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernetoptions_e2afbb391332ae673b33d4fa99666abc import EthernetOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ethernetoptions_99c7302b2004441d3a0f14c74b218a11 import EthernetOptions
         return EthernetOptions(self)
 
     @property
@@ -196,13 +294,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcclientendpoint_7e5e9b26d670e7a4f77b28623de3f69a.FcClientEndpoint): An instance of the FcClientEndpoint class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcclientendpoint_0bb27e24785b640285fd4c28890701c0.FcClientEndpoint): An instance of the FcClientEndpoint class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcclientendpoint_7e5e9b26d670e7a4f77b28623de3f69a import FcClientEndpoint
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcclientendpoint_0bb27e24785b640285fd4c28890701c0 import FcClientEndpoint
         return FcClientEndpoint(self)
 
     @property
@@ -210,13 +308,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcclientoptions_2888c6e9e7f909b50d27f503bbdee6af.FcClientOptions): An instance of the FcClientOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcclientoptions_27e93046b19664cb9a7956d0ce172eda.FcClientOptions): An instance of the FcClientOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcclientoptions_2888c6e9e7f909b50d27f503bbdee6af import FcClientOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcclientoptions_27e93046b19664cb9a7956d0ce172eda import FcClientOptions
         return FcClientOptions(self)
 
     @property
@@ -224,13 +322,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcfportfwdendpoint_f28ea5fd1bf83950a4aadd0d7a886489.FcFportFwdEndpoint): An instance of the FcFportFwdEndpoint class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcfportfwdendpoint_a42123f17fd448b552a019e1e0aaa650.FcFportFwdEndpoint): An instance of the FcFportFwdEndpoint class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcfportfwdendpoint_f28ea5fd1bf83950a4aadd0d7a886489 import FcFportFwdEndpoint
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcfportfwdendpoint_a42123f17fd448b552a019e1e0aaa650 import FcFportFwdEndpoint
         return FcFportFwdEndpoint(self)
 
     @property
@@ -238,13 +336,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcfportoptions_b1c1714bd27605ce452575322dc2d18e.FcFportOptions): An instance of the FcFportOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcfportoptions_a1c0042e98ef427e823313e5fbd2ff5c.FcFportOptions): An instance of the FcFportOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcfportoptions_b1c1714bd27605ce452575322dc2d18e import FcFportOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcfportoptions_a1c0042e98ef427e823313e5fbd2ff5c import FcFportOptions
         return FcFportOptions(self)
 
     @property
@@ -252,13 +350,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoeclientoptions_38e2c7ce6db993624d36fe2016760c4c.FcoeClientOptions): An instance of the FcoeClientOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoeclientoptions_ddeb39bc9d33553718e9d9d5c5615515.FcoeClientOptions): An instance of the FcoeClientOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoeclientoptions_38e2c7ce6db993624d36fe2016760c4c import FcoeClientOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoeclientoptions_ddeb39bc9d33553718e9d9d5c5615515 import FcoeClientOptions
         return FcoeClientOptions(self)
 
     @property
@@ -266,13 +364,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoefwdoptions_c1ebfa7451c0fd226b21ca6a670f698a.FcoeFwdOptions): An instance of the FcoeFwdOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoefwdoptions_bc0e3c0717da470b08da39ad2c23c3e9.FcoeFwdOptions): An instance of the FcoeFwdOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoefwdoptions_c1ebfa7451c0fd226b21ca6a670f698a import FcoeFwdOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcoefwdoptions_bc0e3c0717da470b08da39ad2c23c3e9 import FcoeFwdOptions
         return FcoeFwdOptions(self)
 
     @property
@@ -280,13 +378,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpoptions_af97dc2d88fdcb59ef3bcbc0c5ee0383.IgmpOptions): An instance of the IgmpOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpoptions_058462c51a289a750bb5b00d4485513a.IgmpOptions): An instance of the IgmpOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpoptions_af97dc2d88fdcb59ef3bcbc0c5ee0383 import IgmpOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpoptions_058462c51a289a750bb5b00d4485513a import IgmpOptions
         return IgmpOptions(self)
 
     @property
@@ -294,13 +392,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iprangeoptions_e4c02903f7662a5dbdcd1ee5fc01c49d.IpRangeOptions): An instance of the IpRangeOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iprangeoptions_54247ca6e830355df00053fbf4e307d5.IpRangeOptions): An instance of the IpRangeOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iprangeoptions_e4c02903f7662a5dbdcd1ee5fc01c49d import IpRangeOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iprangeoptions_54247ca6e830355df00053fbf4e307d5 import IpRangeOptions
         return IpRangeOptions(self)
 
     @property
@@ -308,13 +406,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.l2tpoptions_6924c5a1bebdbcd90ceed331b2bf3fa8.L2tpOptions): An instance of the L2tpOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.l2tpoptions_eeef014542cbd357c0dcccccc57550fc.L2tpOptions): An instance of the L2tpOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.l2tpoptions_6924c5a1bebdbcd90ceed331b2bf3fa8 import L2tpOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.l2tpoptions_eeef014542cbd357c0dcccccc57550fc import L2tpOptions
         return L2tpOptions(self)
 
     @property
@@ -322,13 +420,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.options_7469b94cd33b4b06719f0dd4ecfb6f8b.Options): An instance of the Options class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.options_b95a6091b48575c48d8806df541b4653.Options): An instance of the Options class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.options_7469b94cd33b4b06719f0dd4ecfb6f8b import Options
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.options_b95a6091b48575c48d8806df541b4653 import Options
         return Options(self)._select()
 
     @property
@@ -336,13 +434,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.pppoxoptions_f7eed5ece8c8b093f410f4b19e5321ba.PppoxOptions): An instance of the PppoxOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.pppoxoptions_339cf64ae99c79e1d1492d14520ab152.PppoxOptions): An instance of the PppoxOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.pppoxoptions_f7eed5ece8c8b093f410f4b19e5321ba import PppoxOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.pppoxoptions_339cf64ae99c79e1d1492d14520ab152 import PppoxOptions
         return PppoxOptions(self)
 
     @property
@@ -350,27 +448,41 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptpoptions_016c148d29be122b4ff63935e1a40089.PtpOptions): An instance of the PtpOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptpoptions_4431aed535b415be014c5a79217aa3be.PtpOptions): An instance of the PtpOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptpoptions_016c148d29be122b4ff63935e1a40089 import PtpOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptpoptions_4431aed535b415be014c5a79217aa3be import PtpOptions
         return PtpOptions(self)
+
+    @property
+    def SmDnsOptions(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.smdnsoptions_100fbc7c6145703d8f1639aa93d794c3.SmDnsOptions): An instance of the SmDnsOptions class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.smdnsoptions_100fbc7c6145703d8f1639aa93d794c3 import SmDnsOptions
+        return SmDnsOptions(self)
 
     @property
     def StaticHostsOptions(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.statichostsoptions_b856e92d38cfb4c7f8e76ffd5c970154.StaticHostsOptions): An instance of the StaticHostsOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.statichostsoptions_6108d519c1b8726625e78e54ace41b4d.StaticHostsOptions): An instance of the StaticHostsOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.statichostsoptions_b856e92d38cfb4c7f8e76ffd5c970154 import StaticHostsOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.statichostsoptions_6108d519c1b8726625e78e54ace41b4d import StaticHostsOptions
         return StaticHostsOptions(self)
 
     @property
@@ -378,13 +490,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampoptions_76cd16af4e6a3457023c413b90dc09b1.TwampOptions): An instance of the TwampOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampoptions_7b39fa6f24cf29a2ce58f94dd349a195.TwampOptions): An instance of the TwampOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampoptions_76cd16af4e6a3457023c413b90dc09b1 import TwampOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampoptions_7b39fa6f24cf29a2ce58f94dd349a195 import TwampOptions
         return TwampOptions(self)
 
     @property
@@ -392,13 +504,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampserveroptions_d9df2e536efe64ac2a79662f006efe5c.TwampServerOptions): An instance of the TwampServerOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampserveroptions_b3351876a5276da5b361125d722f4b5a.TwampServerOptions): An instance of the TwampServerOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampserveroptions_d9df2e536efe64ac2a79662f006efe5c import TwampServerOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampserveroptions_b3351876a5276da5b361125d722f4b5a import TwampServerOptions
         return TwampServerOptions(self)
 
     @property
@@ -406,13 +518,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vepaoptions_61de8697309d02e26cfdcfe37470fa44.VepaOptions): An instance of the VepaOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vepaoptions_bf2ac7071874877a35a42a8b0e4ce52c.VepaOptions): An instance of the VepaOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vepaoptions_61de8697309d02e26cfdcfe37470fa44 import VepaOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vepaoptions_bf2ac7071874877a35a42a8b0e4ce52c import VepaOptions
         return VepaOptions(self)
 
     @property
@@ -420,13 +532,13 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.webauthoptions_53051bd801054f33723505dcef43b2b7.WebAuthOptions): An instance of the WebAuthOptions class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.webauthoptions_57296c855047b64842a042992661d642.WebAuthOptions): An instance of the WebAuthOptions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.webauthoptions_53051bd801054f33723505dcef43b2b7 import WebAuthOptions
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.webauthoptions_57296c855047b64842a042992661d642 import WebAuthOptions
         return WebAuthOptions(self)
 
     @property
@@ -437,6 +549,26 @@ class ProtocolStack(Base):
         - str: Unique identifier for this object
         """
         return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+
+    def CustomProtocolStack(self, *args, **kwargs):
+        """Executes the customProtocolStack operation on the server.
+
+        Create custom protocol stack under /vport/protocolStack
+
+        customProtocolStack(Arg2=list, Arg3=enum)
+        -----------------------------------------
+        - Arg2 (list(str)): List of plugin types to be added in the new custom stack
+        - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
         """Executes the disableProtocolStack operation on the server.

@@ -103,7 +103,7 @@ class FlowProfile(Base):
 
         addFromTemplate(Arg2=href)
         --------------------------
-        - Arg2 (str(None | /api/v1/sessions/30/ixnetwork//.../*)): 
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork//.../*)): 
 
         Raises
         ------

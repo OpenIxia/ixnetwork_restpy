@@ -408,7 +408,7 @@ class Ptp(Base):
         """DEPRECATED 
         Returns
         -------
-        - list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
@@ -704,7 +704,7 @@ class Ptp(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/7/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
@@ -1572,7 +1572,7 @@ class Ptp(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
@@ -1777,7 +1777,7 @@ class Ptp(Base):
         ----
         - AtoiTlvCount (number): ATOI TLV Count
         - AvnuMode (str(aVNU_NA | aVNU_GPTP)): AVNU Mode
-        - ConnectedVia (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - EnableATOITlv (bool): Enable ATOI TLV
         - EnableCmlds (bool): Enable Cmlds
         - EnableNegativeTesting (bool): Enable Negative Conformance Test
@@ -1787,7 +1787,7 @@ class Ptp(Base):
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NumberOFMsgs (number): Messages Count
-        - StackedLayers (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
         Raises
         ------
@@ -1802,7 +1802,7 @@ class Ptp(Base):
         ----
         - AtoiTlvCount (number): ATOI TLV Count
         - AvnuMode (str(aVNU_NA | aVNU_GPTP)): AVNU Mode
-        - ConnectedVia (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - EnableATOITlv (bool): Enable ATOI TLV
         - EnableCmlds (bool): Enable Cmlds
         - EnableNegativeTesting (bool): Enable Negative Conformance Test
@@ -1812,7 +1812,7 @@ class Ptp(Base):
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NumberOFMsgs (number): Messages Count
-        - StackedLayers (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
         Returns
         -------
@@ -1845,13 +1845,13 @@ class Ptp(Base):
         ----
         - AtoiTlvCount (number): ATOI TLV Count
         - AvnuMode (str(aVNU_NA | aVNU_GPTP)): AVNU Mode
-        - ConnectedVia (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - EnableATOITlv (bool): Enable ATOI TLV
         - EnableCmlds (bool): Enable Cmlds
         - EnableNegativeTesting (bool): Enable Negative Conformance Test
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/7/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - Frequency (number): Frequency(N)
         - LogCleanUpOption (str(notClean | clean)): Debug Log Clean Up
         - LogFileAge (number): This field determines how old logs to be deleted.
@@ -1861,7 +1861,7 @@ class Ptp(Base):
         - PtpState (list(str[disabled | faulty | grandmaster | initializing | listening | master | passive | preMaster | slave | transparentGrandmaster | transparentMaster | uncalibrated])): Displays the current PTP State
         - SessionInfo (list(str[announceReceiptTimeout | aSCapable | delayRespReceiptTimeout | g82651Layer | g82751ClockAccuracy | g82751ClockClass | g82751Domain | g82751Layer | g82751LogVariance | g82751Priority1 | g82751Rates | g82751VLANs | gPTPCapable | gPTPLayer | handleAnnounceTlvUnckecked | multipleP2PResponses | noAnnounce | none | p2PMixedMode | pathTraceDropAnnounce | signalAnnounceTimeout | signalDelayRespTimeout | signalIntervalGrantDelayRespDuration | signalIntervalGrantDuration | signalIntervalGrantSyncDuration | signalSyncTimeout | sMPTELayer | syncReceiptTimeout | syncReceiptTimeoutgPTP])): Logs additional information about the session state
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - StackedLayers (list(str[None | /api/v1/sessions/7/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
@@ -2084,7 +2084,7 @@ class Ptp(Base):
         - ComputeNeighborRateRatio (bool): This parameter requires a computeNeighborRateRatio of type kBool
         - ComputeNeighborPropDelay (bool): This parameter requires a computeNeighborPropDelay of type kBool
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-        - Returns list(dict(port:str[None | /api/v1/sessions/7/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+        - Returns list(dict(port:str[None | /api/v1/sessions/9/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
         gPtpSendSignaling(LinkDelayInterval=enum, TimeSyncInterval=enum, AnnounceInterval=enum, ComputeNeighborRateRatio=bool, ComputeNeighborPropDelay=bool)list
         ---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2093,7 +2093,7 @@ class Ptp(Base):
         - AnnounceInterval (str(enumOpt-DoNotChange | enumOpt-Initial | enumOpt-Stop | enumOpt-V0_1_per_second_ | enumOpt-V1_1_per_2_seconds_ | enumOpt-V2_1_per_4_seconds_ | enumOpt-V3_1_per_8_seconds_ | enumOpt-V4_1_per_16_seconds_ | enumOpt-V5_1_per_32_seconds_ | enumOpt-V6_1_per_64_seconds_ | enumOpt-V7_1_per_128_seconds_ | enumOpt-V8_1_per_256_seconds_ | enumOpt-V9_1_per_512_seconds_ | enumOpt-Vneg1_2_per_second_ | enumOpt-Vneg2_4_per_second_ | enumOpt-Vneg3_8_per_second_ | enumOpt-Vneg4_16_per_second_ | enumOpt-Vneg5_32_per_second_ | enumOpt-Vneg6_64_per_second_ | enumOpt-Vneg7_128_per_second_ | enumOpt-Vneg8_256_per_second_ | enumOpt-Vneg9_512_per_second_)): This parameter requires a announceInterval of type kEnumValue=enumOpt-DoNotChange,enumOpt-Initial,enumOpt-Stop,enumOpt-V0_1_per_second_,enumOpt-V1_1_per_2_seconds_,enumOpt-V2_1_per_4_seconds_,enumOpt-V3_1_per_8_seconds_,enumOpt-V4_1_per_16_seconds_,enumOpt-V5_1_per_32_seconds_,enumOpt-V6_1_per_64_seconds_,enumOpt-V7_1_per_128_seconds_,enumOpt-V8_1_per_256_seconds_,enumOpt-V9_1_per_512_seconds_,enumOpt-Vneg1_2_per_second_,enumOpt-Vneg2_4_per_second_,enumOpt-Vneg3_8_per_second_,enumOpt-Vneg4_16_per_second_,enumOpt-Vneg5_32_per_second_,enumOpt-Vneg6_64_per_second_,enumOpt-Vneg7_128_per_second_,enumOpt-Vneg8_256_per_second_,enumOpt-Vneg9_512_per_second_
         - ComputeNeighborRateRatio (bool): This parameter requires a computeNeighborRateRatio of type kBool
         - ComputeNeighborPropDelay (bool): This parameter requires a computeNeighborPropDelay of type kBool
-        - Returns list(dict(port:str[None | /api/v1/sessions/7/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+        - Returns list(dict(port:str[None | /api/v1/sessions/9/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
         gPtpSendSignaling(SessionIndices=string, LinkDelayInterval=enum, TimeSyncInterval=enum, AnnounceInterval=enum, ComputeNeighborRateRatio=bool, ComputeNeighborPropDelay=bool)list
         --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2103,7 +2103,7 @@ class Ptp(Base):
         - AnnounceInterval (str(enumOpt-DoNotChange | enumOpt-Initial | enumOpt-Stop | enumOpt-V0_1_per_second_ | enumOpt-V1_1_per_2_seconds_ | enumOpt-V2_1_per_4_seconds_ | enumOpt-V3_1_per_8_seconds_ | enumOpt-V4_1_per_16_seconds_ | enumOpt-V5_1_per_32_seconds_ | enumOpt-V6_1_per_64_seconds_ | enumOpt-V7_1_per_128_seconds_ | enumOpt-V8_1_per_256_seconds_ | enumOpt-V9_1_per_512_seconds_ | enumOpt-Vneg1_2_per_second_ | enumOpt-Vneg2_4_per_second_ | enumOpt-Vneg3_8_per_second_ | enumOpt-Vneg4_16_per_second_ | enumOpt-Vneg5_32_per_second_ | enumOpt-Vneg6_64_per_second_ | enumOpt-Vneg7_128_per_second_ | enumOpt-Vneg8_256_per_second_ | enumOpt-Vneg9_512_per_second_)): This parameter requires a computeNeighborRateRatio of type kBool
         - ComputeNeighborRateRatio (bool): This parameter requires a computeNeighborPropDelay of type kBool
         - ComputeNeighborPropDelay (bool): This parameter requires a string of session numbers 1-4;6;7-12
-        - Returns list(dict(port:str[None | /api/v1/sessions/7/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+        - Returns list(dict(port:str[None | /api/v1/sessions/9/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
         Raises
         ------

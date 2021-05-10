@@ -351,6 +351,8 @@ class Interface(Base):
     def SendArp(self):
         """Executes the sendArp operation on the server.
 
+        Sends an ARP to an interface or group of interfaces.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -361,6 +363,8 @@ class Interface(Base):
 
     def SendArpAndNS(self):
         """Executes the sendArpAndNS operation on the server.
+
+        Send ARP and neighbor solicitation to an interface or group of interfaces.
 
         Raises
         ------
@@ -373,6 +377,8 @@ class Interface(Base):
     def SendNs(self):
         """Executes the sendNs operation on the server.
 
+        Sends NS to an interface or group of interfaces.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -384,10 +390,12 @@ class Interface(Base):
     def SendPing(self, *args, **kwargs):
         """Executes the sendPing operation on the server.
 
+        Sends a ping to a port or group of ports.
+
         sendPing(Arg2=string)string
         ---------------------------
-        - Arg2 (str): 
-        - Returns str: 
+        - Arg2 (str): IP address for which ping is send.
+        - Returns str: Returns reply from the IP for which ping has been send.
 
         Raises
         ------
@@ -401,6 +409,8 @@ class Interface(Base):
 
     def SendRs(self):
         """Executes the sendRs operation on the server.
+
+        Sends router solicitation to an interface or group of interfaces.
 
         Raises
         ------

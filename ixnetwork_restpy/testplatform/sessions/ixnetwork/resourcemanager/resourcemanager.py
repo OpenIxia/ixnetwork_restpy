@@ -87,6 +87,12 @@ class ResourceManager(Base):
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
+        importConfig(Arg2=string, Arg3=bool)list
+        ----------------------------------------
+        - Arg2 (str): The configuration as a string
+        - Arg3 (bool): True to create a new configuration, false to update the current configuration
+        - Returns list(str): A list of errors that occurred during import
+
         importConfig(Arg2=string, Arg3=bool, Arg4=enum, Arg5=bool)string
         ----------------------------------------------------------------
         - Arg2 (str): 
@@ -94,12 +100,6 @@ class ResourceManager(Base):
         - Arg4 (str(suppressErrorsWarnings | suppressNothing | suppressWarnings)): 
         - Arg5 (bool): 
         - Returns str: A list of errata that occurred during the import
-
-        importConfig(Arg2=string, Arg3=bool)list
-        ----------------------------------------
-        - Arg2 (str): The configuration as a string
-        - Arg3 (bool): True to create a new configuration, false to update the current configuration
-        - Returns list(str): A list of errors that occurred during import
 
         Raises
         ------
@@ -118,6 +118,12 @@ class ResourceManager(Base):
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
+        importConfigFile(Arg2=href, Arg3=bool)list
+        ------------------------------------------
+        - Arg2 (obj(ixnetwork_restpy.files.Files)): 
+        - Arg3 (bool): 
+        - Returns list(str): A list of errata that occurred during the import
+
         importConfigFile(Arg2=href, Arg3=bool, Arg4=enum, Arg5=bool)string
         ------------------------------------------------------------------
         - Arg2 (obj(ixnetwork_restpy.files.Files)): 
@@ -125,12 +131,6 @@ class ResourceManager(Base):
         - Arg4 (str(suppressErrorsWarnings | suppressNothing | suppressWarnings)): 
         - Arg5 (bool): 
         - Returns str: A list of errata that occurred during the import
-
-        importConfigFile(Arg2=href, Arg3=bool)list
-        ------------------------------------------
-        - Arg2 (obj(ixnetwork_restpy.files.Files)): 
-        - Arg3 (bool): 
-        - Returns list(str): A list of errata that occurred during the import
 
         Raises
         ------

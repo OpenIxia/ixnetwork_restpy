@@ -1,6 +1,9 @@
 # Release Notes
 
 ### May 2021
+* 1.0.67
+  * fix __str__ output of href
+  * generate missing protocolStack classes
 * 1.0.66
   * support uhd 1.3.3003.48
   * support ixnetwork 9.10.2011.111

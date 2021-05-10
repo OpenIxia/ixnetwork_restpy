@@ -84,7 +84,7 @@ class Gre(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../ipv4 | /api/v1/sessions/30/ixnetwork/vport/.../ipv6): Part of the GRE Delivery Header: The IP address of the connected interface associated with the source of this GRE tunnel.
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../ipv4 | /api/v1/sessions/1/ixnetwork/vport/.../ipv6): Part of the GRE Delivery Header: The IP address of the connected interface associated with the source of this GRE tunnel.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Source'])
     @Source.setter
@@ -135,7 +135,7 @@ class Gre(Base):
         - Dest (str): Part of the GRE Delivery Header: The IP address of the Destination router at the remote end of the GRE tunnel.
         - InKey (number): This is the user-assigned GRE header authentication key value that the receiving router will check for to validate GRE packets being sent via the tunnel. All packets sent via a specific tunnel should contain the same key value (one key per GRE tunnel).
         - OutKey (number): This is the user-assigned GRE header authentication key value that will be included in the GRE packets being sent via the tunnel. All packets sent via a specific tunnel should contain the same key value (one key per GRE tunnel). In most cases, the In Key and Out Key will be the same.
-        - Source (str(None | /api/v1/sessions/30/ixnetwork/vport/.../ipv4 | /api/v1/sessions/30/ixnetwork/vport/.../ipv6)): Part of the GRE Delivery Header: The IP address of the connected interface associated with the source of this GRE tunnel.
+        - Source (str(None | /api/v1/sessions/1/ixnetwork/vport/.../ipv4 | /api/v1/sessions/1/ixnetwork/vport/.../ipv6)): Part of the GRE Delivery Header: The IP address of the connected interface associated with the source of this GRE tunnel.
         - UseChecksum (bool): Enables the use of the optional GRE checksum.
         - UseKey (bool): Enables the use of the optional GRE header key field.
         - UseSequence (bool): If more than one GRE tunnel will be used, this is the amount that will be added to create each additional authentication key value to be sent in the GRE packets (one key per GRE tunnel).

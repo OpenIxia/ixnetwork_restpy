@@ -654,7 +654,7 @@ class OspfPseudoRouter(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start Pseudo Router
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -679,7 +679,7 @@ class OspfPseudoRouter(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop Pseudo Router
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 

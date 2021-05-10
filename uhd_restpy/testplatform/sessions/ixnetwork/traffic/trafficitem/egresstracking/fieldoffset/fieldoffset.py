@@ -41,11 +41,11 @@ class FieldOffset(Base):
         """
         Returns
         -------
-        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.stack.Stack): An instance of the Stack class
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.fieldoffset.stack.stack.Stack): An instance of the Stack class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.stack import Stack
+        from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.fieldoffset.stack.stack import Stack
         return Stack(self)

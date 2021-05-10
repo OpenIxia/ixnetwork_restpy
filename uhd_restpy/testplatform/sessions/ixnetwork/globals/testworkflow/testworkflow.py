@@ -130,7 +130,7 @@ class Testworkflow(Base):
 
         startselected(Arg2=href, Arg3=bool)
         -----------------------------------
-        - Arg2 (str(None | /api/v1/sessions/7/ixnetwork/topology | /api/v1/sessions/7/ixnetwork/topology | /api/v1/sessions/7/ixnetwork/topology/.../deviceGroup)): objref to /topology or device group
+        - Arg2 (str(None | /api/v1/sessions/9/ixnetwork/topology | /api/v1/sessions/9/ixnetwork/topology | /api/v1/sessions/9/ixnetwork/topology/.../deviceGroup)): objref to /topology or device group
         - Arg3 (bool): a boolean indicating if ownership should be taken forcefully
 
         Raises

@@ -729,7 +729,7 @@ class IsisL3Router(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/7/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
@@ -1691,7 +1691,7 @@ class IsisL3Router(Base):
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - EnableBIER (bool): Enable BIER
         - EnableSR (bool): This enables SR MPLS on all the emulated ISIS router(s)
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/7/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - FlexAlgoCount (number): If the count is greater than 0, then the Flex Algo tab will appear after ISIS-L3 RTR tab. Default is 0. Range is 0-128.
         - LocalSystemID (list(str)): System ID
         - LocatorCount (number): Locator Count

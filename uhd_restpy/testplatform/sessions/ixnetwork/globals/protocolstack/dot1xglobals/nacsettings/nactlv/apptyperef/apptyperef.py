@@ -44,13 +44,13 @@ class AppTypeRef(Base):
         """
         Returns
         -------
-        - obj(uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.vendorref.nactypes.nacapps.nacapps.NacApps): An instance of the NacApps class
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.apptyperef.nacapps.nacapps.NacApps): An instance of the NacApps class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.vendorref.nactypes.nacapps.nacapps import NacApps
+        from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.apptyperef.nacapps.nacapps import NacApps
         return NacApps(self)
 
     @property

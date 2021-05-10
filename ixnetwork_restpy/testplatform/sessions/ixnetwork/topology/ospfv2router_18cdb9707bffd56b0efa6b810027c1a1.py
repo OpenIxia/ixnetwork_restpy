@@ -393,7 +393,7 @@ class Ospfv2Router(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/30/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
@@ -867,7 +867,7 @@ class Ospfv2Router(Base):
         - EnableBIER (bool): Enable BIER
         - EnableSegmentRouting (bool): Enable Segment Routing
         - EnableSrlb (bool): Enable SRLB
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/30/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - FlexAlgoCount (number): If the count is greater than 0, then the Flex Algo tab will appear after OSPF RTR tab. Default is 0. Range is 0-128.
         - LocalRouterID (list(str)): Router ID
         - LoopBackAddress (list(str)): Router ID
@@ -976,7 +976,7 @@ class Ospfv2Router(Base):
     def Abort(self, *args, **kwargs):
         """Executes the abort operation on the server.
 
-        Abort selected protocols.
+        Abort CPF control plane (equals to demote to kUnconfigured state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -1076,7 +1076,7 @@ class Ospfv2Router(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected protocols.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -1101,7 +1101,7 @@ class Ospfv2Router(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected protocols.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 

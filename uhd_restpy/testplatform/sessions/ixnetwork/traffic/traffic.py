@@ -871,7 +871,7 @@ class Traffic(Base):
 
         getFrameCountForDuration(Arg2=list)list
         ---------------------------------------
-        - Arg2 (list(dict(arg1:str[None | /api/v1/sessions/7/ixnetwork/traffic/.../highLevelStream],arg2:number))): An array of structures. Each structure is one valid highLevelStream object reference and the duration to get the frame count for.
+        - Arg2 (list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork/traffic/.../highLevelStream],arg2:number))): An array of structures. Each structure is one valid highLevelStream object reference and the duration to get the frame count for.
         - Returns list(number): An array of frame counts.
 
         Raises

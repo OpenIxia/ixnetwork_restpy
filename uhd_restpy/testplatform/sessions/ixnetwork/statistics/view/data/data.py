@@ -55,16 +55,16 @@ class Data(Base):
 
     @property
     def Egress(self):
-        """DEPRECATED 
+        """
         Returns
         -------
-        - obj(uhd_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egress.egress.Egress): An instance of the Egress class
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.statistics.view.data.egress.egress.Egress): An instance of the Egress class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from uhd_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egress.egress import Egress
+        from uhd_restpy.testplatform.sessions.ixnetwork.statistics.view.data.egress.egress import Egress
         return Egress(self)
 
     @property
@@ -72,13 +72,13 @@ class Data(Base):
         """
         Returns
         -------
-        - obj(uhd_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egressrxcondition.egressrxcondition.EgressRxCondition): An instance of the EgressRxCondition class
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.statistics.view.data.egressrxcondition.egressrxcondition.EgressRxCondition): An instance of the EgressRxCondition class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from uhd_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egressrxcondition.egressrxcondition import EgressRxCondition
+        from uhd_restpy.testplatform.sessions.ixnetwork.statistics.view.data.egressrxcondition.egressrxcondition import EgressRxCondition
         return EgressRxCondition(self)._select()
 
     @property

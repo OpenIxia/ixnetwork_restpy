@@ -251,7 +251,7 @@ class Vport(Base):
         """DEPRECATED 
         Returns
         -------
-        - str(None | /api/v1/sessions/30/ixnetwork/availableHardware/.../port): The physical port to which the unassigned port is assigned.
+        - str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port): The physical port to which the unassigned port is assigned.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedTo'])
     @ConnectedTo.setter
@@ -578,7 +578,7 @@ class Vport(Base):
 
         Args
         ----
-        - ConnectedTo (str(None | /api/v1/sessions/30/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
+        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
         - IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
         - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
         - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
@@ -603,7 +603,7 @@ class Vport(Base):
 
         Args
         ----
-        - ConnectedTo (str(None | /api/v1/sessions/30/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
+        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
         - IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
         - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
         - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
@@ -651,7 +651,7 @@ class Vport(Base):
         - AssignedTo (str): (Read Only) A new port is assigned with this option.
         - AssignedToDisplayName (str): 
         - CaptureSupported (str(data | control | dataAndControl | none)): 
-        - ConnectedTo (str(None | /api/v1/sessions/30/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
+        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
         - ConnectionInfo (str): Detailed information about location of the physical port that is assigned to this port configuration.
         - ConnectionState (str(assignedInUseByOther | assignedUnconnected | connectedLinkDown | connectedLinkUp | connecting | unassigned)): Consolidated state of the vport. This combines the connection state with link state.
         - ConnectionStatus (str): A string describing the status of the hardware connected to this vport
@@ -739,7 +739,7 @@ class Vport(Base):
         assignPorts(Arg2=bool)list
         --------------------------
         - Arg2 (bool): If true, it will clear ownership on the hardware ports which have location attribute set.
-        - Returns list(str[None | /api/v1/sessions/30/ixnetwork/vport]): Returns a list of virtual port object references that were successfully connected.
+        - Returns list(str[None | /api/v1/sessions/1/ixnetwork/vport]): Returns a list of virtual port object references that were successfully connected.
 
         Raises
         ------
@@ -754,6 +754,8 @@ class Vport(Base):
     def ClearNeighborSolicitation(self):
         """Executes the clearNeighborSolicitation operation on the server.
 
+        NOT DEFINED
+
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         Raises
@@ -766,6 +768,8 @@ class Vport(Base):
 
     def ClearNeighborTable(self):
         """Executes the clearNeighborTable operation on the server.
+
+        This exec clears the learned neighbor table for the specified vport.
 
         Raises
         ------
@@ -804,7 +808,7 @@ class Vport(Base):
     def ConnectPorts(self, *args, **kwargs):
         """Executes the connectPorts operation on the server.
 
-        Connect a list of ports and optionally take ownership, wait for link-up.
+        Connect a list of ports.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -829,7 +833,7 @@ class Vport(Base):
 
         copyTapSettings(Arg2=list)
         --------------------------
-        - Arg2 (list(str[None | /api/v1/sessions/30/ixnetwork/vport])): 
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport])): 
 
         Raises
         ------
@@ -889,16 +893,18 @@ class Vport(Base):
     def IgmpJoin(self, *args, **kwargs):
         """Executes the igmpJoin operation on the server.
 
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+        NOT DEFINED
 
-        igmpJoin(Arg2=string, Arg3=number)
-        ----------------------------------
-        - Arg2 (str): 
-        - Arg3 (number): 
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         igmpJoin(Arg2=string)
         ---------------------
-        - Arg2 (str): 
+        - Arg2 (str): NOT DEFINED
+
+        igmpJoin(Arg2=string, Arg3=number)
+        ----------------------------------
+        - Arg2 (str): NOT DEFINED
+        - Arg3 (number): NOT DEFINED
 
         Raises
         ------
@@ -913,16 +919,18 @@ class Vport(Base):
     def IgmpLeave(self, *args, **kwargs):
         """Executes the igmpLeave operation on the server.
 
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+        NOT DEFINED
 
-        igmpLeave(Arg2=string, Arg3=number)
-        -----------------------------------
-        - Arg2 (str): 
-        - Arg3 (number): 
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         igmpLeave(Arg2=string)
         ----------------------
-        - Arg2 (str): 
+        - Arg2 (str): NOT DEFINED
+
+        igmpLeave(Arg2=string, Arg3=number)
+        -----------------------------------
+        - Arg2 (str): NOT DEFINED
+        - Arg3 (number): NOT DEFINED
 
         Raises
         ------
@@ -1006,6 +1014,8 @@ class Vport(Base):
 
     def RefreshUnresolvedNeighbors(self):
         """Executes the refreshUnresolvedNeighbors operation on the server.
+
+        Refresh unresolved neighbours.
 
         Raises
         ------
@@ -1122,12 +1132,14 @@ class Vport(Base):
     def SendArp(self, *args, **kwargs):
         """Executes the sendArp operation on the server.
 
+        NOT DEFINED
+
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         sendArp(Arg2=list)bool
         ----------------------
-        - Arg2 (list(str[None | /api/v1/sessions/30/ixnetwork/vport/.../interface])): 
-        - Returns bool: 
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../interface])): NOT DEFINED
+        - Returns bool: NOT DEFINED
 
         Raises
         ------
@@ -1142,6 +1154,8 @@ class Vport(Base):
     def SendArpAll(self):
         """Executes the sendArpAll operation on the server.
 
+        NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -1153,12 +1167,14 @@ class Vport(Base):
     def SendNs(self, *args, **kwargs):
         """Executes the sendNs operation on the server.
 
+        NOT DEFINED
+
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         sendNs(Arg2=list)bool
         ---------------------
-        - Arg2 (list(str[None | /api/v1/sessions/30/ixnetwork/vport/.../interface])): 
-        - Returns bool: 
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../interface])): NOT DEFINED
+        - Returns bool: NOT DEFINED
 
         Raises
         ------
@@ -1173,6 +1189,8 @@ class Vport(Base):
     def SendNsAll(self):
         """Executes the sendNsAll operation on the server.
 
+        NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
@@ -1184,12 +1202,14 @@ class Vport(Base):
     def SendRs(self, *args, **kwargs):
         """Executes the sendRs operation on the server.
 
+        NOT DEFINED
+
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         sendRs(Arg2=list)bool
         ---------------------
-        - Arg2 (list(str[None | /api/v1/sessions/30/ixnetwork/vport/.../interface])): 
-        - Returns bool: 
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../interface])): NOT DEFINED
+        - Returns bool: NOT DEFINED
 
         Raises
         ------
@@ -1203,6 +1223,8 @@ class Vport(Base):
 
     def SendRsAll(self):
         """Executes the sendRsAll operation on the server.
+
+        NOT DEFINED
 
         Raises
         ------

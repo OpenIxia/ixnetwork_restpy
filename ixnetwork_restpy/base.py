@@ -176,7 +176,7 @@ class Base(object):
         instances = ''
         for i in range(len(self)):
             properties = self._object_properties[i]
-            instances += '\n%s[%s]: %s' % (self.__class__.__name__, i, self.href)
+            instances += '\n%s[%s]: %s' % (self.__class__.__name__, i, properties['href'])
             for key in sorted(properties.keys()):
                 if key == 'href':
                     continue

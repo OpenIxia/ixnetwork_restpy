@@ -111,7 +111,7 @@ class GlobalChannelList(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/7/ixnetwork/globals/.../igmpGroupRange): The associated multicast group range for defining the channels.
+        - str(None | /api/v1/sessions/9/ixnetwork/globals/.../igmpGroupRange): The associated multicast group range for defining the channels.
         """
         return self._get_attribute(self._SDM_ATT_MAP['MulticastGroup'])
     @MulticastGroup.setter
@@ -149,7 +149,7 @@ class GlobalChannelList(Base):
         - InitialChannel (number): The first channel to be joined by the first host.
         - InitialIncrement (number): The increment step between consecutive hosts joining the channels.
         - LastChannel (number): The last channel from the multicast group range included in the current list.
-        - MulticastGroup (str(None | /api/v1/sessions/7/ixnetwork/globals/.../igmpGroupRange)): The associated multicast group range for defining the channels.
+        - MulticastGroup (str(None | /api/v1/sessions/9/ixnetwork/globals/.../igmpGroupRange)): The associated multicast group range for defining the channels.
         - Name (str): The name of the channel list.
 
         Raises
@@ -168,7 +168,7 @@ class GlobalChannelList(Base):
         - InitialChannel (number): The first channel to be joined by the first host.
         - InitialIncrement (number): The increment step between consecutive hosts joining the channels.
         - LastChannel (number): The last channel from the multicast group range included in the current list.
-        - MulticastGroup (str(None | /api/v1/sessions/7/ixnetwork/globals/.../igmpGroupRange)): The associated multicast group range for defining the channels.
+        - MulticastGroup (str(None | /api/v1/sessions/9/ixnetwork/globals/.../igmpGroupRange)): The associated multicast group range for defining the channels.
         - Name (str): The name of the channel list.
 
         Returns
@@ -205,7 +205,7 @@ class GlobalChannelList(Base):
         - InitialChannel (number): The first channel to be joined by the first host.
         - InitialIncrement (number): The increment step between consecutive hosts joining the channels.
         - LastChannel (number): The last channel from the multicast group range included in the current list.
-        - MulticastGroup (str(None | /api/v1/sessions/7/ixnetwork/globals/.../igmpGroupRange)): The associated multicast group range for defining the channels.
+        - MulticastGroup (str(None | /api/v1/sessions/9/ixnetwork/globals/.../igmpGroupRange)): The associated multicast group range for defining the channels.
         - Name (str): The name of the channel list.
         - ObjectId (str): Unique identifier for this object
 

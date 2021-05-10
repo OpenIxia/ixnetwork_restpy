@@ -92,7 +92,7 @@ class DrillDown(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/30/ixnetwork/statistics/.../availableTargetRowFilters): Sets the row (from the view) that will be used to perform the drill-down. This is done by using one of the filters provided by availableTargetRowFilters
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTargetRowFilters): Sets the row (from the view) that will be used to perform the drill-down. This is done by using one of the filters provided by availableTargetRowFilters
         """
         return self._get_attribute(self._SDM_ATT_MAP['TargetRowFilter'])
     @TargetRowFilter.setter
@@ -117,7 +117,7 @@ class DrillDown(Base):
         Args
         ----
         - TargetDrillDownOption (str): Sets the drill down option attribute to the drilldown object. It is one of the items in the list returned at 2.
-        - TargetRowFilter (str(None | /api/v1/sessions/30/ixnetwork/statistics/.../availableTargetRowFilters)): Sets the row (from the view) that will be used to perform the drill-down. This is done by using one of the filters provided by availableTargetRowFilters
+        - TargetRowFilter (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTargetRowFilters)): Sets the row (from the view) that will be used to perform the drill-down. This is done by using one of the filters provided by availableTargetRowFilters
         - TargetRowIndex (number): Sets the attribute targetRowIndex to the drill down object. This is the row (from the view) that will be used to perform the drill-down.
 
         Raises
@@ -132,7 +132,7 @@ class DrillDown(Base):
         Args
         ----
         - TargetDrillDownOption (str): Sets the drill down option attribute to the drilldown object. It is one of the items in the list returned at 2.
-        - TargetRowFilter (str(None | /api/v1/sessions/30/ixnetwork/statistics/.../availableTargetRowFilters)): Sets the row (from the view) that will be used to perform the drill-down. This is done by using one of the filters provided by availableTargetRowFilters
+        - TargetRowFilter (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTargetRowFilters)): Sets the row (from the view) that will be used to perform the drill-down. This is done by using one of the filters provided by availableTargetRowFilters
         - TargetRowIndex (number): Sets the attribute targetRowIndex to the drill down object. This is the row (from the view) that will be used to perform the drill-down.
 
         Returns
@@ -167,7 +167,7 @@ class DrillDown(Base):
         - AvailableDrillDownOptions (list(str)): Gets the available drill down options for the selected row.
         - TargetDrillDownOption (str): Sets the drill down option attribute to the drilldown object. It is one of the items in the list returned at 2.
         - TargetRow (list(str)): Gets the target row, set previously, at step 1.
-        - TargetRowFilter (str(None | /api/v1/sessions/30/ixnetwork/statistics/.../availableTargetRowFilters)): Sets the row (from the view) that will be used to perform the drill-down. This is done by using one of the filters provided by availableTargetRowFilters
+        - TargetRowFilter (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTargetRowFilters)): Sets the row (from the view) that will be used to perform the drill-down. This is done by using one of the filters provided by availableTargetRowFilters
         - TargetRowIndex (number): Sets the attribute targetRowIndex to the drill down object. This is the row (from the view) that will be used to perform the drill-down.
 
         Returns

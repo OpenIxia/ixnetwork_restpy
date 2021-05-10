@@ -76,7 +76,7 @@ class Topology(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/7/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
@@ -127,7 +127,7 @@ class Topology(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/7/ixnetwork/lag | /api/v1/sessions/7/ixnetwork/vport]): Logical port information.
+        - list(str[None | /api/v1/sessions/9/ixnetwork/lag | /api/v1/sessions/9/ixnetwork/vport]): Logical port information.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Ports'])
     @Ports.setter
@@ -157,7 +157,7 @@ class Topology(Base):
         """DEPRECATED 
         Returns
         -------
-        - list(str[None | /api/v1/sessions/7/ixnetwork/vport]): Virtual port information.
+        - list(str[None | /api/v1/sessions/9/ixnetwork/vport]): Virtual port information.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Vports'])
     @Vports.setter
@@ -171,8 +171,8 @@ class Topology(Base):
         ----
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - Note (str): Any Note about the Topology
-        - Ports (list(str[None | /api/v1/sessions/7/ixnetwork/lag | /api/v1/sessions/7/ixnetwork/vport])): Logical port information.
-        - Vports (list(str[None | /api/v1/sessions/7/ixnetwork/vport])): Virtual port information.
+        - Ports (list(str[None | /api/v1/sessions/9/ixnetwork/lag | /api/v1/sessions/9/ixnetwork/vport])): Logical port information.
+        - Vports (list(str[None | /api/v1/sessions/9/ixnetwork/vport])): Virtual port information.
 
         Raises
         ------
@@ -187,8 +187,8 @@ class Topology(Base):
         ----
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - Note (str): Any Note about the Topology
-        - Ports (list(str[None | /api/v1/sessions/7/ixnetwork/lag | /api/v1/sessions/7/ixnetwork/vport])): Logical port information.
-        - Vports (list(str[None | /api/v1/sessions/7/ixnetwork/vport])): Virtual port information.
+        - Ports (list(str[None | /api/v1/sessions/9/ixnetwork/lag | /api/v1/sessions/9/ixnetwork/vport])): Logical port information.
+        - Vports (list(str[None | /api/v1/sessions/9/ixnetwork/vport])): Virtual port information.
 
         Returns
         -------
@@ -220,15 +220,15 @@ class Topology(Base):
         Args
         ----
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/7/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - LagCount (number): Number of /lags assigned
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - Note (str): Any Note about the Topology
         - PortCount (number): Number of /vports assigned (including unmapped ports)
-        - Ports (list(str[None | /api/v1/sessions/7/ixnetwork/lag | /api/v1/sessions/7/ixnetwork/vport])): Logical port information.
+        - Ports (list(str[None | /api/v1/sessions/9/ixnetwork/lag | /api/v1/sessions/9/ixnetwork/vport])): Logical port information.
         - PortsStateCount (dict(arg1:number,arg2:number,arg3:number,arg4:number)): State of ports on this topology, arg1:total, arg2:up, arg3:down, arg4:other, arg5:busy, arg6:unassigned, arg7:lag
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-        - Vports (list(str[None | /api/v1/sessions/7/ixnetwork/vport])): Virtual port information.
+        - Vports (list(str[None | /api/v1/sessions/9/ixnetwork/vport])): Virtual port information.
 
         Returns
         -------

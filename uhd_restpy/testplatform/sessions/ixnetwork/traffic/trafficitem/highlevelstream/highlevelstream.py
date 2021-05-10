@@ -63,13 +63,13 @@ class HighLevelStream(Base):
         """
         Returns
         -------
-        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framepayload.framepayload.FramePayload): An instance of the FramePayload class
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.framepayload.framepayload.FramePayload): An instance of the FramePayload class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framepayload.framepayload import FramePayload
+        from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.framepayload.framepayload import FramePayload
         return FramePayload(self)._select()
 
     @property
@@ -91,13 +91,13 @@ class HighLevelStream(Base):
         """
         Returns
         -------
-        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framerate.framerate.FrameRate): An instance of the FrameRate class
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.framerate.framerate.FrameRate): An instance of the FrameRate class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framerate.framerate import FrameRate
+        from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.framerate.framerate import FrameRate
         return FrameRate(self)._select()
 
     @property
@@ -105,13 +105,13 @@ class HighLevelStream(Base):
         """
         Returns
         -------
-        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framesize.framesize.FrameSize): An instance of the FrameSize class
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.framesize.framesize.FrameSize): An instance of the FrameSize class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framesize.framesize import FrameSize
+        from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.framesize.framesize import FrameSize
         return FrameSize(self)._select()
 
     @property
@@ -119,13 +119,13 @@ class HighLevelStream(Base):
         """
         Returns
         -------
-        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.stack.Stack): An instance of the Stack class
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.stack.stack.Stack): An instance of the Stack class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.stack import Stack
+        from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.stack.stack import Stack
         return Stack(self)
 
     @property
@@ -133,13 +133,13 @@ class HighLevelStream(Base):
         """
         Returns
         -------
-        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stacklink.stacklink.StackLink): An instance of the StackLink class
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.stacklink.stacklink.StackLink): An instance of the StackLink class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stacklink.stacklink import StackLink
+        from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.stacklink.stacklink import StackLink
         return StackLink(self)
 
     @property
@@ -161,13 +161,13 @@ class HighLevelStream(Base):
         """
         Returns
         -------
-        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.transmissioncontrol.transmissioncontrol.TransmissionControl): An instance of the TransmissionControl class
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.transmissioncontrol.transmissioncontrol.TransmissionControl): An instance of the TransmissionControl class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.transmissioncontrol.transmissioncontrol import TransmissionControl
+        from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.transmissioncontrol.transmissioncontrol import TransmissionControl
         return TransmissionControl(self)._select()
 
     @property
@@ -345,7 +345,7 @@ class HighLevelStream(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/7/ixnetwork/lag | /api/v1/sessions/7/ixnetwork/vport]): A list of virtual ports that are the receiving ports
+        - list(str[None | /api/v1/sessions/9/ixnetwork/lag | /api/v1/sessions/9/ixnetwork/vport]): A list of virtual ports that are the receiving ports
         """
         return self._get_attribute(self._SDM_ATT_MAP['RxPortIds'])
     @RxPortIds.setter
@@ -387,7 +387,7 @@ class HighLevelStream(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/7/ixnetwork/lag | /api/v1/sessions/7/ixnetwork/vport): The virtual port that is the transmitting port.
+        - str(None | /api/v1/sessions/9/ixnetwork/lag | /api/v1/sessions/9/ixnetwork/vport): The virtual port that is the transmitting port.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TxPortId'])
     @TxPortId.setter
@@ -415,9 +415,9 @@ class HighLevelStream(Base):
         - Pause (bool): If true then pause is enabled.
         - PreambleCustomSize (number): Customizes the preamble size of the frame.
         - PreambleFrameSizeMode (str(auto | custom)): The starting size of the frame.
-        - RxPortIds (list(str[None | /api/v1/sessions/7/ixnetwork/lag | /api/v1/sessions/7/ixnetwork/vport])): A list of virtual ports that are the receiving ports
+        - RxPortIds (list(str[None | /api/v1/sessions/9/ixnetwork/lag | /api/v1/sessions/9/ixnetwork/vport])): A list of virtual ports that are the receiving ports
         - Suspend (bool): Suspends all traffic on this high level stream.
-        - TxPortId (str(None | /api/v1/sessions/7/ixnetwork/lag | /api/v1/sessions/7/ixnetwork/vport)): The virtual port that is the transmitting port.
+        - TxPortId (str(None | /api/v1/sessions/9/ixnetwork/lag | /api/v1/sessions/9/ixnetwork/vport)): The virtual port that is the transmitting port.
 
         Raises
         ------
@@ -449,11 +449,11 @@ class HighLevelStream(Base):
         - Pause (bool): If true then pause is enabled.
         - PreambleCustomSize (number): Customizes the preamble size of the frame.
         - PreambleFrameSizeMode (str(auto | custom)): The starting size of the frame.
-        - RxPortIds (list(str[None | /api/v1/sessions/7/ixnetwork/lag | /api/v1/sessions/7/ixnetwork/vport])): A list of virtual ports that are the receiving ports
+        - RxPortIds (list(str[None | /api/v1/sessions/9/ixnetwork/lag | /api/v1/sessions/9/ixnetwork/vport])): A list of virtual ports that are the receiving ports
         - RxPortNames (list(str)): A list of names from the receiving virtual ports.
         - State (str): (Read only) Denotes the current state of the stream.
         - Suspend (bool): Suspends all traffic on this high level stream.
-        - TxPortId (str(None | /api/v1/sessions/7/ixnetwork/lag | /api/v1/sessions/7/ixnetwork/vport)): The virtual port that is the transmitting port.
+        - TxPortId (str(None | /api/v1/sessions/9/ixnetwork/lag | /api/v1/sessions/9/ixnetwork/vport)): The virtual port that is the transmitting port.
         - TxPortName (str): The name of the virtual port that is the transmitting port.
 
         Returns

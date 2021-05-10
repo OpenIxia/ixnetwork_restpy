@@ -129,7 +129,7 @@ class Stack(Base):
 
         DEPRECATED append(Arg2=href)string
         ----------------------------------
-        - Arg2 (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../protocolTemplate)): A valid /traffic/protocolTemplate object reference.
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../protocolTemplate)): A valid /traffic/protocolTemplate object reference.
         - Returns str: This exec returns an object reference to the newly appended stack item.
 
         Raises
@@ -149,8 +149,8 @@ class Stack(Base):
 
         appendProtocol(Arg2=href)href
         -----------------------------
-        - Arg2 (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../protocolTemplate)): A valid /traffic/protocolTemplate object reference.
-        - Returns str(None | /api/v1/sessions/30/ixnetwork/traffic/.../stack): This exec returns an object reference to the newly appended stack item.
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../protocolTemplate)): A valid /traffic/protocolTemplate object reference.
+        - Returns str(None | /api/v1/sessions/1/ixnetwork/traffic/.../stack): This exec returns an object reference to the newly appended stack item.
 
         Raises
         ------
@@ -182,7 +182,7 @@ class Stack(Base):
 
         DEPRECATED insert(Arg2=href)string
         ----------------------------------
-        - Arg2 (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../protocolTemplate)): A valid /traffic/protocolTemplate object reference
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../protocolTemplate)): A valid /traffic/protocolTemplate object reference
         - Returns str: This exec returns an object reference to the newly inserted stack item.
 
         Raises
@@ -202,8 +202,8 @@ class Stack(Base):
 
         insertProtocol(Arg2=href)href
         -----------------------------
-        - Arg2 (str(None | /api/v1/sessions/30/ixnetwork/traffic/.../protocolTemplate)): A valid /traffic/protocolTemplate object reference
-        - Returns str(None | /api/v1/sessions/30/ixnetwork/traffic/.../stack): This exec returns an object reference to the newly inserted stack item.
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../protocolTemplate)): A valid /traffic/protocolTemplate object reference
+        - Returns str(None | /api/v1/sessions/1/ixnetwork/traffic/.../stack): This exec returns an object reference to the newly inserted stack item.
 
         Raises
         ------

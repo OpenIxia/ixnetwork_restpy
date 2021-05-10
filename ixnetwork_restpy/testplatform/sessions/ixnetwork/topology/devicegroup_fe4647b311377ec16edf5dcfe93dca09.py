@@ -414,7 +414,7 @@ class DeviceGroup(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/30/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
@@ -507,7 +507,7 @@ class DeviceGroup(Base):
         ----
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/30/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - Multiplier (number): Number of device instances per parent device instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
@@ -563,7 +563,7 @@ class DeviceGroup(Base):
     def Abort(self, *args, **kwargs):
         """Executes the abort operation on the server.
 
-        Abort selected Device Groups.
+        Abort CPF control plane (equals to demote to kUnconfigured state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -592,8 +592,8 @@ class DeviceGroup(Base):
 
         copyPaste(Arg2=href)list
         ------------------------
-        - Arg2 (str(None | /api/v1/sessions/30/ixnetwork//.../*)): The destination node below which the copied node will be pasted
-        - Returns list(str[None | /api/v1/sessions/30/ixnetwork//.../*]): The newly copied node.
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork//.../*)): The destination node below which the copied node will be pasted
+        - Returns list(str[None | /api/v1/sessions/1/ixnetwork//.../*]): The newly copied node.
 
         Raises
         ------
@@ -640,7 +640,7 @@ class DeviceGroup(Base):
     def Start(self, *args, **kwargs):
         """Executes the start operation on the server.
 
-        Start selected Device Groups.
+        Start CPF control plane (equals to promote to negotiated state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -665,7 +665,7 @@ class DeviceGroup(Base):
     def Stop(self, *args, **kwargs):
         """Executes the stop operation on the server.
 
-        Stop selected Device Groups.
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 

@@ -176,7 +176,7 @@ class Vport(Base):
         """DEPRECATED 
         Returns
         -------
-        - str(None | /api/v1/sessions/7/ixnetwork/availableHardware/.../port): The physical port to which the unassigned port is assigned.
+        - str(None | /api/v1/sessions/9/ixnetwork/availableHardware/.../port): The physical port to which the unassigned port is assigned.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedTo'])
     @ConnectedTo.setter
@@ -458,7 +458,7 @@ class Vport(Base):
 
         Args
         ----
-        - ConnectedTo (str(None | /api/v1/sessions/7/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
+        - ConnectedTo (str(None | /api/v1/sessions/9/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
         - IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
         - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
         - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
@@ -483,7 +483,7 @@ class Vport(Base):
 
         Args
         ----
-        - ConnectedTo (str(None | /api/v1/sessions/7/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
+        - ConnectedTo (str(None | /api/v1/sessions/9/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
         - IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
         - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
         - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
@@ -531,7 +531,7 @@ class Vport(Base):
         - AssignedTo (str): (Read Only) A new port is assigned with this option.
         - AssignedToDisplayName (str): 
         - CaptureSupported (str(data | control | dataAndControl | none)): 
-        - ConnectedTo (str(None | /api/v1/sessions/7/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
+        - ConnectedTo (str(None | /api/v1/sessions/9/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
         - ConnectionInfo (str): Detailed information about location of the physical port that is assigned to this port configuration.
         - ConnectionState (str(assignedInUseByOther | assignedUnconnected | connectedLinkDown | connectedLinkUp | connecting | unassigned)): Consolidated state of the vport. This combines the connection state with link state.
         - ConnectionStatus (str): A string describing the status of the hardware connected to this vport
@@ -614,7 +614,7 @@ class Vport(Base):
         assignPorts(Arg2=bool)list
         --------------------------
         - Arg2 (bool): If true, it will clear ownership on the hardware ports which have location attribute set.
-        - Returns list(str[None | /api/v1/sessions/7/ixnetwork/vport]): Returns a list of virtual port object references that were successfully connected.
+        - Returns list(str[None | /api/v1/sessions/9/ixnetwork/vport]): Returns a list of virtual port object references that were successfully connected.
 
         Raises
         ------
@@ -704,7 +704,7 @@ class Vport(Base):
 
         copyTapSettings(Arg2=list)
         --------------------------
-        - Arg2 (list(str[None | /api/v1/sessions/7/ixnetwork/vport])): 
+        - Arg2 (list(str[None | /api/v1/sessions/9/ixnetwork/vport])): 
 
         Raises
         ------
@@ -1001,7 +1001,7 @@ class Vport(Base):
 
         sendArp(Arg2=list)bool
         ----------------------
-        - Arg2 (list(str[None | /api/v1/sessions/7/ixnetwork/vport/.../interface])): 
+        - Arg2 (list(str[None | /api/v1/sessions/9/ixnetwork/vport/.../interface])): 
         - Returns bool: 
 
         Raises
@@ -1032,7 +1032,7 @@ class Vport(Base):
 
         sendNs(Arg2=list)bool
         ---------------------
-        - Arg2 (list(str[None | /api/v1/sessions/7/ixnetwork/vport/.../interface])): 
+        - Arg2 (list(str[None | /api/v1/sessions/9/ixnetwork/vport/.../interface])): 
         - Returns bool: 
 
         Raises
@@ -1063,7 +1063,7 @@ class Vport(Base):
 
         sendRs(Arg2=list)bool
         ---------------------
-        - Arg2 (list(str[None | /api/v1/sessions/7/ixnetwork/vport/.../interface])): 
+        - Arg2 (list(str[None | /api/v1/sessions/9/ixnetwork/vport/.../interface])): 
         - Returns bool: 
 
         Raises

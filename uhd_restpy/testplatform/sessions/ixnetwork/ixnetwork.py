@@ -234,28 +234,28 @@ class Ixnetwork(Base):
         assignPorts(Arg1=list, Arg2=list, Arg3=bool)list
         ------------------------------------------------
         - Arg1 (list(str)): A list of port display names, if empty then /vport's location attribute value is used.
-        - Arg2 (list(str[None | /api/v1/sessions/7/ixnetwork/vport])): A list of virtual port object references that hardware ports will be attached to.
+        - Arg2 (list(str[None | /api/v1/sessions/9/ixnetwork/vport])): A list of virtual port object references that hardware ports will be attached to.
         - Arg3 (bool): If true, it will clear ownership on the hardware ports.
-        - Returns list(str[None | /api/v1/sessions/7/ixnetwork/vport]): Returns a list of virtual port object references that were successfully connected.
+        - Returns list(str[None | /api/v1/sessions/9/ixnetwork/vport]): Returns a list of virtual port object references that were successfully connected.
 
         assignPorts(Arg1=list, Arg2=bool)list
         -------------------------------------
         - Arg1 (list(str)): A list of port display names, if empty then /vport's location attribute value is used.
         - Arg2 (bool): If true, it will clear ownership on the hardware ports which have location attribute set.
-        - Returns list(str[None | /api/v1/sessions/7/ixnetwork/vport]): Returns a list of virtual port object references that were successfully connected.
+        - Returns list(str[None | /api/v1/sessions/9/ixnetwork/vport]): Returns a list of virtual port object references that were successfully connected.
 
         assignPorts(Arg1=list, Arg2=list, Arg3=list, Arg4=bool)list
         -----------------------------------------------------------
         - Arg1 (list(dict(arg1:str,arg2:str,arg3:str))): A list of chassis, card, port combinations to include.
         - Arg2 (list(dict(arg1:str,arg2:str,arg3:str))): A list of chassis, card, port combinations to exclude.
-        - Arg3 (list(str[None | /api/v1/sessions/7/ixnetwork/vport])): A list of virtual port object references that hardware ports will be attached to.
+        - Arg3 (list(str[None | /api/v1/sessions/9/ixnetwork/vport])): A list of virtual port object references that hardware ports will be attached to.
         - Arg4 (bool): If true, it will clear ownership on the hardware ports.
-        - Returns list(str[None | /api/v1/sessions/7/ixnetwork/vport]): Returns a list of virtual port object references that were successfully connected.
+        - Returns list(str[None | /api/v1/sessions/9/ixnetwork/vport]): Returns a list of virtual port object references that were successfully connected.
 
         assignPorts(Arg1=bool)list
         --------------------------
         - Arg1 (bool): If true, it will clear ownership on the hardware ports which have location attribute set.
-        - Returns list(str[None | /api/v1/sessions/7/ixnetwork/vport]): Returns a list of virtual port object references that were successfully connected.
+        - Returns list(str[None | /api/v1/sessions/9/ixnetwork/vport]): Returns a list of virtual port object references that were successfully connected.
 
         Raises
         ------
@@ -283,7 +283,7 @@ class Ixnetwork(Base):
     def ClearCPDPStats(self):
         """Executes the clearCPDPStats operation on the server.
 
-        Clear control pland and data plane statistics.
+        Clear control plane and data plane statistics.
 
         Raises
         ------
@@ -697,12 +697,12 @@ class Ixnetwork(Base):
         getRecommendedSettings(Arg1=string, Arg2=list)
         ----------------------------------------------
         - Arg1 (str): 
-        - Arg2 (list(str[None | /api/v1/sessions/7/ixnetwork/availableHardware/.../port])): 
+        - Arg2 (list(str[None | /api/v1/sessions/9/ixnetwork/availableHardware/.../port])): 
 
         getRecommendedSettings(Arg1=string, Arg2=list)
         ----------------------------------------------
         - Arg1 (str): 
-        - Arg2 (list(str[None | /api/v1/sessions/7/ixnetwork/vport])): 
+        - Arg2 (list(str[None | /api/v1/sessions/9/ixnetwork/vport])): 
 
         Raises
         ------
@@ -854,7 +854,7 @@ class Ixnetwork(Base):
         mergeCapture(Arg1=string, Arg2=href, Arg3=enum, Arg4=string)
         ------------------------------------------------------------
         - Arg1 (str): Full path to the capture file.
-        - Arg2 (str(None | /api/v1/sessions/7/ixnetwork/vport/.../capture)): The port capture object.
+        - Arg2 (str(None | /api/v1/sessions/9/ixnetwork/vport/.../capture)): The port capture object.
         - Arg3 (str(control | data)): The type of the capture, either data or control.
         - Arg4 (str): The full path where the resulted merged capture will be saved, the resulted capture name needs to contain extension also.
 
@@ -986,7 +986,7 @@ class Ixnetwork(Base):
 
         select(Selects=list)string
         --------------------------
-        - Selects (list(dict(from:str[None | /api/v1/sessions/7/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(child:str,properties:list[str])]))): A list of select structures.Each select structure consists of a starting point in the hierarchy. This starting point must exist and is defined as the 'from' value.Properties for the 'from' value are optional and can be retrieved using the 'properties' list.To retrieve all properties specify the '*' wildcard. Regex is not supported in the 'properties' list.Individual nodes under the starting point can be retrieved. These are specified in the 'children' list.Each item in the children list contains a 'child' name, a list of 'properties' and a list of filters by which to reduce the result set.The 'child' name can be a single name or a regex.Properties that reference another object can have that object's content inlined by specifying inline children.Any child nodes below the object reference can be expanded as long as they are specified in the inline children.
+        - Selects (list(dict(from:str[None | /api/v1/sessions/9/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(child:str,properties:list[str])]))): A list of select structures.Each select structure consists of a starting point in the hierarchy. This starting point must exist and is defined as the 'from' value.Properties for the 'from' value are optional and can be retrieved using the 'properties' list.To retrieve all properties specify the '*' wildcard. Regex is not supported in the 'properties' list.Individual nodes under the starting point can be retrieved. These are specified in the 'children' list.Each item in the children list contains a 'child' name, a list of 'properties' and a list of filters by which to reduce the result set.The 'child' name can be a single name or a regex.Properties that reference another object can have that object's content inlined by specifying inline children.Any child nodes below the object reference can be expanded as long as they are specified in the inline children.
         - Returns str: A json encoded string of result sets.The encoded string will contain a list of result sets with each select producing a result set.
 
         Raises
@@ -1096,7 +1096,7 @@ class Ixnetwork(Base):
 
         setPortTransmitDuration(Arg1=list)
         ----------------------------------
-        - Arg1 (list(dict(arg1:number,arg2:list[str[None | /api/v1/sessions/7/ixnetwork/lag | /api/v1/sessions/7/ixnetwork/traffic | /api/v1/sessions/7/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/7/ixnetwork/traffic/.../highLevelStream | /api/v1/sessions/7/ixnetwork/vport]]))): An array of structures. Each structure is an duration and a valid object reference.
+        - Arg1 (list(dict(arg1:number,arg2:list[str[None | /api/v1/sessions/9/ixnetwork/lag | /api/v1/sessions/9/ixnetwork/traffic | /api/v1/sessions/9/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/9/ixnetwork/traffic/.../highLevelStream | /api/v1/sessions/9/ixnetwork/vport]]))): An array of structures. Each structure is an duration and a valid object reference.
 
         Raises
         ------

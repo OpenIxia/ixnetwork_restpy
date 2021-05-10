@@ -83,7 +83,7 @@ class DhcpV6DiscoveredInfo(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/30/ixnetwork/vport/.../interface): (Read Only) An Ixia protocol interface that is negotiating with the DHCPv6 Server.
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): (Read Only) An Ixia protocol interface that is negotiating with the DHCPv6 Server.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterface'])
 

@@ -44,13 +44,13 @@ class QuickTest(Base):
         """
         Returns
         -------
-        - obj(uhd_restpy.testplatform.sessions.ixnetwork.quicktest.globals_189e36988976210137e69f36458134c2.Globals): An instance of the Globals class
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.quicktest.globals_605c8d39970b93a1aba6b6a97467871c.Globals): An instance of the Globals class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from uhd_restpy.testplatform.sessions.ixnetwork.quicktest.globals_189e36988976210137e69f36458134c2 import Globals
+        from uhd_restpy.testplatform.sessions.ixnetwork.quicktest.globals_605c8d39970b93a1aba6b6a97467871c import Globals
         return Globals(self)._select()
 
     @property
@@ -58,13 +58,13 @@ class QuickTest(Base):
         """
         Returns
         -------
-        - obj(uhd_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544back2back_98477f12f665b89fbc05f63bb31ee827.Rfc2544back2back): An instance of the Rfc2544back2back class
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544back2back_cfd3f40fbe677cc70482381fc445e21e.Rfc2544back2back): An instance of the Rfc2544back2back class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from uhd_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544back2back_98477f12f665b89fbc05f63bb31ee827 import Rfc2544back2back
+        from uhd_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544back2back_cfd3f40fbe677cc70482381fc445e21e import Rfc2544back2back
         return Rfc2544back2back(self)
 
     @property
@@ -72,13 +72,13 @@ class QuickTest(Base):
         """
         Returns
         -------
-        - obj(uhd_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544frameloss_f6a794f7d6a00f8572021fc418d8807f.Rfc2544frameLoss): An instance of the Rfc2544frameLoss class
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544frameloss_868b9746dda2d0cfeed81516cf37d39d.Rfc2544frameLoss): An instance of the Rfc2544frameLoss class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from uhd_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544frameloss_f6a794f7d6a00f8572021fc418d8807f import Rfc2544frameLoss
+        from uhd_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544frameloss_868b9746dda2d0cfeed81516cf37d39d import Rfc2544frameLoss
         return Rfc2544frameLoss(self)
 
     @property
@@ -86,13 +86,13 @@ class QuickTest(Base):
         """
         Returns
         -------
-        - obj(uhd_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544throughput_5a77c9a28f5fa2bb9ce9f4280eb5122f.Rfc2544throughput): An instance of the Rfc2544throughput class
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544throughput_86fc74b3228f97518d2513e6b33a3960.Rfc2544throughput): An instance of the Rfc2544throughput class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from uhd_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544throughput_5a77c9a28f5fa2bb9ce9f4280eb5122f import Rfc2544throughput
+        from uhd_restpy.testplatform.sessions.ixnetwork.quicktest.rfc2544throughput_86fc74b3228f97518d2513e6b33a3960 import Rfc2544throughput
         return Rfc2544throughput(self)
 
     @property
@@ -100,13 +100,13 @@ class QuickTest(Base):
         """
         Returns
         -------
-        - obj(uhd_restpy.testplatform.sessions.ixnetwork.quicktest.traffictest_9709f3566877e5d5fb6ae115268058c6.TrafficTest): An instance of the TrafficTest class
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.quicktest.traffictest_f399e685b29fd795590f27fffbfa469c.TrafficTest): An instance of the TrafficTest class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from uhd_restpy.testplatform.sessions.ixnetwork.quicktest.traffictest_9709f3566877e5d5fb6ae115268058c6 import TrafficTest
+        from uhd_restpy.testplatform.sessions.ixnetwork.quicktest.traffictest_f399e685b29fd795590f27fffbfa469c import TrafficTest
         return TrafficTest(self)
 
     @property
@@ -114,7 +114,7 @@ class QuickTest(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/7/ixnetwork/quickTest/.../*]): Returns list containing the currently running QuickTest
+        - list(str[None | /api/v1/sessions/9/ixnetwork/quickTest/.../*]): Returns list containing the currently running QuickTest
         """
         return self._get_attribute(self._SDM_ATT_MAP['RunningTest'])
 
@@ -123,7 +123,7 @@ class QuickTest(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/7/ixnetwork/quickTest/.../*]): Returns list containing the currently running QuickTest
+        - list(str[None | /api/v1/sessions/9/ixnetwork/quickTest/.../*]): Returns list containing the currently running QuickTest
         """
         return self._get_attribute(self._SDM_ATT_MAP['RunningTestObj'])
 
@@ -132,7 +132,7 @@ class QuickTest(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/7/ixnetwork/quickTest/.../*]): Returns list containing the QuickTest test in the configuration
+        - list(str[None | /api/v1/sessions/9/ixnetwork/quickTest/.../*]): Returns list containing the QuickTest test in the configuration
         """
         return self._get_attribute(self._SDM_ATT_MAP['TestIds'])
 

@@ -74,7 +74,7 @@ class EgressOnlyTracking(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/30/ixnetwork/lag | /api/v1/sessions/30/ixnetwork/vport): 
+        - str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport): 
         """
         return self._get_attribute(self._SDM_ATT_MAP['Port'])
     @Port.setter
@@ -136,7 +136,7 @@ class EgressOnlyTracking(Base):
         ----
         - Egress (list(dict(arg1:number,arg2:str))): Struct contains: egress offset and egress mask
         - Enabled (bool): Enables the egress only tracking for the given port.
-        - Port (str(None | /api/v1/sessions/30/ixnetwork/lag | /api/v1/sessions/30/ixnetwork/vport)): 
+        - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)): 
         - SignatureLengthType (str(fourByte | twelveByte)): 
         - SignatureMask (str): Signature maks to be placed inside the packet.
         - SignatureOffset (number): Offset where the signature value will be placed in the packet.
@@ -155,7 +155,7 @@ class EgressOnlyTracking(Base):
         ----
         - Egress (list(dict(arg1:number,arg2:str))): Struct contains: egress offset and egress mask
         - Enabled (bool): Enables the egress only tracking for the given port.
-        - Port (str(None | /api/v1/sessions/30/ixnetwork/lag | /api/v1/sessions/30/ixnetwork/vport)): 
+        - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)): 
         - SignatureLengthType (str(fourByte | twelveByte)): 
         - SignatureMask (str): Signature maks to be placed inside the packet.
         - SignatureOffset (number): Offset where the signature value will be placed in the packet.
@@ -192,7 +192,7 @@ class EgressOnlyTracking(Base):
         ----
         - Egress (list(dict(arg1:number,arg2:str))): Struct contains: egress offset and egress mask
         - Enabled (bool): Enables the egress only tracking for the given port.
-        - Port (str(None | /api/v1/sessions/30/ixnetwork/lag | /api/v1/sessions/30/ixnetwork/vport)): 
+        - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)): 
         - SignatureLengthType (str(fourByte | twelveByte)): 
         - SignatureMask (str): Signature maks to be placed inside the packet.
         - SignatureOffset (number): Offset where the signature value will be placed in the packet.
